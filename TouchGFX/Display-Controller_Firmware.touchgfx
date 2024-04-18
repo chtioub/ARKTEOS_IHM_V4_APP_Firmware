@@ -1,0 +1,311 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Accueil",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Piscine",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Programmation",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Programmation_zoom",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Historiques_fonctionnement",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Courbe_loi_d_eau",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Energies_cumul",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Energies_histo",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Energies",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Infos_systeme",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Marche_Arret",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Derogation",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Eau_chaude_sanitaire",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Bouclage_ecs",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Derogation_ecs",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Variables_systeme",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Synoptique",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Maintenance",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Installation",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Usine",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Erreurs",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 1024,
+      "Height": 600
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Accueil",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 1024,
+        "Height": 600
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7",
+    "SubFamily": "STM32H730 Value line",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../Display-Controller_Firmware.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.23.2"
+}
