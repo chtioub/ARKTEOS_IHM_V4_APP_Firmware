@@ -271,7 +271,7 @@
               },
               {
                 "Type": "CustomContainerInstance",
-                "Name": "select_oui_non_derog",
+                "Name": "select_oui_non_marche_arret",
                 "X": 251,
                 "Y": 387,
                 "Width": 449,
@@ -461,6 +461,45 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_config_in_out",
+                "X": 17,
+                "Y": 406,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_L168xH102_Beige.png",
+                "Released": "Bouton_L168xH102_Beige.png",
+                "TextId": "__SingleUse_4TGO",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              }
+            ]
           }
         ],
         "Interactions": []
@@ -485,6 +524,39 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "ScrollList",
+                "Name": "scrollList_erreurs",
+                "X": 25,
+                "Y": 133,
+                "Width": 900,
+                "Height": 384,
+                "Snapping": true,
+                "ItemTemplateName": "Erreurs_alertes",
+                "NumberofItems": 9,
+                "Easing": "Back",
+                "EasingOption": "Out",
+                "SwipeAcceleration": 1.0,
+                "DragAcceleration": 1.0,
+                "OverShootPercentage": 75
+              }
+            ]
           }
         ],
         "Interactions": []
@@ -643,6 +715,18 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Erreurs"
             }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_accueil"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Accueil"
+            }
           }
         ]
       },
@@ -725,9 +809,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea",
-            "X": 203,
-            "Y": 8,
-            "Width": 42,
+            "X": 53,
+            "Y": 11,
+            "Width": 343,
             "Height": 24,
             "TextId": "__SingleUse_YWNE",
             "TextRotation": "0",
@@ -750,6 +834,52 @@
             "Name": "action1"
           }
         ]
+      },
+      {
+        "Name": "Erreurs_alertes",
+        "Width": 900,
+        "Height": 70,
+        "Components": [
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel1",
+            "X": 7,
+            "Y": 7,
+            "Width": 80,
+            "Height": 56,
+            "Pressed": "Bouton_Defaut_Rouge_L79xH55.png",
+            "Released": "Bouton_Defaut_Rouge_L79xH55.png",
+            "TextId": "__SingleUse_MOX1",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 100,
+            "Y": 23,
+            "Width": 370,
+            "Height": 24,
+            "TextId": "__SingleUse_OYZR",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": []
       }
     ],
     "Name": "MyApplication",
@@ -758,7 +888,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Marche_Arret",
+    "StartupScreenName": "Erreurs",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

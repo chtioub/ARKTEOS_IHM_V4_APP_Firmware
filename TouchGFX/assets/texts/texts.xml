@@ -8,6 +8,61 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_OYZR" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_MOX1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_J15M" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_PO3G" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_KY2J" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_82RG" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_4TGO" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration&#10;In/Out&#10;Carte REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_X0L9" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_CF5Z" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_CPAL" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_A2WR" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
       <Text Id="__SingleUse_DT7T" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">200</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -34,12 +89,12 @@
         <Translation Language="PT"></Translation>
       </Text>
       <Text Id="__SingleUse_6HNR" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
+        <Translation Language="FR">Non</Translation>
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>
       <Text Id="__SingleUse_20U2" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
+        <Translation Language="FR">Oui</Translation>
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>
@@ -84,12 +139,12 @@
         <Translation Language="PT"></Translation>
       </Text>
       <Text Id="__SingleUse_0HT8" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
+        <Translation Language="FR">Non</Translation>
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>
       <Text Id="__SingleUse_4GLY" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
+        <Translation Language="FR">Oui</Translation>
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>
@@ -104,17 +159,17 @@
         <Translation Language="PT"></Translation>
       </Text>
       <Text Id="__SingleUse_6EWG" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
+        <Translation Language="FR">Non</Translation>
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>
       <Text Id="__SingleUse_BTK2" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
+        <Translation Language="FR">Oui</Translation>
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>
       <Text Id="__SingleUse_YWNE" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Text</Translation>
+        <Translation Language="FR">Voulez-vous forcer un cycle ECS ?</Translation>
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>

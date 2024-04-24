@@ -88,6 +88,8 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Select_oui_nonBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\Barre_titre.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Barre_titreBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\Erreurs_alertes.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\Erreurs_alertesBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -305,6 +307,8 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Select_oui_nonBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\Barre_titre.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Barre_titreBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\Erreurs_alertes.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Erreurs_alertesBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
