@@ -424,6 +424,18 @@
     <Filter Include="Source Files\generated\gui_generated\courbe_loi_d_eau_screen">
       <UniqueIdentifier>8AC71845-73CA-D7B8-9F09-A632983AEBFC</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>64F276F1-A2B3-5A19-34B3-D65049863228</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>86C6694B-D90D-FB0B-7578-129BCB93A265</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>254051E4-E544-EC33-B155-3D3A5507E64E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>FEC0772A-AC53-4873-4249-AF5CF768E616</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -644,6 +656,18 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\variables_systeme_screen\Variables_systemeViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\variables_systeme_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\Select_oui_non.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\Select_oui_nonBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\Barre_titre.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\Barre_titreBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1275,6 +1299,18 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\variables_systeme_screen\Variables_systemeViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\variables_systeme_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\Select_oui_non.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Select_oui_nonBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\Barre_titre.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Barre_titreBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

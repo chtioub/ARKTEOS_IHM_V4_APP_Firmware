@@ -1,10 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.23.2">
   <Languages>
+    <Language Id="FR" />
     <Language Id="GB" />
+    <Language Id="PT" />
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_DT7T" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_EWT9" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_0S6X" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_2NAO" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_XWB3" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Text</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_6HNR" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_20U2" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_F9XH" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Données non contractuelles&#10;Consommation des appoints : estimation calculée&#10;pour une tension de 230V/400V</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_N23H" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cumul&#10;conommées</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZNZN" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Histo&#10;consommées</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_RR0M" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cumul&#10;produites</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_RRH8" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Histo produites</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_EMJW" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_3I8C" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_9N5K" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Souhaitez-vous arrêter votre PAC ?</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_0HT8" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_4GLY" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_9K9P" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_G30Z" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_6EWG" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_BTK2" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_YWNE" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Text</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_DM9M" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+      <Text Id="__SingleUse_FCD0" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />

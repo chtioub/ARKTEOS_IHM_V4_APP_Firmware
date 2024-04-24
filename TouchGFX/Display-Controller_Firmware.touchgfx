@@ -105,6 +105,127 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_cumul_conso",
+                "X": 564,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_L168xH102_Beige.png",
+                "Released": "Bouton_L168xH102_Beige.png",
+                "TextId": "__SingleUse_N23H",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_histo_conso",
+                "X": 381,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_L168xH102_Beige.png",
+                "Released": "Bouton_L168xH102_Beige.png",
+                "TextId": "__SingleUse_ZNZN",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_cumul_prod",
+                "X": 198,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_L168xH102_Beige.png",
+                "Released": "Bouton_L168xH102_Beige.png",
+                "TextId": "__SingleUse_RR0M",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_histo_prod",
+                "X": 15,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_L168xH102_Beige.png",
+                "Released": "Bouton_L168xH102_Beige.png",
+                "TextId": "__SingleUse_RRH8",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_donnees_non_contractuelles",
+                "X": 223,
+                "Y": 287,
+                "Width": 505,
+                "Height": 72,
+                "TextId": "__SingleUse_F9XH",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              }
+            ]
           }
         ],
         "Interactions": []
@@ -129,9 +250,58 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 864,
+                "Y": 462,
+                "Width": 80,
+                "Height": 56,
+                "Pressed": "Bouton_Valider_L79xH55.png",
+                "Released": "Bouton_Valider_L79xH55.png"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "select_oui_non_derog",
+                "X": 251,
+                "Y": 387,
+                "Width": 449,
+                "Height": 129,
+                "CustomContainerDefinitionName": "Select_oui_non"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              }
+            ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Accueil"
+            }
+          }
+        ]
       },
       {
         "Name": "Derogation",
@@ -177,9 +347,58 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 864,
+                "Y": 462,
+                "Width": 80,
+                "Height": 56,
+                "Pressed": "Bouton_Valider_L79xH55.png",
+                "Released": "Bouton_Valider_L79xH55.png"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "select_oui_non_derog",
+                "X": 12,
+                "Y": 141,
+                "Width": 449,
+                "Height": 129,
+                "CustomContainerDefinitionName": "Select_oui_non"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              }
+            ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Eau_chaude_sanitaire"
+            }
+          }
+        ]
       },
       {
         "Name": "Variables_systeme",
@@ -201,6 +420,23 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              }
+            ]
           }
         ],
         "Interactions": []
@@ -254,15 +490,276 @@
         "Interactions": []
       }
     ],
-    "CustomContainerDefinitions": [],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "Barre_titre",
+        "Width": 950,
+        "Height": 126,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Image_barre_titre",
+            "Width": 951,
+            "Height": 64,
+            "RelativeFilename": "Barre_Titre_L950xh63.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "date",
+            "X": 840,
+            "Y": 20,
+            "Width": 96,
+            "Height": 24,
+            "TextId": "__SingleUse_FCD0",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "heure",
+            "X": 19,
+            "Y": 20,
+            "Width": 61,
+            "Height": 24,
+            "TextId": "__SingleUse_DM9M",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "Image_recup_config",
+            "X": 346,
+            "Y": 4,
+            "Width": 80,
+            "Height": 56,
+            "RelativeFilename": "Bouton_Recup_Config_L79xH55.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image_conn_distant",
+            "X": 248,
+            "Y": 4,
+            "Width": 80,
+            "Height": 56,
+            "RelativeFilename": "Bouton_Acces_Distant_L79xH55.png"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_erreur",
+            "X": 150,
+            "Y": 4,
+            "Width": 80,
+            "Height": 56,
+            "Pressed": "Bouton_Defaut_Rouge_L79xH55.png",
+            "Released": "Bouton_Defaut_Rouge_L79xH55.png",
+            "TextId": "__SingleUse_EWT9",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_alerte",
+            "X": 150,
+            "Y": 4,
+            "Width": 80,
+            "Height": 56,
+            "Visible": false,
+            "Pressed": "Bouton_Alerte_Jaune_L79xH55.png",
+            "Released": "Bouton_Alerte_Jaune_L79xH55.png",
+            "TextId": "__SingleUse_DT7T",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "Button",
+            "Name": "button_accueil",
+            "X": 15,
+            "Y": 67,
+            "Width": 61,
+            "Height": 55,
+            "Pressed": "Bouton_Home_L60xH54.png",
+            "Released": "Bouton_Home_L60xH54.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button_retour",
+            "X": 881,
+            "Y": 67,
+            "Width": 61,
+            "Height": 55,
+            "Pressed": "Bouton_Retour_L60xH54.png",
+            "Released": "Bouton_Retour_L60xH54.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_erreur"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Erreurs"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_alerte"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Erreurs"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Select_oui_non",
+        "Width": 449,
+        "Height": 129,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Image_select_right",
+            "Width": 449,
+            "Height": 129,
+            "RelativeFilename": "Bouton_Non_Oui_L449xH129.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image_select_left",
+            "Width": 449,
+            "Height": 129,
+            "RelativeFilename": "Bouton_Oui_Non_L449xH129.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButton_right",
+            "X": 233,
+            "Y": 76,
+            "Width": 216,
+            "Height": 53,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 12,
+                "TextId": "__SingleUse_BTK2",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "flexButton_left",
+            "Y": 76,
+            "Width": 216,
+            "Height": 53,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 12,
+                "TextId": "__SingleUse_6EWG",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea",
+            "X": 203,
+            "Y": 8,
+            "Width": 42,
+            "Height": 24,
+            "TextId": "__SingleUse_YWNE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [],
+        "CustomTriggers": [
+          {
+            "Name": "trigger1"
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "action1"
+          }
+        ]
+      }
+    ],
     "Name": "MyApplication",
     "Resolution": {
       "Width": 1024,
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Accueil",
-    "SelectedStartupLanguage": "GB",
+    "StartupScreenName": "Marche_Arret",
+    "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
     "AvailableColorDepths": [
