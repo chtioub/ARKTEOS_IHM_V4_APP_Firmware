@@ -259,7 +259,7 @@
                 "Height": 102,
                 "Pressed": "Bouton_L168xH102_Beige.png",
                 "Released": "Bouton_L168xH102_Beige.png",
-                "TextId": "__SingleUse_N23H",
+                "TextId": "cumul_conso_text_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
                   "Green": 255,
@@ -281,7 +281,7 @@
                 "Height": 102,
                 "Pressed": "Bouton_L168xH102_Beige.png",
                 "Released": "Bouton_L168xH102_Beige.png",
-                "TextId": "__SingleUse_ZNZN",
+                "TextId": "histo_conso_text_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
                   "Green": 255,
@@ -303,7 +303,7 @@
                 "Height": 102,
                 "Pressed": "Bouton_L168xH102_Beige.png",
                 "Released": "Bouton_L168xH102_Beige.png",
-                "TextId": "__SingleUse_RR0M",
+                "TextId": "cumul_prod_text_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
                   "Green": 255,
@@ -325,7 +325,7 @@
                 "Height": 102,
                 "Pressed": "Bouton_L168xH102_Beige.png",
                 "Released": "Bouton_L168xH102_Beige.png",
-                "TextId": "__SingleUse_RRH8",
+                "TextId": "histo_prod_text_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
                   "Green": 255,
@@ -429,7 +429,7 @@
                 "Y": 389,
                 "Width": 449,
                 "Height": 129,
-                "CustomContainerDefinitionName": "Select_oui_non"
+                "CustomContainerDefinitionName": "Select_gauche_droite"
               },
               {
                 "Type": "CustomContainerInstance",
@@ -578,7 +578,7 @@
                 "Y": 141,
                 "Width": 449,
                 "Height": 129,
-                "CustomContainerDefinitionName": "Select_oui_non"
+                "CustomContainerDefinitionName": "Select_gauche_droite"
               },
               {
                 "Type": "CustomContainerInstance",
@@ -860,7 +860,7 @@
             "Y": 20,
             "Width": 136,
             "Height": 24,
-            "TextId": "__SingleUse_FCD0",
+            "TextId": "date_text_centre_defaut",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -877,7 +877,7 @@
             "Y": 20,
             "Width": 95,
             "Height": 24,
-            "TextId": "__SingleUse_DM9M",
+            "TextId": "heure_text_centre_defaut",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -976,18 +976,17 @@
             "Name": "textArea_titre",
             "X": 430,
             "Y": 77,
-            "Width": 90,
-            "Height": 35,
-            "TextId": "__SingleUse_5KT7",
+            "Width": 67,
+            "Height": 30,
+            "TextId": "titre_text_centre_large",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_Y6R0"
+              "TextId": "text_titre"
             }
           }
         ],
@@ -1053,7 +1052,7 @@
         ]
       },
       {
-        "Name": "Select_oui_non",
+        "Name": "Select_gauche_droite",
         "Width": 449,
         "Height": 129,
         "Components": [
@@ -1163,7 +1162,7 @@
           {
             "Type": "TextArea",
             "Name": "textArea_gauche",
-            "X": 53,
+            "X": 62,
             "Y": 90,
             "Width": 92,
             "Height": 24,

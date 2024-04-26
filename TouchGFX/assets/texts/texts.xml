@@ -6,10 +6,62 @@
     <Language Id="PT" />
   </Languages>
   <Texts>
-    <TextGroup Id="Group1" />
+    <TextGroup Id="Accueil" />
+    <TextGroup Id="Energies">
+      <Text Id="date_text_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="heure_text_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="histo_prod_text_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Histo produites</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="cumul_prod_text_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cumul&#10;produites</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="histo_conso_text_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Histo&#10;consommées</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="cumul_conso_text_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cumul&#10;consommées</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="titre_text_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_HB0M" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_titre" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
       <Text Id="__SingleUse_QIPI" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Configuration&#10;In/Out&#10;Carte REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_F9XH" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Données non contractuelles&#10;Consommation des appoints : estimation calculée&#10;pour une tension de 230V/400V</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
@@ -28,25 +80,10 @@
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
-      <Text Id="__SingleUse_2J3M" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">120</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_MTP2" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">11:25</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
       <Text Id="__SingleUse_PN0I" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_MTAQ" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">02/02/20</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_5IQV" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
@@ -68,35 +105,15 @@
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
-      <Text Id="__SingleUse_3GUY" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">120</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_0MSZ" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">11:25</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
       <Text Id="__SingleUse_MKLW" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_NVNE" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">02/02/20</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
       <Text Id="__SingleUse_NEZ7" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_HB0M" Alignment="Left" TypographyId="Large">
-        <Translation Language="FR">Titre</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_F2S3" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">&lt;value&gt;</Translation>
@@ -619,12 +636,12 @@
         <Translation Language="PT">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_4ZEE" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Non</Translation>
+        <Translation Language="FR">Gauche</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_6C1Y" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Oui</Translation>
+        <Translation Language="FR">Droit</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
@@ -638,15 +655,10 @@
         <Translation Language="GB">New Text&lt;value&gt;</Translation>
         <Translation Language="PT">New Text&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_Y6R0" Alignment="Left" TypographyId="Large">
+      <Text Id="text" Alignment="Left" TypographyId="Large">
         <Translation Language="FR">Titre</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_5KT7" Alignment="Center" TypographyId="Large">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">New Text&lt;value&gt;</Translation>
-        <Translation Language="PT">New Text&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_OWTA" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Question ?</Translation>
@@ -753,31 +765,6 @@
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>
-      <Text Id="__SingleUse_F9XH" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Données non contractuelles&#10;Consommation des appoints : estimation calculée&#10;pour une tension de 230V/400V</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_N23H" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Cumul&#10;consommées</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_ZNZN" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Histo&#10;consommées</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_RR0M" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Cumul&#10;produites</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_RRH8" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Histo produites</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
       <Text Id="__SingleUse_EMJW" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">11:25</Translation>
         <Translation Language="GB"></Translation>
@@ -814,16 +801,6 @@
         <Translation Language="PT"></Translation>
       </Text>
       <Text Id="__SingleUse_YWNE" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_DM9M" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_FCD0" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
