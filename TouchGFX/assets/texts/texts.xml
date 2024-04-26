@@ -8,10 +8,665 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_OYZR" Alignment="Left" TypographyId="Default">
+      <Text Id="__SingleUse_QIPI" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration&#10;In/Out&#10;Carte REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_AN9D" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_6J8R" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_C5P0" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_2J3M" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_MTP2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_PN0I" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MTAQ" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_5IQV" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_F5VV" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_R2ZY" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8DXD" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_3GUY" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_0MSZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_MKLW" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_NVNE" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_NEZ7" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_HB0M" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_F2S3" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_RFEM" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_H51N" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_O0FH" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_XUW1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_721K" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_7IKT" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_IU31" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_42G4" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VAWJ" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_VHO8" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_CY3G" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_DUE9" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8GHW" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_HAA7" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OXNF" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_S3X4" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OWAD" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_7Q94" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_CW7N" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_RVRS" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_GHJ1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_5VF8" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_XDOI" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_YLQE" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KYD5" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_3UZE" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_FJ8L" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_OPT2" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MNL9" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_68AY" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1QEU" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_T49R" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_XL07" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_JV6J" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_LO7G" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_OARW" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_242A" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_LPQV" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_07NC" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_6PBH" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VDTW" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_EUXV" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_9WEE" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_9WMA" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_IQFF" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_9C76" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_AK7J" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_HNP5" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UCLF" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_XHPD" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZD3S" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_7EJ3" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MXTS" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_SXDG" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_7YPJ" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_TZJ3" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_26PF" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_JKU4" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_1EES" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_J10T" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_LQ0E" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZUZI" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_U9N8" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_USD1" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0PGF" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_7DC6" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_QA0M" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_FPJ8" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_BKE5" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_AHZL" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_TMS3" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_MQ20" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_6UVX" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_HW7E" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_4RFO" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_AOEJ" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_RWR3" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_PBEN" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_O2N3" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_7TZL" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ST32" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_JE30" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_IOEF" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_0KYQ" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_BUI3" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_3YZ4" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_O21K" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_9FG6" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5JM8" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_VVS3" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_PIFG" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_S73X" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_X252" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_VOQ9" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JHS7" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_8929" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KCU1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_AQA8" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">120</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_CAUZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZYUB" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_N9SY" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_JFIE" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_RANX" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Erreur : communication carte FRIGO</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_4ZEE" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_6C1Y" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_SHB3" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3DYH" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y6R0" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Titre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_5KT7" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OWTA" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Question ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_9CKR" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">02/02/20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_S5CD" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">11:25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_OYZR" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_MOX1" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">120</Translation>
@@ -104,7 +759,7 @@
         <Translation Language="PT">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_N23H" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Cumul&#10;conommées</Translation>
+        <Translation Language="FR">Cumul&#10;consommées</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
@@ -158,36 +813,26 @@
         <Translation Language="GB"></Translation>
         <Translation Language="PT"></Translation>
       </Text>
-      <Text Id="__SingleUse_6EWG" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Non</Translation>
-        <Translation Language="GB"></Translation>
-        <Translation Language="PT"></Translation>
-      </Text>
-      <Text Id="__SingleUse_BTK2" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Oui</Translation>
-        <Translation Language="GB"></Translation>
-        <Translation Language="PT"></Translation>
-      </Text>
       <Text Id="__SingleUse_YWNE" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Voulez-vous forcer un cycle ECS ?</Translation>
-        <Translation Language="GB"></Translation>
-        <Translation Language="PT"></Translation>
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_DM9M" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">11:25</Translation>
-        <Translation Language="GB"></Translation>
-        <Translation Language="PT"></Translation>
+      <Text Id="__SingleUse_DM9M" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_FCD0" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">02/02/20</Translation>
-        <Translation Language="GB"></Translation>
-        <Translation Language="PT"></Translation>
+      <Text Id="__SingleUse_FCD0" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="segoeuib.ttf" Size="20" Bpp="8" IsVector="no" Direction="RTL" FallbackCharacter="?" />
+    <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Texte" Font="segoeui.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>
