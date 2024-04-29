@@ -6,26 +6,14 @@
     <Language Id="PT" />
   </Languages>
   <Texts>
-    <TextGroup Id="Accueil">
-      <Text Id="BARS" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Bars</Translation>
-        <Translation Language="GB">Bars</Translation>
-        <Translation Language="PT"></Translation>
-      </Text>
-    </TextGroup>
-    <TextGroup Id="Group1" />
-    <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_QIPI" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Configuration&#10;In/Out&#10;Carte REG</Translation>
+    <TextGroup Id="Page_oui_non" />
+    <TextGroup Id="Defilement_gauche_droite">
+      <Text Id="text_bouton_defilement_titre_2_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Question défilement ?</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
-      <Text Id="__SingleUse_AN9D" Alignment="Left" TypographyId="Large">
-        <Translation Language="FR">Titre</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_6J8R" Alignment="Center" TypographyId="Large">
+      <Text Id="text_bouton_defilement_titre_1_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">New Text&lt;value&gt;</Translation>
         <Translation Language="PT">New Text&lt;value&gt;</Translation>
