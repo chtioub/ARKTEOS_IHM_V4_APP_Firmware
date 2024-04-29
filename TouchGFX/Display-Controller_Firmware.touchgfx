@@ -24,6 +24,46 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_zones",
+                "X": 15,
+                "Y": 149,
+                "Width": 181,
+                "Height": 117,
+                "Pressed": "Bouton_L181xh117_Gris.png",
+                "Released": "Bouton_L181xh117_Violet.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_chauffe_eau",
+                "X": 754,
+                "Y": 149,
+                "Width": 181,
+                "Height": 117,
+                "Pressed": "Bouton_L181xh117_Gris.png",
+                "Released": "Bouton_L181xh117_Fond_Orange.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_marche",
+                "X": 15,
+                "Y": 407,
+                "Width": 181,
+                "Height": 117,
+                "Pressed": "Bouton_L181xh117_Gris.png",
+                "Released": "Bouton_L181xh117_Vert.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_piscine",
+                "X": 754,
+                "Y": 281,
+                "Width": 181,
+                "Height": 117,
+                "Pressed": "Bouton_L181xh117_Gris.png",
+                "Released": "Bouton_L181xh117_Fond_Orange.png"
               }
             ]
           }
