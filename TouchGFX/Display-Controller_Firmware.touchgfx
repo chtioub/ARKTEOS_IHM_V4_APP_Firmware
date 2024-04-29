@@ -3,6 +3,7 @@
     "Screens": [
       {
         "Name": "Accueil",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -24,6 +25,167 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_arret",
+                "X": 15,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Rouge_Clicked_L168xH102.png",
+                "Released": "Bouton_Rouge_Unclicked_L168xH102.png",
+                "TextId": "__SingleUse_NRA5",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_ecs",
+                "X": 747,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Etat_Temperature_Chauffe_Eau_L168xH102.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_temp_ext_degivrage",
+                "X": 564,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Etat_Temp_Exterieure_Defrost_L168xH102.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_temp_ext",
+                "X": 564,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Etat_Temp_Exterieure_L168xH102.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_pression",
+                "X": 381,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Etat_Pression_Eau_L168xH102.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_pression_geo",
+                "X": 381,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Etat_Pression_Eau_Eau_L168xH102.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_ecs_bouclage",
+                "X": 747,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Etat_Temperature_Chauffe_Eau_Recyclage_L168xH102.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_ecs_relance",
+                "X": 747,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Etat_Temperature_Chauffe_Eau_Relance_L168xH102.png"
+              },
+              {
+                "Type": "Line",
+                "Name": "line_1",
+                "X": 190,
+                "Y": 399,
+                "Width": 5,
+                "Height": 102,
+                "Color": {
+                  "Red": 76,
+                  "Green": 76,
+                  "Blue": 76
+                },
+                "StartX": 2.5,
+                "StartY": 2.5,
+                "EndX": 2.5,
+                "EndY": 99.5,
+                "LineWidth": 5.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "line_2",
+                "X": 373,
+                "Y": 399,
+                "Width": 5,
+                "Height": 102,
+                "Color": {
+                  "Red": 76,
+                  "Green": 76,
+                  "Blue": 76
+                },
+                "StartX": 2.5,
+                "StartY": 2.5,
+                "EndX": 2.5,
+                "EndY": 99.5,
+                "LineWidth": 5.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "line_3",
+                "X": 556,
+                "Y": 399,
+                "Width": 5,
+                "Height": 102,
+                "Color": {
+                  "Red": 76,
+                  "Green": 76,
+                  "Blue": 76
+                },
+                "StartX": 2.5,
+                "StartY": 2.5,
+                "EndX": 2.5,
+                "EndY": 99.5,
+                "LineWidth": 5.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "line_4",
+                "X": 739,
+                "Y": 399,
+                "Width": 5,
+                "Height": 102,
+                "Color": {
+                  "Red": 76,
+                  "Green": 76,
+                  "Blue": 76
+                },
+                "StartX": 2.5,
+                "StartY": 2.5,
+                "EndX": 2.5,
+                "EndY": 99.5,
+                "LineWidth": 5.0,
+                "LineEndingStyle": "Round"
               }
             ]
           }
@@ -479,40 +641,164 @@
                 "Released": "Bouton_Valider_L79xH55.png"
               },
               {
-                "Type": "CustomContainerInstance",
-                "Name": "select_oui_non_marche_arret",
-                "X": 251,
-                "Y": 387,
+                "Type": "Container",
+                "Name": "container_oui_non",
+                "X": 288,
+                "Y": 425,
                 "Width": 449,
                 "Height": 129,
-                "CustomContainerDefinitionName": "Select_gauche_droite"
-              },
-              {
-                "Type": "CustomContainerInstance",
-                "Name": "select_oui_non_marche_arret_1",
-                "X": 486,
-                "Y": 219,
-                "Width": 449,
-                "Height": 129,
-                "CustomContainerDefinitionName": "Select_gauche_droite"
-              },
-              {
-                "Type": "CustomContainerInstance",
-                "Name": "bouton_on_off_toggle1",
-                "X": 15,
-                "Y": 295,
-                "Width": 449,
-                "Height": 53,
-                "CustomContainerDefinitionName": "Bouton_on_off_toggle"
-              },
-              {
-                "Type": "CustomContainerInstance",
-                "Name": "bouton_on_off_toggle1_1",
-                "X": 15,
-                "Y": 219,
-                "Width": 449,
-                "Height": 53,
-                "CustomContainerDefinitionName": "Bouton_on_off_toggle"
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas",
+                    "X": 288,
+                    "Y": 552,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut",
+                    "X": 288,
+                    "Y": 425,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite",
+                    "X": 449,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_droit",
+                    "X": 521,
+                    "Y": 501,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_gauche",
+                    "X": 288,
+                    "Y": 500,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question",
+                    "X": 341,
+                    "Y": 436,
+                    "Width": 343,
+                    "Height": 24,
+                    "TextId": "text_select_titre_1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_select_titre_2_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 40
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_gauche",
+                    "X": 350,
+                    "Y": 515,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_select_gauche_1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_select_gauche_2_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_droit",
+                    "X": 583,
+                    "Y": 515,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_select_droite_1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_select_droite_2_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  }
+                ]
               }
             ]
           }

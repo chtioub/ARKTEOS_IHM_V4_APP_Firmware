@@ -6,6 +6,7 @@
     <Language Id="PT" />
   </Languages>
   <Texts>
+    <TextGroup Id="Page_oui_non" />
     <TextGroup Id="Defilement_gauche_droite">
       <Text Id="text_bouton_defilement_titre_2_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Question défilement ?</Translation>
@@ -296,7 +297,13 @@
         <Translation Language="PT">New Text</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_NRA5" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="segoeuib.ttf" Size="20" Bpp="8" IsVector="no" Direction="RTL" FallbackCharacter="?" />
