@@ -6,6 +6,33 @@
     <Language Id="PT" />
   </Languages>
   <Texts>
+    <TextGroup Id="Bouclage_ecs">
+      <Text Id="text_prog_bouclage_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Progammation bouclage ECS</Translation>
+        <Translation Language="GB">DHW loop programming</Translation>
+        <Translation Language="PT">Programação de loop de AQS&#10;</Translation>
+      </Text>
+      <Text Id="text_valeur_prog_bouclage_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Programmation</Translation>
+        <Translation Language="GB">Programming</Translation>
+        <Translation Language="PT">Programação</Translation>
+      </Text>
+      <Text Id="text_valeur_duree_bouclage_ecs_2_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">OFF</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_duree_bouclage_ecs_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_duree_bouclage_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Marche forcée bouclage ECS ?</Translation>
+        <Translation Language="GB">Duration of the exemption?</Translation>
+        <Translation Language="PT">Duração da isenção?</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Derogation">
       <Text Id="text_valeur_consigne_derog_2_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">0.0°C</Translation>
@@ -127,8 +154,8 @@
       </Text>
       <Text Id="num_erreur_liste_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">120</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
+        <Translation Language="GB">120</Translation>
+        <Translation Language="PT">120</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Barre_titre">
@@ -208,28 +235,28 @@
     <TextGroup Id="Energies">
       <Text Id="text_donnees_non_contract_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Données non contractuelles&#10;Consommation des appoints : estimation calculée&#10;pour une tension de 230V/400V</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
+        <Translation Language="GB">Non-contractual data&#10;Consumption of top-ups: calculated estimate&#10;for a voltage of 230V/400V&#10;</Translation>
+        <Translation Language="PT">Dados não contratuais&#10;Consumo de recargas: estimativa calculada&#10;para uma tensão de 230V/400V</Translation>
       </Text>
       <Text Id="histo_prod_text_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Histo produites</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
+        <Translation Language="GB">Histo product</Translation>
+        <Translation Language="PT">História produzida</Translation>
       </Text>
       <Text Id="cumul_prod_text_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Cumul&#10;produites</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
+        <Translation Language="GB">Cumul product</Translation>
+        <Translation Language="PT">Cumulativo&#10;produzido</Translation>
       </Text>
       <Text Id="histo_conso_text_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Histo&#10;consommées</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
+        <Translation Language="GB">Histo used</Translation>
+        <Translation Language="PT">História&#10;consumido&#10;</Translation>
       </Text>
       <Text Id="cumul_conso_text_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Cumul&#10;consommées</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
+        <Translation Language="GB">cumul used</Translation>
+        <Translation Language="PT">Cumulativo&#10;consumido&#10;</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Installation">

@@ -1417,14 +1417,157 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "ToggleButton",
+                "Name": "toggleButton_appoint_ecs",
+                "X": 747,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Vert_Unclicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_bouclage_ecs_off",
+                "X": 564,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_bouclage_ecs_on",
+                "X": 564,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_derog_ecs_off",
+                "X": 381,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_derog_ecs_on",
+                "X": 381,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_marche_ecs_off",
+                "X": 198,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_marche_ecs_on",
+                "X": 198,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_arret_ecs_off",
+                "X": 15,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_arret_ecs_on",
+                "X": 15,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Rouge_Clicked_L168xH102.png",
+                "Released": "Bouton_Rouge_Unclicked_L168xH102.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_bouclage_off_chgsc_bouclage_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bouclage_ecs_off"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Bouclage_ecs"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouclage_on_chgsc_bouclage_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bouclage_ecs_on"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Bouclage_ecs"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_derog_off_chgsc_derog_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_derog_ecs_off"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Derogation_ecs"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_derog_on_chgsc_derog_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_derog_ecs_on"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Derogation_ecs"
+            }
+          }
+        ]
       },
       {
         "Name": "Bouclage_ecs",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -1456,6 +1599,260 @@
                 "Height": 56,
                 "Pressed": "Bouton_Valider_L79xH55.png",
                 "Released": "Bouton_Valider_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_duree_bouclage_ecs",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_duree_bouclage_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_duree_bouclage_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_duree_bouclage_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_duree_bouclage_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_duree_bouclage_ecs",
+                    "X": 73,
+                    "Y": 76,
+                    "Width": 303,
+                    "Height": 53,
+                    "RelativeFilename": "Zone_Texte_Gris_Clair_L303xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_duree_bouclage_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_duree_bouclage_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_duree_bouclage_ecs",
+                    "X": 178,
+                    "Y": 90,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_valeur_duree_bouclage_ecs_1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_duree_bouclage_ecs_2_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_duree_bouclage_ecs",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_duree_bouclage_ecs",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_prog_bouclage_ecs",
+                "X": 486,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_prog_bouclage_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_prog_bouclage_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_prog_bouclage_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_prog_bouclage_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_prog_bouclage_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_prog_bouclage_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_prog_bouclage_ecs",
+                    "X": -1,
+                    "Y": 74,
+                    "Width": 449,
+                    "Height": 53,
+                    "Pressed": "Bouton_Gris_Clicked_L449xH53.png",
+                    "Released": "Bouton_Gris_Unclicked_L449xH53.png",
+                    "TextId": "text_valeur_prog_bouclage_ecs_centre_defaut",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  }
+                ]
               }
             ]
           }
@@ -2328,6 +2725,141 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "ToggleButton",
+                "Name": "toggleButton_appoint",
+                "X": 747,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Vert_Unclicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_derog_off",
+                "X": 564,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_derog_on",
+                "X": 564,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_prog_off",
+                "X": 381,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_prog_on",
+                "X": 381,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_arret_off",
+                "X": 198,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_arret_on",
+                "X": 198,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Rouge_Clicked_L168xH102.png",
+                "Released": "Bouton_Rouge_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_hors_gel_off",
+                "X": 15,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_hors_gel_on",
+                "X": 15,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_froid_off",
+                "X": 15,
+                "Y": 274,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_froid_on",
+                "X": 15,
+                "Y": 274,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_chaud_off",
+                "X": 15,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_chaud_on",
+                "X": 15,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
               }
             ]
           }
