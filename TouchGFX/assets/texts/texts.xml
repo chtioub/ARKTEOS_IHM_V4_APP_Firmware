@@ -6,6 +6,13 @@
     <Language Id="PT" />
   </Languages>
   <Texts>
+    <TextGroup Id="Accueil">
+      <Text Id="BARS" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Bars</Translation>
+        <Translation Language="GB">Bars</Translation>
+        <Translation Language="PT"></Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
       <Text Id="__SingleUse_QIPI" Alignment="Center" TypographyId="Default">

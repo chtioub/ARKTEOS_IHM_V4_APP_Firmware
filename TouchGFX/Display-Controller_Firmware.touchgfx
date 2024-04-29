@@ -64,6 +64,21 @@
                 "Height": 117,
                 "Pressed": "Bouton_L181xh117_Gris.png",
                 "Released": "Bouton_L181xh117_Fond_Orange.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_bar",
+                "X": 430,
+                "Y": 407,
+                "Width": 90,
+                "Height": 24,
+                "TextId": "BARS",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
               }
             ]
           }
