@@ -257,8 +257,8 @@
                 "Y": 399,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_L168xH102_Beige.png",
-                "Released": "Bouton_L168xH102_Beige.png",
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
                 "TextId": "cumul_conso_text_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
@@ -279,8 +279,8 @@
                 "Y": 399,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_L168xH102_Beige.png",
-                "Released": "Bouton_L168xH102_Beige.png",
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
                 "TextId": "histo_conso_text_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
@@ -301,8 +301,8 @@
                 "Y": 399,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_L168xH102_Beige.png",
-                "Released": "Bouton_L168xH102_Beige.png",
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
                 "TextId": "cumul_prod_text_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
@@ -323,8 +323,8 @@
                 "Y": 399,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_L168xH102_Beige.png",
-                "Released": "Bouton_L168xH102_Beige.png",
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
                 "TextId": "histo_prod_text_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
@@ -352,7 +352,7 @@
                 "Y": 262,
                 "Width": 494,
                 "Height": 72,
-                "TextId": "__SingleUse_F9XH",
+                "TextId": "donnees_non_contract_centre_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -363,7 +363,56 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_histo_prod_chgsc_energie_histo",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_histo_conso"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Energies_histo"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_histo_conso_chgsc_energie_histo",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_histo_conso"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Energies_histo"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_cumul_prod_chgsc_energie_histo",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_cumul_prod"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Energies_cumul"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_cumul_conso_chgsc_energie_histo",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_cumul_conso"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Energies_cumul"
+            }
+          }
+        ]
       },
       {
         "Name": "Infos_systeme",
@@ -413,10 +462,17 @@
             "Height": 524,
             "Components": [
               {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
                 "Type": "Button",
                 "Name": "button_valider",
-                "X": 864,
-                "Y": 462,
+                "X": 862,
+                "Y": 460,
                 "Width": 80,
                 "Height": 56,
                 "Pressed": "Bouton_Valider_L79xH55.png",
@@ -426,17 +482,37 @@
                 "Type": "CustomContainerInstance",
                 "Name": "select_oui_non_marche_arret",
                 "X": 251,
-                "Y": 389,
+                "Y": 387,
                 "Width": 449,
                 "Height": 129,
                 "CustomContainerDefinitionName": "Select_gauche_droite"
               },
               {
                 "Type": "CustomContainerInstance",
-                "Name": "barre_titre",
-                "Width": 950,
-                "Height": 126,
-                "CustomContainerDefinitionName": "Barre_titre"
+                "Name": "select_oui_non_marche_arret_1",
+                "X": 486,
+                "Y": 219,
+                "Width": 449,
+                "Height": 129,
+                "CustomContainerDefinitionName": "Select_gauche_droite"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "bouton_on_off_toggle1",
+                "X": 15,
+                "Y": 295,
+                "Width": 449,
+                "Height": 53,
+                "CustomContainerDefinitionName": "Bouton_on_off_toggle"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "bouton_on_off_toggle1_1",
+                "X": 15,
+                "Y": 219,
+                "Width": 449,
+                "Height": 53,
+                "CustomContainerDefinitionName": "Bouton_on_off_toggle"
               }
             ]
           }
@@ -458,6 +534,7 @@
       },
       {
         "Name": "Derogation",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -479,6 +556,43 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 80,
+                "Height": 56,
+                "Pressed": "Bouton_Valider_L79xH55.png",
+                "Released": "Bouton_Valider_L79xH55.png"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "select_gauche_droite_activation_derog",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "CustomContainerDefinitionName": "Select_gauche_droite"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "defilement_gauche_droite_consigne",
+                "X": 479,
+                "Y": 301,
+                "Width": 449,
+                "Height": 129,
+                "CustomContainerDefinitionName": "Defilement_gauche_droite"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "defilement_gauche_droite_duree",
+                "X": 479,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "CustomContainerDefinitionName": "Defilement_gauche_droite"
               }
             ]
           }
@@ -516,6 +630,7 @@
       },
       {
         "Name": "Bouclage_ecs",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -537,11 +652,43 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 80,
+                "Height": 56,
+                "Pressed": "Bouton_Valider_L79xH55.png",
+                "Released": "Bouton_Valider_L79xH55.png"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "defilement_gauche_droite_forcage_ecs",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "CustomContainerDefinitionName": "Defilement_gauche_droite"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valid_bouclage_ecs_chgsc_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Eau_chaude_sanitaire"
+            }
+          }
+        ]
       },
       {
         "Name": "Derogation_ecs",
@@ -564,8 +711,8 @@
               {
                 "Type": "Button",
                 "Name": "button_valider",
-                "X": 864,
-                "Y": 462,
+                "X": 862,
+                "Y": 460,
                 "Width": 80,
                 "Height": 56,
                 "Pressed": "Bouton_Valider_L79xH55.png",
@@ -573,26 +720,26 @@
               },
               {
                 "Type": "CustomContainerInstance",
-                "Name": "select_oui_non_derog",
-                "X": 12,
-                "Y": 141,
-                "Width": 449,
-                "Height": 129,
-                "CustomContainerDefinitionName": "Select_gauche_droite"
-              },
-              {
-                "Type": "CustomContainerInstance",
                 "Name": "barre_titre",
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "select_gauche_droite_derog_ecs",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "CustomContainerDefinitionName": "Select_gauche_droite"
               }
             ]
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "BTNClicked_valid_derog_ecs_chgsc_ecs",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_valider"
@@ -718,14 +865,14 @@
               },
               {
                 "Type": "ButtonWithLabel",
-                "Name": "buttonWithLabel_config_in_out",
-                "X": 17,
-                "Y": 406,
+                "Name": "buttonWithLabel_modif_code_acces",
+                "X": 747,
+                "Y": 399,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
-                "Released": "Bouton_L168xH102_Beige.png",
-                "TextId": "__SingleUse_4TGO",
+                "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
+                "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
+                "TextId": "modif_code_acces_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
                   "Green": 255,
@@ -740,14 +887,416 @@
               },
               {
                 "Type": "ButtonWithLabel",
-                "Name": "buttonWithLabel_config_in_out_1",
-                "X": 212,
-                "Y": 406,
+                "Name": "buttonWithLabel_raz_config",
+                "X": 747,
+                "Y": 274,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
+                "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
+                "TextId": "raz_config_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_param_avances",
+                "X": 747,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
+                "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
+                "TextId": "param_avances_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_config_wattmetre_off",
+                "X": 564,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                "TextId": "wattmetre_off_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_config_wattmetre_on",
+                "X": 564,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                "TextId": "wattmetre_on_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_param_circ_capt_off",
+                "X": 564,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                "TextId": "param_circ_capt_off_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_param_circ_capt_on",
+                "X": 564,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                "TextId": "param_circ_capt_on_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_mise_chauffe_dalle_off",
+                "X": 381,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                "TextId": "mise_chauffe_dalle_off_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_mise_chauffe_dalle_on",
+                "X": 381,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                "TextId": "mise_chauffe_dalle_on_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_config_hydrau_rapide",
+                "X": 381,
+                "Y": 274,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                "Released": "Bouton_Orange_Unclicked_L168xH102.png",
+                "TextId": "config_hydrau_rapide_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_param_circ_prim_off",
+                "X": 381,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                "TextId": "param_circ_prim_off_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_param_circ_prim_on",
+                "X": 381,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                "TextId": "param_circ_prim_on_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_mode_piscine_off",
+                "X": 198,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                "TextId": "mode_piscine_off_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_mode_piscine_on",
+                "X": 198,
+                "Y": 399,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                "TextId": "mode_piscine_on_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_param_circ_freecooling_off",
+                "X": 198,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                "TextId": "param_freecopoling_off_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_param_freecooling_on",
+                "X": 198,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                "TextId": "param_freecooling_on_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_config_in_out",
+                "X": 15,
+                "Y": 399,
                 "Width": 168,
                 "Height": 102,
                 "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
                 "Released": "Bouton_L168xH102_Beige.png",
-                "TextId": "__SingleUse_QIPI",
+                "TextId": "config_in_out_carte_reg_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_mode_ecs_off",
+                "X": 15,
+                "Y": 274,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                "TextId": "mode_ecs_off_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_mode_ecs_on",
+                "X": 15,
+                "Y": 274,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                "TextId": "mode_ecs_on_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_config_install_hydrau",
+                "X": 15,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                "Released": "Bouton_Orange_Unclicked_L168xH102.png",
+                "TextId": "config_install_hydrau_centre_defaut",
                 "ReleasedColor": {
                   "Red": 255,
                   "Green": 255,
@@ -838,6 +1387,64 @@
           }
         ],
         "Interactions": []
+      },
+      {
+        "Name": "Zone",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Configuration",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              }
+            ]
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -860,7 +1467,7 @@
             "Y": 20,
             "Width": 136,
             "Height": 24,
-            "TextId": "date_text_centre_defaut",
+            "TextId": "date_text_1_centre_defaut",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -868,7 +1475,9 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_9CKR"
+              "TextId": "date_text_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 9
             }
           },
           {
@@ -877,7 +1486,7 @@
             "Y": 20,
             "Width": 95,
             "Height": 24,
-            "TextId": "heure_text_centre_defaut",
+            "TextId": "heure_text_1_centre_defaut",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -885,13 +1494,15 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_S5CD"
+              "TextId": "heure_text_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 6
             }
           },
           {
             "Type": "Image",
             "Name": "Image_recup_config",
-            "X": 346,
+            "X": 325,
             "Y": 4,
             "Width": 80,
             "Height": 56,
@@ -900,7 +1511,7 @@
           {
             "Type": "Image",
             "Name": "Image_conn_distant",
-            "X": 248,
+            "X": 231,
             "Y": 4,
             "Width": 80,
             "Height": 56,
@@ -909,13 +1520,13 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel_erreur",
-            "X": 150,
+            "X": 137,
             "Y": 4,
             "Width": 79,
             "Height": 55,
             "Pressed": "Bouton_Defaut_Rouge_Clicked_L79xH55.png",
             "Released": "Bouton_Defaut_Rouge_Unclicked_L79xH55.png",
-            "TextId": "__SingleUse_EWT9",
+            "TextId": "num_erreur_centre_defaut",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -931,14 +1542,14 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel_alerte",
-            "X": 150,
+            "X": 137,
             "Y": 4,
-            "Width": 80,
-            "Height": 56,
+            "Width": 79,
+            "Height": 55,
             "Visible": false,
-            "Pressed": "Bouton_Alerte_Jaune_L79xH55.png",
-            "Released": "Bouton_Alerte_Jaune_L79xH55.png",
-            "TextId": "__SingleUse_DT7T",
+            "Pressed": "Bouton_Alerte_Jaune_Clicked_L79xH55.png",
+            "Released": "Bouton_Alerte_Jaune_Unclicked_L79xH55.png",
+            "TextId": "num_alerte_centre_defaut",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -956,10 +1567,10 @@
             "Name": "button_accueil",
             "X": 15,
             "Y": 67,
-            "Width": 61,
-            "Height": 55,
-            "Pressed": "Bouton_Home_L60xH54.png",
-            "Released": "Bouton_Home_L60xH54.png"
+            "Width": 60,
+            "Height": 54,
+            "Pressed": "Bouton_Home_Clicked_L60xH54.png",
+            "Released": "Bouton_Home_Unclicked_L60xH54.png"
           },
           {
             "Type": "Button",
@@ -968,17 +1579,17 @@
             "Y": 67,
             "Width": 61,
             "Height": 55,
-            "Pressed": "Bouton_Retour_L60xH54.png",
-            "Released": "Bouton_Retour_L60xH54.png"
+            "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+            "Released": "Bouton_Retour_Unclicked_L60xH54.png"
           },
           {
             "Type": "TextArea",
             "Name": "textArea_titre",
-            "X": 430,
-            "Y": 77,
+            "X": 442,
+            "Y": 79,
             "Width": 67,
             "Height": 30,
-            "TextId": "titre_text_centre_large",
+            "TextId": "titre_text_1_centre_large",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -986,8 +1597,40 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "text_titre"
+              "TextId": "titre_text_2_centre_large"
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_1",
+            "X": 452,
+            "Y": 20,
+            "Width": 12,
+            "Height": 24,
+            "TextId": "text_barre_titre_1_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_2",
+            "X": 487,
+            "Y": 20,
+            "Width": 12,
+            "Height": 24,
+            "TextId": "text_barre_titre_2_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -1004,7 +1647,7 @@
             }
           },
           {
-            "InteractionName": "Interaction2",
+            "InteractionName": "BTNClicked_alerte_chgsc_erreurs",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonWithLabel_alerte"
@@ -1016,7 +1659,7 @@
             }
           },
           {
-            "InteractionName": "Interaction3",
+            "InteractionName": "BTNClicked_accueil_chgsc_accueil",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_accueil"
@@ -1028,17 +1671,7 @@
             }
           },
           {
-            "InteractionName": "Interaction4",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "button_retour"
-            },
-            "Action": {
-              "Type": "ActionNone"
-            }
-          },
-          {
-            "InteractionName": "Interaction5",
+            "InteractionName": "BTNClicked_retour_chgsc_accueil",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_retour"
@@ -1135,7 +1768,7 @@
           {
             "Type": "ToggleButton",
             "Name": "toggleButton_gauche",
-            "Y": 76,
+            "Y": 75,
             "Width": 216,
             "Height": 53,
             "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
@@ -1148,7 +1781,7 @@
             "Y": 11,
             "Width": 343,
             "Height": 24,
-            "TextId": "__SingleUse_YWNE",
+            "TextId": "text_select_titre_1_centre_defaut",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1156,8 +1789,11 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_OWTA"
-            }
+              "TextId": "text_select_titre_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "WideTextAction": 1
           },
           {
             "Type": "TextArea",
@@ -1166,7 +1802,7 @@
             "Y": 90,
             "Width": 92,
             "Height": 24,
-            "TextId": "__SingleUse_3DYH",
+            "TextId": "text_select_gauche_1_centre_defaut",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1174,7 +1810,9 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_4ZEE"
+              "TextId": "text_select_gauche_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           },
           {
@@ -1184,7 +1822,7 @@
             "Y": 90,
             "Width": 92,
             "Height": 24,
-            "TextId": "__SingleUse_SHB3",
+            "TextId": "text_select_droite_1_centre_defaut",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
@@ -1192,7 +1830,9 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "__SingleUse_6C1Y"
+              "TextId": "text_select_droite_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 3
             }
           }
         ],
@@ -1222,7 +1862,7 @@
             "Height": 55,
             "Pressed": "Bouton_Defaut_Rouge_Unclicked_L79xH55.png",
             "Released": "Bouton_Defaut_Rouge_Unclicked_L79xH55.png",
-            "TextId": "__SingleUse_MOX1",
+            "TextId": "num_erreur_liste_centre_defaut",
             "ReleasedColor": {
               "Red": 255,
               "Green": 255,
@@ -1240,22 +1880,240 @@
             "Name": "textArea_erreur",
             "X": 100,
             "Y": 23,
-            "Width": 409,
-            "Height": 24,
-            "TextId": "__SingleUse_OYZR",
+            "Width": 758,
+            "Height": 25,
+            "TextId": "text_erreur_1_liste_gauche_defaut",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_RANX"
+              "TextId": "text_erreur_2_liste_gauche_defaut",
+              "UseBuffer": true,
+              "BufferSize": 30
             }
           }
         ],
         "Interactions": []
+      },
+      {
+        "Name": "Bouton_on_off_toggle",
+        "Width": 449,
+        "Height": 53,
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "image_fond",
+            "Width": 398,
+            "Height": 53,
+            "RelativeFilename": "Bouton_On_Off_Clicked_L398xH53.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton_off_on",
+            "X": 396,
+            "Width": 53,
+            "Height": 53,
+            "Pressed": "Bouton_On_Off_Unclicked_L53xH53.png",
+            "Released": "Bouton_On_Off_Beige_Unclicked_L53xH53.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_bouton_on_off",
+            "X": 15,
+            "Y": 14,
+            "Width": 142,
+            "Height": 24,
+            "TextId": "text_bouton_on_off_1_gauche_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "text_bouton_on_off_2_gauche_defaut",
+              "UseBuffer": true,
+              "BufferSize": 20
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_on_off",
+            "X": 409,
+            "Y": 14,
+            "Width": 27,
+            "Height": 24,
+            "TextId": "bouton_on_1_text_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "bouton_on_2_text_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Defilement_gauche_droite",
+        "Width": 449,
+        "Height": 129,
+        "Components": [
+          {
+            "Type": "Line",
+            "Name": "line_bas",
+            "Y": 127,
+            "Width": 449,
+            "Height": 2,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            },
+            "StartY": 1.0,
+            "EndX": 449.0,
+            "EndY": 1.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "line_haut",
+            "Width": 449,
+            "Height": 2,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            },
+            "StartY": 1.0,
+            "EndX": 449.0,
+            "EndY": 1.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "line_gauche",
+            "Width": 2,
+            "Height": 129,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            },
+            "StartX": 1.0,
+            "EndX": 1.0,
+            "EndY": 129.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "line_droite",
+            "X": 447,
+            "Width": 2,
+            "Height": 129,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            },
+            "StartX": 1.0,
+            "EndX": 1.0,
+            "EndY": 129.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image1",
+            "X": 73,
+            "Y": 76,
+            "Width": 303,
+            "Height": 53,
+            "RelativeFilename": "Zone_Texte_Gris_Clair_L303xH53.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_titre",
+            "X": 53,
+            "Y": 11,
+            "Width": 343,
+            "Height": 24,
+            "TextId": "text_bouton_defilement_titre_1_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "text_bouton_defilement_titre_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_valeur_courante",
+            "X": 178,
+            "Y": 90,
+            "Width": 92,
+            "Height": 24,
+            "TextId": "text_bouton_defilement_1_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "text_bouton_defilement_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Button",
+            "Name": "button_gauche",
+            "Y": 76,
+            "Width": 75,
+            "Height": 53,
+            "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+            "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "button_droite",
+            "X": 374,
+            "Y": 76,
+            "Width": 75,
+            "Height": 53,
+            "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+            "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+          }
+        ],
+        "Interactions": [],
+        "CustomTriggers": [
+          {
+            "Name": "trigger1"
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "action1"
+          }
+        ]
       }
     ],
     "Name": "MyApplication",
@@ -1264,7 +2122,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Installation",
+    "StartupScreenName": "Marche_Arret",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
