@@ -116,7 +116,7 @@
                 "Name": "line_1",
                 "X": 190,
                 "Y": 399,
-                "Width": 5,
+                "Width": 3,
                 "Height": 102,
                 "Color": {
                   "Red": 76,
@@ -135,7 +135,7 @@
                 "Name": "line_2",
                 "X": 373,
                 "Y": 399,
-                "Width": 5,
+                "Width": 3,
                 "Height": 102,
                 "Color": {
                   "Red": 76,
@@ -154,7 +154,7 @@
                 "Name": "line_3",
                 "X": 556,
                 "Y": 399,
-                "Width": 5,
+                "Width": 3,
                 "Height": 102,
                 "Color": {
                   "Red": 76,
@@ -173,7 +173,7 @@
                 "Name": "line_4",
                 "X": 739,
                 "Y": 399,
-                "Width": 5,
+                "Width": 3,
                 "Height": 102,
                 "Color": {
                   "Red": 76,
@@ -186,6 +186,135 @@
                 "EndY": 99.5,
                 "LineWidth": 5.0,
                 "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_piscine",
+                "X": 767,
+                "Y": 274,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                "Released": "Bouton_Orange_Unclicked_L168xH102.png",
+                "TextId": "__SingleUse_I378",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_piscine",
+                "X": 767,
+                "Y": 274,
+                "Width": 168,
+                "Height": 104,
+                "RelativeFilename": "Bouton_Piscine_L168xH102.png"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_ecs",
+                "X": 767,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                "Released": "Bouton_Orange_Unclicked_L168xH102.png",
+                "TextId": "__SingleUse_4XVF",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_chauffe_eau",
+                "X": 767,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Bouton_ECS_L168xH102.png"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_zone",
+                "X": 15,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                "Released": "Bouton_Orange_Unclicked_L168xH102.png",
+                "TextId": "__SingleUse_WCQB",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_zone",
+                "X": 15,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "RelativeFilename": "Bouton_Zone_Maison_L168xH102.png"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_demande_zone",
+                "X": 132,
+                "Y": 190,
+                "Width": 14,
+                "Height": 14,
+                "Color": {
+                  "Green": 98,
+                  "Blue": 140
+                },
+                "CenterX": 7.0,
+                "CenterY": 7.0,
+                "Radius": 6.5,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_mode_zone",
+                "X": 127,
+                "Y": 185,
+                "Width": 24,
+                "Height": 24,
+                "Color": {
+                  "Red": 216,
+                  "Green": 31,
+                  "Blue": 42
+                },
+                "CenterX": 12.0,
+                "CenterY": 12.0,
+                "Radius": 11.0,
+                "LineWidth": 2.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Round"
               }
             ]
           }
@@ -408,7 +537,7 @@
             "Type": "Container",
             "Name": "container",
             "X": 37,
-            "Y": 38,
+            "Y": 32,
             "Width": 950,
             "Height": 524,
             "Components": [
@@ -510,11 +639,11 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_donnees_non_contractuelles",
-                "X": 218,
+                "X": 130,
                 "Y": 262,
-                "Width": 494,
-                "Height": 72,
-                "TextId": "donnees_non_contract_centre_defaut",
+                "Width": 691,
+                "Height": 122,
+                "TextId": "text_donnees_non_contract_centre_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -643,16 +772,15 @@
               {
                 "Type": "Container",
                 "Name": "container_oui_non",
-                "X": 288,
-                "Y": 425,
+                "X": 251,
+                "Y": 387,
                 "Width": 449,
                 "Height": 129,
                 "Components": [
                   {
                     "Type": "Line",
-                    "Name": "line_bas",
-                    "X": 288,
-                    "Y": 552,
+                    "Name": "line_bas_oui_non",
+                    "Y": 127,
                     "Width": 449,
                     "Height": 2,
                     "Color": {
@@ -668,9 +796,7 @@
                   },
                   {
                     "Type": "Line",
-                    "Name": "line_haut",
-                    "X": 288,
-                    "Y": 425,
+                    "Name": "line_haut_oui_non",
                     "Width": 449,
                     "Height": 2,
                     "Color": {
@@ -686,7 +812,7 @@
                   },
                   {
                     "Type": "Line",
-                    "Name": "line_gauche",
+                    "Name": "line_gauche_oui_non",
                     "Width": 2,
                     "Height": 129,
                     "Color": {
@@ -702,8 +828,8 @@
                   },
                   {
                     "Type": "Line",
-                    "Name": "line_droite",
-                    "X": 449,
+                    "Name": "line_droite_oui_non",
+                    "X": 447,
                     "Width": 2,
                     "Height": 129,
                     "Color": {
@@ -719,9 +845,9 @@
                   },
                   {
                     "Type": "ToggleButton",
-                    "Name": "toggleButton_droit",
-                    "X": 521,
-                    "Y": 501,
+                    "Name": "toggleButton_oui_oui_non",
+                    "X": 233,
+                    "Y": 76,
                     "Width": 216,
                     "Height": 53,
                     "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
@@ -729,9 +855,8 @@
                   },
                   {
                     "Type": "ToggleButton",
-                    "Name": "toggleButton_gauche",
-                    "X": 288,
-                    "Y": 500,
+                    "Name": "toggleButton_non_oui_non",
+                    "Y": 76,
                     "Width": 216,
                     "Height": 53,
                     "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
@@ -739,12 +864,12 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_question",
-                    "X": 341,
-                    "Y": 436,
-                    "Width": 343,
-                    "Height": 24,
-                    "TextId": "text_select_titre_1_centre_defaut",
+                    "Name": "textArea_question_oui_non",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_question_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -752,7 +877,7 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "text_select_titre_2_centre_defaut",
+                      "TextId": "text_question_2_centre_defaut",
                       "UseBuffer": true,
                       "BufferSize": 40
                     },
@@ -760,42 +885,32 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_gauche",
-                    "X": 350,
-                    "Y": 515,
+                    "Name": "textArea_non_oui_non",
+                    "X": 62,
+                    "Y": 89,
                     "Width": 92,
                     "Height": 24,
-                    "TextId": "text_select_gauche_1_centre_defaut",
+                    "TextId": "text_non_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
                       "Green": 255,
                       "Blue": 255
-                    },
-                    "Wildcard1": {
-                      "TextId": "text_select_gauche_2_centre_defaut",
-                      "UseBuffer": true,
-                      "BufferSize": 3
                     }
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_droit",
-                    "X": 583,
-                    "Y": 515,
+                    "Name": "textArea_oui_oui_non",
+                    "X": 295,
+                    "Y": 89,
                     "Width": 92,
                     "Height": 24,
-                    "TextId": "text_select_droite_1_centre_defaut",
+                    "TextId": "text_oui_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
                       "Green": 255,
                       "Blue": 255
-                    },
-                    "Wildcard1": {
-                      "TextId": "text_select_droite_2_centre_defaut",
-                      "UseBuffer": true,
-                      "BufferSize": 3
                     }
                   }
                 ]
@@ -854,31 +969,425 @@
                 "Released": "Bouton_Valider_L79xH55.png"
               },
               {
-                "Type": "CustomContainerInstance",
-                "Name": "select_gauche_droite_activation_derog",
+                "Type": "Container",
+                "Name": "container_oui_non_derog",
                 "X": 15,
                 "Y": 149,
                 "Width": 449,
                 "Height": 129,
-                "CustomContainerDefinitionName": "Select_gauche_droite"
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_derog",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_derog",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_derog",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_derog",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_derog",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_derog",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_non_derog",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_question_derog_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_derog",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_derog_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_derog",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_derog_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
               },
               {
-                "Type": "CustomContainerInstance",
-                "Name": "defilement_gauche_droite_consigne",
-                "X": 479,
-                "Y": 301,
-                "Width": 449,
-                "Height": 129,
-                "CustomContainerDefinitionName": "Defilement_gauche_droite"
-              },
-              {
-                "Type": "CustomContainerInstance",
-                "Name": "defilement_gauche_droite_duree",
-                "X": 479,
+                "Type": "Container",
+                "Name": "container_duree_derog",
+                "X": 486,
                 "Y": 149,
                 "Width": 449,
                 "Height": 129,
-                "CustomContainerDefinitionName": "Defilement_gauche_droite"
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_duree_derog",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_duree_derog",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_duree_derog",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_duree_derog",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_duree_derog",
+                    "X": 73,
+                    "Y": 76,
+                    "Width": 303,
+                    "Height": 53,
+                    "RelativeFilename": "Zone_Texte_Gris_Clair_L303xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_duree_derog",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_duree_derog_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_duree_derog",
+                    "X": 178,
+                    "Y": 90,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_valeur_duree_derog_1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_duree_derog_2_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_duree_derog",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_duree_derog",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_consigne_derog",
+                "X": 486,
+                "Y": 301,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_consigne_derog",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_consigne_derog",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_consigne_derog",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_consigne_derog",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_centrale_consigne_derog",
+                    "X": 73,
+                    "Y": 76,
+                    "Width": 303,
+                    "Height": 53,
+                    "RelativeFilename": "Zone_Texte_Gris_Clair_L303xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_consigne_derog",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_consigne_derog_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_consigne_derog",
+                    "X": 178,
+                    "Y": 90,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_valeur_consigne_derog_1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_consigne_derog_2_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_consigne_derog",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_consigne_derog",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
               }
             ]
           }
@@ -916,7 +1425,6 @@
       },
       {
         "Name": "Bouclage_ecs",
-        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -948,15 +1456,6 @@
                 "Height": 56,
                 "Pressed": "Bouton_Valider_L79xH55.png",
                 "Released": "Bouton_Valider_L79xH55.png"
-              },
-              {
-                "Type": "CustomContainerInstance",
-                "Name": "defilement_gauche_droite_forcage_ecs",
-                "X": 15,
-                "Y": 149,
-                "Width": 449,
-                "Height": 129,
-                "CustomContainerDefinitionName": "Defilement_gauche_droite"
               }
             ]
           }
@@ -1012,13 +1511,145 @@
                 "CustomContainerDefinitionName": "Barre_titre"
               },
               {
-                "Type": "CustomContainerInstance",
-                "Name": "select_gauche_droite_derog_ecs",
+                "Type": "Container",
+                "Name": "container_oui_non_derog_ecs",
                 "X": 15,
                 "Y": 149,
                 "Width": 449,
                 "Height": 129,
-                "CustomContainerDefinitionName": "Select_gauche_droite"
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_derog_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_derog_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_derog_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_derog_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_derog_ecs",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_derog_ecs",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_non_derog_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_question_derog_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_derog_ecs",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_derog_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_derog_ecs",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_derog_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -1749,10 +2380,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea_date",
-            "X": 806,
-            "Y": 20,
-            "Width": 136,
-            "Height": 24,
+            "X": 793,
+            "Y": 12,
+            "Width": 149,
+            "Height": 39,
             "TextId": "date_text_1_centre_defaut",
             "TextRotation": "0",
             "Color": {
@@ -1769,9 +2400,9 @@
           {
             "Type": "TextArea",
             "Name": "textArea_heure",
-            "Y": 20,
-            "Width": 95,
-            "Height": 24,
+            "Y": 13,
+            "Width": 105,
+            "Height": 39,
             "TextId": "heure_text_1_centre_defaut",
             "TextRotation": "0",
             "Color": {
@@ -1871,10 +2502,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea_titre",
-            "X": 442,
-            "Y": 79,
-            "Width": 67,
-            "Height": 30,
+            "X": 268,
+            "Y": 73,
+            "Width": 414,
+            "Height": 42,
             "TextId": "titre_text_1_centre_large",
             "TextRotation": "0",
             "Color": {
@@ -1889,10 +2520,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea_1",
-            "X": 452,
-            "Y": 20,
-            "Width": 12,
-            "Height": 24,
+            "X": 449,
+            "Y": 16,
+            "Width": 17,
+            "Height": 30,
             "TextId": "text_barre_titre_1_centre_defaut",
             "TextRotation": "0",
             "Color": {
@@ -1905,10 +2536,10 @@
           {
             "Type": "TextArea",
             "Name": "textArea_2",
-            "X": 487,
-            "Y": 20,
-            "Width": 12,
-            "Height": 24,
+            "X": 492,
+            "Y": 16,
+            "Width": 17,
+            "Height": 30,
             "TextId": "text_barre_titre_2_centre_defaut",
             "TextRotation": "0",
             "Color": {
@@ -1967,170 +2598,6 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Accueil"
             }
-          }
-        ]
-      },
-      {
-        "Name": "Select_gauche_droite",
-        "Width": 449,
-        "Height": 129,
-        "Components": [
-          {
-            "Type": "Line",
-            "Name": "line_bas",
-            "Y": 127,
-            "Width": 449,
-            "Height": 2,
-            "Color": {
-              "Red": 76,
-              "Green": 76,
-              "Blue": 76
-            },
-            "StartY": 1.0,
-            "EndX": 449.0,
-            "EndY": 1.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line_haut",
-            "Width": 449,
-            "Height": 2,
-            "Color": {
-              "Red": 76,
-              "Green": 76,
-              "Blue": 76
-            },
-            "StartY": 1.0,
-            "EndX": 449.0,
-            "EndY": 1.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line_gauche",
-            "Width": 2,
-            "Height": 129,
-            "Color": {
-              "Red": 76,
-              "Green": 76,
-              "Blue": 76
-            },
-            "StartX": 1.0,
-            "EndX": 1.0,
-            "EndY": 129.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line_droite",
-            "X": 447,
-            "Width": 2,
-            "Height": 129,
-            "Color": {
-              "Red": 76,
-              "Green": 76,
-              "Blue": 76
-            },
-            "StartX": 1.0,
-            "EndX": 1.0,
-            "EndY": 129.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "toggleButton_droit",
-            "X": 233,
-            "Y": 76,
-            "Width": 216,
-            "Height": 53,
-            "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
-            "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
-          },
-          {
-            "Type": "ToggleButton",
-            "Name": "toggleButton_gauche",
-            "Y": 75,
-            "Width": 216,
-            "Height": 53,
-            "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
-            "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea_question",
-            "X": 53,
-            "Y": 11,
-            "Width": 343,
-            "Height": 24,
-            "TextId": "text_select_titre_1_centre_defaut",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Wildcard1": {
-              "TextId": "text_select_titre_2_centre_defaut",
-              "UseBuffer": true,
-              "BufferSize": 40
-            },
-            "WideTextAction": 1
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea_gauche",
-            "X": 62,
-            "Y": 90,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "text_select_gauche_1_centre_defaut",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Wildcard1": {
-              "TextId": "text_select_gauche_2_centre_defaut",
-              "UseBuffer": true,
-              "BufferSize": 3
-            }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea_droit",
-            "X": 295,
-            "Y": 90,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "text_select_droite_1_centre_defaut",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Wildcard1": {
-              "TextId": "text_select_droite_2_centre_defaut",
-              "UseBuffer": true,
-              "BufferSize": 3
-            }
-          }
-        ],
-        "Interactions": [],
-        "CustomTriggers": [
-          {
-            "Name": "trigger1"
-          }
-        ],
-        "CustomActions": [
-          {
-            "Name": "action1"
           }
         ]
       },
@@ -2247,159 +2714,6 @@
           }
         ],
         "Interactions": []
-      },
-      {
-        "Name": "Defilement_gauche_droite",
-        "Width": 449,
-        "Height": 129,
-        "Components": [
-          {
-            "Type": "Line",
-            "Name": "line_bas",
-            "Y": 127,
-            "Width": 449,
-            "Height": 2,
-            "Color": {
-              "Red": 76,
-              "Green": 76,
-              "Blue": 76
-            },
-            "StartY": 1.0,
-            "EndX": 449.0,
-            "EndY": 1.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line_haut",
-            "Width": 449,
-            "Height": 2,
-            "Color": {
-              "Red": 76,
-              "Green": 76,
-              "Blue": 76
-            },
-            "StartY": 1.0,
-            "EndX": 449.0,
-            "EndY": 1.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line_gauche",
-            "Width": 2,
-            "Height": 129,
-            "Color": {
-              "Red": 76,
-              "Green": 76,
-              "Blue": 76
-            },
-            "StartX": 1.0,
-            "EndX": 1.0,
-            "EndY": 129.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Line",
-            "Name": "line_droite",
-            "X": 447,
-            "Width": 2,
-            "Height": 129,
-            "Color": {
-              "Red": 76,
-              "Green": 76,
-              "Blue": 76
-            },
-            "StartX": 1.0,
-            "EndX": 1.0,
-            "EndY": 129.0,
-            "LineWidth": 2.0,
-            "LineEndingStyle": "Round"
-          },
-          {
-            "Type": "Image",
-            "Name": "Image1",
-            "X": 73,
-            "Y": 76,
-            "Width": 303,
-            "Height": 53,
-            "RelativeFilename": "Zone_Texte_Gris_Clair_L303xH53.png"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea_titre",
-            "X": 53,
-            "Y": 11,
-            "Width": 343,
-            "Height": 24,
-            "TextId": "text_bouton_defilement_titre_1_centre_defaut",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Wildcard1": {
-              "TextId": "text_bouton_defilement_titre_2_centre_defaut",
-              "UseBuffer": true,
-              "BufferSize": 40
-            },
-            "WideTextAction": 1
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea_valeur_courante",
-            "X": 178,
-            "Y": 90,
-            "Width": 92,
-            "Height": 24,
-            "TextId": "text_bouton_defilement_1_centre_defaut",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "Wildcard1": {
-              "TextId": "text_bouton_defilement_2_centre_defaut",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "Button",
-            "Name": "button_gauche",
-            "Y": 76,
-            "Width": 75,
-            "Height": 53,
-            "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
-            "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
-          },
-          {
-            "Type": "Button",
-            "Name": "button_droite",
-            "X": 374,
-            "Y": 76,
-            "Width": 75,
-            "Height": 53,
-            "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
-            "Released": "Fleche_Droite_Unclicked_L75xH53.png"
-          }
-        ],
-        "Interactions": [],
-        "CustomTriggers": [
-          {
-            "Name": "trigger1"
-          }
-        ],
-        "CustomActions": [
-          {
-            "Name": "action1"
-          }
-        ]
       }
     ],
     "Name": "MyApplication",
@@ -2408,7 +2722,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Marche_Arret",
+    "StartupScreenName": "Installation",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

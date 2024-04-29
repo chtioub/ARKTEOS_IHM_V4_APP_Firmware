@@ -6,27 +6,90 @@
     <Language Id="PT" />
   </Languages>
   <Texts>
-    <TextGroup Id="Page_oui_non" />
-    <TextGroup Id="Defilement_gauche_droite">
-      <Text Id="text_bouton_defilement_titre_2_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Question défilement ?</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
+    <TextGroup Id="Derogation">
+      <Text Id="text_valeur_consigne_derog_2_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0°C</Translation>
+        <Translation Language="GB">0.0°C</Translation>
+        <Translation Language="PT">0.0°C</Translation>
       </Text>
-      <Text Id="text_bouton_defilement_titre_1_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">New Text&lt;value&gt;</Translation>
-        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+      <Text Id="text_consigne_derog_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Consigne d'ambiance de la dérogation ?</Translation>
+        <Translation Language="GB">Ambient instruction of the exemption?</Translation>
+        <Translation Language="PT">Instrução ambiental da isenção?</Translation>
       </Text>
-      <Text Id="text_bouton_defilement_1_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_valeur_consigne_derog_1_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="text_bouton_defilement_2_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_duree_derog_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Durée de la dérogation ?</Translation>
+        <Translation Language="GB">Duration of the exemption?</Translation>
+        <Translation Language="PT">Duração da isenção?</Translation>
+      </Text>
+      <Text Id="text_valeur_duree_derog_2_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">OFF</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
+        <Translation Language="GB">OFF</Translation>
+        <Translation Language="PT">OFF</Translation>
+      </Text>
+      <Text Id="text_valeur_duree_derog_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_oui_derog_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="PT">Sim</Translation>
+      </Text>
+      <Text Id="text_non_derog_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+      </Text>
+      <Text Id="text_question_derog_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer un cycle de dérogation chauffage ?</Translation>
+        <Translation Language="GB">Do you want to activate a heating override cycle?</Translation>
+        <Translation Language="PT">Deseja ativar um ciclo de cancelamento de aquecimento?</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Derogation_ecs">
+      <Text Id="text_question_derog_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous forcer un cycle ECS ?</Translation>
+        <Translation Language="GB">Do you want to force a DHW cycle?</Translation>
+        <Translation Language="PT">Quer forçar um ciclo de AQS?</Translation>
+      </Text>
+      <Text Id="text_non_derog_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+      </Text>
+      <Text Id="text_oui_derog_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="PT">Sim</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Page_oui_non">
+      <Text Id="text_question_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_question_2_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Question oui non ?</Translation>
+        <Translation Language="GB">Question yes no?</Translation>
+        <Translation Language="PT">Pergunta sim não?</Translation>
+      </Text>
+      <Text Id="text_non_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+      </Text>
+      <Text Id="text_oui_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="PT">Sim</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Bouton_on_off">
@@ -68,60 +131,13 @@
         <Translation Language="PT">New Text</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Select_gauche_droite">
-      <Text Id="text_select_titre_2_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Question oui non ?</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="text_select_titre_1_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">New Text&lt;value&gt;</Translation>
-        <Translation Language="PT">New Text&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="text_select_droite_1_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">New Text&lt;value&gt;</Translation>
-        <Translation Language="PT">New Text&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="text_select_droite_2_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Oui</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="text_select_gauche_1_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="text_select_gauche_2_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Non</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="select_gauche_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR"></Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="select_droite_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Droite</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="select_question_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Question ?</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-    </TextGroup>
     <TextGroup Id="Barre_titre">
-      <Text Id="text_barre_titre_2_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_barre_titre_2_centre_defaut" Alignment="Left" TypographyId="Large">
         <Translation Language="FR">2</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
-      <Text Id="text_barre_titre_1_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_barre_titre_1_centre_defaut" Alignment="Left" TypographyId="Large">
         <Translation Language="FR">1</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -151,12 +167,12 @@
         <Translation Language="GB">120</Translation>
         <Translation Language="PT">120</Translation>
       </Text>
-      <Text Id="date_text_1_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="date_text_1_centre_defaut" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="heure_text_1_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="heure_text_1_centre_defaut" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
@@ -167,9 +183,30 @@
         <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Accueil" />
+    <TextGroup Id="Accueil">
+      <Text Id="__SingleUse_I378" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_4XVF" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_WCQB" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&#10;&#10;&#10;New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_NRA5" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Energies">
-      <Text Id="donnees_non_contract_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_donnees_non_contract_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Données non contractuelles&#10;Consommation des appoints : estimation calculée&#10;pour une tension de 230V/400V</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -297,13 +334,7 @@
         <Translation Language="PT">New Text</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_NRA5" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-    </TextGroup>
+    <TextGroup Id="Unsorted" />
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="segoeuib.ttf" Size="20" Bpp="8" IsVector="no" Direction="RTL" FallbackCharacter="?" />

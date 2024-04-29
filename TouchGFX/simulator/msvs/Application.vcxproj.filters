@@ -436,6 +436,30 @@
     <Filter Include="Source Files\generated\gui_generated\containers">
       <UniqueIdentifier>FEC0772A-AC53-4873-4249-AF5CF768E616</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\zone_screen">
+      <UniqueIdentifier>1D4324BC-4343-D990-7F5F-FCB1F68CFA08</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\zone_screen">
+      <UniqueIdentifier>8B2C13C9-2DBC-13D4-9762-D826CD3AC6D9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\configuration_screen">
+      <UniqueIdentifier>AB351D55-D779-8709-BCD5-DC24076D88FD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\configuration_screen">
+      <UniqueIdentifier>0630CC5C-88A8-7D9D-DD95-5E5313CBA103</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zone_screen">
+      <UniqueIdentifier>3B5A0EF6-9F16-8D3F-E545-C8EB6E1CE5A9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\configuration_screen">
+      <UniqueIdentifier>F8D5BBA7-5D10-A901-D6D3-C31B4FD6E98A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\configuration_screen">
+      <UniqueIdentifier>935FBFE6-651D-ECDA-D582-F8B40BAB2C62</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zone_screen">
+      <UniqueIdentifier>6921BC78-6CC4-7F43-D834-3EFDE3CF2C7C</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -686,6 +710,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Defilement_gauche_droiteBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp">
+      <Filter>Source Files\gui\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp">
+      <Filter>Source Files\gui\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zone_screen\ZonePresenter.cpp">
+      <Filter>Source Files\gui\zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zone_screen\ZoneView.cpp">
+      <Filter>Source Files\gui\zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zone_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1347,6 +1389,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Defilement_gauche_droiteBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp">
+      <Filter>Header Files\gui\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp">
+      <Filter>Header Files\gui\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zone_screen\ZonePresenter.hpp">
+      <Filter>Header Files\gui\zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zone_screen\ZoneView.hpp">
+      <Filter>Header Files\gui\zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zone_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
