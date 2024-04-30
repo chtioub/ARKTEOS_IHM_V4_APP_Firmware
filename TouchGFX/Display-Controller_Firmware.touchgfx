@@ -6351,25 +6351,6 @@
         "Name": "Zone",
         "Components": [
           {
-            "Type": "ToggleButton",
-            "Name": "toggleButton_arret_ecs",
-            "X": 52,
-            "Y": 187,
-            "Width": 168,
-            "Height": 102,
-            "Pressed": "Bouton_Rouge_Unclicked_L168xH102.png",
-            "Released": "Bouton_Beige_Unclicked_L168xH102.png"
-          },
-          {
-            "Type": "Image",
-            "Name": "image_arret_ecs",
-            "X": 109,
-            "Y": 191,
-            "Width": 55,
-            "Height": 61,
-            "RelativeFilename": "Etat_Marche_Arret_L55xH61.png"
-          },
-          {
             "Type": "Box",
             "Name": "Background",
             "Width": 1024,
