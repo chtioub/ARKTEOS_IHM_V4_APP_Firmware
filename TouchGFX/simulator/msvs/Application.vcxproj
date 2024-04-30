@@ -88,18 +88,29 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Barre_titreBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\Erreurs_alertes.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Erreurs_alertesBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\Select_gauche_droite.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Select_gauche_droiteBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\Bouton_on_off_toggle.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Bouton_on_off_toggleBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\Defilement_gauche_droite.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Defilement_gauche_droiteBase.cpp"/>
     <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\zone_screen\ZonePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\zone_screen\ZoneView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapidePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\parametres_screen\ParametresPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\parametres_screen\ParametresView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\parametres_screen\ParametresViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\secours_screen\SecoursPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\secours_screen\SecoursView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\secours_screen\SecoursViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\test_pac_screen\Test_pacPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\test_pac_screen\Test_pacView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\test_pac_screen\Test_pacViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\vacances_screen\VacancesPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\vacances_screen\VacancesView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\vacances_screen\VacancesViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -317,18 +328,29 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Barre_titreBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\Erreurs_alertes.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Erreurs_alertesBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\Select_gauche_droite.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Select_gauche_droiteBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\Bouton_on_off_toggle.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Bouton_on_off_toggleBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\Defilement_gauche_droite.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Defilement_gauche_droiteBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zone_screen\ZonePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zone_screen\ZoneView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapidePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\parametres_screen\ParametresPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\parametres_screen\ParametresView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\parametres_screen\ParametresViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\secours_screen\SecoursPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\secours_screen\SecoursView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\secours_screen\SecoursViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\test_pac_screen\Test_pacPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\test_pac_screen\Test_pacView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\test_pac_screen\Test_pacViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\vacances_screen\VacancesViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

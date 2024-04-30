@@ -210,28 +210,7 @@
         <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Accueil">
-      <Text Id="__SingleUse_I378" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_4XVF" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_WCQB" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&#10;&#10;&#10;New Text</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_NRA5" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-      </Text>
-    </TextGroup>
+    <TextGroup Id="Accueil" />
     <TextGroup Id="Energies">
       <Text Id="text_donnees_non_contract_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Données non contractuelles&#10;Consommation des appoints : estimation calculée&#10;pour une tension de 230V/400V</Translation>
@@ -260,6 +239,11 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation">
+      <Text Id="config_install_hydraulique_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration&#10;installation&#10;hydraulique</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
       <Text Id="param_freecooling_on_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Paramètres&#10;freecooling</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -305,8 +289,8 @@
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
-      <Text Id="config_install_hydrau_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Configuration&#10;installation&#10;hydraulique</Translation>
+      <Text Id="historique_defauts_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Historique&#10;des défauts</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
@@ -351,7 +335,7 @@
         <Translation Language="PT">New Text</Translation>
       </Text>
       <Text Id="config_in_out_carte_reg_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Modifier le&#10;code d'accès</Translation>
+        <Translation Language="FR">Configuration&#10;in/out&#10;carte REG</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
       </Text>
@@ -359,6 +343,125 @@
         <Translation Language="FR">Mise en chauffe&#10;dalle</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Test_pac">
+      <Text Id="text_valeur_mode_test_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_test_code_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Test code</Translation>
+        <Translation Language="GB">Test code</Translation>
+        <Translation Language="PT">Código de teste</Translation>
+      </Text>
+      <Text Id="text_valeur_test_code_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_valeur_test_code_2_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+      </Text>
+      <Text Id="text_question_test_pac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Test PAC ?</Translation>
+        <Translation Language="GB">HP test ?</Translation>
+        <Translation Language="PT">Teste PAC ?</Translation>
+      </Text>
+      <Text Id="text_oui_test_pac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="PT">Sim</Translation>
+      </Text>
+      <Text Id="text_non_test_pac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+      </Text>
+      <Text Id="text_valeur_mode_test_2_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Chaud</Translation>
+        <Translation Language="GB">Heat</Translation>
+        <Translation Language="PT">Quente</Translation>
+      </Text>
+      <Text Id="text_mode_test_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Mode test PAC</Translation>
+        <Translation Language="GB">HP test mode</Translation>
+        <Translation Language="PT">Modo de teste PAC</Translation>
+      </Text>
+      <Text Id="text_valeur_puissance_test_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_valeur_puissance_test_2_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Auto</Translation>
+        <Translation Language="GB">Auto</Translation>
+        <Translation Language="PT">Carro</Translation>
+      </Text>
+      <Text Id="text_puissance_test_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Puissance mode test</Translation>
+        <Translation Language="GB">Test mode power</Translation>
+        <Translation Language="PT">Potência do modo de teste</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Usine">
+      <Text Id="config_pac_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration&#10;PAC usine</Translation>
+        <Translation Language="GB">Configuration&#10;HP factory</Translation>
+        <Translation Language="PT">Configuração&#10;Fábrica de PAC</Translation>
+      </Text>
+      <Text Id="param_avances_usine_centre_defauts" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramètres&#10;avancés</Translation>
+        <Translation Language="GB">Settings&#10;advances</Translation>
+        <Translation Language="PT">Configurações&#10;avanços</Translation>
+      </Text>
+      <Text Id="installation_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Installation</Translation>
+        <Translation Language="GB">Installation</Translation>
+        <Translation Language="PT">Instalação</Translation>
+      </Text>
+      <Text Id="variables_systeme_usine_centre_defauts" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Variables&#10;système</Translation>
+        <Translation Language="GB">Variables&#10;system</Translation>
+        <Translation Language="PT">Variáveis&#10;sistema</Translation>
+      </Text>
+      <Text Id="maintenance_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Maintenance</Translation>
+        <Translation Language="GB">Maintenance</Translation>
+        <Translation Language="PT">Manutenção</Translation>
+      </Text>
+      <Text Id="synoptique_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Synoptique</Translation>
+        <Translation Language="GB">Synoptic</Translation>
+        <Translation Language="PT">Sinóptico</Translation>
+      </Text>
+      <Text Id="historique_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Historique</Translation>
+        <Translation Language="GB">Historical</Translation>
+        <Translation Language="PT">Histórico</Translation>
+      </Text>
+      <Text Id="test_pac_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Test PAC</Translation>
+        <Translation Language="GB">HP test</Translation>
+        <Translation Language="PT">Teste PAC</Translation>
+      </Text>
+      <Text Id="raz_code_maintenance_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ code&#10;maintenance</Translation>
+        <Translation Language="GB">Reset code&#10;maintenance</Translation>
+        <Translation Language="PT">Reiniciar código&#10;manutenção</Translation>
+      </Text>
+      <Text Id="raz_code_installation_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ code&#10;installation</Translation>
+        <Translation Language="GB">Reset code&#10;installation</Translation>
+        <Translation Language="PT">Reiniciar código&#10;instalação</Translation>
+      </Text>
+      <Text Id="raz_config_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ config&#10;usine</Translation>
+        <Translation Language="GB">Reset config&#10;factory</Translation>
+        <Translation Language="PT">Redefinir configuração&#10;fábrica</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted" />

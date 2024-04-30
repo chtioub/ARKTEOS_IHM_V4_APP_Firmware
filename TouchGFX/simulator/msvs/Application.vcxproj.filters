@@ -460,6 +460,66 @@
     <Filter Include="Header Files\generated\gui_generated\zone_screen">
       <UniqueIdentifier>6921BC78-6CC4-7F43-D834-3EFDE3CF2C7C</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\vacances_screen">
+      <UniqueIdentifier>CAD9CFFC-ED05-2C68-C296-24F761AE9721</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\parametres_screen">
+      <UniqueIdentifier>8F4ADDBC-18D0-61C4-705A-E1BEAA375418</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\parametres_screen">
+      <UniqueIdentifier>AB938A3C-637C-A914-DC12-4ABBA69592C6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_config_hydrau_rapide_screen">
+      <UniqueIdentifier>065C51FA-5CAB-0988-ABEA-D5E4B1DDD54B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_config_hydrau_rapide_screen">
+      <UniqueIdentifier>0DD46395-329A-5F1E-1FD3-AE127027B9BD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\vacances_screen">
+      <UniqueIdentifier>924AE631-AD02-A639-1831-597BCCC6DC8C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\secours_screen">
+      <UniqueIdentifier>47811C50-843E-24DB-A517-ADDB7E6E5168</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\secours_screen">
+      <UniqueIdentifier>BDECD4D9-E730-30BC-A153-1106ECBE94D9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\test_pac_screen">
+      <UniqueIdentifier>6AA64F5B-2269-BA67-084C-DDC52593D2F6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\test_pac_screen">
+      <UniqueIdentifier>DAA2D5D2-CCC1-AB0A-5CB9-31E99FBB079C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\test_pac_screen">
+      <UniqueIdentifier>358C4FEA-87BB-7B57-55EF-CBF5194E78BF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\test_pac_screen">
+      <UniqueIdentifier>1092CB7B-6445-C399-6473-2B8A3C480534</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\secours_screen">
+      <UniqueIdentifier>6EDB80F5-D0C6-9436-6FC1-CB7BCC34B8EF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\secours_screen">
+      <UniqueIdentifier>F4C7B45D-B769-2844-27B7-DD7939B9AEA7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\parametres_screen">
+      <UniqueIdentifier>7DA146D8-B59A-C6F6-5D55-25A3DFBD382D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\parametres_screen">
+      <UniqueIdentifier>730ED4BE-9BB6-BB5D-B341-07C1A3A99EDF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\vacances_screen">
+      <UniqueIdentifier>BA9D4F3D-46E5-FA3E-C0C6-DC4189AC0D0E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\vacances_screen">
+      <UniqueIdentifier>6E0AB5D2-0CDE-3E6C-7233-2D7541DDD994</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_config_hydrau_rapide_screen">
+      <UniqueIdentifier>A0B5998C-583A-8B66-BCA3-F8A717660D6F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_config_hydrau_rapide_screen">
+      <UniqueIdentifier>81F781F5-C0EC-AC57-42C3-9F2F8B3D7616</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -693,22 +753,10 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Erreurs_alertesBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\Select_gauche_droite.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Select_gauche_droiteBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\Bouton_on_off_toggle.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Bouton_on_off_toggleBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\Defilement_gauche_droite.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Defilement_gauche_droiteBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp">
@@ -728,6 +776,51 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapidePresenter.cpp">
+      <Filter>Source Files\gui\installation_config_hydrau_rapide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideView.cpp">
+      <Filter>Source Files\gui\installation_config_hydrau_rapide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_config_hydrau_rapide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\parametres_screen\ParametresPresenter.cpp">
+      <Filter>Source Files\gui\parametres_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\parametres_screen\ParametresView.cpp">
+      <Filter>Source Files\gui\parametres_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\parametres_screen\ParametresViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\parametres_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\secours_screen\SecoursPresenter.cpp">
+      <Filter>Source Files\gui\secours_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\secours_screen\SecoursView.cpp">
+      <Filter>Source Files\gui\secours_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\secours_screen\SecoursViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\secours_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\test_pac_screen\Test_pacPresenter.cpp">
+      <Filter>Source Files\gui\test_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\test_pac_screen\Test_pacView.cpp">
+      <Filter>Source Files\gui\test_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\test_pac_screen\Test_pacViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\test_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\vacances_screen\VacancesPresenter.cpp">
+      <Filter>Source Files\gui\vacances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\vacances_screen\VacancesView.cpp">
+      <Filter>Source Files\gui\vacances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\vacances_screen\VacancesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\vacances_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1372,22 +1465,10 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Erreurs_alertesBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\Select_gauche_droite.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Select_gauche_droiteBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\Bouton_on_off_toggle.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Bouton_on_off_toggleBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\Defilement_gauche_droite.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Defilement_gauche_droiteBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp">
@@ -1407,6 +1488,51 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapidePresenter.hpp">
+      <Filter>Header Files\gui\installation_config_hydrau_rapide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideView.hpp">
+      <Filter>Header Files\gui\installation_config_hydrau_rapide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_config_hydrau_rapide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\parametres_screen\ParametresPresenter.hpp">
+      <Filter>Header Files\gui\parametres_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\parametres_screen\ParametresView.hpp">
+      <Filter>Header Files\gui\parametres_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\parametres_screen\ParametresViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\parametres_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\secours_screen\SecoursPresenter.hpp">
+      <Filter>Header Files\gui\secours_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\secours_screen\SecoursView.hpp">
+      <Filter>Header Files\gui\secours_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\secours_screen\SecoursViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\secours_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\test_pac_screen\Test_pacPresenter.hpp">
+      <Filter>Header Files\gui\test_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\test_pac_screen\Test_pacView.hpp">
+      <Filter>Header Files\gui\test_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\test_pac_screen\Test_pacViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\test_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesPresenter.hpp">
+      <Filter>Header Files\gui\vacances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesView.hpp">
+      <Filter>Header Files\gui\vacances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\vacances_screen\VacancesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\vacances_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
