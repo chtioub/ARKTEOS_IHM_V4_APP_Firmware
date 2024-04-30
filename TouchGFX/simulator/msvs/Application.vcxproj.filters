@@ -723,6 +723,24 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SwipeDetectContainerBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp">
+      <Filter>Source Files\gui\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp">
+      <Filter>Source Files\gui\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zone_screen\ZonePresenter.cpp">
+      <Filter>Source Files\gui\zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zone_screen\ZoneView.cpp">
+      <Filter>Source Files\gui\zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zone_screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml">
@@ -1395,6 +1413,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SwipeDetectContainerBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp">
+      <Filter>Header Files\gui\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp">
+      <Filter>Header Files\gui\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zone_screen\ZonePresenter.hpp">
+      <Filter>Header Files\gui\zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zone_screen\ZoneView.hpp">
+      <Filter>Header Files\gui\zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zone_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

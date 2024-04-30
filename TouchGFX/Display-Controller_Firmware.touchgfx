@@ -2659,6 +2659,170 @@
         ]
       },
       {
+        "Name": "Select_gauche_droite",
+        "Width": 449,
+        "Height": 129,
+        "Components": [
+          {
+            "Type": "Line",
+            "Name": "line_bas",
+            "Y": 127,
+            "Width": 449,
+            "Height": 2,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            },
+            "StartY": 1.0,
+            "EndX": 449.0,
+            "EndY": 1.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "line_haut",
+            "Width": 449,
+            "Height": 2,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            },
+            "StartY": 1.0,
+            "EndX": 449.0,
+            "EndY": 1.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "line_gauche",
+            "Width": 2,
+            "Height": 129,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            },
+            "StartX": 1.0,
+            "EndX": 1.0,
+            "EndY": 129.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "Line",
+            "Name": "line_droite",
+            "X": 447,
+            "Width": 2,
+            "Height": 129,
+            "Color": {
+              "Red": 76,
+              "Green": 76,
+              "Blue": 76
+            },
+            "StartX": 1.0,
+            "EndX": 1.0,
+            "EndY": 129.0,
+            "LineWidth": 2.0,
+            "LineEndingStyle": "Round"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton_droit",
+            "X": 233,
+            "Y": 76,
+            "Width": 216,
+            "Height": 53,
+            "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+            "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton_gauche",
+            "Y": 75,
+            "Width": 216,
+            "Height": 53,
+            "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+            "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_question",
+            "X": 53,
+            "Y": 11,
+            "Width": 343,
+            "Height": 24,
+            "TextId": "text_select_titre_1_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "text_select_titre_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 40
+            },
+            "WideTextAction": 1
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_gauche",
+            "X": 62,
+            "Y": 90,
+            "Width": 92,
+            "Height": 24,
+            "TextId": "text_select_gauche_1_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "text_select_gauche_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_droit",
+            "X": 295,
+            "Y": 90,
+            "Width": 92,
+            "Height": 24,
+            "TextId": "text_select_droite_1_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "text_select_droite_2_centre_defaut",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          }
+        ],
+        "Interactions": [],
+        "CustomTriggers": [
+          {
+            "Name": "trigger1"
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "action1"
+          }
+        ]
+      },
+      {
         "Name": "Erreurs_alertes",
         "Width": 900,
         "Height": 70,
@@ -2777,7 +2941,7 @@
         "Width": 1024,
         "Height": 600,
         "Components": [],
-        "Interactions": []
+        "Interactions": [],
       }
     ],
     "Name": "MyApplication",
