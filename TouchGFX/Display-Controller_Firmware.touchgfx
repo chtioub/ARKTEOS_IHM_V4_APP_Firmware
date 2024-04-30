@@ -12,6 +12,13 @@
             "Height": 600
           },
           {
+            "Type": "CustomContainerInstance",
+            "Name": "swipeDetectContainerMainScreen",
+            "Width": 1024,
+            "Height": 600,
+            "CustomContainerDefinitionName": "SwipeDetectContainer"
+          },
+          {
             "Type": "Container",
             "Name": "container",
             "X": 37,
@@ -25,6 +32,40 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_point_page",
+                "X": 492,
+                "Y": 28,
+                "Width": 16,
+                "Height": 16,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 8.0,
+                "CenterY": 8.0,
+                "Radius": 8.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_1",
+                "X": 449,
+                "Y": 16,
+                "Width": 17,
+                "Height": 30,
+                "TextId": "text_barre_titre_1_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
               },
               {
                 "Type": "ButtonWithLabel",
@@ -315,6 +356,83 @@
                 "LineWidth": 2.0,
                 "EndAngle": 360.0,
                 "CapPrecision": "Round"
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_arret"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Configuration",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_2_1",
+                "X": 492,
+                "Y": 16,
+                "Width": 17,
+                "Height": 30,
+                "TextId": "text_barre_titre_2_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_point_page",
+                "X": 451,
+                "Y": 28,
+                "Width": 16,
+                "Height": 16,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 8.0,
+                "CenterY": 8.0,
+                "Radius": 8.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
               }
             ]
           }
@@ -2333,35 +2451,6 @@
           }
         ],
         "Interactions": []
-      },
-      {
-        "Name": "Configuration",
-        "Components": [
-          {
-            "Type": "Box",
-            "Name": "Background",
-            "Width": 1024,
-            "Height": 600
-          },
-          {
-            "Type": "Container",
-            "Name": "container",
-            "X": 37,
-            "Y": 38,
-            "Width": 950,
-            "Height": 524,
-            "Components": [
-              {
-                "Type": "CustomContainerInstance",
-                "Name": "barre_titre",
-                "Width": 950,
-                "Height": 126,
-                "CustomContainerDefinitionName": "Barre_titre"
-              }
-            ]
-          }
-        ],
-        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -2516,38 +2605,6 @@
             "Wildcard1": {
               "TextId": "titre_text_2_centre_large"
             }
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea_1",
-            "X": 449,
-            "Y": 16,
-            "Width": 17,
-            "Height": 30,
-            "TextId": "text_barre_titre_1_centre_defaut",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea_2",
-            "X": 492,
-            "Y": 16,
-            "Width": 17,
-            "Height": 30,
-            "TextId": "text_barre_titre_2_centre_defaut",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -2713,6 +2770,13 @@
             }
           }
         ],
+        "Interactions": []
+      },
+      {
+        "Name": "SwipeDetectContainer",
+        "Width": 1024,
+        "Height": 600,
+        "Components": [],
         "Interactions": []
       }
     ],

@@ -12,6 +12,12 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 protected:
+
+private:
+    touchgfx::Callback<AccueilView, int16_t> swipeCallback;
+
+    void swipeCallbackHandler(int16_t);
+
 };
 
 #endif // ACCUEILVIEW_HPP

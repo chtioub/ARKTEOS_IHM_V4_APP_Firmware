@@ -1,8 +1,9 @@
 #include <gui/accueil_screen/AccueilView.hpp>
 
-AccueilView::AccueilView()
+AccueilView::AccueilView() :
+        swipeCallback(this, &AccueilView::swipeCallbackHandler)
 {
-
+    swipeDetectContainerMainScreen.setAction(swipeCallback);
 }
 
 void AccueilView::setupScreen()
@@ -13,4 +14,12 @@ void AccueilView::setupScreen()
 void AccueilView::tearDownScreen()
 {
     AccueilViewBase::tearDownScreen();
+}
+
+void AccueilView::swipeCallbackHandler(int16_t velocity)
+{
+    if(velocity < 0)
+    {
+        application().gotoConfigurationScreenNoTransition();
+    }
 }

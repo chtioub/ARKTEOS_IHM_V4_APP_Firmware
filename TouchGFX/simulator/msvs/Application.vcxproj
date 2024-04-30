@@ -88,18 +88,16 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Barre_titreBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\Erreurs_alertes.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Erreurs_alertesBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\Select_gauche_droite.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Select_gauche_droiteBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\Bouton_on_off_toggle.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\Bouton_on_off_toggleBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\Defilement_gauche_droite.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Defilement_gauche_droiteBase.cpp"/>
     <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\zone_screen\ZonePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\zone_screen\ZoneView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\SwipeDetectContainer.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SwipeDetectContainerBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -317,18 +315,16 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Barre_titreBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\Erreurs_alertes.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Erreurs_alertesBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\Select_gauche_droite.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Select_gauche_droiteBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\Bouton_on_off_toggle.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Bouton_on_off_toggleBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\Defilement_gauche_droite.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Defilement_gauche_droiteBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zone_screen\ZonePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zone_screen\ZoneView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\SwipeDetectContainer.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SwipeDetectContainerBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
