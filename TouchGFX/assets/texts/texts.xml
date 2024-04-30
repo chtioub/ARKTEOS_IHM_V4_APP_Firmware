@@ -464,7 +464,193 @@
         <Translation Language="PT">Redefinir configuração&#10;fábrica</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Unsorted">
+      <Text Id="text_associer_association_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Associer</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+      </Text>
+      <Text Id="text_signal_association_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">0dB</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_association_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Associer la sonde&#10;Zone 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_signal_association_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">0dB</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_association_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Associer la sonde&#10;Zone 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_associer_association_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Associer</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+      </Text>
+      <Text Id="text_temp_raf_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Température départ d'eau</Translation>
+        <Translation Language="GB">Duration of the exemption?</Translation>
+        <Translation Language="PT">Duração da isenção?</Translation>
+      </Text>
+      <Text Id="text_valeur_temp_raf_z1_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">17°C</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_temp_raf_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_valeur_temp_raf_z2_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">17°C</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_temp_raf_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_temp_raf_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Température départ d'eau</Translation>
+        <Translation Language="GB">Duration of the exemption?</Translation>
+        <Translation Language="PT">Duração da isenção?</Translation>
+      </Text>
+      <Text Id="text_oui_raf_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="PT">Sim</Translation>
+      </Text>
+      <Text Id="text_non_raf_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+      </Text>
+      <Text Id="text_question_raf_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le rafraichissement de la zone ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_question_raf_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le rafraichissement de la zone ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_non_raf_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+      </Text>
+      <Text Id="text_oui_raf_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="PT">Sim</Translation>
+      </Text>
+      <Text Id="text_courbe_loi_deau_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Courbe de loi d'eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_courbe_loi_deau_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Courbe de loi d'eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_circulateur_pilotes_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Nécessite l'utilisation de ciruclateurs pilotés</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_type_emet_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type d'émetteur de la zone</Translation>
+        <Translation Language="GB">Duration of the exemption?</Translation>
+        <Translation Language="PT">Duração da isenção?</Translation>
+      </Text>
+      <Text Id="text_valeur_type_emet_z2_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Plancher</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_type_emet_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_type_emet_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type d'émetteur de la zone</Translation>
+        <Translation Language="GB">Duration of the exemption?</Translation>
+        <Translation Language="PT">Duração da isenção?</Translation>
+      </Text>
+      <Text Id="text_valeur_type_emet_z1_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Plancher</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_type_emet_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_valeur_type_regul_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Directe</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_type_regul_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_type_regul_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type régulation</Translation>
+        <Translation Language="GB">Duration of the exemption?</Translation>
+        <Translation Language="PT">Duração da isenção?</Translation>
+      </Text>
+      <Text Id="text_choix_zones_2_on_off_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_choix_zones_1_on_off_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_choix_zones_1_on_off_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_choix_zones_2_on_off_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_choix_zones_2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 2</Translation>
+        <Translation Language="GB">Do you want to activate a heating override cycle?</Translation>
+        <Translation Language="PT">Deseja ativar um ciclo de cancelamento de aquecimento?</Translation>
+      </Text>
+      <Text Id="text_choix_zones_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 1</Translation>
+        <Translation Language="GB">Do you want to activate a heating override cycle?</Translation>
+        <Translation Language="PT">Deseja ativar um ciclo de cancelamento de aquecimento?</Translation>
+      </Text>
+      <Text Id="text_choix_zones_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Choix de zone(s)</Translation>
+        <Translation Language="GB">Do you want to activate a heating override cycle?</Translation>
+        <Translation Language="PT">Deseja ativar um ciclo de cancelamento de aquecimento?</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="segoeuib.ttf" Size="20" Bpp="8" IsVector="no" Direction="RTL" FallbackCharacter="?" />
