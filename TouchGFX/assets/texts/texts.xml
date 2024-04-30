@@ -33,6 +33,53 @@
         <Translation Language="PT">Duração da isenção?</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="Configuration">
+      <Text Id="text_configuration_vacances_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Vacances</Translation>
+        <Translation Language="GB">Holiday</Translation>
+        <Translation Language="PT">Férias</Translation>
+      </Text>
+      <Text Id="text_configuration_secours_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Secours</Translation>
+        <Translation Language="GB">Rescue</Translation>
+        <Translation Language="PT">Resgatar</Translation>
+      </Text>
+      <Text Id="text_configuration_parametres_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramètres</Translation>
+        <Translation Language="GB">Settings</Translation>
+        <Translation Language="PT">Configurações</Translation>
+      </Text>
+      <Text Id="text_configuration_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Usine</Translation>
+        <Translation Language="GB">Factory</Translation>
+        <Translation Language="PT">Fábrica</Translation>
+      </Text>
+      <Text Id="text_configuration_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Maintenance</Translation>
+        <Translation Language="GB">Maintenance</Translation>
+        <Translation Language="PT">Manutenção</Translation>
+      </Text>
+      <Text Id="text_configuration_installation_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Installation</Translation>
+        <Translation Language="GB">Installation</Translation>
+        <Translation Language="PT">Instalação</Translation>
+      </Text>
+      <Text Id="text_configuration_historique_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Historique</Translation>
+        <Translation Language="GB">Historical</Translation>
+        <Translation Language="PT">Histórico</Translation>
+      </Text>
+      <Text Id="text_configuration_energies_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Conso</Translation>
+        <Translation Language="GB">Consumption</Translation>
+        <Translation Language="PT">Consumo</Translation>
+      </Text>
+      <Text Id="text_configuration_infos_systemes_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Infos</Translation>
+        <Translation Language="GB">Info</Translation>
+        <Translation Language="PT">Info</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Derogation">
       <Text Id="text_valeur_consigne_derog_2_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">0.0°C</Translation>
@@ -117,6 +164,33 @@
         <Translation Language="FR">Oui</Translation>
         <Translation Language="GB">Yes</Translation>
         <Translation Language="PT">Sim</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Eau_chaude_sanitaire">
+      <Text Id="text_ecs_appoint_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Appoint</Translation>
+        <Translation Language="GB">Water heater</Translation>
+        <Translation Language="PT">Sanitária água</Translation>
+      </Text>
+      <Text Id="text_ecs_bouclage_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Bouclage</Translation>
+        <Translation Language="GB">Looping</Translation>
+        <Translation Language="PT">Looping</Translation>
+      </Text>
+      <Text Id="text_ecs_derog_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dérogation</Translation>
+        <Translation Language="GB">Exemption</Translation>
+        <Translation Language="PT">Isenção</Translation>
+      </Text>
+      <Text Id="text_ecs_marche_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Marche/prog</Translation>
+        <Translation Language="GB">Run/prog</Translation>
+        <Translation Language="PT">Executar/prog</Translation>
+      </Text>
+      <Text Id="text_ecs_arret_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Arrêt</Translation>
+        <Translation Language="GB">Stop</Translation>
+        <Translation Language="PT">Parar</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Bouton_on_off">
@@ -210,7 +284,38 @@
         <Translation Language="PT">&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Accueil" />
+    <TextGroup Id="Accueil">
+      <Text Id="text_accueil_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Chauffe-eau</Translation>
+        <Translation Language="GB">Water heater</Translation>
+        <Translation Language="PT">Sanitária água</Translation>
+      </Text>
+      <Text Id="text_accueil_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Piscine</Translation>
+        <Translation Language="GB">Pool</Translation>
+        <Translation Language="PT">Piscina</Translation>
+      </Text>
+      <Text Id="text_accueil_zone_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_accueil_zone_1_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 1</Translation>
+        <Translation Language="GB">Zone 1</Translation>
+        <Translation Language="PT">Zone 1</Translation>
+      </Text>
+      <Text Id="text_accueil_zone_2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_accueil_zone_2_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 2</Translation>
+        <Translation Language="GB">Zone 2</Translation>
+        <Translation Language="PT">Zone 2</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Energies">
       <Text Id="text_donnees_non_contract_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Données non contractuelles&#10;Consommation des appoints : estimation calculée&#10;pour une tension de 230V/400V</Translation>
@@ -236,6 +341,53 @@
         <Translation Language="FR">Cumul&#10;consommées</Translation>
         <Translation Language="GB">cumul used</Translation>
         <Translation Language="PT">Cumulativo&#10;consumido&#10;</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Maintenance">
+      <Text Id="text_test_pac_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Test PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_historique_defauts_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Historique&#10;des défauts</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_synoptique_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Synoptique</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_redemarrer_pac_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Redémarrer sa&#10;PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_modif_code_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Modifier le&#10;code d'accès</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_raz_histo_erreur_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ histo&#10;erreur</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_variables_systemes_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Variables&#10;système</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_fonction_avances_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Fonctions&#10;avancés</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+      </Text>
+      <Text Id="text_derogation_pression_maintenance_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dérogation&#10;pression</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Installation">
@@ -651,41 +803,47 @@
         <Translation Language="PT">Redefinir configuração&#10;fábrica</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted">
-      <Text Id="text_accueil_zone_2_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 2</Translation>
-        <Translation Language="GB">Zone 2</Translation>
-        <Translation Language="PT">Zone 2</Translation>
+    <TextGroup Id="Zone">
+      <Text Id="text_zone_chaud_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Chaud</Translation>
+        <Translation Language="GB">Heat</Translation>
+        <Translation Language="PT">Quente</Translation>
       </Text>
-      <Text Id="text_accueil_zone_2_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
+      <Text Id="text_zone_arret_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Arrêt</Translation>
+        <Translation Language="GB">Stop</Translation>
+        <Translation Language="PT">Parar</Translation>
       </Text>
-      <Text Id="text_accueil_zone_1_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 1</Translation>
-        <Translation Language="GB">Zone 1</Translation>
-        <Translation Language="PT">Zone 1</Translation>
+      <Text Id="text_zone_auto_prog_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Auto/prog</Translation>
+        <Translation Language="GB">Auto/prog</Translation>
+        <Translation Language="PT">Auto/prog</Translation>
       </Text>
-      <Text Id="text_accueil_zone_1_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
+      <Text Id="text_zone_derogation_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dérogation</Translation>
+        <Translation Language="GB">Exemption</Translation>
+        <Translation Language="PT">Isenção</Translation>
       </Text>
-      <Text Id="text_accueil_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Piscine</Translation>
-        <Translation Language="GB">Pool</Translation>
-        <Translation Language="PT">Piscina</Translation>
+      <Text Id="text_zone_appoint_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Appoint</Translation>
+        <Translation Language="GB">Heating adding</Translation>
+        <Translation Language="PT">Suplemento</Translation>
       </Text>
-      <Text Id="text_accueil_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Chauffe-eau</Translation>
-        <Translation Language="GB">Water heater</Translation>
-        <Translation Language="PT">Aquecedor de água</Translation>
+      <Text Id="text_zone_froid_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Froid</Translation>
+        <Translation Language="GB">Cold</Translation>
+        <Translation Language="PT">Frio</Translation>
+      </Text>
+      <Text Id="text_zone_hors_gel_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Hors gel</Translation>
+        <Translation Language="GB">Frost free</Translation>
+        <Translation Language="PT">Livre de gelo</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="Unsorted" />
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="segoeuib.ttf" Size="20" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Texte" Font="segoeui.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>

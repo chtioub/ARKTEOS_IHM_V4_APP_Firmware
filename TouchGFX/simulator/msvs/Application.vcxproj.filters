@@ -520,6 +520,18 @@
     <Filter Include="Source Files\generated\gui_generated\page_oui_non_screen">
       <UniqueIdentifier>C8DA9DC3-43D6-EC93-602A-F948E2E16CBF</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\multizones_screen">
+      <UniqueIdentifier>D3305CC7-2DE9-3E94-C587-773FE216F3A3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\multizones_screen">
+      <UniqueIdentifier>7EEB28C4-4FC1-D9AE-911B-19D97786C4D5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\multizones_screen">
+      <UniqueIdentifier>96870837-2C55-BEBB-735E-9C078304352B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\multizones_screen">
+      <UniqueIdentifier>09EE2449-0C0F-9366-DC18-724E5B26AB0C</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -827,6 +839,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\page_oui_non_screen\Page_oui_nonViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\page_oui_non_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\multizones_screen\MultizonesPresenter.cpp">
+      <Filter>Source Files\gui\multizones_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\multizones_screen\MultizonesView.cpp">
+      <Filter>Source Files\gui\multizones_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\multizones_screen\MultizonesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\multizones_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1545,6 +1566,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\page_oui_non_screen\Page_oui_nonViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\page_oui_non_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\multizones_screen\MultizonesPresenter.hpp">
+      <Filter>Header Files\gui\multizones_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\multizones_screen\MultizonesView.hpp">
+      <Filter>Header Files\gui\multizones_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\multizones_screen\MultizonesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\multizones_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
