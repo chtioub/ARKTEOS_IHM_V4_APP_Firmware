@@ -111,6 +111,8 @@
     <ClCompile Include="..\..\gui\src\vacances_screen\VacancesPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\vacances_screen\VacancesView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\vacances_screen\VacancesViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\SwipeDetectContainer.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SwipeDetectContainerBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -351,6 +353,8 @@
     <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\vacances_screen\VacancesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\SwipeDetectContainer.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SwipeDetectContainerBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
