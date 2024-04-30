@@ -651,7 +651,38 @@
         <Translation Language="PT">Redefinir configuração&#10;fábrica</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Unsorted">
+      <Text Id="text_accueil_zone_2_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 2</Translation>
+        <Translation Language="GB">Zone 2</Translation>
+        <Translation Language="PT">Zone 2</Translation>
+      </Text>
+      <Text Id="text_accueil_zone_2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_accueil_zone_1_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 1</Translation>
+        <Translation Language="GB">Zone 1</Translation>
+        <Translation Language="PT">Zone 1</Translation>
+      </Text>
+      <Text Id="text_accueil_zone_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_accueil_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Piscine</Translation>
+        <Translation Language="GB">Pool</Translation>
+        <Translation Language="PT">Piscina</Translation>
+      </Text>
+      <Text Id="text_accueil_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Chauffe-eau</Translation>
+        <Translation Language="GB">Water heater</Translation>
+        <Translation Language="PT">Aquecedor de água</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="segoeuib.ttf" Size="20" Bpp="8" IsVector="no" Direction="RTL" FallbackCharacter="?" />

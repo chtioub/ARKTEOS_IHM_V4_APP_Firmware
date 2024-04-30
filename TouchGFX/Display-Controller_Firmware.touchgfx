@@ -229,8 +229,8 @@
               {
                 "Type": "Image",
                 "Name": "Image_marche_arret",
-                "X": 72,
-                "Y": 403,
+                "X": 71,
+                "Y": 410,
                 "Width": 55,
                 "Height": 61,
                 "RelativeFilename": "Etat_Marche_Arret_L55xH61.png"
@@ -252,6 +252,20 @@
                     "Released": "Bouton_Orange_Unclicked_L168xH102.png"
                   },
                   {
+                    "Type": "TextArea",
+                    "Name": "textArea_piscine",
+                    "Y": 71,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_accueil_piscine_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
                     "Type": "Image",
                     "Name": "Image_piscine",
                     "X": 86,
@@ -266,7 +280,7 @@
                 "Type": "Container",
                 "Name": "container_zone_2",
                 "X": 15,
-                "Y": 149,
+                "Y": 274,
                 "Width": 168,
                 "Height": 102,
                 "Components": [
@@ -279,10 +293,27 @@
                     "Released": "Bouton_Orange_Unclicked_L168xH102.png"
                   },
                   {
+                    "Type": "TextArea",
+                    "Name": "textArea_zone_2",
+                    "Y": 71,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_accueil_zone_2_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_accueil_zone_2_init_centre_defaut"
+                    }
+                  },
+                  {
                     "Type": "Image",
                     "Name": "Image_maison_zone_2",
-                    "X": 91,
-                    "Y": 6,
+                    "X": 89,
+                    "Y": 11,
                     "Width": 67,
                     "Height": 58,
                     "RelativeFilename": "Etat_Maison_L67xH58.png"
@@ -342,6 +373,20 @@
                     "Released": "Bouton_Orange_Unclicked_L168xH102.png"
                   },
                   {
+                    "Type": "TextArea",
+                    "Name": "textArea_ecs",
+                    "Y": 71,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_accueil_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
                     "Type": "Image",
                     "Name": "Image_ecs",
                     "X": 94,
@@ -367,6 +412,23 @@
                     "Height": 102,
                     "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
                     "Released": "Bouton_Orange_Unclicked_L168xH102.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_zone_1",
+                    "Y": 71,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_accueil_zone_1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_accueil_zone_1_init_centre_defaut"
+                    }
                   },
                   {
                     "Type": "Image",
@@ -453,13 +515,6 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "swipeDetectContainerMainScreen",
-            "Width": 1024,
-            "Height": 600,
-            "CustomContainerDefinitionName": "SwipeDetectContainer"
           },
           {
             "Type": "Container",
@@ -726,17 +781,6 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Parametres"
-            }
-          },
-          {
-            "InteractionName": "Swipe_config_chgsc_accueil",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Accueil"
             }
           }
         ]
