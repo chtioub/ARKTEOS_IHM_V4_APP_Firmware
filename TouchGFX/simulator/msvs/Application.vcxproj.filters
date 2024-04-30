@@ -244,12 +244,6 @@
     <Filter Include="Source Files\gui\derogation_screen">
       <UniqueIdentifier>D4B5319B-264A-8984-9204-74888966DA81</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\marche_arret_screen">
-      <UniqueIdentifier>1EF280A0-0ED2-2BDE-E71C-9515802580A8</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\marche_arret_screen">
-      <UniqueIdentifier>2E28F0CD-19F2-55D8-4C22-24A653C4829B</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\courbe_loi_d_eau_screen">
       <UniqueIdentifier>96A82766-B5DB-0671-1D74-1CCC828B3E77</UniqueIdentifier>
     </Filter>
@@ -330,12 +324,6 @@
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\synoptique_screen">
       <UniqueIdentifier>09B16AD4-BEB8-E66E-EC38-3654DA7FDC88</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\marche_arret_screen">
-      <UniqueIdentifier>9C1F9F36-B06F-FA70-0337-4F771FED68C6</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\marche_arret_screen">
-      <UniqueIdentifier>B74D0069-CCF5-A79F-FDB8-BB8B0F470A1F</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\maintenance_screen">
       <UniqueIdentifier>922728D0-7C0E-306E-CC47-3E361EBA8493</UniqueIdentifier>
@@ -520,6 +508,18 @@
     <Filter Include="Source Files\generated\gui_generated\installation_config_hydrau_rapide_screen">
       <UniqueIdentifier>81F781F5-C0EC-AC57-42C3-9F2F8B3D7616</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\page_oui_non_screen">
+      <UniqueIdentifier>DE9734FD-3383-4162-013B-90BA92F64ED7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\page_oui_non_screen">
+      <UniqueIdentifier>B2DFC2A1-5838-D02A-8AA7-029835A04F87</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\page_oui_non_screen">
+      <UniqueIdentifier>C4826F27-7F55-4618-0C87-728C5F50965D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\page_oui_non_screen">
+      <UniqueIdentifier>C8DA9DC3-43D6-EC93-602A-F948E2E16CBF</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -696,15 +696,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\maintenance_screen\MaintenanceViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\maintenance_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\marche_arret_screen\Marche_ArretPresenter.cpp">
-      <Filter>Source Files\gui\marche_arret_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\marche_arret_screen\Marche_ArretView.cpp">
-      <Filter>Source Files\gui\marche_arret_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\marche_arret_screen\Marche_ArretViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\marche_arret_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\programmation_zoom_screen\Programmation_zoomPresenter.cpp">
       <Filter>Source Files\gui\programmation_zoom_screen</Filter>
     </ClCompile>
@@ -827,6 +818,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SwipeDetectContainerBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\page_oui_non_screen\Page_oui_nonPresenter.cpp">
+      <Filter>Source Files\gui\page_oui_non_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\page_oui_non_screen\Page_oui_nonView.cpp">
+      <Filter>Source Files\gui\page_oui_non_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\page_oui_non_screen\Page_oui_nonViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\page_oui_non_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1414,15 +1414,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_screen\MaintenanceViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\maintenance_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\marche_arret_screen\Marche_ArretPresenter.hpp">
-      <Filter>Header Files\gui\marche_arret_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\marche_arret_screen\Marche_ArretView.hpp">
-      <Filter>Header Files\gui\marche_arret_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\marche_arret_screen\Marche_ArretViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\marche_arret_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\programmation_zoom_screen\Programmation_zoomPresenter.hpp">
       <Filter>Header Files\gui\programmation_zoom_screen</Filter>
     </ClInclude>
@@ -1545,6 +1536,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SwipeDetectContainerBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\page_oui_non_screen\Page_oui_nonPresenter.hpp">
+      <Filter>Header Files\gui\page_oui_non_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\page_oui_non_screen\Page_oui_nonView.hpp">
+      <Filter>Header Files\gui\page_oui_non_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\page_oui_non_screen\Page_oui_nonViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\page_oui_non_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

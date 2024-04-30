@@ -420,7 +420,7 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "Swipe_accueil_chsc_configuration",
             "Trigger": {
               "Type": "TriggerClicked"
             },
@@ -428,6 +428,18 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Configuration"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_ecs_chgsc_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Eau_chaude_sanitaire"
             }
           }
         ]
@@ -441,6 +453,13 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "swipeDetectContainerMainScreen",
+            "Width": 1024,
+            "Height": 600,
+            "CustomContainerDefinitionName": "SwipeDetectContainer"
           },
           {
             "Type": "Container",
@@ -707,6 +726,17 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "Swipe_config_chgsc_accueil",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Accueil"
             }
           }
         ]
@@ -1125,7 +1155,7 @@
         "Interactions": []
       },
       {
-        "Name": "Marche_Arret",
+        "Name": "Page_oui_non",
         "CanvasBufferSize": 15360,
         "Components": [
           {
@@ -3083,7 +3113,13 @@
                 "Width": 950,
                 "Height": 307,
                 "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
                 "ScrollbarsVisibleOnPressed": true,
+                "ScrollbarsColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
                 "ScrollbarsAlpha": 255,
                 "Components": [
                   {
@@ -4397,7 +4433,7 @@
                         "Wildcard1": {
                           "TextId": "text_choix_zones_2_on_off_init_centre_defaut",
                           "UseBuffer": true,
-                          "BufferSize": 3
+                          "BufferSize": 4
                         }
                       },
                       {
@@ -4417,7 +4453,7 @@
                         "Wildcard1": {
                           "TextId": "text_choix_zones_1_on_off_init_centre_defaut",
                           "UseBuffer": true,
-                          "BufferSize": 3
+                          "BufferSize": 4
                         }
                       }
                     ]

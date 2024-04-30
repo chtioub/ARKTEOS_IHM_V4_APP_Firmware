@@ -1,17 +1,17 @@
-#ifndef MARCHE_ARRETPRESENTER_HPP
-#define MARCHE_ARRETPRESENTER_HPP
+#ifndef PAGE_OUI_NONPRESENTER_HPP
+#define PAGE_OUI_NONPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Marche_ArretView;
+class Page_oui_nonView;
 
-class Marche_ArretPresenter : public touchgfx::Presenter, public ModelListener
+class Page_oui_nonPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Marche_ArretPresenter(Marche_ArretView& v);
+    Page_oui_nonPresenter(Page_oui_nonView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Marche_ArretPresenter() {}
+    virtual ~Page_oui_nonPresenter() {}
 
 private:
-    Marche_ArretPresenter();
+    Page_oui_nonPresenter();
 
-    Marche_ArretView& view;
+    Page_oui_nonView& view;
 };
 
-#endif // MARCHE_ARRETPRESENTER_HPP
+#endif // PAGE_OUI_NONPRESENTER_HPP

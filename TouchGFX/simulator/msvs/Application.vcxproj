@@ -69,9 +69,6 @@
     <ClCompile Include="..\..\gui\src\maintenance_screen\MaintenancePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\maintenance_screen\MaintenanceView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\maintenance_screen\MaintenanceViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\marche_arret_screen\Marche_ArretPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\marche_arret_screen\Marche_ArretView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\marche_arret_screen\Marche_ArretViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\programmation_zoom_screen\Programmation_zoomPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\programmation_zoom_screen\Programmation_zoomView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\programmation_zoom_screen\Programmation_zoomViewBase.cpp"/>
@@ -113,6 +110,9 @@
     <ClCompile Include="..\..\generated\gui_generated\src\vacances_screen\VacancesViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\SwipeDetectContainer.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SwipeDetectContainerBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\page_oui_non_screen\Page_oui_nonPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\page_oui_non_screen\Page_oui_nonView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\page_oui_non_screen\Page_oui_nonViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -311,9 +311,6 @@
     <ClInclude Include="..\..\gui\include\gui\maintenance_screen\MaintenancePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\maintenance_screen\MaintenanceView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_screen\MaintenanceViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\marche_arret_screen\Marche_ArretPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\marche_arret_screen\Marche_ArretView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\marche_arret_screen\Marche_ArretViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\programmation_zoom_screen\Programmation_zoomPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\programmation_zoom_screen\Programmation_zoomView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\programmation_zoom_screen\Programmation_zoomViewBase.hpp"/>
@@ -355,6 +352,9 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\vacances_screen\VacancesViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\SwipeDetectContainer.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SwipeDetectContainerBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\page_oui_non_screen\Page_oui_nonPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\page_oui_non_screen\Page_oui_nonView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\page_oui_non_screen\Page_oui_nonViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
