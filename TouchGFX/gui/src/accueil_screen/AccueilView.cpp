@@ -3,7 +3,7 @@
 AccueilView::AccueilView() :
         swipeCallback(this, &AccueilView::swipeCallbackHandler)
 {
-    swipeDetectContainerMainScreen.setAction(swipeCallback);
+    swipeDetectContainerConfigurationScreen.setAction(swipeCallback);
 }
 
 void AccueilView::setupScreen()
@@ -20,6 +20,6 @@ void AccueilView::swipeCallbackHandler(int16_t velocity)
 {
     if(velocity < 0)
     {
-        application().gotoConfigurationScreenNoTransition();
+      application().gotoConfigurationScreenSlideTransitionEast();
     }
 }

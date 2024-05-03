@@ -13,7 +13,7 @@
           },
           {
             "Type": "CustomContainerInstance",
-            "Name": "swipeDetectContainerMainScreen",
+            "Name": "swipeDetectContainerConfigurationScreen",
             "Width": 1024,
             "Height": 600,
             "CustomContainerDefinitionName": "SwipeDetectContainer"
@@ -49,7 +49,8 @@
                 "CenterY": 8.0,
                 "Radius": 8.0,
                 "EndAngle": 360.0,
-                "CapPrecision": "Butt"
+                "CapPrecision": "Butt",
+                "Clickable": true
               },
               {
                 "Type": "TextArea",
@@ -476,6 +477,44 @@
                     "CapPrecision": "Round"
                   }
                 ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "flexButton_to_config_screen",
+                "X": 475,
+                "Y": 11,
+                "Width": 50,
+                "Height": 50,
+                "Alpha": 0,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 50,
+                    "Height": 50,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -484,11 +523,13 @@
           {
             "InteractionName": "Swipe_accueil_chsc_configuration",
             "Trigger": {
-              "Type": "TriggerClicked"
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButton_to_config_screen"
             },
             "Action": {
               "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "East",
               "ActionComponent": "Configuration"
             }
           },
@@ -515,6 +556,13 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "swipeDetectContainerAccueilScreen",
+            "Width": 1024,
+            "Height": 600,
+            "CustomContainerDefinitionName": "SwipeDetectContainer"
           },
           {
             "Type": "Container",
@@ -670,6 +718,44 @@
                 "Radius": 8.0,
                 "EndAngle": 360.0,
                 "CapPrecision": "Butt"
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "flexButton_to_accueil_screen",
+                "X": 434,
+                "Y": 11,
+                "Width": 50,
+                "Height": 50,
+                "Alpha": 0,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 50,
+                    "Height": 50,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -781,6 +867,19 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_to_screen_accueil",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButton_to_accueil_screen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionSlide",
+              "ScreenTransitionDirection": "West",
+              "ActionComponent": "Accueil"
             }
           }
         ]
