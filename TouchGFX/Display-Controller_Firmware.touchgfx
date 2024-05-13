@@ -110,7 +110,7 @@
                 "X": 770,
                 "Y": 440,
                 "Width": 50,
-                "Height": 23,
+                "Height": 24,
                 "RelativeFilename": "Etat_Temperature_Chauffe_Eau_Recyclage_L50xH23.png"
               },
               {
@@ -750,12 +750,12 @@
                 "Height": 102,
                 "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
                 "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                "IconPressed": "Etat_Bouton_Historique_L100xH60.png",
-                "IconReleased": "Etat_Bouton_Historique_L100xH60.png",
-                "IconX": 35,
+                "IconPressed": "Etat_Bouton_Compteur_Linky_L38xH55.png",
+                "IconReleased": "Etat_Bouton_Compteur_Linky_L38xH55.png",
+                "IconX": 66,
                 "IconY": 9,
-                "IconHeight": 60,
-                "IconWidth": 100
+                "IconHeight": 55,
+                "IconWidth": 38
               },
               {
                 "Type": "TextArea",
@@ -1676,10 +1676,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "Container",
@@ -1875,10 +1875,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "Container",
@@ -2428,6 +2428,15 @@
                       "Green": 255,
                       "Blue": 255
                     }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_bouclage_ecs",
+                    "X": 22,
+                    "Y": 7,
+                    "Width": 126,
+                    "Height": 60,
+                    "RelativeFilename": "Etat_Bouton_Bouclage_ECS_L125xH60.png"
                   }
                 ]
               },
@@ -2469,6 +2478,15 @@
                       "Green": 255,
                       "Blue": 255
                     }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_derog_ecs",
+                    "X": 56,
+                    "Y": 7,
+                    "Width": 60,
+                    "Height": 60,
+                    "RelativeFilename": "Etat_Bouton_Derogation_ECS_L60xH60.png"
                   }
                 ]
               },
@@ -2635,10 +2653,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "Container",
@@ -2946,10 +2964,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "CustomContainerInstance",
@@ -4058,6 +4076,30 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_ecs"
             }
+          },
+          {
+            "InteractionName": "BTNClicked_param_circ_prim_off_chgsc_installation_circ_prim",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_param_circ_prim_off"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_circuit_primaire"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_param_circ_prim_on_chgsc_installation_circ_prim",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_param_circ_prim_on"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_circuit_primaire"
+            }
           }
         ]
       },
@@ -4091,10 +4133,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "TextArea",
@@ -7195,10 +7237,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "Container",
@@ -8184,10 +8226,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "ScrollableContainer",
@@ -8874,10 +8916,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "Container",
@@ -9205,10 +9247,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "Container",
@@ -9510,6 +9552,7 @@
       },
       {
         "Name": "Installation_circuit_primaire",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -9537,18 +9580,467 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_vitesse_circulateur",
+                "X": 486,
+                "Y": 301,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_vitesse_circulateur",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_vitesse_circulateur",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_vitesse_circulateur",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_vitesse_circulateur",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_vitesse_circulateur",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_vitesse_circulateur",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_vitesse_circ_prim_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_vitesse_circulateur",
+                    "X": 75,
+                    "Y": 90,
+                    "Width": 301,
+                    "Height": 24,
+                    "TextId": "text_valeur_vitesse_circ_prim_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_vitesse_circ_prim_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_vitesse_circulateur",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_vitesse_circulateur",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_oui_non_marche_forcee",
+                "X": 15,
+                "Y": 301,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_marche_forcee",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_marche_forcee",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_marche_forcee",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_marche_forcee",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_marche_forcee",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_marche_forcee",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_oui_non_marche_forcee",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_oui_non_marche_forcee_circ_prim_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_marche_forcee",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_marche_forcee_circ_prim_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_marche_forcee",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_marche_forcee_circ_prim_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_circuit_primaire",
+                "X": 486,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "TextId": "text_circuit_primaire_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "WideTextAction": 1
+              },
+              {
+                "Type": "Container",
+                "Name": "container_type_circulateur",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_type_circulateur",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_type_circulateur",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_type_circulateur",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_type_circulateur",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_type_circulateur",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_type_circulateur",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_type_circulateur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_type_circulateur",
+                    "X": 75,
+                    "Y": 90,
+                    "Width": 299,
+                    "Height": 23,
+                    "TextId": "text_valeur_type_circulateur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_type_circulateur_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 20
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_type_circulateur",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_type_circulateur",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_param_circuit_prim_chgsc_installation",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation"
+            }
+          }
+        ]
       },
       {
         "Name": "Installation_circuit_captage",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -9576,15 +10068,1021 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "ScrollableContainer",
+                "Name": "scrollableContainer",
+                "Y": 149,
+                "Width": 950,
+                "Height": 307,
+                "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
+                "ScrollbarsVisibleOnPressed": true,
+                "ScrollbarsColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ScrollbarsAlpha": 255,
+                "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "container_vitesse_max_pompe_puits",
+                    "X": 486,
+                    "Y": 459,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_vitesse_max_pompe_puits",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_vitesse_max_pompe_puits",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_vitesse_max_pompe_puits",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_vitesse_max_pompe_puits",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_vitesse_max_pompe_puits",
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 53,
+                        "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vitesse_max_pompe_puits",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_vitesse_max_pompe_puits_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_valeur_vitesse_max_pompe_puits",
+                        "X": 75,
+                        "Y": 90,
+                        "Width": 299,
+                        "Height": 23,
+                        "TextId": "text_valeur_vitesse_max_pompe_puits_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_valeur_vitesse_max_pompe_puits_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 4
+                        }
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_gauche_vitesse_max_pompe_puits",
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                        "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_droite_vitesse_max_pompe_puits",
+                        "X": 374,
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                        "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_vitesse_min_pompe_puits",
+                    "X": 15,
+                    "Y": 459,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_vitesse_min_pompe_puits",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_vitesse_min_pompe_puits",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_vitesse_min_pompe_puits",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_vitesse_min_pompe_puits",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_vitesse_min_pompe_puits",
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 53,
+                        "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vitesse_min_pompe_puits",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_vitesse_min_pompe_puits_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_valeur_vitesse_min_pompe_puits",
+                        "X": 75,
+                        "Y": 90,
+                        "Width": 299,
+                        "Height": 23,
+                        "TextId": "text_valeur_vitesse_min_pompe_puits_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_valeur_vitesse_min_pompe_puits_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 4
+                        }
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_gauche_vitesse_min_pompe_puits",
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                        "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_droite_vitesse_min_pompe_puits",
+                        "X": 374,
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                        "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_oui_non_pilotage_pompe_puits",
+                    "X": 15,
+                    "Y": 304,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_oui_non_pilotage_pompe_puits",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_oui_non_pilotage_pompe_puits",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_oui_non_pilotage_pompe_puits",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_oui_non_pilotage_pompe_puits",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_oui_oui_non_pilotage_pompe_puits",
+                        "X": 233,
+                        "Y": 76,
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_non_oui_non_pilotage_pompe_puits",
+                        "Y": 76,
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_question_oui_non_pilotage_pompe_puits",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_oui_non_pilotage_pompe_puits_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_non_oui_non_pilotage_pompe_puits",
+                        "X": 62,
+                        "Y": 89,
+                        "Width": 92,
+                        "Height": 24,
+                        "TextId": "text_non_pilotage_pompe_puits_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_oui_oui_non_pilotage_pompe_puits",
+                        "X": 295,
+                        "Y": 89,
+                        "Width": 92,
+                        "Height": 24,
+                        "TextId": "text_oui_pilotage_pompe_puits_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_vitesse_circulateur",
+                    "X": 486,
+                    "Y": 152,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_vitesse_circulateur",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_vitesse_circulateur",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_vitesse_circulateur",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_vitesse_circulateur",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_vitesse_circulateur",
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 53,
+                        "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vitesse_circulateur",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_vitesse_type_circ_capteur_init_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_valeur_vitesse_circulateur",
+                        "X": 75,
+                        "Y": 90,
+                        "Width": 301,
+                        "Height": 24,
+                        "TextId": "text_valeur_vitesse_type_circ_capteur_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_valeur_vitesse_type_circ_capteur_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 5
+                        }
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_gauche_vitesse_circulateur",
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                        "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_droite_vitesse_circulateur",
+                        "X": 374,
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                        "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_oui_non_marche_forcee",
+                    "X": 15,
+                    "Y": 152,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_oui_non_marche_forcee",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_oui_non_marche_forcee",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_oui_non_marche_forcee",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_oui_non_marche_forcee",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_oui_oui_non_marche_forcee",
+                        "X": 233,
+                        "Y": 76,
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_non_oui_non_marche_forcee",
+                        "Y": 76,
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_question_oui_non_marche_forcee",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_oui_non_marche_forcee_circ_capt_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_non_oui_non_marche_forcee",
+                        "X": 62,
+                        "Y": 89,
+                        "Width": 92,
+                        "Height": 24,
+                        "TextId": "text_non_marche_forcee_circ_capt_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_oui_oui_non_marche_forcee",
+                        "X": 295,
+                        "Y": 89,
+                        "Width": 92,
+                        "Height": 24,
+                        "TextId": "text_oui_marche_forcee_circ_capt_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_type_circulateur",
+                    "X": 486,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_type_circulateur",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_type_circulateur",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_type_circulateur",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_type_circulateur",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_type_circulateur",
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 53,
+                        "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_type_circulateur",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_type_circulateur_capteur_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_valeur_type_circulateur",
+                        "X": 75,
+                        "Y": 90,
+                        "Width": 299,
+                        "Height": 23,
+                        "TextId": "text_valeur_type_circulateur_capteur_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_valeur_type_circulateur_capteur_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 20
+                        }
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_gauche_type_circulateur",
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                        "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_droite_type_circulateur",
+                        "X": 374,
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                        "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_type_capteur",
+                    "X": 15,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_type_capteur",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_type_capteur",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_type_capteur",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_type_capteur",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_type_capteur",
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 53,
+                        "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_type_capteur",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_type_capteur_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_valeur_type_capteur",
+                        "X": 75,
+                        "Y": 90,
+                        "Width": 299,
+                        "Height": 23,
+                        "TextId": "text_valeur_type_capteur_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_valeur_type_capteur_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 14
+                        }
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_gauche_type_capteur",
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                        "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_droite_type_capteur",
+                        "X": 374,
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                        "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_param_circuit_capt_chgsc_installation",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_circuit_captage"
+            }
+          }
+        ]
       },
       {
         "Name": "Installation_ecs",
@@ -9616,10 +11114,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "ScrollableContainer",
@@ -10283,6 +11781,78 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_hysteresis"
             }
+          },
+          {
+            "InteractionName": "BTNClicked_mode_simultane_ecs_chgsc_installation_ecs_simu",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_mode_simultane_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_simultane"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_mode_simultane_off_ecs_chgsc_installation_ecs_simu",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_off_simultane_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_simultane"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_mode_simultane_on_ecs_chgsc_installation_ecs_simu",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_on_simultane_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_simultane"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_cycle_antilegionellose_ecs_chgsc_installation_ecs_cycle_legionel",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_cycle_legionel"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_cycle_legionel"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_cycle_antilegionellose_off_ecs_chgsc_installation_ecs_cycle_legionel",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_off_cycle_legionel"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_cycle_legionel"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_cycle_antilegionellose_on_ecs_chgsc_installation_ecs_cycle_legionel",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_off_cycle_legionel"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_cycle_legionel"
+            }
           }
         ]
       },
@@ -10295,16 +11865,6 @@
             "Name": "Background",
             "Width": 1024,
             "Height": 600
-          },
-          {
-            "Type": "Button",
-            "Name": "button_valider",
-            "X": 899,
-            "Y": 498,
-            "Width": 80,
-            "Height": 56,
-            "Pressed": "Bouton_Valider_L79xH55.png",
-            "Released": "Bouton_Valider_L79xH55.png"
           },
           {
             "Type": "Container",
@@ -10320,6 +11880,16 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
                 "Type": "ScrollableContainer",
@@ -10339,14 +11909,14 @@
                 "Components": [
                   {
                     "Type": "ButtonWithLabel",
-                    "Name": "buttonWithLabel_param_avances_ecs",
+                    "Name": "buttonWithLabel_puissance_echangeur_ecs",
                     "X": 15,
-                    "Y": 304,
+                    "Y": 380,
                     "Width": 449,
                     "Height": 53,
                     "Pressed": "Bouton_Gris_Clicked_L449xH53.png",
                     "Released": "Bouton_Gris_Unclicked_L449xH53.png",
-                    "TextId": "text_param_avances_ecs_centre_defaut",
+                    "TextId": "text_puissance_echangeur_ecs_centre_defaut",
                     "ReleasedColor": {
                       "Red": 255,
                       "Green": 255,
@@ -10358,6 +11928,306 @@
                       "Blue": 255
                     },
                     "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_puissance_appoint_ecs",
+                    "X": 486,
+                    "Y": 304,
+                    "Width": 449,
+                    "Height": 53,
+                    "Pressed": "Bouton_Gris_Clicked_L449xH53.png",
+                    "Released": "Bouton_Gris_Unclicked_L449xH53.png",
+                    "TextId": "text_puissance_appoint_ecs_centre_defaut",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_type_echangeur_ecs",
+                    "X": 15,
+                    "Y": 228,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_type_echangeur_ecs",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_type_echangeur_ecs",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_type_echangeur_ecs",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_type_echangeur_ecs",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_type_echangeur_ecs",
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 53,
+                        "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_question_type_echangeur_ecs",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_type_echangeur_ecs_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_valeur_type_echangeur_ecs",
+                        "X": 143,
+                        "Y": 90,
+                        "Width": 162,
+                        "Height": 23,
+                        "TextId": "text_valeur_type_echangeur_ecs_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_valeur_type_echangeur_ecs_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_gauche_type_echangeur_ecs",
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                        "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_droite_type_echangeur_ecs",
+                        "X": 374,
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                        "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_type_appoint_ecs",
+                    "X": 486,
+                    "Y": 152,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_type_appoint_ecs",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_type_appoint_ecs",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_type_appoint_ecs",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_type_appoint_ecs",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_type_appoint_ecs",
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 53,
+                        "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_question_type_appoint_ecs",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_type_appoint_ecs_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_valeur_type_appoint_ecs",
+                        "X": 143,
+                        "Y": 90,
+                        "Width": 162,
+                        "Height": 23,
+                        "TextId": "text_valeur_type_appoint_ecs_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_valeur_type_appoint_ecs_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 19
+                        }
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_gauche_type_appoint_ecs",
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                        "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_droite_type_appoint_ecs",
+                        "X": 374,
+                        "Y": 76,
+                        "Width": 75,
+                        "Height": 53,
+                        "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                        "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                      }
+                    ]
                   },
                   {
                     "Type": "Container",
@@ -10447,7 +12317,7 @@
                         "Y": 8,
                         "Width": 433,
                         "Height": 60,
-                        "TextId": "text_demande_debut_cycle_ecs_centre_defaut",
+                        "TextId": "text_temps_rotation_vanne_ecs_centre_defaut",
                         "TextRotation": "0",
                         "Color": {
                           "Red": 255,
@@ -10459,11 +12329,11 @@
                       {
                         "Type": "TextArea",
                         "Name": "textArea_valeur_demande_debut_cycle_ecs",
-                        "X": 178,
+                        "X": 143,
                         "Y": 90,
-                        "Width": 92,
-                        "Height": 24,
-                        "TextId": "text_valeur_demande_debut_cycle_ecs_centre_defaut",
+                        "Width": 162,
+                        "Height": 23,
+                        "TextId": "text_valeur_temps_rotation_vanne_ecs_centre_defaut",
                         "TextRotation": "0",
                         "Color": {
                           "Red": 255,
@@ -10471,9 +12341,9 @@
                           "Blue": 255
                         },
                         "Wildcard1": {
-                          "TextId": "text_valeur_demande_debut_cycle_ecs_init_centre_defaut",
+                          "TextId": "text_valeur_temps_rotation_vanne_ecs_init_centre_defaut",
                           "UseBuffer": true,
-                          "BufferSize": 4
+                          "BufferSize": 14
                         }
                       },
                       {
@@ -10567,7 +12437,7 @@
                     "Components": [
                       {
                         "Type": "ButtonWithLabel",
-                        "Name": "buttonWithLabel_cycle_legionel",
+                        "Name": "buttonWithLabel_ejp_ecs",
                         "Width": 449,
                         "Height": 53,
                         "Pressed": "Bouton_Gris_Clicked_L449xH53.png",
@@ -10587,7 +12457,7 @@
                       },
                       {
                         "Type": "ButtonWithLabel",
-                        "Name": "buttonWithLabel_off_cycle_legionel",
+                        "Name": "buttonWithLabel_off_ejp_ecs",
                         "X": 396,
                         "Width": 53,
                         "Height": 53,
@@ -10608,7 +12478,7 @@
                       },
                       {
                         "Type": "ButtonWithLabel",
-                        "Name": "buttonWithLabel_on_cycle_legionel",
+                        "Name": "buttonWithLabel_on_ejp_ecs",
                         "X": 396,
                         "Width": 53,
                         "Height": 53,
@@ -10705,10 +12575,120 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_param_avances_ecs_chsc_installation_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_puiss_ech_ecs_chsc_install_ecs_puiss_ech",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_puissance_echangeur_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_puissance_echangeur"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_puiss_app_ecs_chsc_install_ecs_puiss_app",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_puissance_appoint_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_puissance_appoint"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_solaire_ecs_chgsc_installation_ecs_solaire",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_solaire_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_solaire"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_solaire_ecs_off_chgsc_installation_ecs_solaire",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_off_solaire_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_solaire"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_solaire_ecs_on_chgsc_installation_ecs_solaire",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_on_solaire_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_solaire"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_ejp_ecs_chgsc_installation_ecs_inhibition_ejp",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_ejp_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_inhibition_ejp"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_ejp_ecs_off_chgsc_installation_ecs_inhibition_ejp",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_off_ejp_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_inhibition_ejp"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_ejp_ecs_on_chgsc_installation_ecs_inhibition_ejp",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_on_ejp_ecs"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_inhibition_ejp"
+            }
+          }
+        ]
       },
       {
         "Name": "Installation_ecs_cycle_legionel",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -10736,18 +12716,1045 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_oui_non_cycle_legionel_ecs",
+                "X": 251,
+                "Y": 387,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_cycle_legionel_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_cycle_legionel_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_cycle_legionel_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_cycle_legionel_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_cycle_legionel_ecs",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_cycle_legionel_ecs",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_oui_non_cycle_legionel_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_oui_non_cycle_legionel_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_cycle_legionel_ecs",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_cycle_legionel_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_cycle_legionel_ecs",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_cycle_legionel_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_jour_cycle_legionel_ecs",
+                "X": 486,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_jour_cycle_legionel_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_jour_cycle_legionel_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_jour_cycle_legionel_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_jour_cycle_legionel_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_jour_cycle_legionel_ecs",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_jour_cycle_legionel_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_jour_cycle_legionel_e_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_jour_cycle_legionel_ecs",
+                    "X": 75,
+                    "Y": 90,
+                    "Width": 301,
+                    "Height": 24,
+                    "TextId": "text_valeur_jour_cycle_legionel_e_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_jour_cycle_legionel_e_ecs_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_jour_cycle_legionel_ecs",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_jour_cycle_legionel_ecs",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_heure_cycle_legionel_ecs",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_heure_cycle_legionel_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_heure_cycle_legionel_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_heure_cycle_legionel_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_heure_cycle_legionel_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_heure_cycle_legionel_ecs",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_heure_cycle_legionel_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_heure_cycle_legionel_eau_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_heure_cycle_legionel_ecs",
+                    "X": 178,
+                    "Y": 90,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_valeur_heure_cycle_legionel_eau_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_heure_cycle_legionel_eau_ecs_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 6
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_heure_cycle_legionel_ecs",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_heure_cycle_legionel_ecs",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_cyclme_legionel_ecs_chsc_installation_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Installation_ecs_inhibition_ejp",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_oui_non_inhibition_ejp_ecs",
+                "X": 251,
+                "Y": 387,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_inhibition_ejp_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_inhibition_ejp_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_inhibition_ejp_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_inhibition_ejp_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_inhibition_ejp_ecs",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_inhibition_ejp_ecs",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_oui_non_inhibition_ejp_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_oui_non_inhibition_ejp_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_inhibition_ejp_ecs",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_inhibition_ejp_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_inhibition_ejp_ecs",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_inhibition_ejp_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_text_inhibition_ejp_ecs",
+                "X": 30,
+                "Y": 149,
+                "Width": 890,
+                "Height": 152,
+                "TextId": "text_inhibition_ejp_ecs_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "WideTextAction": 1
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_inhibition_ejp_ecs_chsc_installation_ecs_avance",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_avances"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Installation_ecs_puissance_appoint",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_puissance_appoint_ecs",
+                "X": 250,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_puissance_appoint_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_puissance_appoint_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_puissance_appoint_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_puissance_appoint_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_puissance_appoint_ecs",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_puissance_appoint_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_puissance_app_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_puissance_appoint_ecs",
+                    "X": 156,
+                    "Y": 90,
+                    "Width": 138,
+                    "Height": 23,
+                    "TextId": "text_valeur_type_app_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_type_app_ecs_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 11
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_puissance_appoint_ecs",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_puissance_appoint_ecs",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_puiss_app_ecs_chsc_installation_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_avances"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Installation_ecs_puissance_echangeur",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_puissance_echangeur_ecs",
+                "X": 250,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_puissance_echangeur_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_puissance_echangeur_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_puissance_echangeur_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_puissance_echangeur_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_puissance_echangeur_ecs",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_puissance_echangeur_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_puissance_ech_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_puissance_echangeur_ecs",
+                    "X": 178,
+                    "Y": 90,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_valeur_type_ech_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_type_ech_ecs_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 6
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_puissance_echangeur_ecs",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_puissance_echangeur_ecs",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_puiss_ech_ecs_chsc_installation_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_avances"
+            }
+          }
+        ]
       },
       {
         "Name": "Installation_ecs_simultane",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -10775,15 +13782,780 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_oui_non_simultane_ecs",
+                "X": 251,
+                "Y": 387,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_simultane_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_simultane_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_simultane_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_simultane_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_simultane_ecs",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_simultane_ecs",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_oui_non_simultane_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_oui_non_simultane_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_simultane_ecs",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_simultane_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_simultane_ecs",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_simultane_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_ouverture_min_vanne_ecs",
+                "X": 486,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_ouverture_min_vanne_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_ouverture_min_vanne_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_ouverture_min_vanne_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_ouverture_min_vanne_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ouverture_min_vanne_ecs",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_ouverture_min_vanne_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_ouverture_min_vanne_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_ouverture_min_vanne_ecs",
+                    "X": 75,
+                    "Y": 90,
+                    "Width": 301,
+                    "Height": 24,
+                    "TextId": "text_valeur_ouverture_min_vanne_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_ouverture_min_vanne_ecs_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 19
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_ouverture_min_vanne_ecs",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_ouverture_min_vanne_ecs",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_reduc_temp_consigne_eau_ecs",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_reduc_temp_consigne_eau_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_reduc_temp_consigne_eau_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_reduc_temp_consigne_eau_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_reduc_temp_consigne_eau_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_reduc_temp_consigne_eau_ecs",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_reduc_temp_consigne_eau_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_reduc_temp_eau_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_reduc_temp_consigne_eau_ecs",
+                    "X": 178,
+                    "Y": 90,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_valeur_reduc_temp_eau_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_reduc_temp_eau_ecs_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_reduc_temp_consigne_eau_ecs",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_reduc_temp_consigne_eau_ecs",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_simu_ecs_chsc_installation_ecs",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Installation_ecs_solaire",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_etat_contact_solaire_ecs",
+                "X": 486,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_etat_contact_solaire_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_etat_contact_solaire_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_etat_contact_solaire_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_etat_contact_solaire_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_etat_contact_solaire_ecs",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_etat_contact_solaire_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_etat_contact_solaire_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_etat_contact_solaire_ecs",
+                    "X": 75,
+                    "Y": 90,
+                    "Width": 301,
+                    "Height": 24,
+                    "TextId": "text_valeur_etat_contact_solaire_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_etat_contact_solaire_ecs_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 6
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_etat_contact_solaire_ecs",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_etat_contact_solaire_ecs",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_oui_non_solaire_ecs",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_solaire_ecs",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_solaire_ecs",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_solaire_ecs",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_solaire_ecs",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_solaire_ecs",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_solaire_ecs",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_oui_non_solaire_ecs",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_contact_solaire_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_solaire_ecs",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_solaire_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_solaire_ecs",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_solaire_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_valider_solaire_ecs_chsc_installation_ecs_avance",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_ecs_avances"
+            }
+          }
+        ]
       },
       {
         "Name": "Installation_hysteresis",
@@ -10814,10 +14586,10 @@
                 "Name": "button_valider",
                 "X": 862,
                 "Y": 460,
-                "Width": 80,
-                "Height": 56,
-                "Pressed": "Bouton_Valider_L79xH55.png",
-                "Released": "Bouton_Valider_L79xH55.png"
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               }
             ]
           }
@@ -11158,7 +14930,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Installation",
+    "StartupScreenName": "Installation_ecs",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

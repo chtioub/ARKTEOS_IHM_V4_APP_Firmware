@@ -146,6 +146,18 @@
     <ClCompile Include="..\..\gui\src\installation_wattmetre_screen\Installation_wattmetrePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_wattmetre_screen\Installation_wattmetreView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_wattmetre_screen\Installation_wattmetreViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_ecs_solaire_screen\Installation_ecs_solairePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_ecs_solaire_screen\Installation_ecs_solaireView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -421,6 +433,18 @@
     <ClInclude Include="..\..\gui\include\gui\installation_wattmetre_screen\Installation_wattmetrePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_wattmetre_screen\Installation_wattmetreView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_wattmetre_screen\Installation_wattmetreViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_solaire_screen\Installation_ecs_solairePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_solaire_screen\Installation_ecs_solaireView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

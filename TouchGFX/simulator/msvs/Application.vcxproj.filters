@@ -652,6 +652,54 @@
     <Filter Include="Source Files\generated\gui_generated\installation_piscine_screen">
       <UniqueIdentifier>48DD8FD0-26EA-F6AF-ED0A-765E588614B6</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_solaire_screen">
+      <UniqueIdentifier>87057B7D-2C08-116F-B19C-FD6D9F426675</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_solaire_screen">
+      <UniqueIdentifier>C5672D37-7129-632E-2F35-6DD99427124B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_puissance_echangeur_screen">
+      <UniqueIdentifier>7E7B09F2-0BA5-C672-D1EF-CB610B2858A7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_puissance_echangeur_screen">
+      <UniqueIdentifier>F19D84B9-DD4D-F030-75B4-A9C20F4F12E4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_puissance_appoint_screen">
+      <UniqueIdentifier>655F82B1-9C5D-1BD1-2DB4-13753C27A214</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_puissance_appoint_screen">
+      <UniqueIdentifier>93EF96D5-A644-06D6-5DB2-4C6E9FC712BF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_inhibition_ejp_screen">
+      <UniqueIdentifier>6EC5BD05-C489-53B5-38D5-EC7900A02611</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_inhibition_ejp_screen">
+      <UniqueIdentifier>F84D204B-DCEC-56C0-0819-A69ECEFC2D34</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_inhibition_ejp_screen">
+      <UniqueIdentifier>94B70EF4-92EB-F750-CEB1-700A46BEC501</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_inhibition_ejp_screen">
+      <UniqueIdentifier>30414A48-0812-55CB-098B-1A1CEE4161AD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_puissance_appoint_screen">
+      <UniqueIdentifier>0AB12036-0BBD-F9A7-AF9B-B5ED7ADC220F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_puissance_appoint_screen">
+      <UniqueIdentifier>B9818383-DEB2-9514-6384-9A726BBCE21A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_puissance_echangeur_screen">
+      <UniqueIdentifier>D9A3C76E-CF10-D24D-EAAA-0AD2D4B31D09</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_puissance_echangeur_screen">
+      <UniqueIdentifier>B45D7151-6261-1912-E94A-320663BF9885</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_solaire_screen">
+      <UniqueIdentifier>0A6ABC9B-1A44-25F2-ACBC-0CC1D7FEDAA8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_solaire_screen">
+      <UniqueIdentifier>13D9251E-9B32-DB45-66BE-6EDEEB4334D3</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1058,6 +1106,42 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_wattmetre_screen\Installation_wattmetreViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_wattmetre_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_inhibition_ejp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpView.cpp">
+      <Filter>Source Files\gui\installation_ecs_inhibition_ejp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_inhibition_ejp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_puissance_appoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointView.cpp">
+      <Filter>Source Files\gui\installation_ecs_puissance_appoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_puissance_appoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurView.cpp">
+      <Filter>Source Files\gui\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_solaire_screen\Installation_ecs_solairePresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_solaire_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_solaire_screen\Installation_ecs_solaireView.cpp">
+      <Filter>Source Files\gui\installation_ecs_solaire_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_solaire_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1875,6 +1959,42 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_wattmetre_screen\Installation_wattmetreViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_wattmetre_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_inhibition_ejp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpView.hpp">
+      <Filter>Header Files\gui\installation_ecs_inhibition_ejp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_inhibition_ejp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_puissance_appoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointView.hpp">
+      <Filter>Header Files\gui\installation_ecs_puissance_appoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_puissance_appoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurView.hpp">
+      <Filter>Header Files\gui\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_solaire_screen\Installation_ecs_solairePresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_solaire_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_solaire_screen\Installation_ecs_solaireView.hpp">
+      <Filter>Header Files\gui\installation_ecs_solaire_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_solaire_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
