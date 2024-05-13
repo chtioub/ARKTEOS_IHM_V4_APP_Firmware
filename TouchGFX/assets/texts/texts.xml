@@ -2153,6 +2153,76 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_pression_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1.7 bars</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_pression_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_temp_ext_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">7.0°C</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_temp_ext_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_etat_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Etat</Translation>
+        <Translation Language="GB">Etat</Translation>
+        <Translation Language="PT">Etat</Translation>
+        <Translation Language="NL">Etat</Translation>
+        <Translation Language="DE">Etat</Translation>
+      </Text>
+      <Text Id="text_ecs_bas_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">20.0°C</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ecs_milieu_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">25.6°C</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ecs_bas_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_ecs_milieu_init_droite_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">25.6°C</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ecs_milieu_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
       <Text Id="text_valeur_vitesse_max_pompe_puits_init_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">100</Translation>
         <Translation Language="GB">New Text</Translation>

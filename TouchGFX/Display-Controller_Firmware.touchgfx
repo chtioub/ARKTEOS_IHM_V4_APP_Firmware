@@ -87,9 +87,45 @@
                 "AutoSize": true
               },
               {
+                "Type": "TextArea",
+                "Name": "textArea_ecs_milieu",
+                "X": 767,
+                "Y": 409,
+                "Width": 94,
+                "Height": 21,
+                "TextId": "text_ecs_milieu_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_ecs_milieu_init_centre_defaut"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_ecs_bas",
+                "X": 767,
+                "Y": 471,
+                "Width": 94,
+                "Height": 21,
+                "TextId": "text_ecs_bas_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_ecs_bas_init_centre_defaut"
+                }
+              },
+              {
                 "Type": "Image",
                 "Name": "Image_sondes_ecs",
-                "X": 834,
+                "X": 870,
                 "Y": 409,
                 "Width": 65,
                 "Height": 83,
@@ -98,7 +134,7 @@
               {
                 "Type": "Image",
                 "Name": "Image_sondes_ecs_relance",
-                "X": 834,
+                "X": 870,
                 "Y": 409,
                 "Width": 65,
                 "Height": 83,
@@ -107,7 +143,7 @@
               {
                 "Type": "Image",
                 "Name": "Image_bouclage_ecs",
-                "X": 770,
+                "X": 790,
                 "Y": 440,
                 "Width": 50,
                 "Height": 24,
@@ -116,7 +152,7 @@
               {
                 "Type": "Line",
                 "Name": "line_4",
-                "X": 739,
+                "X": 757,
                 "Y": 399,
                 "Width": 3,
                 "Height": 102,
@@ -133,18 +169,37 @@
                 "LineEndingStyle": "Round"
               },
               {
+                "Type": "TextArea",
+                "Name": "textArea_temp_ext",
+                "X": 572,
+                "Y": 480,
+                "Width": 185,
+                "Height": 21,
+                "TextId": "text_temp_ext_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_temp_ext_init_centre_defaut"
+                }
+              },
+              {
                 "Type": "Image",
                 "Name": "Image_degivrage",
-                "X": 693,
+                "X": 708,
                 "Y": 420,
                 "Width": 30,
                 "Height": 38,
+                "Visible": false,
                 "RelativeFilename": "Etat_Temp_Exterieure_Defrost_L30xH38.png"
               },
               {
                 "Type": "Circle",
                 "Name": "circle_sonde_ext_2",
-                "X": 673,
+                "X": 688,
                 "Y": 446,
                 "Width": 14,
                 "Height": 14,
@@ -162,7 +217,7 @@
               {
                 "Type": "Circle",
                 "Name": "circle_sonde_ext_1",
-                "X": 668,
+                "X": 683,
                 "Y": 441,
                 "Width": 24,
                 "Height": 24,
@@ -181,7 +236,7 @@
               {
                 "Type": "Image",
                 "Name": "Image_maison_temp_ext",
-                "X": 606,
+                "X": 621,
                 "Y": 410,
                 "Width": 67,
                 "Height": 58,
@@ -190,7 +245,7 @@
               {
                 "Type": "Line",
                 "Name": "line_3",
-                "X": 556,
+                "X": 569,
                 "Y": 399,
                 "Width": 3,
                 "Height": 102,
@@ -207,10 +262,28 @@
                 "LineEndingStyle": "Round"
               },
               {
+                "Type": "TextArea",
+                "Name": "textArea_pression",
+                "X": 384,
+                "Y": 480,
+                "Width": 183,
+                "Height": 21,
+                "TextId": "text_pression_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_pression_init_centre_defaut"
+                }
+              },
+              {
                 "Type": "Image",
                 "Name": "Image_pression_aero",
-                "X": 429,
-                "Y": 429,
+                "X": 439,
+                "Y": 430,
                 "Width": 72,
                 "Height": 40,
                 "RelativeFilename": "Etat_Pression_Eau_L72xH40.png"
@@ -218,8 +291,8 @@
               {
                 "Type": "Image",
                 "Name": "Image_pression_geo",
-                "X": 383,
-                "Y": 429,
+                "X": 393,
+                "Y": 430,
                 "Width": 164,
                 "Height": 40,
                 "Visible": false,
@@ -228,7 +301,7 @@
               {
                 "Type": "Line",
                 "Name": "line_2",
-                "X": 373,
+                "X": 381,
                 "Y": 399,
                 "Width": 3,
                 "Height": 102,
@@ -245,9 +318,24 @@
                 "LineEndingStyle": "Round"
               },
               {
+                "Type": "TextArea",
+                "Name": "textArea_etat",
+                "X": 197,
+                "Y": 480,
+                "Width": 183,
+                "Height": 21,
+                "TextId": "text_etat_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
                 "Type": "Line",
                 "Name": "line_1",
-                "X": 190,
+                "X": 193,
                 "Y": 399,
                 "Width": 3,
                 "Height": 102,
@@ -4100,6 +4188,30 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_circuit_primaire"
             }
+          },
+          {
+            "InteractionName": "BTNClicked_param_circ_capt_off_chgsc_installation_circ_capt",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_param_circ_capt_off"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_circuit_captage"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_param_circ_capt_on_chgsc_installation_circ_capt",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_param_circ_capt_on"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_circuit_captage"
+            }
           }
         ]
       },
@@ -4582,6 +4694,55 @@
                               "Green": 255,
                               "Blue": 255
                             }
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_bonne_zone_2",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "RelativeFilename": "Etat_Reception_RF_Bonne_L184xH71.png"
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_excellente_zone_2",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "Visible": false,
+                            "RelativeFilename": "Etat_Reception_RF_Excellente_L184xH71.png"
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_faible_zone_2",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "Visible": false,
+                            "RelativeFilename": "Etat_Reception_RF_Faible_L184xH71.png"
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_mauvaise_zone_2",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "Visible": false,
+                            "RelativeFilename": "Etat_Reception_RF_Mauvaise_L184xH71.png"
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_moyenne_zone_2",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "Visible": false,
+                            "RelativeFilename": "Etat_Reception_RF_Moyenne_L184xH71.png"
                           }
                         ]
                       },
@@ -5159,6 +5320,55 @@
                               "Green": 255,
                               "Blue": 255
                             }
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_bonne_zone_1",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "RelativeFilename": "Etat_Reception_RF_Bonne_L184xH71.png"
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_excellente_zone_1",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "Visible": false,
+                            "RelativeFilename": "Etat_Reception_RF_Excellente_L184xH71.png"
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_faible_zone_1",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "Visible": false,
+                            "RelativeFilename": "Etat_Reception_RF_Faible_L184xH71.png"
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_mauvaise_zone_1",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "Visible": false,
+                            "RelativeFilename": "Etat_Reception_RF_Mauvaise_L184xH71.png"
+                          },
+                          {
+                            "Type": "Image",
+                            "Name": "Image_rf_moyenne_zone_1",
+                            "X": 245,
+                            "Y": 54,
+                            "Width": 184,
+                            "Height": 71,
+                            "Visible": false,
+                            "RelativeFilename": "Etat_Reception_RF_Moyenne_L184xH71.png"
                           }
                         ]
                       },
