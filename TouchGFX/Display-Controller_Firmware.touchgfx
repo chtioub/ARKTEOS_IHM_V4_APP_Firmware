@@ -318,6 +318,16 @@
                 "LineEndingStyle": "Round"
               },
               {
+                "Type": "ScalableImage",
+                "Name": "scalableImage_maison_etat",
+                "X": 211,
+                "Y": 417,
+                "Width": 67,
+                "Height": 58,
+                "Filename": "Etat_Maison_L67xH58.png",
+                "ScalingAlgorithm": "Nearest-neighbor"
+              },
+              {
                 "Type": "TextArea",
                 "Name": "textArea_etat",
                 "X": 197,
@@ -421,6 +431,23 @@
                     "Width": 75,
                     "Height": 66,
                     "RelativeFilename": "Etat_Bouton_Piscine_L75xH66.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_piscine",
+                    "Y": 15,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_piscine_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_temp_piscine_init_centre_defaut"
+                    }
                   }
                 ]
               },
@@ -519,6 +546,23 @@
                     "LineWidth": 2.0,
                     "EndAngle": 360.0,
                     "CapPrecision": "Round"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_zone_2",
+                    "Y": 15,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_zone_2_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_temp_zone_2_init_centre_defaut"
+                    }
                   }
                 ]
               },
@@ -560,6 +604,23 @@
                     "Width": 59,
                     "Height": 61,
                     "RelativeFilename": "Etat_Bouton_ECS_L59xH61.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_ecs",
+                    "Y": 15,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_temp_ecs_init_centre_defaut"
+                    }
                   }
                 ]
               },
@@ -658,6 +719,23 @@
                     "LineWidth": 2.0,
                     "EndAngle": 360.0,
                     "CapPrecision": "Round"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_zone_1",
+                    "Y": 15,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_zone_1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_temp_zone_1_init_centre_defaut"
+                    }
                   }
                 ]
               },
@@ -1344,6 +1422,21 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_consigne",
+                "X": 230,
+                "Y": 490,
+                "Width": 491,
+                "Height": 27,
+                "TextId": "text_temp_cons_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
               }
             ]
           }
@@ -1707,6 +1800,7 @@
       },
       {
         "Name": "Infos_systeme",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -1728,6 +1822,2803 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "ScrollableContainer",
+                "Name": "scrollableContainer",
+                "Y": 149,
+                "Width": 950,
+                "Height": 307,
+                "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
+                "ScrollbarsVisibleOnPressed": true,
+                "ScrollbarsColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ScrollbarsAlpha": 255,
+                "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_10",
+                    "X": 17,
+                    "Y": 313,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_10",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_10",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_10",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_9",
+                    "X": 17,
+                    "Y": 280,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_9",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_9",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_9",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_8",
+                    "X": 17,
+                    "Y": 247,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_8",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_8",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_8",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_7",
+                    "X": 17,
+                    "Y": 211,
+                    "Width": 236,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_7",
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_7",
+                        "Y": 33,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_gauche_gris_7",
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_7",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_6",
+                    "X": 17,
+                    "Y": 168,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_6",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_6",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_6",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_5",
+                    "X": 17,
+                    "Y": 135,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_5",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_5",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_5",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_4",
+                    "X": 17,
+                    "Y": 102,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_4",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_4",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_4",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_3",
+                    "X": 17,
+                    "Y": 69,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_3",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_3",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_3",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_2",
+                    "X": 17,
+                    "Y": 36,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_2",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_2",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_2",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_gris_1",
+                    "X": 17,
+                    "Width": 236,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_gris_1",
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_gris_1",
+                        "Y": 33,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_gauche_gris_1",
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_gris_1",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_gamme",
+                        "X": 13,
+                        "Y": 6,
+                        "Width": 211,
+                        "Height": 27,
+                        "TextId": "text_infos_systeme_gamme_droite_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_10",
+                    "X": 259,
+                    "Y": 313,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_10",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_10",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_10",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_9",
+                    "X": 259,
+                    "Y": 280,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_9",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_9",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_9",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_8",
+                    "X": 259,
+                    "Y": 247,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_8",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_8",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_8",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_7",
+                    "X": 259,
+                    "Y": 211,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_7",
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_7",
+                        "Y": 33,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_gauche_blanc_7",
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_7",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_6",
+                    "X": 259,
+                    "Y": 168,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_6",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_6",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_6",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_5",
+                    "X": 259,
+                    "Y": 135,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_5",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_5",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_5",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_4",
+                    "X": 259,
+                    "Y": 102,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_4",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_4",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_4",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_3",
+                    "X": 259,
+                    "Y": 69,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_3",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_3",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_3",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_2",
+                    "X": 259,
+                    "Y": 36,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_2",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_2",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_2",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_gauche_blanc_1",
+                    "X": 259,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_gauche_blanc_1",
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_gauche_blanc_1",
+                        "Y": 33,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_gauche_blanc_1",
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_gauche_blanc_1",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_8",
+                    "X": 725,
+                    "Y": 234,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_8",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_8",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_8",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_7",
+                    "X": 725,
+                    "Y": 201,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_7",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_7",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_7",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_6",
+                    "X": 725,
+                    "Y": 168,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_6",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_6",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_6",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_5",
+                    "X": 725,
+                    "Y": 135,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_5",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_5",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_5",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_4",
+                    "X": 725,
+                    "Y": 102,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_4",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_4",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_4",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_3",
+                    "X": 725,
+                    "Y": 69,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_3",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_3",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_3",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_2",
+                    "X": 725,
+                    "Y": 36,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_2",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_2",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_2",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_1",
+                    "X": 725,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_1",
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_1",
+                        "Y": 33,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_droite_blanc_1",
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_1",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_4_1",
+                    "X": 725,
+                    "Y": 384,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_4_1",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_4_1",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_4_1",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_11",
+                    "X": 725,
+                    "Y": 351,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_11",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_11",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_11",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_10",
+                    "X": 725,
+                    "Y": 318,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_10",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_10",
+                        "Y": 30,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_10",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_blanc_9",
+                    "X": 725,
+                    "Y": 282,
+                    "Width": 208,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_blanc_9",
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_blanc_9",
+                        "Y": 33,
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_droite_blanc_9",
+                        "Width": 208,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartY": 1.5,
+                        "EndX": 208.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_blanc_9",
+                        "X": 205,
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_12",
+                    "X": 483,
+                    "Y": 384,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_12",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_12",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_12",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_11",
+                    "X": 483,
+                    "Y": 351,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_11",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_11",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_11",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_10",
+                    "X": 483,
+                    "Y": 318,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_2_1",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_2_1",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_10",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_9",
+                    "X": 483,
+                    "Y": 282,
+                    "Width": 236,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_9",
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_9",
+                        "Y": 33,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_droite_gris_9",
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_9",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_8",
+                    "X": 483,
+                    "Y": 234,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_8",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_8",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_8",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_7",
+                    "X": 483,
+                    "Y": 201,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_7",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_7",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_7",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_6",
+                    "X": 483,
+                    "Y": 168,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_6",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_6",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_6",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_5",
+                    "X": 483,
+                    "Y": 135,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_5",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_5",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_5",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_4",
+                    "X": 483,
+                    "Y": 102,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_4",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_4",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_4",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_3",
+                    "X": 483,
+                    "Y": 69,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_3",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_3",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_3",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_2",
+                    "X": 483,
+                    "Y": 36,
+                    "Width": 236,
+                    "Height": 33,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_2",
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_2",
+                        "Y": 30,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_2",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 33,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 33.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_droite_gris_1",
+                    "X": 483,
+                    "Width": 236,
+                    "Height": 36,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_droite_gris_1",
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_droite_gris_1",
+                        "Y": 33,
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_droite_gris_1",
+                        "Width": 236,
+                        "Height": 3,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartY": 1.5,
+                        "EndX": 236.0,
+                        "EndY": 1.5,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_droite_gris_1",
+                        "X": 233,
+                        "Width": 3,
+                        "Height": 36,
+                        "Color": {
+                          "Red": 102,
+                          "Green": 102,
+                          "Blue": 102
+                        },
+                        "StartX": 1.5,
+                        "EndX": 1.5,
+                        "EndY": 36.0,
+                        "LineWidth": 3.0,
+                        "LineEndingStyle": "Round"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -2477,6 +5368,162 @@
                 "Width": 34,
                 "Height": 63,
                 "RelativeFilename": "Etat_Bouton_Appoint_Elec_L33xH63.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_gris",
+                "X": 109,
+                "Y": 407,
+                "Width": 732,
+                "Height": 101,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_gris_plus",
+                    "X": 652,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_Beige_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_Beige_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_gris",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 514,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
+                    "BackgroundSelected": "Barre_Consigne_L495xH10.png",
+                    "Indicator": "Balle_Chauffe_Eau_Relance_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gris_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_Beige_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_Beige_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_gris",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_ecs_temp_gris_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_ecs_temp_gris_init_centre_defaut"
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_relance",
+                    "X": 121,
+                    "Y": 74,
+                    "Width": 491,
+                    "Height": 27,
+                    "TextId": "text_temp_relance_ecs_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_rose",
+                "X": 109,
+                "Y": 301,
+                "Width": 732,
+                "Height": 101,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_rose_plus",
+                    "X": 652,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_Rose_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_Rose_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_rose",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 514,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
+                    "BackgroundSelected": "Barre_Consigne_L495xH10.png",
+                    "Indicator": "Balle_Chauffe_Eau_Consigne_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_rose_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_Rose_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_Rose_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_rose",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_ecs_temp_rose_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_ecs_temp_rose_init_centre_defaut"
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_consigne",
+                    "X": 121,
+                    "Y": 74,
+                    "Width": 491,
+                    "Height": 27,
+                    "TextId": "text_temp_cons_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
               },
               {
                 "Type": "Container",
@@ -7113,12 +10160,12 @@
                 "Height": 102,
                 "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
                 "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                "IconPressed": "Etat_Bouton_Date_Heure_L52xH52.png",
-                "IconReleased": "Etat_Bouton_Date_Heure_L52xH52.png",
-                "IconX": 58,
-                "IconY": 11,
-                "IconHeight": 52,
-                "IconWidth": 52
+                "IconPressed": "Etat_Bouton_Luminosite_L62xH62.png",
+                "IconReleased": "Etat_Bouton_Luminosite_L62xH62.png",
+                "IconX": 53,
+                "IconY": 5,
+                "IconHeight": 62,
+                "IconWidth": 62
               },
               {
                 "Type": "TextArea",
@@ -7206,12 +10253,12 @@
                 "Height": 102,
                 "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
                 "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                "IconPressed": "Etat_Bouton_Langues_L66xH62.png",
-                "IconReleased": "Etat_Bouton_Langues_L66xH62.png",
-                "IconX": 51,
-                "IconY": 5,
-                "IconHeight": 62,
-                "IconWidth": 66
+                "IconPressed": "Etat_Bouton_Calibrage_L79xH59.png",
+                "IconReleased": "Etat_Bouton_Calibrage_L79xH59.png",
+                "IconX": 46,
+                "IconY": 8,
+                "IconHeight": 59,
+                "IconWidth": 79
               },
               {
                 "Type": "TextArea",
@@ -7231,7 +10278,20 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_param_position_ecran_chgsc_position_ecran",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_position_ecran"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Position_ecran"
+            }
+          }
+        ]
       },
       {
         "Name": "Secours",
@@ -8017,6 +11077,7 @@
       },
       {
         "Name": "Vacances",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -8038,6 +11099,1257 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_nb_jours_absence",
+                "X": 486,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_nb_jours_absence",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_nb_jours_absence",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_nb_jours_absence",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_nb_jours_absence",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_nb_jours_absence",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_nb_jours_absence",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_nb_jours_absence_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_nb_jours_absence",
+                    "X": 75,
+                    "Y": 90,
+                    "Width": 301,
+                    "Height": 24,
+                    "TextId": "text_valeur_nb_jours_absence_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_valeur_nb_jours_absence_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 9
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_nb_jours_absence",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_nb_jours_absence",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_oui_non_vacances",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_vacances",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_vacances",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_vacances",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_vacances",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_vacances",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_vacances",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_non_vacances",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_question_vacances_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_vacances",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_vacances",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "ScrollableContainer",
+                "Name": "scrollableContainer",
+                "Y": 297,
+                "Width": 950,
+                "Height": 159,
+                "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
+                "ScrollbarsVisibleOnPressed": true,
+                "ScrollbarsColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ScrollbarsAlpha": 255,
+                "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "container_ecs",
+                    "X": 15,
+                    "Y": 666,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_ecs",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_ecs",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_accueil_ecs_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_piscine",
+                    "X": 15,
+                    "Y": 592,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_piscine",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_piscine_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Vert_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Vert_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_piscine",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Piscine_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_piscine_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Vert_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Vert_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_piscine",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_8_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_8_temp_orange_init_centre_defaut",
+                              "UseBuffer": true,
+                              "BufferSize": 7
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_piscine",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_piscine",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_accueil_piscine_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_8",
+                    "X": 15,
+                    "Y": 518,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_zone_8",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_8_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_zone_8",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_8_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_zone_8",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_8_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_8_temp_orange_init_centre_defaut",
+                              "UseBuffer": true,
+                              "BufferSize": 7
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_zone_8",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_zone_8",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_zone_8_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_zone_8_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_7",
+                    "X": 15,
+                    "Y": 444,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_zone_7",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_7_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_zone_7",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_7_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_zone_7",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_7_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_7_temp_orange_init_centre_defaut",
+                              "UseBuffer": true,
+                              "BufferSize": 7
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_zone_7",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_zone_7",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_zone_7_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_zone_7_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_6",
+                    "X": 15,
+                    "Y": 370,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_zone_6",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_6_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_zone_6",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_6_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_zone_6",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_6_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_6_temp_orange_init_centre_defaut",
+                              "UseBuffer": true,
+                              "BufferSize": 7
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_zone_6",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_zone_6",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_zone_6_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_zone_6_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_5",
+                    "X": 15,
+                    "Y": 296,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_zone_5",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_5_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_zone_5",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_5_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_zone_5",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_5_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_5_temp_orange_init_centre_defaut",
+                              "UseBuffer": true,
+                              "BufferSize": 7
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_zone_5",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_zone_5",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_zone_5_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_zone_5_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_4",
+                    "X": 15,
+                    "Y": 222,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_zone_4",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_4_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_zone_4",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_4_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_zone_4",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_4_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_4_temp_orange_init_centre_defaut",
+                              "UseBuffer": true,
+                              "BufferSize": 7
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_zone_4",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_zone_4",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_zone_4_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_zone_4_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_3",
+                    "X": 15,
+                    "Y": 148,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_zone_3",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_3_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_zone_3",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_3_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_zone_3",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_3_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_3_temp_orange_init_centre_defaut"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_zone_3",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_zone_3",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_zone_3_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_zone_3_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_2",
+                    "X": 15,
+                    "Y": 74,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_zone_2",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_2_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_zone_2",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_2_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_zone_2",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_2_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_2_temp_orange_init_centre_defaut",
+                              "UseBuffer": true,
+                              "BufferSize": 7
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_zone_2",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_zone_2",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_zone_2_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_zone_2_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_1",
+                    "X": 15,
+                    "Width": 920,
+                    "Height": 74,
+                    "Components": [
+                      {
+                        "Type": "Container",
+                        "Name": "container_slider_zone_1",
+                        "X": 285,
+                        "Width": 600,
+                        "Height": 74,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_1_plus",
+                            "X": 520,
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "Slider",
+                            "Name": "slider_zone_1",
+                            "X": 107,
+                            "Y": 13,
+                            "Width": 386,
+                            "Height": 30,
+                            "IsHorizontalSlider": true,
+                            "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                            "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                            "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                            "BackgroundX": 19,
+                            "BackgroundY": 11,
+                            "IndicatorMax": 356,
+                            "ValueMax": 300,
+                            "ValueMin": 120,
+                            "InitValue": 120
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_zone_1_moins",
+                            "Width": 80,
+                            "Height": 56,
+                            "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                            "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_zone_1",
+                            "X": 80,
+                            "Y": 51,
+                            "Width": 83,
+                            "Height": 23,
+                            "TextId": "text_zone_1_temp_orange_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_zone_1_temp_orange_init_centre_defaut",
+                              "UseBuffer": true,
+                              "BufferSize": 7
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_zone_1",
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances_zone_1",
+                        "X": 2,
+                        "Y": 16,
+                        "Width": 214,
+                        "Height": 24,
+                        "TextId": "text_zone_1_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_zone_1_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }
@@ -8050,6 +12362,7 @@
           {
             "Type": "Box",
             "Name": "Background",
+            "X": -1,
             "Width": 1024,
             "Height": 600
           },
@@ -8067,6 +12380,195 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_rouge",
+                "X": 269,
+                "Y": 410,
+                "Width": 600,
+                "Height": 74,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_rouge_plus",
+                    "X": 520,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_Rouge_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_Rouge_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_rouge",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 386,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                    "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                    "Indicator": "Balle_Chaud_Confort_Plus_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_rouge_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_Rouge_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_Rouge_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_rouge",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_zone_temp_rouge_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_zone_temp_rouge_init_centre_defaut"
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_orange",
+                "X": 269,
+                "Y": 336,
+                "Width": 600,
+                "Height": 74,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_orange_plus",
+                    "X": 520,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_Orange_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_Orange_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_orange",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 386,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                    "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                    "Indicator": "Balle_Chaud_Confort_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_orange_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_Orange_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_Orange_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_orange",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_zone_temp_orange_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_zone_temp_orange_init_centre_defaut"
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_jaune",
+                "X": 269,
+                "Y": 262,
+                "Width": 600,
+                "Height": 74,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_jaune_plus",
+                    "X": 520,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_Jaune_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_Jaune_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_jaune",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 386,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                    "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                    "Indicator": "Balle_Chaud_Reduit_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_jaune_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_Jaune_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_Jaune_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_jaune",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_zone_temp_jaune_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_zone_temp_jaune_init_centre_defaut"
+                    }
+                  }
+                ]
               },
               {
                 "Type": "Container",
@@ -8345,6 +12847,21 @@
                 "Width": 168,
                 "Height": 28,
                 "TextId": "text_zone_chaud_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_consigne",
+                "X": 324,
+                "Y": 484,
+                "Width": 491,
+                "Height": 27,
+                "TextId": "text_temp_cons_centre_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -14724,7 +19241,7 @@
                     "Y": 89,
                     "Width": 92,
                     "Height": 24,
-                    "TextId": "text_non_solaire_ecs_centre_defaut",
+                    "TextId": "text_non_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -14739,7 +19256,7 @@
                     "Y": 89,
                     "Width": 92,
                     "Height": 24,
-                    "TextId": "text_oui_solaire_ecs_centre_defaut",
+                    "TextId": "text_oui_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -14800,6 +19317,413 @@
                 "Height": 55,
                 "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
                 "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Slider",
+                "Name": "slider_hysteresis",
+                "X": 46,
+                "Y": 231,
+                "Width": 844,
+                "Height": 63,
+                "IsHorizontalSlider": true,
+                "BackgroundUnselected": "Hysteresis_L844xH63-79.png",
+                "BackgroundSelected": "Hysteresis_L844xH63-79.png",
+                "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_round_dark.png",
+                "IndicatorPos": 16,
+                "IndicatorMax": 783,
+                "IndicatorMin": 5,
+                "ValueMax": 40,
+                "ValueMin": -40,
+                "InitValue": 40
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Langue",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_choix_langue",
+                "X": 251,
+                "Y": 331,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_choix_langue",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_choix_langue",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_choix_langue",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_choix_langue",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_choix_langue",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_choix_langue",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_choix_langue_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_choix_langue",
+                    "X": 178,
+                    "Y": 90,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_choix_langue_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_choix_langue_valeur_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 6
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_choix_langue",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_choix_langue",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_portugais",
+                "X": 391,
+                "Y": 195,
+                "Width": 170,
+                "Height": 113,
+                "Visible": false,
+                "RelativeFilename": "Drapeau_Portugais_L169xH112.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_neerlandais",
+                "X": 391,
+                "Y": 195,
+                "Width": 169,
+                "Height": 112,
+                "Visible": false,
+                "RelativeFilename": "Drapeau_Neerlandais_L169xH112.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_francais",
+                "X": 391,
+                "Y": 195,
+                "Width": 169,
+                "Height": 112,
+                "RelativeFilename": "Drapeau_Francais_L169xH112.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_anglais",
+                "X": 391,
+                "Y": 195,
+                "Width": 169,
+                "Height": 112,
+                "Visible": false,
+                "RelativeFilename": "Drapeau_Anglaisd_L169xH112.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_allemand",
+                "X": 391,
+                "Y": 195,
+                "Width": 169,
+                "Height": 112,
+                "Visible": false,
+                "RelativeFilename": "Drapeau_Allemand_L169xH112.png"
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Position_ecran",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Line",
+                "Name": "line_haut",
+                "Width": 950,
+                "Height": 2,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "StartY": 1.0,
+                "EndX": 950.0,
+                "EndY": 1.0,
+                "LineWidth": 2.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "line_bas",
+                "Y": 522,
+                "Width": 950,
+                "Height": 2,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "StartY": 1.0,
+                "EndX": 950.0,
+                "EndY": 1.0,
+                "LineWidth": 2.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "line_gauche",
+                "Width": 2,
+                "Height": 524,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "StartX": 1.0,
+                "EndX": 1.0,
+                "EndY": 540.0,
+                "LineWidth": 2.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Line",
+                "Name": "line_droite",
+                "X": 948,
+                "Width": 2,
+                "Height": 524,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "StartX": 1.0,
+                "EndX": 1.0,
+                "EndY": 540.0,
+                "LineWidth": 2.0,
+                "LineEndingStyle": "Round"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_haut",
+                "X": 438,
+                "Y": 126,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Haute_Clicked_L75xH53.png",
+                "Released": "Fleche_Haute_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_bas",
+                "X": 438,
+                "Y": 460,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Basse_Clicked_L75xH53.png",
+                "Released": "Fleche_Basse_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_droite",
+                "X": 862,
+                "Y": 236,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_gauche",
+                "X": 13,
+                "Y": 236,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_position",
+                "X": 88,
+                "Y": 249,
+                "Width": 774,
+                "Height": 27,
+                "TextId": "text_position_ecran_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
               }
             ]
           }
@@ -15140,7 +20064,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Installation_ecs",
+    "StartupScreenName": "Vacances",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

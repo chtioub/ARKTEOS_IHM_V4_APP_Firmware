@@ -700,6 +700,30 @@
     <Filter Include="Header Files\generated\gui_generated\installation_ecs_solaire_screen">
       <UniqueIdentifier>13D9251E-9B32-DB45-66BE-6EDEEB4334D3</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\position_ecran_screen">
+      <UniqueIdentifier>B526D8E1-C7DD-E63A-D00D-1F061400B425</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\position_ecran_screen">
+      <UniqueIdentifier>DAD2539E-BA49-E519-CC61-AB7133AB9081</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\position_ecran_screen">
+      <UniqueIdentifier>8B797FE2-6EBA-4B56-1B17-3B9D4B10EDC9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\position_ecran_screen">
+      <UniqueIdentifier>B6FDF137-9E2D-6AEC-C3B3-6F4DB4EB763C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\langue_screen">
+      <UniqueIdentifier>E4D1EEAC-D1B8-1242-DFAC-6C77B3BFAD7E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\langue_screen">
+      <UniqueIdentifier>D955A05E-C4ED-7C91-532B-4FD9D9B13775</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\langue_screen">
+      <UniqueIdentifier>614E53D4-D4FD-26A4-B27B-E96362E4FFFB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\langue_screen">
+      <UniqueIdentifier>64D7A06F-22B1-A628-5CE1-C7B17E3AA2BB</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1142,6 +1166,24 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_ecs_solaire_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\position_ecran_screen\Position_ecranPresenter.cpp">
+      <Filter>Source Files\gui\position_ecran_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\position_ecran_screen\Position_ecranView.cpp">
+      <Filter>Source Files\gui\position_ecran_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\position_ecran_screen\Position_ecranViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\position_ecran_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\langue_screen\LanguePresenter.cpp">
+      <Filter>Source Files\gui\langue_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\langue_screen\LangueView.cpp">
+      <Filter>Source Files\gui\langue_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\langue_screen\LangueViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\langue_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1995,6 +2037,24 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_ecs_solaire_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\position_ecran_screen\Position_ecranPresenter.hpp">
+      <Filter>Header Files\gui\position_ecran_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\position_ecran_screen\Position_ecranView.hpp">
+      <Filter>Header Files\gui\position_ecran_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\position_ecran_screen\Position_ecranViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\position_ecran_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\langue_screen\LanguePresenter.hpp">
+      <Filter>Header Files\gui\langue_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\langue_screen\LangueView.hpp">
+      <Filter>Header Files\gui\langue_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\langue_screen\LangueViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\langue_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

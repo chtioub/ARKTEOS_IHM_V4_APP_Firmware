@@ -158,6 +158,12 @@
     <ClCompile Include="..\..\gui\src\installation_ecs_solaire_screen\Installation_ecs_solairePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_ecs_solaire_screen\Installation_ecs_solaireView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\position_ecran_screen\Position_ecranPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\position_ecran_screen\Position_ecranView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\position_ecran_screen\Position_ecranViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\langue_screen\LanguePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\langue_screen\LangueView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\langue_screen\LangueViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -445,6 +451,12 @@
     <ClInclude Include="..\..\gui\include\gui\installation_ecs_solaire_screen\Installation_ecs_solairePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_ecs_solaire_screen\Installation_ecs_solaireView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\position_ecran_screen\Position_ecranPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\position_ecran_screen\Position_ecranView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\position_ecran_screen\Position_ecranViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\langue_screen\LanguePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\langue_screen\LangueView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\langue_screen\LangueViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
