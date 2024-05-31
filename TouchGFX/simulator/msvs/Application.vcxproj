@@ -164,6 +164,20 @@
     <ClCompile Include="..\..\gui\src\langue_screen\LanguePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\langue_screen\LangueView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\langue_screen\LangueViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\attente_screen\AttentePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\attente_screen\AttenteView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\attente_screen\AttenteViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\code_web_screen\Code_webPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\code_web_screen\Code_webView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\code_web_screen\Code_webViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heurePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heureView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\date_heure_screen\Date_heureViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\luminosite_screen\LuminositePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\luminosite_screen\LuminositeView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\luminosite_screen\LuminositeViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\PaveNumerique.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\PaveNumeriqueBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -457,6 +471,20 @@
     <ClInclude Include="..\..\gui\include\gui\langue_screen\LanguePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\langue_screen\LangueView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\langue_screen\LangueViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\attente_screen\AttentePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\attente_screen\AttenteView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\attente_screen\AttenteViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\code_web_screen\Code_webPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\code_web_screen\Code_webView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\code_web_screen\Code_webViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heurePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heureView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\date_heure_screen\Date_heureViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\luminosite_screen\LuminositePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\luminosite_screen\LuminositeView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\luminosite_screen\LuminositeViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\PaveNumerique.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\PaveNumeriqueBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

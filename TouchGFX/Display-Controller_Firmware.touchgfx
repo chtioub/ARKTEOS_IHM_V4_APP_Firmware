@@ -2,6 +2,57 @@
   "Application": {
     "Screens": [
       {
+        "Name": "Attente",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Image",
+            "Name": "Image_ours_arkteos",
+            "X": 446,
+            "Y": 237,
+            "Width": 132,
+            "Height": 127,
+            "RelativeFilename": "Logo_Demarrage_Systeme_L132_H127.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_recup_config",
+            "X": 281,
+            "Y": 392,
+            "Width": 463,
+            "Height": 29,
+            "TextId": "text_recup_config_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            },
+            "Wildcard1": {
+              "TextId": "text_recup_config_valeur_centre_defaut"
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_attente_communication",
+            "X": 281,
+            "Y": 392,
+            "Width": 463,
+            "Height": 29,
+            "Visible": false,
+            "TextId": "text_attente_communication_centre_defaut",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
         "Name": "Accueil",
         "CanvasBufferSize": 15360,
         "Components": [
@@ -362,36 +413,81 @@
                 "LineEndingStyle": "Round"
               },
               {
-                "Type": "ButtonWithIcon",
-                "Name": "buttonWithIcon_arret",
+                "Type": "Container",
+                "Name": "container_arret",
                 "X": 15,
                 "Y": 399,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_Rouge_Clicked_L168xH102.png",
-                "Released": "Bouton_Rouge_Unclicked_L168xH102.png",
-                "IconPressed": "Etat_Marche_Arret_L55xH61.png",
-                "IconReleased": "Etat_Marche_Arret_L55xH61.png",
-                "IconX": 57,
-                "IconY": 4,
-                "IconHeight": 61,
-                "IconWidth": 55
+                "Components": [
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_arret",
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Rouge_Clicked_L168xH102.png",
+                    "Released": "Bouton_Rouge_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Marche_Arret_L55xH61.png",
+                    "IconReleased": "Etat_Marche_Arret_L55xH61.png",
+                    "IconX": 57,
+                    "IconY": 4,
+                    "IconHeight": 61,
+                    "IconWidth": 55
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_arret",
+                    "Y": 71,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_ecs_arret_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
               },
               {
-                "Type": "ButtonWithIcon",
-                "Name": "buttonWithIcon_marche",
+                "Type": "Container",
+                "Name": "container_marche",
                 "X": 15,
                 "Y": 399,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
-                "Released": "Bouton_Vert_Unclicked_L168xH102.png",
-                "IconPressed": "Etat_Marche_Arret_L55xH61.png",
-                "IconReleased": "Etat_Marche_Arret_L55xH61.png",
-                "IconX": 57,
-                "IconY": 4,
-                "IconHeight": 61,
-                "IconWidth": 55
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_marche",
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                    "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Marche_Arret_L55xH61.png",
+                    "IconReleased": "Etat_Marche_Arret_L55xH61.png",
+                    "IconX": 57,
+                    "IconY": 4,
+                    "IconHeight": 61,
+                    "IconWidth": 55
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_marche",
+                    "Y": 71,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_marche_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
               },
               {
                 "Type": "Container",
@@ -840,6 +936,15 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Multizones"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerPhysicalButtonClicked"
+            },
+            "Action": {
+              "Type": "ActionNone"
             }
           }
         ]
@@ -1437,6 +1542,274 @@
                   "Green": 255,
                   "Blue": 255
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_marche_ecs_off",
+                "X": 203,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_marche_ecs_on",
+                "X": 203,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Visible": false,
+                "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                "Released": "Bouton_Vert_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image_marche_ecs",
+                "X": 250,
+                "Y": 153,
+                "Width": 75,
+                "Height": 66,
+                "RelativeFilename": "Etat_Bouton_Piscine_L75xH66.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_marche_ecs",
+                "X": 203,
+                "Y": 220,
+                "Width": 168,
+                "Height": 28,
+                "TextId": "text_ecs_marche_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "ToggleButton",
+                "Name": "toggleButton_arret_ecs",
+                "X": 15,
+                "Y": 149,
+                "Width": 168,
+                "Height": 102,
+                "Pressed": "Bouton_Beige_Unclicked_L168xH102.png",
+                "Released": "Bouton_Rouge_Unclicked_L168xH102.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image_arret_ecs",
+                "X": 72,
+                "Y": 153,
+                "Width": 55,
+                "Height": 61,
+                "RelativeFilename": "Etat_Marche_Arret_L55xH61.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_arret_ecs",
+                "X": 15,
+                "Y": 220,
+                "Width": 168,
+                "Height": 28,
+                "TextId": "text_ecs_arret_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_vert_clair",
+                "X": 109,
+                "Y": 269,
+                "Width": 732,
+                "Height": 74,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_vert_clair_plus",
+                    "X": 652,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_Vert_Clair_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_Vert_Clair_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_vert_clair",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 514,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
+                    "BackgroundSelected": "Barre_Consigne_L495xH10.png",
+                    "Indicator": "Balle_Piscine_Reduit_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_vert_clair_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_Vert_Clair_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_Vert_Clair_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_vert_clair",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_pisc_vert_clair_init_centre_defaut"
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_vert",
+                "X": 109,
+                "Y": 343,
+                "Width": 732,
+                "Height": 74,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_vert_plus",
+                    "X": 652,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_Vert_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_Vert_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_vert",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 514,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
+                    "BackgroundSelected": "Barre_Consigne_L495xH10.png",
+                    "Indicator": "Balle_Piscine_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_vert_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_Vert_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_Vert_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_vert",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_pisc_vert_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_pisc_vert_init_centre_defaut"
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_vert_fonce",
+                "X": 109,
+                "Y": 417,
+                "Width": 732,
+                "Height": 74,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_vert_fonce_plus",
+                    "X": 652,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_Vert_Fonce_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_Vert_Fonce_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_vert_fonce",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 514,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
+                    "BackgroundSelected": "Barre_Consigne_L495xH10.png",
+                    "Indicator": "Balle_Piscine_Confort_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_vert_fonce_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_Vert_Fonce_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_Vert_Fonce_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_vert_fonce",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_pisc_vert_fonce_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_pisc_vert_fonce_init_centre_defaut"
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -1490,13 +1863,495 @@
             "Height": 524,
             "Components": [
               {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
                 "Type": "CustomContainerInstance",
                 "Name": "barre_titre",
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc",
+                "X": 15,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_1",
+                "X": 15,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_1",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_1",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_1",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_1",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_2",
+                "X": 25,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_2",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_2",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_2",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_2",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_3",
+                "X": 35,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_3",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_3",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_3",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_3",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_4",
+                "X": 45,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_4",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_4",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_4",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_4",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_5",
+                "X": 15,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_5",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_5",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_5",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_5",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_6",
+                "X": 15,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_6",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_6",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_6",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_6",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_7",
+                "X": 15,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_7",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_7",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_7",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_7",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_8",
+                "X": 15,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_8",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_8",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_8",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_8",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_9",
+                "X": 15,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_9",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_9",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_9",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_9",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pisc_10",
+                "X": 15,
+                "Y": 370,
+                "Width": 10,
+                "Height": 46,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_red_10",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Reduit_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_10",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_conf_10",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_Piscine_Confort_L10xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_pisc_off_10",
+                    "Width": 10,
+                    "Height": 46,
+                    "RelativeFilename": "Barre_Prog_Hebdo_OFF_L10xH46.png"
+                  }
+                ]
               }
             ]
+          },
+          {
+            "Type": "Image",
+            "Name": "Image_piscine_mixte",
+            "X": 136,
+            "Y": 282,
+            "Width": 108,
+            "Height": 71,
+            "RelativeFilename": "Bouton_Prog_Piscine_Zoom_L108xH71.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image_piscine_reduit",
+            "X": 136,
+            "Y": 282,
+            "Width": 108,
+            "Height": 71,
+            "RelativeFilename": "Bouton_Prog_Piscine_Reduit_L108xH71.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image_piscine_confort",
+            "X": 136,
+            "Y": 282,
+            "Width": 108,
+            "Height": 71,
+            "RelativeFilename": "Bouton_Prog_Piscine_Confort_L108xH71.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Image_piscine",
+            "X": 136,
+            "Y": 282,
+            "Width": 108,
+            "Height": 71,
+            "RelativeFilename": "Bouton_Prog_Piscine_ON_L108xH71.png"
+          },
+          {
+            "Type": "Container",
+            "Name": "container_modif_prog",
+            "Width": 250,
+            "Height": 250,
+            "Components": []
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "toggleButton1",
+            "X": 286,
+            "Y": 292,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
           }
         ],
         "Interactions": []
@@ -1582,6 +2437,64 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_centrale_energies_cumul",
+                "X": 251,
+                "Y": 138,
+                "Width": 449,
+                "Height": 53,
+                "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_energies_cumul",
+                "X": 429,
+                "Y": 152,
+                "Width": 92,
+                "Height": 24,
+                "TextId": "text_valeur_duree_derog_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_valeur_duree_derog_init_centre_defaut",
+                  "UseBuffer": true,
+                  "BufferSize": 7
+                }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_gauche_energies_cumul",
+                "X": 176,
+                "Y": 138,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_droite_energies_cumul",
+                "X": 700,
+                "Y": 138,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image_date",
+                "X": 791,
+                "Y": 209,
+                "Width": 145,
+                "Height": 53,
+                "RelativeFilename": "Bouton_Gris_L145xH53.png"
               }
             ]
           }
@@ -5391,7 +6304,7 @@
                     "Name": "slider_gris",
                     "X": 107,
                     "Y": 13,
-                    "Width": 514,
+                    "Width": 525,
                     "Height": 30,
                     "IsHorizontalSlider": true,
                     "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
@@ -5399,10 +6312,10 @@
                     "Indicator": "Balle_Chauffe_Eau_Relance_L30xH30.png",
                     "BackgroundX": 19,
                     "BackgroundY": 11,
-                    "IndicatorMax": 356,
-                    "ValueMax": 300,
-                    "ValueMin": 120,
-                    "InitValue": 120
+                    "IndicatorMax": 495,
+                    "ValueMax": 600,
+                    "ValueMin": 400,
+                    "InitValue": 450
                   },
                   {
                     "Type": "Button",
@@ -5415,7 +6328,7 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_gris",
-                    "X": 80,
+                    "X": 203,
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
@@ -5469,7 +6382,7 @@
                     "Name": "slider_rose",
                     "X": 107,
                     "Y": 13,
-                    "Width": 514,
+                    "Width": 525,
                     "Height": 30,
                     "IsHorizontalSlider": true,
                     "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
@@ -5477,10 +6390,10 @@
                     "Indicator": "Balle_Chauffe_Eau_Consigne_L30xH30.png",
                     "BackgroundX": 19,
                     "BackgroundY": 11,
-                    "IndicatorMax": 356,
-                    "ValueMax": 300,
-                    "ValueMin": 120,
-                    "InitValue": 120
+                    "IndicatorMax": 495,
+                    "ValueMax": 650,
+                    "ValueMin": 400,
+                    "InitValue": 600
                   },
                   {
                     "Type": "Button",
@@ -5493,8 +6406,8 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_rose",
-                    "X": 80,
-                    "Y": 51,
+                    "X": 476,
+                    "Y": 50,
                     "Width": 83,
                     "Height": 23,
                     "TextId": "text_ecs_temp_rose_centre_defaut",
@@ -14235,7 +15148,7 @@
                     "Wildcard1": {
                       "TextId": "text_valeur_param_wattmetre_init_centre_defaut",
                       "UseBuffer": true,
-                      "BufferSize": 13
+                      "BufferSize": 5
                     }
                   },
                   {
@@ -19320,7 +20233,7 @@
               },
               {
                 "Type": "Slider",
-                "Name": "slider_hysteresis",
+                "Name": "slider_hysteresis_plus",
                 "X": 46,
                 "Y": 231,
                 "Width": 844,
@@ -19335,6 +20248,24 @@
                 "ValueMax": 40,
                 "ValueMin": -40,
                 "InitValue": 40
+              },
+              {
+                "Type": "Slider",
+                "Name": "slider_hysteresis_moins",
+                "X": 46,
+                "Y": 231,
+                "Width": 844,
+                "Height": 63,
+                "IsHorizontalSlider": true,
+                "BackgroundUnselected": "Hysteresis_L844xH63-79.png",
+                "BackgroundSelected": "Hysteresis_L844xH63-79.png",
+                "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_round_dark.png",
+                "IndicatorPos": 16,
+                "IndicatorMax": 783,
+                "IndicatorMin": 5,
+                "ValueMax": 40,
+                "ValueMin": -40,
+                "InitValue": -20
               }
             ]
           }
@@ -19729,6 +20660,507 @@
           }
         ],
         "Interactions": []
+      },
+      {
+        "Name": "Luminosite",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Slider",
+                "Name": "slider_luminosite",
+                "X": 220,
+                "Y": 285,
+                "Width": 511,
+                "Height": 32,
+                "IsHorizontalSlider": true,
+                "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
+                "BackgroundSelected": "Barre_Consigne_L495xH10.png",
+                "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_rounded_dark.png",
+                "BackgroundX": 16,
+                "BackgroundY": 11,
+                "IndicatorMax": 300,
+                "ValueMax": 100
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_luminosite",
+                "X": 395,
+                "Y": 329,
+                "Width": 160,
+                "Height": 27,
+                "TextId": "text_luminosite_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_luminosite_init_centre_defaut",
+                  "UseBuffer": true,
+                  "BufferSize": 4
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Date_heure",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_calendrier",
+                "X": 37,
+                "Y": 169,
+                "Width": 178,
+                "Height": 213,
+                "RelativeFilename": "Logo_Calendrier_L178xH213.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_horloge",
+                "X": 522,
+                "Y": 198,
+                "Width": 156,
+                "Height": 156,
+                "RelativeFilename": "Logo_Horloge_L156xH156.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_haut_jours",
+                "X": 239,
+                "Y": 181,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Haute_Clicked_L75xH53.png",
+                "Released": "Fleche_Haute_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_bas_jours",
+                "X": 239,
+                "Y": 327,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Basse_Clicked_L75xH53.png",
+                "Released": "Fleche_Basse_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_slash_1",
+                "X": 314,
+                "Y": 251,
+                "Width": 19,
+                "Height": 51,
+                "RelativeFilename": "Logo_Slash_L19xH51.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_haut_mois",
+                "X": 333,
+                "Y": 181,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Haute_Clicked_L75xH53.png",
+                "Released": "Fleche_Haute_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_bas_mois",
+                "X": 333,
+                "Y": 327,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Basse_Clicked_L75xH53.png",
+                "Released": "Fleche_Basse_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_slash_2",
+                "X": 408,
+                "Y": 251,
+                "Width": 19,
+                "Height": 51,
+                "RelativeFilename": "Logo_Slash_L19xH51.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_haut_annee",
+                "X": 428,
+                "Y": 181,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Haute_Clicked_L75xH53.png",
+                "Released": "Fleche_Haute_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_bas_annee",
+                "X": 428,
+                "Y": 327,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Basse_Clicked_L75xH53.png",
+                "Released": "Fleche_Basse_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_haut_heure",
+                "X": 698,
+                "Y": 181,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Haute_Clicked_L75xH53.png",
+                "Released": "Fleche_Haute_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_bas_heure",
+                "X": 698,
+                "Y": 327,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Basse_Clicked_L75xH53.png",
+                "Released": "Fleche_Basse_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_2_points",
+                "X": 773,
+                "Y": 251,
+                "Width": 19,
+                "Height": 51,
+                "RelativeFilename": "Logo_Slash_L19xH51.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_haut_minutes",
+                "X": 793,
+                "Y": 181,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Haute_Clicked_L75xH53.png",
+                "Released": "Fleche_Haute_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_bas_minutes",
+                "X": 793,
+                "Y": 327,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Basse_Clicked_L75xH53.png",
+                "Released": "Fleche_Basse_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_date_heure",
+                "X": 187,
+                "Y": 426,
+                "Width": 577,
+                "Height": 50,
+                "TextId": "test_date_heure_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "WideTextAction": 1
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_jours",
+                "X": 239,
+                "Y": 254,
+                "Width": 75,
+                "Height": 45,
+                "TextId": "text_jours_centre_large",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_jours_init_centre_large"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_jours_cal",
+                "X": 89,
+                "Y": 276,
+                "Width": 75,
+                "Height": 45,
+                "TextId": "text_jours_centre_large",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_jours_init_centre_large"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_mois",
+                "X": 333,
+                "Y": 254,
+                "Width": 75,
+                "Height": 45,
+                "TextId": "text_mois_centre_large",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_mois_init_centre_large",
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_mois_cal",
+                "X": 74,
+                "Y": 327,
+                "Width": 105,
+                "Height": 45,
+                "TextId": "text_mois_texte_centre_large",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_mois_texte_init_centre_large",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_annee",
+                "X": 428,
+                "Y": 254,
+                "Width": 75,
+                "Height": 45,
+                "TextId": "text_annee_centre_large",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_annee_init_centre_large"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_heure",
+                "X": 698,
+                "Y": 254,
+                "Width": 75,
+                "Height": 45,
+                "TextId": "text_heure_centre_large",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_heure_init_centre_large"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_minutes",
+                "X": 793,
+                "Y": 254,
+                "Width": 75,
+                "Height": 45,
+                "TextId": "text_minutes_centre_large",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_minutes_init_centre_large"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_annee_complete",
+                "X": 89,
+                "Y": 220,
+                "Width": 75,
+                "Height": 31,
+                "TextId": "text_annee_complete_centre_large",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_annee_complete_init_centre_large",
+                  "UseBuffer": true,
+                  "BufferSize": 5
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Code_web",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_code_web",
+                "X": 66,
+                "Y": 335,
+                "Width": 818,
+                "Height": 30,
+                "TextId": "text_code_web_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_code_web_init_centre_defaut",
+                  "UseBuffer": true,
+                  "BufferSize": 5
+                },
+                "WideTextAction": 1
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_creation_compte",
+                "X": 66,
+                "Y": 166,
+                "Width": 818,
+                "Height": 51,
+                "TextId": "text_creation_compte_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "WideTextAction": 1
+              }
+            ]
+          }
+        ],
+        "Interactions": []
       }
     ],
     "CustomContainerDefinitions": [
@@ -20056,6 +21488,13 @@
         "Height": 600,
         "Components": [],
         "Interactions": []
+      },
+      {
+        "Name": "PaveNumerique",
+        "Width": 250,
+        "Height": 250,
+        "Components": [],
+        "Interactions": []
       }
     ],
     "Name": "MyApplication",
@@ -20064,7 +21503,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Vacances",
+    "StartupScreenName": "Installation_hysteresis",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

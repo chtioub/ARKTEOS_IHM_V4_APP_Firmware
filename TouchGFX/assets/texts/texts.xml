@@ -8,6 +8,22 @@
     <Language Id="DE" />
   </Languages>
   <Texts>
+    <TextGroup Id="Attente">
+      <Text Id="text_recup_config_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Recup config &lt;Value&gt;%</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_recup_config_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">33</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Bouclage_ecs">
       <Text Id="text_prog_bouclage_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Progammation bouclage ECS</Translation>
@@ -43,6 +59,29 @@
         <Translation Language="PT">Duração da isenção?</Translation>
         <Translation Language="NL">Marche forcée bouclage ECS ?</Translation>
         <Translation Language="DE">Marche forcée bouclage ECS ?</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Code_web">
+      <Text Id="text_code_web_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">8496</Translation>
+        <Translation Language="GB">8496</Translation>
+        <Translation Language="PT">8496</Translation>
+        <Translation Language="NL">8496</Translation>
+        <Translation Language="DE">8496</Translation>
+      </Text>
+      <Text Id="text_code_web_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Code web : &lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_creation_compte_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Veuillez utiliser le code d'accès web suivant afin de créer votre compte client sur l'espace client Arkteos, et accéder à distance à votre pompe à chaleur.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Configuration">
@@ -115,6 +154,113 @@
         <Translation Language="PT">Info</Translation>
         <Translation Language="NL">Infos</Translation>
         <Translation Language="DE">Infos</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Date_heure">
+      <Text Id="text_mois_texte_init_centre_large" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Février</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_texte_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_annee_complete_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_annee_complete_init_centre_large" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">2020</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_minutes_init_centre_large" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_minutes_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_heure_init_centre_large" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">11</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_heure_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_annee_init_centre_large" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_annee_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_mois_init_centre_large" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">02</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_jours_init_centre_large" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">02</Translation>
+        <Translation Language="GB">02</Translation>
+        <Translation Language="PT">02</Translation>
+        <Translation Language="NL">02</Translation>
+        <Translation Language="DE">02</Translation>
+      </Text>
+      <Text Id="text_jours_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="test_date_heure_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Lorsque votre pompe à chaleur est connectée, la date et l'heure sont automatiquement synchronisés et mis à jour.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Derogation">
@@ -244,14 +390,14 @@
         <Translation Language="DE">Température de consigne</Translation>
       </Text>
       <Text Id="text_ecs_temp_rose_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="FR">&lt;value&gt;°C</Translation>
         <Translation Language="GB">New Text&lt;value&gt;</Translation>
         <Translation Language="PT">New Text&lt;value&gt;</Translation>
         <Translation Language="NL">New Text&lt;value&gt;</Translation>
         <Translation Language="DE">New Text&lt;value&gt;</Translation>
       </Text>
       <Text Id="text_ecs_temp_rose_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">60.0°C</Translation>
+        <Translation Language="FR">60.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -265,14 +411,14 @@
         <Translation Language="DE">Température de consigne</Translation>
       </Text>
       <Text Id="text_ecs_temp_gris_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="FR">&lt;value&gt;°C</Translation>
         <Translation Language="GB">New Text&lt;value&gt;</Translation>
         <Translation Language="PT">New Text&lt;value&gt;</Translation>
         <Translation Language="NL">New Text&lt;value&gt;</Translation>
         <Translation Language="DE">New Text&lt;value&gt;</Translation>
       </Text>
       <Text Id="text_ecs_temp_gris_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">45°C</Translation>
+        <Translation Language="FR">45.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -440,6 +586,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Accueil">
+      <Text Id="text_marche_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Marche</Translation>
+        <Translation Language="GB">Stop</Translation>
+        <Translation Language="PT">Parar</Translation>
+        <Translation Language="NL">Arrêt</Translation>
+        <Translation Language="DE">Arrêt</Translation>
+      </Text>
       <Text Id="text_ecs_milieu_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt;</Translation>
@@ -1263,6 +1416,45 @@
         <Translation Language="DE">Associer</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="Langue">
+      <Text Id="text_choix_langue_valeur_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Francais</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_choix_langue_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_choix_langue_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sélectionner votre langue ?</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Luminosite">
+      <Text Id="text_luminosite_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_luminosite_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">60</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Parametres">
       <Text Id="text_parametres_compte_client_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Compte client</Translation>
@@ -1300,27 +1492,48 @@
         <Translation Language="DE">Langue</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Langue">
-      <Text Id="text_choix_langue_valeur_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Francais</Translation>
+    <TextGroup Id="Piscine">
+      <Text Id="text_pisc_vert_fonce_init_centre_defaut" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">30.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_choix_langue_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
+      <Text Id="text_pisc_vert_fonce_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;°C</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
       </Text>
-      <Text Id="text_choix_langue_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Sélectionner votre langue ?</Translation>
-        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
-        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
-        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      <Text Id="text_pisc_vert_init_centre_defaut" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">45.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_pisc_vert_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;°C</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_pisc_vert_clair_init_centre_defaut" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">60.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_pisc_vert_clair_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;°C</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Position_ecran">
@@ -1506,14 +1719,14 @@
         <Translation Language="DE">Oui</Translation>
       </Text>
       <Text Id="text_valeur_param_wattmetre_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="FR">&lt;value&gt; imp/kWh</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
         <Translation Language="NL">&lt;value&gt;</Translation>
         <Translation Language="DE">&lt;value&gt;</Translation>
       </Text>
       <Text Id="text_valeur_param_wattmetre_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">800 imp/kWh</Translation>
+        <Translation Language="FR">800</Translation>
         <Translation Language="GB">800 imp/kWh</Translation>
         <Translation Language="PT">800 imp/kWh</Translation>
         <Translation Language="NL">800 imp/kWh</Translation>
@@ -2796,7 +3009,15 @@
         <Translation Language="DE">Hors gel</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Unsorted">
+      <Text Id="text_attente_communication_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Attente communication</Translation>
+        <Translation Language="GB">Attente communication</Translation>
+        <Translation Language="PT">Attente communication</Translation>
+        <Translation Language="NL">Attente communication</Translation>
+        <Translation Language="DE">Attente communication</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" />

@@ -724,6 +724,54 @@
     <Filter Include="Source Files\generated\gui_generated\langue_screen">
       <UniqueIdentifier>64D7A06F-22B1-A628-5CE1-C7B17E3AA2BB</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\attente_screen">
+      <UniqueIdentifier>EFD19B88-B580-E044-8215-45FBE20DE1B5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\attente_screen">
+      <UniqueIdentifier>A8811A8C-7B63-6A67-CEBE-06260A7ED08A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\luminosite_screen">
+      <UniqueIdentifier>05299F82-2342-7322-8ABB-AD2D6D890DEF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\luminosite_screen">
+      <UniqueIdentifier>B311768C-C17D-C942-F030-26358C6FE340</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\code_web_screen">
+      <UniqueIdentifier>ED895EB7-F72A-8B3A-47AA-4AD064A3EA28</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\code_web_screen">
+      <UniqueIdentifier>4A7DBFC2-AF69-EE21-1365-5974D84E1BFB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\date_heure_screen">
+      <UniqueIdentifier>BF067EAB-678F-F5EA-52AB-F5452532CA99</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\date_heure_screen">
+      <UniqueIdentifier>BD3235C9-58FB-2EF9-CD96-ACB77415DCF0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\date_heure_screen">
+      <UniqueIdentifier>B8391A0F-4C3F-6B00-DD03-F5AF583E5C2E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\date_heure_screen">
+      <UniqueIdentifier>09741752-6C19-7C2F-05BB-0D627C7B17BD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\code_web_screen">
+      <UniqueIdentifier>39349A54-5898-8F88-6989-E1C1F9CD6A36</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\code_web_screen">
+      <UniqueIdentifier>E0F09E8E-AD89-8FFE-CB39-F00CADC255C9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\luminosite_screen">
+      <UniqueIdentifier>861B7D25-6CED-F2B5-0BEE-37446AC89497</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\luminosite_screen">
+      <UniqueIdentifier>DF0D252A-DCB9-01C2-A839-F1D019C48199</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\attente_screen">
+      <UniqueIdentifier>920B9E73-12DA-D525-E9D5-9094BE16BBE6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\attente_screen">
+      <UniqueIdentifier>C8032DE7-91AB-D3DA-938D-C6098661E361</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1184,6 +1232,48 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\langue_screen\LangueViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\langue_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\attente_screen\AttentePresenter.cpp">
+      <Filter>Source Files\gui\attente_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\attente_screen\AttenteView.cpp">
+      <Filter>Source Files\gui\attente_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\attente_screen\AttenteViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\attente_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\code_web_screen\Code_webPresenter.cpp">
+      <Filter>Source Files\gui\code_web_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\code_web_screen\Code_webView.cpp">
+      <Filter>Source Files\gui\code_web_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\code_web_screen\Code_webViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\code_web_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heurePresenter.cpp">
+      <Filter>Source Files\gui\date_heure_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heureView.cpp">
+      <Filter>Source Files\gui\date_heure_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\date_heure_screen\Date_heureViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\date_heure_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\luminosite_screen\LuminositePresenter.cpp">
+      <Filter>Source Files\gui\luminosite_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\luminosite_screen\LuminositeView.cpp">
+      <Filter>Source Files\gui\luminosite_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\luminosite_screen\LuminositeViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\luminosite_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\PaveNumerique.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\PaveNumeriqueBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2055,6 +2145,48 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\langue_screen\LangueViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\langue_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\attente_screen\AttentePresenter.hpp">
+      <Filter>Header Files\gui\attente_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\attente_screen\AttenteView.hpp">
+      <Filter>Header Files\gui\attente_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\attente_screen\AttenteViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\attente_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\code_web_screen\Code_webPresenter.hpp">
+      <Filter>Header Files\gui\code_web_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\code_web_screen\Code_webView.hpp">
+      <Filter>Header Files\gui\code_web_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\code_web_screen\Code_webViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\code_web_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heurePresenter.hpp">
+      <Filter>Header Files\gui\date_heure_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heureView.hpp">
+      <Filter>Header Files\gui\date_heure_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\date_heure_screen\Date_heureViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\date_heure_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\luminosite_screen\LuminositePresenter.hpp">
+      <Filter>Header Files\gui\luminosite_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\luminosite_screen\LuminositeView.hpp">
+      <Filter>Header Files\gui\luminosite_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\luminosite_screen\LuminositeViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\luminosite_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\PaveNumerique.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\PaveNumeriqueBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
