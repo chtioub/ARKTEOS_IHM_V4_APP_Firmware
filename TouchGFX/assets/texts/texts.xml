@@ -3010,8 +3010,295 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_dimanche_prog_edit_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Dim</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_samedi_prog_edit_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Sam</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_vendredi_prog_edit_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Ven</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_jeudi_prog_edit_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Jeu</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mercredi_prog_edit_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Mer</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mardi_prog_edit_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Mar</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_lundi_prog_edit_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Lun</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_jour_prog_edit_value_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Lun</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_jour_prog_edit_left_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_coller_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Coller</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_copier_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Copier</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_editer_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Editer</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_barre_heure_10_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">10</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_12_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">12</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_14_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">14</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_16_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">16</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_18_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">18</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_20_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">20</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_22_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">22</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_24_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">24</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_8_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">8</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_6_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">6</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">2</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_barre_heure_4_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">4</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_heure_0_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">0</Translation>
+        <Translation Language="PT">0</Translation>
+        <Translation Language="NL">0</Translation>
+        <Translation Language="DE">0</Translation>
+      </Text>
+      <Text Id="text_heure_7_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">24</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_heure_7_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_heure_6_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_heure_6_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_heure_5_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">16</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_heure_5_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_heure_4_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">12</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_heure_4_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_heure_3_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_heure_3_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_heure_2_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">4&#10;</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_heure_2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_heure_1_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_heure_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_zoom_moins_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zoom -</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zoom_plus_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zoom +</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_attente_communication_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Attente communication</Translation>
+        <Translation Language="FR">Démarrage système</Translation>
         <Translation Language="GB">Attente communication</Translation>
         <Translation Language="PT">Attente communication</Translation>
         <Translation Language="NL">Attente communication</Translation>
