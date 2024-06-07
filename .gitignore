@@ -2,3 +2,5 @@
 /TouchGFX/build
 /TouchGFX/simulator/msvs/.vs
 /.metadata/
+/Debug/
+/Release/
