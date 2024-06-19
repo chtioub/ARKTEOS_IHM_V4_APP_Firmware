@@ -1,17 +1,17 @@
-#ifndef COURBE_LOI_D_EAUPRESENTER_HPP
-#define COURBE_LOI_D_EAUPRESENTER_HPP
+#ifndef INSTALLATION_HYDRAULIQUEPRESENTER_HPP
+#define INSTALLATION_HYDRAULIQUEPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Courbe_loi_d_eauView;
+class Installation_hydrauliqueView;
 
-class Courbe_loi_d_eauPresenter : public touchgfx::Presenter, public ModelListener
+class Installation_hydrauliquePresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Courbe_loi_d_eauPresenter(Courbe_loi_d_eauView& v);
+    Installation_hydrauliquePresenter(Installation_hydrauliqueView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Courbe_loi_d_eauPresenter() {}
+    virtual ~Installation_hydrauliquePresenter() {}
 
 private:
-    Courbe_loi_d_eauPresenter();
+    Installation_hydrauliquePresenter();
 
-    Courbe_loi_d_eauView& view;
+    Installation_hydrauliqueView& view;
 };
 
-#endif // COURBE_LOI_D_EAUPRESENTER_HPP
+#endif // INSTALLATION_HYDRAULIQUEPRESENTER_HPP

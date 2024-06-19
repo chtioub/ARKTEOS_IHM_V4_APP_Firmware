@@ -244,14 +244,8 @@
     <Filter Include="Source Files\gui\derogation_screen">
       <UniqueIdentifier>D4B5319B-264A-8984-9204-74888966DA81</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\courbe_loi_d_eau_screen">
-      <UniqueIdentifier>96A82766-B5DB-0671-1D74-1CCC828B3E77</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\derogation_screen">
       <UniqueIdentifier>1CE0EFCE-BB99-558A-51EA-0B95C29A9187</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\courbe_loi_d_eau_screen">
-      <UniqueIdentifier>9F5A973E-F3C4-9A69-DF49-26390A86059C</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\historiques_fonctionnement_screen">
       <UniqueIdentifier>604F039C-973F-901F-AA76-D78B57877DA6</UniqueIdentifier>
@@ -405,12 +399,6 @@
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\derogation_ecs_screen">
       <UniqueIdentifier>89DA5CE9-18AF-5896-D932-05BD63FAF68D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\courbe_loi_d_eau_screen">
-      <UniqueIdentifier>41952EB3-9155-FB2C-1CD1-2F4B07C8812E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\courbe_loi_d_eau_screen">
-      <UniqueIdentifier>8AC71845-73CA-D7B8-9F09-A632983AEBFC</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\containers">
       <UniqueIdentifier>64F276F1-A2B3-5A19-34B3-D65049863228</UniqueIdentifier>
@@ -772,6 +760,138 @@
     <Filter Include="Source Files\generated\gui_generated\attente_screen">
       <UniqueIdentifier>C8032DE7-91AB-D3DA-938D-C6098661E361</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\usine_numero_serie_screen">
+      <UniqueIdentifier>828588C3-E2A4-7E5D-6E31-2B60C9D85605</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_numero_serie_screen">
+      <UniqueIdentifier>9EAF564D-4DBD-3989-E065-B05829EDC987</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_config_inverterra_screen">
+      <UniqueIdentifier>0DA7CC9A-BD7F-3740-A45C-B8799EBC0B55</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_config_inverterra_screen">
+      <UniqueIdentifier>737686C0-4CB5-4D61-91E2-589F8168819D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_choix_fluide_screen">
+      <UniqueIdentifier>2F563856-1C15-1B1A-62B6-68001812C457</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_choix_fluide_screen">
+      <UniqueIdentifier>04648BDC-E62E-A8DF-AACF-0C97A66670DF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_choix_modele_pac_screen">
+      <UniqueIdentifier>DCA56235-24B7-0A25-3F11-1BFF6353EAE8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_choix_modele_pac_screen">
+      <UniqueIdentifier>4AC4775F-8651-611A-6DA7-8DAE27B4B447</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_config_additionnelle_screen">
+      <UniqueIdentifier>062A34DF-27D2-1B0B-9B29-73312B0D7CBE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_config_geotwin_screen">
+      <UniqueIdentifier>A0771216-07F8-E166-21B1-A103D66CC6B0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_config_additionnelle_screen">
+      <UniqueIdentifier>31CEE54F-8645-8637-7C10-5DAB33066E22</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_config_geotwin_screen">
+      <UniqueIdentifier>98706370-FF21-8442-93CD-4EA2ED2BDC89</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_config_additionnelle_screen">
+      <UniqueIdentifier>0E36BD2B-4583-1579-8D78-D04ECF10B187</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_config_additionnelle_screen">
+      <UniqueIdentifier>20EBF803-3251-1D2B-45CD-A2FB16238EBC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_choix_modele_pac_screen">
+      <UniqueIdentifier>DCB06E2C-6EC8-4386-C4D5-AACD5F8436E1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_config_geotwin_screen">
+      <UniqueIdentifier>2FA58EBE-81D6-C2C4-103E-3FF352D39C30</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_choix_modele_pac_screen">
+      <UniqueIdentifier>2E995E83-545D-4E8A-2E53-ADBC5AD59D31</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_config_geotwin_screen">
+      <UniqueIdentifier>D9C333E9-9E7C-AE9D-498E-FF2B93792743</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_choix_fluide_screen">
+      <UniqueIdentifier>C0ECD856-1077-A7E2-3C9E-9D2835CBE564</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_choix_fluide_screen">
+      <UniqueIdentifier>CD199A83-2C31-E4E6-9EAF-A850C9EC1462</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_config_inverterra_screen">
+      <UniqueIdentifier>002B0B42-0838-8E6A-0BAD-669648AEFCDD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_config_inverterra_screen">
+      <UniqueIdentifier>BB6ECF49-BAA0-3EFC-6E3A-D12028D53D6B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_numero_serie_screen">
+      <UniqueIdentifier>24D2B4C1-AA24-0A6A-A17D-8DE68C2C4893</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_numero_serie_screen">
+      <UniqueIdentifier>3657F47E-47EF-F8D8-28DA-59C8C03E9BF2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_config_ajpac_screen">
+      <UniqueIdentifier>C5170573-2AB3-4C38-4D43-4BFD92AA3D15</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_config_ajpac_screen">
+      <UniqueIdentifier>94CE8747-82E4-48F2-B084-A7506B307F4B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_config_ajpac_screen">
+      <UniqueIdentifier>C084FA2A-EE84-C315-0BCE-3112D6511A2B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_config_ajpac_screen">
+      <UniqueIdentifier>35BDC1AC-4521-7B05-2E18-5D515DD4A1E4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_appoint_screen">
+      <UniqueIdentifier>03DC8317-FFF6-DA81-1C98-1C5B9F924549</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_appoint_screen">
+      <UniqueIdentifier>9BD1E3DB-BC2B-13FC-A950-7DF2E9EEADC3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_appoint_screen">
+      <UniqueIdentifier>1D76BF0F-9405-3175-1F16-543CFADB1862</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_appoint_screen">
+      <UniqueIdentifier>71591A47-BC0B-3D18-9E95-E054B8F9448A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_hydraulique_screen">
+      <UniqueIdentifier>C59F2AF5-9005-05BD-8446-00652E1B32B1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_screen">
+      <UniqueIdentifier>C12E02BA-3823-9FF8-0CE2-C976A583B816</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_screen">
+      <UniqueIdentifier>7B904525-7844-24EB-37C0-3B1BC53F800C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_screen">
+      <UniqueIdentifier>B4F1CE27-E113-C6B4-0035-1EF3E01C0CC3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_courbe_loi_d_eau_screen">
+      <UniqueIdentifier>0D6FFDF8-1A7E-6CC2-297B-1AAF82D6F502</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_courbe_loi_d_eau_screen">
+      <UniqueIdentifier>A1FF5D48-F5DB-BFA7-4752-93D93E82F284</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_courbe_loi_d_eau_screen">
+      <UniqueIdentifier>5356D831-1719-8D8B-56A0-559AD80F4065</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_courbe_loi_d_eau_screen">
+      <UniqueIdentifier>8E26E0CC-C3A3-305F-1CAC-66B69BE7483D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_chauffe_dalle_screen">
+      <UniqueIdentifier>82F0A3B9-9E9E-1277-D4CA-E8B2C8BFE1AF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_chauffe_dalle_screen">
+      <UniqueIdentifier>D7A692C2-D05E-FE17-D46C-C50D4C2639AC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_chauffe_dalle_screen">
+      <UniqueIdentifier>BFDE8BF7-4FA1-3F0A-F197-61EB2D2448FB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_chauffe_dalle_screen">
+      <UniqueIdentifier>5E9D939E-F505-F6A7-4C50-E7165C0A90AA</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -839,15 +959,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\bouclage_ecs_screen\Bouclage_ecsViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\bouclage_ecs_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\courbe_loi_d_eau_screen\Courbe_loi_d_eauPresenter.cpp">
-      <Filter>Source Files\gui\courbe_loi_d_eau_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\courbe_loi_d_eau_screen\Courbe_loi_d_eauView.cpp">
-      <Filter>Source Files\gui\courbe_loi_d_eau_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\courbe_loi_d_eau_screen\Courbe_loi_d_eauViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\courbe_loi_d_eau_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\derogation_ecs_screen\Derogation_ecsPresenter.cpp">
       <Filter>Source Files\gui\derogation_ecs_screen</Filter>
@@ -1274,6 +1385,105 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\PaveNumeriqueBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_choix_fluide_screen\Usine_choix_fluidePresenter.cpp">
+      <Filter>Source Files\gui\usine_choix_fluide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_choix_fluide_screen\Usine_choix_fluideView.cpp">
+      <Filter>Source Files\gui\usine_choix_fluide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_choix_fluide_screen\Usine_choix_fluideViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_choix_fluide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_choix_modele_pac_screen\Usine_choix_modele_pacPresenter.cpp">
+      <Filter>Source Files\gui\usine_choix_modele_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_choix_modele_pac_screen\Usine_choix_modele_pacView.cpp">
+      <Filter>Source Files\gui\usine_choix_modele_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_choix_modele_pac_screen\Usine_choix_modele_pacViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_choix_modele_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_additionnelle_screen\Usine_config_additionnellePresenter.cpp">
+      <Filter>Source Files\gui\usine_config_additionnelle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_additionnelle_screen\Usine_config_additionnelleView.cpp">
+      <Filter>Source Files\gui\usine_config_additionnelle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_config_additionnelle_screen\Usine_config_additionnelleViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_config_additionnelle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_geotwin_screen\Usine_config_geotwinPresenter.cpp">
+      <Filter>Source Files\gui\usine_config_geotwin_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_geotwin_screen\Usine_config_geotwinView.cpp">
+      <Filter>Source Files\gui\usine_config_geotwin_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_config_geotwin_screen\Usine_config_geotwinViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_config_geotwin_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_inverterra_screen\Usine_config_inverterraPresenter.cpp">
+      <Filter>Source Files\gui\usine_config_inverterra_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_inverterra_screen\Usine_config_inverterraView.cpp">
+      <Filter>Source Files\gui\usine_config_inverterra_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_config_inverterra_screen\Usine_config_inverterraViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_config_inverterra_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_numero_serie_screen\Usine_numero_seriePresenter.cpp">
+      <Filter>Source Files\gui\usine_numero_serie_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_numero_serie_screen\Usine_numero_serieView.cpp">
+      <Filter>Source Files\gui\usine_numero_serie_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_numero_serie_screen\Usine_numero_serieViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_numero_serie_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_ajpac_screen\Usine_config_ajpacPresenter.cpp">
+      <Filter>Source Files\gui\usine_config_ajpac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_ajpac_screen\Usine_config_ajpacView.cpp">
+      <Filter>Source Files\gui\usine_config_ajpac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_config_ajpac_screen\Usine_config_ajpacViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_config_ajpac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_appoint_screen\Installation_appointPresenter.cpp">
+      <Filter>Source Files\gui\installation_appoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_appoint_screen\Installation_appointView.cpp">
+      <Filter>Source Files\gui\installation_appoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_appoint_screen\Installation_appointViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_appoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_screen\Installation_hydrauliquePresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_screen\Installation_hydrauliqueView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_screen\Installation_hydrauliqueViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauPresenter.cpp">
+      <Filter>Source Files\gui\installation_courbe_loi_d_eau_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauView.cpp">
+      <Filter>Source Files\gui\installation_courbe_loi_d_eau_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_courbe_loi_d_eau_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_chauffe_dalle_screen\Installation_chauffe_dallePresenter.cpp">
+      <Filter>Source Files\gui\installation_chauffe_dalle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_chauffe_dalle_screen\Installation_chauffe_dalleView.cpp">
+      <Filter>Source Files\gui\installation_chauffe_dalle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_chauffe_dalle_screen\Installation_chauffe_dalleViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_chauffe_dalle_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1753,15 +1963,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\bouclage_ecs_screen\Bouclage_ecsViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\bouclage_ecs_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\courbe_loi_d_eau_screen\Courbe_loi_d_eauPresenter.hpp">
-      <Filter>Header Files\gui\courbe_loi_d_eau_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\courbe_loi_d_eau_screen\Courbe_loi_d_eauView.hpp">
-      <Filter>Header Files\gui\courbe_loi_d_eau_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\courbe_loi_d_eau_screen\Courbe_loi_d_eauViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\courbe_loi_d_eau_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\derogation_ecs_screen\Derogation_ecsPresenter.hpp">
       <Filter>Header Files\gui\derogation_ecs_screen</Filter>
     </ClInclude>
@@ -2187,6 +2388,105 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\PaveNumeriqueBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_choix_fluide_screen\Usine_choix_fluidePresenter.hpp">
+      <Filter>Header Files\gui\usine_choix_fluide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_choix_fluide_screen\Usine_choix_fluideView.hpp">
+      <Filter>Header Files\gui\usine_choix_fluide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_choix_fluide_screen\Usine_choix_fluideViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_choix_fluide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_choix_modele_pac_screen\Usine_choix_modele_pacPresenter.hpp">
+      <Filter>Header Files\gui\usine_choix_modele_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_choix_modele_pac_screen\Usine_choix_modele_pacView.hpp">
+      <Filter>Header Files\gui\usine_choix_modele_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_choix_modele_pac_screen\Usine_choix_modele_pacViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_choix_modele_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_additionnelle_screen\Usine_config_additionnellePresenter.hpp">
+      <Filter>Header Files\gui\usine_config_additionnelle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_additionnelle_screen\Usine_config_additionnelleView.hpp">
+      <Filter>Header Files\gui\usine_config_additionnelle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_additionnelle_screen\Usine_config_additionnelleViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_config_additionnelle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_geotwin_screen\Usine_config_geotwinPresenter.hpp">
+      <Filter>Header Files\gui\usine_config_geotwin_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_geotwin_screen\Usine_config_geotwinView.hpp">
+      <Filter>Header Files\gui\usine_config_geotwin_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_geotwin_screen\Usine_config_geotwinViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_config_geotwin_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_inverterra_screen\Usine_config_inverterraPresenter.hpp">
+      <Filter>Header Files\gui\usine_config_inverterra_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_inverterra_screen\Usine_config_inverterraView.hpp">
+      <Filter>Header Files\gui\usine_config_inverterra_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_inverterra_screen\Usine_config_inverterraViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_config_inverterra_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_numero_serie_screen\Usine_numero_seriePresenter.hpp">
+      <Filter>Header Files\gui\usine_numero_serie_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_numero_serie_screen\Usine_numero_serieView.hpp">
+      <Filter>Header Files\gui\usine_numero_serie_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_numero_serie_screen\Usine_numero_serieViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_numero_serie_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_ajpac_screen\Usine_config_ajpacPresenter.hpp">
+      <Filter>Header Files\gui\usine_config_ajpac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_ajpac_screen\Usine_config_ajpacView.hpp">
+      <Filter>Header Files\gui\usine_config_ajpac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_ajpac_screen\Usine_config_ajpacViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_config_ajpac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_appoint_screen\Installation_appointPresenter.hpp">
+      <Filter>Header Files\gui\installation_appoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_appoint_screen\Installation_appointView.hpp">
+      <Filter>Header Files\gui\installation_appoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_appoint_screen\Installation_appointViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_appoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_screen\Installation_hydrauliquePresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_screen\Installation_hydrauliqueView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_screen\Installation_hydrauliqueViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauPresenter.hpp">
+      <Filter>Header Files\gui\installation_courbe_loi_d_eau_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauView.hpp">
+      <Filter>Header Files\gui\installation_courbe_loi_d_eau_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_courbe_loi_d_eau_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_chauffe_dalle_screen\Installation_chauffe_dallePresenter.hpp">
+      <Filter>Header Files\gui\installation_chauffe_dalle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_chauffe_dalle_screen\Installation_chauffe_dalleView.hpp">
+      <Filter>Header Files\gui\installation_chauffe_dalle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_chauffe_dalle_screen\Installation_chauffe_dalleViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_chauffe_dalle_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
