@@ -1,7 +1,7 @@
 
 {
   "Application": {
-    "Name": "Display-Controller_Firmware",
+    "Name": "ARKTEOS_IHM_V4_APP_Firmware",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "AvailableColorDepths": [ 16 ],
     "AvailableLCDs":
@@ -19,7 +19,7 @@
     "SubFamily": "STM32H730 Value line",
     "Platform": "m7",
     "Toolchain": "STM32CubeIDE",
-    "ProjectFile": "../Display-Controller_Firmware.ioc",
+    "ProjectFile": "../ARKTEOS_IHM_V4_APP_Firmware.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [
     ],

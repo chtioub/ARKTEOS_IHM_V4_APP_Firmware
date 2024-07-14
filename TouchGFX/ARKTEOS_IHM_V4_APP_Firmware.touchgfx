@@ -52145,17 +52145,7 @@
                 "Width": 950,
                 "Height": 398,
                 "Visible": false,
-                "Components": [
-                  {
-                    "Type": "Image",
-                    "Name": "Image1_1_1_1",
-                    "X": 46,
-                    "Y": 11,
-                    "Width": 858,
-                    "Height": 377,
-                    "RelativeFilename": "Test_L857xH376-69.png"
-                  }
-                ]
+                "Components": []
               },
               {
                 "Type": "Container",
@@ -52487,51 +52477,6 @@
                     "Width": 689,
                     "Height": 317,
                     "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH316.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image5",
-                    "X": 131,
-                    "Y": 41,
-                    "Width": 689,
-                    "Height": 317,
-                    "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH316 - Copie.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image6",
-                    "X": 131,
-                    "Y": 41,
-                    "Width": 689,
-                    "Height": 317,
-                    "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH316 - Copie2.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image7",
-                    "X": 131,
-                    "Y": 41,
-                    "Width": 689,
-                    "Height": 317,
-                    "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH316 - Copie3.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image8",
-                    "X": 131,
-                    "Y": 41,
-                    "Width": 689,
-                    "Height": 317,
-                    "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH316 - Copie4.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image9",
-                    "X": 131,
-                    "Y": 41,
-                    "Width": 689,
-                    "Height": 317,
-                    "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH316 - Copie5.png"
                   }
                 ]
               },
@@ -72178,7 +72123,7 @@
     },
     "SelectedColorDepth": 16,
     "StartupScreenName": "Variables_systeme",
-    "SelectedStartupLanguage": "FR",
+    "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
     "AvailableColorDepths": [
@@ -72218,7 +72163,7 @@
     "SubFamily": "STM32H730 Value line",
     "Toolchain": "STM32CubeIDE",
     "Platform": "m7",
-    "ProjectFile": "../Display-Controller_Firmware.ioc",
+    "ProjectFile": "../ARKTEOS_IHM_V4_APP_Firmware.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [],
     "AdditionalFeatures": []
