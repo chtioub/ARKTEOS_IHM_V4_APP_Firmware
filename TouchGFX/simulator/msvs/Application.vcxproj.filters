@@ -130,407 +130,767 @@
     <Filter Include="Source Files\generated\simulator">
       <UniqueIdentifier>{C07B02B9-A55E-47AA-AD61-59A6AAD754E6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui">
-      <UniqueIdentifier>37DF279D-AD03-8EC1-6C81-9E8CED6AC125</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui">
-      <UniqueIdentifier>43D56553-48F8-5FAE-B9B6-4F5153BDB98D</UniqueIdentifier>
+      <UniqueIdentifier>DD2E768B-5D83-62A4-ACB9-E0BBFD349423</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\common">
-      <UniqueIdentifier>AF5E3731-DF3D-498C-5B1E-2CE3D5F674CF</UniqueIdentifier>
+    <Filter Include="Header Files\gui">
+      <UniqueIdentifier>3E69D34A-7078-CBD6-EB97-DF1C782111CA</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\model">
-      <UniqueIdentifier>8E976A84-3F15-606D-35AB-EDCE28AC96E8</UniqueIdentifier>
+    <Filter Include="Header Files\gui\langue_screen">
+      <UniqueIdentifier>9222A346-A1F3-3474-334F-B7299CEB1DC8</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\model">
-      <UniqueIdentifier>0F0C9E1F-C433-01CE-C932-008367C3A40F</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated">
-      <UniqueIdentifier>EFFAC152-EC33-50DA-467A-29D424E083A9</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\common">
-      <UniqueIdentifier>93F5D5C0-054B-FC43-03ED-5E7D18B2C14A</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated">
-      <UniqueIdentifier>7BD911FD-47CE-487B-3560-662AC511F58B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\common">
-      <UniqueIdentifier>FA24402A-741F-A9BA-34BD-962D84183DEB</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\simulator\include">
-      <UniqueIdentifier>80FE1A93-3B33-5E4C-BE83-52CF35DFB266</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\simulator\video">
-      <UniqueIdentifier>0BC44378-46FD-2B95-ECC2-F3E3F7C2D89B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\common">
-      <UniqueIdentifier>7738E8F7-41D0-D1C9-8F74-FDB0D3F1517E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\simulator\include\simulator">
-      <UniqueIdentifier>009BEF8C-3776-75D8-6366-0167FA300B41</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\simulator\include\simulator\video">
-      <UniqueIdentifier>224BCCB5-9E65-543D-7F21-7CDC5938C1AD</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\piscine_screen">
-      <UniqueIdentifier>9BC32909-680F-97E7-9B2C-96F38AEB2900</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\piscine_screen">
-      <UniqueIdentifier>30B83AAC-9E15-25E3-7598-58F4FA5BC3A0</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\programmation_screen">
-      <UniqueIdentifier>707A761B-313B-BEC5-4EF0-0EEDC60602BA</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\accueil_screen">
-      <UniqueIdentifier>59E223EA-05E9-0845-EA60-9193F5F2FBE7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\programmation_screen">
-      <UniqueIdentifier>8FF5A9C4-6831-1AFF-C428-39D716012F28</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\accueil_screen">
-      <UniqueIdentifier>0E651D4A-9DA7-923D-A9AF-261896D088DD</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\accueil_screen">
-      <UniqueIdentifier>F138D975-1225-5185-AB64-044C8EE4DFF2</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\accueil_screen">
-      <UniqueIdentifier>663D00D8-C9B3-5624-27FB-3210F2677D63</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\programmation_screen">
-      <UniqueIdentifier>F2FE5053-2AEA-2053-D605-DD709D265C6B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\piscine_screen">
-      <UniqueIdentifier>F1DB9D44-4249-431B-C98C-BB4470C8ACF6</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\programmation_screen">
-      <UniqueIdentifier>96879910-BF1F-222F-3AB4-E44B2F0DCD70</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\piscine_screen">
-      <UniqueIdentifier>E3B9E108-4E36-A6F4-5CB9-2B1F13A1DDC0</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\derogation_ecs_screen">
-      <UniqueIdentifier>AF557A92-DB88-8097-41D0-E6A58E17D19A</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\usine_screen">
-      <UniqueIdentifier>5D49C78A-CF5C-EE26-D394-4738C164632F</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\installation_screen">
-      <UniqueIdentifier>99B826BF-3DBB-F489-2175-A3D38354ED6E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\installation_screen">
-      <UniqueIdentifier>21776368-F3E5-5B0B-2F84-A926622FB3D0</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\derogation_ecs_screen">
-      <UniqueIdentifier>6B49FFA0-BCEE-33D8-4CAE-B872E345D6A5</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\maintenance_screen">
-      <UniqueIdentifier>88013F5B-98BE-5BD2-194A-BE749F2FCF0E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\maintenance_screen">
-      <UniqueIdentifier>28617C2A-320B-F45A-2EB0-132FD5CA2E5D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\variables_systeme_screen">
-      <UniqueIdentifier>11D561AE-5A93-4A00-6BB7-933FB70B88C1</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\infos_systeme_screen">
-      <UniqueIdentifier>5F3F5876-34C6-CF4B-C09C-576DAD43B5F6</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\infos_systeme_screen">
-      <UniqueIdentifier>4FF1FEC4-2A7D-24AC-3906-203079503FDC</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\usine_screen">
-      <UniqueIdentifier>52EA2576-7130-9E3F-4537-8C322D811E56</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\derogation_screen">
-      <UniqueIdentifier>D4B5319B-264A-8984-9204-74888966DA81</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\courbe_loi_d_eau_screen">
-      <UniqueIdentifier>96A82766-B5DB-0671-1D74-1CCC828B3E77</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\derogation_screen">
-      <UniqueIdentifier>1CE0EFCE-BB99-558A-51EA-0B95C29A9187</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\courbe_loi_d_eau_screen">
-      <UniqueIdentifier>9F5A973E-F3C4-9A69-DF49-26390A86059C</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\historiques_fonctionnement_screen">
-      <UniqueIdentifier>604F039C-973F-901F-AA76-D78B57877DA6</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\historiques_fonctionnement_screen">
-      <UniqueIdentifier>36CD3480-81B0-9616-CA3F-A9D92C68AF31</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\variables_systeme_screen">
-      <UniqueIdentifier>B982A1A5-C658-D489-5421-28161EE0E5B8</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\bouclage_ecs_screen">
-      <UniqueIdentifier>D50AC66C-E72C-9739-F28E-17B782F281AD</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\bouclage_ecs_screen">
-      <UniqueIdentifier>3521BE78-4C74-3630-4FD8-B04A85773056</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\eau_chaude_sanitaire_screen">
-      <UniqueIdentifier>B6163852-EF1D-3116-66DC-3496300C171D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\erreurs_screen">
-      <UniqueIdentifier>B9C94FF6-EB05-574C-8914-FF6E0F908A18</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\programmation_zoom_screen">
-      <UniqueIdentifier>F9B7B5FA-DC13-0C71-CF98-ECAD4341FA33</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\eau_chaude_sanitaire_screen">
-      <UniqueIdentifier>15E12AA6-202C-264F-6F69-9FD697E308A5</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\programmation_zoom_screen">
-      <UniqueIdentifier>DAD5CED0-6177-32F4-FDEA-E1CA7CC8F8E1</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\erreurs_screen">
-      <UniqueIdentifier>E64DBA8C-D62F-7C37-1874-DE866A47FA03</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\synoptique_screen">
-      <UniqueIdentifier>55C70B7C-418D-7932-796A-9A423D5E6FCE</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\energies_screen">
-      <UniqueIdentifier>5DF1606E-4E90-089E-1854-FDC623F8150C</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\energies_screen">
-      <UniqueIdentifier>E3815354-97BA-D6E4-D020-1D5565996A6F</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\energies_cumul_screen">
-      <UniqueIdentifier>FFB6E62B-C903-D767-6B8B-AFAB3FA3DB58</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\energies_cumul_screen">
-      <UniqueIdentifier>99313D7C-207F-505F-364F-E0038D5990C1</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\energies_histo_screen">
-      <UniqueIdentifier>26F1C016-EA68-4BB6-839E-F3C885B40547</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\synoptique_screen">
-      <UniqueIdentifier>B10275F1-1C4B-8662-129D-360384E6A504</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\energies_histo_screen">
-      <UniqueIdentifier>A81116A4-8C82-942E-74D0-4758741A4275</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\programmation_zoom_screen">
-      <UniqueIdentifier>7F618771-5D31-0238-2B72-EB2DAF6C9E53</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\programmation_zoom_screen">
-      <UniqueIdentifier>7515E240-9571-AA32-EC0F-D42E1A0059D2</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\synoptique_screen">
-      <UniqueIdentifier>E13299E3-3046-12C4-BEA7-E9DF63DF9F00</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\bouclage_ecs_screen">
-      <UniqueIdentifier>4F9B5E28-2C20-3F7B-7695-94BB986DC90B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\synoptique_screen">
-      <UniqueIdentifier>09B16AD4-BEB8-E66E-EC38-3654DA7FDC88</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\maintenance_screen">
-      <UniqueIdentifier>922728D0-7C0E-306E-CC47-3E361EBA8493</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\maintenance_screen">
-      <UniqueIdentifier>F54772D9-72D9-DDD9-3FF1-A90CAF52D62A</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\installation_screen">
-      <UniqueIdentifier>9E13B316-C4ED-14F3-8AE9-C6F52E629068</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\installation_screen">
-      <UniqueIdentifier>068E6009-FAE5-78E0-9A91-C795FFE477D2</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\infos_systeme_screen">
-      <UniqueIdentifier>93083D80-E815-3A68-DF81-6B1AF1600D33</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\infos_systeme_screen">
-      <UniqueIdentifier>13125D4A-1B94-1EEA-D871-1B96FCE399EC</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\historiques_fonctionnement_screen">
-      <UniqueIdentifier>B2870948-B9CB-767D-328A-720699A93FEA</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\historiques_fonctionnement_screen">
-      <UniqueIdentifier>DAE1C6E7-C542-0D95-C137-2778ADBC7609</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\variables_systeme_screen">
-      <UniqueIdentifier>6919C8A7-7A9D-3DBB-9EEF-FC3F4212A481</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\erreurs_screen">
-      <UniqueIdentifier>0EF49581-1617-F778-1F73-0EFA549784D9</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\erreurs_screen">
-      <UniqueIdentifier>9D1C429E-FAF0-3106-50F0-539A5B2555E9</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\usine_screen">
-      <UniqueIdentifier>B2841048-7D5B-7C2F-CC75-0A858C66F147</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\energies_screen">
-      <UniqueIdentifier>6ACEDB8D-5F02-F070-FE84-0686DF430ABA</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\energies_screen">
-      <UniqueIdentifier>30E73B85-24FB-0230-B72E-94B682DE8A17</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\energies_histo_screen">
-      <UniqueIdentifier>6EA98F46-98C6-2BB6-15AF-36065D01B607</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\usine_screen">
-      <UniqueIdentifier>62D2C2AA-FF1D-38DB-CFEC-CEB755838A9B</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\energies_histo_screen">
-      <UniqueIdentifier>7C6B3416-4A43-F349-E742-41075A1C70CC</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\energies_cumul_screen">
-      <UniqueIdentifier>06790528-1813-9070-A95F-82E47898A501</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\energies_cumul_screen">
-      <UniqueIdentifier>8A80A405-E37D-CB94-02F1-0D1E4C456F50</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\eau_chaude_sanitaire_screen">
-      <UniqueIdentifier>56E0DD5F-100F-794D-2265-45FBC49030AB</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\eau_chaude_sanitaire_screen">
-      <UniqueIdentifier>744859F1-3D1E-8AC0-2370-6F5043B00775</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\variables_systeme_screen">
-      <UniqueIdentifier>29EE246A-790D-1300-9E62-4E92EA4E4B10</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\bouclage_ecs_screen">
-      <UniqueIdentifier>5ACC7324-A7A3-AFE7-839E-74B0478D1F97</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\derogation_screen">
-      <UniqueIdentifier>14C1B2FF-5855-C2F1-5112-6DA62C982F22</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\derogation_screen">
-      <UniqueIdentifier>FFAD3FC1-1E4C-C65C-687A-C4640D6546FB</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\derogation_ecs_screen">
-      <UniqueIdentifier>13DED20F-C059-1C20-FBBA-50036B456E41</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\derogation_ecs_screen">
-      <UniqueIdentifier>89DA5CE9-18AF-5896-D932-05BD63FAF68D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\courbe_loi_d_eau_screen">
-      <UniqueIdentifier>41952EB3-9155-FB2C-1CD1-2F4B07C8812E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\courbe_loi_d_eau_screen">
-      <UniqueIdentifier>8AC71845-73CA-D7B8-9F09-A632983AEBFC</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\containers">
-      <UniqueIdentifier>64F276F1-A2B3-5A19-34B3-D65049863228</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\containers">
-      <UniqueIdentifier>86C6694B-D90D-FB0B-7578-129BCB93A265</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\containers">
-      <UniqueIdentifier>254051E4-E544-EC33-B155-3D3A5507E64E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\containers">
-      <UniqueIdentifier>FEC0772A-AC53-4873-4249-AF5CF768E616</UniqueIdentifier>
+    <Filter Include="Source Files\gui\langue_screen">
+      <UniqueIdentifier>AC938749-9DE7-2E18-76B2-66FB9F8CFAD8</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\zone_screen">
-      <UniqueIdentifier>1D4324BC-4343-D990-7F5F-FCB1F68CFA08</UniqueIdentifier>
+      <UniqueIdentifier>8B70A4A2-FC7C-CD90-AE21-73ABACA91CEE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated">
+      <UniqueIdentifier>42E1C77E-F010-7CA5-808A-3C10BAE7A6C2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated">
+      <UniqueIdentifier>48DFB2FA-7DD0-7ABB-E8FF-DC9E59018B8B</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\zone_screen">
-      <UniqueIdentifier>8B2C13C9-2DBC-13D4-9762-D826CD3AC6D9</UniqueIdentifier>
+      <UniqueIdentifier>E3AE6B23-2E2F-241C-42B9-A431C6C2260B</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\configuration_screen">
-      <UniqueIdentifier>AB351D55-D779-8709-BCD5-DC24076D88FD</UniqueIdentifier>
+    <Filter Include="Header Files\gui\installation_screen">
+      <UniqueIdentifier>EA79861C-69B8-C326-61FA-01037B3F2F97</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\configuration_screen">
-      <UniqueIdentifier>0630CC5C-88A8-7D9D-DD95-5E5313CBA103</UniqueIdentifier>
+    <Filter Include="Source Files\gui\installation_screen">
+      <UniqueIdentifier>8CB38768-2E04-497F-DA48-CEF03C78B8E2</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\zone_screen">
-      <UniqueIdentifier>3B5A0EF6-9F16-8D3F-E545-C8EB6E1CE5A9</UniqueIdentifier>
+    <Filter Include="Source Files\gui\luminosite_screen">
+      <UniqueIdentifier>3B40319C-72D6-585A-9E2C-672B30677BD4</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\configuration_screen">
-      <UniqueIdentifier>F8D5BBA7-5D10-A901-D6D3-C31B4FD6E98A</UniqueIdentifier>
+    <Filter Include="Header Files\gui\luminosite_screen">
+      <UniqueIdentifier>FBE2559B-5784-485E-7CFD-5C90CC112A82</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\configuration_screen">
-      <UniqueIdentifier>935FBFE6-651D-ECDA-D582-F8B40BAB2C62</UniqueIdentifier>
+    <Filter Include="Source Files\gui\attente_screen">
+      <UniqueIdentifier>60387A5D-8850-19BE-D10F-11F6F3625312</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\zone_screen">
-      <UniqueIdentifier>6921BC78-6CC4-7F43-D834-3EFDE3CF2C7C</UniqueIdentifier>
+    <Filter Include="Header Files\gui\installation_wattmetre_screen">
+      <UniqueIdentifier>5B380AF9-9D78-8D83-A402-5D9BDD3153F5</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\vacances_screen">
-      <UniqueIdentifier>CAD9CFFC-ED05-2C68-C296-24F761AE9721</UniqueIdentifier>
+    <Filter Include="Source Files\gui\installation_wattmetre_screen">
+      <UniqueIdentifier>B6C7050D-13DC-5387-B98E-67FFE4B0B78D</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\parametres_screen">
-      <UniqueIdentifier>8F4ADDBC-18D0-61C4-705A-E1BEAA375418</UniqueIdentifier>
+    <Filter Include="Header Files\gui\attente_screen">
+      <UniqueIdentifier>BE35CCB6-7C99-D64C-B163-5BDE175B571A</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\parametres_screen">
-      <UniqueIdentifier>AB938A3C-637C-A914-DC12-4ABBA69592C6</UniqueIdentifier>
+    <Filter Include="Source Files\gui\maintenance_screen">
+      <UniqueIdentifier>4DD17235-2BA3-06C1-5DBB-7A6FF87855E3</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\installation_config_hydrau_rapide_screen">
-      <UniqueIdentifier>065C51FA-5CAB-0988-ABEA-D5E4B1DDD54B</UniqueIdentifier>
+    <Filter Include="Header Files\gui\installation_piscine_screen">
+      <UniqueIdentifier>3C94EBF4-8060-831A-E57B-258758DADD4F</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\installation_config_hydrau_rapide_screen">
-      <UniqueIdentifier>0DD46395-329A-5F1E-1FD3-AE127027B9BD</UniqueIdentifier>
+    <Filter Include="Header Files\gui\maintenance_screen">
+      <UniqueIdentifier>4732A6F1-634F-5419-4910-E399CD16AF3E</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\vacances_screen">
-      <UniqueIdentifier>924AE631-AD02-A639-1831-597BCCC6DC8C</UniqueIdentifier>
+    <Filter Include="Source Files\gui\installation_piscine_screen">
+      <UniqueIdentifier>94FCCB90-1528-139B-E3AC-CEEA866994A6</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\secours_screen">
-      <UniqueIdentifier>47811C50-843E-24DB-A517-ADDB7E6E5168</UniqueIdentifier>
+    <Filter Include="Header Files\gui\installation_piscine_avances_screen">
+      <UniqueIdentifier>6DE92BB6-9202-E077-76B6-42881394F234</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\secours_screen">
-      <UniqueIdentifier>BDECD4D9-E730-30BC-A153-1106ECBE94D9</UniqueIdentifier>
+    <Filter Include="Source Files\gui\installation_piscine_avances_screen">
+      <UniqueIdentifier>1E550586-4426-0D11-1C6F-330FAE9A0759</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\test_pac_screen">
-      <UniqueIdentifier>6AA64F5B-2269-BA67-084C-DDC52593D2F6</UniqueIdentifier>
+    <Filter Include="Header Files\gui\variables_systeme_screen">
+      <UniqueIdentifier>49A0C8CB-DBEA-E6E7-6BDA-E1B0ABD08EC3</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\test_pac_screen">
-      <UniqueIdentifier>DAA2D5D2-CCC1-AB0A-5CB9-31E99FBB079C</UniqueIdentifier>
+    <Filter Include="Source Files\gui\accueil_screen">
+      <UniqueIdentifier>02D72F28-8F29-5AE3-2695-ECE344FC8644</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\test_pac_screen">
-      <UniqueIdentifier>358C4FEA-87BB-7B57-55EF-CBF5194E78BF</UniqueIdentifier>
+    <Filter Include="Source Files\gui\containers">
+      <UniqueIdentifier>DA333FA3-ADDB-6852-B8D1-25D1FFFA4604</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\test_pac_screen">
-      <UniqueIdentifier>1092CB7B-6445-C399-6473-2B8A3C480534</UniqueIdentifier>
+    <Filter Include="Source Files\gui\model">
+      <UniqueIdentifier>6891CF34-21CF-4A75-DBDD-E40E50DFF021</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\secours_screen">
-      <UniqueIdentifier>6EDB80F5-D0C6-9436-6FC1-CB7BCC34B8EF</UniqueIdentifier>
+    <Filter Include="Header Files\gui\containers">
+      <UniqueIdentifier>94C95396-1D5A-EAC0-FF99-A17706581879</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\secours_screen">
-      <UniqueIdentifier>F4C7B45D-B769-2844-27B7-DD7939B9AEA7</UniqueIdentifier>
+    <Filter Include="Header Files\gui\model">
+      <UniqueIdentifier>537A97BA-733F-6DFF-2A81-6592C48555B0</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\parametres_screen">
-      <UniqueIdentifier>7DA146D8-B59A-C6F6-5D55-25A3DFBD382D</UniqueIdentifier>
+    <Filter Include="Header Files\gui\installation_hysteresis_screen">
+      <UniqueIdentifier>12117CF9-D2AB-E232-0E08-4D54D1D540AE</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\parametres_screen">
-      <UniqueIdentifier>730ED4BE-9BB6-BB5D-B341-07C1A3A99EDF</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\vacances_screen">
-      <UniqueIdentifier>BA9D4F3D-46E5-FA3E-C0C6-DC4189AC0D0E</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\vacances_screen">
-      <UniqueIdentifier>6E0AB5D2-0CDE-3E6C-7233-2D7541DDD994</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\installation_config_hydrau_rapide_screen">
-      <UniqueIdentifier>A0B5998C-583A-8B66-BCA3-F8A717660D6F</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\installation_config_hydrau_rapide_screen">
-      <UniqueIdentifier>81F781F5-C0EC-AC57-42C3-9F2F8B3D7616</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\page_oui_non_screen">
-      <UniqueIdentifier>DE9734FD-3383-4162-013B-90BA92F64ED7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\page_oui_non_screen">
-      <UniqueIdentifier>B2DFC2A1-5838-D02A-8AA7-029835A04F87</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\page_oui_non_screen">
-      <UniqueIdentifier>C4826F27-7F55-4618-0C87-728C5F50965D</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\page_oui_non_screen">
-      <UniqueIdentifier>C8DA9DC3-43D6-EC93-602A-F948E2E16CBF</UniqueIdentifier>
+    <Filter Include="Source Files\gui\installation_hysteresis_screen">
+      <UniqueIdentifier>21684E44-741C-579F-E5EB-8164F7D78D86</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\multizones_screen">
-      <UniqueIdentifier>D3305CC7-2DE9-3E94-C587-773FE216F3A3</UniqueIdentifier>
+      <UniqueIdentifier>935A3AA1-73D6-258B-834F-67DC4E496850</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\variables_systeme_screen">
+      <UniqueIdentifier>9091AAAE-D358-537B-D2A4-AF0175C8E92D</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\multizones_screen">
-      <UniqueIdentifier>7EEB28C4-4FC1-D9AE-911B-19D97786C4D5</UniqueIdentifier>
+      <UniqueIdentifier>0363F3CD-4E41-EBB3-7DA2-F6A929338ED9</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\multizones_screen">
-      <UniqueIdentifier>96870837-2C55-BEBB-735E-9C078304352B</UniqueIdentifier>
+    <Filter Include="Header Files\gui\installation_hydraulique_screen">
+      <UniqueIdentifier>470C5A18-22F4-94B9-51B6-D97C569E436B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_screen">
+      <UniqueIdentifier>21D2475B-3DBD-5EF8-C8A4-F87DB92F7DD6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\bouclage_ecs_screen">
+      <UniqueIdentifier>C45F964C-662F-491F-04A9-4E1BE5E1C945</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\page_oui_non_screen">
+      <UniqueIdentifier>43B5E546-9A11-9D5C-6C9B-E45B19A9FED3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_screen">
+      <UniqueIdentifier>CDF9D59B-86B9-FC12-7F28-366B86F9F843</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\page_oui_non_screen">
+      <UniqueIdentifier>DD858C90-0057-2ED3-800E-E4655E629DF1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_screen">
+      <UniqueIdentifier>DDC0112E-9154-971E-B76F-8EFA5890ACCC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\bouclage_ecs_screen">
+      <UniqueIdentifier>436A6CAE-E28D-8E06-0087-2AE719BB06FB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_solaire_screen">
+      <UniqueIdentifier>802949EB-D8AF-D397-FFE1-AF5B846AE65E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_solaire_screen">
+      <UniqueIdentifier>A5DD3533-44C8-DA66-0EFE-68018D466F11</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\parametres_screen">
+      <UniqueIdentifier>F6D60F9C-6D0E-B141-1BD2-1B49E1A0AF1D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\parametres_screen">
+      <UniqueIdentifier>9AC60DD8-3B98-B667-A79F-D02BB8808B28</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_simultane_screen">
+      <UniqueIdentifier>FD7D308E-20F7-2886-5EA8-19DDEE53375F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_simultane_screen">
+      <UniqueIdentifier>3B623B39-CF65-C403-0D5B-FE64F8386B00</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\vacances_screen">
+      <UniqueIdentifier>82C9FEAC-AB68-F781-064B-EA1CDCB36B9E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\vacances_screen">
+      <UniqueIdentifier>272B7A31-A18D-C25F-3203-D5E0DF94893B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_puissance_echangeur_screen">
+      <UniqueIdentifier>1F52E59C-6F5E-9CCB-59F2-DF6CB3601AD3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_puissance_echangeur_screen">
+      <UniqueIdentifier>7192278C-D6AF-AA8B-CB42-9854144C27BB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\piscine_screen">
+      <UniqueIdentifier>C140E9CC-FD40-8C31-2729-A8770D440DFE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_puissance_appoint_screen">
+      <UniqueIdentifier>520C36A3-F5FB-D00A-4166-F1C85EEC5627</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\piscine_screen">
+      <UniqueIdentifier>CA3D5CA8-BD33-7A07-0709-76740E2074DB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_puissance_appoint_screen">
+      <UniqueIdentifier>A6D4041E-0E6B-7DE4-9F65-919DD8658F9C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\code_web_screen">
+      <UniqueIdentifier>24E4A1FF-A668-5D85-3E3D-B032FDD93E0D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_inhibition_ejp_screen">
+      <UniqueIdentifier>BF70FC68-BF11-6457-39C1-708F3E46880F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\code_web_screen">
+      <UniqueIdentifier>1388B9BA-873C-E34E-6216-F5528DEA3314</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_inhibition_ejp_screen">
+      <UniqueIdentifier>20C8F104-D1CE-AB7D-D900-4D1184AC0620</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\position_ecran_screen">
+      <UniqueIdentifier>42F10EB8-54E1-0055-DD51-DBA50CF0E57C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\position_ecran_screen">
+      <UniqueIdentifier>CDBE7F84-8365-CC88-C06A-9AE73ABD9856</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_cycle_legionel_screen">
+      <UniqueIdentifier>F4978F81-4E2B-3175-4D98-46EB66E85EAD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_cycle_legionel_screen">
+      <UniqueIdentifier>F1DCD9C7-DE90-FD8C-C44A-F6A5C9D69646</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_screen">
+      <UniqueIdentifier>5AD76A50-015E-20CA-D417-CE0978F8CB87</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_screen">
+      <UniqueIdentifier>BB8A0B88-478B-B686-F510-4E2D085E565B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\programmation_zoom_screen">
+      <UniqueIdentifier>64F88A8B-C725-A676-FA35-A967AE7762BA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_ecs_avances_screen">
+      <UniqueIdentifier>45A2E779-9385-58E4-6810-B11CED19FDA4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\programmation_zoom_screen">
+      <UniqueIdentifier>C6EE42E9-7D24-2864-F9D2-FA6AD6B0A63A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_ecs_avances_screen">
+      <UniqueIdentifier>2AAE5229-E17B-DA5F-CE96-58BFACDA28EA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\configuration_screen">
+      <UniqueIdentifier>D0BBDEC6-F84E-293F-FDE5-BD20A15439E0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_courbe_loi_d_eau_screen">
+      <UniqueIdentifier>71EDDC84-C63E-A5E9-4F10-F2B0DA54ADD5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\configuration_screen">
+      <UniqueIdentifier>6F287B48-0B47-1B42-D96B-597B94BA04A3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_courbe_loi_d_eau_screen">
+      <UniqueIdentifier>88DE0780-51A4-8312-C0CD-83DE68D9D022</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\programmation_screen">
+      <UniqueIdentifier>AF9457AE-1FB9-0BE9-C04F-DEAEB51C8878</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\programmation_screen">
+      <UniqueIdentifier>D18CDB96-F7A3-01EB-BE9D-0731DFBFD03B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_config_hydrau_rapide_screen">
+      <UniqueIdentifier>BC058984-3D81-12A9-F82F-6B885F79075D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_config_hydrau_rapide_screen">
+      <UniqueIdentifier>FE0F8A4C-828F-137A-342E-DBBCA0C010AF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\secours_screen">
+      <UniqueIdentifier>CD6B31DC-BECF-F25B-944A-6F43CA7341C6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_circuit_primaire_screen">
+      <UniqueIdentifier>3DCBD782-DFE8-4B03-C153-4863C8BA2F96</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\secours_screen">
+      <UniqueIdentifier>BA68810C-4B2F-2032-C1A9-7EF35A53237C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_circuit_primaire_screen">
+      <UniqueIdentifier>87A70EC2-D15E-8A69-E177-8B664E7FACA8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_numero_serie_screen">
+      <UniqueIdentifier>30B55F55-6869-8F91-B81A-A575E810C655</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\date_heure_screen">
+      <UniqueIdentifier>C04E3A74-7788-2AA5-2607-A7015079DCA6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_circuit_captage_screen">
+      <UniqueIdentifier>4265AFF4-B52C-C82B-BC37-2CB52B2BB7E8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\date_heure_screen">
+      <UniqueIdentifier>FB117C76-2E9A-F721-DEBD-B27927BCC6A4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_circuit_captage_screen">
+      <UniqueIdentifier>D3D24C0E-ACEB-DD94-2F0F-FB44D08F68A7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_numero_serie_screen">
+      <UniqueIdentifier>5814595E-1F18-83AC-A838-651832230023</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\accueil_screen">
+      <UniqueIdentifier>7D94FACB-CD8C-71C4-CD11-719225AE0F0F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_chauffe_dalle_screen">
+      <UniqueIdentifier>BB6BE21B-0E8E-6776-F61D-092D1DA8900D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_chauffe_dalle_screen">
+      <UniqueIdentifier>B0C89B61-A055-C372-6D65-8607EF5E7A01</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\derogation_ecs_screen">
+      <UniqueIdentifier>74D1E5AA-0000-89A0-0F3B-7F4F727B139E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\derogation_ecs_screen">
+      <UniqueIdentifier>13CE8F1E-8132-8AA1-3523-2937FB4E0928</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_appoint_screen">
+      <UniqueIdentifier>8DCF293F-760C-498F-BA07-16E5107445D9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\synoptique_screen">
+      <UniqueIdentifier>51F11C22-2D64-E97F-0229-07DA5C1EAAB3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_appoint_screen">
+      <UniqueIdentifier>820C0095-FFF5-189E-FF8C-843E55917415</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\synoptique_screen">
+      <UniqueIdentifier>DCC68F8C-65CE-4D55-56DB-88FF7A4FC06E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\infos_systeme_screen">
+      <UniqueIdentifier>12CDFBF7-5E7B-20DC-5E34-B0D6654EB87E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\infos_systeme_screen">
+      <UniqueIdentifier>60EE2493-B8F7-86FF-EFF4-76C5E0DE98D3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_config_inverterra_screen">
+      <UniqueIdentifier>03285750-3C75-20C7-5D75-C0BC1580511A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\test_pac_screen">
+      <UniqueIdentifier>30143A18-6E45-347A-F6F2-E6A50AEB0252</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_config_inverterra_screen">
+      <UniqueIdentifier>E3E87CD9-A846-59EE-ED2D-0E9D8BFEA0DF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\test_pac_screen">
+      <UniqueIdentifier>1CAA94DD-89AB-7ABC-B2A4-52ABD93F2716</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\historiques_fonctionnement_screen">
+      <UniqueIdentifier>191AC0EE-E083-09B0-2FAB-E7DB99D93034</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\historiques_fonctionnement_screen">
+      <UniqueIdentifier>C0EC8143-5B68-B308-FF4A-9A59EEB9BB83</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\common">
+      <UniqueIdentifier>CD507C57-144E-B82A-69A5-2830D8D7B234</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\derogation_screen">
+      <UniqueIdentifier>3B0F5ED8-5790-ED17-6920-AA081618E04C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\derogation_screen">
+      <UniqueIdentifier>4314D767-2D37-26C8-2437-24E99670625B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_choix_fluide_screen">
+      <UniqueIdentifier>97FEC41E-A128-7C67-4151-D9C6336912AB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_choix_fluide_screen">
+      <UniqueIdentifier>D87FC939-49C5-CFB1-C3D3-9CF8858FB126</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\common">
+      <UniqueIdentifier>F2CBA430-C7AF-5AC5-B59C-3B606ED395CD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\erreurs_screen">
+      <UniqueIdentifier>22A293B1-98AD-AE9C-3A92-FC1AF1D170D2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\erreurs_screen">
+      <UniqueIdentifier>C6446020-3BC0-C8D7-31E3-8D36544CCDA5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_choix_modele_pac_screen">
+      <UniqueIdentifier>08AC9539-F07D-CFE2-1AA2-33623BD6D31B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_choix_modele_pac_screen">
+      <UniqueIdentifier>CC6F8447-5661-4291-5E14-27DAE084A041</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_config_geotwin_screen">
+      <UniqueIdentifier>7B4FC601-041D-E03C-D0C4-CF18B985182B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_config_geotwin_screen">
+      <UniqueIdentifier>DDDC723A-3EED-8E18-40C3-4501D3DD131A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\energies_screen">
+      <UniqueIdentifier>87D120C6-F7DB-8B37-44C4-8F28C580FA0B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\energies_screen">
+      <UniqueIdentifier>C8A6F657-E391-3E66-AD90-BBA144386D6D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_config_additionnelle_screen">
+      <UniqueIdentifier>7E0A18DF-AE12-F348-A033-2AD6B59D078E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_config_additionnelle_screen">
+      <UniqueIdentifier>B8C540F7-F2F9-C9AD-92B6-10B8090B4F63</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\energies_histo_screen">
+      <UniqueIdentifier>530F27A6-129C-0ACB-207C-7190F9D11991</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\energies_histo_screen">
+      <UniqueIdentifier>8FFBD5A7-4C9E-6493-3132-7392C476F34D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\eau_chaude_sanitaire_screen">
+      <UniqueIdentifier>538254C4-AE75-EE64-1B5C-0B4A4194590E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\eau_chaude_sanitaire_screen">
+      <UniqueIdentifier>C3B89503-9266-BFFA-5A5C-1CD3E57273FD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_config_ajpac_screen">
+      <UniqueIdentifier>2C2C0A18-5462-E4FB-F4FE-6C0E2F77B3C8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_config_ajpac_screen">
+      <UniqueIdentifier>250AE0B2-A6FA-6199-D2B9-48C7C421B207</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\energies_cumul_screen">
+      <UniqueIdentifier>65290D65-8B95-9FA6-7DF9-18C63DC3F48C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\energies_cumul_screen">
+      <UniqueIdentifier>3E332198-6788-06EC-EECC-F9E6C95147AB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_config_ajpac_screen">
+      <UniqueIdentifier>BE8EAB97-4AD0-CDB5-2C17-62A0EABD5DBE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_config_ajpac_screen">
+      <UniqueIdentifier>A7EADA1C-095A-B59E-25C8-1C8EDB8A7A53</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\eau_chaude_sanitaire_screen">
+      <UniqueIdentifier>C0784932-C6A9-561C-E02F-F8577EEF58CB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\energies_cumul_screen">
+      <UniqueIdentifier>F6B38557-2584-1EB3-72E7-EE7A46545BD8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\energies_cumul_screen">
+      <UniqueIdentifier>DE6EE22A-C636-709C-C625-91F7E1D7480E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_config_additionnelle_screen">
+      <UniqueIdentifier>392CF2C5-FE8A-2DE8-7F02-3AB87BF46D6D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_config_additionnelle_screen">
+      <UniqueIdentifier>8F0E3DAE-0A06-59BC-DB14-CBEED2421E35</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\energies_histo_screen">
+      <UniqueIdentifier>552D3276-8B86-3264-FA27-5D0CEE34017D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\energies_histo_screen">
+      <UniqueIdentifier>C2AC5AE6-2BA2-416B-5FE2-C1A84A65948E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_choix_modele_pac_screen">
+      <UniqueIdentifier>065F9171-CD73-0923-AB65-A2D979833440</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\energies_screen">
+      <UniqueIdentifier>113D7AE3-7861-8136-3D7B-F9B0BA5898F7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include">
+      <UniqueIdentifier>84AFD85F-0585-24A4-C484-A48FC5B8E482</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_choix_modele_pac_screen">
+      <UniqueIdentifier>82CDDEA5-6CC6-7414-AAC0-6D401E1F4CCE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\energies_screen">
+      <UniqueIdentifier>4A3B19FD-50EB-9447-5F5D-606E72F74268</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\derogation_screen">
+      <UniqueIdentifier>C79DA909-F5E9-1D34-C5AA-99A5F32871E0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\containers">
+      <UniqueIdentifier>EF85381E-2191-1C85-94A3-91ADB2E6AC44</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\containers">
+      <UniqueIdentifier>7D1C90FD-EDBF-6BCE-9E98-FFD176D5FE27</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_config_geotwin_screen">
+      <UniqueIdentifier>BA016AC6-855D-64A4-B266-43A52EC5E294</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\derogation_screen">
+      <UniqueIdentifier>63EE0D7D-C3D4-27E0-5E90-508E62D4E411</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_choix_fluide_screen">
+      <UniqueIdentifier>F7077156-5C16-7F89-C9FF-DC9AA0042ABD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_choix_fluide_screen">
+      <UniqueIdentifier>A63860EF-4E35-5C86-E7AE-9A7A973E0633</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_config_geotwin_screen">
+      <UniqueIdentifier>F893F45B-375A-ECA0-6486-B855A18187FB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\erreurs_screen">
+      <UniqueIdentifier>EE39106C-8378-1DA0-1BC3-AFAAE5FDA5D2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\erreurs_screen">
+      <UniqueIdentifier>31624FA6-56E1-238F-0113-325487B4F6EE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\common">
+      <UniqueIdentifier>77E05B33-C90F-5BDF-0076-56FDFCAEC08C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\common">
+      <UniqueIdentifier>0628D64A-606A-C58A-F936-03765D800DEF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\test_pac_screen">
+      <UniqueIdentifier>EF95FC72-F6A9-7A4E-4457-8AEB89A5E95F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\test_pac_screen">
+      <UniqueIdentifier>165ED82F-DAAD-2764-6936-96BA50E12136</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\derogation_ecs_screen">
+      <UniqueIdentifier>0CF610EE-C185-C682-54FC-86C6BBDA967C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\historiques_fonctionnement_screen">
+      <UniqueIdentifier>3E142873-C370-37A2-9538-57C3ECFEB5B4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\derogation_ecs_screen">
+      <UniqueIdentifier>430733EF-6DA7-CEE5-CEF1-23C2E5357AED</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\historiques_fonctionnement_screen">
+      <UniqueIdentifier>DF7F7D6C-F813-CF31-AC45-C1CB48653501</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\synoptique_screen">
+      <UniqueIdentifier>C015543F-F1CD-3385-A35C-D19BE88FB7F2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\synoptique_screen">
+      <UniqueIdentifier>E36B4EF8-CC2B-45C1-11BD-60ADC0CE0D24</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\infos_systeme_screen">
+      <UniqueIdentifier>8B021FC0-FAD0-9786-A89A-1E7F5962FEE2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\infos_systeme_screen">
+      <UniqueIdentifier>47EDFEC6-4698-E5AF-FBCE-2A43B96BA666</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_config_inverterra_screen">
+      <UniqueIdentifier>14C177D2-826D-AADC-7EFB-EC97BD599DD3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_appoint_screen">
+      <UniqueIdentifier>7F4C2790-0ECC-AE96-1F15-8478E8BE71FF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_config_inverterra_screen">
+      <UniqueIdentifier>98D63A2A-E890-8D6F-7C1B-294935D173A9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\date_heure_screen">
+      <UniqueIdentifier>EB010EBB-F817-0B0C-731A-E05A746585DE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_appoint_screen">
+      <UniqueIdentifier>068DD6BC-9800-FFFD-5761-D68D726E7831</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\zone_screen">
+      <UniqueIdentifier>B9A66C07-C6A8-BFC6-9B53-F061BC6AD04F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\date_heure_screen">
+      <UniqueIdentifier>B6985211-9515-2451-3C91-626F3292777E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_chauffe_dalle_screen">
+      <UniqueIdentifier>4E9F8B3F-FBF2-01A0-B598-241645E7A302</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\simulator\video">
+      <UniqueIdentifier>D3404626-41EE-A572-1859-A17293F51FC9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_chauffe_dalle_screen">
+      <UniqueIdentifier>85592BCC-0EA1-9AC7-DCCF-1D4A6722E1F5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\secours_screen">
+      <UniqueIdentifier>35B3FC0C-FC80-719A-9177-4ADC708B7158</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\secours_screen">
+      <UniqueIdentifier>6B1ECE56-C8EC-250D-02F8-97DB8C566B16</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_circuit_captage_screen">
+      <UniqueIdentifier>5487E456-4999-A838-E6B8-6F91B767264A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\configuration_screen">
+      <UniqueIdentifier>EB3BEC80-939F-1658-DB84-E23B5EEE4D46</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_circuit_captage_screen">
+      <UniqueIdentifier>D9FE6C02-0595-0AD4-F2D9-762893BC58F8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_circuit_primaire_screen">
+      <UniqueIdentifier>EA15144A-40A1-D904-90A6-77A5FE36ED01</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_numero_serie_screen">
+      <UniqueIdentifier>9237BFB9-AD32-C630-6C2D-71F6FC99B674</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\configuration_screen">
+      <UniqueIdentifier>6116AD34-CF4B-B73B-2DF1-ECE9B88086E1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\programmation_screen">
+      <UniqueIdentifier>4C7ECD20-D19B-23C4-5D93-B53A1D622CAA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_circuit_primaire_screen">
+      <UniqueIdentifier>D74EB1EF-6C14-91E2-0634-09733EBD0E41</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_numero_serie_screen">
+      <UniqueIdentifier>EADBE043-98C7-790E-EEA4-80859C241147</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\programmation_screen">
+      <UniqueIdentifier>4E841C42-BB33-2697-9F56-6A5FE8D8AA8B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_config_hydrau_rapide_screen">
+      <UniqueIdentifier>39AAF875-BDC6-AE9E-C57E-07C05C2EEEA3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_config_hydrau_rapide_screen">
+      <UniqueIdentifier>788793D2-548A-12A0-F4B9-1BAA2DE8A812</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\programmation_zoom_screen">
+      <UniqueIdentifier>420D0A96-AF35-C9D6-A53C-C7E8A402C2EB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\programmation_zoom_screen">
+      <UniqueIdentifier>E1C6F700-DC7F-539A-C269-D39570971323</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_courbe_loi_d_eau_screen">
+      <UniqueIdentifier>B9C033EC-5961-FABF-6928-CFB21BFF44EF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\code_web_screen">
+      <UniqueIdentifier>FE149C5B-7207-94B6-B960-48E25D55DD62</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_courbe_loi_d_eau_screen">
+      <UniqueIdentifier>AA5EB38D-032F-7B24-C0EF-E26D98AB9B50</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_avances_screen">
+      <UniqueIdentifier>E99B3AB0-FD6D-EC33-94C3-06E08735E2A1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\code_web_screen">
+      <UniqueIdentifier>BFEAA8D7-ADC3-B7EE-AD5F-D4C065BBBC2D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\position_ecran_screen">
+      <UniqueIdentifier>47673825-D9D3-4286-B2AC-12FEA9EDFE6A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_avances_screen">
+      <UniqueIdentifier>83671A8B-28FE-2DE6-9EFF-50BF5F458495</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\position_ecran_screen">
+      <UniqueIdentifier>4055D20E-225B-64E3-4CBE-2EA73504D76A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_cycle_legionel_screen">
+      <UniqueIdentifier>4951EBA5-BEF3-42A9-8CF9-7F95D6AB1465</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_cycle_legionel_screen">
+      <UniqueIdentifier>3D930030-8636-F1F7-56BB-1681AA95BA05</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_screen">
+      <UniqueIdentifier>7C772F68-BCEB-550A-BAEA-50D352FEE4C7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\piscine_screen">
+      <UniqueIdentifier>CE111458-0E86-AF19-EBB2-39C64DF57F1D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\piscine_screen">
+      <UniqueIdentifier>6F6674B8-D23E-2744-3749-BD765F3AD334</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_inhibition_ejp_screen">
+      <UniqueIdentifier>5891FF33-D75D-0D5B-E266-1F5049B4B125</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_screen">
+      <UniqueIdentifier>0C40C059-EEE5-CA93-D5CB-9E3231E53E1D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_inhibition_ejp_screen">
+      <UniqueIdentifier>A7231EE7-4212-62A0-B526-4B98C6853604</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_puissance_appoint_screen">
+      <UniqueIdentifier>B1D86AD4-3EB1-D4B8-7A8B-9AAAD6D08E90</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_puissance_appoint_screen">
+      <UniqueIdentifier>CC9F5B22-ECBC-23E1-F469-B19357940525</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_puissance_echangeur_screen">
+      <UniqueIdentifier>0EBE3CDF-747D-26B4-872F-C8F614E6747F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\parametres_screen">
+      <UniqueIdentifier>4A303CEC-0EB1-5A4F-C4D4-968FF8733CEB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\bouclage_ecs_screen">
+      <UniqueIdentifier>149AFB34-9373-692A-17E6-8DC6F321D5EE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_puissance_echangeur_screen">
+      <UniqueIdentifier>57A341DE-7E44-8AF5-8595-7D31B3E74CA2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\parametres_screen">
+      <UniqueIdentifier>0442F886-A95F-32B4-605D-1F38B78E0EE1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\bouclage_ecs_screen">
+      <UniqueIdentifier>5D529CF1-3F63-8C3D-48ED-A31A0440C48B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_simultane_screen">
+      <UniqueIdentifier>5216CA07-8C81-4201-825F-93C57071555C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_simultane_screen">
+      <UniqueIdentifier>3A117CB2-8816-0906-46D3-3D9703D24C50</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\vacances_screen">
+      <UniqueIdentifier>7AA98E94-227A-0330-3409-CA53EDB81B25</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\page_oui_non_screen">
+      <UniqueIdentifier>9C79B799-157F-9C3F-3099-673CCC43A751</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\page_oui_non_screen">
+      <UniqueIdentifier>AED743B4-856B-039A-8881-2C4780B2A5D3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_solaire_screen">
+      <UniqueIdentifier>70C2AABA-23C4-C670-8A6D-0729C3596F02</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\vacances_screen">
+      <UniqueIdentifier>9D8286DE-6643-04F3-6C46-456DDE80650F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_solaire_screen">
+      <UniqueIdentifier>426BAC2C-EB4D-93B6-38FC-940AA3B44512</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_ecs_screen">
+      <UniqueIdentifier>D5859A9B-2AA4-EA8A-E872-7E1B970375B2</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\multizones_screen">
-      <UniqueIdentifier>09EE2449-0C0F-9366-DC18-724E5B26AB0C</UniqueIdentifier>
+      <UniqueIdentifier>C9B5AE9A-6536-9CC8-6F41-ECA3D4CF6CB2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_ecs_screen">
+      <UniqueIdentifier>A9A883B1-83DB-A508-DA32-5FB0189EC1ED</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\multizones_screen">
+      <UniqueIdentifier>015918EC-57F0-5266-0B09-380F70AC5B2A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_screen">
+      <UniqueIdentifier>C3119450-25AF-E021-3989-49E475D0FF71</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_screen">
+      <UniqueIdentifier>08EE6FE1-5B6B-8C6E-B855-0BDBF2C6BF7B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hysteresis_screen">
+      <UniqueIdentifier>15973C2B-590E-A179-85B8-5D75236A4F2A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hysteresis_screen">
+      <UniqueIdentifier>DBD5FF1E-0AD3-ABD9-0E99-5324B818ADF2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\attente_screen">
+      <UniqueIdentifier>2728D8C0-9DC3-1C0C-FCF8-1481921E3606</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\maintenance_screen">
+      <UniqueIdentifier>8F7B1E3C-EDA2-58CE-8D59-86CF01410373</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\maintenance_screen">
+      <UniqueIdentifier>B89D5963-0563-ABC9-C9A6-B642252B9BB4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\variables_systeme_screen">
+      <UniqueIdentifier>3CC67E0B-7D22-BEDB-1DA8-13B9F166EED7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\attente_screen">
+      <UniqueIdentifier>5227B5C3-7BEE-0037-79AA-B253F1577B6D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_piscine_avances_screen">
+      <UniqueIdentifier>E96552C9-A7E2-CC06-4D1F-C3D7797AE755</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_piscine_avances_screen">
+      <UniqueIdentifier>07B899B5-56DC-184E-008C-F94680CD7A70</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\variables_systeme_screen">
+      <UniqueIdentifier>1C01A1D8-C399-AD40-76FD-46872CB567A0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_piscine_screen">
+      <UniqueIdentifier>EF195FEB-C99B-4057-3F29-4F9FA8FBB5FE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\luminosite_screen">
+      <UniqueIdentifier>97316AB6-20DA-0FAC-4145-0EAE1F6738A2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_piscine_screen">
+      <UniqueIdentifier>96901866-C3A9-F0C8-97AF-323ED5318644</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\luminosite_screen">
+      <UniqueIdentifier>9187F629-D06A-644D-B8B8-9D1B893C2D83</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_wattmetre_screen">
+      <UniqueIdentifier>4BD187B9-A7EA-83FC-D58B-EF63243BB675</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_wattmetre_screen">
+      <UniqueIdentifier>B897D759-E2F7-DDE7-31A4-2866BA9E45C8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\accueil_screen">
+      <UniqueIdentifier>6B49409E-5401-A5EA-5F43-66FE2CB95449</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\langue_screen">
+      <UniqueIdentifier>5C8B4C8E-5C69-5DB0-8A8A-2AA7C4FC12E9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\langue_screen">
+      <UniqueIdentifier>1A70378F-B4B5-3109-AB8C-88EDF934F73B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\accueil_screen">
+      <UniqueIdentifier>05992451-A1F6-8546-931A-0C363CEEB0AD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_screen">
+      <UniqueIdentifier>47E6F6C4-F73F-435E-1E40-0E6610F32643</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_screen">
+      <UniqueIdentifier>8898A2B1-A17B-6318-032D-3AA2972990BA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\eau_chaude_sanitaire_screen">
+      <UniqueIdentifier>1A961D96-2D25-CDD0-0EF1-5C3CF437EE68</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\zone_screen">
+      <UniqueIdentifier>8665605C-F7E8-28A6-26F6-ED5D961871C1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include\simulator">
+      <UniqueIdentifier>30E4651C-0CD5-47A5-13C8-742BA3904EC6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\simulator\include\simulator\video">
+      <UniqueIdentifier>FBFFEC14-4D8A-A78D-0092-CD3F4155021B</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -552,18 +912,6 @@
     <ClCompile Include="$(ApplicationRoot)\generated\simulator\src\mainBase.cpp">
       <Filter>Source Files\generated\simulator</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
-      <Filter>Source Files\gui\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
-      <Filter>Source Files\generated\gui_generated\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\model\Model.cpp">
-      <Filter>Source Files\gui\model</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
-      <Filter>Source Files\generated\simulator\video</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\accueil_screen\AccueilPresenter.cpp">
       <Filter>Source Files\gui\accueil_screen</Filter>
     </ClCompile>
@@ -573,23 +921,20 @@
     <ClCompile Include="..\..\generated\gui_generated\src\accueil_screen\AccueilViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\accueil_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\piscine_screen\PiscinePresenter.cpp">
-      <Filter>Source Files\gui\piscine_screen</Filter>
+    <ClCompile Include="..\..\gui\src\attente_screen\AttentePresenter.cpp">
+      <Filter>Source Files\gui\attente_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\piscine_screen\PiscineView.cpp">
-      <Filter>Source Files\gui\piscine_screen</Filter>
+    <ClCompile Include="..\..\gui\src\attente_screen\AttenteView.cpp">
+      <Filter>Source Files\gui\attente_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\piscine_screen\PiscineViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\piscine_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\attente_screen\AttenteViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\attente_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\programmation_screen\ProgrammationPresenter.cpp">
-      <Filter>Source Files\gui\programmation_screen</Filter>
+    <ClCompile Include="..\..\gui\src\containers\Barre_titre.cpp">
+      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\programmation_screen\ProgrammationView.cpp">
-      <Filter>Source Files\gui\programmation_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\programmation_screen\ProgrammationViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\programmation_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\Barre_titreBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\bouclage_ecs_screen\Bouclage_ecsPresenter.cpp">
       <Filter>Source Files\gui\bouclage_ecs_screen</Filter>
@@ -600,14 +945,38 @@
     <ClCompile Include="..\..\generated\gui_generated\src\bouclage_ecs_screen\Bouclage_ecsViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\bouclage_ecs_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\courbe_loi_d_eau_screen\Courbe_loi_d_eauPresenter.cpp">
-      <Filter>Source Files\gui\courbe_loi_d_eau_screen</Filter>
+    <ClCompile Include="..\..\gui\src\containers\Bouton_on_off_toggle.cpp">
+      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\courbe_loi_d_eau_screen\Courbe_loi_d_eauView.cpp">
-      <Filter>Source Files\gui\courbe_loi_d_eau_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\Bouton_on_off_toggleBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\courbe_loi_d_eau_screen\Courbe_loi_d_eauViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\courbe_loi_d_eau_screen</Filter>
+    <ClCompile Include="..\..\gui\src\code_web_screen\Code_webPresenter.cpp">
+      <Filter>Source Files\gui\code_web_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\code_web_screen\Code_webView.cpp">
+      <Filter>Source Files\gui\code_web_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\code_web_screen\Code_webViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\code_web_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp">
+      <Filter>Source Files\gui\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp">
+      <Filter>Source Files\gui\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heurePresenter.cpp">
+      <Filter>Source Files\gui\date_heure_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heureView.cpp">
+      <Filter>Source Files\gui\date_heure_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\date_heure_screen\Date_heureViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\date_heure_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\derogation_ecs_screen\Derogation_ecsPresenter.cpp">
       <Filter>Source Files\gui\derogation_ecs_screen</Filter>
@@ -663,6 +1032,12 @@
     <ClCompile Include="..\..\generated\gui_generated\src\energies_screen\EnergiesViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\energies_screen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\Erreurs_alertes.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\Erreurs_alertesBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\gui\src\erreurs_screen\ErreursPresenter.cpp">
       <Filter>Source Files\gui\erreurs_screen</Filter>
     </ClCompile>
@@ -671,6 +1046,12 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\erreurs_screen\ErreursViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\erreurs_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
+      <Filter>Source Files\gui\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
+      <Filter>Source Files\generated\gui_generated\common</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\historiques_fonctionnement_screen\Historiques_fonctionnementPresenter.cpp">
       <Filter>Source Files\gui\historiques_fonctionnement_screen</Filter>
@@ -690,95 +1071,41 @@
     <ClCompile Include="..\..\generated\gui_generated\src\infos_systeme_screen\Infos_systemeViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\infos_systeme_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\installation_screen\InstallationPresenter.cpp">
-      <Filter>Source Files\gui\installation_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_appoint_screen\Installation_appointPresenter.cpp">
+      <Filter>Source Files\gui\installation_appoint_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\installation_screen\InstallationView.cpp">
-      <Filter>Source Files\gui\installation_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_appoint_screen\Installation_appointView.cpp">
+      <Filter>Source Files\gui\installation_appoint_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\installation_screen\InstallationViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\installation_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_appoint_screen\Installation_appointViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_appoint_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\maintenance_screen\MaintenancePresenter.cpp">
-      <Filter>Source Files\gui\maintenance_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_chauffe_dalle_screen\Installation_chauffe_dallePresenter.cpp">
+      <Filter>Source Files\gui\installation_chauffe_dalle_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\maintenance_screen\MaintenanceView.cpp">
-      <Filter>Source Files\gui\maintenance_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_chauffe_dalle_screen\Installation_chauffe_dalleView.cpp">
+      <Filter>Source Files\gui\installation_chauffe_dalle_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_screen\MaintenanceViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\maintenance_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_chauffe_dalle_screen\Installation_chauffe_dalleViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_chauffe_dalle_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\programmation_zoom_screen\Programmation_zoomPresenter.cpp">
-      <Filter>Source Files\gui\programmation_zoom_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_circuit_captage_screen\Installation_circuit_captagePresenter.cpp">
+      <Filter>Source Files\gui\installation_circuit_captage_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\programmation_zoom_screen\Programmation_zoomView.cpp">
-      <Filter>Source Files\gui\programmation_zoom_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_circuit_captage_screen\Installation_circuit_captageView.cpp">
+      <Filter>Source Files\gui\installation_circuit_captage_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\programmation_zoom_screen\Programmation_zoomViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\programmation_zoom_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_circuit_captage_screen\Installation_circuit_captageViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_circuit_captage_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\synoptique_screen\SynoptiquePresenter.cpp">
-      <Filter>Source Files\gui\synoptique_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_circuit_primaire_screen\Installation_circuit_primairePresenter.cpp">
+      <Filter>Source Files\gui\installation_circuit_primaire_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\synoptique_screen\SynoptiqueView.cpp">
-      <Filter>Source Files\gui\synoptique_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_circuit_primaire_screen\Installation_circuit_primaireView.cpp">
+      <Filter>Source Files\gui\installation_circuit_primaire_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\synoptique_screen\SynoptiqueViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\synoptique_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\usine_screen\UsinePresenter.cpp">
-      <Filter>Source Files\gui\usine_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\usine_screen\UsineView.cpp">
-      <Filter>Source Files\gui\usine_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\usine_screen\UsineViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\usine_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\variables_systeme_screen\Variables_systemePresenter.cpp">
-      <Filter>Source Files\gui\variables_systeme_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\variables_systeme_screen\Variables_systemeView.cpp">
-      <Filter>Source Files\gui\variables_systeme_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\variables_systeme_screen\Variables_systemeViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\variables_systeme_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\Barre_titre.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Barre_titreBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\Erreurs_alertes.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Erreurs_alertesBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\Bouton_on_off_toggle.cpp">
-      <Filter>Source Files\gui\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\Bouton_on_off_toggleBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp">
-      <Filter>Source Files\gui\configuration_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp">
-      <Filter>Source Files\gui\configuration_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\configuration_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\zone_screen\ZonePresenter.cpp">
-      <Filter>Source Files\gui\zone_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\zone_screen\ZoneView.cpp">
-      <Filter>Source Files\gui\zone_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\zone_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_circuit_primaire_screen\Installation_circuit_primaireViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_circuit_primaire_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapidePresenter.cpp">
       <Filter>Source Files\gui\installation_config_hydrau_rapide_screen</Filter>
@@ -789,47 +1116,179 @@
     <ClCompile Include="..\..\generated\gui_generated\src\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_config_hydrau_rapide_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\parametres_screen\ParametresPresenter.cpp">
-      <Filter>Source Files\gui\parametres_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauPresenter.cpp">
+      <Filter>Source Files\gui\installation_courbe_loi_d_eau_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\parametres_screen\ParametresView.cpp">
-      <Filter>Source Files\gui\parametres_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauView.cpp">
+      <Filter>Source Files\gui\installation_courbe_loi_d_eau_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\parametres_screen\ParametresViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\parametres_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_courbe_loi_d_eau_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\secours_screen\SecoursPresenter.cpp">
-      <Filter>Source Files\gui\secours_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_ecs_avances_screen\Installation_ecs_avancesPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_avances_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\secours_screen\SecoursView.cpp">
-      <Filter>Source Files\gui\secours_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_ecs_avances_screen\Installation_ecs_avancesView.cpp">
+      <Filter>Source Files\gui\installation_ecs_avances_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\secours_screen\SecoursViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\secours_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_avances_screen\Installation_ecs_avancesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_avances_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\test_pac_screen\Test_pacPresenter.cpp">
-      <Filter>Source Files\gui\test_pac_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_ecs_cycle_legionel_screen\Installation_ecs_cycle_legionelPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_cycle_legionel_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\test_pac_screen\Test_pacView.cpp">
-      <Filter>Source Files\gui\test_pac_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_ecs_cycle_legionel_screen\Installation_ecs_cycle_legionelView.cpp">
+      <Filter>Source Files\gui\installation_ecs_cycle_legionel_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\test_pac_screen\Test_pacViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\test_pac_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_cycle_legionel_screen\Installation_ecs_cycle_legionelViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_cycle_legionel_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\vacances_screen\VacancesPresenter.cpp">
-      <Filter>Source Files\gui\vacances_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_inhibition_ejp_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\vacances_screen\VacancesView.cpp">
-      <Filter>Source Files\gui\vacances_screen</Filter>
+    <ClCompile Include="..\..\gui\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpView.cpp">
+      <Filter>Source Files\gui\installation_ecs_inhibition_ejp_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\vacances_screen\VacancesViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\vacances_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_inhibition_ejp_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\containers\SwipeDetectContainer.cpp">
-      <Filter>Source Files\gui\containers</Filter>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_puissance_appoint_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\SwipeDetectContainerBase.cpp">
-      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointView.cpp">
+      <Filter>Source Files\gui\installation_ecs_puissance_appoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_puissance_appoint_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurView.cpp">
+      <Filter>Source Files\gui\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_simultane_screen\Installation_ecs_simultanePresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_simultane_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_simultane_screen\Installation_ecs_simultaneView.cpp">
+      <Filter>Source Files\gui\installation_ecs_simultane_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_simultane_screen\Installation_ecs_simultaneViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_simultane_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_solaire_screen\Installation_ecs_solairePresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_solaire_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_solaire_screen\Installation_ecs_solaireView.cpp">
+      <Filter>Source Files\gui\installation_ecs_solaire_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_solaire_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_screen\Installation_ecsPresenter.cpp">
+      <Filter>Source Files\gui\installation_ecs_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_ecs_screen\Installation_ecsView.cpp">
+      <Filter>Source Files\gui\installation_ecs_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_ecs_screen\Installation_ecsViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_ecs_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_screen\Installation_hydrauliquePresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_screen\Installation_hydrauliqueView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_screen\Installation_hydrauliqueViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hysteresis_screen\Installation_hysteresisPresenter.cpp">
+      <Filter>Source Files\gui\installation_hysteresis_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hysteresis_screen\Installation_hysteresisView.cpp">
+      <Filter>Source Files\gui\installation_hysteresis_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hysteresis_screen\Installation_hysteresisViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hysteresis_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_piscine_avances_screen\Installation_piscine_avancesPresenter.cpp">
+      <Filter>Source Files\gui\installation_piscine_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_piscine_avances_screen\Installation_piscine_avancesView.cpp">
+      <Filter>Source Files\gui\installation_piscine_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_piscine_avances_screen\Installation_piscine_avancesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_piscine_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_piscine_screen\Installation_piscinePresenter.cpp">
+      <Filter>Source Files\gui\installation_piscine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_piscine_screen\Installation_piscineView.cpp">
+      <Filter>Source Files\gui\installation_piscine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_piscine_screen\Installation_piscineViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_piscine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_wattmetre_screen\Installation_wattmetrePresenter.cpp">
+      <Filter>Source Files\gui\installation_wattmetre_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_wattmetre_screen\Installation_wattmetreView.cpp">
+      <Filter>Source Files\gui\installation_wattmetre_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_wattmetre_screen\Installation_wattmetreViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_wattmetre_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_screen\InstallationPresenter.cpp">
+      <Filter>Source Files\gui\installation_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_screen\InstallationView.cpp">
+      <Filter>Source Files\gui\installation_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_screen\InstallationViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\langue_screen\LanguePresenter.cpp">
+      <Filter>Source Files\gui\langue_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\langue_screen\LangueView.cpp">
+      <Filter>Source Files\gui\langue_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\langue_screen\LangueViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\langue_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\luminosite_screen\LuminositePresenter.cpp">
+      <Filter>Source Files\gui\luminosite_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\luminosite_screen\LuminositeView.cpp">
+      <Filter>Source Files\gui\luminosite_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\luminosite_screen\LuminositeViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\luminosite_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_screen\MaintenancePresenter.cpp">
+      <Filter>Source Files\gui\maintenance_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_screen\MaintenanceView.cpp">
+      <Filter>Source Files\gui\maintenance_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_screen\MaintenanceViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\maintenance_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\model\Model.cpp">
+      <Filter>Source Files\gui\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\multizones_screen\MultizonesPresenter.cpp">
+      <Filter>Source Files\gui\multizones_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\multizones_screen\MultizonesView.cpp">
+      <Filter>Source Files\gui\multizones_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\multizones_screen\MultizonesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\multizones_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\page_oui_non_screen\Page_oui_nonPresenter.cpp">
       <Filter>Source Files\gui\page_oui_non_screen</Filter>
@@ -840,14 +1299,191 @@
     <ClCompile Include="..\..\generated\gui_generated\src\page_oui_non_screen\Page_oui_nonViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\page_oui_non_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\multizones_screen\MultizonesPresenter.cpp">
-      <Filter>Source Files\gui\multizones_screen</Filter>
+    <ClCompile Include="..\..\gui\src\parametres_screen\ParametresPresenter.cpp">
+      <Filter>Source Files\gui\parametres_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\multizones_screen\MultizonesView.cpp">
-      <Filter>Source Files\gui\multizones_screen</Filter>
+    <ClCompile Include="..\..\gui\src\parametres_screen\ParametresView.cpp">
+      <Filter>Source Files\gui\parametres_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\multizones_screen\MultizonesViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\multizones_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\parametres_screen\ParametresViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\parametres_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\PaveNumerique.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\PaveNumeriqueBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\piscine_screen\PiscinePresenter.cpp">
+      <Filter>Source Files\gui\piscine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\piscine_screen\PiscineView.cpp">
+      <Filter>Source Files\gui\piscine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\piscine_screen\PiscineViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\piscine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\position_ecran_screen\Position_ecranPresenter.cpp">
+      <Filter>Source Files\gui\position_ecran_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\position_ecran_screen\Position_ecranView.cpp">
+      <Filter>Source Files\gui\position_ecran_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\position_ecran_screen\Position_ecranViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\position_ecran_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\programmation_zoom_screen\Programmation_zoomPresenter.cpp">
+      <Filter>Source Files\gui\programmation_zoom_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\programmation_zoom_screen\Programmation_zoomView.cpp">
+      <Filter>Source Files\gui\programmation_zoom_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\programmation_zoom_screen\Programmation_zoomViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\programmation_zoom_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\programmation_screen\ProgrammationPresenter.cpp">
+      <Filter>Source Files\gui\programmation_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\programmation_screen\ProgrammationView.cpp">
+      <Filter>Source Files\gui\programmation_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\programmation_screen\ProgrammationViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\programmation_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\secours_screen\SecoursPresenter.cpp">
+      <Filter>Source Files\gui\secours_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\secours_screen\SecoursView.cpp">
+      <Filter>Source Files\gui\secours_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\secours_screen\SecoursViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\secours_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
+      <Filter>Source Files\generated\simulator\video</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\SwipeDetectContainer.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SwipeDetectContainerBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\synoptique_screen\SynoptiquePresenter.cpp">
+      <Filter>Source Files\gui\synoptique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\synoptique_screen\SynoptiqueView.cpp">
+      <Filter>Source Files\gui\synoptique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\synoptique_screen\SynoptiqueViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\synoptique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\test_pac_screen\Test_pacPresenter.cpp">
+      <Filter>Source Files\gui\test_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\test_pac_screen\Test_pacView.cpp">
+      <Filter>Source Files\gui\test_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\test_pac_screen\Test_pacViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\test_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_choix_fluide_screen\Usine_choix_fluidePresenter.cpp">
+      <Filter>Source Files\gui\usine_choix_fluide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_choix_fluide_screen\Usine_choix_fluideView.cpp">
+      <Filter>Source Files\gui\usine_choix_fluide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_choix_fluide_screen\Usine_choix_fluideViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_choix_fluide_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_choix_modele_pac_screen\Usine_choix_modele_pacPresenter.cpp">
+      <Filter>Source Files\gui\usine_choix_modele_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_choix_modele_pac_screen\Usine_choix_modele_pacView.cpp">
+      <Filter>Source Files\gui\usine_choix_modele_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_choix_modele_pac_screen\Usine_choix_modele_pacViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_choix_modele_pac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_additionnelle_screen\Usine_config_additionnellePresenter.cpp">
+      <Filter>Source Files\gui\usine_config_additionnelle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_additionnelle_screen\Usine_config_additionnelleView.cpp">
+      <Filter>Source Files\gui\usine_config_additionnelle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_config_additionnelle_screen\Usine_config_additionnelleViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_config_additionnelle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_ajpac_screen\Usine_config_ajpacPresenter.cpp">
+      <Filter>Source Files\gui\usine_config_ajpac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_ajpac_screen\Usine_config_ajpacView.cpp">
+      <Filter>Source Files\gui\usine_config_ajpac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_config_ajpac_screen\Usine_config_ajpacViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_config_ajpac_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_geotwin_screen\Usine_config_geotwinPresenter.cpp">
+      <Filter>Source Files\gui\usine_config_geotwin_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_geotwin_screen\Usine_config_geotwinView.cpp">
+      <Filter>Source Files\gui\usine_config_geotwin_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_config_geotwin_screen\Usine_config_geotwinViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_config_geotwin_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_inverterra_screen\Usine_config_inverterraPresenter.cpp">
+      <Filter>Source Files\gui\usine_config_inverterra_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_config_inverterra_screen\Usine_config_inverterraView.cpp">
+      <Filter>Source Files\gui\usine_config_inverterra_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_config_inverterra_screen\Usine_config_inverterraViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_config_inverterra_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_numero_serie_screen\Usine_numero_seriePresenter.cpp">
+      <Filter>Source Files\gui\usine_numero_serie_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_numero_serie_screen\Usine_numero_serieView.cpp">
+      <Filter>Source Files\gui\usine_numero_serie_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_numero_serie_screen\Usine_numero_serieViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_numero_serie_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_screen\UsinePresenter.cpp">
+      <Filter>Source Files\gui\usine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_screen\UsineView.cpp">
+      <Filter>Source Files\gui\usine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_screen\UsineViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\vacances_screen\VacancesPresenter.cpp">
+      <Filter>Source Files\gui\vacances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\vacances_screen\VacancesView.cpp">
+      <Filter>Source Files\gui\vacances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\vacances_screen\VacancesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\vacances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\variables_systeme_screen\Variables_systemePresenter.cpp">
+      <Filter>Source Files\gui\variables_systeme_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\variables_systeme_screen\Variables_systemeView.cpp">
+      <Filter>Source Files\gui\variables_systeme_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\variables_systeme_screen\Variables_systemeViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\variables_systeme_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zone_screen\ZonePresenter.cpp">
+      <Filter>Source Files\gui\zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\zone_screen\ZoneView.cpp">
+      <Filter>Source Files\gui\zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\zone_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -1261,36 +1897,6 @@
     <ClInclude Include="$(ApplicationRoot)\generated\simulator\include\simulator\mainBase.hpp">
       <Filter>Header Files\generated\simulator</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp">
-      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
-      <Filter>Header Files\gui\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp">
-      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
-      <Filter>Header Files\gui\model</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
-      <Filter>Header Files\gui\model</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
-      <Filter>Header Files\generated\gui_generated\common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
-      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\accueil_screen\AccueilPresenter.hpp">
       <Filter>Header Files\gui\accueil_screen</Filter>
     </ClInclude>
@@ -1300,23 +1906,20 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\accueil_screen\AccueilViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\accueil_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\piscine_screen\PiscinePresenter.hpp">
-      <Filter>Header Files\gui\piscine_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\attente_screen\AttentePresenter.hpp">
+      <Filter>Header Files\gui\attente_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\piscine_screen\PiscineView.hpp">
-      <Filter>Header Files\gui\piscine_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\attente_screen\AttenteView.hpp">
+      <Filter>Header Files\gui\attente_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\piscine_screen\PiscineViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\piscine_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\attente_screen\AttenteViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\attente_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\programmation_screen\ProgrammationPresenter.hpp">
-      <Filter>Header Files\gui\programmation_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\containers\Barre_titre.hpp">
+      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\programmation_screen\ProgrammationView.hpp">
-      <Filter>Header Files\gui\programmation_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\programmation_screen\ProgrammationViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\programmation_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Barre_titreBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\bouclage_ecs_screen\Bouclage_ecsPresenter.hpp">
       <Filter>Header Files\gui\bouclage_ecs_screen</Filter>
@@ -1327,14 +1930,38 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\bouclage_ecs_screen\Bouclage_ecsViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\bouclage_ecs_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\courbe_loi_d_eau_screen\Courbe_loi_d_eauPresenter.hpp">
-      <Filter>Header Files\gui\courbe_loi_d_eau_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\containers\Bouton_on_off_toggle.hpp">
+      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\courbe_loi_d_eau_screen\Courbe_loi_d_eauView.hpp">
-      <Filter>Header Files\gui\courbe_loi_d_eau_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Bouton_on_off_toggleBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\courbe_loi_d_eau_screen\Courbe_loi_d_eauViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\courbe_loi_d_eau_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\code_web_screen\Code_webPresenter.hpp">
+      <Filter>Header Files\gui\code_web_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\code_web_screen\Code_webView.hpp">
+      <Filter>Header Files\gui\code_web_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\code_web_screen\Code_webViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\code_web_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp">
+      <Filter>Header Files\gui\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp">
+      <Filter>Header Files\gui\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heurePresenter.hpp">
+      <Filter>Header Files\gui\date_heure_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heureView.hpp">
+      <Filter>Header Files\gui\date_heure_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\date_heure_screen\Date_heureViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\date_heure_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\derogation_ecs_screen\Derogation_ecsPresenter.hpp">
       <Filter>Header Files\gui\derogation_ecs_screen</Filter>
@@ -1353,6 +1980,9 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\derogation_screen\DerogationViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\derogation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\DirectFrameBufferVideoController.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\eau_chaude_sanitaire_screen\Eau_chaude_sanitairePresenter.hpp">
       <Filter>Header Files\gui\eau_chaude_sanitaire_screen</Filter>
@@ -1390,6 +2020,12 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\energies_screen\EnergiesViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\energies_screen</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\Erreurs_alertes.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Erreurs_alertesBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\erreurs_screen\ErreursPresenter.hpp">
       <Filter>Header Files\gui\erreurs_screen</Filter>
     </ClInclude>
@@ -1398,6 +2034,18 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\erreurs_screen\ErreursViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\erreurs_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
+      <Filter>Header Files\gui\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\historiques_fonctionnement_screen\Historiques_fonctionnementPresenter.hpp">
       <Filter>Header Files\gui\historiques_fonctionnement_screen</Filter>
@@ -1417,95 +2065,41 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\infos_systeme_screen\Infos_systemeViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\infos_systeme_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\installation_screen\InstallationPresenter.hpp">
-      <Filter>Header Files\gui\installation_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_appoint_screen\Installation_appointPresenter.hpp">
+      <Filter>Header Files\gui\installation_appoint_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\installation_screen\InstallationView.hpp">
-      <Filter>Header Files\gui\installation_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_appoint_screen\Installation_appointView.hpp">
+      <Filter>Header Files\gui\installation_appoint_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_screen\InstallationViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\installation_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_appoint_screen\Installation_appointViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_appoint_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\maintenance_screen\MaintenancePresenter.hpp">
-      <Filter>Header Files\gui\maintenance_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_chauffe_dalle_screen\Installation_chauffe_dallePresenter.hpp">
+      <Filter>Header Files\gui\installation_chauffe_dalle_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\maintenance_screen\MaintenanceView.hpp">
-      <Filter>Header Files\gui\maintenance_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_chauffe_dalle_screen\Installation_chauffe_dalleView.hpp">
+      <Filter>Header Files\gui\installation_chauffe_dalle_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_screen\MaintenanceViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\maintenance_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_chauffe_dalle_screen\Installation_chauffe_dalleViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_chauffe_dalle_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\programmation_zoom_screen\Programmation_zoomPresenter.hpp">
-      <Filter>Header Files\gui\programmation_zoom_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_circuit_captage_screen\Installation_circuit_captagePresenter.hpp">
+      <Filter>Header Files\gui\installation_circuit_captage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\programmation_zoom_screen\Programmation_zoomView.hpp">
-      <Filter>Header Files\gui\programmation_zoom_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_circuit_captage_screen\Installation_circuit_captageView.hpp">
+      <Filter>Header Files\gui\installation_circuit_captage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\programmation_zoom_screen\Programmation_zoomViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\programmation_zoom_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_circuit_captage_screen\Installation_circuit_captageViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_circuit_captage_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\synoptique_screen\SynoptiquePresenter.hpp">
-      <Filter>Header Files\gui\synoptique_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_circuit_primaire_screen\Installation_circuit_primairePresenter.hpp">
+      <Filter>Header Files\gui\installation_circuit_primaire_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\synoptique_screen\SynoptiqueView.hpp">
-      <Filter>Header Files\gui\synoptique_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_circuit_primaire_screen\Installation_circuit_primaireView.hpp">
+      <Filter>Header Files\gui\installation_circuit_primaire_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\synoptique_screen\SynoptiqueViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\synoptique_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\usine_screen\UsinePresenter.hpp">
-      <Filter>Header Files\gui\usine_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\usine_screen\UsineView.hpp">
-      <Filter>Header Files\gui\usine_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_screen\UsineViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\usine_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\variables_systeme_screen\Variables_systemePresenter.hpp">
-      <Filter>Header Files\gui\variables_systeme_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\variables_systeme_screen\Variables_systemeView.hpp">
-      <Filter>Header Files\gui\variables_systeme_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\variables_systeme_screen\Variables_systemeViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\variables_systeme_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\Barre_titre.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Barre_titreBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\Erreurs_alertes.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Erreurs_alertesBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\Bouton_on_off_toggle.hpp">
-      <Filter>Header Files\gui\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Bouton_on_off_toggleBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp">
-      <Filter>Header Files\gui\configuration_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp">
-      <Filter>Header Files\gui\configuration_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\configuration_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\zone_screen\ZonePresenter.hpp">
-      <Filter>Header Files\gui\zone_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\zone_screen\ZoneView.hpp">
-      <Filter>Header Files\gui\zone_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\zone_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_circuit_primaire_screen\Installation_circuit_primaireViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_circuit_primaire_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapidePresenter.hpp">
       <Filter>Header Files\gui\installation_config_hydrau_rapide_screen</Filter>
@@ -1516,47 +2110,185 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_config_hydrau_rapide_screen\Installation_config_hydrau_rapideViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_config_hydrau_rapide_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\parametres_screen\ParametresPresenter.hpp">
-      <Filter>Header Files\gui\parametres_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauPresenter.hpp">
+      <Filter>Header Files\gui\installation_courbe_loi_d_eau_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\parametres_screen\ParametresView.hpp">
-      <Filter>Header Files\gui\parametres_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauView.hpp">
+      <Filter>Header Files\gui\installation_courbe_loi_d_eau_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\parametres_screen\ParametresViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\parametres_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_courbe_loi_d_eau_screen\Installation_courbe_loi_d_eauViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_courbe_loi_d_eau_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\secours_screen\SecoursPresenter.hpp">
-      <Filter>Header Files\gui\secours_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_avances_screen\Installation_ecs_avancesPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_avances_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\secours_screen\SecoursView.hpp">
-      <Filter>Header Files\gui\secours_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_avances_screen\Installation_ecs_avancesView.hpp">
+      <Filter>Header Files\gui\installation_ecs_avances_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\secours_screen\SecoursViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\secours_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_avances_screen\Installation_ecs_avancesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_avances_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\test_pac_screen\Test_pacPresenter.hpp">
-      <Filter>Header Files\gui\test_pac_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_cycle_legionel_screen\Installation_ecs_cycle_legionelPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_cycle_legionel_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\test_pac_screen\Test_pacView.hpp">
-      <Filter>Header Files\gui\test_pac_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_cycle_legionel_screen\Installation_ecs_cycle_legionelView.hpp">
+      <Filter>Header Files\gui\installation_ecs_cycle_legionel_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\test_pac_screen\Test_pacViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\test_pac_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_cycle_legionel_screen\Installation_ecs_cycle_legionelViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_cycle_legionel_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesPresenter.hpp">
-      <Filter>Header Files\gui\vacances_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_inhibition_ejp_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesView.hpp">
-      <Filter>Header Files\gui\vacances_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpView.hpp">
+      <Filter>Header Files\gui\installation_ecs_inhibition_ejp_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\vacances_screen\VacancesViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\vacances_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_inhibition_ejp_screen\Installation_ecs_inhibition_ejpViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_inhibition_ejp_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\containers\SwipeDetectContainer.hpp">
-      <Filter>Header Files\gui\containers</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_puissance_appoint_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SwipeDetectContainerBase.hpp">
-      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointView.hpp">
+      <Filter>Header Files\gui\installation_ecs_puissance_appoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_puissance_appoint_screen\Installation_ecs_puissance_appointViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_puissance_appoint_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurView.hpp">
+      <Filter>Header Files\gui\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_puissance_echangeur_screen\Installation_ecs_puissance_echangeurViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_puissance_echangeur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_simultane_screen\Installation_ecs_simultanePresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_simultane_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_simultane_screen\Installation_ecs_simultaneView.hpp">
+      <Filter>Header Files\gui\installation_ecs_simultane_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_simultane_screen\Installation_ecs_simultaneViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_simultane_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_solaire_screen\Installation_ecs_solairePresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_solaire_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_solaire_screen\Installation_ecs_solaireView.hpp">
+      <Filter>Header Files\gui\installation_ecs_solaire_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_solaire_screen\Installation_ecs_solaireViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_solaire_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_screen\Installation_ecsPresenter.hpp">
+      <Filter>Header Files\gui\installation_ecs_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_ecs_screen\Installation_ecsView.hpp">
+      <Filter>Header Files\gui\installation_ecs_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_ecs_screen\Installation_ecsViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_ecs_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_screen\Installation_hydrauliquePresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_screen\Installation_hydrauliqueView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_screen\Installation_hydrauliqueViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hysteresis_screen\Installation_hysteresisPresenter.hpp">
+      <Filter>Header Files\gui\installation_hysteresis_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hysteresis_screen\Installation_hysteresisView.hpp">
+      <Filter>Header Files\gui\installation_hysteresis_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hysteresis_screen\Installation_hysteresisViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hysteresis_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_piscine_avances_screen\Installation_piscine_avancesPresenter.hpp">
+      <Filter>Header Files\gui\installation_piscine_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_piscine_avances_screen\Installation_piscine_avancesView.hpp">
+      <Filter>Header Files\gui\installation_piscine_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_piscine_avances_screen\Installation_piscine_avancesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_piscine_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_piscine_screen\Installation_piscinePresenter.hpp">
+      <Filter>Header Files\gui\installation_piscine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_piscine_screen\Installation_piscineView.hpp">
+      <Filter>Header Files\gui\installation_piscine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_piscine_screen\Installation_piscineViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_piscine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_wattmetre_screen\Installation_wattmetrePresenter.hpp">
+      <Filter>Header Files\gui\installation_wattmetre_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_wattmetre_screen\Installation_wattmetreView.hpp">
+      <Filter>Header Files\gui\installation_wattmetre_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_wattmetre_screen\Installation_wattmetreViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_wattmetre_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_screen\InstallationPresenter.hpp">
+      <Filter>Header Files\gui\installation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_screen\InstallationView.hpp">
+      <Filter>Header Files\gui\installation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_screen\InstallationViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\langue_screen\LanguePresenter.hpp">
+      <Filter>Header Files\gui\langue_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\langue_screen\LangueView.hpp">
+      <Filter>Header Files\gui\langue_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\langue_screen\LangueViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\langue_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\luminosite_screen\LuminositePresenter.hpp">
+      <Filter>Header Files\gui\luminosite_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\luminosite_screen\LuminositeView.hpp">
+      <Filter>Header Files\gui\luminosite_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\luminosite_screen\LuminositeViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\luminosite_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_screen\MaintenancePresenter.hpp">
+      <Filter>Header Files\gui\maintenance_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_screen\MaintenanceView.hpp">
+      <Filter>Header Files\gui\maintenance_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_screen\MaintenanceViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\maintenance_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\MJPEGDecoder.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
+      <Filter>Header Files\gui\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
+      <Filter>Header Files\gui\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\multizones_screen\MultizonesPresenter.hpp">
+      <Filter>Header Files\gui\multizones_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\multizones_screen\MultizonesView.hpp">
+      <Filter>Header Files\gui\multizones_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\multizones_screen\MultizonesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\multizones_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\page_oui_non_screen\Page_oui_nonPresenter.hpp">
       <Filter>Header Files\gui\page_oui_non_screen</Filter>
@@ -1567,14 +2299,194 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\page_oui_non_screen\Page_oui_nonViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\page_oui_non_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\multizones_screen\MultizonesPresenter.hpp">
-      <Filter>Header Files\gui\multizones_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\parametres_screen\ParametresPresenter.hpp">
+      <Filter>Header Files\gui\parametres_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\multizones_screen\MultizonesView.hpp">
-      <Filter>Header Files\gui\multizones_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\parametres_screen\ParametresView.hpp">
+      <Filter>Header Files\gui\parametres_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\multizones_screen\MultizonesViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\multizones_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\parametres_screen\ParametresViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\parametres_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\PaveNumerique.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\PaveNumeriqueBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\piscine_screen\PiscinePresenter.hpp">
+      <Filter>Header Files\gui\piscine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\piscine_screen\PiscineView.hpp">
+      <Filter>Header Files\gui\piscine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\piscine_screen\PiscineViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\piscine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\position_ecran_screen\Position_ecranPresenter.hpp">
+      <Filter>Header Files\gui\position_ecran_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\position_ecran_screen\Position_ecranView.hpp">
+      <Filter>Header Files\gui\position_ecran_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\position_ecran_screen\Position_ecranViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\position_ecran_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\programmation_zoom_screen\Programmation_zoomPresenter.hpp">
+      <Filter>Header Files\gui\programmation_zoom_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\programmation_zoom_screen\Programmation_zoomView.hpp">
+      <Filter>Header Files\gui\programmation_zoom_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\programmation_zoom_screen\Programmation_zoomViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\programmation_zoom_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\programmation_screen\ProgrammationPresenter.hpp">
+      <Filter>Header Files\gui\programmation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\programmation_screen\ProgrammationView.hpp">
+      <Filter>Header Files\gui\programmation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\programmation_screen\ProgrammationViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\programmation_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\secours_screen\SecoursPresenter.hpp">
+      <Filter>Header Files\gui\secours_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\secours_screen\SecoursView.hpp">
+      <Filter>Header Files\gui\secours_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\secours_screen\SecoursViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\secours_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp">
+      <Filter>Header Files\generated\gui_generated\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
+      <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\SwipeDetectContainer.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SwipeDetectContainerBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\synoptique_screen\SynoptiquePresenter.hpp">
+      <Filter>Header Files\gui\synoptique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\synoptique_screen\SynoptiqueView.hpp">
+      <Filter>Header Files\gui\synoptique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\synoptique_screen\SynoptiqueViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\synoptique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\test_pac_screen\Test_pacPresenter.hpp">
+      <Filter>Header Files\gui\test_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\test_pac_screen\Test_pacView.hpp">
+      <Filter>Header Files\gui\test_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\test_pac_screen\Test_pacViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\test_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_choix_fluide_screen\Usine_choix_fluidePresenter.hpp">
+      <Filter>Header Files\gui\usine_choix_fluide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_choix_fluide_screen\Usine_choix_fluideView.hpp">
+      <Filter>Header Files\gui\usine_choix_fluide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_choix_fluide_screen\Usine_choix_fluideViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_choix_fluide_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_choix_modele_pac_screen\Usine_choix_modele_pacPresenter.hpp">
+      <Filter>Header Files\gui\usine_choix_modele_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_choix_modele_pac_screen\Usine_choix_modele_pacView.hpp">
+      <Filter>Header Files\gui\usine_choix_modele_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_choix_modele_pac_screen\Usine_choix_modele_pacViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_choix_modele_pac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_additionnelle_screen\Usine_config_additionnellePresenter.hpp">
+      <Filter>Header Files\gui\usine_config_additionnelle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_additionnelle_screen\Usine_config_additionnelleView.hpp">
+      <Filter>Header Files\gui\usine_config_additionnelle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_additionnelle_screen\Usine_config_additionnelleViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_config_additionnelle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_ajpac_screen\Usine_config_ajpacPresenter.hpp">
+      <Filter>Header Files\gui\usine_config_ajpac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_ajpac_screen\Usine_config_ajpacView.hpp">
+      <Filter>Header Files\gui\usine_config_ajpac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_ajpac_screen\Usine_config_ajpacViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_config_ajpac_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_geotwin_screen\Usine_config_geotwinPresenter.hpp">
+      <Filter>Header Files\gui\usine_config_geotwin_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_geotwin_screen\Usine_config_geotwinView.hpp">
+      <Filter>Header Files\gui\usine_config_geotwin_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_geotwin_screen\Usine_config_geotwinViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_config_geotwin_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_inverterra_screen\Usine_config_inverterraPresenter.hpp">
+      <Filter>Header Files\gui\usine_config_inverterra_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_config_inverterra_screen\Usine_config_inverterraView.hpp">
+      <Filter>Header Files\gui\usine_config_inverterra_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_inverterra_screen\Usine_config_inverterraViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_config_inverterra_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_numero_serie_screen\Usine_numero_seriePresenter.hpp">
+      <Filter>Header Files\gui\usine_numero_serie_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_numero_serie_screen\Usine_numero_serieView.hpp">
+      <Filter>Header Files\gui\usine_numero_serie_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_numero_serie_screen\Usine_numero_serieViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_numero_serie_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_screen\UsinePresenter.hpp">
+      <Filter>Header Files\gui\usine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_screen\UsineView.hpp">
+      <Filter>Header Files\gui\usine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_screen\UsineViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesPresenter.hpp">
+      <Filter>Header Files\gui\vacances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\vacances_screen\VacancesView.hpp">
+      <Filter>Header Files\gui\vacances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\vacances_screen\VacancesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\vacances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\variables_systeme_screen\Variables_systemePresenter.hpp">
+      <Filter>Header Files\gui\variables_systeme_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\variables_systeme_screen\Variables_systemeView.hpp">
+      <Filter>Header Files\gui\variables_systeme_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\variables_systeme_screen\Variables_systemeViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\variables_systeme_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zone_screen\ZonePresenter.hpp">
+      <Filter>Header Files\gui\zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\zone_screen\ZoneView.hpp">
+      <Filter>Header Files\gui\zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\zone_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
