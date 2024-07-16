@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.23.2">
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.24.0">
   <Languages>
     <Language Id="FR" />
     <Language Id="GB" />
@@ -461,13 +461,6 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_ecs_appoint_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Appoint</Translation>
-        <Translation Language="GB">Water heater</Translation>
-        <Translation Language="PT">Sanitária água</Translation>
-        <Translation Language="NL">Appoint</Translation>
-        <Translation Language="DE">Appoint</Translation>
-      </Text>
       <Text Id="text_ecs_bouclage_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Bouclage</Translation>
         <Translation Language="GB">Looping</Translation>
@@ -900,6 +893,48 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation">
+      <Text Id="ResourceId1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_config_install_hydrau_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR" Alignment="Center">Configuration de votre installation</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_regul_esclave_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Esclave</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_regul_externe_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Externe</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_regul_multi_zones_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Multi-zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_regul_2_zones_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">2 zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_hysteresis_ext_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Hysteresis sonde extérieure</Translation>
         <Translation Language="GB">Hysteresis DHW probe</Translation>
@@ -3737,6 +3772,412 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_num_pac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Numéro de PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_mode_secours_defaut_pac_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : mode secours en cas de défaut PAC</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_chaud_froid_simu_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : chaud / froid simultané</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_adapt_loi_eau_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : adaptation loi d'eau</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_ecs_hyst_piscine_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : hystérésis sonde eau : piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_ecs_hyst_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : hystérésis sonde eau : ECS</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_ecs_hyst_chaud_froid_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : hystérésis sonde eau : chaud / froid</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_ecs_piscine_confort_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : piscine gestion confort</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_ecs_bain_marie_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : ECS bain marie</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_ecs_entree_contact_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : ECS prise en compte entrée contact</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_config_ecs_dem_debut_cycle_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Config : ECS demande forcée en début de cycle</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_wattmetre_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; pulse &lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; / &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; / &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; / &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; / &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_option_wattmetre_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Option : wattmètre</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_ecs_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_var_sys_option_app_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Option : appoint ECS / mode secours</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_option_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Option : ECS</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_option_piscine_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Option : piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_nb_zones_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt; zones</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_option_nb_zones_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Option : nombre de zones</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_electrique_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Electrique</Translation>
+        <Translation Language="GB">Oui</Translation>
+        <Translation Language="PT">Oui</Translation>
+        <Translation Language="NL">Oui</Translation>
+        <Translation Language="DE">Oui</Translation>
+      </Text>
+      <Text Id="text_var_sys_option_app_elec_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Option : appoint électrique</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_signal_auto_piscine_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Signal autorisation piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+      </Text>
+      <Text Id="text_off_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">Off</Translation>
+        <Translation Language="PT">Off</Translation>
+        <Translation Language="NL">Off</Translation>
+        <Translation Language="DE">Off</Translation>
+      </Text>
+      <Text Id="text_var_sys_tps_rotation_v3v_piscine_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Temps de rotation de la V3V directionnelle piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+      </Text>
+      <Text Id="text_var_sys_value_piscine_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Piscine</Translation>
+        <Translation Language="GB">Piscine</Translation>
+        <Translation Language="PT">Piscine</Translation>
+        <Translation Language="NL">Piscine</Translation>
+        <Translation Language="DE">Piscine</Translation>
+      </Text>
+      <Text Id="text_var_sys_option_relance_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Option de relance : priorité piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température ECS</Translation>
+      </Text>
+      <Text Id="text_var_sys_hyst_piscine_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Hystérésis sonde eau piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température ECS</Translation>
+      </Text>
+      <Text Id="text_var_sys_consigne_eau_prim_piscine_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Consigne température départ eau primaire piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température ECS</Translation>
+      </Text>
+      <Text Id="text_var_sys_consigne_piscine_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Consigne température eau piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température ECS</Translation>
+      </Text>
+      <Text Id="text_var_sys_temp_piscine_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Température piscine</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_oui_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Oui</Translation>
+        <Translation Language="PT">Oui</Translation>
+        <Translation Language="NL">Oui</Translation>
+        <Translation Language="DE">Oui</Translation>
+      </Text>
+      <Text Id="text_var_sys_fin_cycle_thermo_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Fin de cycle thermodynamique</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+      </Text>
+      <Text Id="text_var_sys_temps_sec_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;s</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_var_sys_tps_rotation_v3v_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Temps de rotation de la V3V directionnelle ECS</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+      </Text>
+      <Text Id="text_var_sys_temps_min_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;min</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_var_sys_duree_cycle_thermo_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Durée du cycle en thermodynamique ECS</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+      </Text>
+      <Text Id="text_var_sys_value_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_var_sys_auto_cycle_antilegionel_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Autoriation cycle antilégionellose</Translation>
+      </Text>
+      <Text Id="text_var_sys_appoint_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Appoint ECS : autorisation / état</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température ECS</Translation>
+      </Text>
+      <Text Id="text_var_sys_hyst_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Hystérésis sonde eau ECS</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température ECS</Translation>
+      </Text>
+      <Text Id="text_var_sys_consigne_relance_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Consigne température relance ECS</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température ECS</Translation>
+      </Text>
+      <Text Id="text_var_sys_consigne_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température ECS</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température ECS</Translation>
+      </Text>
+      <Text Id="text_var_sys_temp_ecs_bas_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Température ECS bas</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_var_sys_temp_ecs_milieur_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ECS milieu</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ECS milieu</Translation>
+      </Text>
+      <Text Id="text_groupe_A_gainable_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">A (gainable)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_modbus_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Modbus</Translation>
+        <Translation Language="GB">On</Translation>
+        <Translation Language="PT">On</Translation>
+        <Translation Language="NL">On</Translation>
+        <Translation Language="DE">On</Translation>
+      </Text>
+      <Text Id="text_var_sys_cons_registre_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Consigne registre Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_debit_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Débit Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_cons_eau_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Consigne température d'eau départ Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température d'eau départ groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_temp_ret_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Température d'eau retour Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température d'eau retour groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température d'eau retour groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température d'eau retour groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température d'eau retour groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_temp_dep_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Température d'eau départ Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_type_sonde_amb_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Type sonde d'ambiance Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Circulateur groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Circulateur groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Circulateur groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Circulateur groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_hyst_sonde_int_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Hystérésis sonde intérieure Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Consigne température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Consigne température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Consigne température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Consigne température d'eau départ groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_var_sys_consigne_interieure_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Consigne intérieure Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température d'eau retour groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température d'eau retour groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température d'eau retour groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température d'eau retour groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_1_nom_zone_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1 (chauffage)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_var_sys_temp_interieure_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Température intérieure Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_1_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_var_sys_mode_zone_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Mode Z&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+      </Text>
       <Text Id="text_var_sys_cons_ventil_groupe_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt; : Consigne ventilateur groupe &lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt; : Consigne ventilateur groupe &lt;Value&gt;</Translation>
@@ -3787,7 +4228,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_var_sys_mode_groupe_gauche_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
+        <Translation Language="FR">&lt;Value&gt; : Mode goupe &lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
         <Translation Language="PT">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
         <Translation Language="NL">&lt;Value&gt; : Mode du groupe &lt;Value&gt;</Translation>
@@ -3947,7 +4388,7 @@
         <Translation Language="NL">&lt;Value&gt; : Marche arrêt général</Translation>
         <Translation Language="DE">&lt;Value&gt; : Marche arrêt général</Translation>
       </Text>
-      <Text Id="text_var_sys_chaud_droit_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_var_sys_chaud_droit_defaut" Alignment="Right" TypographyId="Default">
         <Translation Language="FR">Chaud</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>

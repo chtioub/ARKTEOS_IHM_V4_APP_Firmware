@@ -1,0 +1,9 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../TouchGFX/gui/include/gui/usine_config_additionnelle_screen/Usine_config_additionnelleView.hpp:11:13:Usine_config_additionnelleView::~Usine_config_additionnelleView()	1
+../TouchGFX/gui/include/gui/usine_config_additionnelle_screen/Usine_config_additionnelleView.hpp:11:13:virtual Usine_config_additionnelleView::~Usine_config_additionnelleView()	1
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:3:1:Usine_config_additionnelleView::Usine_config_additionnelleView()	1
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:8:6:virtual void Usine_config_additionnelleView::setupScreen()	1
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:13:6:virtual void Usine_config_additionnelleView::tearDownScreen()	1

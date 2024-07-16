@@ -1,0 +1,9 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../TouchGFX/gui/include/gui/installation_courbe_loi_d_eau_screen/Installation_courbe_loi_d_eauView.hpp:11:13:Installation_courbe_loi_d_eauView::~Installation_courbe_loi_d_eauView()	1
+../TouchGFX/gui/include/gui/installation_courbe_loi_d_eau_screen/Installation_courbe_loi_d_eauView.hpp:11:13:virtual Installation_courbe_loi_d_eauView::~Installation_courbe_loi_d_eauView()	1
+../TouchGFX/gui/src/installation_courbe_loi_d_eau_screen/Installation_courbe_loi_d_eauView.cpp:3:1:Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()	1
+../TouchGFX/gui/src/installation_courbe_loi_d_eau_screen/Installation_courbe_loi_d_eauView.cpp:8:6:virtual void Installation_courbe_loi_d_eauView::setupScreen()	1
+../TouchGFX/gui/src/installation_courbe_loi_d_eau_screen/Installation_courbe_loi_d_eauView.cpp:13:6:virtual void Installation_courbe_loi_d_eauView::tearDownScreen()	1

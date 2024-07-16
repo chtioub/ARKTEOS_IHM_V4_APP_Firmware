@@ -11,6 +11,7 @@ public:
     virtual ~AccueilView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void Timer_500ms();
 protected:
 
 private:

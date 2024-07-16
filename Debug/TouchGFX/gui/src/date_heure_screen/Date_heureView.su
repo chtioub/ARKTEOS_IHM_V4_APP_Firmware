@@ -1,0 +1,9 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
+../TouchGFX/gui/include/gui/date_heure_screen/Date_heureView.hpp:11:13:Date_heureView::~Date_heureView()	16	static
+../TouchGFX/gui/include/gui/date_heure_screen/Date_heureView.hpp:11:13:virtual Date_heureView::~Date_heureView()	16	static
+../TouchGFX/gui/src/date_heure_screen/Date_heureView.cpp:3:1:Date_heureView::Date_heureView()	16	static
+../TouchGFX/gui/src/date_heure_screen/Date_heureView.cpp:8:6:virtual void Date_heureView::setupScreen()	16	static
+../TouchGFX/gui/src/date_heure_screen/Date_heureView.cpp:13:6:virtual void Date_heureView::tearDownScreen()	16	static

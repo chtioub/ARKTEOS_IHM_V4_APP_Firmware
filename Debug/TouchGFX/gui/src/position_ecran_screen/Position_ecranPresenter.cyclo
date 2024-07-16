@@ -1,0 +1,13 @@
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:37:18:virtual void touchgfx::Presenter::activate()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:47:18:virtual void touchgfx::Presenter::deactivate()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:touchgfx::Presenter::~Presenter()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:virtual touchgfx::Presenter::~Presenter()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:58:5:touchgfx::Presenter::Presenter()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:9:5:ModelListener::ModelListener()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:ModelListener::~ModelListener()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:virtual ModelListener::~ModelListener()	1
+../TouchGFX/gui/include/gui/position_ecran_screen/Position_ecranPresenter.hpp:28:13:Position_ecranPresenter::~Position_ecranPresenter()	1
+../TouchGFX/gui/include/gui/position_ecran_screen/Position_ecranPresenter.hpp:28:13:virtual Position_ecranPresenter::~Position_ecranPresenter()	1
+../TouchGFX/gui/src/position_ecran_screen/Position_ecranPresenter.cpp:4:1:Position_ecranPresenter::Position_ecranPresenter(Position_ecranView&)	1
+../TouchGFX/gui/src/position_ecran_screen/Position_ecranPresenter.cpp:10:6:virtual void Position_ecranPresenter::activate()	1
+../TouchGFX/gui/src/position_ecran_screen/Position_ecranPresenter.cpp:15:6:virtual void Position_ecranPresenter::deactivate()	1

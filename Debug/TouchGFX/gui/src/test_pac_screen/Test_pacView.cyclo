@@ -1,0 +1,9 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../TouchGFX/gui/include/gui/test_pac_screen/Test_pacView.hpp:11:13:Test_pacView::~Test_pacView()	1
+../TouchGFX/gui/include/gui/test_pac_screen/Test_pacView.hpp:11:13:virtual Test_pacView::~Test_pacView()	1
+../TouchGFX/gui/src/test_pac_screen/Test_pacView.cpp:3:1:Test_pacView::Test_pacView()	1
+../TouchGFX/gui/src/test_pac_screen/Test_pacView.cpp:8:6:virtual void Test_pacView::setupScreen()	1
+../TouchGFX/gui/src/test_pac_screen/Test_pacView.cpp:13:6:virtual void Test_pacView::tearDownScreen()	1

@@ -1,0 +1,9 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
+../TouchGFX/gui/include/gui/variables_systeme_screen/Variables_systemeView.hpp:11:13:Variables_systemeView::~Variables_systemeView()	16	static
+../TouchGFX/gui/include/gui/variables_systeme_screen/Variables_systemeView.hpp:11:13:virtual Variables_systemeView::~Variables_systemeView()	16	static
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:3:1:Variables_systemeView::Variables_systemeView()	16	static
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:8:6:virtual void Variables_systemeView::setupScreen()	16	static
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:13:6:virtual void Variables_systemeView::tearDownScreen()	16	static

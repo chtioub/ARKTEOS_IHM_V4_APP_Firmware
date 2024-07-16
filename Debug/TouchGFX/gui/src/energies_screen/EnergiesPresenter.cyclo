@@ -1,0 +1,13 @@
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:37:18:virtual void touchgfx::Presenter::activate()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:47:18:virtual void touchgfx::Presenter::deactivate()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:touchgfx::Presenter::~Presenter()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:virtual touchgfx::Presenter::~Presenter()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:58:5:touchgfx::Presenter::Presenter()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:9:5:ModelListener::ModelListener()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:ModelListener::~ModelListener()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:virtual ModelListener::~ModelListener()	1
+../TouchGFX/gui/include/gui/energies_screen/EnergiesPresenter.hpp:28:13:EnergiesPresenter::~EnergiesPresenter()	1
+../TouchGFX/gui/include/gui/energies_screen/EnergiesPresenter.hpp:28:13:virtual EnergiesPresenter::~EnergiesPresenter()	1
+../TouchGFX/gui/src/energies_screen/EnergiesPresenter.cpp:4:1:EnergiesPresenter::EnergiesPresenter(EnergiesView&)	1
+../TouchGFX/gui/src/energies_screen/EnergiesPresenter.cpp:10:6:virtual void EnergiesPresenter::activate()	1
+../TouchGFX/gui/src/energies_screen/EnergiesPresenter.cpp:15:6:virtual void EnergiesPresenter::deactivate()	1

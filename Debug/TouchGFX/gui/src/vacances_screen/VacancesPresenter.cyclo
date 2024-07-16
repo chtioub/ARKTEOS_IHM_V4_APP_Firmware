@@ -1,0 +1,13 @@
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:37:18:virtual void touchgfx::Presenter::activate()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:47:18:virtual void touchgfx::Presenter::deactivate()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:touchgfx::Presenter::~Presenter()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:52:13:virtual touchgfx::Presenter::~Presenter()	1
+../Middlewares/ST/touchgfx/framework/include/mvp/Presenter.hpp:58:5:touchgfx::Presenter::Presenter()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:9:5:ModelListener::ModelListener()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:ModelListener::~ModelListener()	1
+../TouchGFX/gui/include/gui/model/ModelListener.hpp:11:13:virtual ModelListener::~ModelListener()	1
+../TouchGFX/gui/include/gui/vacances_screen/VacancesPresenter.hpp:28:13:VacancesPresenter::~VacancesPresenter()	1
+../TouchGFX/gui/include/gui/vacances_screen/VacancesPresenter.hpp:28:13:virtual VacancesPresenter::~VacancesPresenter()	1
+../TouchGFX/gui/src/vacances_screen/VacancesPresenter.cpp:4:1:VacancesPresenter::VacancesPresenter(VacancesView&)	1
+../TouchGFX/gui/src/vacances_screen/VacancesPresenter.cpp:10:6:virtual void VacancesPresenter::activate()	1
+../TouchGFX/gui/src/vacances_screen/VacancesPresenter.cpp:15:6:virtual void VacancesPresenter::deactivate()	1
