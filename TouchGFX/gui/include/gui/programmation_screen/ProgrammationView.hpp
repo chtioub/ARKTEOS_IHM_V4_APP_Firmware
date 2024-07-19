@@ -11,6 +11,15 @@ public:
     virtual ~ProgrammationView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void bouton_copier();
+    void bouton_coller();
+    void barre_lundi();
+    void barre_mardi();
+    void barre_mercredi();
+    void barre_jeudi();
+    void barre_vendredi();
+    void barre_samedi();
+    void barre_dimanche();
 protected:
 };
 

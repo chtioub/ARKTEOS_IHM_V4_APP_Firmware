@@ -1,3 +1,6 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:525:10:void touchgfx::Drawable::setTouchable(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:549:10:bool touchgfx::Drawable::isTouchable() const	1
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
@@ -5,5 +8,14 @@
 ../TouchGFX/gui/include/gui/programmation_screen/ProgrammationView.hpp:11:13:ProgrammationView::~ProgrammationView()	1
 ../TouchGFX/gui/include/gui/programmation_screen/ProgrammationView.hpp:11:13:virtual ProgrammationView::~ProgrammationView()	1
 ../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:3:1:ProgrammationView::ProgrammationView()	1
-../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:8:6:virtual void ProgrammationView::setupScreen()	1
-../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:13:6:virtual void ProgrammationView::tearDownScreen()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:16:6:virtual void ProgrammationView::setupScreen()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:21:6:virtual void ProgrammationView::tearDownScreen()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:26:6:virtual void ProgrammationView::bouton_copier()	8
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:74:6:virtual void ProgrammationView::bouton_coller()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:79:6:virtual void ProgrammationView::barre_lundi()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:104:6:virtual void ProgrammationView::barre_mardi()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:129:6:virtual void ProgrammationView::barre_mercredi()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:154:6:virtual void ProgrammationView::barre_jeudi()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:179:6:virtual void ProgrammationView::barre_vendredi()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:204:6:virtual void ProgrammationView::barre_samedi()	1
+../TouchGFX/gui/src/programmation_screen/ProgrammationView.cpp:229:6:virtual void ProgrammationView::barre_dimanche()	1

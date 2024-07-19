@@ -1,9 +1,0 @@
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
-../TouchGFX/gui/include/gui/derogation_ecs_screen/Derogation_ecsView.hpp:11:13:Derogation_ecsView::~Derogation_ecsView()	16	static
-../TouchGFX/gui/include/gui/derogation_ecs_screen/Derogation_ecsView.hpp:11:13:virtual Derogation_ecsView::~Derogation_ecsView()	16	static
-../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:3:1:Derogation_ecsView::Derogation_ecsView()	16	static
-../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:8:6:virtual void Derogation_ecsView::setupScreen()	16	static
-../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:13:6:virtual void Derogation_ecsView::tearDownScreen()	16	static

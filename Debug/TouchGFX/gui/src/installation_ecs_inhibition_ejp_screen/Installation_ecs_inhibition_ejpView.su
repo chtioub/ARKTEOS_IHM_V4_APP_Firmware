@@ -1,9 +1,0 @@
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
-../TouchGFX/gui/include/gui/installation_ecs_inhibition_ejp_screen/Installation_ecs_inhibition_ejpView.hpp:11:13:Installation_ecs_inhibition_ejpView::~Installation_ecs_inhibition_ejpView()	16	static
-../TouchGFX/gui/include/gui/installation_ecs_inhibition_ejp_screen/Installation_ecs_inhibition_ejpView.hpp:11:13:virtual Installation_ecs_inhibition_ejpView::~Installation_ecs_inhibition_ejpView()	16	static
-../TouchGFX/gui/src/installation_ecs_inhibition_ejp_screen/Installation_ecs_inhibition_ejpView.cpp:3:1:Installation_ecs_inhibition_ejpView::Installation_ecs_inhibition_ejpView()	16	static
-../TouchGFX/gui/src/installation_ecs_inhibition_ejp_screen/Installation_ecs_inhibition_ejpView.cpp:8:6:virtual void Installation_ecs_inhibition_ejpView::setupScreen()	16	static
-../TouchGFX/gui/src/installation_ecs_inhibition_ejp_screen/Installation_ecs_inhibition_ejpView.cpp:13:6:virtual void Installation_ecs_inhibition_ejpView::tearDownScreen()	16	static

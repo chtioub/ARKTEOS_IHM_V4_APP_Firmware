@@ -171,6 +171,7 @@ O_SRCS += \
 ../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/image_Boutons_3_Choix_Vert_Unclicked_L139xH53.o \
 ../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/image_Cadre_Rouge_Selection_Jours_Programmation_L768xH46.o \
 ../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/image_Cadre_Transparent_Selection_Jours_Programmation_L768xH46.o \
+../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/image_Cadre_Zoom_Plus_Plus_Programmation_L48xH82.o \
 ../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/image_Cadre_Zoom_Plus_Plus_Programmation_L56xH82.o \
 ../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/image_Cadre_Zoom_Plus_Programmation_L192xH82.o \
 ../TouchGFX/build/MINGW32_NT-6.2/generated/images/src/image_Circuit_Hydraulique_Zuran_Baguio_L342xH261.o \

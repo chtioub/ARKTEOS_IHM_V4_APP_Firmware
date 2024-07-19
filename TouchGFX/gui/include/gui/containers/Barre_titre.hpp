@@ -15,6 +15,7 @@ public:
     void titre(uint32_t u32NumeroTitre);
     void sansRetour();
     void sansAccueil();
+//    void fonctionRetour(void (*funct)());
 protected:
 };
 

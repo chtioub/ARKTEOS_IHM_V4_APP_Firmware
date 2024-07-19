@@ -1,9 +1,0 @@
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
-../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
-../TouchGFX/gui/include/gui/energies_cumul_screen/Energies_cumulView.hpp:11:13:Energies_cumulView::~Energies_cumulView()	16	static
-../TouchGFX/gui/include/gui/energies_cumul_screen/Energies_cumulView.hpp:11:13:virtual Energies_cumulView::~Energies_cumulView()	16	static
-../TouchGFX/gui/src/energies_cumul_screen/Energies_cumulView.cpp:3:1:Energies_cumulView::Energies_cumulView()	16	static
-../TouchGFX/gui/src/energies_cumul_screen/Energies_cumulView.cpp:8:6:virtual void Energies_cumulView::setupScreen()	16	static
-../TouchGFX/gui/src/energies_cumul_screen/Energies_cumulView.cpp:13:6:virtual void Energies_cumulView::tearDownScreen()	16	static

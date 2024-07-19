@@ -13,6 +13,10 @@ public:
     virtual void tearDownScreen();
     void slider_consigne(int sliderValue);
     void slider_relance(int sliderValue);
+    void bouton_moins_consigne();
+    void bouton_plus_consigne();
+    void bouton_moins_relance();
+    void bouton_plus_relance();
 protected:
     float fConsigne, fRelance;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_consigne[5];

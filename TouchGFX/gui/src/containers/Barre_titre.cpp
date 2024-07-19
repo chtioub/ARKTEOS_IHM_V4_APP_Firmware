@@ -39,3 +39,8 @@ void Barre_titre::sansAccueil()
 	button_accueil.setVisible(false);
 	button_accueil.invalidate();
 }
+
+//void Barre_titre::fonctionRetour(void (*funct)())
+//{
+//	funct();
+//}

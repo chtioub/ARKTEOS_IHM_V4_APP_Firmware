@@ -22,7 +22,7 @@ void AccueilView::swipeCallbackHandler(int16_t velocity)
 {
     if(velocity < 0)
     {
-      application().gotoConfigurationScreenSlideTransitionEast();
+		application().gotoConfigurationScreenSlideTransitionEast();
     }
 }
 
@@ -54,4 +54,9 @@ void AccueilView::Timer_500ms()
 		button_violet_zone_1.setVisible(true);
 		button_violet_zone_1.invalidate();
 	}
+}
+
+void AccueilView::bouton_marche_arret()
+{
+	application().gotoPage_oui_nonScreenNoTransition();
 }
