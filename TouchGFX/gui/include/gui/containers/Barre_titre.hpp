@@ -10,6 +10,12 @@ public:
     virtual ~Barre_titre() {}
 
     virtual void initialize();
+    void connexionDistante(bool bConnexionDistante);
+    void recupConfig(bool bRecupConfig);
+    void titre(uint32_t u32NumeroTitre);
+    void sansRetour();
+    void sansAccueil();
+//    void fonctionRetour(void (*funct)());
 protected:
 };
 

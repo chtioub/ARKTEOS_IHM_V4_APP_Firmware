@@ -11,7 +11,16 @@ public:
     virtual ~Eau_chaude_sanitaireView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void slider_consigne(int sliderValue);
+    void slider_relance(int sliderValue);
+    void bouton_moins_consigne();
+    void bouton_plus_consigne();
+    void bouton_moins_relance();
+    void bouton_plus_relance();
 protected:
+    float fConsigne, fRelance;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_consigne[5];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_relance[5];
 };
 
 #endif // EAU_CHAUDE_SANITAIREVIEW_HPP

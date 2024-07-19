@@ -59843,17 +59843,7 @@
                 "Width": 950,
                 "Height": 398,
                 "Visible": false,
-                "Components": [
-                  {
-                    "Type": "Image",
-                    "Name": "Image1_1_1_1",
-                    "X": 46,
-                    "Y": 11,
-                    "Width": 858,
-                    "Height": 377,
-                    "RelativeFilename": "Test_L857xH376-69.png"
-                  }
-                ]
+                "Components": []
               },
               {
                 "Type": "Container",
@@ -60058,41 +60048,6 @@
                     "Height": 53,
                     "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
                     "Released": "Fleche_Droite_Unclicked_L75xH53.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image_p2_double_etage",
-                    "X": 50,
-                    "Width": 850,
-                    "Height": 388,
-                    "RelativeFilename": "Bloc_AJPAC_Double_Etage_P2_L849xH388.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image_p2_froid",
-                    "X": 50,
-                    "Width": 850,
-                    "Height": 388,
-                    "Visible": false,
-                    "RelativeFilename": "Bloc_AJPAC_Froid_P2_L849xH388.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image_p2_semi_etage",
-                    "X": 50,
-                    "Width": 850,
-                    "Height": 388,
-                    "Visible": false,
-                    "RelativeFilename": "Bloc_AJPAC_Semi_Etage_P2_L849xH388.png"
-                  },
-                  {
-                    "Type": "Image",
-                    "Name": "Image_p2_simple_etage",
-                    "X": 50,
-                    "Width": 850,
-                    "Height": 388,
-                    "Visible": false,
-                    "RelativeFilename": "Bloc_AJPAC_Simple_Etage_P2_L849xH388.png"
                   }
                 ]
               },
