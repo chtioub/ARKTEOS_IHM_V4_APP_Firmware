@@ -5,7 +5,7 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 {
 	barre_titre.recupConfig(false);
 	barre_titre.connexionDistante(false);
-	barre_titre.titre(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE);
+//	barre_titre.titre(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE);
 }
 
 void Installation_hydrauliqueView::setupScreen()

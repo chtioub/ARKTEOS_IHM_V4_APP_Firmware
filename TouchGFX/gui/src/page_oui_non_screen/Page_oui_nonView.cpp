@@ -6,7 +6,6 @@ Page_oui_nonView::Page_oui_nonView()
 	{
 		barre_titre.recupConfig(false);
 		barre_titre.connexionDistante(false);
-//		barre_titre.titre(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE);
 	}
 }
 

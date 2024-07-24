@@ -885,7 +885,8 @@
                 "TextId": "text_secours_pac_centre_defaut",
                 "TextRotation": "0",
                 "Color": {
-                  "Red": 255
+                  "Red": 255,
+                  "Green": 21
                 }
               }
             ]
@@ -1588,7 +1589,6 @@
                 "Y": 149,
                 "Width": 168,
                 "Height": 102,
-                "Visible": false,
                 "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
                 "Released": "Bouton_Vert_Unclicked_L168xH102.png"
               },
@@ -1623,8 +1623,8 @@
                 "Y": 149,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_Beige_Unclicked_L168xH102.png",
-                "Released": "Bouton_Rouge_Unclicked_L168xH102.png"
+                "Pressed": "Bouton_Rouge_Unclicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
               },
               {
                 "Type": "Image",
@@ -1672,7 +1672,7 @@
                     "Name": "slider_vert_clair",
                     "X": 107,
                     "Y": 13,
-                    "Width": 514,
+                    "Width": 525,
                     "Height": 30,
                     "IsHorizontalSlider": true,
                     "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
@@ -1680,10 +1680,10 @@
                     "Indicator": "Balle_Piscine_Reduit_L30xH30.png",
                     "BackgroundX": 19,
                     "BackgroundY": 11,
-                    "IndicatorMax": 356,
-                    "ValueMax": 300,
-                    "ValueMin": 120,
-                    "InitValue": 120
+                    "IndicatorMax": 495,
+                    "ValueMax": 400,
+                    "ValueMin": 150,
+                    "InitValue": 350
                   },
                   {
                     "Type": "Button",
@@ -1735,7 +1735,7 @@
                     "Name": "slider_vert",
                     "X": 107,
                     "Y": 13,
-                    "Width": 514,
+                    "Width": 525,
                     "Height": 30,
                     "IsHorizontalSlider": true,
                     "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
@@ -1743,10 +1743,10 @@
                     "Indicator": "Balle_Piscine_L30xH30.png",
                     "BackgroundX": 19,
                     "BackgroundY": 11,
-                    "IndicatorMax": 356,
-                    "ValueMax": 300,
-                    "ValueMin": 120,
-                    "InitValue": 120
+                    "IndicatorMax": 495,
+                    "ValueMax": 400,
+                    "ValueMin": 150,
+                    "InitValue": 200
                   },
                   {
                     "Type": "Button",
@@ -1798,7 +1798,7 @@
                     "Name": "slider_vert_fonce",
                     "X": 107,
                     "Y": 13,
-                    "Width": 514,
+                    "Width": 525,
                     "Height": 30,
                     "IsHorizontalSlider": true,
                     "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
@@ -1806,10 +1806,10 @@
                     "Indicator": "Balle_Piscine_Confort_L30xH30.png",
                     "BackgroundX": 19,
                     "BackgroundY": 11,
-                    "IndicatorMax": 356,
-                    "ValueMax": 300,
-                    "ValueMin": 120,
-                    "InitValue": 120
+                    "IndicatorMax": 495,
+                    "ValueMax": 400,
+                    "ValueMin": 150,
+                    "InitValue": 250
                   },
                   {
                     "Type": "Button",
@@ -1844,27 +1844,135 @@
         ],
         "Interactions": [
           {
-            "InteractionName": "BTNClicked_marche_prog_off_chgsc_programmation",
+            "InteractionName": "BTNClicked_marche_prog_off_fct",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_marche_ecs_off"
             },
             "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Programmation"
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_marche"
             }
           },
           {
-            "InteractionName": "BTNClicked_marche_prog_on_chgsc_programmation",
+            "InteractionName": "BTNClicked_marche_prog_on_fct",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_marche_ecs_on"
             },
             "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Programmation"
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_marche"
+            }
+          },
+          {
+            "InteractionName": "Sider_reduit_fct",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_vert_clair"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_reduit"
+            }
+          },
+          {
+            "InteractionName": "Slider_normal_fct",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_vert"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_normal"
+            }
+          },
+          {
+            "InteractionName": "Slider_confort_fct",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_vert_fonce"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_confort"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_arret_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_arret_ecs"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_arret"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_reduit_moins_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_vert_clair_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_reduit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_reduit_plus_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_vert_clair_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_reduit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_normal_plus_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_vert_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_normal"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_normal_moins_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_vert_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_normal"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_confort_plus_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_vert_fonce_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_confort"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_confort_moins_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_vert_fonce_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_confort"
             }
           }
         ]
@@ -42012,7 +42120,7 @@
                 "Type": "Slider",
                 "Name": "slider_text_20_deg",
                 "X": 80,
-                "Y": 150,
+                "Y": 152,
                 "Width": 30,
                 "Height": 358,
                 "BackgroundUnselected": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
@@ -42023,13 +42131,13 @@
                 "IndicatorMax": 328,
                 "ValueMax": 800,
                 "ValueMin": 200,
-                "InitValue": 350
+                "InitValue": 400
               },
               {
                 "Type": "Slider",
                 "Name": "slider_text_15_deg",
                 "X": 169,
-                "Y": 150,
+                "Y": 152,
                 "Width": 30,
                 "Height": 358,
                 "BackgroundUnselected": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
@@ -42046,7 +42154,7 @@
                 "Type": "Slider",
                 "Name": "slider_text_10_deg",
                 "X": 258,
-                "Y": 150,
+                "Y": 152,
                 "Width": 30,
                 "Height": 358,
                 "BackgroundUnselected": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
@@ -42063,7 +42171,7 @@
                 "Type": "Slider",
                 "Name": "slider_text_0_deg",
                 "X": 436,
-                "Y": 150,
+                "Y": 152,
                 "Width": 30,
                 "Height": 358,
                 "BackgroundUnselected": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
@@ -42080,7 +42188,7 @@
                 "Type": "Slider",
                 "Name": "slider_text_m10_deg",
                 "X": 614,
-                "Y": 150,
+                "Y": 152,
                 "Width": 30,
                 "Height": 358,
                 "BackgroundUnselected": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
@@ -42097,7 +42205,7 @@
                 "Type": "Slider",
                 "Name": "slider_text_m25_deg",
                 "X": 881,
-                "Y": 150,
+                "Y": 152,
                 "Width": 30,
                 "Height": 358,
                 "BackgroundUnselected": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
@@ -42114,7 +42222,7 @@
                 "Type": "Image",
                 "Name": "image_points_1",
                 "X": 362,
-                "Y": 165,
+                "Y": 167,
                 "Width": 2,
                 "Height": 328,
                 "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
@@ -42123,7 +42231,7 @@
                 "Type": "Image",
                 "Name": "image_points_2",
                 "X": 540,
-                "Y": 165,
+                "Y": 167,
                 "Width": 2,
                 "Height": 328,
                 "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
@@ -42132,7 +42240,7 @@
                 "Type": "Image",
                 "Name": "image_points_3",
                 "X": 718,
-                "Y": 165,
+                "Y": 167,
                 "Width": 2,
                 "Height": 328,
                 "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
@@ -42141,7 +42249,7 @@
                 "Type": "Image",
                 "Name": "image_points_4",
                 "X": 807,
-                "Y": 165,
+                "Y": 167,
                 "Width": 2,
                 "Height": 328,
                 "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
@@ -42210,7 +42318,7 @@
                 "Type": "Line",
                 "Name": "line_loi_eau_1",
                 "X": 96,
-                "Y": 150,
+                "Y": 152,
                 "Width": 89,
                 "Height": 343,
                 "Color": {
@@ -42227,7 +42335,7 @@
                 "Type": "Line",
                 "Name": "line_loi_eau_2",
                 "X": 185,
-                "Y": 150,
+                "Y": 152,
                 "Width": 89,
                 "Height": 343,
                 "Color": {
@@ -42244,7 +42352,7 @@
                 "Type": "Line",
                 "Name": "line_loi_eau_3",
                 "X": 274,
-                "Y": 150,
+                "Y": 152,
                 "Width": 178,
                 "Height": 343,
                 "Color": {
@@ -42261,7 +42369,7 @@
                 "Type": "Line",
                 "Name": "line_loi_eau_4",
                 "X": 453,
-                "Y": 150,
+                "Y": 152,
                 "Width": 177,
                 "Height": 343,
                 "Color": {
@@ -42278,7 +42386,7 @@
                 "Type": "Line",
                 "Name": "line_loi_eau_5",
                 "X": 630,
-                "Y": 150,
+                "Y": 152,
                 "Width": 267,
                 "Height": 342,
                 "Color": {
@@ -42420,6 +42528,268 @@
                   "UseBuffer": true,
                   "BufferSize": 3
                 }
+              },
+              {
+                "Type": "Container",
+                "Name": "container_pave_numeric",
+                "X": 196,
+                "Y": 212,
+                "Width": 558,
+                "Height": 312,
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box_background",
+                    "Width": 558,
+                    "Height": 312
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_0",
+                    "X": 186,
+                    "Y": 234,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_3YR5",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_1",
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_ZLTV",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_2",
+                    "X": 186,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_YTOR",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_3",
+                    "X": 372,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_1UG0",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_4",
+                    "Y": 78,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_A0QI",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_5",
+                    "X": 186,
+                    "Y": 78,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_POJK",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_6",
+                    "X": 372,
+                    "Y": 78,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_C9K2",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_7",
+                    "Y": 156,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_B570",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_8",
+                    "X": 186,
+                    "Y": 156,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_5HH9",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "buttonWithLabel_9",
+                    "X": 372,
+                    "Y": 156,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "TextId": "__SingleUse_0BMT",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0"
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_valider",
+                    "X": 372,
+                    "Y": 234,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "IconPressed": "__generated\\icon_theme_images_action_done_40_40_FFFFFF.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_action_done_40_40_FFFFFF.svg.png",
+                    "IconX": 74,
+                    "IconY": 17,
+                    "IconHeight": 40,
+                    "IconWidth": 40
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_supprimer",
+                    "Y": 234,
+                    "Width": 186,
+                    "Height": 78,
+                    "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+                    "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+                    "IconPressed": "__generated\\icon_theme_images_content_backspace_40_40_FFFFFF.svg.png",
+                    "IconReleased": "__generated\\icon_theme_images_content_backspace_40_40_FFFFFF.svg.png",
+                    "IconX": 72,
+                    "IconY": 19,
+                    "IconHeight": 40,
+                    "IconWidth": 40
+                  }
+                ]
               }
             ]
           }
@@ -42489,6 +42859,204 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "slider_m25"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_loi_eau_20_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_loi_eau_20"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_loi_eau_20"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_0_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_0"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_0"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_1_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_1"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_1"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_2_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_2"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_2"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_3_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_3"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_3"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_4_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_4"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_4"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_5_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_5"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_5"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_6_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_6"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_6"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_7_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_7"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_7"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_8_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_8"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_8"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_9_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_9"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_9"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_supprimer_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_supprimer"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_supprimer"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_loi_eau_15_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_loi_eau_15"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_loi_eau_15"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_loi_eau_10_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_loi_eau_10"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_loi_eau_10"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_loi_eau_0_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_loi_eau_0"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_loi_eau_0"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_loi_eau_m10_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_loi_eau_m10"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_loi_eau_m10"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_loi_eau_m25_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_loi_eau_m25"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_loi_eau_m25"
             }
           }
         ]
@@ -66183,6 +66751,7 @@
                 "Y": 410,
                 "Width": 600,
                 "Height": 74,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "Button",
@@ -66226,7 +66795,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_zone_temp_rouge_centre_defaut",
+                    "TextId": "text_pisc_vert_clair_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -66234,7 +66803,9 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "text_zone_temp_rouge_init_centre_defaut"
+                      "TextId": "text_zone_temp_rouge_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 5
                     }
                   }
                 ]
@@ -66289,7 +66860,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_zone_temp_orange_centre_defaut",
+                    "TextId": "text_pisc_vert_clair_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -66297,7 +66868,9 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "text_zone_temp_orange_init_centre_defaut"
+                      "TextId": "text_zone_temp_orange_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 5
                     }
                   }
                 ]
@@ -66309,6 +66882,7 @@
                 "Y": 262,
                 "Width": 600,
                 "Height": 74,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "Button",
@@ -66352,7 +66926,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_zone_temp_jaune_centre_defaut",
+                    "TextId": "text_pisc_vert_clair_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -66360,7 +66934,139 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "text_zone_temp_jaune_init_centre_defaut"
+                      "TextId": "text_zone_temp_jaune_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_bleu",
+                "X": 269,
+                "Y": 410,
+                "Width": 600,
+                "Height": 74,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_bleu_plus",
+                    "X": 520,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_BleuFonce_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_BleuFonce_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_bleu",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 386,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                    "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                    "Indicator": "Balle_Froid_Reduit_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_bleu_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_BleuFonce_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_BleuFonce_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_bleu",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_zone_temp_jaune_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_slider_bleu_ciel",
+                "X": 269,
+                "Y": 336,
+                "Width": 600,
+                "Height": 74,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_bleu_ciel_plus",
+                    "X": 520,
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Plus_BleuClair_Clicked_L80xH56.png",
+                    "Released": "Bouton_Plus_BleuClair_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "Slider",
+                    "Name": "slider_bleu_ciel",
+                    "X": 107,
+                    "Y": 13,
+                    "Width": 386,
+                    "Height": 30,
+                    "IsHorizontalSlider": true,
+                    "BackgroundUnselected": "Barres_Consigne_L356xH10.png",
+                    "BackgroundSelected": "Barres_Consigne_L356xH10.png",
+                    "Indicator": "Balle_Froid_Confort_L30xH30.png",
+                    "BackgroundX": 19,
+                    "BackgroundY": 11,
+                    "IndicatorMax": 356,
+                    "ValueMax": 300,
+                    "ValueMin": 120,
+                    "InitValue": 120
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_bleu_ciel_moins",
+                    "Width": 80,
+                    "Height": 56,
+                    "Pressed": "Bouton_Moins_BleuClair_Clicked_L80xH56.png",
+                    "Released": "Bouton_Moins_BleuClair_Unclicked_L80xH56.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_bleu_ciel",
+                    "X": 80,
+                    "Y": 51,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_zone_temp_jaune_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 5
                     }
                   }
                 ]
@@ -66588,8 +67294,8 @@
                 "Y": 149,
                 "Width": 168,
                 "Height": 102,
-                "Pressed": "Bouton_Beige_Unclicked_L168xH102.png",
-                "Released": "Bouton_Rouge_Unclicked_L168xH102.png"
+                "Pressed": "Bouton_Rouge_Unclicked_L168xH102.png",
+                "Released": "Bouton_Beige_Unclicked_L168xH102.png"
               },
               {
                 "Type": "Image",
@@ -66714,6 +67420,215 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Programmation"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_arret_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_arret"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_arret"
+            }
+          },
+          {
+            "InteractionName": "Slider_reduit_fct",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_jaune"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_reduit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_plus_reduit_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_jaune_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_reduit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_moins_reduit_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_jaune_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_reduit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_moins_normal_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_orange_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_normal"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_plus_normal_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_orange_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_normal"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_plus_confort_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_rouge_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_confort"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_moins_confort_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_rouge_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_confort"
+            }
+          },
+          {
+            "InteractionName": "Slider_normal_fct",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_orange"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_normal"
+            }
+          },
+          {
+            "InteractionName": "Slider_confort_fct",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_rouge"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_confort"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_chaud_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_chaud"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_chaud"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_hors_gel_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_hors_gel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_hors_gel"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_froid_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_froid"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_froid"
+            }
+          },
+          {
+            "InteractionName": "Slider_normal_froid_fct",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_bleu_ciel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_normal"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_plus_normal_froid_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bleu_ciel_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_normal"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_moins_normal_froid_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bleu_ciel_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_normal"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_plus_confort_froid_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bleu_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_confort"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_moins_confort_froid_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bleu_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_confort"
+            }
+          },
+          {
+            "InteractionName": "Slider_confort_froid_fct",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_bleu"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_confort"
             }
           }
         ]
@@ -79651,7 +80566,9 @@
               "Blue": 255
             },
             "Wildcard1": {
-              "TextId": "titre_text_2_centre_large"
+              "TextId": "titre_text_2_centre_large",
+              "UseBuffer": true,
+              "BufferSize": 25
             }
           }
         ],
@@ -79828,9 +80745,261 @@
       },
       {
         "Name": "PaveNumerique",
-        "Width": 250,
-        "Height": 250,
-        "Components": [],
+        "Width": 558,
+        "Height": 312,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box_background",
+            "Width": 558,
+            "Height": 312
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_0",
+            "X": 186,
+            "Y": 234,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_X0Z1",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_1",
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_N9QI",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_2",
+            "X": 186,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_ZTTV",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_3",
+            "X": 372,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_P3GW",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_4",
+            "Y": 78,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_B8UR",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_5",
+            "X": 186,
+            "Y": 78,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_ZARN",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_6",
+            "X": 372,
+            "Y": 78,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_NX1L",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_7",
+            "Y": 156,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_8RAS",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_8",
+            "X": 186,
+            "Y": 156,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_FCCA",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel_9",
+            "X": 372,
+            "Y": 156,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "TextId": "__SingleUse_B43E",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon_valider",
+            "X": 372,
+            "Y": 234,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_40_40_FFFFFF.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_done_40_40_FFFFFF.svg.png",
+            "IconX": 74,
+            "IconY": 17,
+            "IconHeight": 40,
+            "IconWidth": 40
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon_supprimer",
+            "Y": 234,
+            "Width": 186,
+            "Height": 78,
+            "Pressed": "Bouton_Clavier_Numerique_Clicked_L186xH78.png",
+            "Released": "Bouton_Clavier_Numerique_Unclicked_L186xH78.png",
+            "IconPressed": "__generated\\icon_theme_images_content_backspace_40_40_FFFFFF.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_content_backspace_40_40_FFFFFF.svg.png",
+            "IconX": 72,
+            "IconY": 19,
+            "IconHeight": 40,
+            "IconWidth": 40
+          }
+        ],
         "Interactions": []
       }
     ],
@@ -79840,7 +81009,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Installation_courbe_loi_d_eau",
+    "StartupScreenName": "Zone",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

@@ -1,4 +1,5 @@
 #include <gui/containers/Barre_titre.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 Barre_titre::Barre_titre()
 {
@@ -22,9 +23,10 @@ void Barre_titre::recupConfig(bool bRecupConfig)
 	Image_recup_config.invalidate();
 }
 
-void Barre_titre::titre(uint32_t u32NumeroTitre)
+void Barre_titre::titre(touchgfx::Unicode::UnicodeChar *textArea_Buffer)
 {
-	textArea_titre.setTypedText(touchgfx::TypedText(u32NumeroTitre));
+	textArea_titre.setWildcard(textArea_Buffer);
+	textArea_titre.setTypedText(touchgfx::TypedText(T_TEXT_TITRE_CENTRE_LARGE));
 	textArea_titre.invalidate();
 }
 
@@ -40,7 +42,7 @@ void Barre_titre::sansAccueil()
 	button_accueil.invalidate();
 }
 
-//void Barre_titre::fonctionRetour(void (*funct)())
+//void Barre_titre::fonctionRetour(void (FrontendApplicationBase::*)funct())
 //{
-//	funct();
+//	fonct();
 //}

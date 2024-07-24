@@ -3,7 +3,7 @@
 
 Eau_chaude_sanitaireView::Eau_chaude_sanitaireView()
 {
-	barre_titre.titre(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE);
+//	barre_titre.titre(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE);
 }
 
 void Eau_chaude_sanitaireView::setupScreen()
