@@ -11,6 +11,15 @@ public:
     virtual ~Energies_histoView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void bouton_pac();
+    void bouton_chaud();
+    void bouton_froid();
+    void bouton_ecs();
+    void bouton_piscine();
+    void bouton_12mois();
+    void bouton_24jours();
+    void bouton_24heures();
+    void couleur_barres(uint32_t u32Couleur);
 protected:
 };
 

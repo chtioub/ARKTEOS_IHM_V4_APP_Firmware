@@ -8,6 +8,7 @@
     <Language Id="DE" />
   </Languages>
   <Texts>
+    <TextGroup Id="Group1" />
     <TextGroup Id="Attente">
       <Text Id="text_recup_config_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">33</Translation>
@@ -1110,6 +1111,20 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Energies">
+      <Text Id="text_heures_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Heures</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_jours_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Jours</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_donnees_non_contract_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Données non contractuelles&#10;Consommation des appoints : estimation calculée&#10;pour une tension de 230V/400V</Translation>
         <Translation Language="GB">Non-contractual data&#10;Consumption of top-ups: calculated estimate&#10;for a voltage of 230V/400V&#10;</Translation>
@@ -4745,7 +4760,7 @@
         <Translation Language="NL">Jan</Translation>
         <Translation Language="DE">Jan</Translation>
       </Text>
-      <Text Id="text_mois_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_mois_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Mois</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -4906,15 +4921,15 @@
         <Translation Language="NL">&lt;Value&gt;</Translation>
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
-      <Text Id="text_loi_eau_m25_deg_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">-25</Translation>
+      <Text Id="text_loi_eau_m20_deg_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">-20&#10;</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_loi_eau_m20_deg_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">-20&#10;</Translation>
+      <Text Id="text_loi_eau_m25_deg_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">-25</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>

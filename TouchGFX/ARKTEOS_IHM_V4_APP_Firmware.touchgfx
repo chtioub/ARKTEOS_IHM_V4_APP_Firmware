@@ -44029,70 +44029,79 @@
                 "CustomContainerDefinitionName": "Barre_titre"
               },
               {
-                "Type": "ButtonWithLabel",
-                "Name": "buttonWithLabel_24_heures",
-                "X": 793,
-                "Y": 372,
-                "Width": 139,
-                "Height": 53,
-                "Pressed": "Boutons_3_Choix_Beige_Clicked_L139xH53.png",
-                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png",
-                "TextId": "text_24_heures_centre_defaut",
-                "ReleasedColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "PressedColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "TextRotation": "0"
-              },
-              {
-                "Type": "ButtonWithLabel",
-                "Name": "buttonWithLabel_24_jours",
-                "X": 793,
-                "Y": 299,
-                "Width": 139,
-                "Height": 53,
-                "Pressed": "Boutons_3_Choix_Beige_Clicked_L139xH53.png",
-                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png",
-                "TextId": "text_24_jours_centre_defaut",
-                "ReleasedColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "PressedColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "TextRotation": "0"
-              },
-              {
-                "Type": "ButtonWithLabel",
-                "Name": "buttonWithLabel_12_mois",
+                "Type": "ToggleButton",
+                "Name": "toggleButton_12_mois",
                 "X": 793,
                 "Y": 226,
                 "Width": 139,
                 "Height": 53,
-                "Pressed": "Boutons_3_Choix_Beige_Clicked_L139xH53.png",
-                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png",
+                "Pressed": "Boutons_3_Choix_Vert_Unclicked_L139xH53.png",
+                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_12_mois",
+                "X": 793,
+                "Y": 241,
+                "Width": 139,
+                "Height": 22,
                 "TextId": "text_12_mois_centre_defaut",
-                "ReleasedColor": {
+                "TextRotation": "0",
+                "Color": {
                   "Red": 255,
                   "Green": 255,
                   "Blue": 255
-                },
-                "PressedColor": {
+                }
+              },
+              {
+                "Type": "ToggleButton",
+                "Name": "toggleButton_24_heures",
+                "X": 793,
+                "Y": 372,
+                "Width": 139,
+                "Height": 53,
+                "Pressed": "Boutons_3_Choix_Vert_Unclicked_L139xH53.png",
+                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_24_heures",
+                "X": 793,
+                "Y": 387,
+                "Width": 139,
+                "Height": 22,
+                "TextId": "text_24_heures_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
                   "Red": 255,
                   "Green": 255,
                   "Blue": 255
-                },
-                "TextRotation": "0"
+                }
+              },
+              {
+                "Type": "ToggleButton",
+                "Name": "toggleButton_24_jours",
+                "X": 793,
+                "Y": 299,
+                "Width": 139,
+                "Height": 53,
+                "Pressed": "Boutons_3_Choix_Vert_Unclicked_L139xH53.png",
+                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_24_jours",
+                "X": 793,
+                "Y": 314,
+                "Width": 139,
+                "Height": 22,
+                "TextId": "text_24_jours_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
               },
               {
                 "Type": "Container",
@@ -44375,7 +44384,6 @@
                     "Y": 64,
                     "Width": 737,
                     "Height": 298,
-                    "Visible": false,
                     "Components": [
                       {
                         "Type": "Image",
@@ -44526,6 +44534,7 @@
                 "Y": 201,
                 "Width": 737,
                 "Height": 323,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "Box",
@@ -44673,7 +44682,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier",
+                    "Name": "textArea_mois_1",
                     "X": 25,
                     "Y": 298,
                     "Width": 38,
@@ -44688,22 +44697,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_1",
-                    "X": 25,
-                    "Y": 298,
-                    "Width": 38,
-                    "Height": 21,
-                    "TextId": "text_energies_janvier_centre_defaut",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    }
-                  },
-                  {
-                    "Type": "TextArea",
-                    "Name": "textArea_janvier_2",
+                    "Name": "textArea_mois_2",
                     "X": 85,
                     "Y": 298,
                     "Width": 38,
@@ -44718,7 +44712,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_3",
+                    "Name": "textArea_mois_3",
                     "X": 145,
                     "Y": 298,
                     "Width": 38,
@@ -44733,7 +44727,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_4",
+                    "Name": "textArea_mois_4",
                     "X": 205,
                     "Y": 298,
                     "Width": 38,
@@ -44748,7 +44742,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_5",
+                    "Name": "textArea_mois_5",
                     "X": 265,
                     "Y": 298,
                     "Width": 38,
@@ -44763,7 +44757,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_6",
+                    "Name": "textArea_mois_6",
                     "X": 325,
                     "Y": 298,
                     "Width": 38,
@@ -44778,7 +44772,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_7",
+                    "Name": "textArea_mois_7",
                     "X": 385,
                     "Y": 298,
                     "Width": 38,
@@ -44793,7 +44787,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_8",
+                    "Name": "textArea_mois_8",
                     "X": 445,
                     "Y": 298,
                     "Width": 38,
@@ -44808,7 +44802,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_9",
+                    "Name": "textArea_mois_9",
                     "X": 505,
                     "Y": 298,
                     "Width": 38,
@@ -44823,7 +44817,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_10",
+                    "Name": "textArea_mois_10",
                     "X": 565,
                     "Y": 298,
                     "Width": 38,
@@ -44838,7 +44832,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_11",
+                    "Name": "textArea_mois_11",
                     "X": 625,
                     "Y": 298,
                     "Width": 38,
@@ -44853,7 +44847,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_janvier_12",
+                    "Name": "textArea_mois_12",
                     "X": 685,
                     "Y": 298,
                     "Width": 38,
@@ -44874,8 +44868,508 @@
                 "X": 26,
                 "Y": 201,
                 "Width": 737,
-                "Height": 298,
+                "Height": 323,
                 "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre",
+                    "X": 14,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_1",
+                    "X": 14,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_2",
+                    "X": 44,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_3",
+                    "X": 74,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_4",
+                    "X": 104,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_5",
+                    "X": 134,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_6",
+                    "X": 164,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_7",
+                    "X": 194,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_8",
+                    "X": 224,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_9",
+                    "X": 254,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_10",
+                    "X": 284,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_11",
+                    "X": 314,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_12",
+                    "X": 344,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_13",
+                    "X": 374,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_14",
+                    "X": 404,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_15",
+                    "X": 434,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_16",
+                    "X": 464,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_17",
+                    "X": 494,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_18",
+                    "X": 524,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_19",
+                    "X": 554,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_20",
+                    "X": 584,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_21",
+                    "X": 614,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_22",
+                    "X": 644,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_23",
+                    "X": 674,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_chiffre_24",
+                    "X": 704,
+                    "Y": 298,
+                    "Width": 32,
+                    "Height": 21,
+                    "TextId": "text_nb_pac_valeur_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_heure_3_valeur_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 3
+                    }
+                  },
                   {
                     "Type": "Box",
                     "Name": "box_24_1",
@@ -45393,7 +45887,7 @@
                 "Y": 485,
                 "Width": 88,
                 "Height": 24,
-                "TextId": "text_mois_centre_defaut",
+                "TextId": "text_mois_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -45404,7 +45898,96 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_piscine_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_piscine"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_piscine"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_ecs_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_ecs"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_ecs"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_froid_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_froid"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_froid"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_chaud_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_chaud"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_chaud"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_pac_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_pac"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_pac"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_12mois_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_12_mois"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_12mois"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_24heures_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_24_heures"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_24heures"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_24jours_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_24_jours"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_24jours"
+            }
+          }
+        ]
       },
       {
         "Name": "Energies",
@@ -76865,7 +77448,7 @@
                 "Type": "Button",
                 "Name": "button_haut_annee",
                 "X": 428,
-                "Y": 181,
+                "Y": 182,
                 "Width": 75,
                 "Height": 53,
                 "Pressed": "Fleche_Haute_Clicked_L75xH53.png",
@@ -81009,7 +81592,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Zone",
+    "StartupScreenName": "Energies_histo",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
