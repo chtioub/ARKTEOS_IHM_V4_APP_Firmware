@@ -11,6 +11,9 @@ public:
     virtual ~Derogation_ecsView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void bouton_non_derog_ecs();
+    void bouton_oui_derog_ecs();
+    void bouton_valider();
 protected:
 };
 

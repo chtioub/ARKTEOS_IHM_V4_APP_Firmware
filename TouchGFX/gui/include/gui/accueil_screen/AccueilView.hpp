@@ -11,6 +11,8 @@ public:
     virtual ~AccueilView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void Timer_500ms();
+    void bouton_marche_arret();
 protected:
 
 private:

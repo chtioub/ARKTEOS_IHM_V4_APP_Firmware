@@ -3,6 +3,7 @@
 	<name>ARKTEOS_IHM_V4_APP_Firmware</name>
 	<comment></comment>
 	<projects>
+		<project>TouchGFX</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

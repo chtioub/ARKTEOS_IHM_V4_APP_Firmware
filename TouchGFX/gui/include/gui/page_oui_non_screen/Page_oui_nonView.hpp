@@ -11,6 +11,9 @@ public:
     virtual ~Page_oui_nonView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void bouton_non_page_oui_non();
+    void bouton_oui_page_oui_non();
+    void bouton_valider();
 protected:
 };
 

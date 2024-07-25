@@ -1,4 +1,5 @@
 #include <gui/energies_histo_screen/Energies_histoView.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 Energies_histoView::Energies_histoView()
 {
@@ -7,10 +8,269 @@ Energies_histoView::Energies_histoView()
 
 void Energies_histoView::setupScreen()
 {
+	toggleButton_pac.forceState(true);
+	toggleButton_12_mois.forceState(true);
+	container_barres_verticales_12.setVisible(true);
+	container_barres_verticales_24.setVisible(false);
+
     Energies_histoViewBase::setupScreen();
 }
 
 void Energies_histoView::tearDownScreen()
 {
     Energies_histoViewBase::tearDownScreen();
+}
+
+void Energies_histoView::bouton_pac()
+{
+	if(toggleButton_pac.getState())
+	{
+		toggleButton_pac.setTouchable(false);
+		toggleButton_pac.invalidate();
+		toggleButton_chaud.setTouchable(true);
+		toggleButton_chaud.forceState(false);
+		toggleButton_chaud.invalidate();
+		toggleButton_froid.setTouchable(true);
+		toggleButton_froid.forceState(false);
+		toggleButton_froid.invalidate();
+		toggleButton_ecs.setTouchable(true);
+		toggleButton_ecs.forceState(false);
+		toggleButton_ecs.invalidate();
+		toggleButton_piscine.setTouchable(true);
+		toggleButton_piscine.forceState(false);
+		toggleButton_piscine.invalidate();
+		couleur_barres(0xffcd00);
+	}
+}
+
+void Energies_histoView::bouton_chaud()
+{
+	if(toggleButton_chaud.getState())
+	{
+		toggleButton_pac.setTouchable(true);
+		toggleButton_pac.forceState(false);
+		toggleButton_pac.invalidate();
+		toggleButton_chaud.setTouchable(false);
+		toggleButton_chaud.invalidate();
+		toggleButton_froid.setTouchable(true);
+		toggleButton_froid.forceState(false);
+		toggleButton_froid.invalidate();
+		toggleButton_ecs.setTouchable(true);
+		toggleButton_ecs.forceState(false);
+		toggleButton_ecs.invalidate();
+		toggleButton_piscine.setTouchable(true);
+		toggleButton_piscine.forceState(false);
+		toggleButton_piscine.invalidate();
+		couleur_barres(0xc14d00);
+	}
+}
+
+void Energies_histoView::bouton_froid()
+{
+	if(toggleButton_froid.getState())
+	{
+		toggleButton_pac.setTouchable(true);
+		toggleButton_pac.forceState(false);
+		toggleButton_pac.invalidate();
+		toggleButton_chaud.setTouchable(true);
+		toggleButton_chaud.forceState(false);
+		toggleButton_chaud.invalidate();
+		toggleButton_froid.setTouchable(false);
+		toggleButton_froid.invalidate();
+		toggleButton_ecs.setTouchable(true);
+		toggleButton_ecs.forceState(false);
+		toggleButton_ecs.invalidate();
+		toggleButton_piscine.setTouchable(true);
+		toggleButton_piscine.forceState(false);
+		toggleButton_piscine.invalidate();
+		couleur_barres(0x3ab0c8);
+	}
+}
+void Energies_histoView::bouton_ecs()
+{
+	if(toggleButton_ecs.getState())
+	{
+		toggleButton_pac.setTouchable(true);
+		toggleButton_pac.forceState(false);
+		toggleButton_pac.invalidate();
+		toggleButton_chaud.setTouchable(true);
+		toggleButton_chaud.forceState(false);
+		toggleButton_chaud.invalidate();
+		toggleButton_froid.setTouchable(true);
+		toggleButton_froid.forceState(false);
+		toggleButton_froid.invalidate();
+		toggleButton_ecs.setTouchable(false);
+		toggleButton_ecs.invalidate();
+		toggleButton_piscine.setTouchable(true);
+		toggleButton_piscine.forceState(false);
+		toggleButton_piscine.invalidate();
+		couleur_barres(0xe70094);
+	}
+}
+
+void Energies_histoView::bouton_piscine()
+{
+	if(toggleButton_piscine.getState())
+	{
+		toggleButton_pac.setTouchable(true);
+		toggleButton_pac.forceState(false);
+		toggleButton_pac.invalidate();
+		toggleButton_chaud.setTouchable(true);
+		toggleButton_chaud.forceState(false);
+		toggleButton_chaud.invalidate();
+		toggleButton_froid.setTouchable(true);
+		toggleButton_froid.forceState(false);
+		toggleButton_froid.invalidate();
+		toggleButton_ecs.setTouchable(true);
+		toggleButton_ecs.forceState(false);
+		toggleButton_ecs.invalidate();
+		toggleButton_piscine.setTouchable(false);
+		toggleButton_piscine.invalidate();
+		couleur_barres(0xb9c400);
+	}
+}
+
+void Energies_histoView::bouton_12mois()
+{
+	if(toggleButton_12_mois.getState())
+	{
+		toggleButton_12_mois.setTouchable(false);
+		toggleButton_12_mois.invalidate();
+		toggleButton_24_jours.setTouchable(true);
+		toggleButton_24_jours.forceState(false);
+		toggleButton_24_jours.invalidate();
+		toggleButton_24_heures.setTouchable(true);
+		toggleButton_24_heures.forceState(false);
+		toggleButton_24_heures.invalidate();
+		container_barres_verticales_12.setVisible(true);
+		container_barres_verticales_12.invalidate();
+		container_barres_verticales_24.setVisible(false);
+		container_barres_verticales_24.invalidate();
+		container_lignes_verticales_24.setVisible(false);
+		container_lignes_verticales_24.invalidate();
+	    textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_MOIS_GAUCHE_DEFAUT));
+	    textArea_mois.invalidate();
+	}
+}
+
+void Energies_histoView::bouton_24jours()
+{
+	if(toggleButton_24_jours.getState())
+	{
+		toggleButton_12_mois.setTouchable(true);
+		toggleButton_12_mois.forceState(false);
+		toggleButton_12_mois.invalidate();
+		toggleButton_24_jours.setTouchable(false);
+		toggleButton_24_jours.invalidate();
+		toggleButton_24_heures.setTouchable(true);
+		toggleButton_24_heures.forceState(false);
+		toggleButton_24_heures.invalidate();
+		container_barres_verticales_12.setVisible(false);
+		container_barres_verticales_12.invalidate();
+		container_barres_verticales_24.setVisible(true);
+		container_barres_verticales_24.invalidate();
+		container_lignes_verticales_24.setVisible(true);
+		container_lignes_verticales_24.invalidate();
+	    textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_JOURS_GAUCHE_DEFAUT));
+	    textArea_mois.invalidate();
+	}
+}
+
+void Energies_histoView::bouton_24heures()
+{
+	if(toggleButton_24_heures.getState())
+	{
+		toggleButton_12_mois.setTouchable(true);
+		toggleButton_12_mois.forceState(false);
+		toggleButton_12_mois.invalidate();
+		toggleButton_24_jours.setTouchable(true);
+		toggleButton_24_jours.forceState(false);
+		toggleButton_24_jours.invalidate();
+		toggleButton_24_heures.setTouchable(false);
+		toggleButton_24_heures.invalidate();
+		container_barres_verticales_12.setVisible(false);
+		container_barres_verticales_12.invalidate();
+		container_barres_verticales_24.setVisible(true);
+		container_barres_verticales_24.invalidate();
+		container_lignes_verticales_24.setVisible(true);
+		container_lignes_verticales_24.invalidate();
+	    textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_HEURES_GAUCHE_DEFAUT));
+	    textArea_mois.invalidate();
+	}
+}
+
+void Energies_histoView::couleur_barres(uint32_t u32Couleur)
+{
+	box_mois_1.setColor(u32Couleur);
+	box_mois_1.invalidate();
+	box_mois_2.setColor(u32Couleur);
+	box_mois_2.invalidate();
+	box_mois_3.setColor(u32Couleur);
+	box_mois_3.invalidate();
+	box_mois_4.setColor(u32Couleur);
+	box_mois_4.invalidate();
+	box_mois_5.setColor(u32Couleur);
+	box_mois_5.invalidate();
+	box_mois_6.setColor(u32Couleur);
+	box_mois_6.invalidate();
+	box_mois_7.setColor(u32Couleur);
+	box_mois_7.invalidate();
+	box_mois_8.setColor(u32Couleur);
+	box_mois_8.invalidate();
+	box_mois_9.setColor(u32Couleur);
+	box_mois_9.invalidate();
+	box_mois_10.setColor(u32Couleur);
+	box_mois_10.invalidate();
+	box_mois_11.setColor(u32Couleur);
+	box_mois_11.invalidate();
+	box_mois_12.setColor(u32Couleur);
+	box_mois_12.invalidate();
+	box_24_1.setColor(u32Couleur);
+	box_24_1.invalidate();
+	box_24_2.setColor(u32Couleur);
+	box_24_2.invalidate();
+	box_24_3.setColor(u32Couleur);
+	box_24_3.invalidate();
+	box_24_4.setColor(u32Couleur);
+	box_24_4.invalidate();
+	box_24_5.setColor(u32Couleur);
+	box_24_5.invalidate();
+	box_24_6.setColor(u32Couleur);
+	box_24_6.invalidate();
+	box_24_7.setColor(u32Couleur);
+	box_24_7.invalidate();
+	box_24_8.setColor(u32Couleur);
+	box_24_8.invalidate();
+	box_24_9.setColor(u32Couleur);
+	box_24_9.invalidate();
+	box_24_10.setColor(u32Couleur);
+	box_24_10.invalidate();
+	box_24_11.setColor(u32Couleur);
+	box_24_11.invalidate();
+	box_24_12.setColor(u32Couleur);
+	box_24_12.invalidate();
+	box_24_13.setColor(u32Couleur);
+	box_24_13.invalidate();
+	box_24_14.setColor(u32Couleur);
+	box_24_14.invalidate();
+	box_24_15.setColor(u32Couleur);
+	box_24_15.invalidate();
+	box_24_16.setColor(u32Couleur);
+	box_24_16.invalidate();
+	box_24_17.setColor(u32Couleur);
+	box_24_17.invalidate();
+	box_24_18.setColor(u32Couleur);
+	box_24_18.invalidate();
+	box_24_19.setColor(u32Couleur);
+	box_24_19.invalidate();
+	box_24_20.setColor(u32Couleur);
+	box_24_20.invalidate();
+	box_24_21.setColor(u32Couleur);
+	box_24_21.invalidate();
+	box_24_22.setColor(u32Couleur);
+	box_24_22.invalidate();
+	box_24_23.setColor(u32Couleur);
+	box_24_23.invalidate();
+	box_24_24.setColor(u32Couleur);
+	box_24_24.invalidate();
 }

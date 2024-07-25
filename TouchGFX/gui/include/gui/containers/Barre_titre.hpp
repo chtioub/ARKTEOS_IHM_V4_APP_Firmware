@@ -10,6 +10,12 @@ public:
     virtual ~Barre_titre() {}
 
     virtual void initialize();
+    void connexionDistante(bool bConnexionDistante);
+    void recupConfig(bool bRecupConfig);
+    void titre(touchgfx::Unicode::UnicodeChar *textArea_Buffer);
+    void sansRetour();
+    void sansAccueil();
+//    void fonctionRetour(void (FrontendApplicationBase::*)funct());
 protected:
 };
 
