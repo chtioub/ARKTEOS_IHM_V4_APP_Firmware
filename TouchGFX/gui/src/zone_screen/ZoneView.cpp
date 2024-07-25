@@ -204,7 +204,7 @@ void ZoneView::bouton_plus_reduit()
 	slider_jaune.invalidate();
     Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 5, "%.1f", ((float) u16ConsigneReduit) / 10);
     textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
-    textArea_jaune.moveTo((int)((float) slider_jaune.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_jaune.getWidth()/2 + ((float)u16ConsigneReduit - (float)120) * (float)1.98),51);
+    textArea_jaune.moveTo((int)((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/ - textArea_jaune.getWidth()/2 + ((float)u16ConsigneReduit - (float)120) * (float)1.98),51);
     textArea_jaune.invalidate();
 }
 
@@ -217,7 +217,7 @@ void ZoneView::bouton_moins_reduit()
 	slider_jaune.invalidate();
     Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 5, "%.1f", ((float) u16ConsigneReduit) / 10);
     textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
-    textArea_jaune.moveTo((int)((float) slider_jaune.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_jaune.getWidth()/2 + ((float)u16ConsigneReduit - (float)120) * (float)1.98),51);
+    textArea_jaune.moveTo((int)((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/ - textArea_jaune.getWidth()/2 + ((float)u16ConsigneReduit - (float)120) * (float)1.98),51);
     textArea_jaune.invalidate();
 }
 
@@ -226,10 +226,10 @@ void ZoneView::slider_normal(int sliderValue)
 	u16ConsigneNormal = sliderValue;
 	Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 5, "%.1f", ((float) u16ConsigneNormal) / 10);
 	textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
-	textArea_orange.moveTo((int)((float) slider_orange.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_orange.getWidth()/2  + ((float)sliderValue - (float)120) * (float)1.98),51);
+	textArea_orange.moveTo((int)((float) slider_orange.getX() + 19 /*+ slider_orange.background.getX()*/ - textArea_orange.getWidth()/2  + ((float)sliderValue - (float)120) * (float)1.98),51);
 	textArea_orange.invalidate();
 	textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
-	textArea_bleu_ciel.moveTo((int)((float) slider_bleu_ciel.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_bleu_ciel.getWidth()/2  + ((float)sliderValue - (float)120) * (float)1.98),51);
+	textArea_bleu_ciel.moveTo((int)((float) slider_bleu_ciel.getX() + 19 /*+ slider_orange.background.getX()*/ - textArea_bleu_ciel.getWidth()/2  + ((float)sliderValue - (float)120) * (float)1.98),51);
 	textArea_bleu_ciel.invalidate();
 }
 
@@ -244,10 +244,10 @@ void ZoneView::bouton_plus_normal()
 	slider_bleu_ciel.invalidate();
     Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 5, "%.1f", ((float) u16ConsigneNormal) / 10);
     textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
-    textArea_orange.moveTo((int)((float) slider_orange.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_orange.getWidth()/2 + ((float)u16ConsigneNormal - (float)120) * (float)1.98),51);
+    textArea_orange.moveTo((int)((float) slider_orange.getX() + 19 /*+ slider_orange.background.getX()*/ - textArea_orange.getWidth()/2 + ((float)u16ConsigneNormal - (float)120) * (float)1.98),51);
     textArea_orange.invalidate();
 	textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
-	textArea_bleu_ciel.moveTo((int)((float) slider_bleu_ciel.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_bleu_ciel.getWidth()/2  + ((float)u16ConsigneNormal - (float)120) * (float)1.98),51);
+	textArea_bleu_ciel.moveTo((int)((float) slider_bleu_ciel.getX() + 19 /*+ slider_orange.background.getX()*/ - textArea_bleu_ciel.getWidth()/2  + ((float)u16ConsigneNormal - (float)120) * (float)1.98),51);
 	textArea_bleu_ciel.invalidate();
 }
 
@@ -262,10 +262,10 @@ void ZoneView::bouton_moins_normal()
 	slider_bleu_ciel.invalidate();
     Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 5, "%.1f", ((float) u16ConsigneNormal) / 10);
     textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
-    textArea_orange.moveTo((int)((float) slider_orange.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_orange.getWidth()/2 + ((float)u16ConsigneNormal - (float)120) * (float)1.98),51);
+    textArea_orange.moveTo((int)((float) slider_orange.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/ - textArea_orange.getWidth()/2 + ((float)u16ConsigneNormal - (float)120) * (float)1.98),51);
     textArea_orange.invalidate();
 	textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
-	textArea_bleu_ciel.moveTo((int)((float) slider_bleu_ciel.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_bleu_ciel.getWidth()/2  + ((float)u16ConsigneNormal - (float)120) * (float)1.98),51);
+	textArea_bleu_ciel.moveTo((int)((float) slider_bleu_ciel.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/ - textArea_bleu_ciel.getWidth()/2  + ((float)u16ConsigneNormal - (float)120) * (float)1.98),51);
 	textArea_bleu_ciel.invalidate();
 }
 
@@ -274,10 +274,10 @@ void ZoneView::slider_confort(int sliderValue)
 	u16ConsigneConfort = sliderValue;
 	Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 5, "%.1f", ((float) u16ConsigneConfort) / 10);
 	textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
-	textArea_rouge.moveTo((int)((float) slider_rouge.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_rouge.getWidth()/2  + ((float)sliderValue - (float)120) * (float)1.98),51);
+	textArea_rouge.moveTo((int)((float) slider_rouge.getX() + 19 /*+ slider_bleu.background.getX()*/ - textArea_rouge.getWidth()/2  + ((float)sliderValue - (float)120) * (float)1.98),51);
 	textArea_rouge.invalidate();
 	textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
-	textArea_bleu.moveTo((int)((float) slider_bleu.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_bleu.getWidth()/2  + ((float)sliderValue - (float)120) * (float)1.98),51);
+	textArea_bleu.moveTo((int)((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/ - textArea_bleu.getWidth()/2  + ((float)sliderValue - (float)120) * (float)1.98),51);
 	textArea_bleu.invalidate();
 }
 
@@ -292,10 +292,10 @@ void ZoneView::bouton_plus_confort()
 	slider_bleu.invalidate();
     Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 5, "%.1f", ((float) u16ConsigneConfort) / 10);
     textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
-    textArea_rouge.moveTo((int)((float) slider_rouge.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_rouge.getWidth()/2 + ((float)u16ConsigneConfort - (float)120) * (float)1.98),51);
+    textArea_rouge.moveTo((int)((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/ - textArea_rouge.getWidth()/2 + ((float)u16ConsigneConfort - (float)120) * (float)1.98),51);
     textArea_rouge.invalidate();
 	textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
-	textArea_bleu.moveTo((int)((float) slider_bleu.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_bleu.getWidth()/2  + ((float)u16ConsigneConfort - (float)120) * (float)1.98),51);
+	textArea_bleu.moveTo((int)((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/ - textArea_bleu.getWidth()/2  + ((float)u16ConsigneConfort - (float)120) * (float)1.98),51);
 	textArea_bleu.invalidate();
 }
 
@@ -310,9 +310,9 @@ void ZoneView::bouton_moins_confort()
 	slider_bleu.invalidate();
     Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 5, "%.1f", ((float) u16ConsigneConfort) / 10);
     textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
-    textArea_rouge.moveTo((int)((float) slider_rouge.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_rouge.getWidth()/2 + ((float)u16ConsigneConfort - (float)120) * (float)1.98),51);
+    textArea_rouge.moveTo((int)((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/ - textArea_rouge.getWidth()/2 + ((float)u16ConsigneConfort - (float)120) * (float)1.98),51);
     textArea_rouge.invalidate();
 	textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
-	textArea_bleu.moveTo((int)((float) slider_bleu.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_bleu.getWidth()/2  + ((float)u16ConsigneConfort - (float)120) * (float)1.98),51);
+	textArea_bleu.moveTo((int)((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/ - textArea_bleu.getWidth()/2  + ((float)u16ConsigneConfort - (float)120) * (float)1.98),51);
 	textArea_bleu.invalidate();
 }
