@@ -22,7 +22,7 @@
 #include "fmc.h"
 
 /* USER CODE BEGIN 0 */
-#define REFRESH_COUNT                            ((uint32_t)0x056A)   /* Refresh rate = 32ms/2048 = 15.625us  ;  SDRAM refresh counter = Refresh rate*(180Mhz/2)-20  */
+#define REFRESH_COUNT                            ((uint32_t)0x0645)   /* Refresh rate = 32ms/2048 = 15.625us  ;  SDRAM refresh counter = Refresh rate*(208Mhz/2)-20  */
 
 #define SDRAM_TIMEOUT                            ((uint32_t)0xFFFF)
 #define SDRAM_MODEREG_BURST_LENGTH_1             ((uint16_t)0x0000)
@@ -156,7 +156,7 @@ static void HAL_FMC_MspInit(void){
   /** Initializes the peripherals clock
   */
     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_FMC;
-    PeriphClkInitStruct.FmcClockSelection = RCC_FMCCLKSOURCE_PLL;
+    PeriphClkInitStruct.FmcClockSelection = RCC_FMCCLKSOURCE_D1HCLK;
     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
     {
       Error_Handler();

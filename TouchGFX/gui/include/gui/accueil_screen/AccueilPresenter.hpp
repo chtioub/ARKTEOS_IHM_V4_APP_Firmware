@@ -27,6 +27,7 @@ public:
 
     virtual ~AccueilPresenter() {}
 
+    virtual void changeModePac(bool marche);
 private:
     AccueilPresenter();
 

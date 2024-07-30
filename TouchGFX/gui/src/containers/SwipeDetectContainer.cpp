@@ -16,7 +16,7 @@ void SwipeDetectContainer::handleGestureEvent(const GestureEvent &event)
 {
     if(event.getType() == touchgfx::GestureEvent::SWIPE_HORIZONTAL)
     {
-        if(action->isValid())
+    	if(action && action->isValid())
         {
             action->execute(event.getVelocity()); // <-- getVelocity returns int16_t
         }

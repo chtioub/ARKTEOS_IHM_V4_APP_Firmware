@@ -21,7 +21,8 @@
 #include "usart.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "IHM_V4.h"
+#include "string.h"
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart2;
@@ -143,5 +144,15 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 }
 
 /* USER CODE BEGIN 1 */
+void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
+{
+  if(rxData.size != 0)
+  {
+    // TODO : gerer trame non traitée
+  }
 
+  memcpy(rxData.data, rxBuffer, Size);
+  rxData.size = Size;
+  HAL_UARTEx_ReceiveToIdle_IT(&huart2, rxBuffer, sizeof(rxBuffer));
+}
 /* USER CODE END 1 */

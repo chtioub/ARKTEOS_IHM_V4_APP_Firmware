@@ -13,6 +13,7 @@ public:
     virtual void tearDownScreen();
     void Timer_500ms();
     void bouton_marche_arret();
+    virtual void changeModePac(bool marche);
 protected:
 
 private:

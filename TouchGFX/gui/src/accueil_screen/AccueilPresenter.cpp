@@ -16,3 +16,8 @@ void AccueilPresenter::deactivate()
 {
 
 }
+
+void AccueilPresenter::changeModePac(bool marche)
+{
+  view.changeModePac(marche);
+}

@@ -60,3 +60,9 @@ void AccueilView::bouton_marche_arret()
 {
 	application().gotoPage_oui_nonScreenNoTransition();
 }
+
+void AccueilView::changeModePac(bool marche)
+{
+  container_marche.setVisible(marche);
+  container_marche.invalidate();
+}

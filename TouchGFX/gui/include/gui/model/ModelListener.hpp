@@ -14,6 +14,8 @@ public:
     {
         model = m;
     }
+
+    virtual void changeModePac(bool marche) {};
 protected:
     Model* model;
 };
