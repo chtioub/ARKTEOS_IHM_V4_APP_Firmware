@@ -40,8 +40,6 @@ void ZoneView::setupScreen()
 	slider_rouge.setValue(u16ConsigneConfort);
 	slider_bleu.setValue(u16ConsigneConfort);
 
-//	barre_titre.fonctionRetour(&application().gotoAccueilScreenNoTransition);
-
     ZoneViewBase::setupScreen();
 }
 

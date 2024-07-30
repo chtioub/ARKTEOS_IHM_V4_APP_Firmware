@@ -3940,6 +3940,111 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_histo_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Z2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Z1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_d_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">D</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_r_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">R</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_b_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">B</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_eau_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Historique températures d'eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Historique températures</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_temp_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_histo_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_chaud_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Chaud</Translation>
+        <Translation Language="GB">Heat</Translation>
+        <Translation Language="PT">Quente</Translation>
+        <Translation Language="NL">Chaud</Translation>
+        <Translation Language="DE">Chaud</Translation>
+      </Text>
+      <Text Id="text_histo_etat_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Etat</Translation>
+        <Translation Language="GB">Etat</Translation>
+        <Translation Language="PT">Etat</Translation>
+        <Translation Language="NL">Etat</Translation>
+        <Translation Language="DE">Etat</Translation>
+      </Text>
+      <Text Id="text_histo_appoint_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Appoint</Translation>
+        <Translation Language="GB">Heating adding</Translation>
+        <Translation Language="PT">Suplemento</Translation>
+        <Translation Language="NL">Appoint</Translation>
+        <Translation Language="DE">Appoint</Translation>
+      </Text>
+      <Text Id="text_10_histo_fct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">-10</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_60_histo_fct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">-60 mn</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_0_histo_fct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="__SingleUse_3YR5" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">0</Translation>
         <Translation Language="GB">New Text</Translation>
