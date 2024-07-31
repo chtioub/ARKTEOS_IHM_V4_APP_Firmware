@@ -5,7 +5,9 @@
  *      Author: info
  */
 
+#ifndef SIMULATOR
 #include "main.h"
+#endif /* SIMULATOR */
 #include "IHM_V4.h"
 
 uint8_t rxBuffer[TAILLE_BUFFER_UART];

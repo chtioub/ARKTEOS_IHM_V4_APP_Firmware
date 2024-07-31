@@ -13,7 +13,10 @@ extern "C"
 {
 #endif
 
+#ifndef SIMULATOR
 #include "main.h"
+#endif /* SIMULATOR */
+
 #include "arkteos_var_protocole.h"
 
 typedef struct
