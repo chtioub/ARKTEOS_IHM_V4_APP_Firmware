@@ -67079,6 +67079,16 @@
                   "Green": 255,
                   "Blue": 255
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
@@ -67094,6 +67104,66 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Position_ecran"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_configuration",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_langue",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_langue"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Langue"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_luminosite",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_luminosite"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Luminosite"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_code_web",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_compte_client"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Code_web"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_date_heure",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_date_heure"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Date_heure"
             }
           }
         ]
@@ -78865,21 +78935,16 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_valeur_choix_langue",
-                    "X": 178,
+                    "X": 128,
                     "Y": 90,
-                    "Width": 92,
+                    "Width": 192,
                     "Height": 24,
-                    "TextId": "text_choix_langue_valeur_centre_defaut",
+                    "TextId": "text_choix_langue_francais_valeur_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
                       "Green": 255,
                       "Blue": 255
-                    },
-                    "Wildcard1": {
-                      "TextId": "text_choix_langue_valeur_init_centre_defaut",
-                      "UseBuffer": true,
-                      "BufferSize": 6
                     }
                   },
                   {
@@ -78908,10 +78973,9 @@
                 "Name": "Image_portugais",
                 "X": 391,
                 "Y": 195,
-                "Width": 170,
-                "Height": 113,
-                "Visible": false,
-                "RelativeFilename": "Drapeau_Portugais_L169xH112.png"
+                "Width": 169,
+                "Height": 112,
+                "RelativeFilename": "Drapeau_Portugais_L169xH112_2-97.png"
               },
               {
                 "Type": "Image",
@@ -78951,11 +79015,67 @@
                 "Height": 112,
                 "Visible": false,
                 "RelativeFilename": "Drapeau_Allemand_L169xH112.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_paramteres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_gauche_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_choix_langue"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_droit_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_choix_langue"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droit"
+            }
+          }
+        ]
       },
       {
         "Name": "Position_ecran",
@@ -79111,12 +79231,98 @@
                   "Red": 255,
                   "Green": 255,
                   "Blue": 255
+                },
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                },
+                "Wildcard2": {
+                  "UseBuffer": true,
+                  "BufferSize": 3
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_droit_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_gauche_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche"
+            }
+          }
+        ]
       },
       {
         "Name": "Luminosite",
@@ -79155,9 +79361,9 @@
               {
                 "Type": "Slider",
                 "Name": "slider_luminosite",
-                "X": 220,
+                "X": 213,
                 "Y": 285,
-                "Width": 511,
+                "Width": 525,
                 "Height": 30,
                 "IsHorizontalSlider": true,
                 "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
@@ -79165,14 +79371,15 @@
                 "Indicator": "Balle_Hysteresis_L30xH30.png",
                 "BackgroundX": 16,
                 "BackgroundY": 11,
-                "IndicatorMax": 300,
-                "ValueMax": 100
+                "IndicatorMax": 495,
+                "ValueMax": 100,
+                "InitValue": 50
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea_luminosite",
                 "X": 395,
-                "Y": 329,
+                "Y": 328,
                 "Width": 160,
                 "Height": 27,
                 "TextId": "text_luminosite_centre_defaut",
@@ -79187,11 +79394,98 @@
                   "UseBuffer": true,
                   "BufferSize": 4
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_plus",
+                "X": 753,
+                "Y": 272,
+                "Width": 80,
+                "Height": 56,
+                "Pressed": "Bouton_Plus_Beige_Clicked_L80xH56.png",
+                "Released": "Bouton_Plus_Beige_Unclicked_L80xH56.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_moins",
+                "X": 118,
+                "Y": 272,
+                "Width": 80,
+                "Height": 56,
+                "Pressed": "Bouton_Moins_Beige_Clicked_L80xH56.png",
+                "Released": "Bouton_Moins_Beige_Unclicked_L80xH56.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "Slider_luminosite",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_luminosite"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_lumi"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_moins_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_plus_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus"
+            }
+          }
+        ]
       },
       {
         "Name": "Date_heure",
@@ -79537,11 +79831,111 @@
                   "UseBuffer": true,
                   "BufferSize": 5
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_minutes_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_minutes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_minutes_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_minutes_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_minutes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_minutes_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_heures_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_heure"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_heures_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_heures_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_heure"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_heures_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_annee_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_annee"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_annee_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_annee_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_annee"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_annee_bas"
+            }
+          }
+        ]
       },
       {
         "Name": "Code_web",
@@ -79613,11 +80007,46 @@
                   "Blue": 255
                 },
                 "WideTextAction": 1
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          }
+        ]
       },
       {
         "Name": "Usine_choix_fluide",
@@ -83452,7 +83881,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Historiques_fonctionnement",
+    "StartupScreenName": "Luminosite",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
