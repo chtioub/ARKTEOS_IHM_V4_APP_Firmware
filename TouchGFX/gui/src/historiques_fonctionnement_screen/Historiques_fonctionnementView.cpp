@@ -33,6 +33,7 @@ void Historiques_fonctionnementView::setupScreen()
 		dynamicGraph_eau_1.addDataPoint(i);
 		dynamicGraph_eau_2.addDataPoint(i);
 		dynamicGraph_ext.addDataPoint(i);
+		graph_test.addDataPoint(i, i);
 	}
 	// MAJ des données affichées
 	changement_page();
@@ -138,9 +139,18 @@ void Historiques_fonctionnementView::changement_page()
 
 void Historiques_fonctionnementView::maj_data()
 {
+//	graph_test.setVisible(false);
+//	graph_test.invalidate();
+//	graph_test.clear();
+//	for(int i = 0; i < 360; i++)
+//	{
+//		graph_test.addDataPoint(i, i);
+//	}
+//	graph_test.setVisible(true);
+//	graph_test.invalidate();
 	dynamicGraph_eau_1.addDataPoint(20);
-	dynamicGraph_eau_2.addDataPoint(-50);
-	dynamicGraph_ext.addDataPoint(50);
+//	dynamicGraph_eau_2.addDataPoint(-50);
+//	dynamicGraph_ext.addDataPoint(50);
 }
 
 void Historiques_fonctionnementView::maj_graphiques()

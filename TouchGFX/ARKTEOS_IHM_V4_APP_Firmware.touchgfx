@@ -41645,6 +41645,34 @@
                 ]
               },
               {
+                "Type": "StaticGraph",
+                "Name": "graph_test",
+                "X": 114,
+                "Y": 152,
+                "Width": 722,
+                "Height": 207,
+                "DataSeed": 1608622068,
+                "NumberOfValues": 360,
+                "MaxX": 360.0,
+                "PrecisionX": "1",
+                "MaxY": 360.0,
+                "PrecisionY": "1",
+                "XAxisScale": 1.0,
+                "InsertRandomValues": true,
+                "GraphDrawers": [
+                  {
+                    "Type": "LineDrawer",
+                    "LineWidth": 2,
+                    "FileNameImage": "",
+                    "Color": {
+                      "Red": 20,
+                      "Green": 151,
+                      "Blue": 197
+                    }
+                  }
+                ]
+              },
+              {
                 "Type": "Container",
                 "Name": "container_z1",
                 "X": 8,
