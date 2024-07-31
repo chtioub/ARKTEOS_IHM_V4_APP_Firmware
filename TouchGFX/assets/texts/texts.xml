@@ -1676,19 +1676,40 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Langue">
-      <Text Id="text_choix_langue_valeur_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Francais</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
+      <Text Id="text_choix_langue_portugais_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Português</Translation>
+        <Translation Language="GB">Português</Translation>
+        <Translation Language="PT">Português</Translation>
+        <Translation Language="NL">Português</Translation>
+        <Translation Language="DE">Português</Translation>
       </Text>
-      <Text Id="text_choix_langue_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
+      <Text Id="text_choix_langue_allemand_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Deutsch</Translation>
+        <Translation Language="GB">Deutsch</Translation>
+        <Translation Language="PT">Deutsch</Translation>
+        <Translation Language="NL">Deutsch</Translation>
+        <Translation Language="DE">Deutsch</Translation>
+      </Text>
+      <Text Id="text_choix_langue_neerlandais_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Nederlands</Translation>
+        <Translation Language="GB">Nederlands</Translation>
+        <Translation Language="PT">Nederlands</Translation>
+        <Translation Language="NL">Nederlands</Translation>
+        <Translation Language="DE">Nederlands</Translation>
+      </Text>
+      <Text Id="text_choix_langue_anglais_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">English</Translation>
+        <Translation Language="GB">English</Translation>
+        <Translation Language="PT">English</Translation>
+        <Translation Language="NL">English</Translation>
+        <Translation Language="DE">English</Translation>
+      </Text>
+      <Text Id="text_choix_langue_francais_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Francais</Translation>
+        <Translation Language="GB">Francais</Translation>
+        <Translation Language="PT">Francais</Translation>
+        <Translation Language="NL">Francais</Translation>
+        <Translation Language="DE">Francais</Translation>
       </Text>
       <Text Id="text_choix_langue_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Sélectionner votre langue ?</Translation>
@@ -1804,11 +1825,11 @@
     </TextGroup>
     <TextGroup Id="Position_ecran">
       <Text Id="text_position_ecran_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">X : 37 ; Y : 38</Translation>
-        <Translation Language="GB">X : 37 ; Y : 38</Translation>
-        <Translation Language="PT">X : 37 ; Y : 38</Translation>
-        <Translation Language="NL">X : 37 ; Y : 38</Translation>
-        <Translation Language="DE">X : 37 ; Y : 38</Translation>
+        <Translation Language="FR">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
+        <Translation Language="GB">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
+        <Translation Language="PT">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
+        <Translation Language="NL">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
+        <Translation Language="DE">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Programmation">
@@ -5399,8 +5420,8 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="A-Z,a-z" />
+    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0xff" />
+    <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0xff" />
     <Typography Id="Texte" Font="segoeui.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>
