@@ -17,10 +17,16 @@ public:
     void bouton_heures_haut();
     void bouton_annee_bas();
     void bouton_annee_haut();
+    void bouton_mois_bas();
+    void bouton_mois_haut();
+    void bouton_jour_bas();
+    void bouton_jour_haut();
+    void majNbJoursMois();
+    void majMois();
     void bouton_valider();
 protected:
-    uint8_t u8Minutes, u8Heures, u8Jour, u8Mois, u8Annee;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[30], textAreaBuffer_Minutes[3], textAreaBuffer_Heures[3], textAreaBuffer_Jour[3], textAreaBuffer_Mois[3], textAreaBuffer_Annee[5];
+    uint8_t u8Minutes, u8Heures, u8Jour, u8Mois, u8Annee, u8NbJoursMois;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[30], textAreaBuffer_Minutes[3], textAreaBuffer_Heures[3], textAreaBuffer_Jour[3], textAreaBuffer_Mois[3], textAreaBuffer_Annee[3], textAreaBuffer_AnneeComplete[5];
 };
 
 #endif // DATE_HEUREVIEW_HPP

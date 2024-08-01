@@ -1405,6 +1405,16 @@
                     }
                   }
                 ]
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
@@ -1528,6 +1538,18 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
+              "ActionComponent": "Accueil"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_accueil",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Accueil"
             }
           }
@@ -79741,21 +79763,16 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_mois_cal",
-                "X": 74,
+                "X": 37,
                 "Y": 327,
-                "Width": 105,
+                "Width": 178,
                 "Height": 45,
-                "TextId": "text_mois_texte_centre_large",
+                "TextId": "text_mois_fevrier_centre_large",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 60,
                   "Green": 60,
                   "Blue": 59
-                },
-                "Wildcard1": {
-                  "TextId": "text_mois_texte_init_centre_large",
-                  "UseBuffer": true,
-                  "BufferSize": 10
                 }
               },
               {
@@ -79933,6 +79950,50 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_annee_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_mois_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_mois"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_mois_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_mois_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_mois"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_mois_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_jours_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_jours"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_jour_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClickes_jours_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_jours"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_jour_bas"
             }
           }
         ]
@@ -83881,7 +83942,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Luminosite",
+    "StartupScreenName": "Date_heure",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

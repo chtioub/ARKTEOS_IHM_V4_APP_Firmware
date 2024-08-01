@@ -92,6 +92,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Configuration">
+      <Text Id="text_configuration_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_configuration_linky_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Linky</Translation>
         <Translation Language="GB">Linky</Translation>
@@ -164,19 +171,138 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Date_heure">
-      <Text Id="text_mois_texte_init_centre_large" Alignment="Left" TypographyId="Large">
-        <Translation Language="FR">Février</Translation>
+      <Text Id="text_dimanche_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Dimanche</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_mois_texte_centre_large" Alignment="Center" TypographyId="Large">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
+      <Text Id="text_samedi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Samedi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_vendredi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Vendredi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_jeudi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Jeudi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mercredi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Mercredi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mardi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Mardi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_lundi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Lundi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_decembre_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Décembre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_novembre_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Novembre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_octobre_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Octobre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_septembre_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Septembre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_aout_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Aout</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_juillet_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Juillet</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_juin_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Juin</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_mai_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Mai</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_avril_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Avril</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_mars_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Mars</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_janvier_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Janvier</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_fevrier_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Février</Translation>
+        <Translation Language="GB">Février</Translation>
+        <Translation Language="PT">Février</Translation>
+        <Translation Language="NL">Février</Translation>
+        <Translation Language="DE">Février</Translation>
       </Text>
       <Text Id="text_annee_complete_centre_large" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">&lt;Value&gt;</Translation>
