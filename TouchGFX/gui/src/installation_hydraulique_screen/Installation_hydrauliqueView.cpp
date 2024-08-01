@@ -5,7 +5,8 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 {
 	barre_titre.recupConfig(false);
 	barre_titre.connexionDistante(false);
-//	barre_titre.titre(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE);
+    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE).getText());
+    barre_titre.titre(textAreaBuffer_Titre);
 }
 
 void Installation_hydrauliqueView::setupScreen()

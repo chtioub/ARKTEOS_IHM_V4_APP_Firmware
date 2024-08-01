@@ -8,8 +8,8 @@ ZoneView::ZoneView()
 
 void ZoneView::setupScreen()
 {
-    Unicode::snprintf(textAreaBuffer, 25, "Zone 1");
-    barre_titre.titre(textAreaBuffer);
+    Unicode::snprintf(textAreaBuffer_Titre, 25, "Zone 1");
+    barre_titre.titre(textAreaBuffer_Titre);
 	toggleButton_arret.forceState(false);
 	toggleButton_chaud.forceState(true);
 	// Arret
@@ -39,8 +39,6 @@ void ZoneView::setupScreen()
 	u16ConsigneConfort = 200;
 	slider_rouge.setValue(u16ConsigneConfort);
 	slider_bleu.setValue(u16ConsigneConfort);
-
-//	barre_titre.fonctionRetour(&application().gotoAccueilScreenNoTransition);
 
     ZoneViewBase::setupScreen();
 }

@@ -8,7 +8,6 @@
     <Language Id="DE" />
   </Languages>
   <Texts>
-    <TextGroup Id="Group1" />
     <TextGroup Id="Attente">
       <Text Id="text_recup_config_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">33</Translation>
@@ -93,6 +92,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Configuration">
+      <Text Id="text_configuration_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_configuration_linky_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Linky</Translation>
         <Translation Language="GB">Linky</Translation>
@@ -165,19 +171,138 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Date_heure">
-      <Text Id="text_mois_texte_init_centre_large" Alignment="Left" TypographyId="Large">
-        <Translation Language="FR">Février</Translation>
+      <Text Id="text_dimanche_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Dimanche</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_mois_texte_centre_large" Alignment="Center" TypographyId="Large">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
+      <Text Id="text_samedi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Samedi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_vendredi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Vendredi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_jeudi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Jeudi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mercredi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Mercredi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mardi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Mardi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_lundi_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Lundi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_decembre_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Décembre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_novembre_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Novembre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_octobre_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Octobre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_septembre_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Septembre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_aout_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Aout</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_juillet_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Juillet</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_juin_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Juin</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_mai_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Mai</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_avril_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Avril</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_mars_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Mars</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_janvier_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Janvier</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mois_fevrier_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Février</Translation>
+        <Translation Language="GB">Février</Translation>
+        <Translation Language="PT">Février</Translation>
+        <Translation Language="NL">Février</Translation>
+        <Translation Language="DE">Février</Translation>
       </Text>
       <Text Id="text_annee_complete_centre_large" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">&lt;Value&gt;</Translation>
@@ -1111,6 +1236,146 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Energies">
+      <Text Id="text_suivi_energies_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Suivi des énergies</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_annee_en_cours_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Année en cours</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_depuis_mise_en_service_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Depuis la mise en service</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_cumul_partiel_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cumul partiel</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_cumul_produites_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Cumul produites</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_cumul_consommees_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Cumul consommées</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_consommees_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Histo consommées</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_produites_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Histo produites</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_wh_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Wh</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_decembre_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Dec</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_novembre_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Nov</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_octobre_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Oct</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_septembre_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Sep</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_aout_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Aou</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_juillet_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Juil</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_juin_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Juin</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_mai_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Mai</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_avril_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Avr</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_mars_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Mar</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_energies_fevrier_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fev</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_heures_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Heures</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -1537,19 +1802,40 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Langue">
-      <Text Id="text_choix_langue_valeur_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Francais</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
+      <Text Id="text_choix_langue_portugais_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Português</Translation>
+        <Translation Language="GB">Português</Translation>
+        <Translation Language="PT">Português</Translation>
+        <Translation Language="NL">Português</Translation>
+        <Translation Language="DE">Português</Translation>
       </Text>
-      <Text Id="text_choix_langue_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
+      <Text Id="text_choix_langue_allemand_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Deutsch</Translation>
+        <Translation Language="GB">Deutsch</Translation>
+        <Translation Language="PT">Deutsch</Translation>
+        <Translation Language="NL">Deutsch</Translation>
+        <Translation Language="DE">Deutsch</Translation>
+      </Text>
+      <Text Id="text_choix_langue_neerlandais_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Nederlands</Translation>
+        <Translation Language="GB">Nederlands</Translation>
+        <Translation Language="PT">Nederlands</Translation>
+        <Translation Language="NL">Nederlands</Translation>
+        <Translation Language="DE">Nederlands</Translation>
+      </Text>
+      <Text Id="text_choix_langue_anglais_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">English</Translation>
+        <Translation Language="GB">English</Translation>
+        <Translation Language="PT">English</Translation>
+        <Translation Language="NL">English</Translation>
+        <Translation Language="DE">English</Translation>
+      </Text>
+      <Text Id="text_choix_langue_francais_valeur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Francais</Translation>
+        <Translation Language="GB">Francais</Translation>
+        <Translation Language="PT">Francais</Translation>
+        <Translation Language="NL">Francais</Translation>
+        <Translation Language="DE">Francais</Translation>
       </Text>
       <Text Id="text_choix_langue_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Sélectionner votre langue ?</Translation>
@@ -1665,11 +1951,11 @@
     </TextGroup>
     <TextGroup Id="Position_ecran">
       <Text Id="text_position_ecran_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">X : 37 ; Y : 38</Translation>
-        <Translation Language="GB">X : 37 ; Y : 38</Translation>
-        <Translation Language="PT">X : 37 ; Y : 38</Translation>
-        <Translation Language="NL">X : 37 ; Y : 38</Translation>
-        <Translation Language="DE">X : 37 ; Y : 38</Translation>
+        <Translation Language="FR">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
+        <Translation Language="GB">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
+        <Translation Language="PT">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
+        <Translation Language="NL">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
+        <Translation Language="DE">X : &lt;Value&gt; ; Y : &lt;Value&gt;</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Programmation">
@@ -3801,6 +4087,111 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_histo_z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Z2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Z1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_d_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">D</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_r_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">R</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_b_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">B</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_eau_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Historique températures d'eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_centre_large" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">Historique températures</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_temp_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_histo_ecs_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_chaud_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Chaud</Translation>
+        <Translation Language="GB">Heat</Translation>
+        <Translation Language="PT">Quente</Translation>
+        <Translation Language="NL">Chaud</Translation>
+        <Translation Language="DE">Chaud</Translation>
+      </Text>
+      <Text Id="text_histo_etat_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Etat</Translation>
+        <Translation Language="GB">Etat</Translation>
+        <Translation Language="PT">Etat</Translation>
+        <Translation Language="NL">Etat</Translation>
+        <Translation Language="DE">Etat</Translation>
+      </Text>
+      <Text Id="text_histo_appoint_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Appoint</Translation>
+        <Translation Language="GB">Heating adding</Translation>
+        <Translation Language="PT">Suplemento</Translation>
+        <Translation Language="NL">Appoint</Translation>
+        <Translation Language="DE">Appoint</Translation>
+      </Text>
+      <Text Id="text_10_histo_fct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">-10</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_60_histo_fct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">-60 mn</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_0_histo_fct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="__SingleUse_3YR5" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">0</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -5155,8 +5546,8 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="A-Z,a-z" />
+    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0xff" />
+    <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0xff" />
     <Typography Id="Texte" Font="segoeui.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>

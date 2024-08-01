@@ -4,7 +4,8 @@
 
 PiscineView::PiscineView()
 {
-//	barre_titre.titre(T_TEXT_PISCINE_CENTRE_LARGE);
+    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_PISCINE_CENTRE_LARGE).getText());
+    barre_titre.titre(textAreaBuffer_Titre);
 	toggleButton_arret_ecs.forceState(false);
 	button_marche_ecs_on.setVisible(true);
 	// Option piscine arret

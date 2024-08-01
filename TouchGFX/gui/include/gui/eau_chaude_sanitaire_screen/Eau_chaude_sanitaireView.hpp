@@ -19,8 +19,7 @@ public:
     void bouton_plus_relance();
 protected:
     float fConsigne, fRelance;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_consigne[5];
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_relance[5];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_consigne[5], textAreaBuffer_relance[5], textAreaBuffer_Titre[25];
 };
 
 #endif // EAU_CHAUDE_SANITAIREVIEW_HPP

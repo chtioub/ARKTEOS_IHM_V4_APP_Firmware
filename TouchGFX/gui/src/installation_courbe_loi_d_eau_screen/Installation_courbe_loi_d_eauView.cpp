@@ -4,7 +4,8 @@
 
 Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 {
-//	barre_titre.titre(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE);
+    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
+    barre_titre.titre(textAreaBuffer_Titre);
 	container_pave_numeric.setVisible(false);
 	u16TermoMAX = 780;
 	u16LoiDeau[0] = 400;

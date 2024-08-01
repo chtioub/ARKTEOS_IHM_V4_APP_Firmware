@@ -1405,6 +1405,16 @@
                     }
                   }
                 ]
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
@@ -1528,6 +1538,18 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionSlide",
               "ScreenTransitionDirection": "West",
+              "ActionComponent": "Accueil"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_accueil",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Accueil"
             }
           }
@@ -40513,6 +40535,7 @@
       },
       {
         "Name": "Historiques_fonctionnement",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -40534,11 +40557,1282 @@
                 "Width": 950,
                 "Height": 126,
                 "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_graph",
+                "X": 114,
+                "Y": 144,
+                "Width": 722,
+                "Height": 313,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_1",
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_2",
+                    "X": 20,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_3",
+                    "X": 40,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_4",
+                    "X": 60,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_5",
+                    "X": 80,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_6",
+                    "X": 100,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_7",
+                    "X": 120,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_8",
+                    "X": 140,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_9",
+                    "X": 160,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_10",
+                    "X": 180,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_11",
+                    "X": 200,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_12",
+                    "X": 220,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_13",
+                    "X": 240,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_14",
+                    "X": 260,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_15",
+                    "X": 280,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_16",
+                    "X": 300,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_17",
+                    "X": 320,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_18",
+                    "X": 340,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_19",
+                    "X": 360,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_20",
+                    "X": 380,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_21",
+                    "X": 400,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_22",
+                    "X": 420,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_23",
+                    "X": 440,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_24",
+                    "X": 460,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_25",
+                    "X": 480,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_26",
+                    "X": 500,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_27",
+                    "X": 520,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_28",
+                    "X": 540,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_29",
+                    "X": 560,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_30",
+                    "X": 580,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_31",
+                    "X": 600,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_32",
+                    "X": 620,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_33",
+                    "X": 640,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_34",
+                    "X": 660,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_35",
+                    "X": 680,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_36",
+                    "X": 700,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
+                    "Alpha": 130
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ligne_verticale_37",
+                    "X": 720,
+                    "Width": 2,
+                    "Height": 328,
+                    "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png"
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box1",
+                    "Y": 216,
+                    "Width": 722,
+                    "Height": 21
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale",
+                    "Y": 8,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_1",
+                    "Y": 8,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_2",
+                    "Y": 28,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_3",
+                    "Y": 48,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_4",
+                    "Y": 68,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_5",
+                    "Y": 88,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_6",
+                    "Y": 108,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_7",
+                    "Y": 128,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_8",
+                    "Y": 148,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_9",
+                    "Y": 168,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_10",
+                    "Y": 188,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_11",
+                    "Y": 208,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_12",
+                    "Y": 245,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_13",
+                    "Y": 265,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_14",
+                    "Y": 285,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_horizontale_15",
+                    "Y": 305,
+                    "Width": 722,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Alpha": 130,
+                    "StartY": 1.0,
+                    "EndX": 722.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  }
+                ]
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "buttonWithIcon_droite",
+                "X": 862,
+                "Y": 256,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                "Released": "Fleche_Droite_Unclicked_L75xH53.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconX": 97,
+                "IconHeight": 50,
+                "IconWidth": 50
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "buttonWithIcon_gauche",
+                "X": 13,
+                "Y": 256,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                "Released": "Fleche_Gauche_Unclicked_L75xH53.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconX": 97,
+                "IconHeight": 50,
+                "IconWidth": 50
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_raz",
+                "X": 803,
+                "Y": 465,
+                "Width": 139,
+                "Height": 53,
+                "Pressed": "Boutons_3_Choix_Beige_Clicked_L139xH53.png",
+                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png",
+                "TextId": "text_raz_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_ext_2",
+                "X": 923,
+                "Y": 228,
+                "Width": 14,
+                "Height": 14,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 7.0,
+                "CenterY": 7.0,
+                "Radius": 6.5,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_ext_1",
+                "X": 918,
+                "Y": 223,
+                "Width": 24,
+                "Height": 24,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 12.0,
+                "CenterY": 12.0,
+                "Radius": 11.0,
+                "LineWidth": 2.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Round"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_depart_2",
+                "X": 13,
+                "Y": 216,
+                "Width": 14,
+                "Height": 14,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 7.0,
+                "CenterY": 7.0,
+                "Radius": 6.5,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_depart_1",
+                "X": 8,
+                "Y": 211,
+                "Width": 24,
+                "Height": 24,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 12.0,
+                "CenterY": 12.0,
+                "Radius": 11.0,
+                "LineWidth": 2.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Round"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_retour_2",
+                "X": 64,
+                "Y": 216,
+                "Width": 14,
+                "Height": 14,
+                "Color": {
+                  "Green": 111,
+                  "Blue": 149
+                },
+                "CenterX": 7.0,
+                "CenterY": 7.0,
+                "Radius": 6.5,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_retour_1",
+                "X": 59,
+                "Y": 211,
+                "Width": 24,
+                "Height": 24,
+                "Color": {
+                  "Green": 111,
+                  "Blue": 149
+                },
+                "CenterX": 12.0,
+                "CenterY": 12.0,
+                "Radius": 11.0,
+                "LineWidth": 2.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Round"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_maison_temp_ext",
+                "X": 856,
+                "Y": 192,
+                "Width": 67,
+                "Height": 58,
+                "RelativeFilename": "Etat_Maison_L67xH58.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_0min",
+                "X": 794,
+                "Y": 359,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_0_histo_fct_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_10min",
+                "X": 675,
+                "Y": 359,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_10_histo_fct_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_60min",
+                "X": 75,
+                "Y": 359,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_60_histo_fct_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_appoint",
+                "X": 23,
+                "Y": 398,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_appoint_droite_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_etat",
+                "X": 23,
+                "Y": 428,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_etat_droite_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_ecs",
+                "X": 841,
+                "Y": 389,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_ecs_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_d",
+                "X": 37,
+                "Y": 211,
+                "Width": 15,
+                "Height": 23,
+                "TextId": "text_histo_d_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_b",
+                "X": 37,
+                "Y": 211,
+                "Width": 15,
+                "Height": 23,
+                "TextId": "text_histo_b_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_r",
+                "X": 88,
+                "Y": 211,
+                "Width": 15,
+                "Height": 23,
+                "TextId": "text_histo_r_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_chaud",
+                "X": 841,
+                "Y": 409,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_chaud_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_eau_haut",
+                "X": 27,
+                "Y": 143,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_var_sys_temp_droit_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {}
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_eau_bas",
+                "X": 27,
+                "Y": 342,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_var_sys_temp_droit_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {}
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_ext_haut",
+                "X": 840,
+                "Y": 144,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_temp_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {}
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_ext_bas",
+                "X": 841,
+                "Y": 343,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_temp_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {}
+              },
+              {
+                "Type": "DynamicGraph",
+                "Name": "dynamicGraph_ext",
+                "X": 116,
+                "Y": 152,
+                "Width": 718,
+                "Height": 202,
+                "DataSeed": -1720629446,
+                "NumberOfValues": 360,
+                "MaxY": 100.0,
+                "Precision": "1",
+                "LastIndex": 359,
+                "XAxisScale": 1.0,
+                "InsertRandomValues": true,
+                "GraphType": "GraphScroll",
+                "GraphDrawers": [
+                  {
+                    "Type": "LineDrawer",
+                    "LineWidth": 2,
+                    "FileNameImage": "",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "DynamicGraph",
+                "Name": "dynamicGraph_eau_1",
+                "X": 116,
+                "Y": 152,
+                "Width": 718,
+                "Height": 202,
+                "DataSeed": -1720629446,
+                "NumberOfValues": 360,
+                "MaxY": 100.0,
+                "Precision": "1",
+                "LastIndex": 359,
+                "XAxisScale": 1.0,
+                "InsertRandomValues": true,
+                "GraphType": "GraphScroll",
+                "GraphDrawers": [
+                  {
+                    "Type": "LineDrawer",
+                    "LineWidth": 2,
+                    "FileNameImage": "",
+                    "Color": {
+                      "Green": 111,
+                      "Blue": 149
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "DynamicGraph",
+                "Name": "dynamicGraph_eau_2",
+                "X": 116,
+                "Y": 152,
+                "Width": 718,
+                "Height": 202,
+                "DataSeed": -1720629446,
+                "NumberOfValues": 360,
+                "MaxY": 100.0,
+                "MinY": -100.0,
+                "Precision": "1",
+                "LastIndex": 359,
+                "XAxisScale": 1.0,
+                "InsertRandomValues": true,
+                "GraphType": "GraphScroll",
+                "GraphDrawers": [
+                  {
+                    "Type": "LineDrawer",
+                    "LineWidth": 2,
+                    "FileNameImage": "",
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "StaticGraph",
+                "Name": "graph_test",
+                "X": 114,
+                "Y": 152,
+                "Width": 722,
+                "Height": 207,
+                "DataSeed": 1608622068,
+                "NumberOfValues": 360,
+                "MaxX": 360.0,
+                "PrecisionX": "1",
+                "MaxY": 360.0,
+                "PrecisionY": "1",
+                "XAxisScale": 1.0,
+                "InsertRandomValues": true,
+                "GraphDrawers": [
+                  {
+                    "Type": "LineDrawer",
+                    "LineWidth": 2,
+                    "FileNameImage": "",
+                    "Color": {
+                      "Red": 20,
+                      "Green": 151,
+                      "Blue": 197
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_z1",
+                "X": 8,
+                "Y": 196,
+                "Width": 46,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box_z1",
+                    "X": 2,
+                    "Y": 2,
+                    "Width": 44,
+                    "Height": 38,
+                    "Color": {
+                      "Red": 226,
+                      "Green": 126
+                    }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_z1",
+                    "X": -1,
+                    "Width": 47,
+                    "Height": 41,
+                    "RelativeFilename": "Maison_Transparente_L46xH40.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_z1",
+                    "X": 12,
+                    "Y": 15,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "text_histo_z1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_z2",
+                "X": 55,
+                "Y": 196,
+                "Width": 46,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box_z2",
+                    "X": 2,
+                    "Y": 2,
+                    "Width": 44,
+                    "Height": 38,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 211
+                    }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_z2",
+                    "Width": 47,
+                    "Height": 41,
+                    "RelativeFilename": "Maison_Transparente_L46xH40.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_z2",
+                    "X": 13,
+                    "Y": 15,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "text_histo_z2_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_configuration",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_droite_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_droite"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_gauche_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_gauche"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche"
+            }
+          },
+          {
+            "InteractionName": "Timer_maj_data",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 50
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "maj_data"
+            }
+          }
+        ]
       },
       {
         "Name": "Installation_chauffe_dalle",
@@ -43254,7 +44548,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43264,7 +44558,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43274,7 +44568,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43284,7 +44578,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43303,7 +44597,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43313,7 +44607,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43323,7 +44617,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43333,7 +44627,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43352,7 +44646,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43362,7 +44656,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43372,7 +44666,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43382,7 +44676,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43401,7 +44695,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43411,7 +44705,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43421,7 +44715,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43431,7 +44725,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43450,7 +44744,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43460,7 +44754,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43470,7 +44764,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43480,7 +44774,7 @@
                         "Width": 2,
                         "Height": 328,
                         "RelativeFilename": "Points_Tilles_Blancs_Verticaux Loi_Deau_L2xH328.png",
-                        "Alpha": 60
+                        "Alpha": 130
                       },
                       {
                         "Type": "Image",
@@ -43625,10 +44919,10 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_cumul",
-                "X": 429,
+                "X": 251,
                 "Y": 145,
-                "Width": 92,
-                "Height": 24,
+                "Width": 449,
+                "Height": 28,
                 "TextId": "text_valeur_duree_derog_centre_defaut",
                 "TextRotation": "0",
                 "Color": {
@@ -43665,7 +44959,7 @@
               {
                 "Type": "Box",
                 "Name": "box_piscine",
-                "X": 129,
+                "X": 131,
                 "Y": 447,
                 "Width": 50,
                 "Height": 42,
@@ -43677,7 +44971,7 @@
               {
                 "Type": "Box",
                 "Name": "box_ecs",
-                "X": 129,
+                "X": 131,
                 "Y": 389,
                 "Width": 50,
                 "Height": 42,
@@ -43689,8 +44983,8 @@
               {
                 "Type": "Box",
                 "Name": "box_froid",
-                "X": 129,
-                "Y": 331,
+                "X": 131,
+                "Y": 330,
                 "Width": 50,
                 "Height": 42,
                 "Color": {
@@ -43702,7 +44996,7 @@
               {
                 "Type": "Box",
                 "Name": "box_chaud",
-                "X": 129,
+                "X": 131,
                 "Y": 273,
                 "Width": 50,
                 "Height": 42,
@@ -43714,7 +45008,7 @@
               {
                 "Type": "Box",
                 "Name": "box_pac",
-                "X": 129,
+                "X": 131,
                 "Y": 215,
                 "Width": 50,
                 "Height": 42,
@@ -43724,13 +45018,52 @@
                 }
               },
               {
+                "Type": "Box",
+                "Name": "box_elec",
+                "X": 181,
+                "Y": 215,
+                "Width": 50,
+                "Height": 42,
+                "Color": {
+                  "Red": 245,
+                  "Green": 61,
+                  "Blue": 61
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_elec_chaud",
+                "X": 181,
+                "Y": 273,
+                "Width": 50,
+                "Height": 42,
+                "Color": {
+                  "Red": 245,
+                  "Green": 61,
+                  "Blue": 61
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_elec_ecs",
+                "X": 181,
+                "Y": 389,
+                "Width": 50,
+                "Height": 42,
+                "Color": {
+                  "Red": 245,
+                  "Green": 61,
+                  "Blue": 61
+                }
+              },
+              {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_piscine",
-                "X": 131,
+                "X": 135,
                 "Y": 457,
-                "Width": 62,
+                "Width": 150,
                 "Height": 23,
-                "TextId": "text_energies_cumul_centre_defaut",
+                "TextId": "text_bouton_on_off_1_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -43746,11 +45079,11 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_ecs",
-                "X": 131,
+                "X": 135,
                 "Y": 399,
-                "Width": 62,
+                "Width": 150,
                 "Height": 23,
-                "TextId": "text_energies_cumul_centre_defaut",
+                "TextId": "text_bouton_on_off_1_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -43760,17 +45093,17 @@
                 "Wildcard1": {
                   "TextId": "text_energies_cumul_init_centre_defaut",
                   "UseBuffer": true,
-                  "BufferSize": 5
+                  "BufferSize": 14
                 }
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_froid",
-                "X": 131,
+                "X": 135,
                 "Y": 341,
-                "Width": 62,
+                "Width": 150,
                 "Height": 23,
-                "TextId": "text_energies_cumul_centre_defaut",
+                "TextId": "text_bouton_on_off_1_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -43786,11 +45119,11 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_chaud",
-                "X": 131,
+                "X": 135,
                 "Y": 283,
-                "Width": 62,
+                "Width": 150,
                 "Height": 23,
-                "TextId": "text_energies_cumul_centre_defaut",
+                "TextId": "text_bouton_on_off_1_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -43800,17 +45133,17 @@
                 "Wildcard1": {
                   "TextId": "text_energies_cumul_init_centre_defaut",
                   "UseBuffer": true,
-                  "BufferSize": 5
+                  "BufferSize": 14
                 }
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_pac",
-                "X": 131,
-                "Y": 225,
-                "Width": 62,
+                "X": 135,
+                "Y": 224,
+                "Width": 150,
                 "Height": 23,
-                "TextId": "text_energies_cumul_centre_defaut",
+                "TextId": "text_bouton_on_off_1_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -43820,15 +45153,15 @@
                 "Wildcard1": {
                   "TextId": "text_energies_cumul_init_centre_defaut",
                   "UseBuffer": true,
-                  "BufferSize": 5
+                  "BufferSize": 14
                 }
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_1",
-                "X": 99,
+                "X": 80,
                 "Y": 499,
-                "Width": 62,
+                "Width": 100,
                 "Height": 23,
                 "TextId": "text_energies_cumul_centre_defaut",
                 "TextRotation": "0",
@@ -43838,7 +45171,6 @@
                   "Blue": 255
                 },
                 "Wildcard1": {
-                  "TextId": "text_energies_cumul_init_centre_defaut",
                   "UseBuffer": true,
                   "BufferSize": 5
                 }
@@ -43846,9 +45178,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_2",
-                "X": 224,
+                "X": 205,
                 "Y": 499,
-                "Width": 62,
+                "Width": 100,
                 "Height": 23,
                 "TextId": "text_energies_cumul_centre_defaut",
                 "TextRotation": "0",
@@ -43866,9 +45198,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_3",
-                "X": 349,
+                "X": 330,
                 "Y": 499,
-                "Width": 62,
+                "Width": 100,
                 "Height": 23,
                 "TextId": "text_energies_cumul_centre_defaut",
                 "TextRotation": "0",
@@ -43886,9 +45218,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_4",
-                "X": 474,
-                "Y": 499,
-                "Width": 62,
+                "X": 455,
+                "Y": 498,
+                "Width": 100,
                 "Height": 23,
                 "TextId": "text_energies_cumul_centre_defaut",
                 "TextRotation": "0",
@@ -43906,9 +45238,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_5",
-                "X": 599,
+                "X": 580,
                 "Y": 499,
-                "Width": 62,
+                "Width": 100,
                 "Height": 23,
                 "TextId": "text_energies_cumul_centre_defaut",
                 "TextRotation": "0",
@@ -43926,9 +45258,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_energies_histo_6",
-                "X": 724,
+                "X": 705,
                 "Y": 499,
-                "Width": 62,
+                "Width": 100,
                 "Height": 23,
                 "TextId": "text_energies_cumul_centre_defaut",
                 "TextRotation": "0",
@@ -43945,7 +45277,7 @@
               },
               {
                 "Type": "ButtonWithLabel",
-                "Name": "buttonWithLabel1",
+                "Name": "buttonWithLabel_raz",
                 "X": 791,
                 "Y": 274,
                 "Width": 139,
@@ -43997,11 +45329,67 @@
                 "Wildcard1": {
                   "TextId": "date_text_2_centre_defaut"
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_droite_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_energies_cumul"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droite"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_gauche_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_energies_cumul"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_raz_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_raz"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_raz"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_reour_chgsc_energie",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Energies"
+            }
+          }
+        ]
       },
       {
         "Name": "Energies_histo",
@@ -44681,6 +46069,163 @@
                     }
                   },
                   {
+                    "Type": "Box",
+                    "Name": "box_mois_1_elec",
+                    "X": 19,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_2_elec",
+                    "X": 79,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_3_elec",
+                    "X": 139,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_4_elec",
+                    "X": 199,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_5_elec",
+                    "X": 259,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_6_elec",
+                    "X": 319,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_7_elec",
+                    "X": 379,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_8_elec",
+                    "X": 439,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_9_elec",
+                    "X": 499,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    },
+                    "Moveable": true
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_10_elec",
+                    "X": 559,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_11_elec",
+                    "X": 619,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_mois_12_elec",
+                    "X": 679,
+                    "Y": 93,
+                    "Width": 50,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
                     "Type": "TextArea",
                     "Name": "textArea_mois_1",
                     "X": 25,
@@ -44870,26 +46415,6 @@
                 "Width": 737,
                 "Height": 323,
                 "Components": [
-                  {
-                    "Type": "TextArea",
-                    "Name": "textArea_chiffre",
-                    "X": 14,
-                    "Y": 298,
-                    "Width": 32,
-                    "Height": 21,
-                    "TextId": "text_nb_pac_valeur_centre_defaut",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "Wildcard1": {
-                      "TextId": "text_heure_3_valeur_centre_defaut",
-                      "UseBuffer": true,
-                      "BufferSize": 3
-                    }
-                  },
                   {
                     "Type": "TextArea",
                     "Name": "textArea_chiffre_1",
@@ -45517,18 +47042,6 @@
                   {
                     "Type": "Box",
                     "Name": "box_24_13",
-                    "X": 409,
-                    "Y": 93,
-                    "Width": 20,
-                    "Height": 201,
-                    "Color": {
-                      "Red": 255,
-                      "Green": 205
-                    }
-                  },
-                  {
-                    "Type": "Box",
-                    "Name": "box_24_14",
                     "X": 379,
                     "Y": 93,
                     "Width": 20,
@@ -45540,8 +47053,20 @@
                   },
                   {
                     "Type": "Box",
+                    "Name": "box_24_14",
+                    "X": 409,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 201,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 205
+                    }
+                  },
+                  {
+                    "Type": "Box",
                     "Name": "box_24_15",
-                    "X": 469,
+                    "X": 439,
                     "Y": 93,
                     "Width": 20,
                     "Height": 201,
@@ -45553,7 +47078,7 @@
                   {
                     "Type": "Box",
                     "Name": "box_24_16",
-                    "X": 439,
+                    "X": 469,
                     "Y": 93,
                     "Width": 20,
                     "Height": 201,
@@ -45656,6 +47181,318 @@
                     "Color": {
                       "Red": 255,
                       "Green": 205
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_1_elec",
+                    "X": 19,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_2_elec",
+                    "X": 49,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_3_elec",
+                    "X": 79,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_4_elec",
+                    "X": 109,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_5_elec",
+                    "X": 139,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_6_elec",
+                    "X": 169,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_7_elec",
+                    "X": 199,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_8_elec",
+                    "X": 229,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_9_elec",
+                    "X": 259,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_10_elec",
+                    "X": 289,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_11_elec",
+                    "X": 319,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_12_elec",
+                    "X": 349,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_13_elec",
+                    "X": 379,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_14_elec",
+                    "X": 409,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_15_elec",
+                    "X": 439,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_16_elec",
+                    "X": 469,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_17_elec",
+                    "X": 499,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_18_elec",
+                    "X": 529,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_19_elec",
+                    "X": 559,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_20_elec",
+                    "X": 589,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_21_elec",
+                    "X": 619,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_22_elec",
+                    "X": 649,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_23_elec",
+                    "X": 679,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
+                    }
+                  },
+                  {
+                    "Type": "Box",
+                    "Name": "box_24_24_elec",
+                    "X": 709,
+                    "Y": 93,
+                    "Width": 20,
+                    "Height": 50,
+                    "Color": {
+                      "Red": 245,
+                      "Green": 61,
+                      "Blue": 61
                     }
                   }
                 ]
@@ -45894,6 +47731,16 @@
                   "Green": 255,
                   "Blue": 255
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
@@ -45986,6 +47833,18 @@
               "Type": "ActionCustom",
               "FunctionName": "bouton_24jours"
             }
+          },
+          {
+            "InteractionName": "BTNClicked_reour_chgsc_energie",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Energies"
+            }
           }
         ]
       },
@@ -46002,7 +47861,7 @@
             "Type": "Container",
             "Name": "container",
             "X": 37,
-            "Y": 32,
+            "Y": 38,
             "Width": 950,
             "Height": 524,
             "Components": [
@@ -46115,6 +47974,16 @@
                   "Green": 255,
                   "Blue": 255
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
@@ -46124,7 +47993,7 @@
             "InteractionName": "BTNClicked_histo_prod_chgsc_energie_histo",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel_histo_conso"
+              "TriggerComponent": "buttonWithLabel_histo_prod"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -46166,6 +48035,18 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Energies_cumul"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_configuration",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
             }
           }
         ]
@@ -65220,6 +67101,16 @@
                   "Green": 255,
                   "Blue": 255
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
@@ -65235,6 +67126,66 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Position_ecran"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_configuration",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_langue",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_langue"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Langue"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_luminosite",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_luminosite"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Luminosite"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_code_web",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_compte_client"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Code_web"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_date_heure",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithIcon_date_heure"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Date_heure"
             }
           }
         ]
@@ -77006,21 +78957,16 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_valeur_choix_langue",
-                    "X": 178,
+                    "X": 128,
                     "Y": 90,
-                    "Width": 92,
+                    "Width": 192,
                     "Height": 24,
-                    "TextId": "text_choix_langue_valeur_centre_defaut",
+                    "TextId": "text_choix_langue_francais_valeur_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
                       "Green": 255,
                       "Blue": 255
-                    },
-                    "Wildcard1": {
-                      "TextId": "text_choix_langue_valeur_init_centre_defaut",
-                      "UseBuffer": true,
-                      "BufferSize": 6
                     }
                   },
                   {
@@ -77049,10 +78995,9 @@
                 "Name": "Image_portugais",
                 "X": 391,
                 "Y": 195,
-                "Width": 170,
-                "Height": 113,
-                "Visible": false,
-                "RelativeFilename": "Drapeau_Portugais_L169xH112.png"
+                "Width": 169,
+                "Height": 112,
+                "RelativeFilename": "Drapeau_Portugais_L169xH112_2-97.png"
               },
               {
                 "Type": "Image",
@@ -77092,11 +79037,67 @@
                 "Height": 112,
                 "Visible": false,
                 "RelativeFilename": "Drapeau_Allemand_L169xH112.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_paramteres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_gauche_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_choix_langue"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_droit_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_choix_langue"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droit"
+            }
+          }
+        ]
       },
       {
         "Name": "Position_ecran",
@@ -77252,12 +79253,98 @@
                   "Red": 255,
                   "Green": 255,
                   "Blue": 255
+                },
+                "Wildcard1": {
+                  "UseBuffer": true,
+                  "BufferSize": 3
+                },
+                "Wildcard2": {
+                  "UseBuffer": true,
+                  "BufferSize": 3
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_droit_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_gauche_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche"
+            }
+          }
+        ]
       },
       {
         "Name": "Luminosite",
@@ -77296,9 +79383,9 @@
               {
                 "Type": "Slider",
                 "Name": "slider_luminosite",
-                "X": 220,
+                "X": 213,
                 "Y": 285,
-                "Width": 511,
+                "Width": 525,
                 "Height": 30,
                 "IsHorizontalSlider": true,
                 "BackgroundUnselected": "Barre_Consigne_L495xH10.png",
@@ -77306,14 +79393,15 @@
                 "Indicator": "Balle_Hysteresis_L30xH30.png",
                 "BackgroundX": 16,
                 "BackgroundY": 11,
-                "IndicatorMax": 300,
-                "ValueMax": 100
+                "IndicatorMax": 495,
+                "ValueMax": 100,
+                "InitValue": 50
               },
               {
                 "Type": "TextArea",
                 "Name": "textArea_luminosite",
                 "X": 395,
-                "Y": 329,
+                "Y": 328,
                 "Width": 160,
                 "Height": 27,
                 "TextId": "text_luminosite_centre_defaut",
@@ -77328,11 +79416,98 @@
                   "UseBuffer": true,
                   "BufferSize": 4
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_plus",
+                "X": 753,
+                "Y": 272,
+                "Width": 80,
+                "Height": 56,
+                "Pressed": "Bouton_Plus_Beige_Clicked_L80xH56.png",
+                "Released": "Bouton_Plus_Beige_Unclicked_L80xH56.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_moins",
+                "X": 118,
+                "Y": 272,
+                "Width": 80,
+                "Height": 56,
+                "Pressed": "Bouton_Moins_Beige_Clicked_L80xH56.png",
+                "Released": "Bouton_Moins_Beige_Unclicked_L80xH56.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "Slider_luminosite",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_luminosite"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "slider_lumi"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_moins_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_plus_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_plus"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus"
+            }
+          }
+        ]
       },
       {
         "Name": "Date_heure",
@@ -77588,21 +79763,16 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_mois_cal",
-                "X": 74,
+                "X": 37,
                 "Y": 327,
-                "Width": 105,
+                "Width": 178,
                 "Height": 45,
-                "TextId": "text_mois_texte_centre_large",
+                "TextId": "text_mois_fevrier_centre_large",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 60,
                   "Green": 60,
                   "Blue": 59
-                },
-                "Wildcard1": {
-                  "TextId": "text_mois_texte_init_centre_large",
-                  "UseBuffer": true,
-                  "BufferSize": 10
                 }
               },
               {
@@ -77678,11 +79848,155 @@
                   "UseBuffer": true,
                   "BufferSize": 5
                 }
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_minutes_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_minutes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_minutes_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_minutes_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_minutes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_minutes_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_heures_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_heure"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_heures_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_heures_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_heure"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_heures_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_annee_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_annee"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_annee_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_annee_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_annee"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_annee_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_mois_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_mois"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_mois_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_mois_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_mois"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_mois_bas"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_jours_haut_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_haut_jours"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_jour_haut"
+            }
+          },
+          {
+            "InteractionName": "BTNClickes_jours_bas_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_bas_jours"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_jour_bas"
+            }
+          }
+        ]
       },
       {
         "Name": "Code_web",
@@ -77754,11 +80068,46 @@
                   "Blue": 255
                 },
                 "WideTextAction": 1
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               }
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          }
+        ]
       },
       {
         "Name": "Usine_choix_fluide",
@@ -81131,6 +83480,7 @@
             "Y": 67,
             "Width": 61,
             "Height": 55,
+            "Visible": false,
             "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
             "Released": "Bouton_Retour_Unclicked_L60xH54.png"
           },
@@ -81151,7 +83501,7 @@
             "Wildcard1": {
               "TextId": "titre_text_2_centre_large",
               "UseBuffer": true,
-              "BufferSize": 25
+              "BufferSize": 30
             }
           }
         ],
@@ -81592,7 +83942,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Energies_histo",
+    "StartupScreenName": "Date_heure",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

@@ -28,7 +28,7 @@ public:
     void bouton_plus_confort();
 protected:
     uint16_t u16ConsigneReduit, u16ConsigneNormal, u16ConsigneConfort;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_ConsigneReduit[5], textAreaBuffer_ConsigneNormal[5], textAreaBuffer_ConsigneConfort[5], textAreaBuffer[25];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_ConsigneReduit[5], textAreaBuffer_ConsigneNormal[5], textAreaBuffer_ConsigneConfort[5], textAreaBuffer_Titre[25];
 };
 
 #endif // ZONEVIEW_HPP
