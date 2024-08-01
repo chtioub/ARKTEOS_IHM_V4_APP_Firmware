@@ -83475,7 +83475,7 @@
           },
           {
             "Type": "Button",
-            "Name": "button_retour",
+            "Name": "button_retour_old",
             "X": 881,
             "Y": 67,
             "Width": 61,
@@ -83546,7 +83546,7 @@
             "InteractionName": "BTNClicked_retour_chgsc_retour",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "button_retour"
+              "TriggerComponent": "button_retour_old"
             },
             "Action": {
               "Type": "ActionCustom",

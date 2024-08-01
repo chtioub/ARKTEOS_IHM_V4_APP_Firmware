@@ -32,8 +32,8 @@ void Barre_titre::titre(touchgfx::Unicode::UnicodeChar *textArea_Buffer)
 
 void Barre_titre::sansRetour()
 {
-	button_retour.setVisible(false);
-	button_retour.invalidate();
+	button_retour_old.setVisible(false);
+	button_retour_old.invalidate();
 }
 
 void Barre_titre::sansAccueil()
