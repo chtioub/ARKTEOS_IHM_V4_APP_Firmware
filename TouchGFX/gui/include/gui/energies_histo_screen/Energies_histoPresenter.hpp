@@ -27,6 +27,8 @@ public:
 
     virtual ~Energies_histoPresenter() {}
 
+    void energieState(uint16_t state);
+
 private:
     Energies_histoPresenter();
 

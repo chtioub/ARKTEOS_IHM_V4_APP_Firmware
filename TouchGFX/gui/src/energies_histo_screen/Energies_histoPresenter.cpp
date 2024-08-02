@@ -16,3 +16,9 @@ void Energies_histoPresenter::deactivate()
 {
 
 }
+
+void Energies_histoPresenter::energieState(uint16_t state)
+{
+  model->energieState(state);
+}
+

@@ -1,6 +1,8 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include <touchgfx/hal/Types.hpp>
+
 class ModelListener;
 
 class Model
@@ -14,6 +16,8 @@ public:
     }
 
     void tick();
+
+    void energieState(uint16_t state);
 protected:
     ModelListener* modelListener;
 };
