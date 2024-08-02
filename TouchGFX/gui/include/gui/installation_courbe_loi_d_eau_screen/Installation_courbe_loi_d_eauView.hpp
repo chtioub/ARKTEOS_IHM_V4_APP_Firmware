@@ -37,7 +37,7 @@ public:
     void bouton_valider();
     void pave_numerique(bool bPaveNum);
 protected:
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_20[3], textAreaBuffer_15[3], textAreaBuffer_10[3], textAreaBuffer_0[3], textAreaBuffer_m10[3], textAreaBuffer_m25[3], *textAreaBuffer;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_20[3], textAreaBuffer_15[3], textAreaBuffer_10[3], textAreaBuffer_0[3], textAreaBuffer_m10[3], textAreaBuffer_m25[3], *textAreaBuffer, textAreaBuffer_Titre[25];
     uint16_t u16LoiDeau[6], u16TermoMAX, u16ValeurPaveNumeric;
     touchgfx::Slider *slider_text;
     touchgfx::TextAreaWithOneWildcard *textArea_temp_loi_eau;

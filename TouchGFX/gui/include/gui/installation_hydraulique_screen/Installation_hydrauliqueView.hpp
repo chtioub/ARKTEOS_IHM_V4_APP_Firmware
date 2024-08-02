@@ -21,7 +21,7 @@ public:
     void bouton_zone_2_2_zones();
 protected:
     uint8_t u8Nb_PAC, u8Regulation;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_nb_pac[2];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_nb_pac[2], textAreaBuffer_Titre[25];
 };
 
 #endif // INSTALLATION_HYDRAULIQUEVIEW_HPP

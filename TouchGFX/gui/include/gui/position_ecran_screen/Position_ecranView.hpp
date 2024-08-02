@@ -11,7 +11,13 @@ public:
     virtual ~Position_ecranView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void bouton_valider();
+    void bouton_droit();
+    void bouton_gauche();
+    void bouton_bas();
+    void bouton_haut();
 protected:
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[30], textAreaBuffer_OffsetX[3], textAreaBuffer_OffsetY[3];
 };
 
 #endif // POSITION_ECRANVIEW_HPP

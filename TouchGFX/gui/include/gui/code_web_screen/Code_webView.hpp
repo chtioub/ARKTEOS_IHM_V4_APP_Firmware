@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 protected:
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[30], textAreaBuffer_CodeWeb[5];
 };
 
 #endif // CODE_WEBVIEW_HPP

@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 protected:
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[25];
 };
 
 #endif // ENERGIESVIEW_HPP
