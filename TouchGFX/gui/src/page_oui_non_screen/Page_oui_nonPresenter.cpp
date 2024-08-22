@@ -16,3 +16,13 @@ void Page_oui_nonPresenter::deactivate()
 {
 
 }
+
+void Page_oui_nonPresenter::changeDate(S_DATE *sDate)
+{
+	view.changeDate(sDate);
+}
+
+void Page_oui_nonPresenter::changeErreur(uint16_t u16Erreur)
+{
+	view.changeErreur(u16Erreur);
+}

@@ -26,6 +26,8 @@ public:
     virtual void deactivate();
 
     virtual ~Page_oui_nonPresenter() {}
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
 
 private:
     Page_oui_nonPresenter();

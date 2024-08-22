@@ -485,6 +485,20 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Page_oui_non">
+      <Text Id="text_marche_general_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Souhaitez-vous démarrer votre PAC ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_arret_general_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Souhaitez-vous arrêter votre PAC ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_question_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -703,13 +717,6 @@
         <Translation Language="NL">&lt;value&gt;</Translation>
         <Translation Language="DE">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="titre_text_1_centre_large" Alignment="Center" TypographyId="Large">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
-      </Text>
     </TextGroup>
     <TextGroup Id="Accueil">
       <Text Id="text_marche_centre_defaut" Alignment="Center" TypographyId="Default">
@@ -734,14 +741,14 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_ecs_milieu_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">25.6°C</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_ecs_bas_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">20.0°C</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -762,21 +769,21 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_temp_ext_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">7.0°C</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_pression_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="FR">&lt;Value&gt; bars</Translation>
         <Translation Language="GB">&lt;Value&gt;</Translation>
         <Translation Language="PT">&lt;Value&gt;</Translation>
         <Translation Language="NL">&lt;Value&gt;</Translation>
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_pression_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">1.7 bars</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -790,7 +797,7 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_temp_piscine_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">31.5°C</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -804,7 +811,7 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_temp_temp_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">56.0</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -818,7 +825,7 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_temp_zone_1_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">20.6°C</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -832,7 +839,7 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_temp_zone_2_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">22.6°C</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -3740,6 +3747,41 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
+      <Text Id="text_derog_pression_bp_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dérogation pression BP</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_derog_pression_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dérogation pression</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ejp_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">EJP</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_shunt_tempo_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Shunt tempo</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_test_pac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">TEST PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_zone_3_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">12.0°C</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -4087,6 +4129,20 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_temp_ballon_externe_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">T°C eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_pression_bars_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Bars</Translation>
+        <Translation Language="GB">Bars</Translation>
+        <Translation Language="PT">Bars</Translation>
+        <Translation Language="NL">Bars</Translation>
+        <Translation Language="DE">Bars</Translation>
+      </Text>
       <Text Id="text_histo_z2_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Z2</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -5546,7 +5602,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0xff" />
+    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="a b" WildcardCharacterRanges="0-9,a-z,A-Z,0x20" />
     <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0xff" />
     <Typography Id="Texte" Font="segoeui.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
