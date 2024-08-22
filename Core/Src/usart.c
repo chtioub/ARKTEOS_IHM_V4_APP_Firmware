@@ -148,7 +148,8 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
   if(rxData.size != 0)
   {
-    // TODO : gerer trame non traitée
+	  memset(rxData.data, 0, TAILLE_BUFFER_UART);
+    // TODO : gerer trame non traitï¿½e
   }
 
   memcpy(rxData.data, rxBuffer, Size);

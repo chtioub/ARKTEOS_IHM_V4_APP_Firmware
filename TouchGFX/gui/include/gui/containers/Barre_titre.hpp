@@ -12,11 +12,14 @@ public:
     virtual void initialize();
     void connexionDistante(bool bConnexionDistante);
     void recupConfig(bool bRecupConfig);
+    void date(touchgfx::Unicode::UnicodeChar *textArea_Buffer);
+    void heure(touchgfx::Unicode::UnicodeChar *textArea_Buffer);
     void titre(touchgfx::Unicode::UnicodeChar *textArea_Buffer);
     void sansRetour();
     void sansAccueil();
-//    void fonctionRetour(void (FrontendApplicationBase::*)funct());
+    void erreur(uint16_t u16Erreur);
 protected:
+    touchgfx::Unicode::UnicodeChar textArea_Erreur[4];
 };
 
 #endif // BARRE_TITRE_HPP

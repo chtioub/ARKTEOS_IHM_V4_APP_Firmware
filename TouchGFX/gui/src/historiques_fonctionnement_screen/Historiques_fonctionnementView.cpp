@@ -2,6 +2,8 @@
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
+uint8_t u8AffichageGraphiques;
+
 Historiques_fonctionnementView::Historiques_fonctionnementView()
 {
 
@@ -9,8 +11,6 @@ Historiques_fonctionnementView::Historiques_fonctionnementView()
 
 void Historiques_fonctionnementView::setupScreen()
 {
-    // Init des variables
-    u8AffichageGraphiques = 0;
 	// Init des graphiques
 	for(int i = 0; i < 360; i++)
 	{

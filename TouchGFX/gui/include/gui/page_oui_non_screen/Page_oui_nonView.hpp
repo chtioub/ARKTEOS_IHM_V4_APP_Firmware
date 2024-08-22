@@ -13,8 +13,14 @@ public:
     virtual void tearDownScreen();
     void bouton_non_page_oui_non();
     void bouton_oui_page_oui_non();
+    void bouton_retour();
     void bouton_valider();
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
 protected:
+    uint16_t u16ErreurAffichee;
+    S_DATE sDate_old;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9];
 };
 
 #endif // PAGE_OUI_NONVIEW_HPP

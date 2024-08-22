@@ -19,7 +19,6 @@ public:
 protected:
     touchgfx::Box box_etat_pac[360], box_appoint_chaud[360], box_appoint_ecs[360];
     touchgfx::Unicode::UnicodeChar textAreaBuffer_temp_eau_haut[6], textAreaBuffer_temp_eau_bas[6], textAreaBuffer_temp_ext_haut[6], textAreaBuffer_temp_ext_bas[6], textAreaBuffer_Titre[30];
-    uint8_t u8AffichageGraphiques;
 };
 
 #endif // HISTORIQUES_FONCTIONNEMENTVIEW_HPP

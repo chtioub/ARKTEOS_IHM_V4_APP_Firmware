@@ -2,6 +2,10 @@
 #define MODEL_HPP
 
 #include <touchgfx/hal/Types.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include "arkteos_var_commune.h"
+#include "arkteos_defauts.h"
+#include "IHM_V4.h"
 
 class ModelListener;
 
