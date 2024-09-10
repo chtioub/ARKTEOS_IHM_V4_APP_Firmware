@@ -26,9 +26,24 @@ public:
     void bouton_plus_normal();
     void bouton_moins_confort();
     void bouton_plus_confort();
+    void bouton_retour();
+    void timer_100ms();
+
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+    virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
 protected:
-    uint16_t u16ConsigneReduit, u16ConsigneNormal, u16ConsigneConfort;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_ConsigneReduit[5], textAreaBuffer_ConsigneNormal[5], textAreaBuffer_ConsigneConfort[5], textAreaBuffer_Titre[25];
+    bool bConnexionDistance;
+    uint8_t u8NbZone;
+    uint16_t u16ErreurAffichee, u16ValMin, u16ValMax;
+    S_DATE sDate_old;
+    S_CONFIG_IHM sConfig_IHM_old;
+    S_STATUT_PAC sStatut_PAC_old;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9];
+    uint16_t u16ConsigneReduit, u16ConsigneNormal, u16ConsigneConfort, u16TempoEnvoiConsigne;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_ConsigneReduit[6], textAreaBuffer_ConsigneNormal[6], textAreaBuffer_ConsigneConfort[6];
 };
 
 #endif // ZONEVIEW_HPP

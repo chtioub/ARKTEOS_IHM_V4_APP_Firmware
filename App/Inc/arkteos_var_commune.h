@@ -63,6 +63,7 @@
 #define BLANC			0xFFFFFF
 #define ROUGE_CHAUD		0xD81F2A
 #define BLEU_FROID		0x00628C
+#define ORANGE_HORS_GEL 0xE27E00
 
 /*****************************************************************************/
 //  DEFINITION DES ENUMS
@@ -133,7 +134,7 @@ typedef enum {T_CHAUD, T_FROID, T_PISCINE, T_ECS} E_MODE_TEST_PAC;
 typedef enum {PRIORITE_PISCINE=0, PRIORITE_CHAUD, PRIORITE_EGAL} E_PRIORITE_PISC ;
 typedef enum { GC_AUTO, GC_V40, GC_V50, GC_V60, GC_V70, GC_V80, GC_V90, GC_V100, 
                GC_Delta_T_5, GC_Delta_T_7, GC_Delta_T_10, GC_Delta_T_15 }   E_GESTION_CIRCULATEUR ;
-typedef enum {HUBA_DN_10, HUBA_DN_15, HUBA_DN_20, HUBA_DN_25, HUBA_DN_32, SIKA_DN_32, SIKA_DN_40} E_TYPE_DEBITMETRE;
+typedef enum {HUBA_DN_10, HUBA_DN_15, HUBA_DN_20, HUBA_DN_25, HUBA_DN_32, SIKA_DN_32, SIKA_DN_40, SIKA_VTR1050} E_TYPE_DEBITMETRE;
 typedef enum { TYPE_GRUNDFOS=0, TYPE_WILO, TYPE_RELAIS}                     E_TYPE_CIRCULATEUR ;
 typedef enum { ECS_PLAQUE=0, ECS_BAIN_MARIE, ECS_SERPENTIN}                 E_TYPE_ECHANGEUR_ECS ;
 typedef enum { ECHANGEUR_8KW=0, ECHANGEUR_12KW, ECHANGEUR_16KW, ECHANGEUR_20KW } E_PW_ECHANGEUR_ECS ;
@@ -206,7 +207,7 @@ typedef enum {SOUS_TYPE_GEOTWIN, SOUS_TYPE_SAGITAIR} E_SOUS_TYPE_GEOTWIN;
 typedef enum{PHOENIX_HT} E_SOUS_TYPE_PHOENIX;
 
 // GEOINVERTER
-typedef enum{GEOINV_STD, GEOINV_BI_COMP, GEOINV_BI_ETAGE, GEOINV_SAGITAIR,} E_SOUS_TYPE_GEOINV;
+typedef enum{GEOINV_STD, GEOINV_BI_COMP, GEOINV_BI_ETAGE, GEOINV_SAGITAIR, GEOINV_DEFROST} E_SOUS_TYPE_GEOINV;
 
 // Configurations autres
 typedef enum {SIMULTANE_CHAUD_FROID_NONE, SIMULTANE_CHAUD_FROID_CONFIGURATION_1, SIMULTANE_CHAUD_FROID_CONFIGURATION_2, SIMULTANE_CHAUD_FROID_CONFIGURATION_3} E_TYPE_SIMULTANE_CHAUD_FROID;
@@ -1347,8 +1348,10 @@ typedef struct
 {
 	unsigned char Langue :3;                // E_LANGUE
 	unsigned char u5Spare:5;
-	uint8_t            u8Spare;
-	uint16_t            u16Spare;
+	uint8_t u7Luminosite :7;
+	uint8_t bSpare :1;
+	uint8_t u8PositionX;
+	uint8_t u8PositionY;
 } S_PARAM_UTILISATEUR;                          // 4 Octets
 
 // Liste des contacts
@@ -2274,7 +2277,8 @@ typedef struct//22 bytes
 	uint8_t      bCycleRetourHuile :1;
 	uint8_t      bProblemeThermodynamique : 1;
 	uint8_t      bPreHeating : 1;
-	uint8_t      u5Spare : 5;
+	uint8_t      bDegivrageEnCours : 1;
+	uint8_t      u4Spare : 4;
 
 	int16_t      i16ConsignePrimaire;
 	uint16_t      u16Puissance_Produite;
@@ -2679,6 +2683,11 @@ typedef struct
 
 typedef struct
 {
+	S_PARAM_ETHER_SOFT_III sParamSoft;
+	S_PARAM_ETHER_PORT_III sParamPort;
+	S_PARAM_ETHER_WIFI_III sParamWifi;
+	S_PARAM_ETHER_MODBUS_III sParamModbus;
+
 	S_MODE_ZX sMode_Zx[20];
 	S_MODE_ECS sMode_ECS;
 	S_MODE_PISCINE sMode_Piscine;
@@ -2694,8 +2703,12 @@ typedef struct
 	S_PARAM_PISCINE sParam_Piscine;
 	S_PARAM_REG_EXT sParam_RegulExt;
 	S_PARAM_FRIGO sParam_Frigo;
+	S_PARAM_SAV sParam_SAV;
 	S_PARAM_ZX sParam_Zx[20];
 	S_CONFIG_FRIGO sConfigFrigo[NB_UE_MAX];
+
+	uint16_t u16RecupConfig;
+	uint16_t u16NbCyclique;
 } S_CONFIG_IHM;
 
 

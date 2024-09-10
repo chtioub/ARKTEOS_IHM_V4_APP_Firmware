@@ -74,7 +74,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-  txData_t txData;
+//  txData_t txData;
   /* USER CODE END 1 */
 
   /* MPU Configuration--------------------------------------------------------*/
@@ -127,18 +127,15 @@ int main(void)
 
     MX_TouchGFX_Process();
     /* USER CODE BEGIN 3 */
-    if(decodeRxData(&rxData, &cosebe_rx))
+    if(decodeRxData(&rxData))
     {
       dataUpdated = 1;
     }
 
-    if(sendData == 1)
+    if(txData[0].size != 0)
     {
-      if(computeTxData(&txData, &cosebe_tx) == 0)
-      {
-        HAL_UART_Transmit_IT(&huart2, (uint8_t*)&txData.header, txData.size);
-      }
-      sendData = 0;
+        HAL_UART_Transmit_IT(&huart2, (uint8_t*)&txData[0].data[0], txData[0].size);
+        txData[0].size = 0;
     }
   }
   /* USER CODE END 3 */

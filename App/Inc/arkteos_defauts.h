@@ -21,13 +21,13 @@
 /*****************************************************************************/
 //  DEFINES
 /*****************************************************************************/
-#define NB_MAX_DEFAUTS          1000    // Numéro max de défaut
-#define MAX_DEFAUTS_CARTE       5       // Nombre de défauts max par carte
+#define NB_MAX_DEFAUTS          1000    // Numï¿½ro max de dï¿½faut
+#define MAX_DEFAUTS_CARTE       5       // Nombre de dï¿½fauts max par carte
 // Masque et attributs
-#define MASK_DEFAUT             0x03FF  // Masque des défauts
+#define MASK_DEFAUT             0x03FF  // Masque des dï¿½fauts
 #define DEFAUT_NV_IHM           0x8000  // Non visible depuis l'IHM
 #define DEFAUT_NV_TH            0x4000  // Non visible depuis le Thermostat
-#define DEFAUT_BLOQUANT         0x0800  // Entraine l'arrêt de la demande et fait passer la regulation en mode secours si l'option "En Cas Defaut PAC" est activé
+#define DEFAUT_BLOQUANT         0x0800  // Entraine l'arrï¿½t de la demande et fait passer la regulation en mode secours si l'option "En Cas Defaut PAC" est activï¿½
 #define DEFAUT_NV_HISTORIQUE    0x0400  // Non visible depuis l'historique du menu maintenance
 #define T_DEF_ALERTE            0x0000  // Valeur par defaut ou ne rien mettre ; affichage en Jaune sur l'IHM
 #define T_DEF_DEFAUT            0x1000  // affichage en Rouge sur l'IHM
@@ -52,7 +52,7 @@ typedef enum
     ERR_BOOT_MZ					=  18 | T_DEF_DEFAUT,
 	// Erreurs soft REG (30 -> 134)
     INFO_FONCT_CHAUDIERE        =  30 | DEFAUT_NV_IHM,
-    // Erreurs débits
+    // Erreurs dï¿½bits
     ERR_DEBIT_PRIMAIRE          =  40 | T_DEF_DEFAUT,
     ERR_DEBIT_Z1                =  41 | T_DEF_DEFAUT,
     ERR_DEBIT_Z2                =  42 | T_DEF_DEFAUT,
@@ -64,7 +64,7 @@ typedef enum
     ERR_DEBIT_Z8                =  48 | T_DEF_DEFAUT,
     ERR_DEBIT_GROUPE_A          =  49 | T_DEF_DEFAUT,
     ERR_DEBIT_GROUPE_B          =  50 | T_DEF_DEFAUT,
-    // Erreurs Températures intérieures
+    // Erreurs Tempï¿½ratures intï¿½rieures
     ERR_TINT_Z1                 =  51 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ERR_TINT_Z2                 =  52 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ERR_TINT_Z3                 =  53 | T_DEF_DEFAUT | DEFAUT_NV_TH,
@@ -73,7 +73,7 @@ typedef enum
     ERR_TINT_Z6                 =  56 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ERR_TINT_Z7                 =  57 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ERR_TINT_Z8                 =  58 | T_DEF_DEFAUT | DEFAUT_NV_TH, 
-    // Erreurs sondes d'eau départ
+    // Erreurs sondes d'eau dï¿½part
     ERR_TEAU_Z1_DEPART          =  61 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ERR_TEAU_Z2_DEPART          =  62 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ERR_TEAU_Z3_DEPART          =  63 | T_DEF_DEFAUT | DEFAUT_NV_TH,
@@ -104,7 +104,7 @@ typedef enum
     ERR_TEAU_ECS_MILIEU         = 111 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ERR_TEAU_ECS_BAS            = 112 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     // Erreurs
-    ERR_SYSTEM                  = 114 | T_DEF_DEFAUT | DEFAUT_BLOQUANT,     // Erreur system (longueur de trame incohérente, etc ....)
+    ERR_SYSTEM                  = 114 | T_DEF_DEFAUT | DEFAUT_BLOQUANT,     // Erreur system (longueur de trame incohï¿½rente, etc ....)
     ERR_PRESSION_EAU_CHAUFFAGE  = 115 | T_DEF_DEFAUT | DEFAUT_BLOQUANT,
     ERR_IN_COMPTAGE_PW          = 116 | DEFAUT_NV_TH,
     ERR_EEPROM                  = 117 | T_DEF_DEFAUT,
@@ -137,7 +137,7 @@ typedef enum
     ALERTE_IN_COMPTAGE_PW       = 616 | DEFAUT_NV_TH,
     ALERTE_DEFAUT_APPOINT       = 617,
     ALERTE_MAJ_HEURE            = 618 | DEFAUT_NV_TH,
-    // Alertes sondes inversées
+    // Alertes sondes inversï¿½es
     ALERTE_SONDES_ECS_ENVERS    = 619 | DEFAUT_NV_TH,
     ALERTE_SONDES_Z1_ENVERS     = 620 | DEFAUT_NV_TH,
     ALERTE_SONDES_Z2_ENVERS     = 621 | DEFAUT_NV_TH,
@@ -158,7 +158,7 @@ typedef enum
     ALERTE_CONF_CHAUFFAGE_ECS   = 637 | DEFAUT_NV_TH,
     ALERTE_CONF_CHAUFFAGE_PISCINE=638 | DEFAUT_NV_TH,
     ALERTE_CHOIX_VOIE_CARTE     = 639 | DEFAUT_NV_TH, 
-    // Alertes débits
+    // Alertes dï¿½bits
     ALERTE_DEBIT_PRIMAIRE       = 640,
     ALERTE_DEBIT_Z1             = 641,
     ALERTE_DEBIT_Z2             = 642,
@@ -170,7 +170,7 @@ typedef enum
     ALERTE_DEBIT_Z8             = 648,
     ALERTE_DEBIT_GROUPE_A       = 649,
     ALERTE_DEBIT_GROUPE_B       = 650,
-    // Alertes températures intérieures
+    // Alertes tempï¿½ratures intï¿½rieures
     ALERTE_TINT_Z1              = 651 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_TINT_Z2              = 652 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_TINT_Z3              = 653 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
@@ -179,7 +179,7 @@ typedef enum
     ALERTE_TINT_Z6              = 656 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_TINT_Z7              = 657 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_TINT_Z8              = 658 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
-    // Alertes sondes d'eau départ
+    // Alertes sondes d'eau dï¿½part
     ALERTE_TEAU_Z1_DEPART       = 661 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_TEAU_Z2_DEPART       = 662 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_TEAU_Z3_DEPART       = 663 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
@@ -210,7 +210,7 @@ typedef enum
     ALERTE_PILE_RF6             = 686 | DEFAUT_NV_TH,
     ALERTE_PILE_RF7             = 687 | DEFAUT_NV_TH,
     ALERTE_PILE_RF8             = 688 | DEFAUT_NV_TH,
-    // Alerte de puissance de réception des sondes RF
+    // Alerte de puissance de rï¿½ception des sondes RF
     ALERTE_RECEP_RF1            = 691 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_RECEP_RF2            = 692 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_RECEP_RF3            = 693 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
@@ -278,22 +278,22 @@ typedef enum
     ALERTE_DEF_MODE_HM          = 765 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_CHARGE_R410          = 766 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALERTE_CHARGE_R134          = 767 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
-    ERR_IPM_SURINTENSITE        = 857 | DEFAUT_NV_TH | DEFAUT_NV_IHM,                           // PW : IPM surintensité
+    ERR_IPM_SURINTENSITE        = 857 | DEFAUT_NV_TH | DEFAUT_NV_IHM,                           // PW : IPM surintensitï¿½
     ERR_PILOT_COMP              = 858,                                                          // PW : Erreur pilotage compresseur
-    ERR_COMP_SURINTENSITE       = 859,                                                          // PW : Surintensité compresseur
+    ERR_COMP_SURINTENSITE       = 859,                                                          // PW : Surintensitï¿½ compresseur
     ERR_INPUT_PHASE_LACK        = 860,                                                          // PW : Manque un Phase
-    ERR_IPM_ECHANTILLONAGE      = 861,                                                          // PW : IPM erreur échantillonnage
+    ERR_IPM_ECHANTILLONAGE      = 861,                                                          // PW : IPM erreur ï¿½chantillonnage
     ERR_RADIATEUR_CHAUD         = 862,                                                          // PW : Radiateur PW trop Chaud
     ERR_DC_BUS_SURTENSION       = 863,                                                          // PW : DC bus surtension
     ERR_DC_BUS_SOUSTENSION      = 864,                                                          // PW : DC bus sous tension
     ERR_AC_INPUT_SOUSTENSION    = 865,                                                          // PW : AC input sous tension
-    ERR_PFC_SURINTENSITE        = 866,                                                          // PW : PFC  surintensité
-    ERR_TEMP_RADIATEUR          = 867,                                                          // PW : Erreur Sonde température radiateur
+    ERR_PFC_SURINTENSITE        = 866,                                                          // PW : PFC  surintensitï¿½
+    ERR_TEMP_RADIATEUR          = 867,                                                          // PW : Erreur Sonde tempï¿½rature radiateur
     ERR_COM_RS485               = 868,                                                          // PW : PW RS485 communication en erreur
     ERR_COM_MAITRE_ESCLAVE      = 869,                                                          // PW : Communication master avec esclave erreur
-    ALERTE_COMP_SURINTENSITE    = 870 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,                   // PW : Alerte surintensité compresseur
-    ALERTE_TEMP_RADIATEUR_ELEVEE = 871 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,                  // PW : Alerte Radiateur PW température élevée
-    ALERTE_PFC_SURINTENSITE     = 872 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,                   // PW : Alerte PFC surintensité
+    ALERTE_COMP_SURINTENSITE    = 870 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,                   // PW : Alerte surintensitï¿½ compresseur
+    ALERTE_TEMP_RADIATEUR_ELEVEE = 871 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,                  // PW : Alerte Radiateur PW tempï¿½rature ï¿½levï¿½e
+    ALERTE_PFC_SURINTENSITE     = 872 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,                   // PW : Alerte PFC surintensitï¿½
     ALERTE_WEAK_MAGNETIC        = 873 | DEFAUT_NV_TH | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,    // PW : Alerte weak magnetic
 } E_DEFAUT_AJPAC;
 
@@ -321,51 +321,51 @@ typedef enum
     ERR_MITSU_U9_10             = 358 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U9 PFC erreur
     ERR_MITSU_U9_20             = 359 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U9 PFC/IGBT erreur
     ERR_MITSU_U9                = 360 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U9 Anomalie de Tension d'alimentation",
-    ERR_MITSU_UD                = 361 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UD Protection liée a une surchauffe (TH3)",
+    ERR_MITSU_UD                = 361 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UD Protection liï¿½e a une surchauffe (TH3)",
     ERR_MITSU_A0_A8             = 362 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // A0 a A8 Erreur de communication sur M-NET",
-    ERR_MITSU_E0                = 363 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E0 Erreur Communication avec Télécommmande",
+    ERR_MITSU_E0                = 363 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E0 Erreur Communication avec Tï¿½lï¿½commmande",
     ERR_MITSU_E1_E2             = 364 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E1-E2 Anomalie de la Telecommande",
-    ERR_MITSU_E3                = 365 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E3 Err. Communication Télécommande Transmission",
-    ERR_MITSU_E4                = 366 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E4 Err. Signal Télécommande (avec UI)",
+    ERR_MITSU_E3                = 365 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E3 Err. Communication Tï¿½lï¿½commande Transmission",
+    ERR_MITSU_E4                = 366 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E4 Err. Signal Tï¿½lï¿½commande (avec UI)",
     ERR_MITSU_E5                = 367 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E5 Err. Communication Telecommande (avec UI)",
     ERR_MITSU_E6                = 368 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E6 Erreur COM. Reception UI/UE (detect. UI)",
     ERR_MITSU_E7                = 369 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E7 Erreur COM. Transmit. UI/UE (detect. UI)",
     ERR_MITSU_E8                = 370 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E8 Erreur COM. Reception UI/UE (detect. UE)",
     ERR_MITSU_E9                = 371 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // E9 Erreur COM. Transmit. UI/UE (detect. UE)",
-    ERR_MITSU_EA                = 372 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // EA Cablage des modules en inadéquation avec\nla qté unité intérieure",
+    ERR_MITSU_EA                = 372 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // EA Cablage des modules en inadï¿½quation avec\nla qtï¿½ unitï¿½ intï¿½rieure",
     ERR_MITSU_EB                = 373 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // EB Erreur sur cablage des modules internes et\nexternes ",
-    ERR_MITSU_EC                = 374 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // EC Delai de demarrage écoulé",
-    ERR_MITSU_ED                = 375 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // ED Erreur de communication entre cartes\npilotage et Power (unité externe)",
-    ERR_MITSU_EF                = 376 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // EF Code Erreur indéfini",
+    ERR_MITSU_EC                = 374 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // EC Delai de demarrage ï¿½coulï¿½",
+    ERR_MITSU_ED                = 375 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // ED Erreur de communication entre cartes\npilotage et Power (unitï¿½ externe)",
+    ERR_MITSU_EF                = 376 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // EF Code Erreur indï¿½fini",
     ERR_MITSU_F3                = 377 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // F3 Pressostat BP Ouvert (63L)",
     ERR_MITSU_F5                = 378 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // F5 Pressostat HP Ouvert (63H)",
     ERR_MITSU_F9                = 379 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // F9 Pressostat BP Ouvert (63L) ou\nHP Ouvert (63H)",
-    ERR_MITSU_FB                = 380, // FB Carte Controller PAC module intérieur\nen defaut",
+    ERR_MITSU_FB                = 380, // FB Carte Controller PAC module intï¿½rieur\nen defaut",
     ERR_MITSU_P1                = 381, // P1 Anomalie sur thermostat interieur (TH1)",
     ERR_MITSU_P2                = 382, // P2 Anomalie sur capteur de temperature\nliquide (TH2)",
-    ERR_MITSU_P4                = 383, // P4 Anomalie du capteur d'évacuation (DS)\nou Contact (FS) ",
-    ERR_MITSU_P5                = 384, // P5 Protection débordement de l'evacuation\ninterieure",
+    ERR_MITSU_P4                = 383, // P4 Anomalie du capteur d'ï¿½vacuation (DS)\nou Contact (FS) ",
+    ERR_MITSU_P5                = 384, // P5 Protection dï¿½bordement de l'evacuation\ninterieure",
     ERR_MITSU_P6                = 385, // P6 Protection contre le gel (mode froid) ou\nsurchauffe (mode chaud)",
-    ERR_MITSU_P8                = 386, // P8 Anomalie T° Tuyau R410A",
-    ERR_MITSU_P9                = 387 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // P9 Anomalie de la sonde de T° du condenseur\nevaporateur",
-    ERR_MITSU_U1                = 388 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U1 Pression excessive (klixon HP 63H activé)",
-    ERR_MITSU_U2                = 389 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U2 Défaut du Thermostat de corps et\nde la T° de refoulement (TH4)",
-    ERR_MITSU_U3                = 390 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U3 Defaut sonde T° unité exterieure\n(TH4)  ou (TH32)",
-    ERR_MITSU_U4                = 391 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U4 Defaut sonde T° unité exterieure\n(TH3, TH6, TH7 ou TH8)",
-    ERR_MITSU_U5                = 392 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U5 T° anormale radiateur de commande\nmoteur (UE)",
+    ERR_MITSU_P8                = 386, // P8 Anomalie Tï¿½ Tuyau R410A",
+    ERR_MITSU_P9                = 387 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // P9 Anomalie de la sonde de Tï¿½ du condenseur\nevaporateur",
+    ERR_MITSU_U1                = 388 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U1 Pression excessive (klixon HP 63H activï¿½)",
+    ERR_MITSU_U2                = 389 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U2 Dï¿½faut du Thermostat de corps et\nde la Tï¿½ de refoulement (TH4)",
+    ERR_MITSU_U3                = 390 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U3 Defaut sonde Tï¿½ unitï¿½ exterieure\n(TH4)  ou (TH32)",
+    ERR_MITSU_U4                = 391 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U4 Defaut sonde Tï¿½ unitï¿½ exterieure\n(TH3, TH6, TH7 ou TH8)",
+    ERR_MITSU_U5                = 392 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U5 Tï¿½ anormale radiateur de commande\nmoteur (UE)",
     ERR_MITSU_U6                = 393 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U6 Anomalie sur module de PW commande Moteur",
-    ERR_MITSU_U7                = 394 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U7 Surchauffe liée à une T°  BP trop basse",
-    ERR_MITSU_U8                = 395 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U8 Problème sur Ventilateur Unité Extérieure",
-    ERR_MITSU_UE                = 396 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UE Problème Capteur de Pression HP (63HS)",
-    ERR_MITSU_UF                = 397 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UF Coupure Compresseur suite à surintenté\n(demarrage bloqué)",
-    ERR_MITSU_UH                = 398 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UH Anomalie sur Intensité (carte élec. ) ",
+    ERR_MITSU_U7                = 394 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U7 Surchauffe liï¿½e ï¿½ une Tï¿½  BP trop basse",
+    ERR_MITSU_U8                = 395 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // U8 Problï¿½me sur Ventilateur Unitï¿½ Extï¿½rieure",
+    ERR_MITSU_UE                = 396 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UE Problï¿½me Capteur de Pression HP (63HS)",
+    ERR_MITSU_UF                = 397 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UF Coupure Compresseur suite ï¿½ surintentï¿½\n(demarrage bloquï¿½)",
+    ERR_MITSU_UH                = 398 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UH Anomalie sur Intensitï¿½ (carte ï¿½lec. ) ",
     ERR_MITSU_UL                = 399 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UL Pression BP trop basse",
-    ERR_MITSU_UP                = 400 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UP Compresseur en surintenté",
+    ERR_MITSU_UP                = 400 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // UP Compresseur en surintentï¿½",
     ERR_MITSU_TOR               = 401 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // Erreur Module Externe (signal TOR)",
-    ERR_MITSU_XX                = 402 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // Défaut Module Externe (N° d'erreur non défini)",
-    ERR_MITSU_COM               = 403 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // Défaut Erreur Communication avec PAC",
-    ERR_MITSU_TRAME_INCONNUE    = 404 | T_DEF_DEFAUT | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE, // Défaut reccurent de communication avec PAC",
-    ERR_TIMEOUT_EMISSION        = 405 | T_DEF_DEFAUT, // Défaut reccurent pas d'émisson vers Mitsu depuis 5 mn",
+    ERR_MITSU_XX                = 402 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // Dï¿½faut Module Externe (Nï¿½ d'erreur non dï¿½fini)",
+    ERR_MITSU_COM               = 403 | T_DEF_DEFAUT | DEFAUT_BLOQUANT, // Dï¿½faut Erreur Communication avec PAC",
+    ERR_MITSU_TRAME_INCONNUE    = 404 | T_DEF_DEFAUT | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE, // Dï¿½faut reccurent de communication avec PAC",
+    ERR_TIMEOUT_EMISSION        = 405 | T_DEF_DEFAUT, // Dï¿½faut reccurent pas d'ï¿½misson vers Mitsu depuis 5 mn",
     ERR_MITSU_PE                = 406, // PE Anomalie sur capteur de temperature\nliquide PAC Monobloc (TH32) ",
     ERR_TIMEOUT_COM_RC          = 407 | T_DEF_DEFAUT, // Pas de communication RC depuis 200s
 	// ALERTES
@@ -411,7 +411,7 @@ typedef enum
     DEF_TEMP_BP1                = 527 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     DEF_TEMP_BP2                = 528 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     DEF_TEMP_TSC                = 529 | T_DEF_DEFAUT | DEFAUT_NV_TH,
-    /*Alertes suite à dépassement de valeurs sans entrainer arret PAC, fonctionnement éventuellement en dégradé*/
+    /*Alertes suite ï¿½ dï¿½passement de valeurs sans entrainer arret PAC, fonctionnement ï¿½ventuellement en dï¿½gradï¿½*/
     ALR_TEAU_DEPART_CHAUFFAGE   = 530 | DEFAUT_NV_TH,
     ALR_TEAU_RETOUR_CHAUFFAGE   = 531 | DEFAUT_NV_TH,
     ALR_TEAU_DEPART_CAPTEUR     = 532 | DEFAUT_NV_TH,
@@ -441,10 +441,10 @@ typedef enum
     ALR_DEFAUT_ESCLAVE6         = 556 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ALR_DEFAUT_ESCLAVE7         = 557 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     ALR_CONFIG_ESCLAVE          = 558 | T_DEF_DEFAUT | DEFAUT_NV_TH,
-    DEF_DEMARRAGE_C1            = 559 | T_DEF_DEFAUT | DEFAUT_NV_TH, //Pas de démarrage sute à démarreur progressif HS
-    DEF_DEMARRAGE_C2            = 560 | T_DEF_DEFAUT | DEFAUT_NV_TH, //Pas de démarrage sute à démarreur progressif HS
+    DEF_DEMARRAGE_C1            = 559 | T_DEF_DEFAUT | DEFAUT_NV_TH, //Pas de dï¿½marrage sute ï¿½ dï¿½marreur progressif HS
+    DEF_DEMARRAGE_C2            = 560 | T_DEF_DEFAUT | DEFAUT_NV_TH, //Pas de dï¿½marrage sute ï¿½ dï¿½marreur progressif HS
     DEF_CHARGE_FRIGO            = 561 | T_DEF_DEFAUT | DEFAUT_NV_TH,
-    /*Defauts suite à dépassement de valeurs entrainant arret PAC*/
+    /*Defauts suite ï¿½ dï¿½passement de valeurs entrainant arret PAC*/
     DEF_TEMP_EXT                = 562 | T_DEF_DEFAUT | DEFAUT_NV_TH,
     DEF_PRESSION_HP             = 563 | T_DEF_DEFAUT ,
     DEF_PRESSION_BP             = 564 | T_DEF_DEFAUT ,
@@ -465,11 +465,11 @@ typedef enum
 typedef enum
 {
     // ERREURS / DEFAUTS
-	// Extérieurs
+	// Extï¿½rieurs
     ERR_GEOINV_TEMP_EXT               			= 200,
     DEF_GEOINV_TEMP_EXT             			= 201,
     ERR_GEOINV_HYGRO_EXT               			= 202,	// Perte de comm avec le capteur
-    DEF_GEOINV_HYGRO_EXT             			= 203,	// Valeur remontée par le capteur incohérente
+    DEF_GEOINV_HYGRO_EXT             			= 203,	// Valeur remontï¿½e par le capteur incohï¿½rente
 	// Chauffage
 	ERR_GEOINV_TEAU_DEPART_CHAUFFAGE  			= 210 | T_DEF_DEFAUT | DEFAUT_NV_TH,
 	DEF_GEOINV_TEAU_DEPART_CHAUFFAGE  			= 211 | T_DEF_DEFAUT | DEFAUT_NV_TH,
@@ -565,7 +565,7 @@ typedef enum
     DEF_GEOINV_PERTE_ROTOR_2           			= 437 | T_DEF_DEFAUT,
     DEF_GEOINV_PERTE_ROTOR_3           			= 438 | T_DEF_DEFAUT,  
     // ALERTES
-	// Extérieure
+	// Extï¿½rieure
     ALR_GEOINV_TEMP_EXT             			= 700 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALR_GEOINV_HYGRO_EXT          				= 701 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
 	// Chauffage
@@ -588,16 +588,18 @@ typedef enum
     ALR_GEOINV_PRESSION_HP1            			= 742 | DEFAUT_NV_TH,
     ALR_GEOINV_PRESSION_BP1            			= 743 | DEFAUT_NV_TH,
     ALR_GEOINV_CHARGE_FRIGO_CIRCUIT_1           = 744 | DEFAUT_NV_TH,
+	// Frigo autre
+    ALR_GEOINV_DEFROST_INCOMPLET                = 782 | DEFAUT_NV_TH,
 } E_DEFAUT_GEOINV;
 
 typedef enum
 {
     // ERREURS / DEFAUTS
-	// Extérieurs
+	// Extï¿½rieurs
     ERR_ARKTEA_TEMP_EXT               			= 200,
     DEF_ARKTEA_TEMP_EXT             			= 201,
     ERR_ARKTEA_HYGRO_EXT               			= 202,	// Perte de comm avec le capteur
-    DEF_ARKTEA_HYGRO_EXT             			= 203,	// Valeur remontée par le capteur incohérente
+    DEF_ARKTEA_HYGRO_EXT             			= 203,	// Valeur remontï¿½e par le capteur incohï¿½rente
 	// Chauffage
 	ERR_ARKTEA_TEMP_EAU_DEPART_CHAUFF  			= 210 | T_DEF_DEFAUT | DEFAUT_NV_TH,
 	DEF_ARKTEA_TEMP_EAU_DEPART_CHAUFF  			= 211 | T_DEF_DEFAUT | DEFAUT_NV_TH,
@@ -658,7 +660,7 @@ typedef enum
     DEF_ARKTEA_SURINTENSITE_MODULE_PUISSANCE_3  = 416 | T_DEF_DEFAUT,
     DEF_ARKTEA_SURINTENSITE_MODULE_PUISSANCE_4  = 417 | T_DEF_DEFAUT,
     // ALERTES
-	// Extérieure
+	// Extï¿½rieure
     ALR_ARKTEA_TEMP_EXT             			= 700 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALR_ARKTEA_HYGRO_EXT          				= 701 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
 	// Chauffage
@@ -681,11 +683,11 @@ typedef enum
 typedef enum
 {
     // ERREURS / DEFAUTS
-	// Extérieurs
+	// Extï¿½rieurs
     ERR_TYPE_TEMP_EXT               			= 200,
     DEF_TYPE_TEMP_EXT             				= 201,
     ERR_TYPE_HYGRO_EXT               			= 202,	// Perte de comm avec le capteur
-    DEF_TYPE_HYGRO_EXT             				= 203,	// Valeur remontée par le capteur incohérente
+    DEF_TYPE_HYGRO_EXT             				= 203,	// Valeur remontï¿½e par le capteur incohï¿½rente
 	// Chauffage
 	ERR_TYPE_TEMP_EAU_DEPART_CHAUFF  			= 210 | T_DEF_DEFAUT | DEFAUT_NV_TH,
 	DEF_TYPE_TEMP_EAU_DEPART_CHAUFF  			= 211 | T_DEF_DEFAUT | DEFAUT_NV_TH,
@@ -803,7 +805,7 @@ typedef enum
     DEF_TYPE_DRIVER_36           				= 437 | T_DEF_DEFAUT,
     DEF_TYPE_DRIVER_37           				= 438 | T_DEF_DEFAUT,  
     // ALERTES
-	// Extérieure
+	// Extï¿½rieure
     ALR_TYPE_TEMP_EXT             				= 700 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
     ALR_TYPE_HYGRO_EXT          				= 701 | DEFAUT_NV_IHM | DEFAUT_NV_HISTORIQUE,
 	// Chauffage
@@ -838,6 +840,7 @@ typedef enum
 	// Frigo autres
     ALR_TYPE_TEMP_LIQUIDE            			= 780 | DEFAUT_NV_TH,
     ALR_TYPE_TEMP_SPARE            				= 781 | DEFAUT_NV_TH,
+    ALR_TYPE_DEFROST_INCOMPLET                  = 782 | DEFAUT_NV_TH,
 } E_DEFAUT_TYPE;
 
 #endif

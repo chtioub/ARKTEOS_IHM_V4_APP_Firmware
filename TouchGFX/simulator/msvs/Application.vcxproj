@@ -208,6 +208,27 @@
     <ClCompile Include="..\..\gui\src\zone_screen\ZonePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\zone_screen\ZoneView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_config_in_out_screen\Installation_config_in_outPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_config_in_out_screen\Installation_config_in_outView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_config_in_out_screen\Installation_config_in_outViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_param_avances_screen\Installation_param_avancesPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_param_avances_screen\Installation_param_avancesView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_param_avances_screen\Installation_param_avancesViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\historique_defauts_screen\Historique_defautsPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\historique_defauts_screen\Historique_defautsView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\historique_defauts_screen\Historique_defautsViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_test_composants_screen\Maintenance_test_composantsPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_test_composants_screen\Maintenance_test_composantsView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_test_composants_screen\Maintenance_test_composantsViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\usine_param_avances_screen\Usine_param_avancesPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\usine_param_avances_screen\Usine_param_avancesView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_param_avances_screen\Usine_param_avancesViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\code_numerique_screen\Code_numeriquePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\code_numerique_screen\Code_numeriqueView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\code_numerique_screen\Code_numeriqueViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_fct_avances_screen\Maintenance_fct_avancesPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_fct_avances_screen\Maintenance_fct_avancesView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_fct_avances_screen\Maintenance_fct_avancesViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -545,6 +566,27 @@
     <ClInclude Include="..\..\gui\include\gui\zone_screen\ZonePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\zone_screen\ZoneView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_in_out_screen\Installation_config_in_outPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_in_out_screen\Installation_config_in_outView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_config_in_out_screen\Installation_config_in_outViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_param_avances_screen\Installation_param_avancesPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_param_avances_screen\Installation_param_avancesView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_param_avances_screen\Installation_param_avancesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\historique_defauts_screen\Historique_defautsPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\historique_defauts_screen\Historique_defautsView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\historique_defauts_screen\Historique_defautsViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_test_composants_screen\Maintenance_test_composantsPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_test_composants_screen\Maintenance_test_composantsView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_test_composants_screen\Maintenance_test_composantsViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\usine_param_avances_screen\Usine_param_avancesPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\usine_param_avances_screen\Usine_param_avancesView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_param_avances_screen\Usine_param_avancesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\code_numerique_screen\Code_numeriquePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\code_numerique_screen\Code_numeriqueView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\code_numerique_screen\Code_numeriqueViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_fct_avances_screen\Maintenance_fct_avancesPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_fct_avances_screen\Maintenance_fct_avancesView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_fct_avances_screen\Maintenance_fct_avancesViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

@@ -892,6 +892,90 @@
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>FBFFEC14-4D8A-A78D-0092-CD3F4155021B</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\installation_param_avances_screen">
+      <UniqueIdentifier>5AE3C51D-E186-6844-3A90-47E0A07E0BA6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_param_avances_screen">
+      <UniqueIdentifier>747D1F75-FB1C-076C-CD63-DBA2F7DFDA51</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_config_in_out_screen">
+      <UniqueIdentifier>738453BF-AA60-2866-57B3-40FF3C2B74B6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_config_in_out_screen">
+      <UniqueIdentifier>C2C4B05A-B103-6F06-CBCF-D520FEFF2886</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_config_in_out_screen">
+      <UniqueIdentifier>69E9DE21-88C9-B1A8-C43E-7D59EB5E53D9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_config_in_out_screen">
+      <UniqueIdentifier>34FBF825-B9D4-7440-FB54-66886DC1F207</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_param_avances_screen">
+      <UniqueIdentifier>6880CD14-6E39-85F8-45AB-ECE7F33B5614</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_param_avances_screen">
+      <UniqueIdentifier>94FD1090-587A-C1DF-ABC5-DCE9BDD74165</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\usine_param_avances_screen">
+      <UniqueIdentifier>8592835E-6568-03FB-87A0-225CC15F85DE</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_param_avances_screen">
+      <UniqueIdentifier>39239BB5-1CC6-F125-6B40-F50712AB65C3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\maintenance_test_composants_screen">
+      <UniqueIdentifier>02338318-B470-D766-A78A-F641FABE2CDD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\maintenance_test_composants_screen">
+      <UniqueIdentifier>0C89ED6D-4043-7457-36B8-48B93023C3B4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\historique_defauts_screen">
+      <UniqueIdentifier>DC555B3A-CEBC-1643-DDC2-7DA10131D9A3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\historique_defauts_screen">
+      <UniqueIdentifier>3572847C-48F2-8E6C-9F04-8847AE95EE15</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\maintenance_test_composants_screen">
+      <UniqueIdentifier>3A906274-8649-7FE1-B60E-0B9767A10D8F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\maintenance_test_composants_screen">
+      <UniqueIdentifier>7A4B90D4-97F9-BE14-F4BA-1E98ECED9344</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_param_avances_screen">
+      <UniqueIdentifier>438A2C16-D696-5FAC-5102-F28F52B816F3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_param_avances_screen">
+      <UniqueIdentifier>2D280B71-6243-AD82-86FA-2FD3B998D124</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\historique_defauts_screen">
+      <UniqueIdentifier>4591E2A9-5DB8-808E-8C99-BAF98E442D99</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\historique_defauts_screen">
+      <UniqueIdentifier>89BB4CE9-E760-BA46-6682-D0D9F431A7C3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\maintenance_fct_avances_screen">
+      <UniqueIdentifier>A77D1F2F-AD79-368C-AAD6-77CA6DC6A37C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\maintenance_fct_avances_screen">
+      <UniqueIdentifier>CE2F73E9-08D8-9B03-E916-077710618904</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\code_numerique_screen">
+      <UniqueIdentifier>EA7F1B69-F1FF-3F53-FD9F-F2B95F9EDDA8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\code_numerique_screen">
+      <UniqueIdentifier>307FC9C2-1079-549D-782B-C7DC7F0AC2B2</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\maintenance_fct_avances_screen">
+      <UniqueIdentifier>A43ACDD6-9AC6-E412-402F-23F51F97FFD3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\maintenance_fct_avances_screen">
+      <UniqueIdentifier>4D5D8C29-21A1-CF65-30A2-E540A1FC1B8A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\code_numerique_screen">
+      <UniqueIdentifier>20A35843-4F71-7B11-A514-731F5849489F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\code_numerique_screen">
+      <UniqueIdentifier>A89B14F1-34DC-12BA-8252-4433DEC3A554</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1484,6 +1568,69 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\zone_screen\ZoneViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_config_in_out_screen\Installation_config_in_outPresenter.cpp">
+      <Filter>Source Files\gui\installation_config_in_out_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_config_in_out_screen\Installation_config_in_outView.cpp">
+      <Filter>Source Files\gui\installation_config_in_out_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_config_in_out_screen\Installation_config_in_outViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_config_in_out_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_param_avances_screen\Installation_param_avancesPresenter.cpp">
+      <Filter>Source Files\gui\installation_param_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_param_avances_screen\Installation_param_avancesView.cpp">
+      <Filter>Source Files\gui\installation_param_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_param_avances_screen\Installation_param_avancesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_param_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\historique_defauts_screen\Historique_defautsPresenter.cpp">
+      <Filter>Source Files\gui\historique_defauts_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\historique_defauts_screen\Historique_defautsView.cpp">
+      <Filter>Source Files\gui\historique_defauts_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\historique_defauts_screen\Historique_defautsViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\historique_defauts_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_test_composants_screen\Maintenance_test_composantsPresenter.cpp">
+      <Filter>Source Files\gui\maintenance_test_composants_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_test_composants_screen\Maintenance_test_composantsView.cpp">
+      <Filter>Source Files\gui\maintenance_test_composants_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_test_composants_screen\Maintenance_test_composantsViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\maintenance_test_composants_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_param_avances_screen\Usine_param_avancesPresenter.cpp">
+      <Filter>Source Files\gui\usine_param_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_param_avances_screen\Usine_param_avancesView.cpp">
+      <Filter>Source Files\gui\usine_param_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_param_avances_screen\Usine_param_avancesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_param_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\code_numerique_screen\Code_numeriquePresenter.cpp">
+      <Filter>Source Files\gui\code_numerique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\code_numerique_screen\Code_numeriqueView.cpp">
+      <Filter>Source Files\gui\code_numerique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\code_numerique_screen\Code_numeriqueViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\code_numerique_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_fct_avances_screen\Maintenance_fct_avancesPresenter.cpp">
+      <Filter>Source Files\gui\maintenance_fct_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_fct_avances_screen\Maintenance_fct_avancesView.cpp">
+      <Filter>Source Files\gui\maintenance_fct_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_fct_avances_screen\Maintenance_fct_avancesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\maintenance_fct_avances_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2487,6 +2634,69 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\zone_screen\ZoneViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_in_out_screen\Installation_config_in_outPresenter.hpp">
+      <Filter>Header Files\gui\installation_config_in_out_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_in_out_screen\Installation_config_in_outView.hpp">
+      <Filter>Header Files\gui\installation_config_in_out_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_config_in_out_screen\Installation_config_in_outViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_config_in_out_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_param_avances_screen\Installation_param_avancesPresenter.hpp">
+      <Filter>Header Files\gui\installation_param_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_param_avances_screen\Installation_param_avancesView.hpp">
+      <Filter>Header Files\gui\installation_param_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_param_avances_screen\Installation_param_avancesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_param_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\historique_defauts_screen\Historique_defautsPresenter.hpp">
+      <Filter>Header Files\gui\historique_defauts_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\historique_defauts_screen\Historique_defautsView.hpp">
+      <Filter>Header Files\gui\historique_defauts_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\historique_defauts_screen\Historique_defautsViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\historique_defauts_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_test_composants_screen\Maintenance_test_composantsPresenter.hpp">
+      <Filter>Header Files\gui\maintenance_test_composants_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_test_composants_screen\Maintenance_test_composantsView.hpp">
+      <Filter>Header Files\gui\maintenance_test_composants_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_test_composants_screen\Maintenance_test_composantsViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\maintenance_test_composants_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_param_avances_screen\Usine_param_avancesPresenter.hpp">
+      <Filter>Header Files\gui\usine_param_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_param_avances_screen\Usine_param_avancesView.hpp">
+      <Filter>Header Files\gui\usine_param_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_param_avances_screen\Usine_param_avancesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_param_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\code_numerique_screen\Code_numeriquePresenter.hpp">
+      <Filter>Header Files\gui\code_numerique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\code_numerique_screen\Code_numeriqueView.hpp">
+      <Filter>Header Files\gui\code_numerique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\code_numerique_screen\Code_numeriqueViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\code_numerique_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_fct_avances_screen\Maintenance_fct_avancesPresenter.hpp">
+      <Filter>Header Files\gui\maintenance_fct_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_fct_avances_screen\Maintenance_fct_avancesView.hpp">
+      <Filter>Header Files\gui\maintenance_fct_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_fct_avances_screen\Maintenance_fct_avancesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\maintenance_fct_avances_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

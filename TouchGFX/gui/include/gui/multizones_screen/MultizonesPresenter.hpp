@@ -27,6 +27,13 @@ public:
 
     virtual ~MultizonesPresenter() {}
 
+    virtual void changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx);
+    virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+
 private:
     MultizonesPresenter();
 

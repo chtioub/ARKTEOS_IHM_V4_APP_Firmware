@@ -24,9 +24,19 @@ public:
     void majNbJoursMois();
     void majMois();
     void bouton_valider();
+
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
+    bool bConnexionDistance;
     uint8_t u8Minutes, u8Heures, u8Jour, u8Mois, u8Annee, u8NbJoursMois;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[30], textAreaBuffer_Minutes[3], textAreaBuffer_Heures[3], textAreaBuffer_Jour[3], textAreaBuffer_Mois[3], textAreaBuffer_Annee[3], textAreaBuffer_AnneeComplete[5];
+    uint16_t u16ErreurAffichee;
+    S_DATE sDate_old;
+    S_CONFIG_IHM sConfig_IHM_old;
+    S_STATUT_PAC sStatut_PAC_old;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_Minutes[3], textAreaBuffer_Heures[3], textAreaBuffer_Jour[3], textAreaBuffer_Mois[3], textAreaBuffer_Annee[3], textAreaBuffer_AnneeComplete[5];
 };
 
 #endif // DATE_HEUREVIEW_HPP

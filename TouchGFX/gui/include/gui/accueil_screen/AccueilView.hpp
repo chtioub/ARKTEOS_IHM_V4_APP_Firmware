@@ -14,6 +14,7 @@ public:
     void Timer_500ms();
     void bouton_marche_arret();
     void bouton_zone_1();
+    void bouton_zone_2();
     void changeLogo(bool bVisible);
     virtual void changeModePac(bool marche);
     virtual void changeDate(S_DATE *sDate);

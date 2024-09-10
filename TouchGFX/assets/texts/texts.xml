@@ -8,6 +8,71 @@
     <Language Id="DE" />
   </Languages>
   <Texts>
+    <TextGroup Id="Erreurs">
+      <Text Id="text_err_18_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot carte Multizone</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_17_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot carte ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_16_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot antenne RF</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_15_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot IHM</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_14_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot carte FRIGO</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_13_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot carte PW</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_12_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot carte FAN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_11_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot carte REG - REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_10_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Boot carte REG - ETHER</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Attente">
       <Text Id="text_recup_config_valeur_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">33</Translation>
@@ -24,11 +89,11 @@
         <Translation Language="DE">Recup config &lt;Value&gt;%</Translation>
       </Text>
       <Text Id="text_attente_communication_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Démarrage système</Translation>
-        <Translation Language="GB">Attente communication</Translation>
-        <Translation Language="PT">Attente communication</Translation>
-        <Translation Language="NL">Attente communication</Translation>
-        <Translation Language="DE">Attente communication</Translation>
+        <Translation Language="FR">Démarrage système &lt;value&gt;</Translation>
+        <Translation Language="GB">Attente communication &lt;value&gt;</Translation>
+        <Translation Language="PT">Attente communication &lt;value&gt;</Translation>
+        <Translation Language="NL">Attente communication &lt;value&gt;</Translation>
+        <Translation Language="DE">Attente communication &lt;value&gt;</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Bouclage_ecs">
@@ -397,6 +462,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Derogation">
+      <Text Id="text_consigne_derog_ext_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Consigne de la température d'eau de la dérogation ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_question_derog_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Voulez-vous activer un cycle de dérogation chauffage ?</Translation>
         <Translation Language="GB">Do you want to activate a heating override cycle?</Translation>
@@ -440,7 +512,7 @@
         <Translation Language="DE">Durée de la dérogation ?</Translation>
       </Text>
       <Text Id="text_valeur_consigne_derog_2_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">0.0°C</Translation>
+        <Translation Language="FR">0.0</Translation>
         <Translation Language="GB">0.0°C</Translation>
         <Translation Language="PT">0.0°C</Translation>
         <Translation Language="NL">0.0°C</Translation>
@@ -485,13 +557,6 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Page_oui_non">
-      <Text Id="text_marche_general_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Souhaitez-vous démarrer votre PAC ?</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
       <Text Id="text_arret_general_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Souhaitez-vous arrêter votre PAC ?</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -609,7 +674,7 @@
         <Translation Language="DE">Bouclage</Translation>
       </Text>
       <Text Id="text_ecs_derog_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Dérogation</Translation>
+        <Translation Language="FR">Dérogation ECS</Translation>
         <Translation Language="GB">Exemption</Translation>
         <Translation Language="PT">Isenção</Translation>
         <Translation Language="NL">Dérogation</Translation>
@@ -1158,7 +1223,7 @@
         <Translation Language="DE">Mode&#10;chauffe-eau</Translation>
       </Text>
       <Text Id="mode_ecs_on_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Mode chauffe-eau</Translation>
+        <Translation Language="FR">Mode&#10;chauffe-eau</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">Mode chauffe-eau</Translation>
@@ -1192,7 +1257,7 @@
         <Translation Language="NL">Modifier le&#10;code d'accès</Translation>
         <Translation Language="DE">Modifier le&#10;code d'accès</Translation>
       </Text>
-      <Text Id="wattmetre_off_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_wattmetre_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Wattmètre</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -1206,7 +1271,7 @@
         <Translation Language="NL">Wattmètre</Translation>
         <Translation Language="DE">Wattmètre</Translation>
       </Text>
-      <Text Id="mise_chauffe_dalle_off_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_mise_chauffe_dalle_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Mise en chauffe&#10;dalle</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -1234,8 +1299,8 @@
         <Translation Language="NL">Configuration&#10;in/out&#10;carte REG</Translation>
         <Translation Language="DE">Configuration&#10;in/out&#10;carte REG</Translation>
       </Text>
-      <Text Id="mise_chauffe_dalle_on_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Mise en chauffe&#10;dalle</Translation>
+      <Text Id="text_titre_mise_chauffe_dalle_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Mise en chauffe dalle</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">Mise en chauffe&#10;dalle</Translation>
@@ -1966,6 +2031,55 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Programmation">
+      <Text Id="text_prog_bouclage_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Prog. Bouclage ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_prog_zone_rafraichissement_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Prog. rafraichissement </Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_prog_zone_chaud_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Prog. chauffage </Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_prog_regul_ext_rafraichissement_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Prog. regul. externe rafraichissement</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_prog_regul_ext_chaud_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Prog. regul. externe chaud</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_prog_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Prog. piscine</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_prog_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Prog. ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_barre_heure_22_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">22</Translation>
         <Translation Language="GB">0</Translation>
@@ -2255,6 +2369,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Infos_systeme">
+      <Text Id="text_infos_systeme_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Infos / Versions</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_modele_droite_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Modèle</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -2447,7 +2568,7 @@
         <Translation Language="DE">&lt;value&gt;</Translation>
       </Text>
       <Text Id="text_valeur_consigne_eau_primaire_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">45°C</Translation>
+        <Translation Language="FR">45.0</Translation>
         <Translation Language="GB">45°C</Translation>
         <Translation Language="PT">45°C</Translation>
         <Translation Language="NL">45°C</Translation>
@@ -2832,7 +2953,7 @@
         <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
         <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
       </Text>
-      <Text Id="text_valeur_type_capteur_init_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_valeur_type_capteur_nappe_barrage_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Nappe barrage</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -3032,7 +3153,7 @@
         <Translation Language="NL">Oui</Translation>
         <Translation Language="DE">Oui</Translation>
       </Text>
-      <Text Id="text_valeur_type_circulateur_init_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_valeur_type_circulateur_init_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Circulateur piloté</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -3312,8 +3433,29 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Secours">
+      <Text Id="text_texte_secours_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">En activant cette action, la production ECS sera réalisée uniquement par les résistances électrique.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_secours_pac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action arrête la PAC et active le chauffage par les résistances ou la chaudière.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_secours_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le mode secours ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_secours_pac_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Secours</Translation>
+        <Translation Language="FR">Secours PAC</Translation>
         <Translation Language="GB">Rescue</Translation>
         <Translation Language="PT">Resgatar</Translation>
         <Translation Language="NL">Secours</Translation>
@@ -3414,6 +3556,20 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Usine">
+      <Text Id="Text_offset_loi_eau_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Offset sur la loi d'eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ballon_tampon_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Ballon tampon</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_pac_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">PAC</Translation>
         <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
@@ -3733,15 +3889,22 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Vacances">
+      <Text Id="text_question_mode_simultane_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer la gestion piscine en simultané ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_zone_1_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0°C</Translation>
+        <Translation Language="FR">12.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_zone_2_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0°C</Translation>
+        <Translation Language="FR">12.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -3783,35 +3946,35 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_zone_3_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0°C</Translation>
+        <Translation Language="FR">12.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_zone_4_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0°C</Translation>
+        <Translation Language="FR">12.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_zone_5_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0°C</Translation>
+        <Translation Language="FR">12.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_zone_6_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0°C</Translation>
+        <Translation Language="FR">12.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_zone_7_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0°C</Translation>
+        <Translation Language="FR">12.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -3832,7 +3995,7 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_zone_8_temp_orange_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0°C</Translation>
+        <Translation Language="FR">12.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -3993,14 +4156,14 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_valeur_nb_jours_absence_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">8 jours</Translation>
+        <Translation Language="FR">8</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_valeur_nb_jours_absence_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="FR">&lt;value&gt; jours</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
         <Translation Language="NL">&lt;value&gt;</Translation>
@@ -4129,6 +4292,741 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_alarmes_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Alarmes</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_nu_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Nu</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_carte_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_entree_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Entrée</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_ejp_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">EJP</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_sur_carte_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sur carte</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_num_es_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Numéro E/S</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_fonction_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Fonction</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_A42X" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">****</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_large_centre" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_3ZN1" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_HXFQ" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_IJMU" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_6UEA" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_UMII" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_WQWB" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_JCMO" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_TDDM" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">7</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_6KYQ" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_9X9Y" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">9</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_circulateur_pwm_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">PWM</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_vit_circulteur_v100_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">V100</Translation>
+        <Translation Language="GB">Par défaut</Translation>
+        <Translation Language="PT">Par défaut</Translation>
+        <Translation Language="NL">Par défaut</Translation>
+        <Translation Language="DE">Par défaut</Translation>
+      </Text>
+      <Text Id="text_vit_circulteur_v90_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">V90</Translation>
+        <Translation Language="GB">Par défaut</Translation>
+        <Translation Language="PT">Par défaut</Translation>
+        <Translation Language="NL">Par défaut</Translation>
+        <Translation Language="DE">Par défaut</Translation>
+      </Text>
+      <Text Id="text_vit_circulteur_v80_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">V80</Translation>
+        <Translation Language="GB">Par défaut</Translation>
+        <Translation Language="PT">Par défaut</Translation>
+        <Translation Language="NL">Par défaut</Translation>
+        <Translation Language="DE">Par défaut</Translation>
+      </Text>
+      <Text Id="text_vit_circulteur_v70_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">V70</Translation>
+        <Translation Language="GB">Par défaut</Translation>
+        <Translation Language="PT">Par défaut</Translation>
+        <Translation Language="NL">Par défaut</Translation>
+        <Translation Language="DE">Par défaut</Translation>
+      </Text>
+      <Text Id="text_vit_circulteur_v60_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">V60</Translation>
+        <Translation Language="GB">Par défaut</Translation>
+        <Translation Language="PT">Par défaut</Translation>
+        <Translation Language="NL">Par défaut</Translation>
+        <Translation Language="DE">Par défaut</Translation>
+      </Text>
+      <Text Id="text_vit_circulteur_v50_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">V50</Translation>
+        <Translation Language="GB">Par défaut</Translation>
+        <Translation Language="PT">Par défaut</Translation>
+        <Translation Language="NL">Par défaut</Translation>
+        <Translation Language="DE">Par défaut</Translation>
+      </Text>
+      <Text Id="text_vit_circulteur_v40_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">V40</Translation>
+        <Translation Language="GB">Par défaut</Translation>
+        <Translation Language="PT">Par défaut</Translation>
+        <Translation Language="NL">Par défaut</Translation>
+        <Translation Language="DE">Par défaut</Translation>
+      </Text>
+      <Text Id="text_vit_circulteur_defaut_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Par défaut</Translation>
+        <Translation Language="GB">Par défaut</Translation>
+        <Translation Language="PT">Par défaut</Translation>
+        <Translation Language="NL">Par défaut</Translation>
+        <Translation Language="DE">Par défaut</Translation>
+      </Text>
+      <Text Id="text_type_circulateur_0_10v_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">0 - 10V</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_circulateur_pilote_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Circulateur piloté</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_circulateur_relais_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Relais</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_histo_defaut_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Historique alarmes et défauts</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_test_date_heure_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">20:00 15/09/2024</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_date_heure_erreur_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_texte_secours_pression_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">En activant cette dérogation, le défaut pression d'eau sera inhibée temporairement (72h).&#10;La dérogation pression ne sera plus active en cas de mise hors tension de votre PAC.&#10;Merci de contacter votre installateur.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_raz_energies_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Attention : cette fonction efface l'ensemble des énergies.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_raz_energies_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ des énergies</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_raz_tps_fonct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ des temps de fonctionnement</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_raz_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous effacer ces données ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_derog_pression_bp_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">En activant cette dérogation, le transmetteur de pression BP sera inhibé. La dérogation pression n'est pas active&#10;pour le mode rafraichissement ou en cas de mise hors tension de votre PAC.&#10;Merci de contacter votre installateur.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_derog_pression_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le mode dérogation pression ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_secours_pression_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dérogation sur défaut pression</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_restart_ihm_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous redémarre votre IHM ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_restart_ihm_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Attention : cette fonction redémarre seulement votre écran.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_restart_ihm_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Redémarrer son IHM</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_raz_log_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous effacer ce fichier ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_raz_log_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Attention : cette fonction efface le logfile concernant le serveur ethernet.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_raz_log_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ log ethernet</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_raz_soft_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous effacer ces fichiers ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_raz_soft_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Attention : cette fonction supprime les osfts stockés en mémoire flash (REG, ETHER, FRIGO, ...).</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_raz_soft_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ des softs en flash</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_restart_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Redémarrer sa PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_restart_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Attention : cette fonction redémarre votre PAC. Assurez vous qu'il n'y a pas de demande et que les compresseurs sont à l'arrêt.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_restart_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous redémarrer votre PAC ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_shunt_tempo_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous réduire les temporisations ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_shunt_tempo_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Attention : permet de réduie les temporisations, à n'utiliser que pour des tests.&#10;Enlever la fonction après vos tests.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_raz_histo_erreur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous effacer l'historique des erreurs ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_raz_histo_erreur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action efface l'historique des erreurs, pour revenir à un historique d'erreur vierge.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_raz_histo_erreur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ historique erreurs</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_raz_code_maint_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action remet le code maintenance par défaut 1111.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_raz_code_maint_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ code maintenance</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_raz_code_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous réinitialiser le code ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_raz_code_install_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action remet le code installation par défaut 1111.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_raz_code_install_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ code installation</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_raz_config_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous effacer la configuration et l'historique ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_raz_config_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action efface les historiques, la configuration et le paramètrage usine pour revenir à une config par défaut.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_raz_config_usine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ config usine</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_redemarrer_ihm_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Redémarrer son&#10;IHM</Translation>
+        <Translation Language="GB">Restart your&#10;HP</Translation>
+        <Translation Language="PT">Reinicie o seu&#10;BONÉ</Translation>
+        <Translation Language="NL">Redémarrer sa&#10;PAC</Translation>
+        <Translation Language="DE">Redémarrer sa&#10;PAC</Translation>
+      </Text>
+      <Text Id="text_raz_tps_fonct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ des temps&#10;de&#10;fonctionnement</Translation>
+        <Translation Language="GB">HP test</Translation>
+        <Translation Language="PT">Teste PAC</Translation>
+        <Translation Language="NL">Test PAC</Translation>
+        <Translation Language="DE">Test PAC</Translation>
+      </Text>
+      <Text Id="text_titre_derog_pression_bp_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dérogation&#10;transmetteur de&#10;pression BP</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_raz_softs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ softs en&#10;flash</Translation>
+        <Translation Language="GB">Test&#10;components</Translation>
+        <Translation Language="PT">Teste&#10;componentes</Translation>
+        <Translation Language="NL">Test&#10;composants</Translation>
+        <Translation Language="DE">Test&#10;composants</Translation>
+      </Text>
+      <Text Id="text_raz_log_ether_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ log&#10;ethernet</Translation>
+        <Translation Language="GB">HP test</Translation>
+        <Translation Language="PT">Teste PAC</Translation>
+        <Translation Language="NL">Test PAC</Translation>
+        <Translation Language="DE">Test PAC</Translation>
+      </Text>
+      <Text Id="text_raz_energies_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">RAZ des&#10;énergies</Translation>
+        <Translation Language="GB">Historical&#10;faults</Translation>
+        <Translation Language="PT">Histórico&#10;falhas, panes</Translation>
+        <Translation Language="NL">Historique&#10;des défauts</Translation>
+        <Translation Language="DE">Historique&#10;des défauts</Translation>
+      </Text>
+      <Text Id="text_param_circuit_capt_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramètres du circuit captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_param_circuit_prim_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramètres du circuit primaire</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_marche_general_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Souhaitez-vous démarrer votre PAC ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_param_avance_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramètres avancés piscine</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_choix_fluide_c1_c2_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fluide C1 / C2</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_titre_cumul_energie_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Compteur énergies cumulées</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_cumul_energie_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous effacer les compteurs d'énergie ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_cumul_energie_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action permet de mettre le compteur des cumuls d'énergie à zéro.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_date_heure_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous effacer, changer la date ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_date_heure_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Le changement de date peut agir sur les historiques.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_type_capteur_nappe_directe_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Nappe directe</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_type_capteur_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Capteur</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_geotwin_iv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">GEOTWIN_IV</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_vacances_off_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sélectionner les zones sur lesquelles vous souhaitez conserver une consigne pendant vos vacances</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_freecooling_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le mode freecooling ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_freecooling_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action active le mode freecooling, pour le mode rafraichissement de la PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_freecooling_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Mode freecooling</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_raz_config_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action efface la configuration pour revenir à une configuration par défaut.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_raz_config_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous effacer la configuration ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_chauffe_dalle_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer la mise en chauffe dalle ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_regul_bcp_interne_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">BCP interne</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_gainable_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Gainable</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ventilo_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Ventilo-convect.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_radiateur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Radiateur</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_plancher_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Plancher</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_choix_fluide_c1_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fluide C1</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_type_capteur_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Type de capteur</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_appoint_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Appoint ECS</Translation>
+        <Translation Language="GB">Heating adding</Translation>
+        <Translation Language="PT">Suplemento</Translation>
+        <Translation Language="NL">Appoint</Translation>
+        <Translation Language="DE">Appoint</Translation>
+      </Text>
+      <Text Id="text_legionel_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Le cycle anti-legionellose force la température d'eau ECS à 65°C une fois par semaine</Translation>
+        <Translation Language="GB">Do you want to force a DHW cycle?</Translation>
+        <Translation Language="PT">Quer forçar um ciclo de AQS?</Translation>
+        <Translation Language="NL">Voulez-vous forcer un cycle ECS ?</Translation>
+        <Translation Language="DE">Voulez-vous forcer un cycle ECS ?</Translation>
+      </Text>
+      <Text Id="text_question_legionel_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous programmer un cycle anti-légionellose hebdomadaire ?</Translation>
+        <Translation Language="GB">Do you want to force a DHW cycle?</Translation>
+        <Translation Language="PT">Quer forçar um ciclo de AQS?</Translation>
+        <Translation Language="NL">Voulez-vous forcer un cycle ECS ?</Translation>
+        <Translation Language="DE">Voulez-vous forcer un cycle ECS ?</Translation>
+      </Text>
       <Text Id="text_temp_ballon_externe_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">T°C eau</Translation>
         <Translation Language="GB">New Text</Translation>

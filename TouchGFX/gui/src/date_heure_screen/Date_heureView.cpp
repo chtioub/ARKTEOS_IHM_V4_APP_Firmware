@@ -3,20 +3,35 @@
 
 Date_heureView::Date_heureView()
 {
-
-}
-
-void Date_heureView::setupScreen()
-{
+	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
+	sDate_old.Date = 0;
+	u16ErreurAffichee = 0;
+	changeDate(&sDate);
+	bConnexionDistance = false;
+	changeErreur(u16ErreurEncours);
+	changeStatutPAC(&sStatut_PAC);
+	changeStatutEther(&sCycEther);
+	container.setXY(u8PositionX, u8PositionY);
 	// Affichage du titre
     Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_PARAMETRES_DATE_HEURE_CENTRE_DEFAUT).getText());
     barre_titre.titre(textAreaBuffer_Titre);
     // Init des variables
-    u8Minutes = 25;
-    u8Heures = 6;
-    u8Jour = 25;
-    u8Mois = 06;
-    u8Annee = 21;
+    if(sDate.Year != 0)
+    {
+    	u8Minutes = sDate.Minutes;
+		u8Heures = sDate.Hours;
+		u8Jour = sDate.Date;
+		u8Mois = sDate.Month;
+		u8Annee = sDate.Year;
+    }
+    else
+    {
+		u8Minutes = 25;
+		u8Heures = 6;
+		u8Jour = 25;
+		u8Mois = 06;
+		u8Annee = 21;
+    }
 	// Verification du nombre de jours dans le mois
 	majNbJoursMois();
 	// Affichage de la valeur
@@ -34,7 +49,10 @@ void Date_heureView::setupScreen()
     Unicode::snprintf(textAreaBuffer_Jour, 5, "%02d", u8Jour);
     textArea_jours_cal.setWildcard(textAreaBuffer_Jour);
     textArea_jours.setWildcard(textAreaBuffer_Jour);
+}
 
+void Date_heureView::setupScreen()
+{
     Date_heureViewBase::setupScreen();
 }
 
@@ -266,5 +284,64 @@ void Date_heureView::majNbJoursMois()
 
 void Date_heureView::bouton_valider()
 {
-	application().gotoParametresScreenNoTransition();
+	sDate_modif.Minutes = u8Minutes;
+	sDate_modif.Hours = u8Heures;
+	sDate_modif.Date = u8Jour;
+	sDate_modif.Month = u8Mois;
+	sDate_modif.Year = u8Annee;
+	// Page oui non
+	eOuiNon = OUI_NON_MODE_DATE;
+	application().gotoPage_oui_nonScreenNoTransition();
+}
+
+void Date_heureView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
+{
+	// Recup config
+	if((sStatut_PAC_old.ModifConfig | sStatut_PAC_old.ModifConfigSimple) != (sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple))
+	{
+		barre_titre.recupConfig((sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple));
+		barre_titre.invalidate();
+	}
+	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
+}
+
+void Date_heureView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
+{
+	if(bConnexionDistance != sCycEther->bAppletConnect)
+	{
+		bConnexionDistance = sCycEther->bAppletConnect;
+		barre_titre.connexionDistante(bConnexionDistance);
+		barre_titre.invalidate();
+	}
+}
+
+void Date_heureView::changeErreur(uint16_t u16Erreur)
+{
+	if(u16ErreurAffichee != u16Erreur)
+	{
+		u16ErreurAffichee = u16Erreur;
+		barre_titre.erreur(u16Erreur);
+		barre_titre.invalidate();
+	}
+}
+
+void Date_heureView::changeDate(S_DATE *sDate)
+{
+	if(sDate_old.Date != sDate->Date)
+	{
+		// Affichage de la date
+	    Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
+	    barre_titre.date(textAreaBuffer_Date);
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+	else if(sDate_old.Minutes != sDate->Minutes)
+	{
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+    barre_titre.invalidate();
+	memcpy(&sDate_old, sDate, sizeof(S_DATE));
 }

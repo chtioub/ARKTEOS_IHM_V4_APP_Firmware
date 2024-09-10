@@ -3,24 +3,39 @@
 
 Energies_histoView::Energies_histoView()
 {
-}
-
-void Energies_histoView::setupScreen()
-{
+	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
+	sDate_old.Date = 0;
+	u16ErreurAffichee = 0;
+	changeDate(&sDate);
+	bConnexionDistance = false;
+	changeErreur(u16ErreurEncours);
+	changeStatutPAC(&sStatut_PAC);
+	changeStatutEther(&sCycEther);
+	container.setXY(u8PositionX, u8PositionY);
+	// Init des boutons
 	toggleButton_pac.forceState(true);
 	toggleButton_12_mois.forceState(true);
 	toggleButton_12_mois.setTouchable(false);
 	container_barres_verticales_12.setVisible(true);
 	container_barres_verticales_24.setVisible(false);
 	container_lignes_verticales_24.setVisible(false);
-    mois(2);
+    mois(sDate.Month);
     majbarres_mois();
     // Titre histo produites ou consommees
-    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_HISTO_PRODUITES_CENTRE_LARGE).getText());
-    barre_titre.titre(textAreaBuffer_Titre);
-    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_HISTO_CONSOMMEES_CENTRE_LARGE).getText());
-    barre_titre.titre(textAreaBuffer_Titre);
+	if(bConsoProd == 0)
+	{
+		Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_HISTO_PRODUITES_CENTRE_LARGE).getText());
+		barre_titre.titre(textAreaBuffer_Titre);
+	}
+	else
+	{
+		Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_HISTO_CONSOMMEES_CENTRE_LARGE).getText());
+		barre_titre.titre(textAreaBuffer_Titre);
+	}
+}
 
+void Energies_histoView::setupScreen()
+{
     Energies_histoViewBase::setupScreen();
 }
 
@@ -31,7 +46,7 @@ void Energies_histoView::tearDownScreen()
 
 void Energies_histoView::bouton_pac()
 {
-  presenter->energieState(1);
+//  presenter->energieState(1);
   if(toggleButton_pac.getState())
   {
     toggleButton_pac.setTouchable(false);
@@ -67,7 +82,7 @@ void Energies_histoView::bouton_pac()
 
 void Energies_histoView::bouton_chaud()
 {
-  presenter->energieState(2);
+//  presenter->energieState(2);
   if(toggleButton_chaud.getState())
   {
     toggleButton_pac.setTouchable(true);
@@ -103,7 +118,7 @@ void Energies_histoView::bouton_chaud()
 
 void Energies_histoView::bouton_froid()
 {
-  presenter->energieState(3);
+//  presenter->energieState(3);
   if(toggleButton_froid.getState())
   {
     toggleButton_pac.setTouchable(true);
@@ -138,24 +153,23 @@ void Energies_histoView::bouton_froid()
 }
 void Energies_histoView::bouton_ecs()
 {
-  presenter->energieState(4);
-  if(toggleButton_ecs.getState())
-  {
-    toggleButton_pac.setTouchable(true);
-    toggleButton_pac.forceState(false);
-    toggleButton_pac.invalidate();
-    toggleButton_chaud.setTouchable(true);
-    toggleButton_chaud.forceState(false);
-    toggleButton_chaud.invalidate();
-    toggleButton_froid.setTouchable(true);
-    toggleButton_froid.forceState(false);
-    toggleButton_froid.invalidate();
-    toggleButton_ecs.setTouchable(false);
-    toggleButton_ecs.invalidate();
-    toggleButton_piscine.setTouchable(true);
-    toggleButton_piscine.forceState(false);
-    toggleButton_piscine.invalidate();
-    couleur_barres(0xe70094);
+	if(toggleButton_ecs.getState())
+	{
+		toggleButton_pac.setTouchable(true);
+		toggleButton_pac.forceState(false);
+		toggleButton_pac.invalidate();
+		toggleButton_chaud.setTouchable(true);
+		toggleButton_chaud.forceState(false);
+		toggleButton_chaud.invalidate();
+		toggleButton_froid.setTouchable(true);
+		toggleButton_froid.forceState(false);
+		toggleButton_froid.invalidate();
+		toggleButton_ecs.setTouchable(false);
+		toggleButton_ecs.invalidate();
+		toggleButton_piscine.setTouchable(true);
+		toggleButton_piscine.forceState(false);
+		toggleButton_piscine.invalidate();
+		couleur_barres(0xe70094);
 		// MAJ des barres
 		if(toggleButton_12_mois.getState())
 		{
@@ -169,29 +183,28 @@ void Energies_histoView::bouton_ecs()
 		{
 		    majbarres_jours_heures(false);
 		}
-  }
+	}
 }
 
 void Energies_histoView::bouton_piscine()
 {
-  presenter->energieState(5);
-  if(toggleButton_piscine.getState())
-  {
-    toggleButton_pac.setTouchable(true);
-    toggleButton_pac.forceState(false);
-    toggleButton_pac.invalidate();
-    toggleButton_chaud.setTouchable(true);
-    toggleButton_chaud.forceState(false);
-    toggleButton_chaud.invalidate();
-    toggleButton_froid.setTouchable(true);
-    toggleButton_froid.forceState(false);
-    toggleButton_froid.invalidate();
-    toggleButton_ecs.setTouchable(true);
-    toggleButton_ecs.forceState(false);
-    toggleButton_ecs.invalidate();
-    toggleButton_piscine.setTouchable(false);
-    toggleButton_piscine.invalidate();
-    couleur_barres(0xb9c400);
+	if(toggleButton_piscine.getState())
+	{
+		toggleButton_pac.setTouchable(true);
+		toggleButton_pac.forceState(false);
+		toggleButton_pac.invalidate();
+		toggleButton_chaud.setTouchable(true);
+		toggleButton_chaud.forceState(false);
+		toggleButton_chaud.invalidate();
+		toggleButton_froid.setTouchable(true);
+		toggleButton_froid.forceState(false);
+		toggleButton_froid.invalidate();
+		toggleButton_ecs.setTouchable(true);
+		toggleButton_ecs.forceState(false);
+		toggleButton_ecs.invalidate();
+		toggleButton_piscine.setTouchable(false);
+		toggleButton_piscine.invalidate();
+		couleur_barres(0xb9c400);
 		// MAJ des barres
 		if(toggleButton_12_mois.getState())
 		{
@@ -205,91 +218,91 @@ void Energies_histoView::bouton_piscine()
 		{
 		    majbarres_jours_heures(false);
 		}
-  }
+	}
 }
 
 void Energies_histoView::bouton_12mois()
 {
-  if(toggleButton_12_mois.getState())
-  {
-    toggleButton_12_mois.setTouchable(false);
-    toggleButton_12_mois.invalidate();
-    toggleButton_24_jours.setTouchable(true);
-    toggleButton_24_jours.forceState(false);
-    toggleButton_24_jours.invalidate();
-    toggleButton_24_heures.setTouchable(true);
-    toggleButton_24_heures.forceState(false);
-    toggleButton_24_heures.invalidate();
-    container_barres_verticales_12.setVisible(true);
-    container_barres_verticales_12.invalidate();
-    container_barres_verticales_24.setVisible(false);
-    container_barres_verticales_24.invalidate();
-    container_lignes_verticales_24.setVisible(false);
-    container_lignes_verticales_24.invalidate();
+	if(toggleButton_12_mois.getState())
+	{
+		toggleButton_12_mois.setTouchable(false);
+		toggleButton_12_mois.invalidate();
+		toggleButton_24_jours.setTouchable(true);
+		toggleButton_24_jours.forceState(false);
+		toggleButton_24_jours.invalidate();
+		toggleButton_24_heures.setTouchable(true);
+		toggleButton_24_heures.forceState(false);
+		toggleButton_24_heures.invalidate();
+		container_barres_verticales_12.setVisible(true);
+		container_barres_verticales_12.invalidate();
+		container_barres_verticales_24.setVisible(false);
+		container_barres_verticales_24.invalidate();
+		container_lignes_verticales_24.setVisible(false);
+		container_lignes_verticales_24.invalidate();
 	    textArea_kwh.setTypedText(touchgfx::TypedText(T_TEXT_KWH_CENTRE_DEFAUT));
 	    textArea_kwh.invalidate();
-    textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_MOIS_GAUCHE_DEFAUT));
-    textArea_mois.invalidate();
-	    mois(2);
+		textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_MOIS_GAUCHE_DEFAUT));
+		textArea_mois.invalidate();
+	    mois(sDate.Month);
 		// MAJ des barres
 	    majbarres_mois();
-  }
+	}
 }
 
 void Energies_histoView::bouton_24jours()
 {
-  if(toggleButton_24_jours.getState())
-  {
-    toggleButton_12_mois.setTouchable(true);
-    toggleButton_12_mois.forceState(false);
-    toggleButton_12_mois.invalidate();
-    toggleButton_24_jours.setTouchable(false);
-    toggleButton_24_jours.invalidate();
-    toggleButton_24_heures.setTouchable(true);
-    toggleButton_24_heures.forceState(false);
-    toggleButton_24_heures.invalidate();
-    container_barres_verticales_12.setVisible(false);
-    container_barres_verticales_12.invalidate();
-    container_barres_verticales_24.setVisible(true);
-    container_barres_verticales_24.invalidate();
-    container_lignes_verticales_24.setVisible(true);
-    container_lignes_verticales_24.invalidate();
+	if(toggleButton_24_jours.getState())
+	{
+		toggleButton_12_mois.setTouchable(true);
+		toggleButton_12_mois.forceState(false);
+		toggleButton_12_mois.invalidate();
+		toggleButton_24_jours.setTouchable(false);
+		toggleButton_24_jours.invalidate();
+		toggleButton_24_heures.setTouchable(true);
+		toggleButton_24_heures.forceState(false);
+		toggleButton_24_heures.invalidate();
+		container_barres_verticales_12.setVisible(false);
+		container_barres_verticales_12.invalidate();
+		container_barres_verticales_24.setVisible(true);
+		container_barres_verticales_24.invalidate();
+		container_lignes_verticales_24.setVisible(true);
+		container_lignes_verticales_24.invalidate();
 	    textArea_kwh.setTypedText(touchgfx::TypedText(T_TEXT_KWH_CENTRE_DEFAUT));
 	    textArea_kwh.invalidate();
-    textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_JOURS_GAUCHE_DEFAUT));
-    textArea_mois.invalidate();
-	    jours(2, 28);
+		textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_JOURS_GAUCHE_DEFAUT));
+		textArea_mois.invalidate();
+	    jours(sDate.Date - 1, sDate.Month - 1, sDate.Year);
 		// MAJ des barres
 	    majbarres_jours_heures(true);
-  }
+	}
 }
 
 void Energies_histoView::bouton_24heures()
 {
-  if(toggleButton_24_heures.getState())
-  {
-    toggleButton_12_mois.setTouchable(true);
-    toggleButton_12_mois.forceState(false);
-    toggleButton_12_mois.invalidate();
-    toggleButton_24_jours.setTouchable(true);
-    toggleButton_24_jours.forceState(false);
-    toggleButton_24_jours.invalidate();
-    toggleButton_24_heures.setTouchable(false);
-    toggleButton_24_heures.invalidate();
-    container_barres_verticales_12.setVisible(false);
-    container_barres_verticales_12.invalidate();
-    container_barres_verticales_24.setVisible(true);
-    container_barres_verticales_24.invalidate();
-    container_lignes_verticales_24.setVisible(true);
-    container_lignes_verticales_24.invalidate();
+	if(toggleButton_24_heures.getState())
+	{
+		toggleButton_12_mois.setTouchable(true);
+		toggleButton_12_mois.forceState(false);
+		toggleButton_12_mois.invalidate();
+		toggleButton_24_jours.setTouchable(true);
+		toggleButton_24_jours.forceState(false);
+		toggleButton_24_jours.invalidate();
+		toggleButton_24_heures.setTouchable(false);
+		toggleButton_24_heures.invalidate();
+		container_barres_verticales_12.setVisible(false);
+		container_barres_verticales_12.invalidate();
+		container_barres_verticales_24.setVisible(true);
+		container_barres_verticales_24.invalidate();
+		container_lignes_verticales_24.setVisible(true);
+		container_lignes_verticales_24.invalidate();
 	    textArea_kwh.setTypedText(touchgfx::TypedText(T_TEXT_WH_CENTRE_DEFAUT));
 	    textArea_kwh.invalidate();
-    textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_HEURES_GAUCHE_DEFAUT));
-    textArea_mois.invalidate();
-	    heures(1);
+		textArea_mois.setTypedText(touchgfx::TypedText(T_TEXT_HEURES_GAUCHE_DEFAUT));
+		textArea_mois.invalidate();
+	    heures(sDate.Hours);
 		// MAJ des barres
 	    majbarres_jours_heures(false);
-  }
+	}
 }
 
 void Energies_histoView::majbarres_mois()
@@ -301,33 +314,54 @@ void Energies_histoView::majbarres_mois()
     {
     	if(toggleButton_pac.getState())
     	{
-    		u32Energies_mois[i] = (uint32_t) u16Energies_mois_chaud[i] + (uint32_t) u16Energies_mois_froid[i] + (uint32_t) u16Energies_mois_ecs[i] + (uint32_t) u16Energies_mois_piscine[i];
-    		u32Energies_mois_elec[i] = u16Energies_mois_chaud_elec[i] + u16Energies_mois_ecs_elec[i];
+    		if(bConsoProd == 0)
+    		{
+				u32Energies_mois[i] = (uint32_t) sEnergie.Prod_12M.Chaud[(i + sEnergie.Prod_12M.Pointeur + 1) % 12] + (uint32_t) sEnergie.Prod_12M.Froid[(i + sEnergie.Prod_12M.Pointeur + 1) % 12] + (uint32_t) sEnergie.Prod_12M.ECS[(i + sEnergie.Prod_12M.Pointeur + 1) % 12] + (uint32_t) sEnergie.Prod_12M.Piscine[(i + sEnergie.Prod_12M.Pointeur + 1) % 12];
+    		}
+    		else u32Energies_mois[i] = (uint32_t) sEnergie.Conso_12M.Chaud[(i + sEnergie.Conso_12M.Pointeur + 1) % 12] + (uint32_t) sEnergie.Conso_12M.Froid[(i + sEnergie.Conso_12M.Pointeur + 1) % 12] + (uint32_t) sEnergie.Conso_12M.ECS[(i + sEnergie.Conso_12M.Pointeur + 1) % 12] + (uint32_t) sEnergie.Conso_12M.Piscine[(i + sEnergie.Conso_12M.Pointeur + 1) % 12];
+    		u32Energies_mois_elec[i] = sEnergie.Conso_12M.ElecChaud[(i + sEnergie.Conso_12M.Pointeur + 1) % 12] + sEnergie.Conso_12M.ElecECS[(i + sEnergie.Conso_12M.Pointeur + 1) % 12];
     	}
     	else if(toggleButton_chaud.getState())
     	{
-    		u32Energies_mois[i] = u16Energies_mois_chaud[i];
-    		u32Energies_mois_elec[i] = u16Energies_mois_chaud_elec[i];
+    		if(bConsoProd == 0)
+    		{
+				u32Energies_mois[i] = sEnergie.Prod_12M.Chaud[(i + sEnergie.Prod_12M.Pointeur + 1) % 12];
+    		}
+    		else u32Energies_mois[i] = sEnergie.Conso_12M.Chaud[(i + sEnergie.Conso_12M.Pointeur + 1) % 12];
+			u32Energies_mois_elec[i] = sEnergie.Conso_12M.ElecChaud[(i + sEnergie.Conso_12M.Pointeur + 1) % 12];
     	}
     	else if(toggleButton_froid.getState())
     	{
-    		u32Energies_mois[i] = u16Energies_mois_froid[i];
-    		u32Energies_mois_elec[i] = 0;
+    		if(bConsoProd == 0)
+    		{
+				u32Energies_mois[i] = sEnergie.Prod_12M.Froid[(i + sEnergie.Prod_12M.Pointeur + 1) % 12];
+				u32Energies_mois_elec[i] = 0;
+    		}
+    		else u32Energies_mois[i] = sEnergie.Conso_12M.Froid[(i + sEnergie.Conso_12M.Pointeur + 1) % 12];
+			u32Energies_mois_elec[i] = 0;
     	}
     	else if(toggleButton_ecs.getState())
     	{
-    		u32Energies_mois[i] = u16Energies_mois_ecs[i];
-    		u32Energies_mois_elec[i] = u16Energies_mois_ecs_elec[i];
+    		if(bConsoProd == 0)
+    		{
+				u32Energies_mois[i] = sEnergie.Prod_12M.ECS[(i + sEnergie.Prod_12M.Pointeur + 1) % 12];
+    		}
+    		else u32Energies_mois[i] = sEnergie.Conso_12M.ECS[(i + sEnergie.Conso_12M.Pointeur + 1) % 12];
+			u32Energies_mois_elec[i] = sEnergie.Conso_12M.ElecECS[(i + sEnergie.Conso_12M.Pointeur + 1) % 12];
     	}
     	else
 		{
-    		u32Energies_mois[i] = u16Energies_mois_piscine[i];
-    		u32Energies_mois_elec[i] = 0;
+    		if(bConsoProd == 0)
+    		{
+				u32Energies_mois[i] = sEnergie.Prod_12M.Piscine[(i + sEnergie.Prod_12M.Pointeur + 1) % 12];
+    		}
+    		else u32Energies_mois[i] = sEnergie.Conso_12M.Piscine[(i + sEnergie.Conso_12M.Pointeur + 1) % 12];
+			u32Energies_mois_elec[i] = 0;
 		}
     	// Sauvegarde du max
 		if(u32Energies_mois[i] > u32ValeurMax)
 		{
-			u32ValeurMax = u32Energies_mois[i];
+			u32ValeurMax = u32Energies_mois[i] + 10;
 		}
     }
 	// Modification des labels de graduation
@@ -527,7 +561,7 @@ void Energies_histoView::mois(uint8_t u8Mois)
 				break;
 		}
 
-		switch((u8Mois + 1 + i) % 12)
+		switch((u8Mois + i) % 12)
 		{
 			default:
 				textArea_mois->setTypedText(touchgfx::TypedText(T_TEXT_ENERGIES_JANVIER_CENTRE_DEFAUT));
@@ -581,63 +615,109 @@ void Energies_histoView::majbarres_jours_heures(bool bJourHeure)
     	{
     		if(bJourHeure == true)
     		{
-    			u32Energies_jours_heures[i] = (uint32_t) u16Energies_jours_chaud[i] + (uint32_t) u16Energies_jours_froid[i] + (uint32_t) u16Energies_jours_ecs[i] + (uint32_t) u16Energies_jours_piscine[i];
-    			u32Energies_jours_heures_elec[i] = (uint32_t) u16Energies_jours_chaud_elec[i] + (uint32_t) u16Energies_jours_ecs_elec[i];
+        		if(bConsoProd == 0)
+        		{
+        			u32Energies_jours_heures[i] = sEnergie.Prod_24J.Chaud[(i + sEnergie.Prod_24J.Pointeur + 1) % 24] + sEnergie.Prod_24J.Froid[(i + sEnergie.Prod_24J.Pointeur + 1) % 24] + sEnergie.Prod_24J.ECS[(i + sEnergie.Prod_24J.Pointeur + 1) % 24] + sEnergie.Prod_24J.Piscine[(i + sEnergie.Prod_24J.Pointeur + 1) % 24];
+        		}
+        		else u32Energies_jours_heures[i] = sEnergie.Conso_24J.Chaud[(i + sEnergie.Conso_24J.Pointeur + 1) % 24] + sEnergie.Conso_24J.Froid[(i + sEnergie.Conso_24J.Pointeur + 1) % 24] + sEnergie.Conso_24J.ECS[(i + sEnergie.Conso_24J.Pointeur + 1) % 24] + sEnergie.Conso_24J.Piscine[(i + sEnergie.Conso_24J.Pointeur + 1) % 24];
+        		u32Energies_jours_heures_elec[i] = sEnergie.Conso_24J.ElecChaud[(i + sEnergie.Conso_24J.Pointeur + 1) % 24] + sEnergie.Conso_24J.ElecECS[(i + sEnergie.Conso_24J.Pointeur + 1) % 24];
     		}
     		else
 			{
-    			u32Energies_jours_heures[i] = (uint32_t) u16Energies_heures_chaud[i] + (uint32_t) u16Energies_heures_froid[i] + (uint32_t) u16Energies_heures_ecs[i] + (uint32_t) u16Energies_heures_piscine[i];
-    			u32Energies_jours_heures_elec[i] = (uint32_t) u16Energies_heures_chaud_elec[i] + (uint32_t) u16Energies_heures_ecs_elec[i];
+        		if(bConsoProd == 0)
+        		{
+        			u32Energies_jours_heures[i] = sEnergie.Prod_24H.Chaud[(i + sEnergie.Prod_24H.Pointeur + 1) % 24] + sEnergie.Prod_24H.Froid[(i + sEnergie.Prod_24H.Pointeur + 1) % 24] + sEnergie.Prod_24H.ECS[(i + sEnergie.Prod_24H.Pointeur + 1) % 24] + sEnergie.Prod_24H.Piscine[(i + sEnergie.Prod_24H.Pointeur + 1) % 24];
+        		}
+        		else u32Energies_jours_heures[i] = sEnergie.Conso_24H.Chaud[(i + sEnergie.Conso_24H.Pointeur + 1) % 24] + sEnergie.Conso_24H.Froid[(i + sEnergie.Conso_24H.Pointeur + 1) % 24] + sEnergie.Conso_24H.ECS[(i + sEnergie.Conso_24H.Pointeur + 1) % 24] + sEnergie.Conso_24H.Piscine[(i + sEnergie.Conso_24H.Pointeur + 1) % 24];
+        		u32Energies_jours_heures_elec[i] = sEnergie.Conso_24H.ElecChaud[(i + sEnergie.Conso_24H.Pointeur + 1) % 24] + sEnergie.Conso_24H.ElecECS[(i + sEnergie.Conso_24H.Pointeur + 1) % 24];
 			}
     	}
     	else if(toggleButton_chaud.getState())
     	{
     		if(bJourHeure == true)
     		{
-    			u32Energies_jours_heures[i] = u16Energies_jours_chaud[i];
-    			u32Energies_jours_heures_elec[i] = u16Energies_jours_chaud_elec[i];
+        		if(bConsoProd == 0)
+        		{
+        			u32Energies_jours_heures[i] = sEnergie.Prod_24J.Chaud[(i + sEnergie.Prod_24J.Pointeur + 1) % 24];
+        		}
+        		else u32Energies_jours_heures[i] = sEnergie.Conso_24J.Chaud[(i + sEnergie.Conso_24J.Pointeur + 1) % 24];
+        		u32Energies_jours_heures_elec[i] = sEnergie.Conso_24J.ElecChaud[(i + sEnergie.Conso_24J.Pointeur + 1) % 24];
     		}
     		else
 			{
-    			u32Energies_jours_heures[i] = u16Energies_heures_chaud[i];
-    			u32Energies_jours_heures_elec[i] = u16Energies_heures_chaud_elec[i];
+        		if(bConsoProd == 0)
+        		{
+        			u32Energies_jours_heures[i] = sEnergie.Prod_24H.Chaud[(i + sEnergie.Prod_24H.Pointeur + 1) % 24];
+        		}
+        		else u32Energies_jours_heures[i] = sEnergie.Conso_24H.Chaud[(i + sEnergie.Conso_24H.Pointeur + 1) % 24];
+        		u32Energies_jours_heures_elec[i] = sEnergie.Conso_24H.ElecChaud[(i + sEnergie.Conso_24H.Pointeur + 1) % 24];
 			}
     	}
     	else if(toggleButton_froid.getState())
     	{
     		if(bJourHeure == true)
     		{
-    			u32Energies_jours_heures[i] = u16Energies_jours_froid[i];
+    			if(bConsoProd == 0)
+				{
+					u32Energies_jours_heures[i] = sEnergie.Prod_24J.Froid[(i + sEnergie.Prod_24J.Pointeur + 1) % 24];
+				}
+				else u32Energies_jours_heures[i] = sEnergie.Conso_24J.Froid[(i + sEnergie.Conso_24J.Pointeur + 1) % 24];
     		}
-    		else u32Energies_jours_heures[i] = u16Energies_heures_froid[i];
+    		else
+    		{
+    			if(bConsoProd == 0)
+				{
+					u32Energies_jours_heures[i] = sEnergie.Prod_24H.Froid[(i + sEnergie.Prod_24H.Pointeur + 1) % 24];
+				}
+				else u32Energies_jours_heures[i] = sEnergie.Conso_24H.Froid[(i + sEnergie.Conso_24H.Pointeur + 1) % 24];
+    		}
 			u32Energies_jours_heures_elec[i] = 0;
     	}
     	else if(toggleButton_ecs.getState())
     	{
     		if(bJourHeure == true)
     		{
-    			u32Energies_jours_heures[i] = u16Energies_jours_ecs[i];
-    			u32Energies_jours_heures_elec[i] = u16Energies_jours_ecs_elec[i];
+    			if(bConsoProd == 0)
+				{
+					u32Energies_jours_heures[i] = sEnergie.Prod_24J.ECS[(i + sEnergie.Prod_24J.Pointeur + 1) % 24];
+				}
+				else u32Energies_jours_heures[i] = sEnergie.Conso_24J.ECS[(i + sEnergie.Conso_24J.Pointeur + 1) % 24];
+    			u32Energies_jours_heures_elec[i] = sEnergie.Conso_24J.ElecECS[(i + sEnergie.Conso_24J.Pointeur + 1) % 24];
     		}
     		else
-			{
-    			u32Energies_jours_heures[i] = u16Energies_heures_ecs[i];
-    			u32Energies_jours_heures_elec[i] = u16Energies_heures_ecs_elec[i];
-			}
+    		{
+    			if(bConsoProd == 0)
+				{
+					u32Energies_jours_heures[i] = sEnergie.Prod_24H.ECS[(i + sEnergie.Prod_24H.Pointeur + 1) % 24];
+				}
+				else u32Energies_jours_heures[i] = sEnergie.Conso_24H.ECS[(i + sEnergie.Conso_24H.Pointeur + 1) % 24];
+    			u32Energies_jours_heures_elec[i] = sEnergie.Conso_24H.ElecECS[(i + sEnergie.Conso_24H.Pointeur + 1) % 24];
+    		}
     	}
     	else
     	{
     		if(bJourHeure == true)
     		{
-    			u32Energies_jours_heures[i] = u16Energies_jours_piscine[i];
+    			if(bConsoProd == 0)
+				{
+					u32Energies_jours_heures[i] = sEnergie.Prod_24J.Piscine[(i + sEnergie.Prod_24J.Pointeur + 1) % 24];
+				}
+				else u32Energies_jours_heures[i] = sEnergie.Conso_24J.Piscine[(i + sEnergie.Conso_24J.Pointeur + 1) % 24];
     		}
-    		else u32Energies_jours_heures[i] = u16Energies_heures_piscine[i];
-			u32Energies_jours_heures_elec[i] = 0;
+    		else
+    		{
+    			if(bConsoProd == 0)
+				{
+					u32Energies_jours_heures[i] = sEnergie.Prod_24H.Piscine[(i + sEnergie.Prod_24H.Pointeur + 1) % 24];
+				}
+				else u32Energies_jours_heures[i] = sEnergie.Conso_24H.Piscine[(i + sEnergie.Conso_24H.Pointeur + 1) % 24];
+    		}
+    		u32Energies_jours_heures_elec[i] = 0;
     	}
     	// Sauvegarde du max
 		if(u32Energies_jours_heures[i] > u32ValeurMax)
 		{
-			u32ValeurMax = u32Energies_jours_heures[i];
+			u32ValeurMax = u32Energies_jours_heures[i] + 10;
 		}
     }
 	// Modification des labels de graduation
@@ -923,8 +1003,26 @@ void Energies_histoView::majbarres_jours_heures(bool bJourHeure)
 	box_24_24_elec.invalidate();
 }
 
-void Energies_histoView::jours(uint8_t u8Jours, uint8_t u8NbJoursMois)
+void Energies_histoView::jours(uint8_t u8Jours, uint8_t u8Mois, uint8_t u8Annee)
 {
+	uint8_t u8NbJoursMois = 31;
+	// Nombre de jours par mois
+	if(u8Mois == 0 || u8Mois == 1 || u8Mois == 3 || u8Mois == 5 || u8Mois == 7 || u8Mois == 8 || u8Mois == 10 || u8Mois == 12)
+	{
+		u8NbJoursMois = 31;
+	}
+	else if(u8Mois == 4 || u8Mois == 6 || u8Mois == 9 || u8Mois == 11)
+	{
+		u8NbJoursMois = 30;
+	}
+	else
+	{
+		if((u8Annee % 4 == 0 && u8Annee % 100 != 0) || u8Annee % 400 == 0)
+		{
+			u8NbJoursMois = 29;	// Année bisextile
+		}
+		else u8NbJoursMois = 28;
+	}
 	// u8Jours de 0 à 30
     Unicode::snprintf(textAreaBuffer_1, 3, "%d", ((u8Jours + u8NbJoursMois - 23) % u8NbJoursMois) + 1);
     textArea_chiffre_1.setWildcard(textAreaBuffer_1);
@@ -1153,4 +1251,56 @@ void Energies_histoView::couleur_barres(uint32_t u32Couleur)
   box_24_23.invalidate();
   box_24_24.setColor(u32Couleur);
   box_24_24.invalidate();
+}
+
+void Energies_histoView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
+{
+	// Recup config
+	if((sStatut_PAC_old.ModifConfig | sStatut_PAC_old.ModifConfigSimple) != (sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple))
+	{
+		barre_titre.recupConfig((sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple));
+		barre_titre.invalidate();
+	}
+	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
+}
+
+void Energies_histoView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
+{
+	if(bConnexionDistance != sCycEther->bAppletConnect)
+	{
+		bConnexionDistance = sCycEther->bAppletConnect;
+		barre_titre.connexionDistante(bConnexionDistance);
+		barre_titre.invalidate();
+	}
+}
+
+void Energies_histoView::changeErreur(uint16_t u16Erreur)
+{
+	if(u16ErreurAffichee != u16Erreur)
+	{
+		u16ErreurAffichee = u16Erreur;
+		barre_titre.erreur(u16Erreur);
+		barre_titre.invalidate();
+	}
+}
+
+void Energies_histoView::changeDate(S_DATE *sDate)
+{
+	if(sDate_old.Date != sDate->Date)
+	{
+		// Affichage de la date
+	    Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
+	    barre_titre.date(textAreaBuffer_Date);
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+	else if(sDate_old.Minutes != sDate->Minutes)
+	{
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+    barre_titre.invalidate();
+	memcpy(&sDate_old, sDate, sizeof(S_DATE));
 }

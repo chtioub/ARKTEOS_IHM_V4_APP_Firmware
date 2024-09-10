@@ -3,22 +3,35 @@
 
 Energies_cumulView::Energies_cumulView()
 {
-
-}
-
-void Energies_cumulView::setupScreen()
-{
+	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
+	sDate_old.Date = 0;
+	u16ErreurAffichee = 0;
+	changeDate(&sDate);
+	bConnexionDistance = false;
+	changeErreur(u16ErreurEncours);
+	changeStatutPAC(&sStatut_PAC);
+	changeStatutEther(&sCycEther);
+	container.setXY(u8PositionX, u8PositionY);
     // Titre histo produites ou consommees
-    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_CUMUL_PRODUITES_CENTRE_LARGE).getText());
-    barre_titre.titre(textAreaBuffer_Titre);
-    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_CUMUL_CONSOMMEES_CENTRE_LARGE).getText());
-    barre_titre.titre(textAreaBuffer_Titre);
+	if(bConsoProd == 0)
+	{
+		Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_CUMUL_PRODUITES_CENTRE_LARGE).getText());
+		barre_titre.titre(textAreaBuffer_Titre);
+	}
+	else
+	{
+		Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_CUMUL_CONSOMMEES_CENTRE_LARGE).getText());
+	    barre_titre.titre(textAreaBuffer_Titre);
+	}
     // Init des variables
 	u8TypeCumul = 0;
 	textArea_energies_cumul.setTypedText(touchgfx::TypedText(T_TEXT_DEPUIS_MISE_EN_SERVICE_CENTRE_DEFAUT));
 	// MAJ de l'affichage
 	maj_affichage();
+}
 
+void Energies_cumulView::setupScreen()
+{
     Energies_cumulViewBase::setupScreen();
 }
 
@@ -52,9 +65,9 @@ void Energies_cumulView::bouton_droite()
 
 void Energies_cumulView::bouton_raz()
 {
-	// RAZ des variables locales plus envoi de la trame
-	// MAJ de l'affichage
-	maj_affichage();
+	// Page oui / non
+	eOuiNon = OUI_NON_CUMUL;
+	application().gotoPage_oui_nonScreenNoTransition();
 }
 
 void Energies_cumulView::maj_affichage()
@@ -66,47 +79,98 @@ void Energies_cumulView::maj_affichage()
 		default:
 			textArea_energies_cumul.setTypedText(touchgfx::TypedText(T_TEXT_DEPUIS_MISE_EN_SERVICE_CENTRE_DEFAUT));
 			buttonWithLabel_raz.setVisible(false);
-			// Init des variables
-		    u32EnergiesCumul_Chaud = 80000;
-		    u32EnergiesCumul_Froid = 50000;
-		    u32EnergiesCumul_ECS = 60000;
-		    u32EnergiesCumul_Piscine = 75000;
-		    u32EnergiesCumul_Elec_ECS = 1500;
-		    u32EnergiesCumul_Elec_Chaud = 4500;
-			// Init de la date
-		    u8Jour = 25;
-		    u8Mois = 3;
-		    u8Annee = 22;
+			if(bConsoProd == 0)
+			{
+				// Init des variables
+				u32EnergiesCumul_Chaud = sEnergie.Cumul_Produite.Debut_Chaud;
+				u32EnergiesCumul_Froid = sEnergie.Cumul_Produite.Debut_Froid;
+				u32EnergiesCumul_ECS = sEnergie.Cumul_Produite.Debut_ECS;
+				u32EnergiesCumul_Piscine = sEnergie.Cumul_Produite.Debut_Piscine;
+				u32EnergiesCumul_Elec_ECS = sEnergie.Cumul_Consommee.Debut_ElecECS;
+				u32EnergiesCumul_Elec_Chaud = sEnergie.Cumul_Consommee.Debut_ElecChaud;
+				// Init de la date
+			    u8Jour = sEnergie.Cumul_Produite.Debut_Date.Date;
+			    u8Mois = sEnergie.Cumul_Produite.Debut_Date.Month;
+			    u8Annee = sEnergie.Cumul_Produite.Debut_Date.Year;
+			}
+			else
+			{
+				// Init des variables
+				u32EnergiesCumul_Chaud = sEnergie.Cumul_Consommee.Debut_Chaud;
+				u32EnergiesCumul_Froid = sEnergie.Cumul_Consommee.Debut_Froid;
+				u32EnergiesCumul_ECS = sEnergie.Cumul_Consommee.Debut_ECS;
+				u32EnergiesCumul_Piscine = sEnergie.Cumul_Consommee.Debut_Piscine;
+				u32EnergiesCumul_Elec_ECS = sEnergie.Cumul_Consommee.Debut_ElecECS;
+				u32EnergiesCumul_Elec_Chaud = sEnergie.Cumul_Consommee.Debut_ElecChaud;
+				// Init de la date
+			    u8Jour = sEnergie.Cumul_Consommee.Debut_Date.Date;
+			    u8Mois = sEnergie.Cumul_Consommee.Debut_Date.Month;
+			    u8Annee = sEnergie.Cumul_Consommee.Debut_Date.Year;
+			}
 			break;
 		case 1:
 			textArea_energies_cumul.setTypedText(touchgfx::TypedText(T_TEXT_ANNEE_EN_COURS_CENTRE_DEFAUT));
 			buttonWithLabel_raz.setVisible(false);
-			// Init des variables
-		    u32EnergiesCumul_Chaud = 0;
-		    u32EnergiesCumul_Froid = 0;
-		    u32EnergiesCumul_ECS = 0;
-		    u32EnergiesCumul_Piscine = 0;
-		    u32EnergiesCumul_Elec_ECS = 1500;
-		    u32EnergiesCumul_Elec_Chaud = 4500;
-			// Init de la date
-		    u8Jour = 25;
-		    u8Mois = 6;
-		    u8Annee = 23;
+			if(bConsoProd == 0)
+			{
+				// Init des variables
+				u32EnergiesCumul_Chaud = sEnergie.Cumul_Produite.Annee_Chaud;
+				u32EnergiesCumul_Froid = sEnergie.Cumul_Produite.Annee_Froid;
+				u32EnergiesCumul_ECS = sEnergie.Cumul_Produite.Annee_ECS;
+				u32EnergiesCumul_Piscine = sEnergie.Cumul_Produite.Annee_Piscine;
+				u32EnergiesCumul_Elec_ECS = sEnergie.Cumul_Consommee.Annee_ElecECS;
+				u32EnergiesCumul_Elec_Chaud = sEnergie.Cumul_Consommee.Annee_ElecChaud;
+				// Init de la date
+			    u8Jour = sEnergie.Cumul_Produite.Annee_Date.Date;
+			    u8Mois = sEnergie.Cumul_Produite.Annee_Date.Month;
+			    u8Annee = sEnergie.Cumul_Produite.Annee_Date.Year;
+			}
+			else
+			{
+				// Init des variables
+				u32EnergiesCumul_Chaud = sEnergie.Cumul_Consommee.Annee_Chaud;
+				u32EnergiesCumul_Froid = sEnergie.Cumul_Consommee.Annee_Froid;
+				u32EnergiesCumul_ECS = sEnergie.Cumul_Consommee.Annee_ECS;
+				u32EnergiesCumul_Piscine = sEnergie.Cumul_Consommee.Annee_Piscine;
+				u32EnergiesCumul_Elec_ECS = sEnergie.Cumul_Consommee.Annee_ElecECS;
+				u32EnergiesCumul_Elec_Chaud = sEnergie.Cumul_Consommee.Annee_ElecChaud;
+				// Init de la date
+			    u8Jour = sEnergie.Cumul_Consommee.Annee_Date.Date;
+			    u8Mois = sEnergie.Cumul_Consommee.Annee_Date.Month;
+			    u8Annee = sEnergie.Cumul_Consommee.Annee_Date.Year;
+			}
 			break;
 		case 2:
 			textArea_energies_cumul.setTypedText(touchgfx::TypedText(T_TEXT_CUMUL_PARTIEL_CENTRE_DEFAUT));
 			buttonWithLabel_raz.setVisible(true);
-			// Init des variables
-		    u32EnergiesCumul_Chaud = 18000;
-		    u32EnergiesCumul_Froid = 2500;
-		    u32EnergiesCumul_ECS = 3500;
-		    u32EnergiesCumul_Piscine = 4500;
-		    u32EnergiesCumul_Elec_ECS = 1500;
-		    u32EnergiesCumul_Elec_Chaud = 4500;
-			// Init de la date
-		    u8Jour = 12;
-		    u8Mois = 6;
-		    u8Annee = 23;
+			if(bConsoProd == 0)
+			{
+				// Init des variables
+				u32EnergiesCumul_Chaud = sEnergie.Cumul_Produite.Partiel_Chaud;
+				u32EnergiesCumul_Froid = sEnergie.Cumul_Produite.Partiel_Froid;
+				u32EnergiesCumul_ECS = sEnergie.Cumul_Produite.Partiel_ECS;
+				u32EnergiesCumul_Piscine = sEnergie.Cumul_Produite.Partiel_Piscine;
+				u32EnergiesCumul_Elec_ECS = sEnergie.Cumul_Consommee.Partiel_ElecECS;
+				u32EnergiesCumul_Elec_Chaud = sEnergie.Cumul_Consommee.Partiel_ElecChaud;
+				// Init de la date
+			    u8Jour = sEnergie.Cumul_Produite.Partiel_Date_Reset.Date;
+			    u8Mois = sEnergie.Cumul_Produite.Partiel_Date_Reset.Month;
+			    u8Annee = sEnergie.Cumul_Produite.Partiel_Date_Reset.Year;
+			}
+			else
+			{
+				// Init des variables
+				u32EnergiesCumul_Chaud = sEnergie.Cumul_Consommee.Partiel_Chaud;
+				u32EnergiesCumul_Froid = sEnergie.Cumul_Consommee.Partiel_Froid;
+				u32EnergiesCumul_ECS = sEnergie.Cumul_Consommee.Partiel_ECS;
+				u32EnergiesCumul_Piscine = sEnergie.Cumul_Consommee.Partiel_Piscine;
+				u32EnergiesCumul_Elec_ECS = sEnergie.Cumul_Consommee.Partiel_ElecECS;
+				u32EnergiesCumul_Elec_Chaud = sEnergie.Cumul_Consommee.Partiel_ElecChaud;
+				// Init de la date
+			    u8Jour = sEnergie.Cumul_Consommee.Partiel_Date_Reset.Date;
+			    u8Mois = sEnergie.Cumul_Consommee.Partiel_Date_Reset.Month;
+			    u8Annee = sEnergie.Cumul_Consommee.Partiel_Date_Reset.Year;
+			}
 			break;
 	}
 	textArea_energies_cumul.invalidate();
@@ -169,8 +233,6 @@ void Energies_cumulView::maj_affichage()
     textArea_energies_histo_piscine.setWildcard(textAreaBuffer_value_piscine);
     textArea_energies_histo_piscine.invalidate();
     // Modification des barres
-    u32EnergiesCumul_Elec_ECS = 1500;
-    u32EnergiesCumul_Elec_Chaud = 4500;
     box_pac.setVisible(false);
     box_pac.invalidate();
     box_pac.setWidth(u32EnergiesCumul_PAC * 623 / u32ValeurMax);
@@ -223,4 +285,56 @@ void Energies_cumulView::maj_affichage()
     box_piscine.setWidth(u32EnergiesCumul_Piscine * 623 / u32ValeurMax);
     box_piscine.setVisible(true);
     box_piscine.invalidate();
+}
+
+void Energies_cumulView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
+{
+	// Recup config
+	if((sStatut_PAC_old.ModifConfig | sStatut_PAC_old.ModifConfigSimple) != (sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple))
+	{
+		barre_titre.recupConfig((sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple));
+		barre_titre.invalidate();
+	}
+	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
+}
+
+void Energies_cumulView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
+{
+	if(bConnexionDistance != sCycEther->bAppletConnect)
+	{
+		bConnexionDistance = sCycEther->bAppletConnect;
+		barre_titre.connexionDistante(bConnexionDistance);
+		barre_titre.invalidate();
+	}
+}
+
+void Energies_cumulView::changeErreur(uint16_t u16Erreur)
+{
+	if(u16ErreurAffichee != u16Erreur)
+	{
+		u16ErreurAffichee = u16Erreur;
+		barre_titre.erreur(u16Erreur);
+		barre_titre.invalidate();
+	}
+}
+
+void Energies_cumulView::changeDate(S_DATE *sDate)
+{
+	if(sDate_old.Date != sDate->Date)
+	{
+		// Affichage de la date
+	    Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
+	    barre_titre.date(textAreaBuffer_Date);
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+	else if(sDate_old.Minutes != sDate->Minutes)
+	{
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+    barre_titre.invalidate();
+	memcpy(&sDate_old, sDate, sizeof(S_DATE));
 }

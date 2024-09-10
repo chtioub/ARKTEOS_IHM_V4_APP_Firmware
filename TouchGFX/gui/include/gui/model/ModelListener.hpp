@@ -27,6 +27,8 @@ public:
     virtual void changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo) {};
     virtual void changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt) {};
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM) {};
+    virtual void changeDemandeFrigo(S_DEMANDE_FRIGO *sDemandeFrigo) {};
+
 protected:
     Model* model;
 };

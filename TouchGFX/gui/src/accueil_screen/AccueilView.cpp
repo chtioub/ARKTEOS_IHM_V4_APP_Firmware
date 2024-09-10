@@ -15,6 +15,7 @@ AccueilView::AccueilView():
 	u8Zone1 = 0xff;
 	u8Zone2 = 0xff;
 	u8NbZones = 0;
+	bPageUsine = 0;
 	bConnexionDistance = false;
 	changeStatutPAC(&sStatut_PAC);
 	changeDate(&sDate);
@@ -37,6 +38,23 @@ AccueilView::AccueilView():
 	barre_titre.sansAccueil();
 	barre_titre.sansRetour();
     swipeDetectContainerConfigurationScreen.setAction(swipeCallback);
+    // Affichage dans la bonne langue
+	if(sConfig_IHM.sParam_Utilisateur.Langue != Texts::getLanguage())
+	{
+		Texts::setLanguage(sConfig_IHM.sParam_Utilisateur.Langue);
+	}
+	// Affichage du bon offset
+	if(sConfig_IHM.sParam_Utilisateur.u8PositionX == 0 || sConfig_IHM.sParam_Utilisateur.u8PositionX >= 100 || sConfig_IHM.sParam_Utilisateur.u8PositionY == 0 || sConfig_IHM.sParam_Utilisateur.u8PositionX >= 100)
+	{
+		u8PositionX = 37;
+		u8PositionY = 38;
+	}
+	else
+	{
+		u8PositionX = (sConfig_IHM.sParam_Utilisateur.u8PositionX - 1);
+		u8PositionY = (sConfig_IHM.sParam_Utilisateur.u8PositionY - 1);
+	}
+	container.setXY(u8PositionX, u8PositionY);
 }
 
 void AccueilView::setupScreen()
@@ -59,7 +77,6 @@ void AccueilView::swipeCallbackHandler(int16_t velocity)
 
 void AccueilView::Timer_500ms()
 {
-	uint16_t u16TmpBuffer[11];
 	//
 	if(sStatut_PAC_old.Mode_Secours != 0 || sStatut_PAC_old.Test != 0 || sDemandeFrigo.bShuntTempo != 0 || sStatut_PAC_old.sFonctInxTor.bTorEJP != 0 || sStatut_PAC_old.bDerogationPression != 0 || sStatut_PAC_old.bDerogationPressionBP != 0)
 	{
@@ -157,11 +174,7 @@ void AccueilView::Timer_500ms()
 		}
 		// Modification de l'affichage
 		// Nom de la zone
-		for(int i = 0; i < 10; i++)
-		{
-			u16TmpBuffer[i] = sConfig_IHM_old.sParam_Zx[u8Zone1].u8NomZone[i];
-		}
-		Unicode::snprintf(textAreaBuffer_Zone_1, 11, "%s", u16TmpBuffer);
+		Unicode::fromUTF8(sConfig_IHM_old.sParam_Zx[u8Zone1].u8NomZone, textAreaBuffer_Zone_1, 10);
 		textArea_zone_1.setWildcard(textAreaBuffer_Zone_1);
 		textArea_zone_1.invalidate();
 		//
@@ -281,11 +294,26 @@ void AccueilView::bouton_marche_arret()
 
 void AccueilView::bouton_zone_1()
 {
-	if(u8NbZones > 2 && sConfig_IHM_old.sParam_PAC.TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	if(sConfig_IHM_old.sParam_PAC.TypeRegul >= REGUL_EXTERNE)
+	{
+		u8ZoneSelect = 0xff;							// Pour indiquer regul externe
+		application().gotoZoneScreenNoTransition();
+	}
+	else if(u8NbZones > 2 && sConfig_IHM_old.sParam_PAC.TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
 	{
 		application().gotoMultizonesScreenNoTransition();
 	}
-	else application().gotoZoneScreenNoTransition();
+	else
+	{
+		u8ZoneSelect = u8Zone1;
+		application().gotoZoneScreenNoTransition();
+	}
+}
+
+void AccueilView::bouton_zone_2()
+{
+	u8ZoneSelect = u8Zone2;
+	application().gotoZoneScreenNoTransition();
 }
 
 void AccueilView::changeModePac(bool marche)
@@ -304,7 +332,6 @@ void AccueilView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
 	    textArea_pression_chauf.setWildcard(textAreaBuffer_Pression);
 	    textArea_pression_chauf.invalidate();
 	}
-
 	//
 	if(sConfig_IHM_old.sParam_PAC.TypeRegul >= REGUL_EXTERNE && sStatut_Primaire_old.i16TeauBallonTampon != sStatut_Primaire->i16TeauBallonTampon)
 	{
@@ -326,204 +353,507 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 	// Icone état appoint
 	if(sStatut_PAC_old.Appoint != sStatut_PAC->Appoint)
 	{
+		// RAZ des icones
+		scalableImage_appoint.setVisible(false);
+		Image_chaudiere.setVisible(false);
+		//
 		switch(sStatut_PAC->Appoint)
 		{
 			case RELEVE_CHAUDIERE:
 			case APPOINT_CHAUDIERE:
 				scalableImage_appoint.setVisible(false);
-				scalableImage_chaudiere.setVisible(true);
+				Image_chaudiere.setVisible(true);
 				break;
 			case ELEC:
 				scalableImage_appoint.setVisible(true);
-				scalableImage_chaudiere.setVisible(false);
+				Image_chaudiere.setVisible(false);
 				break;
 			default:
 				scalableImage_appoint.setVisible(false);
-				scalableImage_chaudiere.setVisible(false);
+				Image_chaudiere.setVisible(false);
 				break;
 		}
 		scalableImage_appoint.invalidate();
-		scalableImage_chaudiere.invalidate();
+		Image_chaudiere.invalidate();
 	}
 	// Icone état exception
 	if(sStatut_PAC_old.Exception != sStatut_PAC->Exception)
 	{
+		// RAZ des icones
+		scalableImage_vacances.setVisible(false);
+		Image_legionnel.setVisible(false);
+		Image_sablier.setVisible(false);
+		Image_dalle.setVisible(false);
+		//
 		switch(sStatut_PAC->Exception)
 		{
 			case S_VACANCES:
 				scalableImage_vacances.setVisible(true);
-				scalableImage_legionel.setVisible(false);
-				scalableImage_sablier.setVisible(false);
-				scalableImage_dalle.setVisible(false);
 				break;
 			case S_DALLE:
-				scalableImage_vacances.setVisible(false);
-				scalableImage_legionel.setVisible(false);
-				scalableImage_sablier.setVisible(false);
-				scalableImage_dalle.setVisible(true);
+				Image_dalle.setVisible(true);
 				break;
 			case S_LEGIONEL:
-				scalableImage_vacances.setVisible(false);
-				scalableImage_legionel.setVisible(true);
-				scalableImage_sablier.setVisible(false);
-				scalableImage_dalle.setVisible(false);
+				Image_legionnel.setVisible(true);
 				break;
 			case S_SABLIER:
-				scalableImage_vacances.setVisible(false);
-				scalableImage_legionel.setVisible(false);
-				scalableImage_sablier.setVisible(true);
-				scalableImage_dalle.setVisible(false);
+				Image_sablier.setVisible(true);
 				break;
 			default:
-				scalableImage_vacances.setVisible(false);
-				scalableImage_legionel.setVisible(false);
-				scalableImage_sablier.setVisible(false);
-				scalableImage_dalle.setVisible(false);
 				break;
 		}
 		scalableImage_vacances.invalidate();
-		scalableImage_legionel.invalidate();
-		scalableImage_sablier.invalidate();
-		scalableImage_dalle.invalidate();
+		Image_legionnel.invalidate();
+		Image_sablier.invalidate();
+		Image_dalle.invalidate();
 	}
 	// Icone état
 	if(sStatut_PAC_old.S_Mode != sStatut_PAC->S_Mode)
 	{
-		switch(sStatut_PAC->S_Mode)
+		// RAZ de l'affichage
+		Image_arret.setVisible(false);
+		Image_attente.setVisible(false);
+		scalableImage_ext_chaud.setVisible(false);
+		scalableImage_ext_froid.setVisible(false);
+		scalableImage_ecs.setVisible(false);
+		scalableImage_piscine.setVisible(false);
+		scalableImage_maison_etat_pac.setVisible(false);
+		circle_demande_pac.setVisible(false);
+		circle_mode_pac.setVisible(false);
+		//
+		switch(sStatut_PAC->S_Mode & 0x07)
 		{
 			case S_ARRET:
 				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
+				    scalableImage_ecs.setPosition(206, 415, 43, 45);
 					scalableImage_ecs.setVisible(true);
+				    scalableImage_piscine.setPosition(249, 415, 54, 47);
 					scalableImage_piscine.setVisible(true);
 				}
 				else if(sStatut_PAC->S_Mode & S_ECS)
 				{
+				    scalableImage_ecs.setPosition(218, 415, 52, 60);
+				    scalableImage_piscine.setPosition(214, 417, 60, 55);
 					scalableImage_ecs.setVisible(true);
 				}
 				else if(sStatut_PAC->S_Mode & S_PISCINE)
 				{
+				    scalableImage_piscine.setPosition(214, 417, 60, 55);
 					scalableImage_piscine.setVisible(true);
 				}
-				else
-				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Arret");
-				}
+				else Image_arret.setVisible(true);
 				break;
 			case S_ATTENTE:
 				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
+				    scalableImage_ecs.setPosition(206, 415, 43, 45);
 					scalableImage_ecs.setVisible(true);
+				    scalableImage_piscine.setPosition(249, 415, 54, 47);
 					scalableImage_piscine.setVisible(true);
 				}
 				else if(sStatut_PAC->S_Mode & S_ECS)
 				{
+				    scalableImage_ecs.setPosition(218, 415, 52, 60);
 					scalableImage_ecs.setVisible(true);
 				}
 				else if(sStatut_PAC->S_Mode & S_PISCINE)
 				{
+				    scalableImage_piscine.setPosition(214, 417, 60, 55);
 					scalableImage_piscine.setVisible(true);
 				}
-				else
-				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Arret");
-				}
+				else Image_attente.setVisible(true);
 				break;
 			case S_CHAUD:
+				scalableImage_maison_etat_pac.setVisible(true);
+		        circle_demande_pac.setVisible(true);
+		        circle_mode_pac.setVisible(true);
 				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-					scalableImage_maison_etat.setPosition(211, 417, 67, 58);
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Simu_ECS_Pisc");
+				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+					scalableImage_ecs.setVisible(true);
+					//
+				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+					scalableImage_piscine.setVisible(true);
+					//
+					scalableImage_maison_etat_pac.setPosition(228, 451, 40, 34);
+					//
+				    circle_demande_pac.setPosition(245, 469, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+				    //
+				    circle_mode_pac.setPosition(240, 464, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(ROUGE_CHAUD);
+				    circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
 				else if(sStatut_PAC->S_Mode & S_ECS)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Chauffe_Eau");
+				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+					scalableImage_ecs.setVisible(true);
+
+					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+
+				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+
+				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(ROUGE_CHAUD);
 				}
 				else if(sStatut_PAC->S_Mode & S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Piscine");
+				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+					scalableImage_piscine.setVisible(true);
+
+					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+
+				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+
+				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(ROUGE_CHAUD);
 				}
 				else
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Arret");
+				    scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+				    //
+				    circle_demande_pac.setPosition(235, 448, 14, 14);
+					circle_demande_pac.setCenter(7, 7);
+					circle_demande_pac.setRadius(6.5f);
+					circle_demande_pac.setLineWidth(0);
+					circle_demande_pac.setArc(0, 360);
+					circle_demande_pacPainter.setColor(ROUGE_CHAUD);
+					circle_demande_pac.setPainter(circle_demande_pacPainter);
+					//
+					circle_mode_pac.setPosition(230, 443, 24, 24);
+					circle_mode_pac.setCenter(12, 12);
+					circle_mode_pac.setRadius(11);
+					circle_mode_pac.setLineWidth(2);
+					circle_mode_pac.setArc(0, 360);
+					circle_mode_pac.setCapPrecision(10);
+					circle_mode_pacPainter.setColor(ROUGE_CHAUD);
+					circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
 				break;
 			case S_FROID:
+				scalableImage_maison_etat_pac.setVisible(true);
+		        circle_demande_pac.setVisible(true);
+		        circle_mode_pac.setVisible(true);
 				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Simu_ECS_Pisc");
+				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+					scalableImage_ecs.setVisible(true);
+					//
+				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+					scalableImage_piscine.setVisible(true);
+					//
+					scalableImage_maison_etat_pac.setPosition(228, 451, 40, 34);
+					//
+				    circle_demande_pac.setPosition(245, 469, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(BLEU_FROID);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+				    //
+				    circle_mode_pac.setPosition(240, 464, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(BLEU_FROID);
+				    circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
 				else if(sStatut_PAC->S_Mode & S_ECS)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Chauffe_Eau");
+				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+					scalableImage_ecs.setVisible(true);
+					//
+					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+					//
+				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(BLEU_FROID);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+				    //
+				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(BLEU_FROID);
 				}
 				else if(sStatut_PAC->S_Mode & S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Piscine");
+				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+					scalableImage_piscine.setVisible(true);
+					//
+					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+					//
+				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(BLEU_FROID);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+				    //
+				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(BLEU_FROID);
 				}
 				else
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Arret");
+				    scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+				    //
+				    circle_demande_pac.setPosition(235, 448, 14, 14);
+					circle_demande_pac.setCenter(7, 7);
+					circle_demande_pac.setRadius(6.5f);
+					circle_demande_pac.setLineWidth(0);
+					circle_demande_pac.setArc(0, 360);
+					circle_demande_pacPainter.setColor(BLEU_FROID);
+					circle_demande_pac.setPainter(circle_demande_pacPainter);
+					//
+					circle_mode_pac.setPosition(230, 443, 24, 24);
+					circle_mode_pac.setCenter(12, 12);
+					circle_mode_pac.setRadius(11);
+					circle_mode_pac.setLineWidth(2);
+					circle_mode_pac.setArc(0, 360);
+					circle_mode_pac.setCapPrecision(10);
+					circle_mode_pacPainter.setColor(BLEU_FROID);
+					circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
 				break;
 			case S_HORS_GEL:
-//				// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Regul_Ajtech_Hors_Gel");
+				scalableImage_maison_etat_pac.setVisible(true);
+		        circle_demande_pac.setVisible(true);
+		        circle_mode_pac.setVisible(true);
+		        //
+			    scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+			    //
+			    circle_demande_pac.setPosition(235, 448, 14, 14);
+				circle_demande_pac.setCenter(7, 7);
+				circle_demande_pac.setRadius(6.5f);
+				circle_demande_pac.setLineWidth(0);
+				circle_demande_pac.setArc(0, 360);
+				circle_demande_pacPainter.setColor(ORANGE_HORS_GEL);
+				circle_demande_pac.setPainter(circle_demande_pacPainter);
+				//
+				circle_mode_pac.setPosition(230, 443, 24, 24);
+				circle_mode_pac.setCenter(12, 12);
+				circle_mode_pac.setRadius(11);
+				circle_mode_pac.setLineWidth(2);
+				circle_mode_pac.setArc(0, 360);
+				circle_mode_pac.setCapPrecision(10);
+				circle_mode_pacPainter.setColor(ORANGE_HORS_GEL);
+				circle_mode_pac.setPainter(circle_mode_pacPainter);
 				break;
 			case S_EXT_CHAUD:
+			    scalableImage_ext_chaud.setVisible(true);
 				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Simu_ECS_Pisc");
+				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+					scalableImage_ecs.setVisible(true);
+					//
+				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+					scalableImage_piscine.setVisible(true);
+					//
+					scalableImage_ext_chaud.setPosition(229, 452, 33, 33);
 				}
 				else if(sStatut_PAC->S_Mode & S_ECS)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Chauffe_Eau");
+				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+					scalableImage_ecs.setVisible(true);
+					scalableImage_ext_chaud.setPosition(205, 416, 46, 45);
 				}
 				else if(sStatut_PAC->S_Mode & S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Piscine");
+				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+					scalableImage_piscine.setVisible(true);
+					scalableImage_ext_chaud.setPosition(205, 416, 46, 45);
 				}
 				else
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Arret");
+				    scalableImage_ext_chaud.setPosition(209, 416, 61, 60);
 				}
 				break;
 			case S_EXT_FROID:
+			    scalableImage_ext_froid.setVisible(true);
 				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Simu_ECS_Pisc");
+				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+					scalableImage_ecs.setVisible(true);
+					//
+				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+					scalableImage_piscine.setVisible(true);
+					//
+				    scalableImage_ext_froid.setPosition(229, 452, 33, 33);
 				}
 				else if(sStatut_PAC->S_Mode & S_ECS)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Chauffe_Eau");
+				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+					scalableImage_ecs.setVisible(true);
+				    scalableImage_ext_froid.setPosition(205, 416, 46, 45);
 				}
 				else if(sStatut_PAC->S_Mode & S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Piscine");
+				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+					scalableImage_piscine.setVisible(true);
+				    scalableImage_ext_froid.setPosition(205, 413, 46, 45);
 				}
 				else
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Arret");
+				    scalableImage_ext_froid.setPosition(216, 413, 53, 61);
 				}
 				break;
 			case S_CHAUD_FROID:
+				scalableImage_maison_etat_pac.setVisible(true);
+		        circle_demande_pac.setVisible(true);
+		        circle_mode_pac.setVisible(true);
 				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Simu_ECS_Pisc");
+				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+					scalableImage_ecs.setVisible(true);
+					//
+				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+					scalableImage_piscine.setVisible(true);
+					//
+					scalableImage_maison_etat_pac.setPosition(228, 451, 40, 34);
+					//
+				    circle_demande_pac.setPosition(245, 469, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+				    //
+				    circle_mode_pac.setPosition(240, 464, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(BLEU_FROID);
+				    circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
 				else if(sStatut_PAC->S_Mode & S_ECS)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Chauffe_Eau");
+				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+					scalableImage_ecs.setVisible(true);
+
+					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+
+				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+
+				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(BLEU_FROID);
+				    circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
 				else if(sStatut_PAC->S_Mode & S_PISCINE)
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Piscine");
+				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+					scalableImage_piscine.setVisible(true);
+
+					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+
+				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setCenter(3, 3);
+				    circle_demande_pac.setRadius(3);
+				    circle_demande_pac.setLineWidth(0);
+				    circle_demande_pac.setArc(0, 360);
+				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
+				    circle_demande_pac.setPainter(circle_demande_pacPainter);
+
+				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setCenter(8.0f, 8.1f);
+				    circle_mode_pac.setRadius(7);
+				    circle_mode_pac.setLineWidth(2);
+				    circle_mode_pac.setArc(0, 360);
+				    circle_mode_pac.setCapPrecision(10);
+				    circle_mode_pacPainter.setColor(BLEU_FROID);
 				}
 				else
 				{
-					// secondColumnLeftWidget = getBackground("Picto_Etat_L55xh39_Arret");
+				    scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+				    //
+				    circle_demande_pac.setPosition(235, 448, 14, 14);
+					circle_demande_pac.setCenter(7, 7);
+					circle_demande_pac.setRadius(6.5f);
+					circle_demande_pac.setLineWidth(0);
+					circle_demande_pac.setArc(0, 360);
+					circle_demande_pacPainter.setColor(ROUGE_CHAUD);
+					circle_demande_pac.setPainter(circle_demande_pacPainter);
+					//
+					circle_mode_pac.setPosition(230, 443, 24, 24);
+					circle_mode_pac.setCenter(12, 12);
+					circle_mode_pac.setRadius(11);
+					circle_mode_pac.setLineWidth(2);
+					circle_mode_pac.setArc(0, 360);
+					circle_mode_pac.setCapPrecision(10);
+					circle_mode_pacPainter.setColor(BLEU_FROID);
+					circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
 				break;
 		}
+		Image_arret.invalidate();
+		Image_attente.invalidate();
+		scalableImage_ext_chaud.invalidate();
+		scalableImage_ext_froid.invalidate();
+		scalableImage_ecs.invalidate();
+		scalableImage_piscine.invalidate();
+		scalableImage_maison_etat_pac.invalidate();
+		circle_demande_pac.invalidate();
+		circle_mode_pac.invalidate();
 	}
 	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
 }
@@ -677,7 +1007,7 @@ void AccueilView::changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt)
 	if(sConfig_IHM_old.sParam_PAC.TypeRegul >= REGUL_EXTERNE)
 	{
 		// Mode et demande de la zone
-		if((sStatut_RegulExt_old.Mode != sStatut_Zx->Mode) || (sStatut_RegulExt_old.Exception != sStatut_Zx->Exception))
+		if((sStatut_RegulExt_old.Mode != sStatut_RegulExt->Mode) || (sStatut_RegulExt_old.Exception != sStatut_RegulExt->Exception))
 		{
 			switch(sStatut_RegulExt->Mode)
 			{
@@ -755,7 +1085,8 @@ void AccueilView::changeErreur(uint16_t u16Erreur)
 
 void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
-	uint16_t u16TmpBuffer[11];
+	uint8_t u8Zone1_old = u8Zone1, u8Zone2_old = u8Zone2;
+
 	if(sConfig_IHM->sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_MULTI_ZONE)
 	{
 		// Bouton zones
@@ -879,14 +1210,10 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			}
 		}
 		// Affichage de la zone 1
-		if(memcmp(&sConfig_IHM_old.sParam_Zx[u8Zone1], &sConfig_IHM->sParam_Zx[u8Zone1], sizeof(S_PARAM_ZX)))
+		if((u8Zone1_old != u8Zone1) || memcmp(&sConfig_IHM_old.sParam_Zx[u8Zone1], &sConfig_IHM->sParam_Zx[u8Zone1], sizeof(S_PARAM_ZX)))
 		{
 			// Nom de la zone
-			for(int i = 0; i < 10; i++)
-			{
-				u16TmpBuffer[i] = sConfig_IHM->sParam_Zx[u8Zone1].u8NomZone[i];
-			}
-			Unicode::snprintf(textAreaBuffer_Zone_1, 11, "%s", u16TmpBuffer);
+			Unicode::fromUTF8(sConfig_IHM->sParam_Zx[u8Zone1].u8NomZone, textAreaBuffer_Zone_1, 10);
 			textArea_zone_1.setWildcard(textAreaBuffer_Zone_1);
 			textArea_zone_1.invalidate();
 			//
@@ -946,13 +1273,9 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			textArea_temp_zone_1.invalidate();
 		}
 		// Affichage de la zone 2
-		if(memcmp(&sConfig_IHM_old.sParam_Zx[u8Zone2], &sConfig_IHM->sParam_Zx[u8Zone2], sizeof(S_PARAM_ZX)))
+		if((u8Zone2_old != u8Zone2) || memcmp(&sConfig_IHM_old.sParam_Zx[u8Zone2], &sConfig_IHM->sParam_Zx[u8Zone2], sizeof(S_PARAM_ZX)))
 		{
-			for(int i = 0; i < 10; i++)
-			{
-				u16TmpBuffer[i] = sConfig_IHM->sParam_Zx[u8Zone2].u8NomZone[i];
-			}
-			Unicode::snprintf(textAreaBuffer_Zone_2, 11, "%s", u16TmpBuffer);
+			Unicode::fromUTF8(sConfig_IHM->sParam_Zx[u8Zone2].u8NomZone, textAreaBuffer_Zone_2, 10);
 			textArea_zone_2.setWildcard(textAreaBuffer_Zone_2);
 			textArea_zone_2.invalidate();
 			//

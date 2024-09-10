@@ -168,10 +168,10 @@ typedef struct S_RECEP_COM_MODBUS
 /*****************************************************************************/
 //  RETOUR DES CONTROLES DE TRAMES
 /*****************************************************************************/
-#define CONTROL_WRITE                   0//0x00
-#define CONTROL_NACK                    1//0x40
-#define CONTROL_READ                    2//0x80
-#define CONTROL_ACK                     4//0xC0
+#define CONTROL_WRITE                   0x00
+#define CONTROL_NACK                    0x40
+#define CONTROL_READ                    0x80
+#define CONTROL_ACK                     0xC0
 
 /*****************************************************************************/
 //  LISTE DES COMMANDES

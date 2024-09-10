@@ -18,10 +18,11 @@ cosebe_rx_t cosebe_rx;
 cosebe_test_t cosebe_test;
 arkteos_update_t arkteos_update;
 uint8_t dataUpdated = 0;
-cosebe_tx_t cosebe_tx;
-uint8_t sendData = 0;
+txData_t txData[5];
 uint8_t eOuiNon = 0;
-S_DATE sDate;
+uint8_t eHysteresis = 0;
+uint8_t eProg;
+S_DATE sDate, sDate_modif;
 S_DEMANDE_FRIGO sDemandeFrigo;
 S_STATUT_PAC sStatut_PAC;
 S_STATUT_PRIMAIRE sStatut_Primaire;
@@ -34,19 +35,32 @@ S_STATUT_REGUL_ESCLAVE sStatut_RegulEsclave;
 S_STATUT_DEBUG sStatut_DebugTrame1[8];
 S_STATUT_DEBUG sStatut_DebugTrame2[8];
 S_CYC_ETHER_III sCycEther;
+S_ENERGIE sEnergie;
 uint16_t u16ErreurEncours;
 uint16_t u16ListeErreurEncours[25];
 S_CONFIG_IHM sConfig_IHM;
 S_CYCL_REG_FRI sCyclRegFrigo[NB_UE_MAX];
+uint8_t au8Prog_Chaud_Zx[NB_ZONE][7][24];
+uint8_t au8Prog_Froid_Zx[NB_ZONE][7][24];
+uint8_t au8Prog_Regul_Ext_Chaud[7][24];
+uint8_t au8Prog_Regul_Ext_Froid[7][24];
+uint8_t au8Prog_ECS[7][24];
+uint8_t au8Prog_Piscine[7][24];
+uint8_t au8Prog_Options[7][24];
+uint8_t au8Prog_ModeSilence[7][24];
+uint8_t u8Prog[7][24], u8JourProg;
+uint8_t u8ZoneSelect;
+uint8_t u8PositionX, u8PositionY;
+bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine;
+S_HISTO_ERR sHisto_Erreur;
+uint16_t u16NumAction;
+uint32_t u32ValAction;
 
-static uint16_t computeCRC(uint8_t *data, uint16_t size);
-
-uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
+uint8_t decodeRxData(rxData_t *rxData)
 {
 	uint16_t ptrRxBuffer = 6;
 	uint8_t result = 0;
 	header_t *pHeader;
-	cosebe_test_t *pCosebe_test;
 
 	if(rxData->size != 0)
 	{
@@ -62,6 +76,9 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 			case START:
 				break;
 			case RESTART:
+#ifndef SIMULATOR
+				NVIC_SystemReset();
+#endif
 				break;
 			case RECUP_CONFIG:
 				if(pHeader->dest == N_ADD_IHM)
@@ -69,6 +86,15 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 					switch(pHeader->emet)
 					{
 						case N_ADD_ETHER:
+							memcpy(&sConfig_IHM.sParamSoft, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_SOFT_III));
+							ptrRxBuffer += sizeof(S_PARAM_ETHER_SOFT_III);
+							memcpy(&sConfig_IHM.sParamPort, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_PORT_III));
+							ptrRxBuffer += sizeof(S_PARAM_ETHER_PORT_III);
+							memcpy(&sConfig_IHM.sParamWifi, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_WIFI_III));
+							ptrRxBuffer += sizeof(S_PARAM_ETHER_WIFI_III);
+							memcpy(&sConfig_IHM.sParamModbus, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_MODBUS_III));
+							ptrRxBuffer += sizeof(S_PARAM_ETHER_MODBUS_III);
+							sConfig_IHM.u16RecupConfig = 1;
 							break;
 						case N_ADD_REG:
 							switch(pHeader->s_comm)
@@ -106,6 +132,7 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 										ptrRxBuffer += sizeof(S_PARAM_REG_EXT);
 										memcpy(&sConfig_IHM.sParam_Frigo, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_FRIGO));
 										ptrRxBuffer += sizeof(S_PARAM_FRIGO);
+										sConfig_IHM.u16RecupConfig = 2;
 									}
 									break;
 								case SC_RECUP_TRAME2:
@@ -113,6 +140,7 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 									{
 										memcpy(&sConfig_IHM.sParam_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ZX) * NB_VOIE);
 										ptrRxBuffer += 320;
+										sConfig_IHM.u16RecupConfig = 3;
 									}
 									break;
 								case SC_RECUP_CONFIG_PHOENIX:
@@ -120,6 +148,7 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 									{
 										memcpy(&sConfig_IHM.sConfigFrigo[0], &rxData->data[ptrRxBuffer], sizeof(S_CONFIG_FRIGO) * NB_UE_MAX);
 										ptrRxBuffer += sizeof(S_CONFIG_FRIGO) * NB_UE_MAX;
+										sConfig_IHM.u16RecupConfig = 4;
 									}
 									break;
 							}
@@ -133,6 +162,10 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 				{
 					memcpy(&sCyclRegFrigo[0], &rxData->data[ptrRxBuffer], sizeof(S_CYCL_REG_FRI));
 					arkteos_update.cycl_frigo_update = true;
+					if(sConfig_IHM.u16NbCyclique < 6)
+					{
+						sConfig_IHM.u16NbCyclique++;
+					}
 				}
 				break;
 			case CYC_ETHER_REG_REGUL:
@@ -219,6 +252,10 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 							}
 							ptrRxBuffer += sizeof(S_STATUT_DEBUG) * 8;
 							result++;
+							if(sConfig_IHM.u16NbCyclique < 6)
+							{
+								sConfig_IHM.u16NbCyclique++;
+							}
 						}
 						break;
 					case SC_CYC_T2:
@@ -280,6 +317,10 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 								arkteos_update.statut_debug_update = true;
 							}
 							ptrRxBuffer += sizeof(S_STATUT_DEBUG) * 8;
+							if(sConfig_IHM.u16NbCyclique < 6)
+							{
+								sConfig_IHM.u16NbCyclique++;
+							}
 						}
 						break;
 				}
@@ -295,46 +336,173 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 						arkteos_update.erreur_update = true;
 					}
 				}
+				if(sConfig_IHM.u16NbCyclique < 6)
+				{
+					sConfig_IHM.u16NbCyclique++;
+				}
 				ptrRxBuffer += sizeof(S_CYC_ETHER_III);
 				break;
 			case C_USER:
-				if(pHeader->dest == N_ADD_IHM)
-				{
-				  if(pHeader->comm == C_USER)
-				  {
-					if(pHeader->control == CONTROL_WRITE)
-					{
-					  if(pHeader->s_comm == SC_USER_Z1)
-					  {
-						pCosebe_test = (cosebe_test_t*)(rxData->data + sizeof(header_t));
-						if((pCosebe_test->bModePAC) != cosebe_test.bModePAC)
-						{
-						  cosebe_test.bModePAC = pCosebe_test->bModePAC;
-						  result++;
-						}
-						if((pCosebe_test->u7Spare) != cosebe_test.u7Spare)
-						{
-						  cosebe_test.u7Spare = pCosebe_test->u7Spare;
-						  result++;
-						}
-						if((pCosebe_test->u8Spare) != cosebe_test.u8Spare)
-						{
-						  cosebe_test.u8Spare = pCosebe_test->u8Spare;
-						  result++;
-						}
-						if((pCosebe_test->u8Spare) != cosebe_test.u8Spare)
-						{
-						  cosebe_test.u8Spare = pCosebe_test->u8Spare;
-						  result++;
-						}
-					  }
-					}
-				  }
-				}
+//				if(pHeader->dest == N_ADD_IHM)
+//				{
+//				  if(pHeader->comm == C_USER)
+//				  {
+//					if(pHeader->control == CONTROL_WRITE)
+//					{
+//					  if(pHeader->s_comm == SC_USER_Z1)
+//					  {
+//						pCosebe_test = (cosebe_test_t*)(rxData->data + sizeof(header_t));
+//						if((pCosebe_test->bModePAC) != cosebe_test.bModePAC)
+//						{
+//						  cosebe_test.bModePAC = pCosebe_test->bModePAC;
+//						  result++;
+//						}
+//						if((pCosebe_test->u7Spare) != cosebe_test.u7Spare)
+//						{
+//						  cosebe_test.u7Spare = pCosebe_test->u7Spare;
+//						  result++;
+//						}
+//						if((pCosebe_test->u8Spare) != cosebe_test.u8Spare)
+//						{
+//						  cosebe_test.u8Spare = pCosebe_test->u8Spare;
+//						  result++;
+//						}
+//						if((pCosebe_test->u8Spare) != cosebe_test.u8Spare)
+//						{
+//						  cosebe_test.u8Spare = pCosebe_test->u8Spare;
+//						  result++;
+//						}
+//					  }
+//					}
+//				  }
+//				}
 				break;
 			case C_USER_PROG:
+				if(pHeader->taille == sizeof(au8Prog_ECS))
+				{
+					switch(pHeader->s_comm)
+					{
+						case SC_PROG_CHAUD_Z1:
+							memcpy(&au8Prog_Chaud_Zx[0], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_CHAUD_Z2:
+							memcpy(&au8Prog_Chaud_Zx[1], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_CHAUD_Z3:
+							memcpy(&au8Prog_Chaud_Zx[3], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_CHAUD_Z4:
+							memcpy(&au8Prog_Chaud_Zx[3], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_CHAUD_Z5:
+							memcpy(&au8Prog_Chaud_Zx[4], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_CHAUD_Z6:
+							memcpy(&au8Prog_Chaud_Zx[5], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_CHAUD_Z7:
+							memcpy(&au8Prog_Chaud_Zx[6], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_CHAUD_Z8:
+							memcpy(&au8Prog_Chaud_Zx[7], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_FROID_Z1:
+							memcpy(&au8Prog_Froid_Zx[0], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_FROID_Z2:
+							memcpy(&au8Prog_Froid_Zx[1], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_FROID_Z3:
+							memcpy(&au8Prog_Froid_Zx[2], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_FROID_Z4:
+							memcpy(&au8Prog_Froid_Zx[3], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_FROID_Z5:
+							memcpy(&au8Prog_Froid_Zx[4], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_FROID_Z6:
+							memcpy(&au8Prog_Froid_Zx[5], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_FROID_Z7:
+							memcpy(&au8Prog_Froid_Zx[6], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_FROID_Z8:
+							memcpy(&au8Prog_Froid_Zx[7], &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_EXT_CHAUD:
+							memcpy(&au8Prog_Regul_Ext_Chaud, &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_EXT_FROID:
+							memcpy(&au8Prog_Regul_Ext_Froid, &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_ECS:
+							memcpy(&au8Prog_ECS, &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_PISCINE:
+							memcpy(&au8Prog_Piscine, &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_OPTIONS:
+							memcpy(&au8Prog_Options, &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+						case SC_PROG_MODE_SILENCE:
+							memcpy(&au8Prog_ModeSilence, &rxData->data[ptrRxBuffer], sizeof(au8Prog_ECS));
+							break;
+					}
+				}
 				break;
 			case C_USER_ENERGIE:
+				switch(pHeader->s_comm)
+				{
+					case SC_ENER_CONS_12M:
+						if(pHeader->taille == sizeof(sEnergie.Conso_12M))
+						{
+							memcpy(&sEnergie.Conso_12M, &rxData->data[ptrRxBuffer], sizeof(sEnergie.Conso_12M));
+						}
+						break;
+					case SC_ENER_CONS_24H:
+						if(pHeader->taille == sizeof(sEnergie.Conso_24H))
+						{
+							memcpy(&sEnergie.Conso_24H, &rxData->data[ptrRxBuffer], sizeof(sEnergie.Conso_24H));
+						}
+						break;
+					case SC_ENER_CONS_24J:
+						if(pHeader->taille == sizeof(sEnergie.Conso_24J))
+						{
+							memcpy(&sEnergie.Conso_24J, &rxData->data[ptrRxBuffer], sizeof(sEnergie.Conso_24J));
+						}
+						break;
+					case SC_ENER_CUMUL_CONS:
+						if(pHeader->taille == sizeof(sEnergie.Cumul_Consommee))
+						{
+							memcpy(&sEnergie.Cumul_Consommee, &rxData->data[ptrRxBuffer], sizeof(sEnergie.Cumul_Consommee));
+						}
+						break;
+					case SC_ENER_CUMUL_PROD:
+						if(pHeader->taille == sizeof(sEnergie.Cumul_Produite))
+						{
+							memcpy(&sEnergie.Cumul_Produite, &rxData->data[ptrRxBuffer], sizeof(sEnergie.Cumul_Produite));
+						}
+						break;
+					case SC_ENER_PROD_12M:
+						if(pHeader->taille == sizeof(sEnergie.Prod_12M))
+						{
+							memcpy(&sEnergie.Prod_12M, &rxData->data[ptrRxBuffer], sizeof(sEnergie.Prod_12M));
+						}
+						break;
+					case SC_ENER_PROD_24H:
+						if(pHeader->taille == sizeof(sEnergie.Prod_24H))
+						{
+							memcpy(&sEnergie.Prod_24H, &rxData->data[ptrRxBuffer], sizeof(sEnergie.Prod_24H));
+						}
+						break;
+					case SC_ENER_PROD_24J:
+						if(pHeader->taille == sizeof(sEnergie.Prod_24J))
+						{
+							memcpy(&sEnergie.Prod_24J, &rxData->data[ptrRxBuffer], sizeof(sEnergie.Prod_24J));
+						}
+						break;
+				}
 				break;
 			case C_INSTALL:
 				break;
@@ -343,6 +511,15 @@ uint8_t decodeRxData(rxData_t *rxData, cosebe_rx_t *cosebe_rx)
 			case C_USINE:
 				break;
 			case C_SAV:
+				switch(pHeader->s_comm)
+				{
+					case SC_SAV_HISTO_ERR:
+						if(pHeader->taille == sizeof(sHisto_Erreur))
+						{
+							memcpy(&sHisto_Erreur, &rxData->data[ptrRxBuffer], sizeof(S_HISTO_ERR));
+						}
+						break;
+				}
 				break;
 			case C_WEB:
 				break;
@@ -451,28 +628,12 @@ bool verifErreurs(void)
 	}
 	return false;
 }
-
-uint8_t computeTxData(txData_t *txData, const cosebe_tx_t *cosebe_tx)
-{
-  uint8_t result = 0;
-
-  txData->header.dest = N_ADD_ETHER;
-  txData->header.emet = N_ADD_IHM;
-  txData->header.comm = C_IHM_TABLETTE;
-  txData->header.control = CONTROL_WRITE;
-  txData->header.s_comm = SC_IHM_ON_OFF;
-  txData->header.taille = 2;
-  txData->data[0] = (uint8_t)(cosebe_tx->u16Data >> 8);
-  txData->data[1] = (uint8_t)(cosebe_tx->u16Data);
-  txData->crc = (uint16_t*)(txData->data + txData->header.taille);
-  *txData->crc = computeCRC((uint8_t*)txData, sizeof(header_t) + txData->header.taille);
-  txData->size = sizeof(header_t) + txData->header.taille + sizeof(uint16_t);
-
-  return result;
-}
-
-static uint16_t computeCRC(uint8_t *data, uint16_t size)
-{
-  uint16_t crc = 0x1234;
-  return crc;
-}
+//
+//uint8_t computeTxData(txData_t *txData, txData_t *txData_t)
+//{
+//  uint8_t result = 0;
+//
+//  txData = txData_t;
+//
+//  return result;
+//}

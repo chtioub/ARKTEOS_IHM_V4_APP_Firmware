@@ -27,6 +27,19 @@ public:
 
     virtual ~ProgrammationPresenter() {}
 
+    virtual void changeDate(S_DATE *sDate);
+	virtual void changeErreur(uint16_t u16Erreur);
+	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+
+    void c_prog_ecs(bool bEnvoi);
+    void c_prog_option(bool bEnvoi);
+    void c_prog_piscine(bool bEnvoi);
+    void c_prog_zone_chaud(uint8_t u8Zone, bool bEnvoi);
+    void c_prog_zone_froid(uint8_t u8Zone, bool bEnvoi);
+    void c_prog_reg_ext_chaud(bool bEnvoi);
+    void c_prog_reg_ext_froid(bool bEnvoi);
+
 private:
     ProgrammationPresenter();
 
