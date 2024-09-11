@@ -14,6 +14,27 @@ Usine_config_inverterraView::Usine_config_inverterraView()
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIG_INVERTERRA_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
+	//
+	if(sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bSupply)
+	{
+		textArea_valeur_alim_pac.setTypedText(touchgfx::TypedText(T_TEXT_ALIM_PAC_TRI_CENTRE_DEFAUT));
+	}
+	//
+	if(sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bReversible)
+	{
+		textArea_on_off_reversible.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+	}
+	//
+	if(sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bReversible)
+	{
+		toggleButton_reversible.forceState(true);
+		textArea_on_off_reversible.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		container_fluide_inverterra_sajiter.setVisible(true);
+	}
+	//
+	u8FluideC1 = sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u4TypeGaz;
+	affichageFluideC1();
+	//
 }
 
 void Usine_config_inverterraView::setupScreen()
@@ -88,6 +109,16 @@ void Usine_config_inverterraView::bouton_plus_puissance()
 
 }
 
+void Usine_config_inverterraView::bouton_on_off()
+{
+	if(toggleButton_reversible.getState())
+	{
+		textArea_on_off_reversible.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+	}
+	else textArea_on_off_reversible.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+	textArea_on_off_reversible.invalidate();
+}
+
 void Usine_config_inverterraView::bouton_mono_tri()
 {
 	if(textArea_valeur_alim_pac.getTypedText().getId() == touchgfx::TypedText(T_TEXT_ALIM_PAC_MONO_CENTRE_DEFAUT).getId())
@@ -100,12 +131,18 @@ void Usine_config_inverterraView::bouton_mono_tri()
 
 void Usine_config_inverterraView::bouton_type_inverterra()
 {
-//	if(textArea_valeur_module_2_zones_int.getTypedText().getId() == touchgfx::TypedText(T_TEXT_OUI_CENTRE_DEFAUT).getId())
-//	{
-//		textArea_valeur_module_2_zones_int.setTypedText(touchgfx::TypedText(T_TEXT_NON_CENTRE_DEFAUT));
-//	}
-//	else textArea_valeur_module_2_zones_int.setTypedText(touchgfx::TypedText(T_TEXT_OUI_CENTRE_DEFAUT));
-//	textArea_valeur_module_2_zones_int.invalidate();
+	if(textArea_valeur_type_pac.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_PAC_INVERTERRA_R454C_CENTRE_DEFAUT).getId())
+	{
+		textArea_valeur_type_pac.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_PAC_INVERTERRA_SAGITAIR_CENTRE_DEFAUT));
+		container_fluide_inverterra_sajiter.setVisible(true);
+	}
+	else
+	{
+		textArea_valeur_type_pac.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_PAC_INVERTERRA_R454C_CENTRE_DEFAUT));
+		container_fluide_inverterra_sajiter.setVisible(true);
+	}
+	textArea_valeur_type_pac.invalidate();
+	container_fluide_inverterra_sajiter.invalidate();
 }
 
 void Usine_config_inverterraView::bouton_valider()

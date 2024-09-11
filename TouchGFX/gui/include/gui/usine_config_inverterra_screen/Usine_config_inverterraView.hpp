@@ -15,6 +15,7 @@ public:
     void bouton_droite_fluide_c1();
     void bouton_gauche_fluide_c1();
     void affichageFluideC1();
+    void bouton_on_off();
     void bouton_moins_puissance();
     void bouton_plus_puissance();
     void bouton_mono_tri();
@@ -33,7 +34,7 @@ protected:
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_FluideC1[6];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_FluideC1[6], textAreaBuffer_Puissance[4];
 };
 
 #endif // USINE_CONFIG_INVERTERRAVIEW_HPP

@@ -4915,6 +4915,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_type_pac_inverterra_sagitair_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Inverterra sagitair</Translation>
+        <Translation Language="GB">Inverterra R454C</Translation>
+        <Translation Language="PT">Inverterra R454C</Translation>
+        <Translation Language="NL">Inverterra R454C</Translation>
+        <Translation Language="DE">Inverterra R454C</Translation>
+      </Text>
       <Text Id="text_carte_mitsu_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Présence carte Mitsu</Translation>
         <Translation Language="GB">DHW loop</Translation>

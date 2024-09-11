@@ -18,6 +18,7 @@ Usine_choix_fluideView::Usine_choix_fluideView()
 	if(sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO_PP)
 	{
 		toggleButton_baguio_pp.forceState(true);
+		textArea_on_off_baguio_pp.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
 	//
 	u8FluideC1 = sConfig_IHM.sModele_PAC.Gaz_C1;
@@ -34,6 +35,16 @@ void Usine_choix_fluideView::setupScreen()
 void Usine_choix_fluideView::tearDownScreen()
 {
     Usine_choix_fluideViewBase::tearDownScreen();
+}
+
+void Usine_choix_fluideView::bouton_on_off()
+{
+	if(toggleButton_baguio_pp.getState())
+	{
+		textArea_on_off_baguio_pp.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+	}
+	else textArea_on_off_baguio_pp.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+	textArea_on_off_baguio_pp.invalidate();
 }
 
 void Usine_choix_fluideView::bouton_droite_fluide_c1()

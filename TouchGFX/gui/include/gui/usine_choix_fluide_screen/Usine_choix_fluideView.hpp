@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void bouton_on_off();
     void bouton_droite_fluide_c1();
     void bouton_gauche_fluide_c1();
     void affichageFluideC1();

@@ -55916,7 +55916,6 @@
                 "Y": 301,
                 "Width": 449,
                 "Height": 53,
-                "Visible": false,
                 "Components": [
                   {
                     "Type": "Image",
@@ -55955,17 +55954,12 @@
                     "Y": 15,
                     "Width": 53,
                     "Height": 22,
-                    "TextId": "text_on_off_sajiter_centre_defaut",
+                    "TextId": "text_off_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
                       "Green": 255,
                       "Blue": 255
-                    },
-                    "Wildcard1": {
-                      "TextId": "text_on_off_sajiter_valeur_centre_defaut",
-                      "UseBuffer": true,
-                      "BufferSize": 4
                     }
                   }
                 ]
@@ -56038,6 +56032,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_droite_fluide_c2"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_on_off_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_baguio_pp"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_on_off"
             }
           }
         ]
@@ -58519,7 +58524,7 @@
                   },
                   {
                     "Type": "Container",
-                    "Name": "container_sajiter",
+                    "Name": "container_reversible",
                     "X": 486,
                     "Y": 152,
                     "Width": 449,
@@ -58527,14 +58532,14 @@
                     "Components": [
                       {
                         "Type": "Image",
-                        "Name": "image_sajiter",
+                        "Name": "image_reversible",
                         "Width": 449,
                         "Height": 53,
                         "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
                       },
                       {
                         "Type": "ToggleButton",
-                        "Name": "toggleButton_sajiter",
+                        "Name": "toggleButton_reversible",
                         "X": 396,
                         "Width": 53,
                         "Height": 53,
@@ -58543,7 +58548,7 @@
                       },
                       {
                         "Type": "TextArea",
-                        "Name": "textArea_sajiter",
+                        "Name": "textArea_reversible",
                         "Y": 15,
                         "Width": 396,
                         "Height": 22,
@@ -58557,7 +58562,7 @@
                       },
                       {
                         "Type": "TextArea",
-                        "Name": "textArea_on_off_sajiter",
+                        "Name": "textArea_on_off_reversible",
                         "X": 396,
                         "Y": 15,
                         "Width": 53,
@@ -58975,6 +58980,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_gauche_fluide_c1"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_reversible"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_on_off"
             }
           }
         ]
