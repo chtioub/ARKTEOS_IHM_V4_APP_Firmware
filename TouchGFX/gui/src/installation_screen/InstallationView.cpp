@@ -28,6 +28,12 @@ void InstallationView::tearDownScreen()
     InstallationViewBase::tearDownScreen();
 }
 
+void InstallationView::bouton_modif_code()
+{
+	eCode = MODIF_CODE_INSTALL;
+	application().gotoCode_numeriqueScreenNoTransition();
+}
+
 void InstallationView::bouton_retour()
 {
 	if(bMaintenanceDepuisUsine)

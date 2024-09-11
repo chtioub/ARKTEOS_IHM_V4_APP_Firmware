@@ -21,6 +21,7 @@ extern "C"
 #include "arkteos_var_protocole.h"
 #include "arkteos_var_commune.h"
 #include "arkteos_defauts.h"
+#include <texts/TextKeysAndLanguages.hpp>
 
 typedef enum
 {
@@ -49,6 +50,16 @@ typedef enum
 	OUI_NON_RAZ_TPS_FONCT = 25,
 	OUI_NON_RAZ_ENERGIES = 26,
 } E_OUI_NON;
+
+typedef enum
+{
+	CODE_ACCES_INSTALL = 1,
+	CODE_ACCES_USINE = 2,
+	CODE_ACCES_MAINT = 3,
+	MODIF_CODE_INSTALL = 4,
+	MODIF_CODE_MAINT = 5,
+	NUM_SERIE = 6,
+} E_CODE;
 
 typedef enum
 {
@@ -146,7 +157,7 @@ extern arkteos_update_t arkteos_update;
 extern rxData_t rxData;
 extern uint8_t rxBuffer[TAILLE_BUFFER_UART];
 extern uint8_t dataUpdated;
-extern uint8_t eOuiNon;
+extern uint8_t eOuiNon, eCode;
 extern uint8_t eHysteresis;
 extern uint8_t eProg;
 extern S_DATE sDate, sDate_modif;
@@ -184,11 +195,13 @@ extern uint8_t u8PositionX, u8PositionY;
 extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine;
 extern S_HISTO_ERR sHisto_Erreur;
 extern uint16_t u16NumAction;
-extern uint32_t u32ValAction;
+extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000];
 
 uint8_t decodeRxData(rxData_t *rxData);
 uint8_t computeTxData(txData_t *txData, txData_t *cosebe_tx);
 bool verifErreurs(void);
+
+
 
 
 #ifdef __cplusplus

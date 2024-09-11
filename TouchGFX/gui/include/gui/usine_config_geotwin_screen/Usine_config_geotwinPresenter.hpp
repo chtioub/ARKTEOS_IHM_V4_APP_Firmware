@@ -27,6 +27,13 @@ public:
 
     virtual ~Usine_config_geotwinPresenter() {}
 
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+
+    void c_usine_param();
+
 private:
     Usine_config_geotwinPresenter();
 

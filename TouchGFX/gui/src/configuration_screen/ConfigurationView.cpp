@@ -35,6 +35,24 @@ void ConfigurationView::tearDownScreen()
     ConfigurationViewBase::tearDownScreen();
 }
 
+void ConfigurationView::bouton_maintenance()
+{
+	eCode = CODE_ACCES_MAINT;
+	application().gotoCode_numeriqueScreenNoTransition();
+}
+
+void ConfigurationView::bouton_installation()
+{
+	eCode = CODE_ACCES_INSTALL;
+	application().gotoCode_numeriqueScreenNoTransition();
+}
+
+void ConfigurationView::bouton_usine()
+{
+	eCode = CODE_ACCES_USINE;
+	application().gotoCode_numeriqueScreenNoTransition();
+}
+
 void ConfigurationView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
 	S_ZONE sZone_tmp;

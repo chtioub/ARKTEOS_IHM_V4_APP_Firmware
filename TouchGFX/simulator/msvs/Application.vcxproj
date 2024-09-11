@@ -193,9 +193,6 @@
     <ClCompile Include="..\..\gui\src\usine_config_inverterra_screen\Usine_config_inverterraPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\usine_config_inverterra_screen\Usine_config_inverterraView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\usine_config_inverterra_screen\Usine_config_inverterraViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\usine_numero_serie_screen\Usine_numero_seriePresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\usine_numero_serie_screen\Usine_numero_serieView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\usine_numero_serie_screen\Usine_numero_serieViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\usine_screen\UsinePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\usine_screen\UsineView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\usine_screen\UsineViewBase.cpp"/>
@@ -551,9 +548,6 @@
     <ClInclude Include="..\..\gui\include\gui\usine_config_inverterra_screen\Usine_config_inverterraPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\usine_config_inverterra_screen\Usine_config_inverterraView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_inverterra_screen\Usine_config_inverterraViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\usine_numero_serie_screen\Usine_numero_seriePresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\usine_numero_serie_screen\Usine_numero_serieView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_numero_serie_screen\Usine_numero_serieViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\usine_screen\UsinePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\usine_screen\UsineView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_screen\UsineViewBase.hpp"/>

@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void bouton_modif_code();
     void bouton_raz_config();
     void bouton_freecooling();
     void bouton_dalle();

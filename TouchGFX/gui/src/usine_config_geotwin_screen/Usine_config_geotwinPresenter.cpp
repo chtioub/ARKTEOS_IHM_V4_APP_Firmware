@@ -16,3 +16,28 @@ void Usine_config_geotwinPresenter::deactivate()
 {
 
 }
+
+void Usine_config_geotwinPresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
+{
+	view.changeStatutEther(sCycEther);
+}
+
+void Usine_config_geotwinPresenter::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
+{
+	view.changeStatutPAC(sStatut_PAC);
+}
+
+void Usine_config_geotwinPresenter::changeDate(S_DATE *sDate)
+{
+	view.changeDate(sDate);
+}
+
+void Usine_config_geotwinPresenter::changeErreur(uint16_t u16Erreur)
+{
+	view.changeErreur(u16Erreur);
+}
+
+void Usine_config_geotwinPresenter::c_usine_param()
+{
+	model->c_usine_param();
+}

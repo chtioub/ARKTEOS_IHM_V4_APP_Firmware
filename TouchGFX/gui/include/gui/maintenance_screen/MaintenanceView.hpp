@@ -12,6 +12,7 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void bouton_modif_code();
     void bouton_raz_histo_err();
     void bouton_derog_pression();
     void bouton_shunt_tempo();

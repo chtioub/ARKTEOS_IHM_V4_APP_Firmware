@@ -60,6 +60,7 @@ public:
     void c_install_piscine();
     void c_install_raz_histo_err();
 
+    void c_usine_param();
     void c_usine_password();
     void c_usine_phoenix(int u8Esclave);
     void c_usine_raz_energie();

@@ -10,6 +10,10 @@ Model::Model() : modelListener(0)
 	sConfig_IHM.sOption_PAC.sZone.bZone1 = 1;
 	sConfig_IHM.sOption_PAC.ECS = 1;
 	sConfig_IHM.sOption_PAC.Piscine = 1;
+	// Install PAC
+	memset(sConfig_IHM.sInstall_PAC.auc8Serial_Number_PAC, '1', 12);
+	memset(sConfig_IHM.sInstall_PAC.auc8PW_Installateur, '1', 4);
+	memset(sConfig_IHM.sInstall_PAC.auc8PW_Maintenance, '1', 4);
 	// Statut PAC
 	sStatut_PAC.S_Mode = S_ECS + S_PISCINE;
 	// Config ECS
@@ -853,6 +857,30 @@ void Model::c_install_raz_histo_err()
 	txData[0].data[4] = 0;
 	txData[0].data[5] = 0;
 	u16Pointeur = 6;
+
+	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
+	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[0].size = u16Pointeur;
+}
+
+void Model::c_usine_param()
+{
+	uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[0].data[0] = N_ADD_REG;
+	txData[0].data[1] = N_ADD_IHM;
+	txData[0].data[2] = C_USINE;
+	txData[0].data[3] = SC_USINE_PARAM;
+	txData[0].data[4] = sizeof(S_MODELE_PAC) + sizeof(S_CONFIG_PAC);
+	txData[0].data[5] = 0;
+	u16Pointeur = 6;
+
+	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sModele_PAC, sizeof(S_MODELE_PAC));
+	u16Pointeur += sizeof(S_MODELE_PAC);
+	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sConfig_PAC, sizeof(S_CONFIG_PAC));
+	u16Pointeur += sizeof(S_CONFIG_PAC);
 
 	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
 	txData[0].data[u16Pointeur++] = u16CRC & 0xff;

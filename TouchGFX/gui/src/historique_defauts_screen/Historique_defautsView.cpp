@@ -24,7 +24,7 @@ Historique_defautsView::Historique_defautsView()
 			pointeur = 49;
 		}
 		//
-		if(sHisto_Erreur.Defaut[pointeur] != 0)
+		if(sHisto_Erreur.Defaut[pointeur] != 0 && (bPageUsine || ((sHisto_Erreur.Defaut[pointeur] & DEFAUT_NV_HISTORIQUE) == 0)))
 		{
 			// Image jaune ou rouge
 			image_defaut[i].setXY(0, 10 + 74 * i);
@@ -64,11 +64,14 @@ Historique_defautsView::Historique_defautsView()
 			textArea_def[i].setPosition(95, 24 + 74 * i, 600, 23);
 			textArea_def[i].setColor(BLANC);
 			textArea_def[i].setLinespacing(0);
-			textArea_def[i].setTypedText(touchgfx::TypedText(T_TEXT_ERREUR_2_LISTE_GAUCHE_DEFAUT));
+			if(u32Erreurs[sHisto_Erreur.Defaut[pointeur] & 0x3ff] != 0)
+			{
+				textArea_def[i].setTypedText(touchgfx::TypedText(u32Erreurs[sHisto_Erreur.Defaut[pointeur] & 0x3ff]));
+			}
+			else textArea_def[i].setTypedText(touchgfx::TypedText(T_TEXT_ERR_INCONNUE_GAUCHE_DEFAUT));
 			scrollableContainer.add(textArea_def[i]);
 		}
 	}
-
 }
 
 void Historique_defautsView::setupScreen()

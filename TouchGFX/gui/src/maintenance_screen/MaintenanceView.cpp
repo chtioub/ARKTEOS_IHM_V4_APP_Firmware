@@ -31,6 +31,12 @@ void MaintenanceView::tearDownScreen()
     MaintenanceViewBase::tearDownScreen();
 }
 
+void MaintenanceView::bouton_modif_code()
+{
+	eCode = MODIF_CODE_MAINT;
+	application().gotoCode_numeriqueScreenNoTransition();
+}
+
 void MaintenanceView::bouton_retour()
 {
 	if(bMaintenanceDepuisUsine)

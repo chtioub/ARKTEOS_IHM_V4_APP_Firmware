@@ -373,9 +373,6 @@
     <Filter Include="Source Files\gui\installation_circuit_primaire_screen">
       <UniqueIdentifier>87A70EC2-D15E-8A69-E177-8B664E7FACA8</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\usine_numero_serie_screen">
-      <UniqueIdentifier>30B55F55-6869-8F91-B81A-A575E810C655</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui\date_heure_screen">
       <UniqueIdentifier>C04E3A74-7788-2AA5-2607-A7015079DCA6</UniqueIdentifier>
     </Filter>
@@ -387,9 +384,6 @@
     </Filter>
     <Filter Include="Source Files\gui\installation_circuit_captage_screen">
       <UniqueIdentifier>D3D24C0E-ACEB-DD94-2F0F-FB44D08F68A7</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\usine_numero_serie_screen">
-      <UniqueIdentifier>5814595E-1F18-83AC-A838-651832230023</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\gui\accueil_screen">
       <UniqueIdentifier>7D94FACB-CD8C-71C4-CD11-719225AE0F0F</UniqueIdentifier>
@@ -670,9 +664,6 @@
     <Filter Include="Source Files\generated\gui_generated\installation_circuit_primaire_screen">
       <UniqueIdentifier>EA15144A-40A1-D904-90A6-77A5FE36ED01</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\usine_numero_serie_screen">
-      <UniqueIdentifier>9237BFB9-AD32-C630-6C2D-71F6FC99B674</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\generated\gui_generated\configuration_screen">
       <UniqueIdentifier>6116AD34-CF4B-B73B-2DF1-ECE9B88086E1</UniqueIdentifier>
     </Filter>
@@ -681,9 +672,6 @@
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\installation_circuit_primaire_screen">
       <UniqueIdentifier>D74EB1EF-6C14-91E2-0634-09733EBD0E41</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\usine_numero_serie_screen">
-      <UniqueIdentifier>EADBE043-98C7-790E-EEA4-80859C241147</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\programmation_screen">
       <UniqueIdentifier>4E841C42-BB33-2697-9F56-6A5FE8D8AA8B</UniqueIdentifier>
@@ -1523,15 +1511,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\usine_config_inverterra_screen\Usine_config_inverterraViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\usine_config_inverterra_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\usine_numero_serie_screen\Usine_numero_seriePresenter.cpp">
-      <Filter>Source Files\gui\usine_numero_serie_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\usine_numero_serie_screen\Usine_numero_serieView.cpp">
-      <Filter>Source Files\gui\usine_numero_serie_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\usine_numero_serie_screen\Usine_numero_serieViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\usine_numero_serie_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\usine_screen\UsinePresenter.cpp">
       <Filter>Source Files\gui\usine_screen</Filter>
@@ -2589,15 +2568,6 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_config_inverterra_screen\Usine_config_inverterraViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\usine_config_inverterra_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\usine_numero_serie_screen\Usine_numero_seriePresenter.hpp">
-      <Filter>Header Files\gui\usine_numero_serie_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\usine_numero_serie_screen\Usine_numero_serieView.hpp">
-      <Filter>Header Files\gui\usine_numero_serie_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_numero_serie_screen\Usine_numero_serieViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\usine_numero_serie_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\usine_screen\UsinePresenter.hpp">
       <Filter>Header Files\gui\usine_screen</Filter>

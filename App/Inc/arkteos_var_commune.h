@@ -214,6 +214,9 @@ typedef enum {SIMULTANE_CHAUD_FROID_NONE, SIMULTANE_CHAUD_FROID_CONFIGURATION_1,
 // SIMULTANE_CHAUD_FROID_CONFIGURATION_1 : Freecooling (Froid par Freecolling � classique � ou par le c�t� capteur de la PAC en fonction que la PAC est par ailleurs en demande de production de Chaud vers une source chaude ou pas)
 // SIMULTANE_CHAUD_FROID_CONFIGURATION_2 : Froid actif (Pr�sence de 2 ballons Chaud et Froid, d�charge de la PAC du ballon satisfait vers le capteur)
 
+// Type AJPAC
+typedef enum { MONO_10KW, MONO_16KW, TRI_16KW, TRI_20KW, MONO_6KW, MONO_8KW, TRI_24KW } E_LISTE_PW;
+
 // </editor-fold>
 
 /*****************************************************************************/

@@ -9,6 +9,482 @@
   </Languages>
   <Texts>
     <TextGroup Id="Erreurs">
+      <Text Id="text_err_202_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde température TEV_OUT</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_201_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde température TEV_IN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_200_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde extérieure</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_134_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication carte MZ3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_133_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication carte MZ2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_132_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication carte MZ1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_131_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication carte ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_130_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication esclave</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_128_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication modbus</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_127_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication modbus</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_125_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Association multiple antenne RF</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_124_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Thermodynamique Maximum atteint en mode ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_123_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau ballon tampon</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_122_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication antenne RF</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_121_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication carte FAN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_120_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Défaut communication carte FRIGO</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_119_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Erreur RTC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_118_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Erreur mémoire Flash</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_117_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Erreur mémoire EEPROM</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_116_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Compteur de puissance</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_115_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Pression d'eau chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_114_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Erreur système</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_112_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde ballon ECS Bas</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_111_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde ballon ECS Milieu</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_110_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau piscine</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_107_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau ballon tampon froid</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_105_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau primaire retour</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_104_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau primaire aller</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_80_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour Groupe B</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_79_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour Groupe A</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_78_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour zone 8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_77_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour zone 7</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_76_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour zone 6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_75_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour zone 5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_74_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour zone 4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_73_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_72_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour zone 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_71_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour zone 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_70_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ Groupe B</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_69_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ Groupe A</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_68_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ zone 8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_67_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ zone 7</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_66_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ zone 6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_65_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ zone 5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_64_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ zone 4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_63_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_62_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ zone 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_61_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ zone 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_58_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde intérieure zone 8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_57_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde intérieure zone 7</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_56_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde intérieure zone 6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_55_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde intérieure zone 5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_54_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde intérieure zone 4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_53_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde intérieure zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_52_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde intérieure zone 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_51_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde intérieure zone 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_50_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Groupe B</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_49_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Groupe A</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_48_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Zone 8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_47_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Zone 7</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_46_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Zone 6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_45_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Zone 5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_44_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Zone 4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_43_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_42_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Zone 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_41_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Zone 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_40_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Capteur de débit Primaire</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_30_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Info : Demande de fonctionnement de la chaudière</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_err_18_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Erreur : Boot carte Multizone</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -67,6 +543,20 @@
       </Text>
       <Text Id="text_err_10_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Erreur : Boot carte REG - ETHER</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_inconnue_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Non référencée dans l'IHM</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_alarmes_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Alarmes</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -3556,6 +4046,55 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Usine">
+      <Text Id="text_sika_vtr1050_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">SIKA VTR1050</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sika_40_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">SIKA 40</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sika_32_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">SIKA 32</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_huba_32_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">HUBA 32</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_huba_25_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">HUBA 25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_huba_20_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">HUBA 20</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_huba_15_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">HUBA 15</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="Text_offset_loi_eau_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Offset sur la loi d'eau</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -3669,7 +4208,7 @@
         <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
       </Text>
       <Text Id="text_choix_fluide_c2_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Fluide compresseur 2</Translation>
+        <Translation Language="FR">Fluide C2</Translation>
         <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
         <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
         <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
@@ -3889,6 +4428,90 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Vacances">
+      <Text Id="text_alim_pac_tri_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Tri 3~</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_non_utilise_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">NU</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_affectation_fct_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Affectation des fonctions</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_tri_24_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Tri 24kW</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_tri_20_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Tri 20kW</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_tri_16_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Tri 16kW</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mono_16_ajpac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Mono 16kW</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_config_inverterra_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration INVERTERRA</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_config_ajpac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration AJPAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_config_geotwin_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_choix_fluide_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Choix du fluide frigorifique</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_config_additionnelle_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration additionnelle PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_question_mode_simultane_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Voulez-vous activer la gestion piscine en simultané ?</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -4292,8 +4915,197 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
-      <Text Id="text_alarmes_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Alarmes</Translation>
+      <Text Id="text_carte_mitsu_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Présence carte Mitsu</Translation>
+        <Translation Language="GB">DHW loop</Translation>
+        <Translation Language="PT">Ciclo de AQS</Translation>
+        <Translation Language="NL">Bouclage ECS</Translation>
+        <Translation Language="DE">Bouclage ECS</Translation>
+      </Text>
+      <Text Id="__SingleUse_NUVT" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">Code incorrect</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_fonction_10_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fonction 10</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_fonction_9_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fonction 9</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_fonction_8_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fonction 8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_info_comp_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Info marche / arrêt comp.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_chaud_froid_voie_2_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Chaud / froid voie 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_chaud_froid_voie_1_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Chaud / froid voie 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_def_general_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut général PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_info_chaud_froid_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Info chaud / froid</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_releve_pac_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Relève PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_resis_carter_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Résistance carter</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_sortie_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_adapt_cons_pv_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Adaptation consigne (PV)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_adapt_loi_eau_pv_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Adaptation loi d'eau (PV)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_fonction_7_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fonction 7</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_fonction_6_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fonction 6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_fonction_5_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fonction 5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_fonction_4_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fonction 4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_marche_general_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Marche (contact fermé) / Arrêt (contact ouvert) général</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_marche_zone_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Marche (contact fermé) / Arrêt (contact ouvert) zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_chaud_zones_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Chaud (contact fermé) / Froid (contact ouvert) zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_th2_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Th2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_th1_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Th1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_abaissmeent_consigne_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Abaissement consigne intérieure (3°C si contact fermé)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_delestage_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Délestage (activation de la réduction de puissance)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
+        <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
+      </Text>
+      <Text Id="text_code_acces_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Code d'accès</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_select_modele_pac_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Sélection du modèle de PAC</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -4355,14 +5167,14 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="__SingleUse_A42X" Alignment="Left" TypographyId="Large">
-        <Translation Language="FR">****</Translation>
+      <Text Id="__SingleUse_A42X" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">_ _ _ _ _ _ _ _ _ _ _ _</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_value_large_centre" Alignment="Center" TypographyId="Large">
+      <Text Id="text_value_large_centre" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt;</Translation>
         <Translation Language="PT">&lt;Value&gt;</Translation>
@@ -6500,7 +7312,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="a b" WildcardCharacterRanges="0-9,a-z,A-Z,0x20" />
+    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="a b" WildcardCharacterRanges="0-9,a-z,A-Z,0x20,0x2A" />
     <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0xff" />
     <Typography Id="Texte" Font="segoeui.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
