@@ -226,6 +226,15 @@
     <ClCompile Include="..\..\gui\src\maintenance_fct_avances_screen\Maintenance_fct_avancesPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\maintenance_fct_avances_screen\Maintenance_fct_avancesView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\maintenance_fct_avances_screen\Maintenance_fct_avancesViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zonePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zoneView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zoneViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\veille_screen\VeillePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\veille_screen\VeilleView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\veille_screen\VeilleViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -581,6 +590,15 @@
     <ClInclude Include="..\..\gui\include\gui\maintenance_fct_avances_screen\Maintenance_fct_avancesPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\maintenance_fct_avances_screen\Maintenance_fct_avancesView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_fct_avances_screen\Maintenance_fct_avancesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zonePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zoneView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zoneViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\veille_screen\VeillePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\veille_screen\VeilleView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\veille_screen\VeilleViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

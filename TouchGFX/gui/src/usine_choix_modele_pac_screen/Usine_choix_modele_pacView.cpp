@@ -47,7 +47,7 @@ void Usine_choix_modele_pacView::afficheModelePAC(uint8_t u8Modele)
 			Unicode::snprintf(textAreaBuffer_Gamme, 18, "ZURAN / BAGUIO IV");
 			break;
 		case TIMAX_III:
-			Unicode::snprintf(textAreaBuffer_Gamme, 9, "TIMAX III");
+			Unicode::snprintf(textAreaBuffer_Gamme, 10, "TIMAX III");
 			break;
 		case GEOTWIN_IV:
 			container_sajiter.setVisible(true);
@@ -74,7 +74,7 @@ void Usine_choix_modele_pacView::afficheModelePAC(uint8_t u8Modele)
 void Usine_choix_modele_pacView::bouton_valider()
 {
 	sConfig_IHM.sModele_PAC.u8ModelePAC = u8ModelePAC;
-	if(u8ModelePAC == GEOTWIN_IV && sConfig_IHM.sModele_PAC.u3SousTypePAC != 0)
+	if(u8ModelePAC == GEOTWIN_IV)
 	{
 		if(toggleButton_sajiter.getState())
 		{

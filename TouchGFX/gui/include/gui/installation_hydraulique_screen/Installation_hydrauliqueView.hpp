@@ -11,17 +11,29 @@ public:
     virtual ~Installation_hydrauliqueView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
     void bouton_defilement_droit_type_regulation();
     void bouton_defilement_gauche_type_regulation();
     void bouton_defilement_droit_nb_pac();
     void bouton_defilement_gauche_nb_pac();
+    void affichage_type_regul();
     void bouton_zone_1_directe();
     void bouton_zone_2_directe();
     void bouton_zone_1_2_zones();
     void bouton_zone_2_2_zones();
+
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
-    uint8_t u8Nb_PAC, u8Regulation;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_nb_pac[2], textAreaBuffer_Titre[25];
+    bool bConnexionDistance;
+    uint8_t u8Nb_PAC;
+    uint16_t u16ErreurAffichee;
+    S_DATE sDate_old;
+    S_CONFIG_IHM sConfig_IHM_old;
+    S_STATUT_PAC sStatut_PAC_old;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_nb_pac[2], textAreaBuffer_nom_zone1[11], textAreaBuffer_nom_zone2[11];
 };
 
 #endif // INSTALLATION_HYDRAULIQUEVIEW_HPP

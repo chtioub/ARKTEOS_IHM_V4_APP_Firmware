@@ -964,6 +964,42 @@
     <Filter Include="Source Files\generated\gui_generated\code_numerique_screen">
       <UniqueIdentifier>A89B14F1-34DC-12BA-8252-4433DEC3A554</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\installation_hydraulique_param_comp_screen">
+      <UniqueIdentifier>FAD61FA2-DFA6-8D8F-A5F0-6330EFBB802B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_param_comp_screen">
+      <UniqueIdentifier>08381310-1B90-0213-F658-A2045CBF6730</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_param_comp_screen">
+      <UniqueIdentifier>83D01C5A-B694-A470-8B4A-C8ED45D793A0</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_param_comp_screen">
+      <UniqueIdentifier>00DC93A9-FE75-46EA-7406-CF25B70A4068</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_hydraulique_config_zone_screen">
+      <UniqueIdentifier>A378C30A-D203-CAFE-DE4C-F91BB4A37FC5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_config_zone_screen">
+      <UniqueIdentifier>5E4631BB-CEA9-A9D1-2F51-A06EDF264B23</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_config_zone_screen">
+      <UniqueIdentifier>24C153AA-E646-9093-EAD5-8098BFA2ABD7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_config_zone_screen">
+      <UniqueIdentifier>B3D638AC-DA23-BCB7-71F5-7CC10E6F7F89</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\veille_screen">
+      <UniqueIdentifier>E14FD974-4249-849E-42E1-4C4EB45076FD</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\veille_screen">
+      <UniqueIdentifier>1EAA7174-3A73-6756-7B93-A0D4BAC50392</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\veille_screen">
+      <UniqueIdentifier>0BA1BFE8-0D6F-3C16-B003-9DF98525980F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\veille_screen">
+      <UniqueIdentifier>A0638336-3266-F8FF-E33A-395024DD6CC3</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1610,6 +1646,33 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\maintenance_fct_avances_screen\Maintenance_fct_avancesViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\maintenance_fct_avances_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compPresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_param_comp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_param_comp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_param_comp_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zonePresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_config_zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zoneView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_config_zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zoneViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_config_zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\veille_screen\VeillePresenter.cpp">
+      <Filter>Source Files\gui\veille_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\veille_screen\VeilleView.cpp">
+      <Filter>Source Files\gui\veille_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\veille_screen\VeilleViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\veille_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2667,6 +2730,33 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_fct_avances_screen\Maintenance_fct_avancesViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\maintenance_fct_avances_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compPresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_param_comp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_param_comp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_param_comp_screen\Installation_hydraulique_param_compViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_param_comp_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zonePresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_config_zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zoneView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_config_zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_config_zone_screen\Installation_hydraulique_config_zoneViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_config_zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\veille_screen\VeillePresenter.hpp">
+      <Filter>Header Files\gui\veille_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\veille_screen\VeilleView.hpp">
+      <Filter>Header Files\gui\veille_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\veille_screen\VeilleViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\veille_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

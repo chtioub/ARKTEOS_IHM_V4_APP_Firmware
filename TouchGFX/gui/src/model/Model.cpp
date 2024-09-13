@@ -820,6 +820,28 @@ void Model::c_install_piscine()
 	txData[0].size = u16Pointeur;
 }
 
+void Model::c_install_ecs()
+{
+	uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[0].data[0] = N_ADD_REG;
+	txData[0].data[1] = N_ADD_IHM;
+	txData[0].data[2] = C_INSTALL;
+	txData[0].data[3] = SC_PARAM_ECS;
+	txData[0].data[4] = sizeof(S_PARAM_ECS);
+	txData[0].data[5] = 0;
+	u16Pointeur = 6;
+
+	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sParam_ECS, sizeof(S_PARAM_ECS));
+	u16Pointeur += sizeof(S_PARAM_ECS);
+
+	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
+	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[0].size = u16Pointeur;
+}
+
 void Model::c_install_param()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;

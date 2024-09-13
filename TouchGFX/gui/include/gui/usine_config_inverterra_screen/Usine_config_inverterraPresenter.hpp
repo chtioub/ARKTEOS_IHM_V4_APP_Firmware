@@ -32,7 +32,7 @@ public:
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
     virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 
-    void c_usine_param();
+    void c_usine_phoenix(uint8_t u8Esclave);
 
 private:
     Usine_config_inverterraPresenter();

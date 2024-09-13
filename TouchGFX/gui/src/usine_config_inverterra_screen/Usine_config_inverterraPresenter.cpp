@@ -37,7 +37,7 @@ void Usine_config_inverterraPresenter::changeErreur(uint16_t u16Erreur)
 	view.changeErreur(u16Erreur);
 }
 
-void Usine_config_inverterraPresenter::c_usine_param()
+void Usine_config_inverterraPresenter::c_usine_phoenix(uint8_t u8Esclave)
 {
-	model->c_usine_param();
+	model->c_usine_phoenix(u8Esclave);
 }

@@ -49,6 +49,7 @@ typedef enum
 	OUI_NON_DEROG_PRESSION_BP = 24,
 	OUI_NON_RAZ_TPS_FONCT = 25,
 	OUI_NON_RAZ_ENERGIES = 26,
+	OUI_NON_RESIST_TERM = 27,
 } E_OUI_NON;
 
 typedef enum
@@ -83,6 +84,12 @@ typedef enum
 	PRO_OPTION = 8,
 	PRO_SILENCE = 9,
 } E_PROG;
+
+typedef struct
+{
+	uint8_t u8TypeRegul;
+	S_ZONE sZones;
+} S_CONFIG_HYDRAU_TEMP;
 
 typedef struct
 {
@@ -196,6 +203,7 @@ extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuis
 extern S_HISTO_ERR sHisto_Erreur;
 extern uint16_t u16NumAction;
 extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000];
+extern S_CONFIG_HYDRAU_TEMP sConfig_Hydrau_temp;
 
 uint8_t decodeRxData(rxData_t *rxData);
 uint8_t computeTxData(txData_t *txData, txData_t *cosebe_tx);

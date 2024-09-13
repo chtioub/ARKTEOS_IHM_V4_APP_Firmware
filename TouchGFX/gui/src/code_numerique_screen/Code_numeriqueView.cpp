@@ -58,9 +58,8 @@ Code_numeriqueView::Code_numeriqueView()
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_NUM_SERIE_DROITE_DEFAUT).getText());
 			break;
 	}
-	affichageNumero();
-	textArea_value.setWildcard(textAreaBuffer_Valeur);
 	barre_titre.titre(textAreaBuffer_Titre);
+	affichageNumero();
 }
 
 void Code_numeriqueView::setupScreen()
@@ -75,6 +74,7 @@ void Code_numeriqueView::tearDownScreen()
 
 void Code_numeriqueView::affichageNumero()
 {
+	touchgfx::Unicode::UnicodeChar textAreaBuffer_Valeur_tmp[25];
 	int longueur = 4;
 	//
 	if(eCode == NUM_SERIE)
@@ -88,14 +88,15 @@ void Code_numeriqueView::affichageNumero()
 		{
 			if(eCode == CODE_ACCES_INSTALL || eCode == CODE_ACCES_USINE || eCode == CODE_ACCES_MAINT)
 			{
-				textAreaBuffer_Valeur[i * 2] = '*';
+				textAreaBuffer_Valeur_tmp[i * 2] = '*';
 			}
-			else textAreaBuffer_Valeur[i * 2] = u8BufferCode[i];
+			else textAreaBuffer_Valeur_tmp[i * 2] = u8BufferCode[i];
 		}
-		else textAreaBuffer_Valeur[i * 2] = '_';
-		textAreaBuffer_Valeur[i * 2 + 1] = ' ';
+		else textAreaBuffer_Valeur_tmp[i * 2] = '_';
+		textAreaBuffer_Valeur_tmp[i * 2 + 1] = ' ';
 	}
-	textAreaBuffer_Valeur[longueur * 2 - 1] = 0;
+	textAreaBuffer_Valeur_tmp[longueur * 2 - 1] = 0;
+	Unicode::strncpy(textAreaBuffer_Valeur, textAreaBuffer_Valeur_tmp, longueur * 2);
 	textArea_value.setWildcard(textAreaBuffer_Valeur);
 	textArea_value.invalidate();
 }
@@ -132,11 +133,7 @@ void Code_numeriqueView::bouton_valider()
 			{
 				application().gotoInstallationScreenNoTransition();
 			}
-			else
-			{
-				modalWindow_code_inconnu.show();
-				modalWindow_code_inconnu.invalidate();
-			}
+			else modalWindow_code_inconnu.show();
 			break;
 		case CODE_ACCES_USINE:
 			Unicode::snprintf(BufferCodeUsine, 5, "%d", sDate.Date * 100 + sDate.Month + sDate.Year + 2000);
@@ -145,22 +142,14 @@ void Code_numeriqueView::bouton_valider()
 			{
 				application().gotoUsineScreenNoTransition();
 			}
-			else
-			{
-				modalWindow_code_inconnu.show();
-				modalWindow_code_inconnu.invalidate();
-			}
+			else modalWindow_code_inconnu.show();
 			break;
 		case CODE_ACCES_MAINT:
 			if(u8Longueur == 4 && memcmp(sConfig_IHM.sInstall_PAC.auc8PW_Maintenance, u8BufferCode, 4) == 0)
 			{
 				application().gotoMaintenanceScreenNoTransition();
 			}
-			else
-			{
-				modalWindow_code_inconnu.show();
-				modalWindow_code_inconnu.invalidate();
-			}
+			else modalWindow_code_inconnu.show();
 			break;
 		case MODIF_CODE_INSTALL:
 			if(u8Longueur == 4)
@@ -207,7 +196,6 @@ void Code_numeriqueView::bouton_valider_modal_window()
 	u8Longueur = 0;
 	affichageNumero();
 	modalWindow_code_inconnu.hide();
-	modalWindow_code_inconnu.invalidate();
 }
 
 void Code_numeriqueView::bouton_supprimer()

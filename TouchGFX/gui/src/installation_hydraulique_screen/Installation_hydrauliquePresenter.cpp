@@ -16,3 +16,23 @@ void Installation_hydrauliquePresenter::deactivate()
 {
 
 }
+
+void Installation_hydrauliquePresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
+{
+	view.changeStatutEther(sCycEther);
+}
+
+void Installation_hydrauliquePresenter::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
+{
+	view.changeStatutPAC(sStatut_PAC);
+}
+
+void Installation_hydrauliquePresenter::changeDate(S_DATE *sDate)
+{
+	view.changeDate(sDate);
+}
+
+void Installation_hydrauliquePresenter::changeErreur(uint16_t u16Erreur)
+{
+	view.changeErreur(u16Erreur);
+}

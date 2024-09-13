@@ -4892,7 +4892,7 @@
         <Translation Language="NL">Dérogation</Translation>
         <Translation Language="DE">Dérogation</Translation>
       </Text>
-      <Text Id="text_zone_appoint_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_appoint_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Appoint</Translation>
         <Translation Language="GB">Heating adding</Translation>
         <Translation Language="PT">Suplemento</Translation>
@@ -4915,6 +4915,69 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_param_complementaire_zone_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Paramètres complémentaires de la zone</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_chauffage_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le chauffage ?</Translation>
+        <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="PT">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="NL">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="DE">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+      </Text>
+      <Text Id="text_rafraichissement_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le rafraichissement ?</Translation>
+        <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="PT">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="NL">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="DE">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+      </Text>
+      <Text Id="text_electrique_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Electrique</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_resistance_terminaison_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer la résistance de terminaison ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_resistance_terminaison_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Dans le cas de la régulation cascade, il est nécessaire d'activer la résistance de terminaison pour les deux machines aux extrémitées du bus de communication.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_temp_depart_eau_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Température départ eau</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_chauffage_zone_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le chauffage de la zone ?</Translation>
+        <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="PT">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="NL">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="DE">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+      </Text>
+      <Text Id="text_rafraichissement_zone_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le rafraichissement de la zone ?</Translation>
+        <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="PT">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="NL">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="DE">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+      </Text>
       <Text Id="text_type_pac_inverterra_sagitair_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Inverterra sagitair</Translation>
         <Translation Language="GB">Inverterra R454C</Translation>

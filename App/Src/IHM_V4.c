@@ -55,6 +55,7 @@ bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine;
 S_HISTO_ERR sHisto_Erreur;
 uint16_t u16NumAction;
 uint32_t u32ValAction, eAnciennePage;
+S_CONFIG_HYDRAU_TEMP sConfig_Hydrau_temp;
 
 uint8_t decodeRxData(rxData_t *rxData)
 {
@@ -146,8 +147,11 @@ uint8_t decodeRxData(rxData_t *rxData)
 								case SC_RECUP_CONFIG_PHOENIX:
 									if(pHeader->taille == (sizeof(S_CONFIG_FRIGO) * NB_UE_MAX))
 									{
-										memcpy(&sConfig_IHM.sConfigFrigo[0], &rxData->data[ptrRxBuffer], sizeof(S_CONFIG_FRIGO) * NB_UE_MAX);
-										ptrRxBuffer += sizeof(S_CONFIG_FRIGO) * NB_UE_MAX;
+										for(int i = 0; i < NB_UE_MAX; i++)
+										{
+											memcpy(&sConfig_IHM.sConfigFrigo[i], &rxData->data[ptrRxBuffer], sizeof(S_CONFIG_FRIGO));
+											ptrRxBuffer += sizeof(S_CONFIG_FRIGO);
+										}
 										sConfig_IHM.u16RecupConfig = 4;
 									}
 									break;

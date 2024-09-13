@@ -20,6 +20,7 @@ public:
     void bouton_plus_puissance();
     void bouton_mono_tri();
     void bouton_type_inverterra();
+    void timer_10ms();
     void bouton_valider();
 
     virtual void changeDate(S_DATE *sDate);
@@ -29,7 +30,7 @@ public:
 
 protected:
     bool bConnexionDistance;
-    uint8_t u8FluideC1;
+    uint8_t u8FluideC1, u8Puissance, u8PressionLongue_droite, u8PressionLongue_gauche;
     uint16_t u16ErreurAffichee;
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;

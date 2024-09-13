@@ -1,17 +1,17 @@
-#ifndef INSTALLATION_HYDRAULIQUEPRESENTER_HPP
-#define INSTALLATION_HYDRAULIQUEPRESENTER_HPP
+#ifndef INSTALLATION_HYDRAULIQUE_PARAM_COMPPRESENTER_HPP
+#define INSTALLATION_HYDRAULIQUE_PARAM_COMPPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Installation_hydrauliqueView;
+class Installation_hydraulique_param_compView;
 
-class Installation_hydrauliquePresenter : public touchgfx::Presenter, public ModelListener
+class Installation_hydraulique_param_compPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Installation_hydrauliquePresenter(Installation_hydrauliqueView& v);
+    Installation_hydraulique_param_compPresenter(Installation_hydraulique_param_compView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,7 +25,7 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Installation_hydrauliquePresenter() {}
+    virtual ~Installation_hydraulique_param_compPresenter() {}
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
@@ -33,9 +33,9 @@ public:
     virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 
 private:
-    Installation_hydrauliquePresenter();
+    Installation_hydraulique_param_compPresenter();
 
-    Installation_hydrauliqueView& view;
+    Installation_hydraulique_param_compView& view;
 };
 
-#endif // INSTALLATION_HYDRAULIQUEPRESENTER_HPP
+#endif // INSTALLATION_HYDRAULIQUE_PARAM_COMPPRESENTER_HPP

@@ -2349,7 +2349,8 @@ typedef struct   //64 bytes
 	S_MODELE_FRIGO sModele_FRIGO;                   //32
 	S_RUKING_DRIVER_FRIGO sRukingModel_FRIGO;       //12
 	S_TPS_FONCTIONNEMENT_FRIGO sTpsFonct_FRIGO;     //16
-} S_CONFIG_FRIGO;
+	uint8_t u8Spare[4];
+} __attribute__((__packed__)) S_CONFIG_FRIGO;
 
 
 typedef struct  //4 bytes

@@ -260,6 +260,21 @@ Page_oui_nonView::Page_oui_nonView()
 			textArea_texte_oui_non.setVisible(true);
 		    textArea_question_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_QUESTION_RAZ_CENTRE_DEFAUT));
 			break;
+		case OUI_NON_RESIST_TERM:
+			if(sConfig_IHM.sParam_PAC.bConfigCascade120R)
+			{
+				toggleButton_oui_oui_non.forceState(true);
+				toggleButton_oui_oui_non.setTouchable(false);
+				toggleButton_non_oui_non.forceState(false);
+				toggleButton_non_oui_non.setTouchable(true);
+			}
+			// Titre
+		    Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_RESISTANCE_TERMINAISON_CENTRE_DEFAUT).getText());
+		    barre_titre.titre(textAreaBuffer_Titre);
+			textArea_texte_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_TEXTE_RESISTANCE_TERMINAISON_CENTRE_DEFAUT));
+			textArea_texte_oui_non.setVisible(true);
+		    textArea_question_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_QUESTION_RESISTANCE_TERMINAISON_CENTRE_DEFAUT));
+			break;
 	}
 }
 
@@ -372,6 +387,9 @@ void Page_oui_nonView::bouton_retour()
 			break;
 		case OUI_NON_RAZ_ENERGIES:
 			application().gotoUsine_param_avancesScreenNoTransition();
+			break;
+		case OUI_NON_RESIST_TERM:
+			application().gotoInstallation_hydrauliqueScreenNoTransition();
 			break;
 	}
 }
@@ -610,6 +628,15 @@ void Page_oui_nonView::bouton_valider()
 				presenter->c_usine_raz_energie();
 			}
 			application().gotoUsine_param_avancesScreenNoTransition();
+			break;
+		case OUI_NON_RESIST_TERM:
+			if(toggleButton_oui_oui_non.getState())
+			{
+				sConfig_IHM.sParam_PAC.bConfigCascade120R = 1;
+			}
+			else sConfig_IHM.sParam_PAC.bConfigCascade120R = 0;
+			presenter->c_install_param();
+			application().gotoInstallation_hydrauliqueScreenNoTransition();
 			break;
 	}
 }

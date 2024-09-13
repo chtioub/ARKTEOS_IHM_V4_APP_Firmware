@@ -56,6 +56,7 @@ public:
 
     void c_install_raz_config();
     void c_install_config_pac();
+    void c_install_ecs();
     void c_install_param();
     void c_install_piscine();
     void c_install_raz_histo_err();

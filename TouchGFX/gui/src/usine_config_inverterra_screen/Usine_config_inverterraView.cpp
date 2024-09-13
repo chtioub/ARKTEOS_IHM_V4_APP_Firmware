@@ -22,15 +22,23 @@ Usine_config_inverterraView::Usine_config_inverterraView()
 	//
 	if(sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bReversible)
 	{
+		toggleButton_reversible.forceState(true);
 		textArea_on_off_reversible.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
 	//
-	if(sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bReversible)
+	if(sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u3SousType == GEOINV_SAGITAIR)
 	{
-		toggleButton_reversible.forceState(true);
-		textArea_on_off_reversible.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		textArea_valeur_type_pac.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_PAC_INVERTERRA_SAGITAIR_CENTRE_DEFAUT));
 		container_fluide_inverterra_sajiter.setVisible(true);
 	}
+	//
+	u8Puissance = sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u7Puissance;
+	if(u8Puissance < 4 || u8Puissance > 100)
+	{
+		u8Puissance = 4;
+	}
+	Unicode::snprintf(textAreaBuffer_Puissance, 4, "%d", u8Puissance);
+	textArea_valeur_puissance_pac.setWildcard(textAreaBuffer_Puissance);
 	//
 	u8FluideC1 = sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u4TypeGaz;
 	affichageFluideC1();
@@ -101,12 +109,24 @@ void Usine_config_inverterraView::affichageFluideC1()
 
 void Usine_config_inverterraView::bouton_moins_puissance()
 {
-
+	if(u8Puissance > 4)
+	{
+		u8Puissance--;
+		Unicode::snprintf(textAreaBuffer_Puissance, 4, "%d", u8Puissance);
+		textArea_valeur_puissance_pac.setWildcard(textAreaBuffer_Puissance);
+		textArea_valeur_puissance_pac.invalidate();
+	}
 }
 
 void Usine_config_inverterraView::bouton_plus_puissance()
 {
-
+	if(u8Puissance < 100)
+	{
+		u8Puissance++;
+		Unicode::snprintf(textAreaBuffer_Puissance, 4, "%d", u8Puissance);
+		textArea_valeur_puissance_pac.setWildcard(textAreaBuffer_Puissance);
+		textArea_valeur_puissance_pac.invalidate();
+	}
 }
 
 void Usine_config_inverterraView::bouton_on_off()
@@ -139,17 +159,65 @@ void Usine_config_inverterraView::bouton_type_inverterra()
 	else
 	{
 		textArea_valeur_type_pac.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_PAC_INVERTERRA_R454C_CENTRE_DEFAUT));
-		container_fluide_inverterra_sajiter.setVisible(true);
+		container_fluide_inverterra_sajiter.setVisible(false);
 	}
 	textArea_valeur_type_pac.invalidate();
 	container_fluide_inverterra_sajiter.invalidate();
 }
 
+void Usine_config_inverterraView::timer_10ms()
+{
+	//
+	if(button_gauche_puissance_pac.getPressedState())
+	{
+		if(u8PressionLongue_gauche < 15)
+		{
+			u8PressionLongue_gauche++;
+		}
+		else bouton_moins_puissance();
+	}
+	else u8PressionLongue_gauche = 0;
+	//
+	if(button_droite_puissance_pac.getPressedState())
+	{
+		if(u8PressionLongue_droite < 15)
+		{
+			u8PressionLongue_droite++;
+		}
+		else bouton_plus_puissance();
+	}
+	else u8PressionLongue_droite = 0;
+}
+
 void Usine_config_inverterraView::bouton_valider()
 {
-
+	if(textArea_valeur_alim_pac.getTypedText().getId() == touchgfx::TypedText(T_TEXT_ALIM_PAC_MONO_CENTRE_DEFAUT).getId())
+	{
+		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bSupply = 0;
+	}
+	else sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bSupply = 1;
 	//
-	presenter->c_usine_param();
+	if(textArea_on_off_reversible.getTypedText().getId() == touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getId())
+	{
+		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bReversible = 1;
+	}
+	else sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bReversible = 0;
+	//
+	if(textArea_valeur_type_pac.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_PAC_INVERTERRA_SAGITAIR_CENTRE_DEFAUT).getId())
+	{
+		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u3SousType = GEOINV_SAGITAIR;
+		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u4TypeGaz = u8FluideC1;
+	}
+	else sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u3SousType = GEOINV_STD;
+	// Débitmètres
+	sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u4DebitmetreCaptage = HUBA_DN_20;
+	sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u4DebitmetreChauffage = HUBA_DN_20;
+	//
+	sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u7Puissance = u8Puissance & 0x7f;
+	// Init type capteur
+	sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeDeCaptage = 0;
+	//
+	presenter->c_usine_phoenix(0);
 	application().gotoUsineScreenNoTransition();
 }
 

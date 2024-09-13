@@ -129,7 +129,7 @@ int main(void)
     /* USER CODE BEGIN 3 */
     if(decodeRxData(&rxData))
     {
-      dataUpdated = 1;
+    	dataUpdated = 1;
     }
 
     if(txData[0].size != 0)
@@ -137,6 +137,8 @@ int main(void)
         HAL_UART_Transmit_IT(&huart2, (uint8_t*)&txData[0].data[0], txData[0].size);
         txData[0].size = 0;
     }
+
+    HAL_GetTick();
   }
   /* USER CODE END 3 */
 }
