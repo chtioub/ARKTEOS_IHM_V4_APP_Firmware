@@ -12,15 +12,17 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void bouton_resistance_terminaison();
     void bouton_defilement_droit_type_regulation();
     void bouton_defilement_gauche_type_regulation();
     void bouton_defilement_droit_nb_pac();
     void bouton_defilement_gauche_nb_pac();
     void affichage_type_regul();
-    void bouton_zone_1_directe();
-    void bouton_zone_2_directe();
-    void bouton_zone_1_2_zones();
-    void bouton_zone_2_2_zones();
+    void affichage_zones();
+    void bouton_zone_1();
+    void bouton_zone_2();
+    void bouton_param_zone_1();
+    void bouton_param_zone_2();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

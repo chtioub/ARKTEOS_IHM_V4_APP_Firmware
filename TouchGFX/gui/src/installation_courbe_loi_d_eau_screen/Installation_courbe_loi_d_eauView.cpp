@@ -1,32 +1,94 @@
 #include <gui/installation_courbe_loi_d_eau_screen/Installation_courbe_loi_d_eauView.hpp>
 #include <touchgfx/Color.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <math.h>
 
 Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 {
-    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
-    barre_titre.titre(textAreaBuffer_Titre);
+	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
+	sDate_old.Date = 0;
+	u16ErreurAffichee = 0;
+	changeDate(&sDate);
+	bConnexionDistance = false;
+	changeErreur(u16ErreurEncours);
+	changeStatutPAC(&sStatut_PAC);
+	changeStatutEther(&sCycEther);
+	container.setXY(u8PositionX, u8PositionY);
+    //
 	container_pave_numeric.setVisible(false);
-	u16TermoMAX = 780;
-	u16LoiDeau[0] = 400;
-	u16LoiDeau[1] = 500;
-	u16LoiDeau[2] = 550;
-	u16LoiDeau[3] = 600;
-	u16LoiDeau[4] = 650;
-	u16LoiDeau[5] = 700;
+	// Thermo max
+	if(sConfig_IHM.sModele_PAC.u8ThermoMaxPac > 50 && sConfig_IHM.sModele_PAC.u8ThermoMaxPac < 100)
+	{
+		u16TermoMAX = sConfig_IHM.sModele_PAC.u8ThermoMaxPac * 10;
+	}
+	else u16TermoMAX = 800;
+	//
+	if(sConfig_Hydrau_temp.u8TypeRegul >= REGUL_EXTERNE)
+	{
+		for(int i = 0; i < 6; i++)
+		{
+			u16LoiDeau[i] = sConfig_IHM.sParam_RegulExt.u8LoiDeau[i] * 10;
+		}
+		// Titre
+	    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
+	    barre_titre.titre(textAreaBuffer_Titre);
+	}
+	else
+	{
+		for(int i = 0; i < 6; i++)
+		{
+			u16LoiDeau[i] = sConfig_Hydrau_temp.sParamZx.u8LoiDeau[i] * 10;
+		}
+		// Titre
+	    Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
+	    Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
+		Unicode::fromUTF8(sConfig_Hydrau_temp.sParamZx.u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
+	    Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
+	    barre_titre.titre(textAreaBuffer_Titre);
+	}
+	//
 	for(int i = 0; i < 6; i++)
 	{
-		if(u16LoiDeau[i] > u16TermoMAX)
+//		if(u16LoiDeau[i] > u16TermoMAX)
+//		{
+//			u16LoiDeau[i] = (uint16_t) u16TermoMAX;
+//		}
+		//
+		if((sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES) && sConfig_Hydrau_temp.sZones.bZone1 == 1 && sConfig_Hydrau_temp.sZones.bZone2 == 1)
 		{
-			u16LoiDeau[i] = (uint16_t) u16TermoMAX;
+			if(sConfig_Hydrau_temp.u8NumZone == 0)
+			{
+				u16LoiDeau_MAX[i] = fmax(u16TermoMAX, 0);
+				u16LoiDeau_MIN[i] = sConfig_IHM.sParam_Zx[1].u8LoiDeau[i] * 10;
+			}
+			else
+			{
+				u16LoiDeau_MAX[i] = fmax(u16TermoMAX, sConfig_IHM.sParam_Zx[0].u8LoiDeau[i] * 10);
+				u16LoiDeau_MIN[i] = 200;
+			}
+		}
+		else
+		{
+			u16LoiDeau_MAX[i] = fmax(u16TermoMAX, 0);
+			u16LoiDeau_MIN[i] = 200;
+		}
+		// Verif max
+		if(u16LoiDeau[i] > u16LoiDeau_MAX[i])
+		{
+			u16LoiDeau[i] = u16LoiDeau_MAX[i];
+		}
+		// Verif min
+		if(u16LoiDeau[i] < u16LoiDeau_MIN[i])
+		{
+			u16LoiDeau[i] = u16LoiDeau_MIN[i];
 		}
 	}
-	slider_text_20_deg.setValue((int) u16LoiDeau[0] + 1);
-	slider_text_15_deg.setValue((int) u16LoiDeau[1] + 1);
-	slider_text_10_deg.setValue((int) u16LoiDeau[2] + 1);
-	slider_text_0_deg.setValue((int) u16LoiDeau[3] + 1);
-	slider_text_m10_deg.setValue((int) u16LoiDeau[4] + 1);
-	slider_text_m25_deg.setValue((int) u16LoiDeau[5] + 1);
+	slider_text_m25_deg.setValue((int) u16LoiDeau[5]);
+	slider_text_m10_deg.setValue((int) u16LoiDeau[4]);
+	slider_text_0_deg.setValue((int) u16LoiDeau[3]);
+	slider_text_10_deg.setValue((int) u16LoiDeau[2]);
+	slider_text_15_deg.setValue((int) u16LoiDeau[1]);
+	slider_text_20_deg.setValue((int) u16LoiDeau[0]);
 }
 
 void Installation_courbe_loi_d_eauView::setupScreen()
@@ -39,6 +101,36 @@ void Installation_courbe_loi_d_eauView::tearDownScreen()
     Installation_courbe_loi_d_eauViewBase::tearDownScreen();
 }
 
+void Installation_courbe_loi_d_eauView::bouton_retour()
+{
+	if(sConfig_Hydrau_temp.u8TypeRegul >= REGUL_EXTERNE)
+	{
+		application().gotoInstallation_hydrauliqueScreenNoTransition();
+	}
+	else if(sConfig_Hydrau_temp.u8TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
+	{
+		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+	}
+}
+
+void Installation_courbe_loi_d_eauView::bouton_valider()
+{
+	if(sConfig_Hydrau_temp.u8TypeRegul >= REGUL_EXTERNE)
+	{
+		for(int i = 0; i < 6; i++)
+		{
+			sConfig_IHM.sParam_RegulExt.u8LoiDeau[i] = u16LoiDeau[i] / 10;
+		}
+		//
+		presenter->c_install_reg_ext();
+		application().gotoInstallation_hydrauliqueScreenNoTransition();
+	}
+	else if(sConfig_Hydrau_temp.u8TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
+	{
+		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+	}
+}
+
 void Installation_courbe_loi_d_eauView::slider_20(int sliderValue)
 {
 	u16LoiDeau[0] = sliderValue;
@@ -49,6 +141,21 @@ void Installation_courbe_loi_d_eauView::slider_20(int sliderValue)
 		slider_text_20_deg.invalidate();
 		sliderValue = u16LoiDeau[1];
 		u16LoiDeau[0] = u16LoiDeau[1];
+	}
+	else if(sliderValue > u16LoiDeau_MAX[0])
+	{
+		slider_text_20_deg.setValue((int) u16LoiDeau_MAX[0]);
+		slider_text_20_deg.invalidate();
+		sliderValue = u16LoiDeau_MAX[0];
+		u16LoiDeau[0] = u16LoiDeau_MAX[0];
+	}
+	// Verif pour éviter le dépassement négatif
+	else if(sliderValue < u16LoiDeau_MIN[0])
+	{
+		slider_text_20_deg.setValue((int) u16LoiDeau_MIN[0]);
+		slider_text_20_deg.invalidate();
+		sliderValue = u16LoiDeau_MIN[0];
+		u16LoiDeau[0] = u16LoiDeau_MIN[0];
 	}
 	else
 	{
@@ -67,7 +174,7 @@ void Installation_courbe_loi_d_eauView::slider_15(int sliderValue)
 {
 	u16LoiDeau[1] = sliderValue;
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16LoiDeau[2])
+	if(sliderValue > u16LoiDeau[2] || sliderValue > u16LoiDeau_MAX[1])
 	{
 		slider_text_15_deg.setValue((int) u16LoiDeau[2]);
 		slider_text_15_deg.invalidate();
@@ -75,7 +182,7 @@ void Installation_courbe_loi_d_eauView::slider_15(int sliderValue)
 		u16LoiDeau[1] = u16LoiDeau[2];
 	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[0])
+	else if(sliderValue < u16LoiDeau[0] || sliderValue < u16LoiDeau_MIN[1])
 	{
 		slider_text_15_deg.setValue((int) u16LoiDeau[0]);
 		slider_text_15_deg.invalidate();
@@ -104,7 +211,7 @@ void Installation_courbe_loi_d_eauView::slider_10(int sliderValue)
 {
 	u16LoiDeau[2] = sliderValue;
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16LoiDeau[3])
+	if(sliderValue > u16LoiDeau[3] || sliderValue > u16LoiDeau_MAX[2])
 	{
 		slider_text_10_deg.setValue((int) u16LoiDeau[3]);
 		slider_text_10_deg.invalidate();
@@ -112,7 +219,7 @@ void Installation_courbe_loi_d_eauView::slider_10(int sliderValue)
 		u16LoiDeau[2] = u16LoiDeau[3];
 	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[1])
+	else if(sliderValue < u16LoiDeau[1] || sliderValue < u16LoiDeau_MIN[2])
 	{
 		slider_text_10_deg.setValue((int) u16LoiDeau[1]);
 		slider_text_10_deg.invalidate();
@@ -141,7 +248,7 @@ void Installation_courbe_loi_d_eauView::slider_0(int sliderValue)
 {
 	u16LoiDeau[3] = sliderValue;
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16LoiDeau[4])
+	if(sliderValue > u16LoiDeau[4] || sliderValue > u16LoiDeau_MAX[3])
 	{
 		slider_text_0_deg.setValue((int) u16LoiDeau[4]);
 		slider_text_0_deg.invalidate();
@@ -149,7 +256,7 @@ void Installation_courbe_loi_d_eauView::slider_0(int sliderValue)
 		u16LoiDeau[3] = u16LoiDeau[4];
 	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[2])
+	else if(sliderValue < u16LoiDeau[2] || sliderValue < u16LoiDeau_MIN[3])
 	{
 		slider_text_0_deg.setValue((int) u16LoiDeau[2]);
 		slider_text_0_deg.invalidate();
@@ -178,7 +285,7 @@ void Installation_courbe_loi_d_eauView::slider_m10(int sliderValue)
 {
 	u16LoiDeau[4] = sliderValue;
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16LoiDeau[5])
+	if(sliderValue > u16LoiDeau[5] || sliderValue > u16LoiDeau_MAX[4])
 	{
 		slider_text_m10_deg.setValue((int) u16LoiDeau[5]);
 		slider_text_m10_deg.invalidate();
@@ -186,7 +293,7 @@ void Installation_courbe_loi_d_eauView::slider_m10(int sliderValue)
 		u16LoiDeau[4] = u16LoiDeau[5];
 	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[3])
+	else if(sliderValue < u16LoiDeau[3] || sliderValue < u16LoiDeau_MIN[4])
 	{
 		slider_text_m10_deg.setValue((int) u16LoiDeau[3]);
 		slider_text_m10_deg.invalidate();
@@ -215,15 +322,15 @@ void Installation_courbe_loi_d_eauView::slider_m25(int sliderValue)
 {
 	u16LoiDeau[5] = sliderValue;
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16TermoMAX)
+	if(sliderValue > u16LoiDeau_MAX[5])
 	{
 		slider_text_m25_deg.setValue(u16TermoMAX);
 		slider_text_m25_deg.invalidate();
-		sliderValue = u16TermoMAX;
-		u16LoiDeau[5] = u16TermoMAX;
+		sliderValue = u16LoiDeau_MAX[5];
+		u16LoiDeau[5] = u16LoiDeau_MAX[5];
 	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[4])
+	else if(sliderValue < u16LoiDeau[4] || sliderValue < u16LoiDeau_MIN[5])
 	{
 		slider_text_m25_deg.setValue((int) u16LoiDeau[4]);
 		slider_text_m25_deg.invalidate();
@@ -587,7 +694,7 @@ void Installation_courbe_loi_d_eauView::bouton_supprimer()
 	}
 }
 
-void Installation_courbe_loi_d_eauView::bouton_valider()
+void Installation_courbe_loi_d_eauView::bouton_valider_pave_num()
 {
 	int temperature_modifiee = 0;
 	// Recherche de la température en cours de modification
@@ -658,4 +765,56 @@ void Installation_courbe_loi_d_eauView::pave_numerique(bool bPaveNum)
 	button_loi_eau_m10.invalidate();
 	button_loi_eau_m25.setTouchable(!bPaveNum);
 	button_loi_eau_m25.invalidate();
+}
+
+void Installation_courbe_loi_d_eauView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
+{
+	// Recup config
+	if((sStatut_PAC_old.ModifConfig | sStatut_PAC_old.ModifConfigSimple) != (sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple))
+	{
+		barre_titre.recupConfig((sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple));
+		barre_titre.invalidate();
+	}
+	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
+}
+
+void Installation_courbe_loi_d_eauView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
+{
+	if(bConnexionDistance != sCycEther->bAppletConnect)
+	{
+		bConnexionDistance = sCycEther->bAppletConnect;
+		barre_titre.connexionDistante(bConnexionDistance);
+		barre_titre.invalidate();
+	}
+}
+
+void Installation_courbe_loi_d_eauView::changeErreur(uint16_t u16Erreur)
+{
+	if(u16ErreurAffichee != u16Erreur)
+	{
+		u16ErreurAffichee = u16Erreur;
+		barre_titre.erreur(u16Erreur);
+		barre_titre.invalidate();
+	}
+}
+
+void Installation_courbe_loi_d_eauView::changeDate(S_DATE *sDate)
+{
+	if(sDate_old.Date != sDate->Date)
+	{
+		// Affichage de la date
+	    Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
+	    barre_titre.date(textAreaBuffer_Date);
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+	else if(sDate_old.Minutes != sDate->Minutes)
+	{
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+    barre_titre.invalidate();
+	memcpy(&sDate_old, sDate, sizeof(S_DATE));
 }

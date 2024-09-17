@@ -15,13 +15,13 @@ Installation_piscine_avancesView::Installation_piscine_avancesView()
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PARAM_AVANCE_PISCINE_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 	//
-	if(sConfig_IHM.sParam_Piscine.bConfort)
+	if(sConfig_Piscine_temp.sParam_Piscine.bConfort)
 	{
 		textArea_valeur_prog_3_niveau_piscine.setTypedText(touchgfx::TypedText(T_TEXT_OUI_CENTRE_DEFAUT));
 	}
 	else textArea_valeur_prog_3_niveau_piscine.setTypedText(touchgfx::TypedText(T_TEXT_NON_CENTRE_DEFAUT));
 	//
-	u8TpsBasculementVanne = sConfig_IHM.sParam_Piscine.Time_Bascul_V3V_PISCINE;
+	u8TpsBasculementVanne = sConfig_Piscine_temp.sParam_Piscine.Time_Bascul_V3V_PISCINE;
 	Unicode::snprintf(textAreaBuffer_TpsBasculementVanne, 15, "%d min %02d sec", u8TpsBasculementVanne / 60, u8TpsBasculementVanne % 60);
 	textArea_valeur_temps_rotation_vanne.setWildcard(textAreaBuffer_TpsBasculementVanne);
 }
@@ -94,7 +94,7 @@ void Installation_piscine_avancesView::bouton_valider()
 {
 	if(textArea_valeur_prog_3_niveau_piscine.getTypedText().getId() == touchgfx::TypedText(T_TEXT_OUI_CENTRE_DEFAUT).getId())
 	{
-		if(sConfig_IHM.sParam_Piscine.bConfort != 1)
+		if(sConfig_Piscine_temp.sParam_Piscine.bConfort != 1)
 		{
 			for(int j = 0; j < 7; j++)
 			{
@@ -112,13 +112,13 @@ void Installation_piscine_avancesView::bouton_valider()
 				}
 			}
 			// Multiple trame
-//			presenter->c_prog_piscine(true);
+			presenter->c_prog_piscine(true);
 		}
-		sConfig_IHM.sParam_Piscine.bConfort = 1;
+		sConfig_Piscine_temp.sParam_Piscine.bConfort = 1;
 	}
 	else
 	{
-		if(sConfig_IHM.sParam_Piscine.bConfort != 0)
+		if(sConfig_Piscine_temp.sParam_Piscine.bConfort != 0)
 		{
 			for(int j = 0; j < 7; j++)
 			{
@@ -136,12 +136,15 @@ void Installation_piscine_avancesView::bouton_valider()
 				}
 			}
 			// Multiple trame
-//			presenter->c_prog_piscine(true);
+			presenter->c_prog_piscine(true);
 		}
-		sConfig_IHM.sParam_Piscine.bConfort = 0;
+		sConfig_Piscine_temp.sParam_Piscine.bConfort = 0;
 	}
 	//
-	sConfig_IHM.sParam_Piscine.Time_Bascul_V3V_PISCINE = u8TpsBasculementVanne;
+	sConfig_Piscine_temp.sParam_Piscine.Time_Bascul_V3V_PISCINE = u8TpsBasculementVanne;
+	// Mémorisation des variables modifiées
+	sConfig_IHM.sParam_Piscine.Time_Bascul_V3V_PISCINE = sConfig_Piscine_temp.sParam_Piscine.Time_Bascul_V3V_PISCINE;
+	sConfig_IHM.sParam_Piscine.bConfort = sConfig_Piscine_temp.sParam_Piscine.bConfort;
 	//
 	presenter->c_install_piscine();
 	application().gotoInstallation_piscineScreenNoTransition();

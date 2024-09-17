@@ -50,6 +50,7 @@ typedef enum
 	OUI_NON_RAZ_TPS_FONCT = 25,
 	OUI_NON_RAZ_ENERGIES = 26,
 	OUI_NON_RESIST_TERM = 27,
+	OUI_NON_RESIST_TERM_SONDE = 28,
 } E_OUI_NON;
 
 typedef enum
@@ -88,8 +89,16 @@ typedef enum
 typedef struct
 {
 	uint8_t u8TypeRegul;
+	uint8_t u8NumZone;
 	S_ZONE sZones;
+	S_PARAM_ZX sParamZx;
 } S_CONFIG_HYDRAU_TEMP;
+
+typedef struct
+{
+	bool bPiscine;
+	S_PARAM_PISCINE sParam_Piscine;
+} S_CONFIG_PISCINE_TEMP;
 
 typedef struct
 {
@@ -108,6 +117,7 @@ typedef struct
 	bool erreur_update;
 	bool demande_frigo_update;
 	bool statut_pac_update;
+	bool statut_rf_update;
 	bool statut_primaire_update;
 	bool statut_zx_update[20];
 	bool statut_ecs_update;
@@ -177,6 +187,7 @@ extern S_STATUT_REG_EXT sStatut_RegulExt;
 extern S_STATUT_TPS_FONCT sStatut_TpsFonct;
 extern S_STATUT_REGUL_ESCLAVE sStatut_RegulEsclave;
 extern S_STATUT_DEBUG sStatut_DebugTrame1[8];
+extern S_STATUT_RF sStatut_RF[8];
 extern S_STATUT_DEBUG sStatut_DebugTrame2[8];
 extern S_CYC_ETHER_III sCycEther;
 extern S_ENERGIE sEnergie;
@@ -186,7 +197,7 @@ extern S_CONFIG_IHM sConfig_IHM;
 extern S_CYCL_REG_FRI sCyclRegFrigo[NB_UE_MAX];
 extern S_DEMANDE_FRIGO sDemandeFrigo;
 extern cosebe_rx_t cosebe_rx;
-extern txData_t txData[5];
+extern txData_t txData[10];
 extern uint8_t sendData;
 extern uint8_t au8Prog_Chaud_Zx[NB_ZONE][7][24];
 extern uint8_t au8Prog_Froid_Zx[NB_ZONE][7][24];
@@ -204,6 +215,10 @@ extern S_HISTO_ERR sHisto_Erreur;
 extern uint16_t u16NumAction;
 extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000];
 extern S_CONFIG_HYDRAU_TEMP sConfig_Hydrau_temp;
+extern S_CONFIG_PISCINE_TEMP sConfig_Piscine_temp;
+extern S_PARAM_ECS sParam_ECS_temp;
+extern uint32_t u32LastCyclique;
+extern uint8_t u8Pointeur_buffer_tx, u8Pointeur_envoi;
 
 uint8_t decodeRxData(rxData_t *rxData);
 uint8_t computeTxData(txData_t *txData, txData_t *cosebe_tx);

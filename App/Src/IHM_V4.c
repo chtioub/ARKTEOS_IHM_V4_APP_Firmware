@@ -18,7 +18,7 @@ cosebe_rx_t cosebe_rx;
 cosebe_test_t cosebe_test;
 arkteos_update_t arkteos_update;
 uint8_t dataUpdated = 0;
-txData_t txData[5];
+txData_t txData[10];
 uint8_t eOuiNon = 0, eCode = 0;
 uint8_t eHysteresis = 0;
 uint8_t eProg;
@@ -33,6 +33,7 @@ S_STATUT_REG_EXT sStatut_RegulExt;
 S_STATUT_TPS_FONCT sStatut_TpsFonct;
 S_STATUT_REGUL_ESCLAVE sStatut_RegulEsclave;
 S_STATUT_DEBUG sStatut_DebugTrame1[8];
+S_STATUT_RF sStatut_RF[8];
 S_STATUT_DEBUG sStatut_DebugTrame2[8];
 S_CYC_ETHER_III sCycEther;
 S_ENERGIE sEnergie;
@@ -56,6 +57,10 @@ S_HISTO_ERR sHisto_Erreur;
 uint16_t u16NumAction;
 uint32_t u32ValAction, eAnciennePage;
 S_CONFIG_HYDRAU_TEMP sConfig_Hydrau_temp;
+S_CONFIG_PISCINE_TEMP sConfig_Piscine_temp;
+S_PARAM_ECS sParam_ECS_temp;
+uint32_t u32LastCyclique;
+uint8_t u8Pointeur_buffer_tx, u8Pointeur_envoi;
 
 uint8_t decodeRxData(rxData_t *rxData)
 {
@@ -164,6 +169,7 @@ uint8_t decodeRxData(rxData_t *rxData)
 			case CYC_ETHER_REG_FRIGO:
 				if(pHeader->taille == sizeof(S_CYCL_REG_FRI))
 				{
+					u32LastCyclique = HAL_GetTick();
 					memcpy(&sCyclRegFrigo[0], &rxData->data[ptrRxBuffer], sizeof(S_CYCL_REG_FRI));
 					arkteos_update.cycl_frigo_update = true;
 					if(sConfig_IHM.u16NbCyclique < 6)
@@ -178,6 +184,7 @@ uint8_t decodeRxData(rxData_t *rxData)
 					case SC_CYC_T1:
 						if(pHeader->taille == LG_TRAME_CYCLIQUE_REGUL_T1)
 						{
+							u32LastCyclique = HAL_GetTick();
 							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_PAC, sizeof(S_STATUT_PAC)))
 							{
 								memcpy(&sStatut_PAC, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_PAC));
@@ -249,10 +256,21 @@ uint8_t decodeRxData(rxData_t *rxData)
 								arkteos_update.demande_frigo_update = true;
 							}
 							ptrRxBuffer += sizeof(S_DEMANDE_FRIGO);
-							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_DebugTrame1[0], sizeof(S_STATUT_DEBUG) * 8))
+							if(sStatut_PAC.u3TypeData == 0)
 							{
-								memcpy(&sStatut_DebugTrame1[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_DEBUG) * 8);
-								arkteos_update.statut_debug_update = true;
+								if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_RF[0], sizeof(S_STATUT_RF) * 8))
+								{
+									memcpy(&sStatut_RF[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_RF) * 8);
+									arkteos_update.statut_rf_update = true;
+								}
+							}
+							else
+							{
+								if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_DebugTrame1[0], sizeof(S_STATUT_DEBUG) * 8))
+								{
+									memcpy(&sStatut_DebugTrame1[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_DEBUG) * 8);
+									arkteos_update.statut_debug_update = true;
+								}
 							}
 							ptrRxBuffer += sizeof(S_STATUT_DEBUG) * 8;
 							result++;
@@ -265,6 +283,7 @@ uint8_t decodeRxData(rxData_t *rxData)
 					case SC_CYC_T2:
 						if(pHeader->taille == LG_TRAME_CYCLIQUE_REGUL_T2)
 						{
+							u32LastCyclique = HAL_GetTick();
 							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[2], sizeof(S_STATUT_ZX)))
 							{
 								memcpy(&sStatut_Zx[2], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
@@ -332,6 +351,7 @@ uint8_t decodeRxData(rxData_t *rxData)
 			case CYC_ETHER:
 				if(memcmp(&rxData->data[ptrRxBuffer], &sCycEther, sizeof(S_CYC_ETHER_III)))
 				{
+					u32LastCyclique = HAL_GetTick();
 					memcpy(&sCycEther, &rxData->data[ptrRxBuffer], sizeof(S_CYC_ETHER_III));
 					arkteos_update.statut_ether_update = true;
 					// Verification si MAJ de l'affichage nécessaire

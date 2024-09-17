@@ -186,7 +186,7 @@ void Installation_appointView::bouton_valider()
 	}
 	// Multiple trames
 	presenter->c_install_param();
-//	presenter->c_install_ecs();
+	presenter->c_install_ecs();
 	application().gotoInstallation_hydrauliqueScreenNoTransition();
 }
 

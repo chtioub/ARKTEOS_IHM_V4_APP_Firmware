@@ -16,3 +16,28 @@ void Installation_courbe_loi_d_eauPresenter::deactivate()
 {
 
 }
+
+void Installation_courbe_loi_d_eauPresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
+{
+	view.changeStatutEther(sCycEther);
+}
+
+void Installation_courbe_loi_d_eauPresenter::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
+{
+	view.changeStatutPAC(sStatut_PAC);
+}
+
+void Installation_courbe_loi_d_eauPresenter::changeDate(S_DATE *sDate)
+{
+	view.changeDate(sDate);
+}
+
+void Installation_courbe_loi_d_eauPresenter::changeErreur(uint16_t u16Erreur)
+{
+	view.changeErreur(u16Erreur);
+}
+
+void Installation_courbe_loi_d_eauPresenter::c_install_reg_ext()
+{
+	model->c_install_reg_ext();
+}

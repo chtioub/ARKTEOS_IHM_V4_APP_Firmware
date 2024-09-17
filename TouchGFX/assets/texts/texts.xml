@@ -3259,8 +3259,8 @@
         <Translation Language="NL">Hysteresis sonde ECS</Translation>
         <Translation Language="DE">Hysteresis sonde ECS</Translation>
       </Text>
-      <Text Id="text_oui_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Oui</Translation>
+      <Text Id="text_Dissocier_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dissocier</Translation>
         <Translation Language="GB">Yes</Translation>
         <Translation Language="PT">Sim</Translation>
         <Translation Language="NL">Oui</Translation>
@@ -4915,6 +4915,202 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_aucune_sonde_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Aucune sonde associée</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_association_en_cours_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Association en cours</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sonde_radio_titre_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sonde radio - </Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_resistance_terminaison_sonde_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dans le cas d'une distance trop importante entre les équipements, il est nécessaire d'activer la résistance de terminaison 120Ω.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_reattribution_sonde_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Réattribution numéro de la sonde - </Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_contact_ferme_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Contact fermé = demande de froid ?</Translation>
+        <Translation Language="GB">DHW loop</Translation>
+        <Translation Language="PT">Ciclo de AQS</Translation>
+        <Translation Language="NL">Bouclage ECS</Translation>
+        <Translation Language="DE">Bouclage ECS</Translation>
+      </Text>
+      <Text Id="text_adresse_rf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Numéro de la sonde RF : &lt;Value&gt;</Translation>
+        <Translation Language="GB">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+        <Translation Language="PT">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+        <Translation Language="NL">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+        <Translation Language="DE">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_associer_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Associer</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+        <Translation Language="NL">Non</Translation>
+        <Translation Language="DE">Non</Translation>
+      </Text>
+      <Text Id="text_associer_dissocier_sonde_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Associer / Dissocier&#10;La sonde intérieure</Translation>
+        <Translation Language="GB">Do you want to activate the DHW option?</Translation>
+        <Translation Language="PT">Quer ativar a opção AQS?</Translation>
+        <Translation Language="NL">Voulez-vous activer l'option ECS ?</Translation>
+        <Translation Language="DE">Voulez-vous activer l'option ECS ?</Translation>
+      </Text>
+      <Text Id="text_qualite_signal_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Qualité du signal</Translation>
+        <Translation Language="GB">Do you want to activate the DHW option?</Translation>
+        <Translation Language="PT">Quer ativar a opção AQS?</Translation>
+        <Translation Language="NL">Voulez-vous activer l'option ECS ?</Translation>
+        <Translation Language="DE">Voulez-vous activer l'option ECS ?</Translation>
+      </Text>
+      <Text Id="text_changer_num_sonde_rf_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Pour réattribuer un nouveau numéro de sonde à la zone, vous devez au préalable avoir dissocié votre sonde ainsi que celle correspondant au nouveau numéro que vous souhaitez lui affecter.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_arret_defaut_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Arret de la zone si defaut sonde</Translation>
+        <Translation Language="GB">DHW loop</Translation>
+        <Translation Language="PT">Ciclo de AQS</Translation>
+        <Translation Language="NL">Bouclage ECS</Translation>
+        <Translation Language="DE">Bouclage ECS</Translation>
+      </Text>
+      <Text Id="text_verrouillage_consigne_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Verrouillage consigne</Translation>
+        <Translation Language="GB">DHW loop</Translation>
+        <Translation Language="PT">Ciclo de AQS</Translation>
+        <Translation Language="NL">Bouclage ECS</Translation>
+        <Translation Language="DE">Bouclage ECS</Translation>
+      </Text>
+      <Text Id="text_hysteresis_sonde_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Hystérésis sonde</Translation>
+        <Translation Language="GB">Hysteresis DHW probe</Translation>
+        <Translation Language="PT">Sonda de histerese para AQS</Translation>
+        <Translation Language="NL">Hysteresis sonde ECS</Translation>
+        <Translation Language="DE">Hysteresis sonde ECS</Translation>
+      </Text>
+      <Text Id="text_adresse_modbus_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+        <Translation Language="GB">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+        <Translation Language="PT">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+        <Translation Language="NL">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+        <Translation Language="DE">Adresse modbus à programmer dans la sonde : &lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_numero_sonde_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Numéro de sonde</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_type_sonde_modbus_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Thermostat modbus 1</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_type_sonde_modbus_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Modèle sonde modbus</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_num_sonde_modbus_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Numéro de sonde modbus</Translation>
+        <Translation Language="GB">Hysteresis DHW probe</Translation>
+        <Translation Language="PT">Sonda de histerese para AQS</Translation>
+        <Translation Language="NL">Hysteresis sonde ECS</Translation>
+        <Translation Language="DE">Hysteresis sonde ECS</Translation>
+      </Text>
+      <Text Id="text_regul_plancher_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Régulation applicable que si les 2 zones sont en plancher chauffant</Translation>
+        <Translation Language="GB">Nécessite l'utilisation de circulateurs pilotés</Translation>
+        <Translation Language="PT">Nécessite l'utilisation de circulateurs pilotés</Translation>
+        <Translation Language="NL">Nécessite l'utilisation de circulateurs pilotés</Translation>
+        <Translation Language="DE">Nécessite l'utilisation de circulateurs pilotés</Translation>
+      </Text>
+      <Text Id="text_sonde_contact_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Entrée contact</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_sonde_modbus_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Modbus</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_sonde_radio_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Radio</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_type_sonde_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type de sonde intérieure</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_type_emetteur_zone_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type d'émetteur de la zone</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_sonde_rf_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sonde RF</Translation>
+        <Translation Language="GB">DHW loop</Translation>
+        <Translation Language="PT">Ciclo de AQS</Translation>
+        <Translation Language="NL">Bouclage ECS</Translation>
+        <Translation Language="DE">Bouclage ECS</Translation>
+      </Text>
+      <Text Id="text_gestion_circulateur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Gestion circulateur</Translation>
+        <Translation Language="GB">Hysteresis DHW probe</Translation>
+        <Translation Language="PT">Sonda de histerese para AQS</Translation>
+        <Translation Language="NL">Hysteresis sonde ECS</Translation>
+        <Translation Language="DE">Hysteresis sonde ECS</Translation>
+      </Text>
+      <Text Id="text_renommer_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Renommer</Translation>
+        <Translation Language="GB">Hysteresis DHW probe</Translation>
+        <Translation Language="PT">Sonda de histerese para AQS</Translation>
+        <Translation Language="NL">Hysteresis sonde ECS</Translation>
+        <Translation Language="DE">Hysteresis sonde ECS</Translation>
+      </Text>
       <Text Id="text_param_complementaire_zone_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Paramètres complémentaires de la zone</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -4943,14 +5139,14 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_question_resistance_terminaison_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_question_resistance_terminaison_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Voulez-vous activer la résistance de terminaison ?</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_texte_resistance_terminaison_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_texte_resistance_terminaison_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Dans le cas de la régulation cascade, il est nécessaire d'activer la résistance de terminaison pour les deux machines aux extrémitées du bus de communication.</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -4992,7 +5188,7 @@
         <Translation Language="NL">Bouclage ECS</Translation>
         <Translation Language="DE">Bouclage ECS</Translation>
       </Text>
-      <Text Id="__SingleUse_NUVT" Alignment="Left" TypographyId="Large">
+      <Text Id="text_code_incorrect_gauche_large" Alignment="Left" TypographyId="Large">
         <Translation Language="FR">Code incorrect</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>

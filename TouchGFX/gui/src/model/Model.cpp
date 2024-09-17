@@ -30,12 +30,12 @@ Model::Model() : modelListener(0)
 	sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal = 300;
 	sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Reduit = 290;
 	// Config Piscine
-	sStatut_Zx[0].i16Tint = 196;
-	strcpy((char *)&sConfig_IHM.sParam_Zx[0].u8NomZone[0], "Zone 1");
-	sConfig_IHM.sMode_Zx[0].Mode = MARCHE_CHAUD;
-	sConfig_IHM.sMode_Zx[0].i16Consigne_Tint_Reduit = 160;
-	sConfig_IHM.sMode_Zx[0].i16Consigne_Tint_Normal = 186;
-	sConfig_IHM.sMode_Zx[0].i16Consigne_Tint_Confort = 200;
+	sStatut_Zx[u8Pointeur_buffer_tx].i16Tint = 196;
+	strcpy((char *)&sConfig_IHM.sParam_Zx[u8Pointeur_buffer_tx].u8NomZone[0], "Zone 1");
+	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx].Mode = MARCHE_CHAUD;
+	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx].i16Consigne_Tint_Reduit = 160;
+	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx].i16Consigne_Tint_Normal = 186;
+	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx].i16Consigne_Tint_Confort = 200;
 	// Config chauffe dalle
 	sConfig_IHM.sParam_PAC.u8Consigne_Sablier_Dalle[0] = 35;
 	sConfig_IHM.sParam_PAC.u8Consigne_Sablier_Dalle[1] = 40;
@@ -129,6 +129,20 @@ void Model::tick()
 	if(arkteos_update.statut_pac_update)
 	{
 		modelListener->changeStatutPAC(&sStatut_PAC);
+		if(sStatut_PAC.ModifConfig)
+		{
+			c_recup_config(0);
+			c_recup_config(1);
+			c_recup_config(2);
+			if(sConfig_IHM.sModele_PAC.u8ModelePAC == INVERTERRA || sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX || sConfig_IHM.sModele_PAC.u8ModelePAC == ARKTEA)
+			{
+				c_recup_config(3);
+			}
+		}
+		else if(sStatut_PAC.ModifConfigSimple)
+		{
+			c_recup_config(1);
+		}
 		arkteos_update.statut_pac_update = false;
 	}
 	if(arkteos_update.statut_ether_update)
@@ -166,6 +180,11 @@ void Model::tick()
 		modelListener->changeDemandeFrigo(&sDemandeFrigo);
 		arkteos_update.demande_frigo_update = false;
 	}
+	if(arkteos_update.statut_rf_update)
+	{
+		modelListener->changeStatutRF(&sStatut_RF[0]);
+		arkteos_update.statut_rf_update = false;
+	}
 }
 
 //void Model::energieState(uint16_t state)
@@ -181,352 +200,437 @@ void Model::c_user_param()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER;
-//	txData[0].data[0] = CONTROL_WRITE;
-	txData[0].data[3] = SC_USER_PARAM;
-	txData[0].data[4] = sizeof(S_MODE_PAC) + sizeof(S_PARAM_UTILISATEUR);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
+//	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_PARAM;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_PAC) + sizeof(S_PARAM_UTILISATEUR);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_PAC, sizeof(S_MODE_PAC));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_PAC, sizeof(S_MODE_PAC));
 	u16Pointeur += sizeof(S_MODE_PAC);
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sParam_Utilisateur, sizeof(S_PARAM_UTILISATEUR));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_Utilisateur, sizeof(S_PARAM_UTILISATEUR));
 	u16Pointeur += sizeof(S_PARAM_UTILISATEUR);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_user_vacances()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER;
-	txData[0].data[3] = SC_USER_VACANCES;
-	txData[0].data[4] = sizeof(S_MODE_ZX)*NB_ZONE + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE) + sizeof(S_MODE_REG_EXT) + sizeof(S_PARAM_PAC);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_VACANCES;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_ZX)*NB_ZONE + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE) + sizeof(S_MODE_REG_EXT) + sizeof(S_PARAM_PAC);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_Zx[0], sizeof(S_MODE_ZX) * NB_ZONE);
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_Zx[0], sizeof(S_MODE_ZX) * NB_ZONE);
 	u16Pointeur += sizeof(S_MODE_ZX) * NB_ZONE;
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_ECS, sizeof(S_MODE_ECS));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_ECS, sizeof(S_MODE_ECS));
 	u16Pointeur += sizeof(S_MODE_ECS);
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_Piscine, sizeof(S_MODE_PISCINE));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_Piscine, sizeof(S_MODE_PISCINE));
 	u16Pointeur += sizeof(S_MODE_PISCINE);
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_RegulExt, sizeof(S_MODE_REG_EXT));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_RegulExt, sizeof(S_MODE_REG_EXT));
 	u16Pointeur += sizeof(S_MODE_REG_EXT);
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sParam_PAC, sizeof(S_PARAM_PAC));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_PAC, sizeof(S_PARAM_PAC));
 	u16Pointeur += sizeof(S_PARAM_PAC);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_user_ecs()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER;
-//	txData[0].data[0] = CONTROL_WRITE;
-	txData[0].data[3] = SC_USER_ECS;
-	txData[0].data[4] = sizeof(S_MODE_ECS);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
+//	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_ECS;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_ECS);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_ECS, sizeof(S_MODE_ECS));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_ECS, sizeof(S_MODE_ECS));
 	u16Pointeur += sizeof(S_MODE_ECS);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_user_zx(uint8_t u8Zone)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER;
-	txData[0].data[3] = SC_USER_Z1 + u8Zone;
-	txData[0].data[4] = sizeof(S_MODE_ZX);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_Z1 + u8Zone;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_ZX);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_Zx[u8Zone], sizeof(S_MODE_ZX));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_Zx[u8Zone], sizeof(S_MODE_ZX));
 	u16Pointeur += sizeof(S_MODE_ZX);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_user_zx_all()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER;
-	txData[0].data[3] = SC_USER_ZX;
-	txData[0].data[4] = sizeof(S_MODE_ZX) * NB_ZONE;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_ZX;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_ZX) * NB_ZONE;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_Zx[0], sizeof(S_MODE_ZX) * NB_ZONE);
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_Zx[0], sizeof(S_MODE_ZX) * NB_ZONE);
 	u16Pointeur += sizeof(S_MODE_ZX) * NB_ZONE;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_user_reg_ext()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER;
-	txData[0].data[3] = SC_USER_REG_EXT;
-	txData[0].data[4] = sizeof(S_MODE_REG_EXT);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_REG_EXT;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_REG_EXT);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_RegulExt, sizeof(S_MODE_REG_EXT));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_RegulExt, sizeof(S_MODE_REG_EXT));
 	u16Pointeur += sizeof(S_MODE_REG_EXT);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_user_piscine()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER;
-	txData[0].data[3] = SC_USER_PISCINE;
-	txData[0].data[4] = sizeof(S_MODE_PISCINE);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_PISCINE;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_PISCINE);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sMode_Piscine, sizeof(S_MODE_PISCINE));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_Piscine, sizeof(S_MODE_PISCINE));
 	u16Pointeur += sizeof(S_MODE_PISCINE);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_user_date()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER;
-	txData[0].data[3] = SC_USER_DATE;
-	txData[0].data[4] = sizeof(S_DATE);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_DATE;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_DATE);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
-	memcpy(&txData[0].data[u16Pointeur], &sDate_modif, sizeof(S_DATE));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sDate_modif, sizeof(S_DATE));
 	u16Pointeur += sizeof(S_DATE);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_raz()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_RAZ_DATE;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_RAZ_DATE;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_cumul_prod()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_CUMUL_PROD + CONTROL_READ;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_CUMUL_PROD + CONTROL_READ;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_cumul_conso()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_CUMUL_CONS + CONTROL_READ;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_CUMUL_CONS + CONTROL_READ;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_histo_12m_conso()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_CONS_12M + CONTROL_READ;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_CONS_12M + CONTROL_READ;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_histo_24j_conso()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_CONS_24J + CONTROL_READ;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_CONS_24J + CONTROL_READ;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_histo_24h_conso()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_CONS_24H + CONTROL_READ;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_CONS_24H + CONTROL_READ;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_histo_12m_prod()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_PROD_12M + CONTROL_READ;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_PROD_12M + CONTROL_READ;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_histo_24j_prod()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_PROD_24J + CONTROL_READ;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_PROD_24J + CONTROL_READ;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_ener_histo_24h_prod()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_ENERGIE;
-	txData[0].data[3] = SC_ENER_PROD_24H + CONTROL_READ;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_ENER_PROD_24H + CONTROL_READ;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_recup_config(uint8_t u8RecupConfig)
@@ -535,603 +639,832 @@ void Model::c_recup_config(uint8_t u8RecupConfig)
 
 	if(u8RecupConfig == 0)
 	{
-		txData[0].data[0] = N_ADD_ETHER;
+		txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
 	}
-	else txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = RECUP_CONFIG;
-//	txData[0].data[0] = CONTROL_WRITE;
+	else txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = RECUP_CONFIG;
+//	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
 	if(u8RecupConfig == 2)
 	{
-		txData[0].data[3] = SC_RECUP_TRAME2;
+		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_TRAME2;
 	}
-	else
-	if(u8RecupConfig == 3)
+	else if(u8RecupConfig == 3)
 	{
-		txData[0].data[3] = SC_RECUP_CONFIG_PHOENIX;
+		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_CONFIG_PHOENIX;
 	}
-	else txData[0].data[3] = SC_RECUP_GENERAL;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	else txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_GENERAL;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_prog_ecs(bool bEnvoi)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_PROG;
-	txData[0].data[3] = SC_PROG_ECS;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_PROG;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PROG_ECS;
 	if(bEnvoi == false)
 	{
-		txData[0].data[3] += CONTROL_READ;
-		txData[0].data[4] = 0;
+		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
+		txData[u8Pointeur_buffer_tx].data[4] = 0;
 	}
-	else txData[0].data[4] = sizeof(au8Prog_ECS);
-	txData[0].data[5] = 0;
+	else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_ECS);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 	if(bEnvoi == true)
 	{
-		memcpy(&txData[0].data[u16Pointeur], &au8Prog_ECS, sizeof(au8Prog_ECS));
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &au8Prog_ECS, sizeof(au8Prog_ECS));
 		u16Pointeur += sizeof(au8Prog_ECS);
 	}
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_prog_option(bool bEnvoi)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_PROG;
-	txData[0].data[3] = SC_PROG_OPTIONS;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_PROG;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PROG_OPTIONS;
 	if(bEnvoi == false)
 	{
-		txData[0].data[3] += CONTROL_READ;
-		txData[0].data[4] = 0;
+		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
+		txData[u8Pointeur_buffer_tx].data[4] = 0;
 	}
-	else txData[0].data[4] = sizeof(au8Prog_Options);
-	txData[0].data[5] = 0;
+	else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Options);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 	if(bEnvoi == true)
 	{
-		memcpy(&txData[0].data[u16Pointeur], &au8Prog_Options, sizeof(au8Prog_Options));
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &au8Prog_Options, sizeof(au8Prog_Options));
 		u16Pointeur += sizeof(au8Prog_Options);
 	}
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_prog_piscine(bool bEnvoi)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_PROG;
-	txData[0].data[3] = SC_PROG_PISCINE;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_PROG;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PROG_PISCINE;
 	if(bEnvoi == false)
 	{
-		txData[0].data[3] += CONTROL_READ;
-		txData[0].data[4] = 0;
+		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
+		txData[u8Pointeur_buffer_tx].data[4] = 0;
 	}
-	else txData[0].data[4] = sizeof(au8Prog_Piscine);
-	txData[0].data[5] = 0;
+	else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Piscine);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 	if(bEnvoi == true)
 	{
-		memcpy(&txData[0].data[u16Pointeur], &au8Prog_Piscine, sizeof(au8Prog_Piscine));
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &au8Prog_Piscine, sizeof(au8Prog_Piscine));
 		u16Pointeur += sizeof(au8Prog_Piscine);
 	}
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_prog_zone_chaud(uint8_t u8Zone, bool bEnvoi)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_PROG;
-	txData[0].data[3] = SC_PROG_CHAUD_Z1 + u8Zone;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_PROG;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PROG_CHAUD_Z1 + u8Zone;
 	if(bEnvoi == false)
 	{
-		txData[0].data[3] += CONTROL_READ;
-		txData[0].data[4] = 0;
+		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
+		txData[u8Pointeur_buffer_tx].data[4] = 0;
 	}
-	else txData[0].data[4] = sizeof(au8Prog_Chaud_Zx[u8Zone]);
-	txData[0].data[5] = 0;
+	else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Chaud_Zx[u8Zone]);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 	if(bEnvoi == true)
 	{
-		memcpy(&txData[0].data[u16Pointeur], &au8Prog_Chaud_Zx[u8Zone], sizeof(au8Prog_Chaud_Zx[u8Zone]));
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &au8Prog_Chaud_Zx[u8Zone], sizeof(au8Prog_Chaud_Zx[u8Zone]));
 		u16Pointeur += sizeof(au8Prog_Chaud_Zx[u8Zone]);
 	}
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_prog_zone_froid(uint8_t u8Zone, bool bEnvoi)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_PROG;
-	txData[0].data[3] = SC_PROG_FROID_Z1 + u8Zone;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_PROG;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PROG_FROID_Z1 + u8Zone;
 	if(bEnvoi == false)
 	{
-		txData[0].data[3] += CONTROL_READ;
-		txData[0].data[4] = 0;
+		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
+		txData[u8Pointeur_buffer_tx].data[4] = 0;
 	}
-	else txData[0].data[4] = sizeof(au8Prog_Froid_Zx[u8Zone]);
-	txData[0].data[5] = 0;
+	else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Froid_Zx[u8Zone]);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 	if(bEnvoi == true)
 	{
-		memcpy(&txData[0].data[u16Pointeur], &au8Prog_Froid_Zx[u8Zone], sizeof(au8Prog_Froid_Zx[u8Zone]));
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &au8Prog_Froid_Zx[u8Zone], sizeof(au8Prog_Froid_Zx[u8Zone]));
 		u16Pointeur += sizeof(au8Prog_Froid_Zx[u8Zone]);
 	}
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_prog_reg_ext_chaud(bool bEnvoi)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_PROG;
-	txData[0].data[3] = SC_PROG_EXT_CHAUD;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_PROG;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PROG_EXT_CHAUD;
 	if(bEnvoi == false)
 	{
-		txData[0].data[3] += CONTROL_READ;
-		txData[0].data[4] = 0;
+		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
+		txData[u8Pointeur_buffer_tx].data[4] = 0;
 	}
-	else txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Chaud);
-	txData[0].data[5] = 0;
+	else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Regul_Ext_Chaud);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 	if(bEnvoi == true)
 	{
-		memcpy(&txData[0].data[u16Pointeur], &au8Prog_Regul_Ext_Chaud, sizeof(au8Prog_Regul_Ext_Chaud));
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &au8Prog_Regul_Ext_Chaud, sizeof(au8Prog_Regul_Ext_Chaud));
 		u16Pointeur += sizeof(au8Prog_Regul_Ext_Chaud);
 	}
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_prog_reg_ext_froid(bool bEnvoi)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USER_PROG;
-	txData[0].data[3] = SC_PROG_EXT_FROID;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_PROG;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PROG_EXT_FROID;
 	if(bEnvoi == false)
 	{
-		txData[0].data[3] += CONTROL_READ;
-		txData[0].data[4] = 0;
+		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
+		txData[u8Pointeur_buffer_tx].data[4] = 0;
 	}
-	else txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Froid);
-	txData[0].data[5] = 0;
+	else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Regul_Ext_Froid);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 	if(bEnvoi == true)
 	{
-		memcpy(&txData[0].data[u16Pointeur], &au8Prog_Regul_Ext_Froid, sizeof(au8Prog_Regul_Ext_Froid));
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &au8Prog_Regul_Ext_Froid, sizeof(au8Prog_Regul_Ext_Froid));
 		u16Pointeur += sizeof(au8Prog_Regul_Ext_Froid);
 	}
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_install_raz_config()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_INSTALL;
-	txData[0].data[3] = SC_INSTALL_RAZ_CONFIG;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_RAZ_CONFIG;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_install_config_pac()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_INSTALL;
-	txData[0].data[3] = SC_INSTALL_CONFIG_PAC;
-	txData[0].data[4] = sizeof(S_CONFIG_PAC);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_CONFIG_PAC;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_CONFIG_PAC);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sConfig_PAC, sizeof(S_CONFIG_PAC));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sConfig_PAC, sizeof(S_CONFIG_PAC));
 	u16Pointeur += sizeof(S_CONFIG_PAC);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_install_piscine()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_INSTALL;
-	txData[0].data[3] = SC_PARAM_PISCINE;
-	txData[0].data[4] = sizeof(S_PARAM_PISCINE);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PARAM_PISCINE;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_PARAM_PISCINE);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sParam_Piscine, sizeof(S_PARAM_PISCINE));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_Piscine, sizeof(S_PARAM_PISCINE));
 	u16Pointeur += sizeof(S_PARAM_PISCINE);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_install_ecs()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_INSTALL;
-	txData[0].data[3] = SC_PARAM_ECS;
-	txData[0].data[4] = sizeof(S_PARAM_ECS);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PARAM_ECS;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_PARAM_ECS);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sParam_ECS, sizeof(S_PARAM_ECS));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_ECS, sizeof(S_PARAM_ECS));
 	u16Pointeur += sizeof(S_PARAM_ECS);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_install_param()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_INSTALL;
-	txData[0].data[3] = SC_INSTALL_PARAM;
-	txData[0].data[4] = sizeof(S_OPTION_PAC) + sizeof(S_PARAM_PAC) + sizeof(S_PARAM_FRIGO);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_PARAM;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_OPTION_PAC) + sizeof(S_PARAM_PAC) + sizeof(S_PARAM_FRIGO);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sOption_PAC, sizeof(S_OPTION_PAC));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sOption_PAC, sizeof(S_OPTION_PAC));
 	u16Pointeur += sizeof(S_OPTION_PAC);
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sParam_PAC, sizeof(S_PARAM_PAC));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_PAC, sizeof(S_PARAM_PAC));
 	u16Pointeur += sizeof(S_PARAM_PAC);
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sParam_Frigo, sizeof(S_PARAM_FRIGO));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_Frigo, sizeof(S_PARAM_FRIGO));
 	u16Pointeur += sizeof(S_PARAM_FRIGO);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_install_raz_histo_err()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_INSTALL;
-	txData[0].data[3] = SC_INSTALL_RAZ_HISTO_ERR;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_RAZ_HISTO_ERR;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_install_reg_ext()
+{
+	uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PARAM_REG_EXT;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_PARAM_REG_EXT);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+	u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_RegulExt, sizeof(S_PARAM_REG_EXT));
+	u16Pointeur += sizeof(S_PARAM_REG_EXT);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_install_zx(uint8_t u8Zone)
+{
+	uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PARAM_Z1;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_PARAM_ZX);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+	u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_Zx[u8Zone], sizeof(S_PARAM_ZX));
+	u16Pointeur += sizeof(S_PARAM_ZX);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_install_th_association(uint8_t u8NumZone)
+{
+	uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL_THERMOSTAT;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_TH_ASSO_Z1 + u8NumZone;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_install_th_dissociation(uint8_t u8NumZone)
+{
+	uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL_THERMOSTAT;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_TH_DISSO_Z1 + u8NumZone;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_usine_param()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USINE;
-	txData[0].data[3] = SC_USINE_PARAM;
-	txData[0].data[4] = sizeof(S_MODELE_PAC) + sizeof(S_CONFIG_PAC);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USINE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USINE_PARAM;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODELE_PAC) + sizeof(S_CONFIG_PAC);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sModele_PAC, sizeof(S_MODELE_PAC));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sModele_PAC, sizeof(S_MODELE_PAC));
 	u16Pointeur += sizeof(S_MODELE_PAC);
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sConfig_PAC, sizeof(S_CONFIG_PAC));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sConfig_PAC, sizeof(S_CONFIG_PAC));
 	u16Pointeur += sizeof(S_CONFIG_PAC);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_usine_password()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USINE;
-	txData[0].data[3] = SC_USINE_PASSWORD;
-	txData[0].data[4] = sizeof(S_INSTALL_PAC);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USINE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USINE_PASSWORD;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_INSTALL_PAC);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sInstall_PAC, sizeof(S_INSTALL_PAC));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sInstall_PAC, sizeof(S_INSTALL_PAC));
 	u16Pointeur += sizeof(S_INSTALL_PAC);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_usine_phoenix(int u8Esclave)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_FRIGO + u8Esclave;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USINE;
-	txData[0].data[3] = SC_USINE_GENERAL;
-	txData[0].data[4] = sizeof(S_MODELE_FRIGO);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_FRIGO + u8Esclave;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USINE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USINE_GENERAL;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODELE_FRIGO);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sConfigFrigo[u8Esclave].sModele_FRIGO, sizeof(S_MODELE_FRIGO));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sConfigFrigo[u8Esclave].sModele_FRIGO, sizeof(S_MODELE_FRIGO));
 	u16Pointeur += sizeof(S_MODELE_FRIGO);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_usine_raz_energie()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USINE;
-	txData[0].data[3] = SC_USINE_RAZ_ENERGIE;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USINE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USINE_RAZ_ENERGIE;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_usine_raz_config()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_USINE;
-	txData[0].data[3] = SC_USINE_RAZ_CONFIG;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USINE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USINE_RAZ_CONFIG;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_sav_histo_err()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_SAV;
-	txData[0].data[3] = SC_SAV_HISTO_ERR;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_HISTO_ERR;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_sav_param()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_SAV;
-	txData[0].data[3] = SC_SAV_PARAM;
-	txData[0].data[4] = sizeof(u16NumAction) + sizeof(u32ValAction);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_PARAM;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(u16NumAction) + sizeof(u32ValAction);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &u16NumAction, sizeof(u16NumAction));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &u16NumAction, sizeof(u16NumAction));
 	u16Pointeur += sizeof(u16NumAction);
-	memcpy(&txData[0].data[u16Pointeur], &u32ValAction, sizeof(u32ValAction));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &u32ValAction, sizeof(u32ValAction));
 	u16Pointeur += sizeof(u32ValAction);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_sav_shunt_tempo()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_REG;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_SAV;
-	txData[0].data[3] = SC_SAV_SHUNT_TEMPO;
-	txData[0].data[4] = sizeof(S_PARAM_SAV);
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_SHUNT_TEMPO;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_PARAM_SAV);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	memcpy(&txData[0].data[u16Pointeur], &sConfig_IHM.sParam_SAV, sizeof(S_PARAM_SAV));
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_SAV, sizeof(S_PARAM_SAV));
 	u16Pointeur += sizeof(S_PARAM_SAV);
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_sav_raz_tps_fonct(uint8_t u8Esclave)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_FRIGO + u8Esclave;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_SAV;
-	txData[0].data[3] = SC_SAV_RAZ_TPS_FONCT;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_FRIGO + u8Esclave;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_RAZ_TPS_FONCT;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_sav_raz_soft_flash()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_ETHER;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_SAV;
-	txData[0].data[3] = SC_SAV_RAZ_SOFT_FLASH;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_RAZ_SOFT_FLASH;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_sav_raz_log()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_ETHER;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = C_SAV;
-	txData[0].data[3] = SC_SAV_RAZ_LOG;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_RAZ_LOG;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 void Model::c_restart()
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	txData[0].data[0] = N_ADD_ETHER;
-	txData[0].data[1] = N_ADD_IHM;
-	txData[0].data[2] = RESTART;
-	txData[0].data[3] = 0;
-	txData[0].data[4] = 0;
-	txData[0].data[5] = 0;
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = RESTART;
+	txData[u8Pointeur_buffer_tx].data[3] = 0;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
 
-	u16CRC = computeCRC((uint8_t*)&txData[0].data[0], u16Pointeur);
-	txData[0].data[u16Pointeur++] = u16CRC & 0xff;
-	txData[0].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
 
-	txData[0].size = u16Pointeur;
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
 }
 
 uint16_t Model::computeCRC(uint8_t *data, uint16_t size)

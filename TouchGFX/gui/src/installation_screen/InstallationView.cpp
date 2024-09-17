@@ -28,6 +28,23 @@ void InstallationView::tearDownScreen()
     InstallationViewBase::tearDownScreen();
 }
 
+void InstallationView::bouton_mem_config()
+{
+    sConfig_Hydrau_temp.u8TypeRegul = sConfig_IHM.sParam_PAC.TypeRegul;
+	sConfig_Hydrau_temp.sZones = sConfig_IHM.sOption_PAC.sZone;
+}
+
+void InstallationView::bouton_mem_config_piscine()
+{
+	sConfig_Piscine_temp.bPiscine = sConfig_IHM.sOption_PAC.Piscine;
+    memcpy(&sConfig_Piscine_temp.sParam_Piscine, &sConfig_IHM.sParam_Piscine, sizeof(S_PARAM_PISCINE));
+}
+
+void InstallationView::bouton_mem_config_ecs()
+{
+    memcpy(&sParam_ECS_temp, &sConfig_IHM.sParam_ECS, sizeof(S_PARAM_ECS));
+}
+
 void InstallationView::bouton_modif_code()
 {
 	eCode = MODIF_CODE_INSTALL;
