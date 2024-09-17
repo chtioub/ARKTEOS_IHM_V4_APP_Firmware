@@ -27,6 +27,9 @@ public:
 
     virtual ~VeillePresenter() {}
 
+    void enterVeille();
+    void exitVeille();
+
 private:
     VeillePresenter();
 

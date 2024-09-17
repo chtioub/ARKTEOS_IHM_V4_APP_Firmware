@@ -11,7 +11,9 @@ public:
     virtual ~VeilleView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    void BackgroundClickHandler(const Box& b, const ClickEvent& e);
 protected:
+    Callback<VeilleView, const Box&, const ClickEvent&> BackgroundClickedCallback;
 };
 
 #endif // VEILLEVIEW_HPP

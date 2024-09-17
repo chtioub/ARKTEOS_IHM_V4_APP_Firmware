@@ -2,6 +2,7 @@
 #include <gui/model/ModelListener.hpp>
 #include "IHM_V4.h"
 #include <string.h>
+#include <touchgfx/Utils.hpp>
 
 Model::Model() : modelListener(0)
 {
@@ -66,7 +67,7 @@ Model::Model() : modelListener(0)
 
 void Model::tick()
 {
-	if(dataUpdated != 0)
+    if(dataUpdated != 0)
 	{
 		modelListener->changeModePac(cosebe_test.bModePAC);
 		dataUpdated = 0;
@@ -176,6 +177,26 @@ void Model::tick()
 //		sendData = 1;
 //	}
 //}
+
+void Model::enterVeille()
+{
+#ifdef SIMULATOR
+  touchgfx_printf("Veille \n");
+#else
+  uint8_t PWMVeille = 0;
+  setBackLightPWM(PWMVeille);
+#endif
+}
+
+void Model::exitVeille()
+{
+#ifdef SIMULATOR
+  touchgfx_printf("activation \n");
+#else
+  uint8_t PWMActive = 100;
+  setBackLightPWM(PWMActive);
+#endif
+}
 
 void Model::c_user_param()
 {

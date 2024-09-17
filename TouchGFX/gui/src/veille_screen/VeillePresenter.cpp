@@ -16,3 +16,13 @@ void VeillePresenter::deactivate()
 {
 
 }
+
+void VeillePresenter::enterVeille()
+{
+  model->enterVeille();
+}
+
+void VeillePresenter::exitVeille()
+{
+  model->exitVeille();
+}

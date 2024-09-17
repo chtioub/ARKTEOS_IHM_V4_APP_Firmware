@@ -15,6 +15,8 @@ public:
         model = m;
     }
 
+    virtual void enterVeille() {};
+    virtual void exitVeille() {};
     virtual void changeModePac(bool marche) {};
     virtual void changeDate(S_DATE *sDate) {};
     virtual void changeErreur(uint16_t u16Erreur) {};

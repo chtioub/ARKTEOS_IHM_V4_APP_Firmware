@@ -25,6 +25,8 @@ public:
     uint16_t computeCRC(uint8_t *data, uint16_t size);
 
 //    void energieState(uint16_t state);
+    void enterVeille();
+    void exitVeille();
     void c_ener_raz();
     void c_ener_cumul_prod();
     void c_ener_cumul_conso();
