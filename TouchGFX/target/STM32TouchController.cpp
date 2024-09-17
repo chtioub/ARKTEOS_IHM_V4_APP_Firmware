@@ -53,8 +53,8 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
     x = buf[0] + (buf[1] << 8);
     y = buf[2] + (buf[3] << 8);
 
-    x = (x * 1024) / 800;
-    y = (y * 600) / 480;
+//    x = (x * 1024) / 800;
+//    y = (y * 600) / 480;
     return true;
   }
 

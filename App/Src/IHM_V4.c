@@ -57,6 +57,18 @@ uint16_t u16NumAction;
 uint32_t u32ValAction, eAnciennePage;
 S_CONFIG_HYDRAU_TEMP sConfig_Hydrau_temp;
 
+void setBackLightPWM(uint8_t pwm)
+{
+  uint16_t pulse = 100;
+  if(pulse == 0)
+    HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+  else
+  {
+    __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, pulse*10);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  }
+}
+
 uint8_t decodeRxData(rxData_t *rxData)
 {
 	uint16_t ptrRxBuffer = 6;

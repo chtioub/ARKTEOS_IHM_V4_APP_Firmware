@@ -205,6 +205,7 @@ extern uint16_t u16NumAction;
 extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000];
 extern S_CONFIG_HYDRAU_TEMP sConfig_Hydrau_temp;
 
+void setBackLightPWM(uint8_t pwm);
 uint8_t decodeRxData(rxData_t *rxData);
 uint8_t computeTxData(txData_t *txData, txData_t *cosebe_tx);
 bool verifErreurs(void);
