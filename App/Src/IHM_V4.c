@@ -169,7 +169,9 @@ uint8_t decodeRxData(rxData_t *rxData)
 			case CYC_ETHER_REG_FRIGO:
 				if(pHeader->taille == sizeof(S_CYCL_REG_FRI))
 				{
+#ifndef SIMULATOR
 					u32LastCyclique = HAL_GetTick();
+#endif
 					memcpy(&sCyclRegFrigo[0], &rxData->data[ptrRxBuffer], sizeof(S_CYCL_REG_FRI));
 					arkteos_update.cycl_frigo_update = true;
 					if(sConfig_IHM.u16NbCyclique < 6)
@@ -184,7 +186,9 @@ uint8_t decodeRxData(rxData_t *rxData)
 					case SC_CYC_T1:
 						if(pHeader->taille == LG_TRAME_CYCLIQUE_REGUL_T1)
 						{
+#ifndef SIMULATOR
 							u32LastCyclique = HAL_GetTick();
+#endif
 							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_PAC, sizeof(S_STATUT_PAC)))
 							{
 								memcpy(&sStatut_PAC, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_PAC));
@@ -283,7 +287,9 @@ uint8_t decodeRxData(rxData_t *rxData)
 					case SC_CYC_T2:
 						if(pHeader->taille == LG_TRAME_CYCLIQUE_REGUL_T2)
 						{
+#ifndef SIMULATOR
 							u32LastCyclique = HAL_GetTick();
+#endif
 							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[2], sizeof(S_STATUT_ZX)))
 							{
 								memcpy(&sStatut_Zx[2], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
@@ -351,7 +357,9 @@ uint8_t decodeRxData(rxData_t *rxData)
 			case CYC_ETHER:
 				if(memcmp(&rxData->data[ptrRxBuffer], &sCycEther, sizeof(S_CYC_ETHER_III)))
 				{
+#ifndef SIMULATOR
 					u32LastCyclique = HAL_GetTick();
+#endif
 					memcpy(&sCycEther, &rxData->data[ptrRxBuffer], sizeof(S_CYC_ETHER_III));
 					arkteos_update.statut_ether_update = true;
 					// Verification si MAJ de l'affichage nécessaire

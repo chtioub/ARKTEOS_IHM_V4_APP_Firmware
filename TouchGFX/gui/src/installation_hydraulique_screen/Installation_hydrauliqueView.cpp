@@ -407,6 +407,12 @@ void Installation_hydrauliqueView::affichage_zones()
 	}
 }
 
+void Installation_hydrauliqueView::bouton_valider()
+{
+
+	application().gotoInstallationScreenNoTransition();
+}
+
 void Installation_hydrauliqueView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 {
 	// Recup config

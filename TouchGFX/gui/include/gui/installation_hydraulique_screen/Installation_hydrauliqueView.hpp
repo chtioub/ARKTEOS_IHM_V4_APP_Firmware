@@ -23,6 +23,7 @@ public:
     void bouton_zone_2();
     void bouton_param_zone_1();
     void bouton_param_zone_2();
+    void bouton_valider();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
