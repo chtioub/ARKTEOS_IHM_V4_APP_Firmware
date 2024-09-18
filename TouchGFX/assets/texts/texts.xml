@@ -4915,6 +4915,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_sonde_modbus_titre_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sonde modbus - </Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_aucune_sonde_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Aucune sonde associée</Translation>
         <Translation Language="GB">New Text</Translation>

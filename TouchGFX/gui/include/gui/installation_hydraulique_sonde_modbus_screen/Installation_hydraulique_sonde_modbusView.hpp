@@ -11,7 +11,29 @@ public:
     virtual ~Installation_hydraulique_sonde_modbusView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    void bouton_moins_numero_sonde();
+    void bouton_plus_numero_sonde();
+    void bouton_retour();
+    void bouton_verrouillage_consigne();
+    void bouton_arret_defaut();
+    void bouton_hysteresis();
+    void bouton_resistance_terminaison();
+    void bouton_valider();
+
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
+    bool bConnexionDistance;
+    uint8_t u8NumSonde;
+    uint16_t u16ErreurAffichee;
+    S_DATE sDate_old;
+    S_CONFIG_IHM sConfig_IHM_old;
+    S_STATUT_PAC sStatut_PAC_old;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_num_sonde[3];
+
 };
 
 #endif // INSTALLATION_HYDRAULIQUE_SONDE_MODBUSVIEW_HPP

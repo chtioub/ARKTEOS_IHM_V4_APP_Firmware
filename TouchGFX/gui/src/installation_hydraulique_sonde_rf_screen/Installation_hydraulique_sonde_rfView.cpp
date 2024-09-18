@@ -17,7 +17,23 @@ Installation_hydraulique_sonde_rfView::Installation_hydraulique_sonde_rfView()
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_SONDE_RADIO_TITRE_CENTRE_DEFAUT).getText());
 	Unicode::fromUTF8(sConfig_Hydrau_temp.sParamZx.u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
 	barre_titre.titre(textAreaBuffer_Titre);
+	//
+	if(sStatut_RF[sConfig_Hydrau_temp.u8NumZone].Valid_Zx != 0)
+	{
+		toggleButton_associer.forceState(true);
+		toggleButton_associer.setTouchable(false);
+		toggleButton_dissocer.forceState(false);
+		toggleButton_dissocer.setTouchable(true);
+	}
+	else
+	{
+		toggleButton_associer.forceState(false);
+		toggleButton_associer.setTouchable(true);
+		toggleButton_dissocer.forceState(true);
+		toggleButton_dissocer.setTouchable(false);
+	}
 	//
 	if(sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne)
 	{
@@ -196,11 +212,6 @@ void Installation_hydraulique_sonde_rfView::changeStatutRF(S_STATUT_RF *sStatut_
 			container_qualite_signal.setVisible(true);
 			textArea_signal.setTypedText(touchgfx::TypedText(T_TEXT_QUALITE_SIGNAL_CENTRE_DEFAUT));
 			//
-			toggleButton_associer.forceState(true);
-			toggleButton_associer.setTouchable(false);
-			toggleButton_dissocer.forceState(false);
-			toggleButton_dissocer.setTouchable(true);
-			//
 			if(sStatut_RF[sConfig_Hydrau_temp.u8NumZone].Niveau_Reception > -70)
 			{
 				image_qualite_signal.setBitmap(touchgfx::Bitmap(BITMAP_ETAT_RECEPTION_RF_EXCELLENTE_L184XH71_ID));
@@ -224,11 +235,6 @@ void Installation_hydraulique_sonde_rfView::changeStatutRF(S_STATUT_RF *sStatut_
 		{
 			//
 			container_qualite_signal.setVisible(false);
-			//
-			toggleButton_associer.forceState(false);
-			toggleButton_associer.setTouchable(true);
-			toggleButton_dissocer.forceState(true);
-			toggleButton_dissocer.setTouchable(false);
 			//
 			if(sStatut_RF[sConfig_Hydrau_temp.u8NumZone].Init_Zx != 0)
 			{

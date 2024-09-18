@@ -48,7 +48,7 @@ void Installation_hydraulique_config_zoneView::setupScreen()
 
 void Installation_hydraulique_config_zoneView::tearDownScreen()
 {
-    Installation_hydraulique_config_zoneViewBase::tearDownScreen();
+	Installation_hydraulique_config_zoneViewBase::tearDownScreen();
 }
 
 void Installation_hydraulique_config_zoneView::bouton_droite_type_emetteur()

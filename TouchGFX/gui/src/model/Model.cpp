@@ -1094,7 +1094,7 @@ void Model::c_install_zx(uint8_t u8Zone)
 	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
-	txData[u8Pointeur_buffer_tx].data[3] = SC_PARAM_Z1;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PARAM_Z1 + u8Zone;
 	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_PARAM_ZX);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
 	u16Pointeur = 6;
@@ -1124,6 +1124,7 @@ void Model::c_install_th_association(uint8_t u8NumZone)
 	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_TH_ASSO_Z1 + u8NumZone;
 	txData[u8Pointeur_buffer_tx].data[4] = 0;
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
+	u16Pointeur = 6;
 
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
@@ -1147,6 +1148,7 @@ void Model::c_install_th_dissociation(uint8_t u8NumZone)
 	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_TH_DISSO_Z1 + u8NumZone;
 	txData[u8Pointeur_buffer_tx].data[4] = 0;
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
+	u16Pointeur = 6;
 
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;

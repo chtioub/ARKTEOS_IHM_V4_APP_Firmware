@@ -26142,6 +26142,15 @@
               "Type": "ActionCustom",
               "FunctionName": "bouton_legionel_oui"
             }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionNone"
+            }
           }
         ]
       },
@@ -55191,7 +55200,7 @@
             "InteractionName": "BTNClicked_plus_numero_sonde_fct",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "button_droite_type_sonde"
+              "TriggerComponent": "button_droite_num_sonde"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -55808,6 +55817,7 @@
                         "Y": 76,
                         "Width": 216,
                         "Height": 53,
+                        "InitialStatePressed": true,
                         "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
                         "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
                       },
@@ -55874,6 +55884,7 @@
                     "X": 486,
                     "Width": 449,
                     "Height": 129,
+                    "Visible": false,
                     "Components": [
                       {
                         "Type": "Line",
@@ -55959,7 +55970,7 @@
                     "Y": 91,
                     "Width": 433,
                     "Height": 29,
-                    "TextId": "text_qualite_signal_centre_defaut",
+                    "TextId": "text_aucune_sonde_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,

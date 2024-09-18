@@ -14,6 +14,7 @@ Installation_hydraulique_numero_sonde_rfView::Installation_hydraulique_numero_so
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_REATTRIBUTION_SONDE_CENTRE_DEFAUT).getText());
 	Unicode::fromUTF8(sConfig_Hydrau_temp.sParamZx.u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
 	barre_titre.titre(textAreaBuffer_Titre);
 	// Numéro de sonde
 	u8NumSonde = sConfig_Hydrau_temp.sParamZx.type_zone.zone.NumSonde;
