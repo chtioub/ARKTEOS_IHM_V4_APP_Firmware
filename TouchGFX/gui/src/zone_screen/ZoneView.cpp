@@ -46,13 +46,13 @@ ZoneView::ZoneView()
 	{
 		// Multiple trame
 		presenter->c_prog_reg_ext_chaud(false);
-//		presenter->c_prog_reg_ext_froid(false);
+		presenter->c_prog_reg_ext_froid(false);
 	}
 	else
 	{
 		// Multiple trame
 		presenter->c_prog_zone_chaud(u8ZoneSelect, false);
-//		presenter->c_prog_zone_froid(u8ZoneSelect, false);
+		presenter->c_prog_zone_froid(u8ZoneSelect, false);
 	}
 #endif
 }

@@ -33,7 +33,6 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 	    textArea_on_off_resistance_terminaison_regul_esclave.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
 	// Affichage de la regul en cours
-    sConfig_Hydrau_temp.u8TypeRegul = sConfig_IHM.sParam_PAC.TypeRegul;
 	affichage_type_regul();
 	//
 	if(u8Nb_PAC > 1)
@@ -41,62 +40,62 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 		container_resistance_terminaison_regul_2_zones.setVisible(true);
 		container_resistance_terminaison_regul_multizones.setVisible(true);
 		container_resistance_terminaison_regul_externe.setVisible(true);
-		container_resistance_terminaison_regul_esclave.setVisible(true);
 	}
 	else
 	{
 		container_resistance_terminaison_regul_2_zones.setVisible(false);
 		container_resistance_terminaison_regul_multizones.setVisible(false);
 		container_resistance_terminaison_regul_externe.setVisible(false);
-		container_resistance_terminaison_regul_esclave.setVisible(false);
 	}
 	Unicode::snprintf(textAreaBuffer_nb_pac, 2, "%d", u8Nb_PAC);
 	textArea_valeur_nombre_pac.setWildcard(textAreaBuffer_nb_pac);
-	// Zones actives
-	sConfig_Hydrau_temp.sZones = sConfig_IHM.sOption_PAC.sZone;
+	// Param zones 1
 	if(sConfig_Hydrau_temp.sZones.bZone1)
 	{
-		// Regul directe
-		button_zone_1_regul_directe.setVisible(true);
-		textArea_bouton_zone_1_regul_directe.setVisible(true);
 		toggleButton_zone_1_on_off_regul_directe.forceState(true);
-		textArea_zone_1_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-		textArea_zone_1_regul_directe_1.setWildcard(textAreaBuffer_nom_zone1);
-		textArea_bouton_zone_1_regul_directe.setWildcard(textAreaBuffer_nom_zone1);
-		// Regul BCP / 2 zones
-		button_zone_1_regul_2_zones.setVisible(true);
-		textArea_bouton_zone_1_regul_2_zones.setVisible(true);
 		toggleButton_zone_1_on_off_regul_2_zones.forceState(true);
+		textArea_zone_1_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 		textArea_zone_1_on_off_regul_2_zones.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-		textArea_zone_1_regul_2_zones.setWildcard(textAreaBuffer_nom_zone1);
-		textArea_bouton_zone_1_regul_2_zones.setWildcard(textAreaBuffer_nom_zone1);
 	}
+	Unicode::fromUTF8(sConfig_IHM.sParam_Zx[0].u8NomZone, textAreaBuffer_nom_zone1, 10);
+	textArea_zone_1_regul_directe.setWildcard(textAreaBuffer_nom_zone1);
+	textArea_bouton_zone_1_regul_directe.setWildcard(textAreaBuffer_nom_zone1);
+	textArea_zone_1_regul_2_zones.setWildcard(textAreaBuffer_nom_zone1);
+	textArea_bouton_zone_1_regul_2_zones.setWildcard(textAreaBuffer_nom_zone1);
+	Unicode::snprintf(textAreaBuffer_nb_pac, 2, "%d", u8Nb_PAC);
+	textArea_valeur_nombre_pac.setWildcard(textAreaBuffer_nb_pac);
+	// Param zones 2
 	if(sConfig_Hydrau_temp.sZones.bZone2)
 	{
-		// Regul directe
-		button_zone_2_regul_directe.setVisible(true);
-		textArea_bouton_zone_2_regul_directe.setVisible(true);
 		toggleButton_zone_2_on_off_regul_directe.forceState(true);
-		textArea_zone_2_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-		textArea_zone_2_regul_directe_1.setWildcard(textAreaBuffer_nom_zone2);
-		textArea_bouton_zone_2_regul_directe.setWildcard(textAreaBuffer_nom_zone2);
-		// Regul BCP / 2 zones
-		button_zone_2_regul_2_zones.setVisible(true);
-		textArea_bouton_zone_2_regul_2_zones.setVisible(true);
 		toggleButton_zone_2_on_off_regul_2_zones.forceState(true);
+		textArea_zone_2_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 		textArea_zone_2_on_off_regul_2_zones.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-		textArea_zone_2_regul_2_zones.setWildcard(textAreaBuffer_nom_zone2);
-		textArea_bouton_zone_2_regul_2_zones.setWildcard(textAreaBuffer_nom_zone2);
 	}
-	if(sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2)
-	{
-		buttonWithLabel_repartition_puissance_zones_regul_directe.setVisible(true);
-	}
+	Unicode::fromUTF8(sConfig_IHM.sParam_Zx[1].u8NomZone, textAreaBuffer_nom_zone2, 10);
+	textArea_zone_2_regul_directe.setWildcard(textAreaBuffer_nom_zone2);
+	textArea_bouton_zone_2_regul_directe.setWildcard(textAreaBuffer_nom_zone2);
+	textArea_zone_2_regul_2_zones.setWildcard(textAreaBuffer_nom_zone2);
+	textArea_bouton_zone_2_regul_2_zones.setWildcard(textAreaBuffer_nom_zone2);
+	// Zones actives
+	affichage_zones();
 	// Appoint
 	if(sConfig_IHM.sOption_PAC.TypeAppoint != 0)
 	{
 		image_on_off_appoint_chauffage.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 	    textArea_on_off_appoint_chauffage.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+	}
+	// Resistance de terminaison
+	if(sConfig_IHM.sParam_PAC.bConfigCascade120R != 0)
+	{
+		image_on_off_resistance_terminaison_regul_2_zones.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
+		textArea_on_off_resistance_terminaison_regul_2_zones.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		image_on_off_resistance_terminaison_regul_multizones.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
+		textArea_on_off_resistance_terminaison_regul_multizones.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		image_on_off_resistance_terminaison_regul_externe.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
+		textArea_on_off_resistance_terminaison_regul_externe.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		image_on_off_resistance_terminaison_regul_esclave.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
+		textArea_on_off_resistance_terminaison_regul_esclave.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
 }
 
@@ -108,6 +107,12 @@ void Installation_hydrauliqueView::setupScreen()
 void Installation_hydrauliqueView::tearDownScreen()
 {
     Installation_hydrauliqueViewBase::tearDownScreen();
+}
+
+void Installation_hydrauliqueView::bouton_resistance_terminaison()
+{
+	eOuiNon = OUI_NON_RESIST_TERM;
+	application().gotoPage_oui_nonScreenNoTransition();
 }
 
 void Installation_hydrauliqueView::bouton_defilement_droit_type_regulation()
@@ -122,6 +127,18 @@ void Installation_hydrauliqueView::bouton_defilement_droit_type_regulation()
 	{
 		sConfig_Hydrau_temp.u8TypeRegul = 2;
 	}
+	//
+	memset(&sConfig_Hydrau_temp.sZones, 0, sizeof(S_ZONE));
+	// RAZ
+	toggleButton_zone_1_on_off_regul_directe.forceState(false);
+	toggleButton_zone_1_on_off_regul_directe.invalidate();
+	toggleButton_zone_1_on_off_regul_2_zones.forceState(false);
+	toggleButton_zone_1_on_off_regul_2_zones.invalidate();
+	toggleButton_zone_2_on_off_regul_directe.forceState(false);
+	toggleButton_zone_2_on_off_regul_directe.invalidate();
+	toggleButton_zone_2_on_off_regul_2_zones.forceState(false);
+	toggleButton_zone_2_on_off_regul_2_zones.invalidate();
+	//
 	affichage_type_regul();
 }
 
@@ -137,6 +154,18 @@ void Installation_hydrauliqueView::bouton_defilement_gauche_type_regulation()
 		}
 	}
 	else sConfig_Hydrau_temp.u8TypeRegul = 5;
+	//
+	memset(&sConfig_Hydrau_temp.sZones, 0, sizeof(S_ZONE));
+	// RAZ
+	toggleButton_zone_1_on_off_regul_directe.forceState(false);
+	toggleButton_zone_1_on_off_regul_directe.invalidate();
+	toggleButton_zone_1_on_off_regul_2_zones.forceState(false);
+	toggleButton_zone_1_on_off_regul_2_zones.invalidate();
+	toggleButton_zone_2_on_off_regul_directe.forceState(false);
+	toggleButton_zone_2_on_off_regul_directe.invalidate();
+	toggleButton_zone_2_on_off_regul_2_zones.forceState(false);
+	toggleButton_zone_2_on_off_regul_2_zones.invalidate();
+	//
 	affichage_type_regul();
 }
 
@@ -144,63 +173,40 @@ void Installation_hydrauliqueView::affichage_type_regul()
 {
 	// Masque l'ensemble des containers
 	container_regul_directe.setVisible(false);
-	container_regul_directe.invalidate();
 	container_regul_2_zones.setVisible(false);
-	container_regul_2_zones.invalidate();
 	container_regul_multizones.setVisible(false);
-	container_regul_multizones.invalidate();
 	container_regul_externe.setVisible(false);
-	container_regul_externe.invalidate();
 	container_regul_esclave.setVisible(false);
-	container_regul_esclave.invalidate();
 	textArea_circulateurs_arkteos.setVisible(false);
-	textArea_circulateurs_arkteos.invalidate();
 	textArea_nombre_pac.setTypedText(touchgfx::TypedText(T_TEXT_NB_PAC_CENTRE_DEFAUT));
-	textArea_nombre_pac.invalidate();
 	container_nombre_pac.setVisible(true);
-	container_nombre_pac.invalidate();
 	// Affichage du container de la régulation sélectionnee
 	switch(sConfig_Hydrau_temp.u8TypeRegul)
 	{
 		case REGUL_DIRECTE:
 			textArea_valeur_type_regulation.setTypedText(touchgfx::TypedText(T_TEXT_REGUL_DIRECTE_CENTRE_DEFAUT));
-			textArea_valeur_type_regulation.invalidate();
 			container_regul_directe.setVisible(true);
-			container_regul_directe.invalidate();
 			container_nombre_pac.setVisible(false);
-			container_nombre_pac.invalidate();
 			break;
 		case REGUL_BCP_INTERNE:
 			textArea_valeur_type_regulation.setTypedText(touchgfx::TypedText(T_TEXT_REGUL_BCP_INTERNE_CENTRE_DEFAUT));
-			textArea_valeur_type_regulation.invalidate();
 			button_gauche_type_regulation.setVisible(false);
-			button_gauche_type_regulation.invalidate();
 			button_droite_type_regulation.setVisible(false);
-			button_droite_type_regulation.invalidate();
 			container_regul_2_zones.setVisible(true);
-			container_regul_2_zones.invalidate();
 			container_nombre_pac.setVisible(false);
-			container_nombre_pac.invalidate();
 			break;
 		case REGUL_BAL_TAMPON_2_ZONES:
 			textArea_valeur_type_regulation.setTypedText(touchgfx::TypedText(T_TEXT_REGUL_2_ZONES_CENTRE_DEFAUT));
-			textArea_valeur_type_regulation.invalidate();
 			container_regul_2_zones.setVisible(true);
-			container_regul_2_zones.invalidate();
 			textArea_circulateurs_arkteos.setVisible(true);
-			textArea_circulateurs_arkteos.invalidate();
 			break;
 		case REGUL_BAL_TAMPON_MULTI_ZONE:
 			textArea_valeur_type_regulation.setTypedText(touchgfx::TypedText(T_TEXT_REGUL_MULTI_ZONES_CENTRE_DEFAUT));
-			textArea_valeur_type_regulation.invalidate();
 			container_regul_multizones.setVisible(true);
-			container_regul_multizones.invalidate();
 			break;
 		case REGUL_EXTERNE:
 			textArea_valeur_type_regulation.setTypedText(touchgfx::TypedText(T_TEXT_REGUL_EXTERNE_CENTRE_DEFAUT));
-			textArea_valeur_type_regulation.invalidate();
 			container_regul_externe.setVisible(true);
-			container_regul_externe.invalidate();
 			break;
 		case REGUL_ESCLAVE:
 			if(u8Nb_PAC <= 1)
@@ -211,13 +217,21 @@ void Installation_hydrauliqueView::affichage_type_regul()
 				textArea_valeur_nombre_pac.invalidate();
 			}
 			textArea_valeur_type_regulation.setTypedText(touchgfx::TypedText(T_TEXT_REGUL_ESCLAVE_CENTRE_DEFAUT));
-			textArea_valeur_type_regulation.invalidate();
 			textArea_nombre_pac.setTypedText(touchgfx::TypedText(T_TEXT_NUM_PAC_CENTRE_DEFAUT));
-			textArea_nombre_pac.invalidate();
 			container_regul_esclave.setVisible(true);
-			container_regul_esclave.invalidate();
 			break;
 	}
+	textArea_valeur_type_regulation.invalidate();
+	container_regul_directe.invalidate();
+	container_regul_2_zones.invalidate();
+	container_regul_multizones.invalidate();
+	container_regul_externe.invalidate();
+	container_regul_esclave.invalidate();
+	textArea_circulateurs_arkteos.invalidate();
+	textArea_nombre_pac.invalidate();
+	container_nombre_pac.invalidate();
+	//
+	affichage_zones();
 }
 
 void Installation_hydrauliqueView::bouton_defilement_droit_nb_pac()
@@ -236,8 +250,6 @@ void Installation_hydrauliqueView::bouton_defilement_droit_nb_pac()
         	container_resistance_terminaison_regul_multizones.invalidate();
     		container_resistance_terminaison_regul_externe.setVisible(true);
     		container_resistance_terminaison_regul_externe.invalidate();
-    		container_resistance_terminaison_regul_esclave.setVisible(true);
-    		container_resistance_terminaison_regul_esclave.invalidate();
         }
         // MAJ de la valeur
         touchgfx_printf("nb pac = %d\n", u8Nb_PAC);
@@ -263,8 +275,6 @@ void Installation_hydrauliqueView::bouton_defilement_gauche_nb_pac()
         	container_resistance_terminaison_regul_multizones.invalidate();
     		container_resistance_terminaison_regul_externe.setVisible(false);
     		container_resistance_terminaison_regul_externe.invalidate();
-    		container_resistance_terminaison_regul_esclave.setVisible(false);
-    		container_resistance_terminaison_regul_esclave.invalidate();
         }
         // MAJ de la valeur
         touchgfx_printf("nb pac = %d\n", u8Nb_PAC);
@@ -274,69 +284,70 @@ void Installation_hydrauliqueView::bouton_defilement_gauche_nb_pac()
     }
 }
 
-void Installation_hydrauliqueView::bouton_zone_1_directe()
+void Installation_hydrauliqueView::bouton_zone_1()
 {
-	touchgfx_printf("status bouton zone 1 : %s\n", toggleButton_zone_1_on_off_regul_directe.getState() ? "true" : "false");
-
-	if(toggleButton_zone_1_on_off_regul_directe.getState())
+	if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE)
 	{
+		sConfig_Hydrau_temp.sZones.bZone1 = toggleButton_zone_1_on_off_regul_directe.getState();
+	}
+	else sConfig_Hydrau_temp.sZones.bZone1 = toggleButton_zone_1_on_off_regul_2_zones.getState();
+	affichage_zones();
+}
+
+void Installation_hydrauliqueView::bouton_zone_2()
+{
+	if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE)
+	{
+		sConfig_Hydrau_temp.sZones.bZone2 = toggleButton_zone_2_on_off_regul_directe.getState();
+	}
+	else sConfig_Hydrau_temp.sZones.bZone2 = toggleButton_zone_2_on_off_regul_2_zones.getState();
+	affichage_zones();
+}
+
+void Installation_hydrauliqueView::bouton_param_zone_1()
+{
+	sConfig_Hydrau_temp.u8NumZone = 0;
+	memcpy(&sConfig_Hydrau_temp.sParamZx, &sConfig_IHM.sParam_Zx[0], sizeof(S_PARAM_ZX));
+	application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+}
+
+void Installation_hydrauliqueView::bouton_param_zone_2()
+{
+	sConfig_Hydrau_temp.u8NumZone = 1;
+	memcpy(&sConfig_Hydrau_temp.sParamZx, &sConfig_IHM.sParam_Zx[1], sizeof(S_PARAM_ZX));
+	application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+}
+
+void Installation_hydrauliqueView::affichage_zones()
+{
+	// Zone 1
+	if(sConfig_Hydrau_temp.sZones.bZone1 != 0 && button_zone_1_regul_directe.isVisible() == false)
+	{
+		// Regul directe
 		button_zone_1_regul_directe.setVisible(true);
 		button_zone_1_regul_directe.invalidate();
 		textArea_bouton_zone_1_regul_directe.setVisible(true);
 		textArea_bouton_zone_1_regul_directe.invalidate();
 		textArea_zone_1_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 		textArea_zone_1_on_off_regul_directe.invalidate();
+		// Regul BCP / 2 zones
+		button_zone_1_regul_2_zones.setVisible(true);
+		button_zone_1_regul_2_zones.invalidate();
+		textArea_bouton_zone_1_regul_2_zones.setVisible(true);
+		textArea_bouton_zone_1_regul_2_zones.invalidate();
+		textArea_zone_1_on_off_regul_2_zones.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		textArea_zone_1_on_off_regul_2_zones.invalidate();
 	}
-	else
+	else if(sConfig_Hydrau_temp.sZones.bZone1 == 0 && button_zone_1_regul_directe.isVisible() == true)
 	{
+		// Regul directe
 		button_zone_1_regul_directe.setVisible(false);
 		button_zone_1_regul_directe.invalidate();
 		textArea_bouton_zone_1_regul_directe.setVisible(false);
 		textArea_bouton_zone_1_regul_directe.invalidate();
 		textArea_zone_1_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
 		textArea_zone_1_on_off_regul_directe.invalidate();
-	}
-}
-
-void Installation_hydrauliqueView::bouton_zone_2_directe()
-{
-	touchgfx_printf("status bouton zone 2 : %s\n", toggleButton_zone_2_on_off_regul_directe.getState() ? "true" : "false");
-
-	if(toggleButton_zone_2_on_off_regul_directe.getState())
-	{
-		button_zone_2_regul_directe.setVisible(true);
-		button_zone_2_regul_directe.invalidate();
-		textArea_bouton_zone_2_regul_directe.setVisible(true);
-		textArea_bouton_zone_2_regul_directe.invalidate();
-		textArea_zone_2_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-		textArea_zone_2_on_off_regul_directe.invalidate();
-	}
-	else
-	{
-		button_zone_2_regul_directe.setVisible(false);
-		button_zone_2_regul_directe.invalidate();
-		textArea_bouton_zone_2_regul_directe.setVisible(false);
-		textArea_bouton_zone_2_regul_directe.invalidate();
-		textArea_zone_2_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
-		textArea_zone_2_on_off_regul_directe.invalidate();
-	}
-}
-
-void Installation_hydrauliqueView::bouton_zone_1_2_zones()
-{
-	touchgfx_printf("status bouton zone 1 : %s\n", toggleButton_zone_1_on_off_regul_2_zones.getState() ? "true" : "false");
-
-	if(toggleButton_zone_1_on_off_regul_2_zones.getState())
-	{
-		button_zone_1_regul_2_zones.setVisible(true);
-		button_zone_1_regul_2_zones.invalidate();
-		textArea_bouton_zone_1_regul_2_zones.setVisible(true);
-		textArea_bouton_zone_1_regul_2_zones.invalidate();
-		textArea_zone_1_on_off_regul_2_zones.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-		textArea_zone_1_on_off_regul_directe.invalidate();
-	}
-	else
-	{
+		// Regul BCP / 2 zones
 		button_zone_1_regul_2_zones.setVisible(false);
 		button_zone_1_regul_2_zones.invalidate();
 		textArea_bouton_zone_1_regul_2_zones.setVisible(false);
@@ -344,23 +355,34 @@ void Installation_hydrauliqueView::bouton_zone_1_2_zones()
 		textArea_zone_1_on_off_regul_2_zones.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
 		textArea_zone_1_on_off_regul_2_zones.invalidate();
 	}
-}
-
-void Installation_hydrauliqueView::bouton_zone_2_2_zones()
-{
-	touchgfx_printf("status bouton zone 2 : %s\n", toggleButton_zone_2_on_off_regul_2_zones.getState() ? "true" : "false");
-
-	if(toggleButton_zone_2_on_off_regul_2_zones.getState())
+	// Zone 2
+	if(sConfig_Hydrau_temp.sZones.bZone2 != 0 && button_zone_2_regul_directe.isVisible() == false)
 	{
+		// Regul directe
+		button_zone_2_regul_directe.setVisible(true);
+		button_zone_2_regul_directe.invalidate();
+		textArea_bouton_zone_2_regul_directe.setVisible(true);
+		textArea_bouton_zone_2_regul_directe.invalidate();
+		textArea_zone_2_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		textArea_zone_2_on_off_regul_directe.invalidate();
+		// Regul BCP / 2 zones
 		button_zone_2_regul_2_zones.setVisible(true);
 		button_zone_2_regul_2_zones.invalidate();
 		textArea_bouton_zone_2_regul_2_zones.setVisible(true);
 		textArea_bouton_zone_2_regul_2_zones.invalidate();
 		textArea_zone_2_on_off_regul_2_zones.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-		textArea_zone_2_on_off_regul_2_zones.invalidate();
+		textArea_zone_2_on_off_regul_directe.invalidate();
 	}
-	else
+	else if(sConfig_Hydrau_temp.sZones.bZone2 == 0 && button_zone_2_regul_directe.isVisible() == true)
 	{
+		// Regul directe
+		button_zone_2_regul_directe.setVisible(false);
+		button_zone_2_regul_directe.invalidate();
+		textArea_bouton_zone_2_regul_directe.setVisible(false);
+		textArea_bouton_zone_2_regul_directe.invalidate();
+		textArea_zone_2_on_off_regul_directe.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+		textArea_zone_2_on_off_regul_directe.invalidate();
+		// Regul BCP / 2 zones
 		button_zone_2_regul_2_zones.setVisible(false);
 		button_zone_2_regul_2_zones.invalidate();
 		textArea_bouton_zone_2_regul_2_zones.setVisible(false);
@@ -368,6 +390,27 @@ void Installation_hydrauliqueView::bouton_zone_2_2_zones()
 		textArea_zone_2_on_off_regul_2_zones.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
 		textArea_zone_2_on_off_regul_2_zones.invalidate();
 	}
+	//
+	if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && button_zone_1_regul_directe.isVisible() && button_zone_2_regul_directe.isVisible() && buttonWithLabel_repartition_puissance_zones_regul_directe.isVisible() == false)
+	{
+		buttonWithLabel_repartition_puissance_zones_regul_directe.setVisible(true);
+		buttonWithLabel_repartition_puissance_zones_regul_directe.invalidate();
+		textArea_regul_plancher.setVisible(true);
+		textArea_regul_plancher.invalidate();
+	}
+	else if(sConfig_Hydrau_temp.u8TypeRegul != REGUL_DIRECTE || ((button_zone_1_regul_directe.isVisible() == false || button_zone_2_regul_directe.isVisible() == false) && buttonWithLabel_repartition_puissance_zones_regul_directe.isVisible() == true))
+	{
+		buttonWithLabel_repartition_puissance_zones_regul_directe.setVisible(false);
+		buttonWithLabel_repartition_puissance_zones_regul_directe.invalidate();
+		textArea_regul_plancher.setVisible(false);
+		textArea_regul_plancher.invalidate();
+	}
+}
+
+void Installation_hydrauliqueView::bouton_valider()
+{
+
+	application().gotoInstallationScreenNoTransition();
 }
 
 void Installation_hydrauliqueView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

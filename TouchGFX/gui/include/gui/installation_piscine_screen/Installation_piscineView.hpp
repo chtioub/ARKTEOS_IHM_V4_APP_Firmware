@@ -19,6 +19,7 @@ public:
     void bouton_50_50();
     void bouton_consigne_moins();
     void bouton_consigne_plus();
+    void bouton_mem_config_piscine();
     void bouton_simultane();
     void bouton_hysteresis();
     void bouton_valider();

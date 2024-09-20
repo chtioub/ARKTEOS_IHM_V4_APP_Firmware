@@ -27,6 +27,14 @@ public:
 
     virtual ~Installation_hydraulique_config_zonePresenter() {}
 
+    void c_install_zx(uint8_t u8NumZone);
+
+    virtual void changeStatutRF(S_STATUT_RF *sStatut_RF);
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+
 private:
     Installation_hydraulique_config_zonePresenter();
 

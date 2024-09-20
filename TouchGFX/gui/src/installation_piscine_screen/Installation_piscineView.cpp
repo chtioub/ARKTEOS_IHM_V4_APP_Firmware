@@ -12,7 +12,7 @@ Installation_piscineView::Installation_piscineView()
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
 	//
-	if(sConfig_IHM.sOption_PAC.Piscine == 0)
+	if(sConfig_Piscine_temp.bPiscine == 0)
 	{
 		toggleButton_oui_oui_non_piscine.forceState(false);
 		toggleButton_oui_oui_non_piscine.setTouchable(true);
@@ -27,11 +27,11 @@ Installation_piscineView::Installation_piscineView()
 		toggleButton_non_oui_non_piscine.setTouchable(true);
 	}
 	//
-	if(sConfig_IHM.sParam_Piscine.PrioritePiscine == PRIORITE_PISCINE)
+	if(sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine == PRIORITE_PISCINE)
 	{
 		toggleButton_piscine_option_relance_piscine.forceState(true);
 	}
-	else if(sConfig_IHM.sParam_Piscine.PrioritePiscine == PRIORITE_CHAUD)
+	else if(sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine == PRIORITE_CHAUD)
 	{
 		toggleButton_maison_option_relance_piscine.forceState(true);
 	}
@@ -40,11 +40,11 @@ Installation_piscineView::Installation_piscineView()
 	bouton_maison();
 	bouton_50_50();
 	//
-	u16ConsignePiscine = sConfig_IHM.sParam_Piscine.i16ConsigneDepartEauPiscine;
+	u16ConsignePiscine = sConfig_Piscine_temp.sParam_Piscine.i16ConsigneDepartEauPiscine;
     Unicode::snprintfFloat(textAreaBuffer_Temp, 5, "%.1f", ((float) u16ConsignePiscine) / 10);
     textArea_valeur_consigne_eau_piscine.setWildcard(textAreaBuffer_Temp);
 	//
-	if(sConfig_IHM.sParam_Piscine.bGestionSimultanee)
+	if(sConfig_Piscine_temp.sParam_Piscine.bGestionSimultanee)
 	{
 		buttonWithLabel_on_simultane_piscine.setVisible(true);
 	}
@@ -155,6 +155,28 @@ void Installation_piscineView::bouton_consigne_plus()
     textArea_valeur_consigne_eau_piscine.invalidate();
 }
 
+void Installation_piscineView::bouton_mem_config_piscine()
+{
+	//
+	if(toggleButton_oui_oui_non_piscine.getState())
+	{
+		sConfig_Piscine_temp.bPiscine = 1;
+	}
+	else sConfig_Piscine_temp.bPiscine = 0;
+	//
+	if(toggleButton_piscine_option_relance_piscine.getState())
+	{
+		sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine = PRIORITE_PISCINE;
+	}
+	else if(toggleButton_maison_option_relance_piscine.getState())
+	{
+		sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine = PRIORITE_CHAUD;
+	}
+	else sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine = PRIORITE_EGAL;
+	//
+	sConfig_Piscine_temp.sParam_Piscine.i16ConsigneDepartEauPiscine = u16ConsignePiscine;
+}
+
 void Installation_piscineView::bouton_simultane()
 {
 	eOuiNon = OUI_NON_SIMULTANE_PISCINE;
@@ -172,25 +194,28 @@ void Installation_piscineView::bouton_valider()
 	//
 	if(toggleButton_oui_oui_non_piscine.getState())
 	{
-		sConfig_IHM.sOption_PAC.Piscine = 1;
+		sConfig_Piscine_temp.bPiscine = 1;
 	}
-	else sConfig_IHM.sOption_PAC.Piscine = 0;
+	else sConfig_Piscine_temp.bPiscine = 0;
 	//
 	if(toggleButton_piscine_option_relance_piscine.getState())
 	{
-		sConfig_IHM.sParam_Piscine.PrioritePiscine = PRIORITE_PISCINE;
+		sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine = PRIORITE_PISCINE;
 	}
 	else if(toggleButton_maison_option_relance_piscine.getState())
 	{
-		sConfig_IHM.sParam_Piscine.PrioritePiscine = PRIORITE_CHAUD;
+		sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine = PRIORITE_CHAUD;
 	}
-	else sConfig_IHM.sParam_Piscine.PrioritePiscine = PRIORITE_EGAL;
+	else sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine = PRIORITE_EGAL;
 	//
-	sConfig_IHM.sParam_Piscine.i16ConsigneDepartEauPiscine = u16ConsignePiscine;
+	sConfig_Piscine_temp.sParam_Piscine.i16ConsigneDepartEauPiscine = u16ConsignePiscine;
+	// Mémorisation
+	sConfig_IHM.sOption_PAC.Piscine = sConfig_Piscine_temp.bPiscine;
+	memcpy(&sConfig_IHM.sParam_Piscine, &sConfig_Piscine_temp.sParam_Piscine, sizeof(S_PARAM_PISCINE));
 	// Multiple trame
-//	presenter->c_install_param();
+	presenter->c_install_param();
 	presenter->c_install_piscine();
-	application().gotoInstallation_piscineScreenNoTransition();
+	application().gotoInstallationScreenNoTransition();
 }
 
 void Installation_piscineView::timer_10ms()
