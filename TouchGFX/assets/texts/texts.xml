@@ -4915,6 +4915,55 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_regul_2_zones_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Esclave</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_regul_esclave_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Esclave</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_regul_externe_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Externe</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_regul_multizones_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Multi-zones</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_regul_bcp_interne_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">BCP interne</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_var_sys_off_droit_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_variables_systemes_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Variables systèmes</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_sonde_modbus_titre_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Sonde modbus - </Translation>
         <Translation Language="GB">New Text</Translation>

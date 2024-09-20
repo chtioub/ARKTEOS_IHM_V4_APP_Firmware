@@ -1144,6 +1144,7 @@ typedef struct
     uint8_t          u8CTime_Vacances_Jour;          // Temps restant vacances en Jour (Mis dans les Params afin de faire la sauvegarde)
     uint8_t          u8CTime_Sablier_Dalle_Jour;     // Temps restant Chauffe Dalle en Jour (Mis dans les Params afin de faire la sauvegarde ; dernier jour perdu)
 //18
+    int8_t          i8HysteresisTextMoins;           //
     int8_t          i8HysteresisTextPlus;           //
     int8_t          i8HysteresisEauMoins;           //
     int8_t          i8HysteresisEauPlus;            //
@@ -1186,7 +1187,7 @@ typedef struct
 
     uint8_t          u8Spare;
 //36
-} S_PARAM_PAC;                  // 36 octets
+}  __attribute__((__packed__))  S_PARAM_PAC;                  // 36 octets
 
 
 typedef struct

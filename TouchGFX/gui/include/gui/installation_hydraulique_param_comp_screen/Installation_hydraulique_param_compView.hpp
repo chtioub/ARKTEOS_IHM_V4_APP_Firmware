@@ -20,6 +20,7 @@ public:
     void bouton_non_rafraichissement();
     void bouton_retour();
     void bouton_valider();
+    void bouton_change_over();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

@@ -114,7 +114,11 @@ Installation_hydraulique_param_compView::Installation_hydraulique_param_compView
 	if(sConfig_Hydrau_temp.u8TypeRegul < REGUL_EXTERNE && container_oui_non_rafraichissement.isVisible() && toggleButton_oui_oui_non_rafraichissement.getState() && sConfig_Hydrau_temp.sParamZx.type_zone.zone.TypeThermostat == TH_CONTACT)
 	{
 		container_change_over.setVisible(true);
-		container_change_over.invalidate();
+	}
+	if(sConfig_IHM.sParam_PAC.bThermostatContactModeFroid)
+	{
+		toggleButton_change_over.forceState(true);
+		textArea_on_off_change_over.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
 	// Temperature minimum eau
 	if(sConfig_Hydrau_temp.u8TypeRegul < REGUL_EXTERNE && sConfig_Hydrau_temp.sParamZx.TypeEmmetteur == PLANCHER)
@@ -256,6 +260,17 @@ void Installation_hydraulique_param_compView::bouton_retour()
 	else application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 }
 
+void Installation_hydraulique_param_compView::bouton_change_over()
+{
+	if(toggleButton_change_over.getState())
+	{
+		textArea_on_off_change_over.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+	}
+	else textArea_on_off_change_over.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+	textArea_on_off_change_over.invalidate();
+}
+
+
 void Installation_hydraulique_param_compView::bouton_valider()
 {
 	if(sConfig_Hydrau_temp.u8TypeRegul >= REGUL_EXTERNE)
@@ -301,7 +316,8 @@ void Installation_hydraulique_param_compView::bouton_valider()
 		//
 		if(sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2)
 		{
-			if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && container_oui_non_rafraichissement.isVisible())
+			//
+			if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && container_temp_depart_eau_raf.isVisible())
 			{
 				if(sConfig_Hydrau_temp.u8NumZone == 0)
 				{
@@ -314,6 +330,28 @@ void Installation_hydraulique_param_compView::bouton_valider()
 					presenter->c_install_zx(0);
 				}
 			}
+			//
+			if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES)
+			{
+				//
+				if(sConfig_Hydrau_temp.u8NumZone == 0 && sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid < sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid)
+				{
+					sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid = sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid;
+					presenter->c_install_zx(1);
+				}
+				//
+				if(sConfig_Hydrau_temp.u8NumZone == 1 && sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid < sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid)
+				{
+					sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid = sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid;
+					presenter->c_install_zx(0);
+				}
+			}
+		}
+		//
+		if(sConfig_IHM.sParam_PAC.bThermostatContactModeFroid != toggleButton_change_over.getState())
+		{
+			sConfig_IHM.sParam_PAC.bThermostatContactModeFroid = toggleButton_change_over.getState();
+			presenter->c_install_param();
 		}
 		//
 		presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
