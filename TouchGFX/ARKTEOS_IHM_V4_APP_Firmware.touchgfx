@@ -45,6 +45,24 @@
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Accueil"
             }
+          },
+          {
+            "InteractionName": "goToVeilleScreen",
+            "Trigger": {
+              "Type": "TriggerWhen",
+              "ActionCustomTypeName": "Call Veille backToScreen"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Veille"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "backToScreen",
+            "Description": "called to change screen"
           }
         ]
       },

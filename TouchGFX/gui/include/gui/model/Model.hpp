@@ -80,6 +80,7 @@ public:
 
 protected:
     ModelListener* modelListener;
+    uint32_t veilleCounter;
 };
 
 #endif // MODEL_HPP

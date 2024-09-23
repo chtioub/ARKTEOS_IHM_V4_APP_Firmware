@@ -20,6 +20,8 @@
   */
 #include "main.h"
 #include "i2c.h"
+
+uint8_t gTouched = 0;
 /* USER CODE END Header */
 
 /* USER CODE BEGIN STM32TouchController */
@@ -53,8 +55,8 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
     x = buf[0] + (buf[1] << 8);
     y = buf[2] + (buf[3] << 8);
 
-//    x = (x * 1024) / 800;
-//    y = (y * 600) / 480;
+    gTouched = 1;
+
     return true;
   }
 

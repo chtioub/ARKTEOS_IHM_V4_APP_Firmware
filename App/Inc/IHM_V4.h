@@ -23,6 +23,10 @@ extern "C"
 #include "arkteos_defauts.h"
 #include <texts/TextKeysAndLanguages.hpp>
 
+#define VEILLE_1_COUNT          1000
+#define VEILLE_2_COUNT          5000
+#define PWM_VEILLE_1            5u
+
 typedef enum
 {
 	OUI_NON_RAZ_CONF_USINE = 2,
