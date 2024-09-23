@@ -19,7 +19,7 @@ cosebe_rx_t cosebe_rx;
 cosebe_test_t cosebe_test;
 arkteos_update_t arkteos_update;
 uint8_t dataUpdated = 0;
-txData_t txData[5];
+txData_t txData[10];
 uint8_t eOuiNon = 0, eCode = 0;
 uint8_t eHysteresis = 0;
 uint8_t eProg;
@@ -34,6 +34,7 @@ S_STATUT_REG_EXT sStatut_RegulExt;
 S_STATUT_TPS_FONCT sStatut_TpsFonct;
 S_STATUT_REGUL_ESCLAVE sStatut_RegulEsclave;
 S_STATUT_DEBUG sStatut_DebugTrame1[8];
+S_STATUT_RF sStatut_RF[8];
 S_STATUT_DEBUG sStatut_DebugTrame2[8];
 S_CYC_ETHER_III sCycEther;
 S_ENERGIE sEnergie;
@@ -57,6 +58,10 @@ S_HISTO_ERR sHisto_Erreur;
 uint16_t u16NumAction;
 uint32_t u32ValAction, eAnciennePage;
 S_CONFIG_HYDRAU_TEMP sConfig_Hydrau_temp;
+S_CONFIG_PISCINE_TEMP sConfig_Piscine_temp;
+S_PARAM_ECS sParam_ECS_temp;
+uint32_t u32LastCyclique;
+uint8_t u8Pointeur_buffer_tx, u8Pointeur_envoi;
 
 void setBackLightPWM(uint8_t pwm)
 {
@@ -94,276 +99,296 @@ uint8_t decodeRxData(rxData_t *rxData)
 #ifndef SIMULATOR
         NVIC_SystemReset();
 #endif
-        break;
-      case RECUP_CONFIG:
-        if(pHeader->dest == N_ADD_IHM)
-        {
-          switch (pHeader->emet)
-          {
-            case N_ADD_ETHER:
-              memcpy(&sConfig_IHM.sParamSoft, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_SOFT_III));
-              ptrRxBuffer += sizeof(S_PARAM_ETHER_SOFT_III);
-              memcpy(&sConfig_IHM.sParamPort, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_PORT_III));
-              ptrRxBuffer += sizeof(S_PARAM_ETHER_PORT_III);
-              memcpy(&sConfig_IHM.sParamWifi, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_WIFI_III));
-              ptrRxBuffer += sizeof(S_PARAM_ETHER_WIFI_III);
-              memcpy(&sConfig_IHM.sParamModbus, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_MODBUS_III));
-              ptrRxBuffer += sizeof(S_PARAM_ETHER_MODBUS_III);
-              sConfig_IHM.u16RecupConfig = 1;
-              break;
-            case N_ADD_REG:
-              switch (pHeader->s_comm)
-              {
-                case SC_RECUP_GENERAL:
-                  if(pHeader->taille
-                      == (sizeof(S_MODE_ZX) * NB_ZONE + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE) + sizeof(S_MODE_REG_EXT) + sizeof(S_MODE_PAC)
-                          + sizeof(S_PARAM_UTILISATEUR) + sizeof(S_MODELE_PAC) + sizeof(S_OPTION_PAC) + sizeof(S_CONFIG_PAC) + sizeof(S_INSTALL_PAC)
-                          + sizeof(S_PARAM_PAC) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT) + sizeof(S_PARAM_FRIGO)))
-                  {
-                    memcpy(&sConfig_IHM.sMode_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_MODE_ZX) * NB_ZONE);
-                    ptrRxBuffer += sizeof(S_MODE_ZX) * NB_ZONE;
-                    memcpy(&sConfig_IHM.sMode_ECS, &rxData->data[ptrRxBuffer], sizeof(S_MODE_ECS));
-                    ptrRxBuffer += sizeof(S_MODE_ECS);
-                    memcpy(&sConfig_IHM.sMode_Piscine, &rxData->data[ptrRxBuffer], sizeof(S_MODE_PISCINE));
-                    ptrRxBuffer += sizeof(S_MODE_PISCINE);
-                    memcpy(&sConfig_IHM.sMode_RegulExt, &rxData->data[ptrRxBuffer], sizeof(S_MODE_REG_EXT));
-                    ptrRxBuffer += sizeof(S_MODE_REG_EXT);
-                    memcpy(&sConfig_IHM.sMode_PAC, &rxData->data[ptrRxBuffer], sizeof(S_MODE_PAC));
-                    ptrRxBuffer += sizeof(S_MODE_PAC);
-                    memcpy(&sConfig_IHM.sParam_Utilisateur, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_UTILISATEUR));
-                    ptrRxBuffer += sizeof(S_PARAM_UTILISATEUR);
-                    memcpy(&sConfig_IHM.sModele_PAC, &rxData->data[ptrRxBuffer], sizeof(S_MODELE_PAC));
-                    ptrRxBuffer += sizeof(S_MODELE_PAC);
-                    memcpy(&sConfig_IHM.sOption_PAC, &rxData->data[ptrRxBuffer], sizeof(S_OPTION_PAC));
-                    ptrRxBuffer += sizeof(S_OPTION_PAC);
-                    memcpy(&sConfig_IHM.sConfig_PAC, &rxData->data[ptrRxBuffer], sizeof(S_CONFIG_PAC));
-                    ptrRxBuffer += sizeof(S_CONFIG_PAC);
-                    memcpy(&sConfig_IHM.sInstall_PAC, &rxData->data[ptrRxBuffer], sizeof(S_INSTALL_PAC));
-                    ptrRxBuffer += sizeof(S_INSTALL_PAC);
-                    memcpy(&sConfig_IHM.sParam_PAC, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_PAC));
-                    ptrRxBuffer += sizeof(S_PARAM_PAC);
-                    memcpy(&sConfig_IHM.sParam_ECS, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ECS));
-                    ptrRxBuffer += sizeof(S_PARAM_ECS);
-                    memcpy(&sConfig_IHM.sParam_Piscine, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_PISCINE));
-                    ptrRxBuffer += sizeof(S_PARAM_PISCINE);
-                    memcpy(&sConfig_IHM.sParam_RegulExt, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_REG_EXT));
-                    ptrRxBuffer += sizeof(S_PARAM_REG_EXT);
-                    memcpy(&sConfig_IHM.sParam_Frigo, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_FRIGO));
-                    ptrRxBuffer += sizeof(S_PARAM_FRIGO);
-                    sConfig_IHM.u16RecupConfig = 2;
-                  }
-                  break;
-                case SC_RECUP_TRAME2:
-                  if(pHeader->taille == (sizeof(S_PARAM_ZX) * NB_VOIE))
-                  {
-                    memcpy(&sConfig_IHM.sParam_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ZX) * NB_VOIE);
-                    ptrRxBuffer += 320;
-                    sConfig_IHM.u16RecupConfig = 3;
-                  }
-                  break;
-                case SC_RECUP_CONFIG_PHOENIX:
-                  if(pHeader->taille == (sizeof(S_CONFIG_FRIGO) * NB_UE_MAX))
-                  {
-                    for (int i = 0; i < NB_UE_MAX; i++)
-                    {
-                      memcpy(&sConfig_IHM.sConfigFrigo[i], &rxData->data[ptrRxBuffer], sizeof(S_CONFIG_FRIGO));
-                      ptrRxBuffer += sizeof(S_CONFIG_FRIGO);
-                    }
-                    sConfig_IHM.u16RecupConfig = 4;
-                  }
-                  break;
-              }
-              break;
-          }
-        }
-        arkteos_update.config_update = true;
-        break;
-      case CYC_ETHER_REG_FRIGO:
-        if(pHeader->taille == sizeof(S_CYCL_REG_FRI))
-        {
-          memcpy(&sCyclRegFrigo[0], &rxData->data[ptrRxBuffer], sizeof(S_CYCL_REG_FRI));
-          arkteos_update.cycl_frigo_update = true;
-          if(sConfig_IHM.u16NbCyclique < 6)
-          {
-            sConfig_IHM.u16NbCyclique++;
-          }
-        }
-        break;
-      case CYC_ETHER_REG_REGUL:
-        switch (pHeader->s_comm)
-        {
-          case SC_CYC_T1:
-            if(pHeader->taille == LG_TRAME_CYCLIQUE_REGUL_T1)
-            {
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_PAC, sizeof(S_STATUT_PAC)))
-              {
-                memcpy(&sStatut_PAC, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_PAC));
-                arkteos_update.statut_pac_update = true;
-                // Verification si MAJ de l'affichage nécessaire
-                if(verifErreurs())
-                {
-                  arkteos_update.erreur_update = true;
-                }
-              }
-              ptrRxBuffer += sizeof(S_STATUT_PAC);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Primaire, sizeof(S_STATUT_PRIMAIRE)))
-              {
-                memcpy(&sStatut_Primaire, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_PRIMAIRE));
-                arkteos_update.statut_primaire_update = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_PRIMAIRE);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[0], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[0] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[1], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[1], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[1] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_ECS, sizeof(S_STATUT_ECS)))
-              {
-                memcpy(&sStatut_ECS, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ECS));
-                arkteos_update.statut_ecs_update = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ECS);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Piscine, sizeof(S_STATUT_PISCINE)))
-              {
-                memcpy(&sStatut_Piscine, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_PISCINE));
-                arkteos_update.statut_piscine_update = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_PISCINE);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_RegulExt, sizeof(S_STATUT_REG_EXT)))
-              {
-                memcpy(&sStatut_RegulExt, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_REG_EXT));
-                arkteos_update.statut_regul_ext_update = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_REG_EXT);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_TpsFonct, sizeof(S_STATUT_TPS_FONCT)))
-              {
-                memcpy(&sStatut_TpsFonct, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_TPS_FONCT));
-                arkteos_update.statut_tps_fonct_update = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_TPS_FONCT);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_RegulEsclave, sizeof(S_STATUT_REGUL_ESCLAVE)))
-              {
-                memcpy(&sStatut_RegulEsclave, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_REGUL_ESCLAVE));
-                arkteos_update.statut_regul_esclave_update = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_REGUL_ESCLAVE);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sDate, sizeof(S_DATE)))
-              {
-                memcpy(&sDate, &rxData->data[ptrRxBuffer], sizeof(S_DATE));
-                arkteos_update.date_update = true;
-              }
-              ptrRxBuffer += sizeof(S_DATE);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sDemandeFrigo, sizeof(S_DEMANDE_FRIGO)))
-              {
-                memcpy(&sDemandeFrigo, &rxData->data[ptrRxBuffer], sizeof(S_DEMANDE_FRIGO));
-                arkteos_update.demande_frigo_update = true;
-              }
-              ptrRxBuffer += sizeof(S_DEMANDE_FRIGO);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_DebugTrame1[0], sizeof(S_STATUT_DEBUG) * 8))
-              {
-                memcpy(&sStatut_DebugTrame1[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_DEBUG) * 8);
-                arkteos_update.statut_debug_update = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_DEBUG) * 8;
-              result++;
-              if(sConfig_IHM.u16NbCyclique < 6)
-              {
-                sConfig_IHM.u16NbCyclique++;
-              }
-            }
-            break;
-          case SC_CYC_T2:
-            if(pHeader->taille == LG_TRAME_CYCLIQUE_REGUL_T2)
-            {
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[2], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[2], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[2] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[3], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[3], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[3] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[4], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[4], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[4] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[5], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[5], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[5] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[6], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[6], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[6] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[7], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[7], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[7] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[8], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[8], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[8] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[9], sizeof(S_STATUT_ZX)))
-              {
-                memcpy(&sStatut_Zx[9], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
-                arkteos_update.statut_zx_update[9] = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_ZX);
-              // u32Temp = sStatut_PAC.u3TypeData
-              ptrRxBuffer += 4;
-              if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_DebugTrame2[0], sizeof(S_STATUT_DEBUG) * 8))
-              {
-                memcpy(&sStatut_DebugTrame2[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_DEBUG) * 8);
-                arkteos_update.statut_debug_update = true;
-              }
-              ptrRxBuffer += sizeof(S_STATUT_DEBUG) * 8;
-              if(sConfig_IHM.u16NbCyclique < 6)
-              {
-                sConfig_IHM.u16NbCyclique++;
-              }
-            }
-            break;
-        }
-        break;
-      case CYC_ETHER:
-        if(memcmp(&rxData->data[ptrRxBuffer], &sCycEther, sizeof(S_CYC_ETHER_III)))
-        {
-          memcpy(&sCycEther, &rxData->data[ptrRxBuffer], sizeof(S_CYC_ETHER_III));
-          arkteos_update.statut_ether_update = true;
-          // Verification si MAJ de l'affichage nécessaire
-          if(verifErreurs())
-          {
-            arkteos_update.erreur_update = true;
-          }
-        }
-        if(sConfig_IHM.u16NbCyclique < 6)
-        {
-          sConfig_IHM.u16NbCyclique++;
-        }
-        ptrRxBuffer += sizeof(S_CYC_ETHER_III);
-        break;
-      case C_USER:
+				break;
+			case RECUP_CONFIG:
+				if(pHeader->dest == N_ADD_IHM)
+				{
+					switch(pHeader->emet)
+					{
+						case N_ADD_ETHER:
+							memcpy(&sConfig_IHM.sParamSoft, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_SOFT_III));
+							ptrRxBuffer += sizeof(S_PARAM_ETHER_SOFT_III);
+							memcpy(&sConfig_IHM.sParamPort, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_PORT_III));
+							ptrRxBuffer += sizeof(S_PARAM_ETHER_PORT_III);
+							memcpy(&sConfig_IHM.sParamWifi, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_WIFI_III));
+							ptrRxBuffer += sizeof(S_PARAM_ETHER_WIFI_III);
+							memcpy(&sConfig_IHM.sParamModbus, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_MODBUS_III));
+							ptrRxBuffer += sizeof(S_PARAM_ETHER_MODBUS_III);
+							sConfig_IHM.u16RecupConfig = 1;
+							break;
+						case N_ADD_REG:
+							switch(pHeader->s_comm)
+							{
+								case SC_RECUP_GENERAL:
+									if(pHeader->taille == (sizeof(S_MODE_ZX) * NB_ZONE + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE) + sizeof(S_MODE_REG_EXT) + sizeof(S_MODE_PAC) + sizeof(S_PARAM_UTILISATEUR) + sizeof(S_MODELE_PAC) + sizeof(S_OPTION_PAC) + sizeof(S_CONFIG_PAC) + sizeof(S_INSTALL_PAC) + sizeof(S_PARAM_PAC) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT) + sizeof(S_PARAM_FRIGO)))
+									{
+										memcpy(&sConfig_IHM.sMode_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_MODE_ZX) * NB_ZONE);
+										ptrRxBuffer += sizeof(S_MODE_ZX) * NB_ZONE;
+										memcpy(&sConfig_IHM.sMode_ECS, &rxData->data[ptrRxBuffer], sizeof(S_MODE_ECS));
+										ptrRxBuffer += sizeof(S_MODE_ECS);
+										memcpy(&sConfig_IHM.sMode_Piscine, &rxData->data[ptrRxBuffer], sizeof(S_MODE_PISCINE));
+										ptrRxBuffer += sizeof(S_MODE_PISCINE);
+										memcpy(&sConfig_IHM.sMode_RegulExt, &rxData->data[ptrRxBuffer], sizeof(S_MODE_REG_EXT));
+										ptrRxBuffer += sizeof(S_MODE_REG_EXT);
+										memcpy(&sConfig_IHM.sMode_PAC, &rxData->data[ptrRxBuffer], sizeof(S_MODE_PAC));
+										ptrRxBuffer += sizeof(S_MODE_PAC);
+										memcpy(&sConfig_IHM.sParam_Utilisateur, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_UTILISATEUR));
+										ptrRxBuffer += sizeof(S_PARAM_UTILISATEUR);
+										memcpy(&sConfig_IHM.sModele_PAC, &rxData->data[ptrRxBuffer], sizeof(S_MODELE_PAC));
+										ptrRxBuffer += sizeof(S_MODELE_PAC);
+										memcpy(&sConfig_IHM.sOption_PAC, &rxData->data[ptrRxBuffer], sizeof(S_OPTION_PAC));
+										ptrRxBuffer += sizeof(S_OPTION_PAC);
+										memcpy(&sConfig_IHM.sConfig_PAC, &rxData->data[ptrRxBuffer], sizeof(S_CONFIG_PAC));
+										ptrRxBuffer += sizeof(S_CONFIG_PAC);
+										memcpy(&sConfig_IHM.sInstall_PAC, &rxData->data[ptrRxBuffer], sizeof(S_INSTALL_PAC));
+										ptrRxBuffer += sizeof(S_INSTALL_PAC);
+										memcpy(&sConfig_IHM.sParam_PAC, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_PAC));
+										ptrRxBuffer += sizeof(S_PARAM_PAC);
+										memcpy(&sConfig_IHM.sParam_ECS, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ECS));
+										ptrRxBuffer += sizeof(S_PARAM_ECS);
+										memcpy(&sConfig_IHM.sParam_Piscine, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_PISCINE));
+										ptrRxBuffer += sizeof(S_PARAM_PISCINE);
+										memcpy(&sConfig_IHM.sParam_RegulExt, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_REG_EXT));
+										ptrRxBuffer += sizeof(S_PARAM_REG_EXT);
+										memcpy(&sConfig_IHM.sParam_Frigo, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_FRIGO));
+										ptrRxBuffer += sizeof(S_PARAM_FRIGO);
+										sConfig_IHM.u16RecupConfig = 2;
+									}
+									break;
+								case SC_RECUP_TRAME2:
+									if(pHeader->taille == (sizeof(S_PARAM_ZX) * NB_VOIE))
+									{
+										memcpy(&sConfig_IHM.sParam_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ZX) * NB_VOIE);
+										ptrRxBuffer += 320;
+										sConfig_IHM.u16RecupConfig = 3;
+									}
+									break;
+								case SC_RECUP_CONFIG_PHOENIX:
+									if(pHeader->taille == (sizeof(S_CONFIG_FRIGO) * NB_UE_MAX))
+									{
+										for(int i = 0; i < NB_UE_MAX; i++)
+										{
+											memcpy(&sConfig_IHM.sConfigFrigo[i], &rxData->data[ptrRxBuffer], sizeof(S_CONFIG_FRIGO));
+											ptrRxBuffer += sizeof(S_CONFIG_FRIGO);
+										}
+										sConfig_IHM.u16RecupConfig = 4;
+									}
+									break;
+							}
+							break;
+					}
+				}
+				arkteos_update.config_update = true;
+				break;
+			case CYC_ETHER_REG_FRIGO:
+				if(pHeader->taille == sizeof(S_CYCL_REG_FRI))
+				{
+#ifndef SIMULATOR
+					u32LastCyclique = HAL_GetTick();
+#endif
+					memcpy(&sCyclRegFrigo[0], &rxData->data[ptrRxBuffer], sizeof(S_CYCL_REG_FRI));
+					arkteos_update.cycl_frigo_update = true;
+					if(sConfig_IHM.u16NbCyclique < 6)
+					{
+						sConfig_IHM.u16NbCyclique++;
+					}
+				}
+				break;
+			case CYC_ETHER_REG_REGUL:
+				switch(pHeader->s_comm)
+				{
+					case SC_CYC_T1:
+						if(pHeader->taille == LG_TRAME_CYCLIQUE_REGUL_T1)
+						{
+#ifndef SIMULATOR
+							u32LastCyclique = HAL_GetTick();
+#endif
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_PAC, sizeof(S_STATUT_PAC)))
+							{
+								memcpy(&sStatut_PAC, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_PAC));
+								arkteos_update.statut_pac_update = true;
+								// Verification si MAJ de l'affichage nécessaire
+								if(verifErreurs())
+								{
+									arkteos_update.erreur_update = true;
+								}
+							}
+							ptrRxBuffer += sizeof(S_STATUT_PAC);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Primaire, sizeof(S_STATUT_PRIMAIRE)))
+							{
+								memcpy(&sStatut_Primaire, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_PRIMAIRE));
+								arkteos_update.statut_primaire_update = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_PRIMAIRE);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[0], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[0] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[1], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[1], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[1] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_ECS, sizeof(S_STATUT_ECS)))
+							{
+								memcpy(&sStatut_ECS, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ECS));
+								arkteos_update.statut_ecs_update = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ECS);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Piscine, sizeof(S_STATUT_PISCINE)))
+							{
+								memcpy(&sStatut_Piscine, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_PISCINE));
+								arkteos_update.statut_piscine_update = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_PISCINE);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_RegulExt, sizeof(S_STATUT_REG_EXT)))
+							{
+								memcpy(&sStatut_RegulExt, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_REG_EXT));
+								arkteos_update.statut_regul_ext_update = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_REG_EXT);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_TpsFonct, sizeof(S_STATUT_TPS_FONCT)))
+							{
+								memcpy(&sStatut_TpsFonct, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_TPS_FONCT));
+								arkteos_update.statut_tps_fonct_update = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_TPS_FONCT);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_RegulEsclave, sizeof(S_STATUT_REGUL_ESCLAVE)))
+							{
+								memcpy(&sStatut_RegulEsclave, &rxData->data[ptrRxBuffer], sizeof(S_STATUT_REGUL_ESCLAVE));
+								arkteos_update.statut_regul_esclave_update = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_REGUL_ESCLAVE);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sDate, sizeof(S_DATE)))
+							{
+								memcpy(&sDate, &rxData->data[ptrRxBuffer], sizeof(S_DATE));
+								arkteos_update.date_update = true;
+							}
+							ptrRxBuffer += sizeof(S_DATE);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sDemandeFrigo, sizeof(S_DEMANDE_FRIGO)))
+							{
+								memcpy(&sDemandeFrigo, &rxData->data[ptrRxBuffer], sizeof(S_DEMANDE_FRIGO));
+								arkteos_update.demande_frigo_update = true;
+							}
+							ptrRxBuffer += sizeof(S_DEMANDE_FRIGO);
+							if(sStatut_PAC.u3TypeData == 0)
+							{
+								if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_RF[0], sizeof(S_STATUT_RF) * 8))
+								{
+									memcpy(&sStatut_RF[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_RF) * 8);
+									arkteos_update.statut_rf_update = true;
+								}
+							}
+							else
+							{
+								if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_DebugTrame1[0], sizeof(S_STATUT_DEBUG) * 8))
+								{
+									memcpy(&sStatut_DebugTrame1[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_DEBUG) * 8);
+									arkteos_update.statut_debug_update = true;
+								}
+							}
+							ptrRxBuffer += sizeof(S_STATUT_DEBUG) * 8;
+							result++;
+							if(sConfig_IHM.u16NbCyclique < 6)
+							{
+								sConfig_IHM.u16NbCyclique++;
+							}
+						}
+						break;
+					case SC_CYC_T2:
+						if(pHeader->taille == LG_TRAME_CYCLIQUE_REGUL_T2)
+						{
+#ifndef SIMULATOR
+							u32LastCyclique = HAL_GetTick();
+#endif
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[2], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[2], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[2] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[3], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[3], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[3] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[4], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[4], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[4] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[5], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[5], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[5] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[6], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[6], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[6] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[7], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[7], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[7] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[8], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[8], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[8] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_Zx[9], sizeof(S_STATUT_ZX)))
+							{
+								memcpy(&sStatut_Zx[9], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_ZX));
+								arkteos_update.statut_zx_update[9] = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_ZX);
+							// u32Temp = sStatut_PAC.u3TypeData
+							ptrRxBuffer += 4;
+							if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_DebugTrame2[0], sizeof(S_STATUT_DEBUG) * 8))
+							{
+								memcpy(&sStatut_DebugTrame2[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_DEBUG) * 8);
+								arkteos_update.statut_debug_update = true;
+							}
+							ptrRxBuffer += sizeof(S_STATUT_DEBUG) * 8;
+							if(sConfig_IHM.u16NbCyclique < 6)
+							{
+								sConfig_IHM.u16NbCyclique++;
+							}
+						}
+						break;
+				}
+				break;
+			case CYC_ETHER:
+				if(memcmp(&rxData->data[ptrRxBuffer], &sCycEther, sizeof(S_CYC_ETHER_III)))
+				{
+#ifndef SIMULATOR
+					u32LastCyclique = HAL_GetTick();
+#endif
+					memcpy(&sCycEther, &rxData->data[ptrRxBuffer], sizeof(S_CYC_ETHER_III));
+					arkteos_update.statut_ether_update = true;
+					// Verification si MAJ de l'affichage nécessaire
+					if(verifErreurs())
+					{
+						arkteos_update.erreur_update = true;
+					}
+				}
+				if(sConfig_IHM.u16NbCyclique < 6)
+				{
+					sConfig_IHM.u16NbCyclique++;
+				}
+				ptrRxBuffer += sizeof(S_CYC_ETHER_III);
+				break;
+			case C_USER:
 //				if(pHeader->dest == N_ADD_IHM)
 //				{
 //				  if(pHeader->comm == C_USER)

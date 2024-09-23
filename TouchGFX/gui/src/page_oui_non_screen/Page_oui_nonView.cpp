@@ -275,6 +275,22 @@ Page_oui_nonView::Page_oui_nonView()
 			textArea_texte_oui_non.setVisible(true);
 		    textArea_question_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_QUESTION_RESISTANCE_TERMINAISON_CENTRE_DEFAUT));
 			break;
+		case OUI_NON_RESIST_TERM_SONDE:
+			if(sConfig_IHM.sParam_PAC.bConfigThermostats120R)
+			{
+				toggleButton_oui_oui_non.forceState(true);
+				toggleButton_oui_oui_non.setTouchable(false);
+				toggleButton_non_oui_non.forceState(false);
+				toggleButton_non_oui_non.setTouchable(true);
+			}
+			// Titre
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_RESISTANCE_TERMINAISON_CENTRE_DEFAUT).getText());
+			barre_titre.titre(textAreaBuffer_Titre);
+			textArea_texte_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_RESISTANCE_TERMINAISON_SONDE_CENTRE_DEFAUT));
+			textArea_texte_oui_non.setVisible(true);
+			textArea_question_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_QUESTION_RESISTANCE_TERMINAISON_CENTRE_DEFAUT));
+			break;
+
 	}
 }
 
@@ -390,6 +406,13 @@ void Page_oui_nonView::bouton_retour()
 			break;
 		case OUI_NON_RESIST_TERM:
 			application().gotoInstallation_hydrauliqueScreenNoTransition();
+			break;
+		case OUI_NON_RESIST_TERM_SONDE:
+			if(sConfig_Hydrau_temp.sParamZx.type_zone.zone.TypeThermostat == TH_MODBUS)
+			{
+				application().gotoInstallation_hydraulique_sonde_modbusScreenNoTransition();
+			}
+			else application().gotoInstallation_hydraulique_sonde_rfScreenNoTransition();
 			break;
 	}
 }
@@ -590,7 +613,7 @@ void Page_oui_nonView::bouton_valider()
 			{
 				sConfig_IHM.sParam_PAC.u8CTime_Sablier_Dalle_Jour = 0;
 				// Multiple trame
-				//presenter->c_install_param();
+				presenter->c_install_param();
 				application().gotoInstallationScreenNoTransition();
 			}
 			break;
@@ -638,11 +661,21 @@ void Page_oui_nonView::bouton_valider()
 			presenter->c_install_param();
 			application().gotoInstallation_hydrauliqueScreenNoTransition();
 			break;
+		case OUI_NON_RESIST_TERM_SONDE:
+			if(toggleButton_oui_oui_non.getState())
+			{
+				sConfig_IHM.sParam_PAC.bConfigThermostats120R = 1;
+			}
+			else sConfig_IHM.sParam_PAC.bConfigThermostats120R = 0;
+			presenter->c_install_param();
+			if(sConfig_Hydrau_temp.sParamZx.type_zone.zone.TypeThermostat == TH_MODBUS)
+			{
+				application().gotoInstallation_hydraulique_sonde_modbusScreenNoTransition();
+			}
+			else application().gotoInstallation_hydraulique_sonde_rfScreenNoTransition();
+			break;
 	}
 }
-
-void c_sav_param();
-
 
 void Page_oui_nonView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 {

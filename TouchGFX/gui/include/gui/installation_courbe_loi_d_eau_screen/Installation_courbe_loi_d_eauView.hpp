@@ -11,6 +11,9 @@ public:
     virtual ~Installation_courbe_loi_d_eauView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    void bouton_retour();
+    void bouton_valider();
     void slider_20(int sliderValue);
     void slider_15(int sliderValue);
     void slider_10(int sliderValue);
@@ -34,11 +37,20 @@ public:
     void bouton_8();
     void bouton_9();
     void bouton_supprimer();
-    void bouton_valider();
+    void bouton_valider_pave_num();
     void pave_numerique(bool bPaveNum);
+
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_20[3], textAreaBuffer_15[3], textAreaBuffer_10[3], textAreaBuffer_0[3], textAreaBuffer_m10[3], textAreaBuffer_m25[3], *textAreaBuffer, textAreaBuffer_Titre[25];
-    uint16_t u16LoiDeau[6], u16TermoMAX, u16ValeurPaveNumeric;
+    bool bConnexionDistance;
+    uint16_t u16ErreurAffichee;
+    S_DATE sDate_old;
+    S_STATUT_PAC sStatut_PAC_old;
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_20[3], textAreaBuffer_15[3], textAreaBuffer_10[3], textAreaBuffer_0[3], textAreaBuffer_m10[3], textAreaBuffer_m25[3], *textAreaBuffer;
+    uint16_t u16LoiDeau[6], u16LoiDeau_MAX[6], u16LoiDeau_MIN[6], u16TermoMAX, u16ValeurPaveNumeric;
     touchgfx::Slider *slider_text;
     touchgfx::TextAreaWithOneWildcard *textArea_temp_loi_eau;
 };

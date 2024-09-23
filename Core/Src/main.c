@@ -75,7 +75,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-//  txData_t txData;
+  uint32_t u32LastEnvoi = HAL_GetTick();
   /* USER CODE END 1 */
 
   /* MPU Configuration--------------------------------------------------------*/
@@ -95,7 +95,8 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-
+  u8Pointeur_buffer_tx = 0;
+  u8Pointeur_envoi = 0;
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -130,18 +131,27 @@ int main(void)
 
   MX_TouchGFX_Process();
     /* USER CODE BEGIN 3 */
+    // Données recues
     if(decodeRxData(&rxData))
     {
     	dataUpdated = 1;
     }
-
-    if(txData[0].size != 0)
+    // Données envoyées
+    if(((HAL_GetTick() - u32LastCyclique) > 100 && (HAL_GetTick() - u32LastCyclique) < 900) && (HAL_GetTick() - u32LastEnvoi) > 100)
     {
-        HAL_UART_Transmit_IT(&huart2, (uint8_t*)&txData[0].data[0], txData[0].size);
-        txData[0].size = 0;
+		if(txData[u8Pointeur_envoi].size != 0)
+		{
+			u32LastEnvoi = HAL_GetTick();
+			//
+			HAL_UART_Transmit_IT(&huart2, (uint8_t*)&txData[u8Pointeur_envoi].data[0], txData[u8Pointeur_envoi].size);
+			txData[u8Pointeur_envoi].size = 0;
+			//
+			if(++u8Pointeur_envoi > 9)
+			{
+				u8Pointeur_envoi = 0;
+			}
+		}
     }
-
-    HAL_GetTick();
   }
   /* USER CODE END 3 */
 }

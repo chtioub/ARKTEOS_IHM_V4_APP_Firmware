@@ -36,3 +36,13 @@ void Installation_hydraulique_param_compPresenter::changeErreur(uint16_t u16Erre
 {
 	view.changeErreur(u16Erreur);
 }
+
+void Installation_hydraulique_param_compPresenter::c_install_param()
+{
+	model->c_install_param();
+}
+
+void Installation_hydraulique_param_compPresenter::c_install_zx(uint8_t u8Zone)
+{
+	model->c_install_zx(u8Zone);
+}

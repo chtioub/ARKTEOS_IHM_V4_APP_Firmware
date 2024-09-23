@@ -20,14 +20,14 @@ EnergiesView::EnergiesView()
     barre_titre.titre(textAreaBuffer_Titre);
 #ifndef SIMULATOR
     // Multiple trame
-//    presenter->c_ener_cumul_prod();
-//    presenter->c_ener_cumul_conso();
-//    presenter->c_ener_histo_12m_conso();
-//    presenter->c_ener_histo_24j_conso();
-//    presenter->c_ener_histo_24h_conso();
+    presenter->c_ener_cumul_prod();
+    presenter->c_ener_cumul_conso();
+    presenter->c_ener_histo_12m_conso();
+    presenter->c_ener_histo_24j_conso();
+    presenter->c_ener_histo_24h_conso();
     presenter->c_ener_histo_12m_prod();
-//    presenter->c_ener_histo_24j_prod();
-//    presenter->c_ener_histo_24h_prod();
+    presenter->c_ener_histo_24j_prod();
+    presenter->c_ener_histo_24h_prod();
 #endif
 }
 

@@ -30,6 +30,7 @@ public:
     virtual void changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt) {};
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM) {};
     virtual void changeDemandeFrigo(S_DEMANDE_FRIGO *sDemandeFrigo) {};
+    virtual void changeStatutRF(S_STATUT_RF *sStatut_RF) {};
 
 protected:
     Model* model;

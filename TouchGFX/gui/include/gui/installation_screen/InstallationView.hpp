@@ -12,6 +12,9 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void bouton_mem_config();
+    void bouton_mem_config_piscine();
+    void bouton_mem_config_ecs();
     void bouton_modif_code();
     void bouton_raz_config();
     void bouton_freecooling();

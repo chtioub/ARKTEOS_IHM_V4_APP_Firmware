@@ -235,6 +235,21 @@
     <ClCompile Include="..\..\gui\src\veille_screen\VeillePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\veille_screen\VeilleView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\veille_screen\VeilleViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_clavier_screen\Installation_clavierPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_clavier_screen\Installation_clavierView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_clavier_screen\Installation_clavierViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -599,6 +614,21 @@
     <ClInclude Include="..\..\gui\include\gui\veille_screen\VeillePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\veille_screen\VeilleView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\veille_screen\VeilleViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_clavier_screen\Installation_clavierPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_clavier_screen\Installation_clavierView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_clavier_screen\Installation_clavierViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

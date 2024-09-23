@@ -1000,6 +1000,66 @@
     <Filter Include="Header Files\generated\gui_generated\veille_screen">
       <UniqueIdentifier>A0638336-3266-F8FF-E33A-395024DD6CC3</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\installation_hydraulique_gestion_circulateur_screen">
+      <UniqueIdentifier>22E1D870-E99B-0D08-8B95-2EFBA156FB64</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_gestion_circulateur_screen">
+      <UniqueIdentifier>56149985-A9A4-07CE-F389-D6292BE7B29B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_gestion_circulateur_screen">
+      <UniqueIdentifier>24CF002B-5242-3816-2AF7-2848CBC5D99E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_gestion_circulateur_screen">
+      <UniqueIdentifier>1CD3C318-EE1D-D36E-FD12-1B1E7C82FD92</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_clavier_screen">
+      <UniqueIdentifier>7A4AB3EB-EC8E-FE9B-5678-F51DC02E9531</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_clavier_screen">
+      <UniqueIdentifier>C6757B18-9393-B309-73C9-D17F3EC2F44F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_clavier_screen">
+      <UniqueIdentifier>3D1C2F01-65B6-F10A-D531-A1205A6A0FC4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_clavier_screen">
+      <UniqueIdentifier>C73A2FC7-661A-F3DD-E615-B4558464138F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_hydraulique_sonde_rf_screen">
+      <UniqueIdentifier>A668D7A9-9479-CF44-DA2C-D2F87006A2B7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_sonde_rf_screen">
+      <UniqueIdentifier>479F191B-6813-99C4-E4C2-D0F4A7A4DF25</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_hydraulique_sonde_modbus_screen">
+      <UniqueIdentifier>603A577A-EE68-4243-0152-EA5F050E80BF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_sonde_modbus_screen">
+      <UniqueIdentifier>0DC8A898-02A4-F229-2426-2A60D7ACCB38</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_hydraulique_numero_sonde_rf_screen">
+      <UniqueIdentifier>54B3BDDB-6DA3-D752-BBA1-30BD887EC670</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_numero_sonde_rf_screen">
+      <UniqueIdentifier>35A64BC7-E0EF-DC53-1FB8-32DB7169F4ED</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_numero_sonde_rf_screen">
+      <UniqueIdentifier>319D5EA3-4906-856A-E204-58F25EB5F82C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_numero_sonde_rf_screen">
+      <UniqueIdentifier>CECE2C51-4376-27BA-411E-46FE6567CBE8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_sonde_modbus_screen">
+      <UniqueIdentifier>2C9E79D1-5F00-BD49-987C-63D3BFE2B2D4</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_sonde_modbus_screen">
+      <UniqueIdentifier>B1F890A7-24A4-21E9-5D61-FD9AA3921BEF</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_sonde_rf_screen">
+      <UniqueIdentifier>4ACBA72B-E0EB-D6D6-B1EB-96B01AB40E5B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_sonde_rf_screen">
+      <UniqueIdentifier>6BBB81AE-032D-FE63-A10C-B379B55ED635</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1673,6 +1733,51 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\veille_screen\VeilleViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\veille_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurPresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_gestion_circulateur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_gestion_circulateur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_gestion_circulateur_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_clavier_screen\Installation_clavierPresenter.cpp">
+      <Filter>Source Files\gui\installation_clavier_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_clavier_screen\Installation_clavierView.cpp">
+      <Filter>Source Files\gui\installation_clavier_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_clavier_screen\Installation_clavierViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_clavier_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfPresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_numero_sonde_rf_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_numero_sonde_rf_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_numero_sonde_rf_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusPresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_sonde_modbus_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_sonde_modbus_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_sonde_modbus_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfPresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_sonde_rf_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_sonde_rf_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_sonde_rf_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2757,6 +2862,51 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\veille_screen\VeilleViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\veille_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurPresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_gestion_circulateur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_gestion_circulateur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_gestion_circulateur_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_clavier_screen\Installation_clavierPresenter.hpp">
+      <Filter>Header Files\gui\installation_clavier_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_clavier_screen\Installation_clavierView.hpp">
+      <Filter>Header Files\gui\installation_clavier_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_clavier_screen\Installation_clavierViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_clavier_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfPresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_numero_sonde_rf_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_numero_sonde_rf_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_numero_sonde_rf_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusPresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_sonde_modbus_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_sonde_modbus_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_sonde_modbus_screen\Installation_hydraulique_sonde_modbusViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_sonde_modbus_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfPresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_sonde_rf_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_sonde_rf_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_sonde_rf_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
