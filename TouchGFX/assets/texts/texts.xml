@@ -1379,13 +1379,6 @@
         <Translation Language="NL">&lt;Value&gt;</Translation>
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
-      <Text Id="text_temp_zone_1_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">0.0</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
       <Text Id="text_temp_zone_2_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt;</Translation>
@@ -1797,6 +1790,120 @@
         <Translation Language="DE">Mise en chauffe&#10;dalle</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="Multizones">
+      <Text Id="text_multizones_zone_7_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 7</Translation>
+        <Translation Language="GB">Zone 7</Translation>
+        <Translation Language="PT">Zone 7</Translation>
+        <Translation Language="NL">Zone 7</Translation>
+        <Translation Language="DE">Zone 7</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_7_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_6_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 6</Translation>
+        <Translation Language="GB">Zone 6</Translation>
+        <Translation Language="PT">Zone 6</Translation>
+        <Translation Language="NL">Zone 6</Translation>
+        <Translation Language="DE">Zone 6</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_6_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_5_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 5</Translation>
+        <Translation Language="GB">Zone 5</Translation>
+        <Translation Language="PT">Zone 5</Translation>
+        <Translation Language="NL">Zone 5</Translation>
+        <Translation Language="DE">Zone 5</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_5_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_4_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 4</Translation>
+        <Translation Language="GB">Zone 4</Translation>
+        <Translation Language="PT">Zone 4</Translation>
+        <Translation Language="NL">Zone 4</Translation>
+        <Translation Language="DE">Zone 4</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_4_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_3_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="GB">Zone 3</Translation>
+        <Translation Language="PT">Zone 3</Translation>
+        <Translation Language="NL">Zone 3</Translation>
+        <Translation Language="DE">Zone 3</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_3_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_2_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 2</Translation>
+        <Translation Language="GB">Zone 2</Translation>
+        <Translation Language="PT">Zone 2</Translation>
+        <Translation Language="NL">Zone 2</Translation>
+        <Translation Language="DE">Zone 2</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_1_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 1</Translation>
+        <Translation Language="GB">Zone 1</Translation>
+        <Translation Language="PT">Zone 1</Translation>
+        <Translation Language="NL">Zone 1</Translation>
+        <Translation Language="DE">Zone 1</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_8_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 8</Translation>
+        <Translation Language="GB">Zone 8</Translation>
+        <Translation Language="PT">Zone 8</Translation>
+        <Translation Language="NL">Zone 8</Translation>
+        <Translation Language="DE">Zone 8</Translation>
+      </Text>
+      <Text Id="text_multizones_zone_8_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Energies">
       <Text Id="text_suivi_energies_centre_large" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">Suivi des énergies</Translation>
@@ -1986,120 +2093,6 @@
         <Translation Language="PT">Cumulativo&#10;consumido&#10;</Translation>
         <Translation Language="NL">Cumul&#10;consommées</Translation>
         <Translation Language="DE">Cumul&#10;consommées</Translation>
-      </Text>
-    </TextGroup>
-    <TextGroup Id="Multizones">
-      <Text Id="text_multizones_zone_7_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 7</Translation>
-        <Translation Language="GB">Zone 7</Translation>
-        <Translation Language="PT">Zone 7</Translation>
-        <Translation Language="NL">Zone 7</Translation>
-        <Translation Language="DE">Zone 7</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_7_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_6_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 6</Translation>
-        <Translation Language="GB">Zone 6</Translation>
-        <Translation Language="PT">Zone 6</Translation>
-        <Translation Language="NL">Zone 6</Translation>
-        <Translation Language="DE">Zone 6</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_6_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_5_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 5</Translation>
-        <Translation Language="GB">Zone 5</Translation>
-        <Translation Language="PT">Zone 5</Translation>
-        <Translation Language="NL">Zone 5</Translation>
-        <Translation Language="DE">Zone 5</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_5_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_4_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 4</Translation>
-        <Translation Language="GB">Zone 4</Translation>
-        <Translation Language="PT">Zone 4</Translation>
-        <Translation Language="NL">Zone 4</Translation>
-        <Translation Language="DE">Zone 4</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_4_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_3_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 3</Translation>
-        <Translation Language="GB">Zone 3</Translation>
-        <Translation Language="PT">Zone 3</Translation>
-        <Translation Language="NL">Zone 3</Translation>
-        <Translation Language="DE">Zone 3</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_3_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_2_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 2</Translation>
-        <Translation Language="GB">Zone 2</Translation>
-        <Translation Language="PT">Zone 2</Translation>
-        <Translation Language="NL">Zone 2</Translation>
-        <Translation Language="DE">Zone 2</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_2_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_1_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 1</Translation>
-        <Translation Language="GB">Zone 1</Translation>
-        <Translation Language="PT">Zone 1</Translation>
-        <Translation Language="NL">Zone 1</Translation>
-        <Translation Language="DE">Zone 1</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_1_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_8_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Zone 8</Translation>
-        <Translation Language="GB">Zone 8</Translation>
-        <Translation Language="PT">Zone 8</Translation>
-        <Translation Language="NL">Zone 8</Translation>
-        <Translation Language="DE">Zone 8</Translation>
-      </Text>
-      <Text Id="text_multizones_zone_8_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;</Translation>
-        <Translation Language="GB">&lt;Value&gt;</Translation>
-        <Translation Language="PT">&lt;Value&gt;</Translation>
-        <Translation Language="NL">&lt;Value&gt;</Translation>
-        <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Installation_config_hydrau_rapide">
@@ -2405,6 +2398,43 @@
         <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
         <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
         <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Secours">
+      <Text Id="text_texte_secours_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">En activant cette action, la production ECS sera réalisée uniquement par les résistances électrique.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_texte_secours_pac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cette action arrête la PAC et active le chauffage par les résistances ou la chaudière.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_secours_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le mode secours ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_secours_pac_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Secours PAC</Translation>
+        <Translation Language="GB">Rescue</Translation>
+        <Translation Language="PT">Resgatar</Translation>
+        <Translation Language="NL">Secours</Translation>
+        <Translation Language="DE">Secours</Translation>
+      </Text>
+      <Text Id="text_secours_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Secours ECS</Translation>
+        <Translation Language="GB">Rescue DHW</Translation>
+        <Translation Language="PT">Resgatar</Translation>
+        <Translation Language="NL">Secours ECS</Translation>
+        <Translation Language="DE">Secours ECS</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Luminosite">
@@ -3458,6 +3488,43 @@
         <Translation Language="DE">&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="Synoptique">
+      <Text Id="text_percent_circ_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;%</Translation>
+        <Translation Language="PT">&lt;Value&gt;%</Translation>
+        <Translation Language="NL">&lt;Value&gt;%</Translation>
+        <Translation Language="DE">&lt;Value&gt;%</Translation>
+      </Text>
+      <Text Id="text_temp_HP_cible_gauche" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">(&lt;Value&gt;°C)</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_frequence_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;Hz</Translation>
+        <Translation Language="GB">&lt;Value&gt;Hz</Translation>
+        <Translation Language="PT">&lt;Value&gt;Hz</Translation>
+        <Translation Language="NL">&lt;Value&gt;Hz</Translation>
+        <Translation Language="DE">&lt;Value&gt;Hz</Translation>
+      </Text>
+      <Text Id="text_taux_eev_centre" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_temp_init_droite" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Installation_ecs_avances">
       <Text Id="text_type_echangeur_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Type d'échangeur ECS ?&#10;(ajout des phases d'équilibrage)</Translation>
@@ -3920,43 +3987,6 @@
         <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
         <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
         <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-      </Text>
-    </TextGroup>
-    <TextGroup Id="Secours">
-      <Text Id="text_texte_secours_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">En activant cette action, la production ECS sera réalisée uniquement par les résistances électrique.</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_texte_secours_pac_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Cette action arrête la PAC et active le chauffage par les résistances ou la chaudière.</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_question_secours_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Voulez-vous activer le mode secours ?</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_secours_pac_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Secours PAC</Translation>
-        <Translation Language="GB">Rescue</Translation>
-        <Translation Language="PT">Resgatar</Translation>
-        <Translation Language="NL">Secours</Translation>
-        <Translation Language="DE">Secours</Translation>
-      </Text>
-      <Text Id="text_secours_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Secours ECS</Translation>
-        <Translation Language="GB">Rescue DHW</Translation>
-        <Translation Language="PT">Resgatar</Translation>
-        <Translation Language="NL">Secours ECS</Translation>
-        <Translation Language="DE">Secours ECS</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Test_pac">
@@ -4893,7 +4923,7 @@
         <Translation Language="DE">Dérogation</Translation>
       </Text>
       <Text Id="text_appoint_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Appoint</Translation>
+        <Translation Language="FR">Off&#10;</Translation>
         <Translation Language="GB">Heating adding</Translation>
         <Translation Language="PT">Suplemento</Translation>
         <Translation Language="NL">Appoint</Translation>
@@ -4915,6 +4945,188 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_G8E8" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_B10G" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_P7RD" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_KRN4" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_NS75" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_1EUE" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZUJ6" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_T3DT" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_1YB7" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_21GZ" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_6GJC" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="ResourceId1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_8JQ7" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_BAIM" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_FKF4" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_HD6H" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_CSE9" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_HXGY" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_UU0V" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;l/h</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_debit_centre" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_DW85" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;l/h</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_temp_droit" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0.0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_var_sys_temp_droit" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="tes" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR"> &lt;Value&gt;/500</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_temp_press_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR"> &lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_temp_press_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;b / &lt;Value&gt;°C</Translation>
+      </Text>
       <Text Id="text_regul_2_zones_droite_defaut" Alignment="Right" TypographyId="Default">
         <Translation Language="FR">Esclave</Translation>
         <Translation Language="GB">Directe</Translation>
@@ -6224,7 +6436,7 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_histo_temp_gauche_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_temp_init_gauche" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;°C</Translation>
         <Translation Language="GB">&lt;Value&gt;°C</Translation>
         <Translation Language="PT">&lt;Value&gt;°C</Translation>
