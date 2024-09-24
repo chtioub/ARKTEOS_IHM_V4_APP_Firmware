@@ -35,6 +35,12 @@ void LuminositeView::setupScreen()
 void LuminositeView::tearDownScreen()
 {
     LuminositeViewBase::tearDownScreen();
+	//
+	if(sConfig_IHM.sParam_Utilisateur.u7Luminosite != 0)
+	{
+		presenter->editLuminosite(sConfig_IHM.sParam_Utilisateur.u7Luminosite);
+	}
+	else presenter->editLuminosite(100);
 }
 
 void LuminositeView::slider_lumi(int sliderValue)

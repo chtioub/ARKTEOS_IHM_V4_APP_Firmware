@@ -89,9 +89,12 @@ void Model::tick()
   }
   else
   {
+	if(veilleCounter >= VEILLE_1_COUNT)
+	{
+	  exitVeille();
+	}
     gTouched = 0;
     veilleCounter = 0;
-    exitVeille();
   }
 
   if(dataUpdated != 0)
