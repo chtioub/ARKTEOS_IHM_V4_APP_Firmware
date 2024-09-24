@@ -33,6 +33,7 @@ public:
     virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 
     void c_user_param();
+    void editLuminosite(uint8_t u8Luminosite);
 
 private:
     LuminositePresenter();

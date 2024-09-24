@@ -212,6 +212,11 @@ void Model::tick()
 		modelListener->changeStatutRF(&sStatut_RF[0]);
 		arkteos_update.statut_rf_update = false;
 	}
+	if(arkteos_update.statut_regul_esclave_update)
+	{
+		modelListener->changeStatutRegulEsclave(&sStatut_RegulEsclave);
+		arkteos_update.statut_regul_esclave_update = false;
+	}
 }
 
 //void Model::energieState(uint16_t state)
@@ -229,6 +234,13 @@ void Model::enterVeille()
   touchgfx_printf("Veille \n");
 #else
   setBackLightPWM(0);
+#endif
+}
+
+void Model::editLuminosite(uint8_t u8Luminosite)
+{
+#ifndef SIMULATOR
+  setBackLightPWM(u8Luminosite);
 #endif
 }
 

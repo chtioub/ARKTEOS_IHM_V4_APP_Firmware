@@ -55,6 +55,12 @@ AccueilView::AccueilView():
 		u8PositionY = (sConfig_IHM.sParam_Utilisateur.u8PositionY - 1);
 	}
 	container.setXY(u8PositionX, u8PositionY);
+	//
+	if(sConfig_IHM.sParam_Utilisateur.u7Luminosite != 0)
+	{
+		presenter->editLuminosite(sConfig_IHM.sParam_Utilisateur.u7Luminosite);
+	}
+	else presenter->editLuminosite(100);
 }
 
 void AccueilView::setupScreen()

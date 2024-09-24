@@ -76,3 +76,8 @@ void AccueilPresenter::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
 	view.changeConfig(sConfig_IHM);
 }
+
+void AccueilPresenter::editLuminosite(uint8_t u8Luminosite)
+{
+	model->editLuminosite(u8Luminosite);
+}

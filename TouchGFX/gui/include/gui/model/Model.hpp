@@ -27,6 +27,7 @@ public:
 //    void energieState(uint16_t state);
     void enterVeille();
     void exitVeille();
+    void editLuminosite(uint8_t u8Luminosite);
     void c_ener_raz();
     void c_ener_cumul_prod();
     void c_ener_cumul_conso();

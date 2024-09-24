@@ -1358,7 +1358,7 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_temp_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_temp_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;°C</Translation>
         <Translation Language="GB">&lt;Value&gt;</Translation>
         <Translation Language="PT">&lt;Value&gt;</Translation>
@@ -1606,13 +1606,6 @@
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_temp_ext_equilibre_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;°C</Translation>
-        <Translation Language="GB">&lt;Value&gt;°C</Translation>
-        <Translation Language="PT">&lt;Value&gt;°C</Translation>
-        <Translation Language="NL">&lt;Value&gt;°C</Translation>
-        <Translation Language="DE">&lt;Value&gt;°C</Translation>
       </Text>
       <Text Id="text_si_defaut_pac_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">En cas de défaut PAC</Translation>
@@ -2292,26 +2285,12 @@
         <Translation Language="NL">&lt;value&gt;</Translation>
         <Translation Language="DE">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="text_valeur_temp_raf_z2_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">17°C</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">17°C</Translation>
-        <Translation Language="DE">17°C</Translation>
-      </Text>
       <Text Id="text_valeur_temp_raf_z1_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
         <Translation Language="NL">&lt;value&gt;</Translation>
         <Translation Language="DE">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="text_valeur_temp_raf_z1_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">17°C</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">17°C</Translation>
-        <Translation Language="DE">17°C</Translation>
       </Text>
       <Text Id="text_temp_raf_z1_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Température départ d'eau</Translation>
@@ -4915,6 +4894,111 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_var_sys_na_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">NA</Translation>
+        <Translation Language="GB">NA</Translation>
+        <Translation Language="PT">NA</Translation>
+        <Translation Language="NL">NA</Translation>
+        <Translation Language="DE">NA</Translation>
+      </Text>
+      <Text Id="text_ballon_tampon_froid_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt; : Température ballon tampon froid</Translation>
+        <Translation Language="GB">&lt;Value&gt; : Température ballon tampon froid</Translation>
+        <Translation Language="PT">&lt;Value&gt; : Température ballon tampon froid</Translation>
+        <Translation Language="NL">&lt;Value&gt; : Température ballon tampon froid</Translation>
+        <Translation Language="DE">&lt;Value&gt; : Température ballon tampon froid</Translation>
+      </Text>
+      <Text Id="text_pump_down_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Pump down</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_piscine_froid_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Piscine / froid</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ecs_froid_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">ECS / froid</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_chaud_froid_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Chaud / froid</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_circulateur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Circulateur</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_test_cps_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Test composants</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_arret_urgence_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Arrêt urgence</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Piscine</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_froid_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Froid</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_chaud_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Chaud</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_arret_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Arret</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_releve_chaudiere_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Relève chaudière</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_app_chaudiere_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Appoint chaudière</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_regul_2_zones_droite_defaut" Alignment="Right" TypographyId="Default">
         <Translation Language="FR">Esclave</Translation>
         <Translation Language="GB">Directe</Translation>
