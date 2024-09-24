@@ -27,8 +27,11 @@ public:
 
     virtual ~Variables_systemePresenter() {}
 
+    virtual void changeStatutRegulEsclave(S_STATUT_REGUL_ESCLAVE *sStatut_RegulEsclave);
+    virtual void changeDemandeFrigo(S_DEMANDE_FRIGO *sDemandeFrigo);
+    virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
     virtual void changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire);
-
+    virtual void changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo);
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);

@@ -224,7 +224,7 @@
                     "Name": "textArea_ecs_milieu",
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -243,7 +243,7 @@
                     "Y": 62,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -310,7 +310,7 @@
                 "Y": 480,
                 "Width": 185,
                 "Height": 21,
-                "TextId": "text_temp_ecs_centre_defaut",
+                "TextId": "text_temp_centre_defaut",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -855,7 +855,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -976,7 +976,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -1037,7 +1037,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -1166,7 +1166,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -11876,7 +11876,7 @@
                     "Y": 44,
                     "Width": 108,
                     "Height": 27,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -11977,7 +11977,7 @@
                     "Y": 44,
                     "Width": 108,
                     "Height": 27,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -12078,7 +12078,7 @@
                     "Y": 44,
                     "Width": 108,
                     "Height": 27,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -12179,7 +12179,7 @@
                     "Y": 44,
                     "Width": 108,
                     "Height": 27,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -12280,7 +12280,7 @@
                     "Y": 44,
                     "Width": 108,
                     "Height": 27,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -12381,7 +12381,7 @@
                     "Y": 44,
                     "Width": 108,
                     "Height": 27,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -24358,7 +24358,7 @@
                     "Y": 90,
                     "Width": 301,
                     "Height": 26,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -26363,6 +26363,7 @@
                 "Height": 358,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
                 "ScrollbarsVisibleOnPressed": true,
                 "ScrollbarsColor": {
                   "Red": 255,
@@ -26793,10 +26794,10 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_circ_prim_val",
-                    "X": 622,
+                    "X": 472,
                     "Y": 224,
-                    "Width": 144,
-                    "Height": 26,
+                    "Width": 294,
+                    "Height": 28,
                     "TextId": "text_var_sys_pilotage_circualteur_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
@@ -26902,9 +26903,9 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_demande_pac_val",
-                    "X": 622,
+                    "X": 529,
                     "Y": 280,
-                    "Width": 144,
+                    "Width": 237,
                     "Height": 26,
                     "TextId": "text_var_sys_demande_pac_droit_defaut",
                     "TextRotation": "0",
@@ -27013,7 +27014,7 @@
                     "Type": "TextArea",
                     "Name": "textArea_temp_ballon_val",
                     "X": 622,
-                    "Y": 336,
+                    "Y": 335,
                     "Width": 144,
                     "Height": 26,
                     "TextId": "text_var_sys_temp_droit_defaut",
@@ -27153,9 +27154,9 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_cascade_demande_val",
-                    "X": 622,
+                    "X": 529,
                     "Y": 420,
-                    "Width": 144,
+                    "Width": 237,
                     "Height": 26,
                     "TextId": "text_var_sys_demande_pac_droit_defaut",
                     "TextRotation": "0",
@@ -27173,6 +27174,22 @@
                       "TextId": "text_temp_temp_init_centre_defaut",
                       "UseBuffer": true,
                       "BufferSize": 6
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_cascade_na",
+                    "X": 529,
+                    "Y": 420,
+                    "Width": 237,
+                    "Height": 26,
+                    "Visible": false,
+                    "TextId": "text_var_sys_na_droite_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     }
                   },
                   {
@@ -27356,9 +27373,9 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_config_appoint_val",
-                    "X": 622,
+                    "X": 529,
                     "Y": 532,
-                    "Width": 144,
+                    "Width": 237,
                     "Height": 26,
                     "TextId": "text_var_sys_config_appoint_droit_defaut",
                     "TextRotation": "0",
@@ -27373,7 +27390,7 @@
                       "BufferSize": 4
                     },
                     "Wildcard2": {
-                      "TextId": "text_chaudiere_centre_defaut",
+                      "TextId": "text_app_chaudiere_centre_defaut",
                       "UseBuffer": true,
                       "BufferSize": 10
                     }
@@ -27845,6 +27862,7 @@
                 "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
                 "ScrollbarsVisibleOnPressed": true,
                 "ScrollbarsColor": {
                   "Red": 255,
@@ -28701,6 +28719,7 @@
                 "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
                 "ScrollbarsVisibleOnPressed": true,
                 "ScrollbarsColor": {
                   "Red": 255,
@@ -34120,6 +34139,7 @@
                 "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
                 "ScrollbarsVisibleOnPressed": true,
                 "ScrollbarsColor": {
                   "Red": 255,
@@ -35052,6 +35072,7 @@
                 "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
+                "ScrollbarsVisible": true,
                 "ScrollbarsVisibleOnPressed": true,
                 "ScrollbarsColor": {
                   "Red": 255,
@@ -35969,6 +35990,72 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_retour"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_config_in_out_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_config_in_out"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_config_in_out"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_frigo_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_frigo"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_frigo"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_options_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_options"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_options"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_groupes_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_groupes"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_groupes"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_zones_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_zones"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_zones"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_primaire_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_primaire"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_primaire"
             }
           }
         ]
@@ -37971,7 +38058,6 @@
                               "Blue": 255
                             },
                             "Wildcard1": {
-                              "TextId": "text_valeur_temp_raf_z2_init_centre_defaut",
                               "UseBuffer": true,
                               "BufferSize": 4
                             }
@@ -38597,7 +38683,6 @@
                               "Blue": 255
                             },
                             "Wildcard1": {
-                              "TextId": "text_valeur_temp_raf_z1_init_centre_defaut",
                               "UseBuffer": true,
                               "BufferSize": 4
                             }
@@ -40336,7 +40421,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40455,7 +40540,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40574,7 +40659,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40693,7 +40778,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40812,7 +40897,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40931,7 +41016,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41050,7 +41135,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41169,7 +41254,7 @@
                     "Y": 15,
                     "Width": 94,
                     "Height": 21,
-                    "TextId": "text_temp_ecs_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -42968,7 +43053,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -43066,7 +43151,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -43169,7 +43254,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -43272,7 +43357,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -43375,7 +43460,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -43478,7 +43563,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -43581,7 +43666,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -43684,7 +43769,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -43786,7 +43871,7 @@
                             "Y": 51,
                             "Width": 83,
                             "Height": 23,
-                            "TextId": "text_temp_ecs_centre_defaut",
+                            "TextId": "text_temp_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -45597,7 +45682,7 @@
                     "Y": 90,
                     "Width": 299,
                     "Height": 23,
-                    "TextId": "text_temp_ext_equilibre_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -46680,7 +46765,7 @@
                         "Y": 90,
                         "Width": 299,
                         "Height": 23,
-                        "TextId": "text_temp_ecs_centre_defaut",
+                        "TextId": "text_temp_centre_defaut",
                         "TextRotation": "0",
                         "Color": {
                           "Red": 255,
@@ -57595,7 +57680,7 @@
                     "Y": 90,
                     "Width": 299,
                     "Height": 23,
-                    "TextId": "text_temp_ext_equilibre_centre_defaut",
+                    "TextId": "text_temp_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,

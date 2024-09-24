@@ -39,12 +39,13 @@ void LuminositeView::tearDownScreen()
 
 void LuminositeView::slider_lumi(int sliderValue)
 {
-	if(sliderValue < 10)
+	if(sliderValue < 1)
 	{
-		u8Luminosite = 10;
+		u8Luminosite = 1;
 		slider_luminosite.setValue(u8Luminosite);
 	}
 	else u8Luminosite = sliderValue;
+	presenter->editLuminosite(u8Luminosite);
 	// Affichage de la valeur
     Unicode::snprintf(textAreaBuffer_Luminosite, 4, "%d", u8Luminosite);
 	textArea_luminosite.setWildcard(textAreaBuffer_Luminosite);
@@ -53,10 +54,11 @@ void LuminositeView::slider_lumi(int sliderValue)
 
 void LuminositeView::bouton_moins()
 {
-	if(u8Luminosite > 10)
+	if(u8Luminosite > 1)
 	{
 		u8Luminosite--;
 		slider_luminosite.setValue(u8Luminosite);
+		presenter->editLuminosite(u8Luminosite);
 		// Affichage de la valeur
 	    Unicode::snprintf(textAreaBuffer_Luminosite, 4, "%d", u8Luminosite);
 		textArea_luminosite.setWildcard(textAreaBuffer_Luminosite);
@@ -70,6 +72,7 @@ void LuminositeView::bouton_plus()
 	{
 		u8Luminosite++;
 		slider_luminosite.setValue(u8Luminosite);
+		presenter->editLuminosite(u8Luminosite);
 		// Affichage de la valeur
 	    Unicode::snprintf(textAreaBuffer_Luminosite, 4, "%d", u8Luminosite);
 		textArea_luminosite.setWildcard(textAreaBuffer_Luminosite);
@@ -83,6 +86,7 @@ void LuminositeView::bouton_valider()
 	{
 		sConfig_IHM.sParam_Utilisateur.u7Luminosite = u8Luminosite;
 		presenter->c_user_param();
+		presenter->editLuminosite(u8Luminosite);
 	}
 	application().gotoParametresScreenNoTransition();
 }

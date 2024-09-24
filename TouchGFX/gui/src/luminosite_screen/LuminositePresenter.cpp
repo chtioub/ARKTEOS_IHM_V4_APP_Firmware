@@ -41,3 +41,8 @@ void LuminositePresenter::c_user_param()
 {
 	model->c_user_param();
 }
+
+void LuminositePresenter::editLuminosite(uint8_t u8Luminosite)
+{
+	model->editLuminosite(u8Luminosite);
+}

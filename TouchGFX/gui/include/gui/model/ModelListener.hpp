@@ -31,6 +31,7 @@ public:
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM) {};
     virtual void changeDemandeFrigo(S_DEMANDE_FRIGO *sDemandeFrigo) {};
     virtual void changeStatutRF(S_STATUT_RF *sStatut_RF) {};
+    virtual void changeStatutRegulEsclave(S_STATUT_REGUL_ESCLAVE *sStatut_RegulEsclave) {};
 
 protected:
     Model* model;
