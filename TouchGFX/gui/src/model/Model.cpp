@@ -91,6 +91,7 @@ void Model::tick()
   {
     gTouched = 0;
     veilleCounter = 0;
+    exitVeille();
   }
 
   if(dataUpdated != 0)
@@ -249,8 +250,13 @@ void Model::exitVeille()
 #ifdef SIMULATOR
   touchgfx_printf("activation \n");
 #else
-  uint8_t PWMActive = 100;
-  setBackLightPWM(PWMActive);
+  if(sConfig_IHM.sParam_Utilisateur.u7Luminosite != 0)
+  {
+	setBackLightPWM(sConfig_IHM.sParam_Utilisateur.u7Luminosite);
+  }
+  else setBackLightPWM(100);
+//  uint8_t PWMActive = 100;
+//  setBackLightPWM(PWMActive);
 #endif
 }
 

@@ -26,3 +26,8 @@ void AttentePresenter::c_recup_config(uint8_t u8RecupConfig)
 {
 	model->c_recup_config(u8RecupConfig);
 }
+
+void AttentePresenter::editLuminosite(uint8_t u8Luminosite)
+{
+	model->editLuminosite(u8Luminosite);
+}

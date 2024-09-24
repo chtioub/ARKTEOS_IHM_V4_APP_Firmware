@@ -29,6 +29,8 @@ public:
 
     void changeConfig(S_CONFIG_IHM *sConfig_IHM);
     void c_recup_config(uint8_t u8RecupConfig);
+
+    void editLuminosite(uint8_t u8Luminosite);
 private:
     AttentePresenter();
 

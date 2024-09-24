@@ -8,6 +8,8 @@ AttenteView::AttenteView()
 	textArea_attente_communication.setWildcard(textAreaBuffer_RecupConfig);
 	textArea_recup_config.setWildcard(textAreaBuffer_RecupConfig);
 	textArea_recup_config.setVisible(false);
+	//
+	presenter->editLuminosite(50);
 }
 
 void AttenteView::setupScreen()
