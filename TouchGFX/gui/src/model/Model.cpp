@@ -80,9 +80,7 @@ void Model::tick()
     }
     else if(veilleCounter == VEILLE_2_COUNT)
     {
-      static_cast<FrontendApplication*>(touchgfx::Application::getInstance())
-          ->gotoVeilleScreenNoTransition();
-
+      static_cast<FrontendApplication*>(touchgfx::Application::getInstance())->gotoVeilleScreenNoTransition();
     }
     else if(veilleCounter > VEILLE_2_COUNT)
     {
@@ -689,8 +687,7 @@ void Model::c_recup_config(uint8_t u8RecupConfig)
   {
 		txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
   }
-  else
-	else txData[0].data[0] = N_ADD_REG;
+  else txData[0].data[0] = N_ADD_REG;
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = RECUP_CONFIG;
 //	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
@@ -702,8 +699,7 @@ void Model::c_recup_config(uint8_t u8RecupConfig)
   {
 		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_CONFIG_PHOENIX;
   }
-  else
-	else txData[0].data[3] = SC_RECUP_GENERAL;
+  else txData[0].data[3] = SC_RECUP_GENERAL;
 	txData[u8Pointeur_buffer_tx].data[4] = 0;
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
@@ -732,8 +728,7 @@ void Model::c_prog_ecs(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else
-	else txData[0].data[4] = sizeof(au8Prog_ECS);
+  else txData[0].data[4] = sizeof(au8Prog_ECS);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -766,8 +761,7 @@ void Model::c_prog_option(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else
-	else txData[0].data[4] = sizeof(au8Prog_Options);
+  else txData[0].data[4] = sizeof(au8Prog_Options);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -800,8 +794,7 @@ void Model::c_prog_piscine(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else
-	else txData[0].data[4] = sizeof(au8Prog_Piscine);
+  else txData[0].data[4] = sizeof(au8Prog_Piscine);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -834,8 +827,7 @@ void Model::c_prog_zone_chaud(uint8_t u8Zone, bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else
-	else txData[0].data[4] = sizeof(au8Prog_Chaud_Zx[u8Zone]);
+  else txData[0].data[4] = sizeof(au8Prog_Chaud_Zx[u8Zone]);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -868,8 +860,7 @@ void Model::c_prog_zone_froid(uint8_t u8Zone, bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else
-	else txData[0].data[4] = sizeof(au8Prog_Froid_Zx[u8Zone]);
+  else txData[0].data[4] = sizeof(au8Prog_Froid_Zx[u8Zone]);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -902,8 +893,7 @@ void Model::c_prog_reg_ext_chaud(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else
-	else txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Chaud);
+  else txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Chaud);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -936,8 +926,7 @@ void Model::c_prog_reg_ext_froid(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else
-	else txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Froid);
+  else txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Froid);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
