@@ -638,6 +638,20 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_hz_comp_droite" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;Hz</Translation>
+        <Translation Language="GB">&lt;Value&gt;Hz</Translation>
+        <Translation Language="PT">&lt;Value&gt;Hz</Translation>
+        <Translation Language="NL">&lt;Value&gt;Hz</Translation>
+        <Translation Language="DE">&lt;Value&gt;Hz</Translation>
+      </Text>
+      <Text Id="text_init_0_droite" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="__SingleUse_3UVL" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">0</Translation>
         <Translation Language="GB">New Text</Translation>

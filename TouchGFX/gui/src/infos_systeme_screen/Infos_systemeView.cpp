@@ -90,7 +90,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				textArea_type_capteur.setVisible(true);
 				break;
 			case INVERTERRA:
-				Unicode::snprintf(textAreaBuffer_Gamme, 9, "INVERTERRA");
+				Unicode::snprintf(textAreaBuffer_Gamme,11, "INVERTERRA");
 				textArea_capteur_val.setVisible(true);
 				textArea_type_capteur.setVisible(true);
 				break;

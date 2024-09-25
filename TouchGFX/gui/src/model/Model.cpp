@@ -71,7 +71,7 @@ Model::Model() :
 
 void Model::tick()
 {
-  if(gTouched == 0)
+  if(gTouched == 0)// && u16ErreurEncours == 0)
   {
     veilleCounter++;
     if(veilleCounter == VEILLE_1_COUNT)

@@ -228,6 +228,7 @@ void setBackLightPWM(uint8_t pwm);
 uint8_t decodeRxData(rxData_t *rxData);
 uint8_t computeTxData(txData_t *txData, txData_t *cosebe_tx);
 bool verifErreurs(void);
+int ConvertPressionToTemperature(E_TYPE_GAZ typegaz, int PressionHP, int valpression);
 
 
 

@@ -36160,7 +36160,7 @@
                     "Type": "TextArea",
                     "Name": "textArea_temp_DCh_invert",
                     "X": 766,
-                    "Y": 197,
+                    "Y": 196,
                     "Width": 94,
                     "Height": 21,
                     "TextId": "text_temp_droit_defaut",
@@ -36253,7 +36253,27 @@
                     "Wildcard1": {
                       "TextId": "text_init_0_centre_defaut",
                       "UseBuffer": true,
-                      "BufferSize": 7
+                      "BufferSize": 4
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_Hz_comp_invert",
+                    "X": 374,
+                    "Y": 150,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_hz_comp_droite",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_droite",
+                      "UseBuffer": true,
+                      "BufferSize": 4
                     }
                   },
                   {
@@ -36273,7 +36293,7 @@
                     "Wildcard1": {
                       "TextId": "text_init_0_centre_defaut",
                       "UseBuffer": true,
-                      "BufferSize": 7
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -36308,7 +36328,7 @@
                     "Wildcard1": {
                       "TextId": "text_init_0_centre_defaut",
                       "UseBuffer": true,
-                      "BufferSize": 7
+                      "BufferSize": 6
                     }
                   },
                   {
@@ -36328,7 +36348,7 @@
                     "Wildcard1": {
                       "TextId": "__SingleUse_3UVL",
                       "UseBuffer": true,
-                      "BufferSize": 7
+                      "BufferSize": 4
                     }
                   },
                   {
@@ -36408,15 +36428,15 @@
                     "Wildcard1": {
                       "TextId": "text_init_0_centre_defaut",
                       "UseBuffer": true,
-                      "BufferSize": 7
+                      "BufferSize": 6
                     }
                   },
                   {
                     "Type": "TextArea",
                     "Name": "textArea_pression_temp_bp_invert",
-                    "X": 239,
+                    "X": 231,
                     "Y": 78,
-                    "Width": 150,
+                    "Width": 160,
                     "Height": 21,
                     "TextId": "text_pression_temp_centre_defaut",
                     "TextRotation": "0",
@@ -36441,7 +36461,7 @@
                     "Name": "textArea_pression_temp_hp_invert",
                     "X": 500,
                     "Y": 78,
-                    "Width": 150,
+                    "Width": 160,
                     "Height": 21,
                     "TextId": "text_pression_temp_centre_defaut",
                     "TextRotation": "0",
@@ -36483,7 +36503,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_temp_ext",
+                    "Name": "textArea_temp_ext_invert",
                     "X": 10,
                     "Y": 40,
                     "Width": 94,

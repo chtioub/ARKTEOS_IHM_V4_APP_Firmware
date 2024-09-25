@@ -81,12 +81,77 @@ void SynoptiqueView::changeDate(S_DATE *sDate)
 
 void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 {
+	int i16TempCond = 0;
+	int i16TempEvap = 0;
 //	if(sCyclRegFrigo_old.pac. != sCyclRegFrigo->pac)
 //	{
-		// Affichage de l'heure
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Prim, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire)/10));
-		textArea_temp_DCh_invert.setWildcard(textAreaBuffer_Temp_Dep_Prim);
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Prim_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire)/10));
+		textArea_temp_DCh_invert.setWildcard(textAreaBuffer_Temp_Dep_Prim_Inv);
 		textArea_temp_DCh_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Prim_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire)/10));
+		textArea_temp_RCh_invert.setWildcard(textAreaBuffer_Temp_Ret_Prim_Inv);
+		textArea_temp_RCh_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Capt_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur)/10));
+		textArea_temp_RCa_invert.setWildcard(textAreaBuffer_Temp_Ret_Capt_Inv);
+		textArea_temp_RCa_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Capt_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur)/10));
+		textArea_temp_DCa_invert.setWildcard(textAreaBuffer_Temp_Dep_Capt_Inv);
+		textArea_temp_DCa_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Ext_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur)/10));
+		textArea_temp_ext_invert.setWildcard(textAreaBuffer_Temp_Ext_Inv);
+		textArea_temp_ext_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Temp_HP_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1)/10));
+		textArea_temp_HP_invert.setWildcard(textAreaBuffer_Temp_HP_Inv);
+		textArea_temp_HP_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Temp_BP_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1)/10));
+		textArea_temp_BP_invert.setWildcard(textAreaBuffer_Temp_BP_Inv);
+		textArea_temp_BP_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Liq_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide)/10));
+		textArea_temp_liquide_invert.setWildcard(textAreaBuffer_Temp_Liq_Inv);
+		textArea_temp_liquide_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Press_Cond_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1)/10));
+		textArea_pression_temp_hp_invert.setWildcard1(textAreaBuffer_Press_Cond_Inv);
+		Unicode::snprintfFloat(textAreaBuffer_Press_Evap_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1)/10));
+		textArea_pression_temp_bp_invert.setWildcard1(textAreaBuffer_Press_Evap_Inv);
+
+		i16TempCond = ConvertPressionToTemperature(GAZ_R454C, 1, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1);
+		i16TempEvap = ConvertPressionToTemperature(GAZ_R454C, 0, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1);
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_Inv, 7,"%.1f", ((float)(i16TempCond)/10));
+		textArea_pression_temp_hp_invert.setWildcard2(textAreaBuffer_Temp_Cond_Inv);
+		textArea_pression_temp_hp_invert.invalidate();
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Evap_Inv, 7,"%.1f", ((float)(i16TempEvap)/10));
+		textArea_pression_temp_bp_invert.setWildcard2(textAreaBuffer_Temp_Evap_Inv);
+		textArea_pression_temp_bp_invert.invalidate();
+		Unicode::snprintf(textAreaBuffer_Temp_HP_Cible_Inv, 6,"%d", sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.u16DebitPrimaire);
+		textArea_temp_HP_cible_invert.setWildcard(textAreaBuffer_Temp_HP_Cible_Inv);
+		textArea_temp_HP_cible_invert.invalidate();
+		Unicode::snprintf(textAreaBuffer_Debit_Prim_Inv, 6,"%d", sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.u16DebitPrimaire);
+		textArea_debit_chauf_invert.setWildcard(textAreaBuffer_Debit_Prim_Inv);
+		textArea_debit_chauf_invert.invalidate();
+		Unicode::snprintf(textAreaBuffer_Debit_Capt_Inv, 6,"%d", sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.u16DebitCapteur);
+		textArea_debit_capt_invert.setWildcard(textAreaBuffer_Debit_Capt_Inv);
+		textArea_debit_capt_invert.invalidate();
+		Unicode::snprintf(textAreaBuffer_Percent_Circ_Cap_Inv, 4,"%d", sCyclRegFrigo->pac.geoinverter.sOutAnaGeoinv.u8ConsigneCirculateurCapteur);
+		textArea_circ_cap_invert.setWildcard(textAreaBuffer_Percent_Circ_Cap_Inv);
+		textArea_circ_cap_invert.invalidate();
+		Unicode::snprintf(textAreaBuffer_Percent_Circ_Prim_Inv, 4,"%d", sCyclRegFrigo->pac.geoinverter.sOutAnaGeoinv.u8ConsigneCirculateurPrimaire);
+		textArea_circ_chauf_invert.setWildcard(textAreaBuffer_Percent_Circ_Prim_Inv);
+		textArea_circ_chauf_invert.invalidate();
+		Unicode::snprintf(textAreaBuffer_Hz_comp_invert, 4,"%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorRunningSpeed);
+		textArea_Hz_comp_invert.setWildcard(textAreaBuffer_Hz_comp_invert);
+		textArea_Hz_comp_invert.invalidate();
+
+
+		if(sCyclRegFrigo->pac.geoinverter.sOutTorGeoinv.Appoint1 || sCyclRegFrigo->pac.geoinverter.sOutTorGeoinv.Appoint2_3)
+		{
+			textArea_appoint_invert.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		}
+		else textArea_appoint_invert.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+		textArea_appoint_invert.invalidate();
+
+
+//		textArea_temp_ballon_froid.setTypedText(touchgfx::TypedText(T_TEXT_BALLON_TAMPON_FROID_GAUCHE_DEFAUT));
+
 		memcpy(&sCyclRegFrigo_old, sCyclRegFrigo, sizeof(S_CYCL_REG_FRI));
 //	}
 

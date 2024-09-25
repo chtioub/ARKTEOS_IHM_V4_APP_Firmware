@@ -575,6 +575,152 @@ uint8_t decodeRxData(rxData_t *rxData)
   return result;
 }
 
+
+
+int ConvertPressionToTemperature(E_TYPE_GAZ typegaz, int PressionHP, int valpression)
+{
+  int retour, i;
+  double dPressionPow[10];
+
+  dPressionPow[0] = (double)valpression;
+
+  for (i = 1; i < 8; i++)
+  {
+	  dPressionPow[i] = dPressionPow[0] * dPressionPow[i - 1];
+  }
+
+  switch (typegaz)
+  {
+    case GAZ_R407:
+    	if (PressionHP)
+    	{
+			if (valpression < 100)
+			{
+			retour = (int)(-440.890 +
+					20.0314 * dPressionPow[0] -
+					0.577171 * dPressionPow[1] +
+					0.0157434 * dPressionPow[2] -
+					0.000289235 * dPressionPow[3] +
+					3.21508E-6 * dPressionPow[4] -
+					1.93876E-8 * dPressionPow[5] +
+					4.84923E-11 * dPressionPow[6]);
+			}
+			else
+			{
+			retour = (int)(-315.126 +
+					8.83384 * dPressionPow[0] -
+					0.0548563 * dPressionPow[1] +
+					0.000280008 * dPressionPow[2] -
+					9.57202E-7 * dPressionPow[3] +
+					2.04109E-9 * dPressionPow[4] -
+					2.44626E-12 * dPressionPow[5] +
+					1.25703E-15 * dPressionPow[6]);
+			}
+		}
+    	else
+    	{
+			if (valpression < 50)
+			retour = (int)(-368.083 +
+					20.4559 * dPressionPow[0] -
+					0.732898 * dPressionPow[1] +
+					0.030192 * dPressionPow[2] -
+					0.000945452 * dPressionPow[3] +
+					1.90519E-5 * dPressionPow[4] -
+					2.14951E-7 * dPressionPow[5] +
+					1.023417E-9 * dPressionPow[6]);
+			else
+			retour = (int)(-284.147 +
+					10.6022 * dPressionPow[0] -
+					0.0915881 * dPressionPow[1] +
+					0.000657693 * dPressionPow[2] -
+					3.18556E-6 * dPressionPow[3] +
+					9.64081E-9 * dPressionPow[4] -
+					1.63942E-11 * dPressionPow[5] +
+					1.19249E-14 * dPressionPow[6]);
+    	}
+    	break;
+
+    case GAZ_R410:
+		if (valpression < 50)
+		{
+		retour = (int)(-525.2 +
+				19.82 * dPressionPow[0] -
+				0.7059 * dPressionPow[1] +
+				0.0289 * dPressionPow[2] -
+				0.0008989 * dPressionPow[3] +
+				1.801E-5 * dPressionPow[4] -
+				2.023E-7 * dPressionPow[5] +
+				9.600E-10 * dPressionPow[6]);
+		}
+		else
+		{
+		retour = (int)(-433.6 +
+				9.663 * dPressionPow[0] -
+				0.0734 * dPressionPow[1] +
+				0.0004492 * dPressionPow[2] -
+				1.809E-6 * dPressionPow[3] +
+				4.462E-9 * dPressionPow[4] -
+				6.091E-12 * dPressionPow[5] +
+				3.513E-15 * dPressionPow[6]);
+		}
+		break;
+
+    case GAZ_R134:
+		if (valpression < 50)
+		{
+		retour = (int)(-264.2 +
+				21.71 * dPressionPow[0] -
+				0.7734 * dPressionPow[1] +
+				0.03172 * dPressionPow[2] -
+				0.0009877 * dPressionPow[3] +
+				1.980E-5 * dPressionPow[4] -
+				2.225E-7 * dPressionPow[5] +
+				1.056E-9 * dPressionPow[6]);
+		}
+		else
+		{
+		retour = (int)(-153.8 +
+				10.12 * dPressionPow[0] -
+				0.07154 * dPressionPow[1] +
+				0.0004112 * dPressionPow[2] -
+				1.564E-6 * dPressionPow[3] +
+				3.657E-9 * dPressionPow[4] -
+				4.744E-12 * dPressionPow[5] +
+				2.603E-15 * dPressionPow[6]);
+		}
+		break;
+
+    case GAZ_R454C:
+    	if (PressionHP)
+		{
+			retour = (int)(((-135.6138 * exp(-(dPressionPow[0] / 10) / 34.01293)) +
+					(-41.3338 * exp(-(dPressionPow[0] / 10) / 3.43721)) +
+					121.8346) *
+				10);
+		}
+    	else
+    	{
+			retour = (int)(((-117.1731 * exp(-(dPressionPow[0] / 10) / 24.17337)) +
+						(-39.11009 * exp(-(dPressionPow[0] / 10) / 2.637)) +
+						104.1427) *
+					10);
+    	}
+		break;
+
+		default:
+		  retour = 0;
+		  break;
+  	  }
+
+  	  if (retour > 32766)
+  	  {
+  		  retour = 32766;
+  	  }
+
+  	  return retour;
+}
+
+
 bool verifErreurs(void)
 {
   uint8_t u8PointeurListeDefaut = 0;
