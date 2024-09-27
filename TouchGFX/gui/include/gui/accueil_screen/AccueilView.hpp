@@ -41,7 +41,7 @@ protected:
     S_CYCL_REG_FRI sCyclRegFrigo_old;
     S_STATUT_REG_EXT sStatut_RegulExt_old;
     S_STATUT_ZX sStatut_Zx_old[20];
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[30], textAreaBuffer_Zone_1[11], textAreaBuffer_Zone_2[11], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_Pression_Capt[7], textAreaBuffer_Pression[7], textAreaBuffer_ECS_Milieu[7], textAreaBuffer_ECS_Bas[7], textAreaBuffer_Piscine[7], textAreaBuffer_Temp_Ext[7], textAreaBuffer_Temp_Zone_1[7], textAreaBuffer_Temp_Zone_2[7];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[30], textAreaBuffer_Zone_1[11], textAreaBuffer_Zone_2[11], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_Pression_Capt[7], textAreaBuffer_pression_chauf[7],textAreaBuffer_Pression[7], textAreaBuffer_ECS_Milieu[7], textAreaBuffer_ECS_Bas[7], textAreaBuffer_Piscine[7], textAreaBuffer_Temp_Ext[7], textAreaBuffer_Temp_Zone_1[7], textAreaBuffer_Temp_Zone_2[7];
 
 private:
     touchgfx::Callback<AccueilView, int16_t> swipeCallback;

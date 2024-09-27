@@ -189,8 +189,8 @@
                 "Name": "Image_arkteos",
                 "X": 285,
                 "Y": 200,
-                "Width": 381,
-                "Height": 131,
+                "Width": 382,
+                "Height": 132,
                 "RelativeFilename": "Logo_Arkteos_L381_H131.png"
               },
               {
@@ -421,6 +421,7 @@
                 "Y": 430,
                 "Width": 185,
                 "Height": 71,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "TextArea",
@@ -456,7 +457,6 @@
                 "Y": 409,
                 "Width": 185,
                 "Height": 92,
-                "Visible": false,
                 "Components": [
                   {
                     "Type": "Image",
@@ -26467,7 +26467,7 @@
                     "Wildcard1": {
                       "TextId": "text_pisc_vert_init_centre_defaut",
                       "UseBuffer": true,
-                      "BufferSize": 6
+                      "BufferSize": 7
                     }
                   },
                   {

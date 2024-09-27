@@ -1,5 +1,8 @@
 #include <gui/code_numerique_screen/Code_numeriqueView.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <touchgfx/Utils.hpp>
+
+
 
 Code_numeriqueView::Code_numeriqueView()
 {
@@ -14,6 +17,14 @@ Code_numeriqueView::Code_numeriqueView()
 	container.setXY(u8PositionX, u8PositionY);
 	modalWindow_code_inconnu.setBackground(touchgfx::BitmapId(BITMAP_BARRE_TITRE_L950XH63_ID), u8PositionX, u8PositionY + 524 - 64);
 	modalWindow_code_inconnu.hide();
+
+#ifdef SIMULATOR
+			for (int i = 0; i<4;i++)
+			{
+				sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[i] = '1';
+				sConfig_IHM.sInstall_PAC.auc8PW_Installateur[i] = '1';
+			}
+#endif
 	//
 	memset(u8BufferCode, 0, 12);
 	u8Longueur = 0;
@@ -129,7 +140,7 @@ void Code_numeriqueView::bouton_valider()
 	switch(eCode)
 	{
 		case CODE_ACCES_INSTALL:
-			if(u8Longueur == 4 && memcmp(sConfig_IHM.sInstall_PAC.auc8PW_Installateur, u8BufferCode, 4) == 0)
+			if(u8Longueur == 4 && memcmp(&sConfig_IHM.sInstall_PAC.auc8PW_Installateur[0], &u8BufferCode[0], 4) == 0)
 			{
 				application().gotoInstallationScreenNoTransition();
 			}
@@ -138,14 +149,19 @@ void Code_numeriqueView::bouton_valider()
 		case CODE_ACCES_USINE:
 			Unicode::snprintf(BufferCodeUsine, 5, "%d", sDate.Date * 100 + sDate.Month + sDate.Year + 2000);
 			Unicode::fromUTF8(u8BufferCode, BufferCode, 5);
-			if(u8Longueur == 4 && Unicode::strncmp(BufferCode, BufferCodeUsine, 4) == 0)
+			if(u8Longueur == 4 && Unicode::strncmp(&BufferCode[0], &BufferCodeUsine[0], 4) == 0)
 			{
 				application().gotoUsineScreenNoTransition();
 			}
 			else modalWindow_code_inconnu.show();
 			break;
 		case CODE_ACCES_MAINT:
-			if(u8Longueur == 4 && memcmp(sConfig_IHM.sInstall_PAC.auc8PW_Maintenance, u8BufferCode, 4) == 0)
+			for (int i = 0; i< 4; i++)
+			{
+			touchgfx_printf("value %c\n",sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[i]);
+			touchgfx_printf("Buffer %c\n",u8BufferCode[i]);
+			}
+			if(u8Longueur == 4 && memcmp(&sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[0], &u8BufferCode[0], 4) == 0)
 			{
 				application().gotoMaintenanceScreenNoTransition();
 			}

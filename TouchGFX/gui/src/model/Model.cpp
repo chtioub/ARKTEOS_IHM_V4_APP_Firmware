@@ -7,12 +7,19 @@
 
 extern uint8_t gTouched;
 
+#define DEMO_ARKTEOS
+
 Model::Model() :
     modelListener(0), veilleCounter(0)
 {
-#ifdef SIMULATOR
+#if defined(SIMULATOR) || defined(DEMO_ARKTEOS)
 	// Options PAC
 	sConfig_IHM.sOption_PAC.sZone.bZone1 = 1;
+	sConfig_IHM.sOption_PAC.sZone.bZone2 = 1;
+	sConfig_IHM.sParam_Zx[0].bModeChaud = 1;
+	sConfig_IHM.sParam_Zx[1].bModeChaud = 1;
+	sConfig_IHM.sParam_Zx[0].bModeFroid = 1;
+	sConfig_IHM.sParam_Zx[1].bModeFroid = 1;
 	sConfig_IHM.sOption_PAC.ECS = 1;
 	sConfig_IHM.sOption_PAC.Piscine = 1;
 	// Install PAC
@@ -30,17 +37,26 @@ Model::Model() :
 	sConfig_IHM.sMode_ECS.i16Consigne_ECS_Relance = 500;
 	sConfig_IHM.sMode_ECS.u8Time_Bouclage_ECS = 130;
 	// Config Piscine
-	sStatut_Piscine.i16TeauPiscine = 321;
+	sStatut_Piscine.i16TeauPiscine = 279;
 	sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Confort = 350;
 	sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal = 300;
 	sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Reduit = 290;
 	// Config Piscine
 	sStatut_Zx[u8Pointeur_buffer_tx].i16Tint = 196;
-	strcpy((char *)&sConfig_IHM.sParam_Zx[u8Pointeur_buffer_tx].u8NomZone[0], "Zone 1");
+	strcpy((char *)&sConfig_IHM.sParam_Zx[u8Pointeur_buffer_tx].u8NomZone[0], "RCH");
 	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx].Mode = MARCHE_CHAUD;
 	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx].i16Consigne_Tint_Reduit = 160;
 	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx].i16Consigne_Tint_Normal = 186;
 	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx].i16Consigne_Tint_Confort = 200;
+	sStatut_Zx[u8Pointeur_buffer_tx].Mode = ARRET;
+
+	sStatut_Zx[u8Pointeur_buffer_tx + 1].i16Tint = 182;
+	strcpy((char *)&sConfig_IHM.sParam_Zx[u8Pointeur_buffer_tx + 1].u8NomZone[0], "Etage");
+	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx + 1].Mode = MARCHE_CHAUD;
+	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx + 1].i16Consigne_Tint_Reduit = 160;
+	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx + 1].i16Consigne_Tint_Normal = 186;
+	sConfig_IHM.sMode_Zx[u8Pointeur_buffer_tx + 1].i16Consigne_Tint_Confort = 215;
+	sStatut_Zx[u8Pointeur_buffer_tx + 1].Mode = MARCHE_CHAUD;
 	// Config chauffe dalle
 	sConfig_IHM.sParam_PAC.u8Consigne_Sablier_Dalle[0] = 35;
 	sConfig_IHM.sParam_PAC.u8Consigne_Sablier_Dalle[1] = 40;
@@ -66,36 +82,73 @@ Model::Model() :
 	sDate.WeekDay = 5;
 	//
 	u16ErreurEncours = ERR_TINT_Z1;
-#endif
+
+	sConfig_IHM.sModele_PAC.u8ModelePAC = GEOINVERTER;
+	sConfig_IHM.sModele_PAC.Gaz_C1 = GAZ_R454C;
+	sConfig_IHM.sModele_PAC.bSupply = 0;
+	sConfig_IHM.sModele_PAC.bReversible = 0;
+	sConfig_IHM.sModele_PAC.u8PwPac = 9;
+	sConfig_IHM.sModele_PAC.u8ThermoMaxPac = 75;
+	sCyclRegFrigo[0].pac.geoinverter.sOutAnaGeoinv.u8ConsigneCirculateurCapteur = 80;
+	sCyclRegFrigo[0].pac.geoinverter.sOutAnaGeoinv.u8ConsigneCirculateurPrimaire = 80;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.u16DebitCapteur = 2365;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.u16DebitPrimaire = 1555;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire = 455;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire = 402;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur = -34;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur = -5;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_HP1 = 870;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_BP1 = -40;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Press_HP1= 198;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Press_BP1= 27;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide= 432;
+	sCyclRegFrigo[0].pac.geoinverter.sStatutFrigoGeoinv.i16Temp_HP_Cible[0] = 88;
+	sCyclRegFrigo[0].pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorRunningSpeed = 4920;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur = -23;
+	sCyclRegFrigo[0].pac.geoinverter.sOutAnaGeoinv.u16PositionDetendeur1 = 267;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur= 18;
+	sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage= 17;
+
+	sStatut_Primaire.i16TeauDepart = sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire;
+	sStatut_Primaire.i16TeauRetour = sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire;
+	sStatut_Primaire.u16DebitPrimaire = sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.u16DebitPrimaire;
+	sStatut_Primaire.u16In_Pression_Eau = sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage;
+	sStatut_Primaire.i16ConsigneTeauPrimaire = 480;
+	sCyclRegFrigo[0].commun.i16Text = sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur;
+
+	#endif
 }
 
 void Model::tick()
 {
-  if(gTouched == 0)// && u16ErreurEncours == 0)
-  {
-    veilleCounter++;
-    if(veilleCounter == VEILLE_1_COUNT)
-    {
-      setBackLightPWM(PWM_VEILLE_1);
-    }
-    else if(veilleCounter == VEILLE_2_COUNT)
-    {
-      static_cast<FrontendApplication*>(touchgfx::Application::getInstance())->gotoVeilleScreenNoTransition();
-    }
-    else if(veilleCounter > VEILLE_2_COUNT)
-    {
-      veilleCounter--;
-    }
-  }
-  else
-  {
-	if(veilleCounter >= VEILLE_1_COUNT)
-	{
-	  exitVeille();
-	}
-    gTouched = 0;
-    veilleCounter = 0;
-  }
+	#ifndef SIMULATOR
+
+		if(gTouched == 0)// && u16ErreurEncours == 0)
+		{
+		veilleCounter++;
+		if(veilleCounter == VEILLE_1_COUNT)
+		{
+		  setBackLightPWM(PWM_VEILLE_1);
+		}
+		else if(veilleCounter == VEILLE_2_COUNT)
+		{
+		  static_cast<FrontendApplication*>(touchgfx::Application::getInstance())->gotoVeilleScreenNoTransition();
+		}
+		else if(veilleCounter > VEILLE_2_COUNT)
+		{
+		  veilleCounter--;
+		}
+		}
+		else
+		{
+		if(veilleCounter >= VEILLE_1_COUNT)
+		{
+		  exitVeille();
+		}
+		gTouched = 0;
+		veilleCounter = 0;
+		}
+	#endif
 
   if(dataUpdated != 0)
   {

@@ -11,6 +11,7 @@
 #endif /* SIMULATOR */
 #include "IHM_V4.h"
 #include <string.h>
+#include <math.h>
 
 uint8_t rxBuffer[TAILLE_BUFFER_UART];
 rxData_t rxData;
@@ -186,6 +187,7 @@ uint8_t decodeRxData(rxData_t *rxData)
 #ifndef SIMULATOR
 					u32LastCyclique = HAL_GetTick();
 #endif
+
 					memcpy(&sCyclRegFrigo[0], &rxData->data[ptrRxBuffer], sizeof(S_CYCL_REG_FRI));
 					arkteos_update.cycl_frigo_update = true;
 					if(sConfig_IHM.u16NbCyclique < 6)
@@ -690,20 +692,18 @@ int ConvertPressionToTemperature(E_TYPE_GAZ typegaz, int PressionHP, int valpres
 		}
 		break;
 
-    case GAZ_R454C:
+    case GAZ_R454C: //!!!!Formules pour pressions absolues
     	if (PressionHP)
 		{
 			retour = (int)(((-135.6138 * exp(-(dPressionPow[0] / 10) / 34.01293)) +
 					(-41.3338 * exp(-(dPressionPow[0] / 10) / 3.43721)) +
-					121.8346) *
-				10);
+					121.8346) * 10);
 		}
     	else
     	{
 			retour = (int)(((-117.1731 * exp(-(dPressionPow[0] / 10) / 24.17337)) +
 						(-39.11009 * exp(-(dPressionPow[0] / 10) / 2.637)) +
-						104.1427) *
-					10);
+						104.1427) *	10);
     	}
 		break;
 

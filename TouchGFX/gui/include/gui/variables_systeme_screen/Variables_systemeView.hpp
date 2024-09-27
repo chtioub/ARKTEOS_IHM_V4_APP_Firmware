@@ -35,6 +35,7 @@ protected:
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;
+    S_CYCL_REG_FRI sCyclRegFrigo_old;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9];
     // Primaire
     touchgfx::Unicode::UnicodeChar textArea_Buffer_tps_mise_tension[7], textArea_Buffer_AppointVal[4], textArea_Buffer_pw_consommee[7], textArea_Buffer_pw_produite[7], textAreaBuffer_PressionPrimaire[7], textAreaBuffer_DebitPrimaire[7], textAreaBuffer_ConsignePrimaire[7], textAreaBuffer_BallonTamponPrimaire[7], textAreaBuffer_BallonTamponFroid[7], textAreaBuffer_DepartPrimaire[6], textAreaBuffer_RetourPrimaire[7], textAreaBuffer_Temp_Ext[7], textAreaBuffer_CirculateurPrimaire[4], textAreaBuffer_HystBallonPlus[5], textAreaBuffer_HystBallonMoins[5], textAreaBuffer_HystExtPlus[5], textAreaBuffer_HystExtMoins[5], textAreaBuffer_TempExtEqui[5], textAreaBuffer_MaxPW[4], textAreaBuffer_AppointAutorise[4], textAreaBuffer_CircForce[4], textAreaBuffer_GestCirc[15], textAreaBuffer_AppointEnCours[4], textAreaBuffer_TypeAppoint[20], textAreaBuffer_Demande[20], textAreaBuffer_DemandeCascade[20], textAreaBuffer_CascadePresence[9], textAreaBuffer_CascadeTotal[3], textAreaBuffer_CascadeOn[3], textAreaBuffer_CascadeDispo[3], textAreaBuffer_NumLigne[99][3];

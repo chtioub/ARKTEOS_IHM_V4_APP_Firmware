@@ -6,6 +6,7 @@ Variables_systemeView::Variables_systemeView()
 
 	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));
 	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
+	memset(&sCyclRegFrigo_old, 0, sizeof(sCyclRegFrigo_old));
 	sDate_old.Date = 0;
 	u16ErreurAffichee = 0;
 	changeDate(&sDate);
@@ -16,6 +17,7 @@ Variables_systemeView::Variables_systemeView()
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
 	changeStatutRegulEsclave(&sStatut_RegulEsclave);
+	changeStatutCyclFrigo(&sCyclRegFrigo);
 	container.setXY(u8PositionX, u8PositionY);
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_VARIABLES_SYSTEMES_CENTRE_DEFAUT).getText());
@@ -561,6 +563,9 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 	else Unicode::snprintf(textAreaBuffer_MaxPW, 4, touchgfx::TypedText(T_TEXT_NON_CENTRE_DEFAUT).getText());
 	textArea_appoint_en_cours_val.setWildcard1(textAreaBuffer_MaxPW);
 	textArea_appoint_en_cours_val.invalidate();
+
+	// Mémorisation de l'état précédent
+	memcpy(&sCyclRegFrigo_old, sCyclRegFrigo, sizeof(S_CYCL_REG_FRI));
 }
 
 void Variables_systemeView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

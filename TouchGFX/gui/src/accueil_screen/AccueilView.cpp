@@ -10,6 +10,7 @@ AccueilView::AccueilView():
 	memset(&sStatut_Piscine_old, 0, sizeof(sStatut_Piscine));
 	memset(&sStatut_Zx_old, 0, sizeof(sStatut_Zx));
 	memset(&sStatut_RegulExt_old, 0, sizeof(sStatut_RegulExt_old));
+	memset(&sCyclRegFrigo_old, 0, sizeof(sCyclRegFrigo_old));
 	sDate_old.Date = 0;
 	u16ErreurAffichee = 0;
 	u8Zone1 = 0xff;
@@ -56,11 +57,13 @@ AccueilView::AccueilView():
 	}
 	container.setXY(u8PositionX, u8PositionY);
 	//
+#ifndef SIMULATOR
 	if(sConfig_IHM.sParam_Utilisateur.u7Luminosite != 0)
 	{
 		presenter->editLuminosite(sConfig_IHM.sParam_Utilisateur.u7Luminosite);
 	}
 	else presenter->editLuminosite(100);
+#endif
 }
 
 void AccueilView::setupScreen()
@@ -906,6 +909,13 @@ void AccueilView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 	    Unicode::snprintfFloat(textAreaBuffer_Pression_Capt, 7, "%.1f", ((float) sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur) / 10);
 	    textArea_pression_capt.setWildcard(textAreaBuffer_Pression_Capt);
 	    textArea_pression_capt.invalidate();
+	}
+	// Pression chauffage
+	if(sConfig_IHM_old.sModele_PAC.u8ModelePAC == INVERTERRA && sCyclRegFrigo_old.pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage != sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage)
+	{
+		Unicode::snprintfFloat(textAreaBuffer_pression_chauf, 7, "%.1f", ((float) sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage) / 10);
+		textArea_pression_chauf.setWildcard(textAreaBuffer_pression_chauf);
+		textArea_pression_chauf.invalidate();
 	}
 	// Mémorisation de l'état précédent
 	memcpy(&sCyclRegFrigo_old, sCyclRegFrigo, sizeof(S_CYCL_REG_FRI));

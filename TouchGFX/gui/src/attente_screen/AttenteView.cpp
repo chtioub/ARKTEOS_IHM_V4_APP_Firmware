@@ -9,7 +9,9 @@ AttenteView::AttenteView()
 	textArea_recup_config.setWildcard(textAreaBuffer_RecupConfig);
 	textArea_recup_config.setVisible(false);
 	//
+#ifndef SIMULATOR
 	presenter->editLuminosite(50);
+#endif
 }
 
 void AttenteView::setupScreen()
