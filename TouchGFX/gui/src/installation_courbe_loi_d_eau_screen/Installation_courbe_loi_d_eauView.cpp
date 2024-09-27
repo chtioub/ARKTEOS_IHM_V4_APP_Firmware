@@ -174,20 +174,34 @@ void Installation_courbe_loi_d_eauView::slider_15(int sliderValue)
 {
 	u16LoiDeau[1] = sliderValue;
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16LoiDeau[2] || sliderValue > u16LoiDeau_MAX[1])
+	if(sliderValue > u16LoiDeau[2])
 	{
 		slider_text_15_deg.setValue((int) u16LoiDeau[2]);
 		slider_text_15_deg.invalidate();
 		sliderValue = u16LoiDeau[2];
 		u16LoiDeau[1] = u16LoiDeau[2];
 	}
+	else if(sliderValue > u16LoiDeau_MAX[1])
+	{
+		slider_text_15_deg.setValue((int) u16LoiDeau_MAX[1]);
+		slider_text_15_deg.invalidate();
+		sliderValue = u16LoiDeau_MAX[1];
+		u16LoiDeau[1] = u16LoiDeau_MAX[1];
+	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[0] || sliderValue < u16LoiDeau_MIN[1])
+	else if(sliderValue < u16LoiDeau[0])
 	{
 		slider_text_15_deg.setValue((int) u16LoiDeau[0]);
 		slider_text_15_deg.invalidate();
 		sliderValue = u16LoiDeau[0];
 		u16LoiDeau[1] = u16LoiDeau[0];
+	}
+	else if(sliderValue < u16LoiDeau_MIN[1])
+	{
+		slider_text_15_deg.setValue((int) u16LoiDeau_MIN[1]);
+		slider_text_15_deg.invalidate();
+		sliderValue = u16LoiDeau_MIN[1];
+		u16LoiDeau[1] = u16LoiDeau_MIN[1];
 	}
 	else
 	{
@@ -218,13 +232,27 @@ void Installation_courbe_loi_d_eauView::slider_10(int sliderValue)
 		sliderValue = u16LoiDeau[3];
 		u16LoiDeau[2] = u16LoiDeau[3];
 	}
+	else if(sliderValue > u16LoiDeau_MAX[2])
+	{
+		slider_text_10_deg.setValue((int) u16LoiDeau_MAX[2]);
+		slider_text_10_deg.invalidate();
+		sliderValue = u16LoiDeau_MAX[2];
+		u16LoiDeau[2] = u16LoiDeau_MAX[2];
+	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[1] || sliderValue < u16LoiDeau_MIN[2])
+	else if(sliderValue < u16LoiDeau[1])
 	{
 		slider_text_10_deg.setValue((int) u16LoiDeau[1]);
 		slider_text_10_deg.invalidate();
 		sliderValue = u16LoiDeau[1];
 		u16LoiDeau[2] = u16LoiDeau[1];
+	}
+	else if(sliderValue < u16LoiDeau_MIN[2])
+	{
+		slider_text_10_deg.setValue((int) u16LoiDeau_MIN[2]);
+		slider_text_10_deg.invalidate();
+		sliderValue = u16LoiDeau_MIN[2];
+		u16LoiDeau[2] = u16LoiDeau_MIN[2];
 	}
 	else
 	{
@@ -248,20 +276,34 @@ void Installation_courbe_loi_d_eauView::slider_0(int sliderValue)
 {
 	u16LoiDeau[3] = sliderValue;
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16LoiDeau[4] || sliderValue > u16LoiDeau_MAX[3])
+	if(sliderValue > u16LoiDeau[4])
 	{
 		slider_text_0_deg.setValue((int) u16LoiDeau[4]);
 		slider_text_0_deg.invalidate();
 		sliderValue = u16LoiDeau[4];
 		u16LoiDeau[3] = u16LoiDeau[4];
 	}
+	else if(sliderValue > u16LoiDeau_MAX[3])
+	{
+		slider_text_0_deg.setValue((int) u16LoiDeau_MAX[3]);
+		slider_text_0_deg.invalidate();
+		sliderValue = u16LoiDeau_MAX[3];
+		u16LoiDeau[3] = u16LoiDeau_MAX[3];
+	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[2] || sliderValue < u16LoiDeau_MIN[3])
+	else if(sliderValue < u16LoiDeau[2])
 	{
 		slider_text_0_deg.setValue((int) u16LoiDeau[2]);
 		slider_text_0_deg.invalidate();
 		sliderValue = u16LoiDeau[2];
 		u16LoiDeau[3] = u16LoiDeau[2];
+	}
+	else if(sliderValue < u16LoiDeau_MIN[3])
+	{
+		slider_text_0_deg.setValue((int) u16LoiDeau_MIN[3]);
+		slider_text_0_deg.invalidate();
+		sliderValue = u16LoiDeau_MIN[3];
+		u16LoiDeau[3] = u16LoiDeau_MIN[3];
 	}
 	else
 	{
@@ -285,20 +327,34 @@ void Installation_courbe_loi_d_eauView::slider_m10(int sliderValue)
 {
 	u16LoiDeau[4] = sliderValue;
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16LoiDeau[5] || sliderValue > u16LoiDeau_MAX[4])
+	if(sliderValue > u16LoiDeau[5])
 	{
 		slider_text_m10_deg.setValue((int) u16LoiDeau[5]);
 		slider_text_m10_deg.invalidate();
 		sliderValue = u16LoiDeau[5];
 		u16LoiDeau[4] = u16LoiDeau[5];
 	}
+	else if(sliderValue > u16LoiDeau_MAX[4])
+	{
+		slider_text_m10_deg.setValue((int) u16LoiDeau_MAX[4]);
+		slider_text_m10_deg.invalidate();
+		sliderValue = u16LoiDeau_MAX[4];
+		u16LoiDeau[4] = u16LoiDeau_MAX[4];
+	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[3] || sliderValue < u16LoiDeau_MIN[4])
+	else if(sliderValue < u16LoiDeau[3])
 	{
 		slider_text_m10_deg.setValue((int) u16LoiDeau[3]);
 		slider_text_m10_deg.invalidate();
 		sliderValue = u16LoiDeau[3];
 		u16LoiDeau[4] = u16LoiDeau[3];
+	}
+	else if(sliderValue < u16LoiDeau_MIN[4])
+	{
+		slider_text_m10_deg.setValue((int) u16LoiDeau_MIN[4]);
+		slider_text_m10_deg.invalidate();
+		sliderValue = u16LoiDeau_MIN[4];
+		u16LoiDeau[4] = u16LoiDeau_MIN[4];
 	}
 	else
 	{
@@ -330,12 +386,19 @@ void Installation_courbe_loi_d_eauView::slider_m25(int sliderValue)
 		u16LoiDeau[5] = u16LoiDeau_MAX[5];
 	}
 	// Verif pour éviter le dépassement négatif
-	else if(sliderValue < u16LoiDeau[4] || sliderValue < u16LoiDeau_MIN[5])
+	else if(sliderValue < u16LoiDeau[4])
 	{
 		slider_text_m25_deg.setValue((int) u16LoiDeau[4]);
 		slider_text_m25_deg.invalidate();
 		sliderValue = u16LoiDeau[4];
 		u16LoiDeau[5] = u16LoiDeau[4];
+	}
+	else if(sliderValue < u16LoiDeau_MIN[5])
+	{
+		slider_text_m10_deg.setValue((int) u16LoiDeau_MIN[5]);
+		slider_text_m10_deg.invalidate();
+		sliderValue = u16LoiDeau_MIN[5];
+		u16LoiDeau[5] = u16LoiDeau_MIN[5];
 	}
 	else
 	{

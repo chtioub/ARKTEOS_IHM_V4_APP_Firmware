@@ -71,6 +71,7 @@ Model::Model() :
 
 void Model::tick()
 {
+#ifndef SIMULATOR
   if(gTouched == 0)
   {
     veilleCounter++;
@@ -96,6 +97,7 @@ void Model::tick()
     gTouched = 0;
     veilleCounter = 0;
   }
+#endif
 
   if(dataUpdated != 0)
   {
@@ -244,7 +246,7 @@ void Model::enterVeille()
 void Model::editLuminosite(uint8_t u8Luminosite)
 {
 #ifndef SIMULATOR
-  setBackLightPWM(u8Luminosite);
+	setBackLightPWM(u8Luminosite);
 #endif
 }
 
