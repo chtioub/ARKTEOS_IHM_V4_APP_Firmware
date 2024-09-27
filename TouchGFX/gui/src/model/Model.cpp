@@ -121,34 +121,33 @@ Model::Model() :
 
 void Model::tick()
 {
-	#ifndef SIMULATOR
-
-		if(gTouched == 0)// && u16ErreurEncours == 0)
-		{
+#ifndef SIMULATOR
+	if(gTouched == 0)// && u16ErreurEncours == 0)
+	{
 		veilleCounter++;
 		if(veilleCounter == VEILLE_1_COUNT)
 		{
-		  setBackLightPWM(PWM_VEILLE_1);
+			setBackLightPWM(PWM_VEILLE_1);
 		}
 		else if(veilleCounter == VEILLE_2_COUNT)
 		{
-		  static_cast<FrontendApplication*>(touchgfx::Application::getInstance())->gotoVeilleScreenNoTransition();
+			static_cast<FrontendApplication*>(touchgfx::Application::getInstance())->gotoVeilleScreenNoTransition();
 		}
 		else if(veilleCounter > VEILLE_2_COUNT)
 		{
-		  veilleCounter--;
+			veilleCounter--;
 		}
-		}
-		else
-		{
+	}
+	else
+	{
 		if(veilleCounter >= VEILLE_1_COUNT)
 		{
-		  exitVeille();
+			exitVeille();
 		}
 		gTouched = 0;
 		veilleCounter = 0;
-		}
-	#endif
+	}
+#endif
 
   if(dataUpdated != 0)
   {
@@ -297,7 +296,7 @@ void Model::enterVeille()
 void Model::editLuminosite(uint8_t u8Luminosite)
 {
 #ifndef SIMULATOR
-  setBackLightPWM(u8Luminosite);
+	setBackLightPWM(u8Luminosite);
 #endif
 }
 
