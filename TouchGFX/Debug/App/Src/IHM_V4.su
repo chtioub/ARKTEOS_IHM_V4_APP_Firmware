@@ -1,0 +1,5 @@
+../Drivers/CMSIS/Include/core_cm7.h:2156:34:__NVIC_SystemReset	4	static,ignoring_inline_asm
+../App/Src/IHM_V4.c:67:6:setBackLightPWM	16	static
+../App/Src/IHM_V4.c:80:9:decodeRxData	48	static
+../App/Src/IHM_V4.c:582:5:ConvertPressionToTemperature	120	static
+../App/Src/IHM_V4.c:724:6:verifErreurs	88	static

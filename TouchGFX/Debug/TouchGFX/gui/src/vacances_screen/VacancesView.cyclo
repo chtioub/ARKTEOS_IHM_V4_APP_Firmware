@@ -1,0 +1,76 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:146:14:touchgfx::BitmapId touchgfx::Bitmap::getId() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:273:13:int16_t touchgfx::Drawable::getX() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:293:13:int16_t touchgfx::Drawable::getWidth() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:525:10:void touchgfx::Drawable::setTouchable(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp:404:25:static touchgfx::Unicode::UnicodeChar* touchgfx::Unicode::snprintfFloat(UnicodeChar*, uint16_t, const char*, float)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:79:10:void touchgfx::TextAreaWithOneWildcard::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:98:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:58:10:bool touchgfx::ToggleButton::getState() const	1
+../TouchGFX/generated/gui_generated/include/gui_generated/vacances_screen/VacancesViewBase.hpp:199:26:FrontendApplication& VacancesViewBase::application()	1
+../TouchGFX/gui/include/gui/vacances_screen/VacancesView.hpp:11:13:VacancesView::~VacancesView()	1
+../TouchGFX/gui/include/gui/vacances_screen/VacancesView.hpp:11:13:virtual VacancesView::~VacancesView()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:3:1:VacancesView::VacancesView()	20
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:123:6:virtual void VacancesView::slider_pisc(int)	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:132:6:void VacancesView::text_vacances_off()	12
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:142:6:virtual void VacancesView::bouton_piscine()	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:153:6:virtual void VacancesView::bouton_piscine_plus()	3
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:167:6:virtual void VacancesView::bouton_piscine_moins()	3
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:181:6:virtual void VacancesView::bouton_zone_1()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:186:6:virtual void VacancesView::bouton_zone_2()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:191:6:virtual void VacancesView::bouton_zone_3()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:196:6:virtual void VacancesView::bouton_zone_4()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:201:6:virtual void VacancesView::bouton_zone_5()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:206:6:virtual void VacancesView::bouton_zone_6()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:211:6:virtual void VacancesView::bouton_zone_7()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:216:6:virtual void VacancesView::bouton_zone_8()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:221:6:void VacancesView::bouton_zone_x(touchgfx::ToggleButton*, touchgfx::Container*)	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:233:6:virtual void VacancesView::slider_zone1(int)	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:239:6:virtual void VacancesView::slider_zone2(int)	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:245:6:virtual void VacancesView::slider_zone3(int)	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:251:6:virtual void VacancesView::slider_zone4(int)	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:257:6:virtual void VacancesView::slider_zone5(int)	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:263:6:virtual void VacancesView::slider_zone6(int)	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:269:6:virtual void VacancesView::slider_zone7(int)	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:275:6:virtual void VacancesView::slider_zone8(int)	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:281:6:void VacancesView::slider_zone_x(uint8_t, touchgfx::TextAreaWithOneWildcard*, touchgfx::Unicode::UnicodeChar*)	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:289:6:virtual void VacancesView::bouton_zone_1_plus()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:294:6:virtual void VacancesView::bouton_zone_2_plus()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:299:6:virtual void VacancesView::bouton_zone_3_plus()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:304:6:virtual void VacancesView::bouton_zone_4_plus()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:309:6:virtual void VacancesView::bouton_zone_5_plus()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:314:6:virtual void VacancesView::bouton_zone_6_plus()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:319:6:virtual void VacancesView::bouton_zone_7_plus()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:324:6:virtual void VacancesView::bouton_zone_8_plus()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:329:6:void VacancesView::bouton_zone_x_plus(uint8_t, touchgfx::Slider*, touchgfx::TextAreaWithOneWildcard*, touchgfx::Unicode::UnicodeChar*)	3
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:342:6:virtual void VacancesView::bouton_zone_1_moins()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:347:6:virtual void VacancesView::bouton_zone_2_moins()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:352:6:virtual void VacancesView::bouton_zone_3_moins()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:357:6:virtual void VacancesView::bouton_zone_4_moins()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:362:6:virtual void VacancesView::bouton_zone_5_moins()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:367:6:virtual void VacancesView::bouton_zone_6_moins()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:372:6:virtual void VacancesView::bouton_zone_7_moins()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:377:6:virtual void VacancesView::bouton_zone_8_moins()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:382:6:void VacancesView::bouton_zone_x_moins(uint8_t, touchgfx::Slider*, touchgfx::TextAreaWithOneWildcard*, touchgfx::Unicode::UnicodeChar*)	3
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:396:6:void VacancesView::affichageZone(uint8_t, touchgfx::Container*, touchgfx::ToggleButton*, touchgfx::Container*, touchgfx::TextAreaWithOneWildcard*, touchgfx::Unicode::UnicodeChar*, touchgfx::Unicode::UnicodeChar*, touchgfx::Slider*, touchgfx::TextAreaWithOneWildcard*)	5
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:428:6:virtual void VacancesView::setupScreen()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:433:6:virtual void VacancesView::tearDownScreen()	1
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:438:6:virtual void VacancesView::bouton_nb_jours_plus()	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:449:6:virtual void VacancesView::bouton_nb_jours_moins()	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:460:6:virtual void VacancesView::bouton_vacances_oui()	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:493:6:virtual void VacancesView::bouton_vacances_non()	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:554:6:virtual void VacancesView::bouton_valider()	42
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:669:6:virtual void VacancesView::changeStatutPAC(S_STATUT_PAC*)	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:680:6:virtual void VacancesView::changeStatutEther(S_CYC_ETHER_III*)	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:690:6:virtual void VacancesView::changeErreur(uint16_t)	2
+../TouchGFX/gui/src/vacances_screen/VacancesView.cpp:700:6:virtual void VacancesView::changeDate(S_DATE*)	3

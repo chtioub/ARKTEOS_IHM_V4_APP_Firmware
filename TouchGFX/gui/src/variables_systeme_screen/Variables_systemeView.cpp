@@ -17,7 +17,7 @@ Variables_systemeView::Variables_systemeView()
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
 	changeStatutRegulEsclave(&sStatut_RegulEsclave);
-	changeStatutCyclFrigo(&sCyclRegFrigo);
+	changeStatutCyclFrigo(&sCyclRegFrigo[0]);
 	container.setXY(u8PositionX, u8PositionY);
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_VARIABLES_SYSTEMES_CENTRE_DEFAUT).getText());

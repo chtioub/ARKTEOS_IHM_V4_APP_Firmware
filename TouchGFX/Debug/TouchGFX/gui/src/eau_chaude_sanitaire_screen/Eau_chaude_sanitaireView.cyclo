@@ -1,0 +1,38 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:146:14:touchgfx::BitmapId touchgfx::Bitmap::getId() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:273:13:int16_t touchgfx::Drawable::getX() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:293:13:int16_t touchgfx::Drawable::getWidth() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:525:10:void touchgfx::Drawable::setTouchable(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp:404:25:static touchgfx::Unicode::UnicodeChar* touchgfx::Unicode::snprintfFloat(UnicodeChar*, uint16_t, const char*, float)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:79:10:void touchgfx::TextAreaWithOneWildcard::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:98:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:58:10:bool touchgfx::ToggleButton::getState() const	1
+../TouchGFX/generated/gui_generated/include/gui_generated/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireViewBase.hpp:73:26:FrontendApplication& Eau_chaude_sanitaireViewBase::application()	1
+../TouchGFX/gui/include/gui/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.hpp:11:13:Eau_chaude_sanitaireView::~Eau_chaude_sanitaireView()	1
+../TouchGFX/gui/include/gui/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.hpp:11:13:virtual Eau_chaude_sanitaireView::~Eau_chaude_sanitaireView()	1
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:4:1:Eau_chaude_sanitaireView::Eau_chaude_sanitaireView()	2
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:35:6:virtual void Eau_chaude_sanitaireView::setupScreen()	1
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:40:6:virtual void Eau_chaude_sanitaireView::tearDownScreen()	3
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:53:6:virtual void Eau_chaude_sanitaireView::slider_consigne(int)	3
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:71:6:virtual void Eau_chaude_sanitaireView::slider_relance(int)	3
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:89:6:virtual void Eau_chaude_sanitaireView::bouton_plus_relance()	4
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:108:6:virtual void Eau_chaude_sanitaireView::bouton_moins_relance()	4
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:127:6:virtual void Eau_chaude_sanitaireView::bouton_plus_consigne()	4
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:147:6:virtual void Eau_chaude_sanitaireView::bouton_moins_consigne()	4
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:166:6:virtual void Eau_chaude_sanitaireView::bouton_appoint()	1
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:172:6:virtual void Eau_chaude_sanitaireView::bouton_arret()	3
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:190:6:virtual void Eau_chaude_sanitaireView::bouton_marche_ecs()	2
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:203:6:virtual void Eau_chaude_sanitaireView::timer_100ms()	5
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:220:6:virtual void Eau_chaude_sanitaireView::changeConfig(S_CONFIG_IHM*)	15
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:301:6:virtual void Eau_chaude_sanitaireView::changeStatutPAC(S_STATUT_PAC*)	2
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:312:6:virtual void Eau_chaude_sanitaireView::changeStatutEther(S_CYC_ETHER_III*)	2
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:322:6:virtual void Eau_chaude_sanitaireView::changeErreur(uint16_t)	2
+../TouchGFX/gui/src/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.cpp:332:6:virtual void Eau_chaude_sanitaireView::changeDate(S_DATE*)	3

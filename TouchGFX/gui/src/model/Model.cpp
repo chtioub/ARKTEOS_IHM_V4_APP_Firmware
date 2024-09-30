@@ -7,7 +7,8 @@
 
 extern uint8_t gTouched;
 
-#define DEMO_ARKTEOS
+//Pour IHM en mode "Salon" (alim de l'IHM sans COM)
+//#define DEMO_ARKTEOS
 
 Model::Model() :
     modelListener(0), veilleCounter(0)
@@ -116,6 +117,90 @@ Model::Model() :
 	sStatut_Primaire.i16ConsigneTeauPrimaire = 480;
 	sCyclRegFrigo[0].commun.i16Text = sCyclRegFrigo[0].pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur;
 
+	// Programmation mode chaud
+	int zone, jour, heure;
+	memset(au8Prog_Chaud_Zx, 0x55, sizeof (au8Prog_Chaud_Zx));
+	for(zone = 0; zone < NB_ZONE; zone++)
+	{
+		// Semaine
+		for(jour = 0; jour < 5; jour++)
+		{
+			// Confort : 6h/18h
+			for(heure = 6; heure < 18; heure++)
+			{
+				au8Prog_Chaud_Zx[zone][jour][heure] = 0xAA;
+			}
+			// Confort plus : 18h/23h
+			for(heure = 18; heure < 23; heure++)
+			{
+				au8Prog_Chaud_Zx[zone][jour][heure] = 0xFF;
+			}
+		}
+		// Week-end
+		for(jour=5; jour < 7; jour++)
+		{
+			// Confort : 6h/8h
+			for (heure=6; heure < 8; heure++)
+			{
+				au8Prog_Chaud_Zx[zone][jour][heure] = 0xAA;
+			}
+			// Confort plus : 8h/23h
+			for (heure = 8; heure < 23; heure++)
+			{
+				au8Prog_Chaud_Zx[zone][jour][heure] = 0xFF;
+			}
+		}
+	}
+	// Programmation mode froid
+	memset(au8Prog_Froid_Zx, 0x55, sizeof (au8Prog_Froid_Zx));
+	for(zone = 0; zone < NB_ZONE; zone++)
+	{
+		// Confort : 6h/9h et 12h/14 semaine
+		for(jour = 0; jour < 5; jour++)
+		{
+			for(heure = 6; heure < 9; heure++)
+			{
+				au8Prog_Froid_Zx[zone][jour][heure] = 0xAA;
+			}
+			for(heure = 12; heure < 14; heure++)
+			{
+				au8Prog_Froid_Zx[zone][jour][heure] = 0xAA;
+			}
+		}
+		// Confort : 6h/23h week end
+		for(jour = 5; jour < 7; jour++)
+		{
+			for(heure = 6; heure < 23; heure++)
+			{
+				au8Prog_Froid_Zx[zone][jour][heure] = 0xAA;
+			}
+		}
+	}
+	// Programmation régulation externe (24/24)
+	memset(au8Prog_Regul_Ext_Chaud, 0x55, sizeof(au8Prog_Regul_Ext_Chaud));
+	memset(au8Prog_Regul_Ext_Froid, 0x55, sizeof(au8Prog_Regul_Ext_Froid));
+	// Programmation ECS
+	memset(au8Prog_ECS, 0, sizeof (au8Prog_ECS));
+	for(jour = 0; jour < 7; jour++)
+	{
+		for(heure = 1; heure < 5; heure++)
+		{
+			au8Prog_ECS[jour][heure] = 0x55;
+		}
+	}
+	// Programmation piscine
+	memset(au8Prog_Piscine, 0, sizeof (au8Prog_Piscine));
+	for(jour = 0; jour < 7; jour++)
+	{
+		for(heure = 5; heure < 11; heure++)
+		{
+			au8Prog_Piscine[jour][heure] = 0x55;
+		}
+		for(heure = 18; heure < 23; heure++)
+		{
+			au8Prog_Piscine[jour][heure] = 0x55;
+		}
+	}
 	#endif
 }
 

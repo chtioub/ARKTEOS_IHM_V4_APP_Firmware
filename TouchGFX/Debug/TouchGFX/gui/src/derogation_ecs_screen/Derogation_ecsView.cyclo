@@ -1,0 +1,28 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:146:14:touchgfx::BitmapId touchgfx::Bitmap::getId() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:525:10:void touchgfx::Drawable::setTouchable(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:58:10:bool touchgfx::ToggleButton::getState() const	1
+../TouchGFX/generated/gui_generated/include/gui_generated/derogation_ecs_screen/Derogation_ecsViewBase.hpp:51:26:FrontendApplication& Derogation_ecsViewBase::application()	1
+../TouchGFX/gui/include/gui/derogation_ecs_screen/Derogation_ecsView.hpp:11:13:Derogation_ecsView::~Derogation_ecsView()	1
+../TouchGFX/gui/include/gui/derogation_ecs_screen/Derogation_ecsView.hpp:11:13:virtual Derogation_ecsView::~Derogation_ecsView()	1
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:3:1:Derogation_ecsView::Derogation_ecsView()	3
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:51:6:virtual void Derogation_ecsView::setupScreen()	1
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:56:6:virtual void Derogation_ecsView::tearDownScreen()	1
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:61:6:virtual void Derogation_ecsView::bouton_legionel_non()	2
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:73:6:virtual void Derogation_ecsView::bouton_legionel_oui()	2
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:85:6:virtual void Derogation_ecsView::bouton_non_derog_ecs()	2
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:97:6:virtual void Derogation_ecsView::bouton_oui_derog_ecs()	2
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:109:6:virtual void Derogation_ecsView::bouton_valider()	4
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:121:6:virtual void Derogation_ecsView::changeConfig(S_CONFIG_IHM*)	3
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:137:6:virtual void Derogation_ecsView::changeStatutPAC(S_STATUT_PAC*)	2
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:148:6:virtual void Derogation_ecsView::changeStatutEther(S_CYC_ETHER_III*)	2
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:158:6:virtual void Derogation_ecsView::changeErreur(uint16_t)	2
+../TouchGFX/gui/src/derogation_ecs_screen/Derogation_ecsView.cpp:168:6:virtual void Derogation_ecsView::changeDate(S_DATE*)	3

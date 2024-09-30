@@ -158,11 +158,17 @@ void Code_numeriqueView::bouton_valider()
 		case CODE_ACCES_MAINT:
 			for (int i = 0; i< 4; i++)
 			{
-			touchgfx_printf("value %c\n",sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[i]);
-			touchgfx_printf("Buffer %c\n",u8BufferCode[i]);
+				touchgfx_printf("value %c\n",sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[i]);
+				touchgfx_printf("Buffer %c\n",u8BufferCode[i]);
+				touchgfx_printf("Longueur %d\n",u8Longueur);
 			}
+			u8Longueur = 4;
+			touchgfx_printf("Longueur %d\n",u8Longueur);
+
 			if(u8Longueur == 4 && memcmp(&sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[0], &u8BufferCode[0], 4) == 0)
 			{
+//			if(u8Longueur == 4 && memcmp(&sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[0], &sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[0], 4) == 0)
+//			{
 				application().gotoMaintenanceScreenNoTransition();
 			}
 			else modalWindow_code_inconnu.show();

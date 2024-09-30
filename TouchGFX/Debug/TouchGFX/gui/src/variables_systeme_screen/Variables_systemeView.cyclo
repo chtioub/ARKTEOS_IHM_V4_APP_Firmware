@@ -1,0 +1,37 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:525:10:void touchgfx::Drawable::setTouchable(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp:404:25:static touchgfx::Unicode::UnicodeChar* touchgfx::Unicode::snprintfFloat(UnicodeChar*, uint16_t, const char*, float)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:79:10:void touchgfx::TextAreaWithOneWildcard::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:98:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:142:10:void touchgfx::TextAreaWithTwoWildcards::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:161:10:void touchgfx::TextAreaWithTwoWildcards::setWildcard2(const touchgfx::Unicode::UnicodeChar*)	1
+../TouchGFX/generated/gui_generated/include/gui_generated/variables_systeme_screen/Variables_systemeViewBase.hpp:61:26:FrontendApplication& Variables_systemeViewBase::application()	1
+../TouchGFX/gui/include/gui/variables_systeme_screen/Variables_systemeView.hpp:11:13:Variables_systemeView::~Variables_systemeView()	1
+../TouchGFX/gui/include/gui/variables_systeme_screen/Variables_systemeView.hpp:11:13:virtual Variables_systemeView::~Variables_systemeView()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:3:1:Variables_systemeView::Variables_systemeView()	2
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:93:6:virtual void Variables_systemeView::setupScreen()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:98:6:virtual void Variables_systemeView::tearDownScreen()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:103:6:virtual void Variables_systemeView::bouton_primaire()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:134:6:virtual void Variables_systemeView::bouton_zones()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:165:6:virtual void Variables_systemeView::bouton_groupes()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:196:6:virtual void Variables_systemeView::bouton_options()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:227:6:virtual void Variables_systemeView::bouton_frigo()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:258:6:virtual void Variables_systemeView::bouton_config_in_out()	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:289:6:virtual void Variables_systemeView::bouton_retour()	2
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:298:6:virtual void Variables_systemeView::changeConfig(S_CONFIG_IHM*)	29
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:449:6:virtual void Variables_systemeView::changeStatutRegulEsclave(S_STATUT_REGUL_ESCLAVE*)	14
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:514:6:virtual void Variables_systemeView::changeStatutPrimaire(S_STATUT_PRIMAIRE*)	1
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:552:6:virtual void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI*)	2
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:571:6:virtual void Variables_systemeView::changeStatutPAC(S_STATUT_PAC*)	6
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:619:6:virtual void Variables_systemeView::changeDemandeFrigo(S_DEMANDE_FRIGO*)	14
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:677:6:virtual void Variables_systemeView::changeStatutEther(S_CYC_ETHER_III*)	2
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:687:6:virtual void Variables_systemeView::changeErreur(uint16_t)	2
+../TouchGFX/gui/src/variables_systeme_screen/Variables_systemeView.cpp:697:6:virtual void Variables_systemeView::changeDate(S_DATE*)	3

@@ -1,0 +1,61 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:91:5:touchgfx::colortype::colortype(uint32_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:114:5:touchgfx::colortype::operator uint32_t() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:413:10:void touchgfx::Drawable::setWidthHeight(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:537:10:bool touchgfx::Drawable::isVisible() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp:404:25:static touchgfx::Unicode::UnicodeChar* touchgfx::Unicode::snprintfFloat(UnicodeChar*, uint16_t, const char*, float)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../TouchGFX/gui/include/gui/containers/SwipeDetectContainer.hpp:15:18:virtual void SwipeDetectContainer::setAction(touchgfx::GenericCallback<short int>&)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:48:23:static touchgfx::LanguageId touchgfx::Texts::getLanguage()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:79:10:void touchgfx::TextAreaWithOneWildcard::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:98:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:70:18:touchgfx::CWRUtil::Q5::Q5(int)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:93:9:touchgfx::CWRUtil::Q5::operator int() const	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CanvasWidget.hpp:48:10:void touchgfx::CanvasWidget::setPainter(const touchgfx::AbstractPainter&)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterColor.hpp:58:18:virtual void touchgfx::AbstractPainterColor::setColor(touchgfx::colortype)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/PainterRGB565.hpp:47:18:virtual void touchgfx::PainterRGB565::setColor(touchgfx::colortype)	1
+../TouchGFX/generated/gui_generated/include/gui_generated/accueil_screen/AccueilViewBase.hpp:55:26:FrontendApplication& AccueilViewBase::application()	1
+../TouchGFX/gui/include/gui/accueil_screen/AccueilView.hpp:11:13:AccueilView::~AccueilView()	1
+../TouchGFX/gui/include/gui/accueil_screen/AccueilView.hpp:11:13:virtual AccueilView::~AccueilView()	1
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:3:1:AccueilView::AccueilView()	7
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:69:6:virtual void AccueilView::setupScreen()	1
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:74:6:virtual void AccueilView::tearDownScreen()	1
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:79:6:void AccueilView::swipeCallbackHandler(int16_t)	2
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:87:6:virtual void AccueilView::Timer_500ms()	41
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:245:6:void AccueilView::changeLogo(bool)	3
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:294:6:virtual void AccueilView::bouton_marche_arret()	2
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:304:6:virtual void AccueilView::bouton_zone_1()	4
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:322:6:virtual void AccueilView::bouton_zone_2()	1
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:328:6:virtual void AccueilView::changeModePac(bool)	1
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:334:6:virtual void AccueilView::changeStatutPrimaire(S_STATUT_PRIMAIRE*)	4
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:354:6:virtual void AccueilView::changeStatutPAC(S_STATUT_PAC*)	48
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:870:6:virtual void AccueilView::changeStatutEther(S_CYC_ETHER_III*)	2
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:880:6:virtual void AccueilView::changeStatutPiscine(S_STATUT_PISCINE*)	2
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:891:6:virtual void AccueilView::changeStatutCyclFrigo(S_CYCL_REG_FRI*)	8
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:924:6:virtual void AccueilView::changeStatutZx(uint8_t, S_STATUT_ZX*)	20
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:1021:6:virtual void AccueilView::changeStatutRegulExt(S_STATUT_REG_EXT*)	9
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:1064:6:virtual void AccueilView::changeStatutECS(S_STATUT_ECS*)	5
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:1092:6:virtual void AccueilView::changeErreur(uint16_t)	2
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:1102:6:virtual void AccueilView::changeConfig(S_CONFIG_IHM*)	70
+../TouchGFX/gui/src/accueil_screen/AccueilView.cpp:1469:6:virtual void AccueilView::changeDate(S_DATE*)	20
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:100:10:void touchgfx::Circle::setCenter(T, T) [with T = int]	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:195:10:void touchgfx::Circle::setArc(T, T) [with T = int]	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:134:7:constexpr touchgfx::GenericCallback<short int>::GenericCallback()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:373:5:touchgfx::Callback<dest_type, T1, void, void>::Callback(dest_type*, void (dest_type::*)(T1)) [with dest_type = AccueilView; T1 = short int]	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:162:10:void touchgfx::Circle::setRadius(T) [with T = int]	2
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:374:10:void touchgfx::Circle::setLineWidth(T) [with T = int]	2
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:100:10:void touchgfx::Circle::setCenter(T, T) [with T = float]	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Circle.hpp:162:10:void touchgfx::Circle::setRadius(T) [with T = float]	2
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = short int]	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:138:13:touchgfx::GenericCallback<T1, void, void>::~GenericCallback() [with T1 = short int]	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<AccueilView, short int>::~Callback()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<AccueilView, short int>::~Callback()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = AccueilView; T1 = short int]	2
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = AccueilView; T1 = short int]	5

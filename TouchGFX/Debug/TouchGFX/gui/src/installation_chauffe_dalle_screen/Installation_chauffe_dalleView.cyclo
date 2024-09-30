@@ -1,0 +1,36 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:79:10:void touchgfx::TextAreaWithOneWildcard::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:98:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const touchgfx::Unicode::UnicodeChar*)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/CWRUtil.hpp:70:18:touchgfx::CWRUtil::Q5::Q5(int)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Slider.hpp:273:9:int touchgfx::Slider::getValue()	1
+../TouchGFX/generated/gui_generated/include/gui_generated/installation_chauffe_dalle_screen/Installation_chauffe_dalleViewBase.hpp:76:26:FrontendApplication& Installation_chauffe_dalleViewBase::application()	1
+../TouchGFX/gui/include/gui/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.hpp:11:13:Installation_chauffe_dalleView::~Installation_chauffe_dalleView()	1
+../TouchGFX/gui/include/gui/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.hpp:11:13:virtual Installation_chauffe_dalleView::~Installation_chauffe_dalleView()	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:3:1:Installation_chauffe_dalleView::Installation_chauffe_dalleView()	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:59:6:virtual void Installation_chauffe_dalleView::setupScreen()	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:64:6:virtual void Installation_chauffe_dalleView::tearDownScreen()	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:69:6:virtual void Installation_chauffe_dalleView::slider_j1(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:82:6:virtual void Installation_chauffe_dalleView::slider_j2(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:100:6:virtual void Installation_chauffe_dalleView::slider_j3(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:118:6:virtual void Installation_chauffe_dalleView::slider_j4(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:136:6:virtual void Installation_chauffe_dalleView::slider_j5(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:154:6:virtual void Installation_chauffe_dalleView::slider_j6(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:172:6:virtual void Installation_chauffe_dalleView::slider_j7(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:190:6:virtual void Installation_chauffe_dalleView::slider_j8(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:208:6:virtual void Installation_chauffe_dalleView::slider_j9(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:226:6:virtual void Installation_chauffe_dalleView::slider_j10(int)	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:239:6:virtual void Installation_chauffe_dalleView::bouton_valider()	1
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:256:6:virtual void Installation_chauffe_dalleView::changeStatutPAC(S_STATUT_PAC*)	2
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:267:6:virtual void Installation_chauffe_dalleView::changeStatutEther(S_CYC_ETHER_III*)	2
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:277:6:virtual void Installation_chauffe_dalleView::changeErreur(uint16_t)	2
+../TouchGFX/gui/src/installation_chauffe_dalle_screen/Installation_chauffe_dalleView.cpp:287:6:virtual void Installation_chauffe_dalleView::changeDate(S_DATE*)	3
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:95:10:void touchgfx::Line::setStart(T, T) [with T = int]	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:171:10:void touchgfx::Line::setEnd(T, T) [with T = int]	1

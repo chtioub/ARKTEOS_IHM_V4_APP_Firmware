@@ -1,0 +1,21 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:246:22:const touchgfx::TypedText& touchgfx::TextArea::getTypedText() const	1
+../TouchGFX/generated/gui_generated/include/gui_generated/usine_config_additionnelle_screen/Usine_config_additionnelleViewBase.hpp:39:26:FrontendApplication& Usine_config_additionnelleViewBase::application()	1
+../TouchGFX/gui/include/gui/usine_config_additionnelle_screen/Usine_config_additionnelleView.hpp:11:13:Usine_config_additionnelleView::~Usine_config_additionnelleView()	1
+../TouchGFX/gui/include/gui/usine_config_additionnelle_screen/Usine_config_additionnelleView.hpp:11:13:virtual Usine_config_additionnelleView::~Usine_config_additionnelleView()	1
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:3:1:Usine_config_additionnelleView::Usine_config_additionnelleView()	2
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:25:6:virtual void Usine_config_additionnelleView::setupScreen()	1
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:30:6:virtual void Usine_config_additionnelleView::tearDownScreen()	1
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:35:6:virtual void Usine_config_additionnelleView::bouton_module_2_zones()	2
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:45:6:virtual void Usine_config_additionnelleView::bouton_valider()	3
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:59:6:virtual void Usine_config_additionnelleView::changeStatutPAC(S_STATUT_PAC*)	2
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:70:6:virtual void Usine_config_additionnelleView::changeStatutEther(S_CYC_ETHER_III*)	2
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:80:6:virtual void Usine_config_additionnelleView::changeErreur(uint16_t)	2
+../TouchGFX/gui/src/usine_config_additionnelle_screen/Usine_config_additionnelleView.cpp:90:6:virtual void Usine_config_additionnelleView::changeDate(S_DATE*)	3

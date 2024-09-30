@@ -36,6 +36,21 @@ Installation_hydraulique_config_zoneView::Installation_hydraulique_config_zoneVi
 		}
 		buttonWithLabel_gestion_circulateur.setVisible(false);
 	}
+	else if(sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2 && sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES)
+	{
+		if(sConfig_Hydrau_temp.u8NumZone == 1)
+		{
+//			container_type_emetteur.setVisible(false);
+//			buttonWithLabel_courbe_loi_eau.setVisible(false);
+			if (sConfig_IHM.sParam_Zx[0].TypeEmmetteur == PLANCHER)
+			{
+				sConfig_Hydrau_temp.sParamZx.TypeEmmetteur = PLANCHER;
+				button_droite_type_emetteur.setVisible(false);
+				button_gauche_type_emetteur.setVisible(false);
+			}
+		}
+	}
+	else buttonWithLabel_gestion_circulateur.setVisible(true);
 	//
 	affichage_type_emetteur();
 	affichage_type_sonde();

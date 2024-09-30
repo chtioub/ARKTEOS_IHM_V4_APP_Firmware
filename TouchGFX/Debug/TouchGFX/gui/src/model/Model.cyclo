@@ -1,0 +1,53 @@
+../TouchGFX/gui/src/model/Model.cpp:12:1:Model::Model()	19
+../TouchGFX/gui/src/model/Model.cpp:206:6:void Model::tick()	33
+../TouchGFX/gui/src/model/Model.cpp:371:6:void Model::enterVeille()	1
+../TouchGFX/gui/src/model/Model.cpp:380:6:void Model::editLuminosite(uint8_t)	1
+../TouchGFX/gui/src/model/Model.cpp:387:6:void Model::exitVeille()	2
+../TouchGFX/gui/src/model/Model.cpp:402:6:void Model::c_user_param()	2
+../TouchGFX/gui/src/model/Model.cpp:431:6:void Model::c_user_vacances()	3
+../TouchGFX/gui/src/model/Model.cpp:465:6:void Model::c_user_ecs()	2
+../TouchGFX/gui/src/model/Model.cpp:492:6:void Model::c_user_zx(uint8_t)	2
+../TouchGFX/gui/src/model/Model.cpp:518:6:void Model::c_user_zx_all()	2
+../TouchGFX/gui/src/model/Model.cpp:545:6:void Model::c_user_reg_ext()	2
+../TouchGFX/gui/src/model/Model.cpp:571:6:void Model::c_user_piscine()	2
+../TouchGFX/gui/src/model/Model.cpp:597:6:void Model::c_user_date()	2
+../TouchGFX/gui/src/model/Model.cpp:623:6:void Model::c_ener_raz()	2
+../TouchGFX/gui/src/model/Model.cpp:647:6:void Model::c_ener_cumul_prod()	2
+../TouchGFX/gui/src/model/Model.cpp:671:6:void Model::c_ener_cumul_conso()	2
+../TouchGFX/gui/src/model/Model.cpp:695:6:void Model::c_ener_histo_12m_conso()	2
+../TouchGFX/gui/src/model/Model.cpp:719:6:void Model::c_ener_histo_24j_conso()	2
+../TouchGFX/gui/src/model/Model.cpp:743:6:void Model::c_ener_histo_24h_conso()	2
+../TouchGFX/gui/src/model/Model.cpp:767:6:void Model::c_ener_histo_12m_prod()	2
+../TouchGFX/gui/src/model/Model.cpp:791:6:void Model::c_ener_histo_24j_prod()	2
+../TouchGFX/gui/src/model/Model.cpp:815:6:void Model::c_ener_histo_24h_prod()	2
+../TouchGFX/gui/src/model/Model.cpp:839:6:void Model::c_recup_config(uint8_t)	5
+../TouchGFX/gui/src/model/Model.cpp:875:6:void Model::c_prog_ecs(bool)	4
+../TouchGFX/gui/src/model/Model.cpp:908:6:void Model::c_prog_option(bool)	4
+../TouchGFX/gui/src/model/Model.cpp:941:6:void Model::c_prog_piscine(bool)	4
+../TouchGFX/gui/src/model/Model.cpp:974:6:void Model::c_prog_zone_chaud(uint8_t, bool)	4
+../TouchGFX/gui/src/model/Model.cpp:1007:6:void Model::c_prog_zone_froid(uint8_t, bool)	4
+../TouchGFX/gui/src/model/Model.cpp:1040:6:void Model::c_prog_reg_ext_chaud(bool)	4
+../TouchGFX/gui/src/model/Model.cpp:1073:6:void Model::c_prog_reg_ext_froid(bool)	4
+../TouchGFX/gui/src/model/Model.cpp:1106:6:void Model::c_install_raz_config()	2
+../TouchGFX/gui/src/model/Model.cpp:1130:6:void Model::c_install_config_pac()	2
+../TouchGFX/gui/src/model/Model.cpp:1157:6:void Model::c_install_piscine()	2
+../TouchGFX/gui/src/model/Model.cpp:1184:6:void Model::c_install_ecs()	2
+../TouchGFX/gui/src/model/Model.cpp:1211:6:void Model::c_install_param()	3
+../TouchGFX/gui/src/model/Model.cpp:1242:6:void Model::c_install_raz_histo_err()	2
+../TouchGFX/gui/src/model/Model.cpp:1266:6:void Model::c_install_reg_ext()	2
+../TouchGFX/gui/src/model/Model.cpp:1293:6:void Model::c_install_zx(uint8_t)	2
+../TouchGFX/gui/src/model/Model.cpp:1320:6:void Model::c_install_th_association(uint8_t)	2
+../TouchGFX/gui/src/model/Model.cpp:1344:6:void Model::c_install_th_dissociation(uint8_t)	2
+../TouchGFX/gui/src/model/Model.cpp:1368:6:void Model::c_usine_param()	2
+../TouchGFX/gui/src/model/Model.cpp:1397:6:void Model::c_usine_password()	2
+../TouchGFX/gui/src/model/Model.cpp:1424:6:void Model::c_usine_phoenix(int)	2
+../TouchGFX/gui/src/model/Model.cpp:1451:6:void Model::c_usine_raz_energie()	2
+../TouchGFX/gui/src/model/Model.cpp:1475:6:void Model::c_usine_raz_config()	2
+../TouchGFX/gui/src/model/Model.cpp:1499:6:void Model::c_sav_histo_err()	2
+../TouchGFX/gui/src/model/Model.cpp:1523:6:void Model::c_sav_param()	2
+../TouchGFX/gui/src/model/Model.cpp:1552:6:void Model::c_sav_shunt_tempo()	2
+../TouchGFX/gui/src/model/Model.cpp:1579:6:void Model::c_sav_raz_tps_fonct(uint8_t)	2
+../TouchGFX/gui/src/model/Model.cpp:1603:6:void Model::c_sav_raz_soft_flash()	2
+../TouchGFX/gui/src/model/Model.cpp:1627:6:void Model::c_sav_raz_log()	2
+../TouchGFX/gui/src/model/Model.cpp:1651:6:void Model::c_restart()	2
+../TouchGFX/gui/src/model/Model.cpp:1675:10:uint16_t Model::computeCRC(uint8_t*, uint16_t)	4

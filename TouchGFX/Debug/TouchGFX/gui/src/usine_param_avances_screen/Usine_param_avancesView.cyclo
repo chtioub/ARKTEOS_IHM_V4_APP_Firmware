@@ -1,0 +1,24 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
+../TouchGFX/generated/gui_generated/include/gui_generated/usine_param_avances_screen/Usine_param_avancesViewBase.hpp:48:26:FrontendApplication& Usine_param_avancesViewBase::application()	1
+../TouchGFX/gui/include/gui/usine_param_avances_screen/Usine_param_avancesView.hpp:11:13:Usine_param_avancesView::~Usine_param_avancesView()	1
+../TouchGFX/gui/include/gui/usine_param_avances_screen/Usine_param_avancesView.hpp:11:13:virtual Usine_param_avancesView::~Usine_param_avancesView()	1
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:3:1:Usine_param_avancesView::Usine_param_avancesView()	3
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:24:6:virtual void Usine_param_avancesView::setupScreen()	1
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:29:6:virtual void Usine_param_avancesView::tearDownScreen()	1
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:34:6:virtual void Usine_param_avancesView::bouton_redemarrer()	1
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:40:6:virtual void Usine_param_avancesView::bouton_raz_soft()	1
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:46:6:virtual void Usine_param_avancesView::bouton_raz_log_ether()	1
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:52:6:virtual void Usine_param_avancesView::bouton_raz_tps_fonct()	1
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:58:6:virtual void Usine_param_avancesView::bouton_raz_energies()	1
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:64:6:virtual void Usine_param_avancesView::changeStatutPAC(S_STATUT_PAC*)	2
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:75:6:virtual void Usine_param_avancesView::changeStatutEther(S_CYC_ETHER_III*)	2
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:85:6:virtual void Usine_param_avancesView::changeErreur(uint16_t)	2
+../TouchGFX/gui/src/usine_param_avances_screen/Usine_param_avancesView.cpp:95:6:virtual void Usine_param_avancesView::changeDate(S_DATE*)	3

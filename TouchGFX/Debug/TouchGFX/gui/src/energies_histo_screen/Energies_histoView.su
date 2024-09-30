@@ -1,0 +1,43 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:91:5:touchgfx::colortype::colortype(uint32_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:146:14:touchgfx::BitmapId touchgfx::Bitmap::getId() const	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:283:13:int16_t touchgfx::Drawable::getY() const	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:303:13:int16_t touchgfx::Drawable::getHeight() const	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:525:10:void touchgfx::Drawable::setTouchable(bool)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:62:10:void touchgfx::Box::setColor(touchgfx::colortype)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:79:10:void touchgfx::TextAreaWithOneWildcard::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:98:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const touchgfx::Unicode::UnicodeChar*)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ToggleButton.hpp:58:10:bool touchgfx::ToggleButton::getState() const	24	static
+../TouchGFX/gui/include/gui/energies_histo_screen/Energies_histoView.hpp:11:13:Energies_histoView::~Energies_histoView()	16	static
+../TouchGFX/gui/include/gui/energies_histo_screen/Energies_histoView.hpp:11:13:virtual Energies_histoView::~Energies_histoView()	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:4:1:Energies_histoView::Energies_histoView()	48	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:37:6:virtual void Energies_histoView::setupScreen()	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:42:6:virtual void Energies_histoView::tearDownScreen()	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:47:6:virtual void Energies_histoView::bouton_pac()	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:83:6:virtual void Energies_histoView::bouton_chaud()	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:119:6:virtual void Energies_histoView::bouton_froid()	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:154:6:virtual void Energies_histoView::bouton_ecs()	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:189:6:virtual void Energies_histoView::bouton_piscine()	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:224:6:virtual void Energies_histoView::bouton_12mois()	40	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:252:6:virtual void Energies_histoView::bouton_24jours()	40	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:280:6:virtual void Energies_histoView::bouton_24heures()	40	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:308:6:void Energies_histoView::majbarres_mois()	128	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:518:6:void Energies_histoView::mois(uint8_t)	128	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:607:6:void Energies_histoView::majbarres_jours_heures(bool)	224	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:1006:6:void Energies_histoView::jours(uint8_t, uint8_t, uint8_t)	24	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:1101:6:void Energies_histoView::heures(uint8_t)	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:1180:6:void Energies_histoView::couleur_barres(uint32_t)	168	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:1256:6:virtual void Energies_histoView::changeStatutPAC(S_STATUT_PAC*)	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:1267:6:virtual void Energies_histoView::changeStatutEther(S_CYC_ETHER_III*)	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:1277:6:virtual void Energies_histoView::changeErreur(uint16_t)	16	static
+../TouchGFX/gui/src/energies_histo_screen/Energies_histoView.cpp:1287:6:virtual void Energies_histoView::changeDate(S_DATE*)	24	static

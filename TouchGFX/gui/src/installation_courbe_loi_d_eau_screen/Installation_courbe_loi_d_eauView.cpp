@@ -63,7 +63,7 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 			}
 			else
 			{
-				u16LoiDeau_MAX[i] = fmax(u16TermoMAX, sConfig_IHM.sParam_Zx[0].u8LoiDeau[i] * 10);
+				u16LoiDeau_MAX[i] = fmin(sConfig_IHM.sParam_Zx[0].u8LoiDeau[i] * 10, u16TermoMAX);
 				u16LoiDeau_MIN[i] = 200;
 			}
 		}
@@ -83,12 +83,13 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 			u16LoiDeau[i] = u16LoiDeau_MIN[i];
 		}
 	}
-	slider_text_m25_deg.setValue((int) u16LoiDeau[5]);
-	slider_text_m10_deg.setValue((int) u16LoiDeau[4]);
-	slider_text_0_deg.setValue((int) u16LoiDeau[3]);
-	slider_text_10_deg.setValue((int) u16LoiDeau[2]);
-	slider_text_15_deg.setValue((int) u16LoiDeau[1]);
-	slider_text_20_deg.setValue((int) u16LoiDeau[0]);
+
+//	slider_text_m25_deg.setValue((int) u16LoiDeau[5]);
+//	slider_text_m10_deg.setValue((int) u16LoiDeau[4]);
+//	slider_text_0_deg.setValue((int) u16LoiDeau[3]);
+//	slider_text_10_deg.setValue((int) u16LoiDeau[2]);
+//	slider_text_15_deg.setValue((int) u16LoiDeau[1]);
+//	slider_text_20_deg.setValue((int) u16LoiDeau[0]);
 }
 
 void Installation_courbe_loi_d_eauView::setupScreen()

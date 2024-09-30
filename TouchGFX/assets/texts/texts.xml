@@ -4489,7 +4489,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_regul_2_zones_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">2 zones</Translation>
+        <Translation Language="FR">Ballon tampon 2 zones</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>

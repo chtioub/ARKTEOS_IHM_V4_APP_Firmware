@@ -1,0 +1,9 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
+../TouchGFX/gui/include/gui/maintenance_fct_avances_screen/Maintenance_fct_avancesView.hpp:11:13:Maintenance_fct_avancesView::~Maintenance_fct_avancesView()	16	static
+../TouchGFX/gui/include/gui/maintenance_fct_avances_screen/Maintenance_fct_avancesView.hpp:11:13:virtual Maintenance_fct_avancesView::~Maintenance_fct_avancesView()	16	static
+../TouchGFX/gui/src/maintenance_fct_avances_screen/Maintenance_fct_avancesView.cpp:3:1:Maintenance_fct_avancesView::Maintenance_fct_avancesView()	16	static
+../TouchGFX/gui/src/maintenance_fct_avances_screen/Maintenance_fct_avancesView.cpp:8:6:virtual void Maintenance_fct_avancesView::setupScreen()	16	static
+../TouchGFX/gui/src/maintenance_fct_avances_screen/Maintenance_fct_avancesView.cpp:13:6:virtual void Maintenance_fct_avancesView::tearDownScreen()	16	static

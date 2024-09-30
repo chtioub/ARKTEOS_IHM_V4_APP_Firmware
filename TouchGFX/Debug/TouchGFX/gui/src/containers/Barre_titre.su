@@ -1,0 +1,31 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:315:18:virtual void touchgfx::Drawable::setX(int16_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:327:18:virtual void touchgfx::Drawable::setY(int16_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:356:18:virtual void touchgfx::Drawable::setWidth(int16_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:368:18:virtual void touchgfx::Drawable::setHeight(int16_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:378:18:virtual void touchgfx::Drawable::childGeometryChanged()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:389:18:virtual void touchgfx::Drawable::handleClickEvent(const touchgfx::ClickEvent&)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:401:18:virtual void touchgfx::Drawable::handleGestureEvent(const touchgfx::GestureEvent&)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:490:18:virtual void touchgfx::Drawable::handleDragEvent(const touchgfx::DragEvent&)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:515:10:void touchgfx::Drawable::setVisible(bool)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:59:5:touchgfx::TypedText::TypedText(touchgfx::TypedTextId)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:79:10:void touchgfx::TextAreaWithOneWildcard::setWildcard1(const touchgfx::Unicode::UnicodeChar*)	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:98:10:void touchgfx::TextAreaWithOneWildcard::setWildcard(const touchgfx::Unicode::UnicodeChar*)	16	static
+../TouchGFX/generated/gui_generated/include/gui_generated/containers/Barre_titreBase.hpp:23:18:virtual void Barre_titreBase::fonctionRetour()	16	static
+../TouchGFX/gui/include/gui/containers/Barre_titre.hpp:10:13:Barre_titre::~Barre_titre()	16	static
+../TouchGFX/gui/include/gui/containers/Barre_titre.hpp:10:13:virtual Barre_titre::~Barre_titre()	16	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:5:1:Barre_titre::Barre_titre()	16	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:10:6:virtual void Barre_titre::initialize()	16	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:15:6:void Barre_titre::connexionDistante(bool)	16	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:21:6:void Barre_titre::recupConfig(bool)	16	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:27:6:void Barre_titre::titre(touchgfx::Unicode::UnicodeChar*)	32	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:34:6:void Barre_titre::heure(touchgfx::Unicode::UnicodeChar*)	32	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:41:6:void Barre_titre::date(touchgfx::Unicode::UnicodeChar*)	32	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:48:6:void Barre_titre::sansRetour()	16	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:54:6:void Barre_titre::sansAccueil()	16	static
+../TouchGFX/gui/src/containers/Barre_titre.cpp:60:6:void Barre_titre::erreur(uint16_t)	16	static

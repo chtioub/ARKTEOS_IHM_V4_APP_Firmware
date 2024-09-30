@@ -1,0 +1,20 @@
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:115:18:virtual void touchgfx::Screen::tearDownScreen()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	16	static
+../TouchGFX/generated/gui_generated/include/gui_generated/veille_screen/VeilleViewBase.hpp:30:18:virtual void VeilleViewBase::Timer_500ms()	16	static
+../TouchGFX/generated/gui_generated/include/gui_generated/veille_screen/VeilleViewBase.hpp:36:26:FrontendApplication& VeilleViewBase::application()	16	static
+../TouchGFX/gui/include/gui/veille_screen/VeilleView.hpp:11:13:VeilleView::~VeilleView()	16	static
+../TouchGFX/gui/include/gui/veille_screen/VeilleView.hpp:11:13:virtual VeilleView::~VeilleView()	16	static
+../TouchGFX/gui/src/veille_screen/VeilleView.cpp:3:1:VeilleView::VeilleView()	24	static
+../TouchGFX/gui/src/veille_screen/VeilleView.cpp:9:6:virtual void VeilleView::setupScreen()	16	static
+../TouchGFX/gui/src/veille_screen/VeilleView.cpp:17:6:virtual void VeilleView::tearDownScreen()	16	static
+../TouchGFX/gui/src/veille_screen/VeilleView.cpp:23:6:void VeilleView::BackgroundClickHandler(const touchgfx::Box&, const touchgfx::ClickEvent&)	24	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:90:7:constexpr touchgfx::GenericCallback<const touchgfx::Box&, const touchgfx::ClickEvent&, void>::GenericCallback()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:306:5:touchgfx::Callback<dest_type, T1, T2, void>::Callback(dest_type*, void (dest_type::*)(T1, T2)) [with dest_type = VeilleView; T1 = const touchgfx::Box&; T2 = const touchgfx::ClickEvent&]	24	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/ClickListener.hpp:64:10:void touchgfx::ClickListener<T>::setClickAction(touchgfx::GenericCallback<const T&, const touchgfx::ClickEvent&>&) [with T = touchgfx::Box]	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:94:13:touchgfx::GenericCallback<T1, T2, void>::~GenericCallback() [with T1 = const touchgfx::Box&; T2 = const touchgfx::ClickEvent&]	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:94:13:touchgfx::GenericCallback<T1, T2, void>::~GenericCallback() [with T1 = const touchgfx::Box&; T2 = const touchgfx::ClickEvent&]	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:290:8:touchgfx::Callback<VeilleView, const touchgfx::Box&, const touchgfx::ClickEvent&>::~Callback()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:290:8:virtual touchgfx::Callback<VeilleView, const touchgfx::Box&, const touchgfx::ClickEvent&>::~Callback()	16	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:318:18:void touchgfx::Callback<dest_type, T1, T2, void>::execute(T1, T2) [with dest_type = VeilleView; T1 = const touchgfx::Box&; T2 = const touchgfx::ClickEvent&]	24	static
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:328:18:bool touchgfx::Callback<dest_type, T1, T2, void>::isValid() const [with dest_type = VeilleView; T1 = const touchgfx::Box&; T2 = const touchgfx::ClickEvent&]	16	static
