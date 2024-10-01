@@ -43697,7 +43697,7 @@
               {
                 "Type": "Button",
                 "Name": "button_valider",
-                "X": 862,
+                "X": 863,
                 "Y": 460,
                 "Width": 79,
                 "Height": 55,
@@ -49887,7 +49887,7 @@
                             "Type": "ToggleButton",
                             "Name": "toggleButton_zone_2_on_off_regul_directe",
                             "X": 233,
-                            "Y": 75,
+                            "Y": 74,
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
@@ -49896,7 +49896,7 @@
                           {
                             "Type": "ToggleButton",
                             "Name": "toggleButton_zone_1_on_off_regul_directe",
-                            "Y": 76,
+                            "Y": 74,
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
@@ -50233,6 +50233,7 @@
                     "Y": 77,
                     "Width": 447,
                     "Height": 52,
+                    "Visible": false,
                     "TextId": "text_regul_plancher_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
@@ -50613,6 +50614,17 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_hydraulique_config_zone"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
             }
           }
         ]
@@ -57419,7 +57431,7 @@
                 "IndicatorMax": 328,
                 "ValueMax": 800,
                 "ValueMin": 200,
-                "InitValue": 800
+                "InitValue": 200
               },
               {
                 "Type": "Slider",
@@ -57436,7 +57448,7 @@
                 "IndicatorMax": 328,
                 "ValueMax": 800,
                 "ValueMin": 200,
-                "InitValue": 800
+                "InitValue": 200
               },
               {
                 "Type": "Slider",
@@ -57453,7 +57465,7 @@
                 "IndicatorMax": 328,
                 "ValueMax": 800,
                 "ValueMin": 200,
-                "InitValue": 800
+                "InitValue": 200
               },
               {
                 "Type": "Slider",
@@ -57470,7 +57482,7 @@
                 "IndicatorMax": 328,
                 "ValueMax": 800,
                 "ValueMin": 200,
-                "InitValue": 800
+                "InitValue": 200
               },
               {
                 "Type": "Slider",
@@ -57487,7 +57499,7 @@
                 "IndicatorMax": 328,
                 "ValueMax": 800,
                 "ValueMin": 200,
-                "InitValue": 800
+                "InitValue": 200
               },
               {
                 "Type": "Slider",
@@ -57504,7 +57516,7 @@
                 "IndicatorMax": 328,
                 "ValueMax": 800,
                 "ValueMin": 200,
-                "InitValue": 800
+                "InitValue": 200
               },
               {
                 "Type": "Image",

@@ -10,6 +10,7 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 	u16ErreurAffichee = 0;
 	changeDate(&sDate);
 	bConnexionDistance = false;
+	changeConfig(&sConfig_IHM);//SER
 	changeErreur(u16ErreurEncours);
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
@@ -27,7 +28,7 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 	{
 		for(int i = 0; i < 6; i++)
 		{
-			u16LoiDeau[i] = sConfig_IHM.sParam_RegulExt.u8LoiDeau[i] * 10;
+			u16LoiDeau[i] = (uint16_t)sConfig_IHM.sParam_RegulExt.u8LoiDeau[i] * 10;
 		}
 		// Titre
 	    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
@@ -37,7 +38,7 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 	{
 		for(int i = 0; i < 6; i++)
 		{
-			u16LoiDeau[i] = sConfig_Hydrau_temp.sParamZx.u8LoiDeau[i] * 10;
+			u16LoiDeau[i] = (uint16_t)sConfig_Hydrau_temp.sParamZx.u8LoiDeau[i] * 10;
 		}
 		// Titre
 	    Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
@@ -46,7 +47,7 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 	    Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
 	    barre_titre.titre(textAreaBuffer_Titre);
 	}
-	//
+
 	for(int i = 0; i < 6; i++)
 	{
 //		if(u16LoiDeau[i] > u16TermoMAX)
@@ -59,11 +60,11 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 			if(sConfig_Hydrau_temp.u8NumZone == 0)
 			{
 				u16LoiDeau_MAX[i] = fmax(u16TermoMAX, 0);
-				u16LoiDeau_MIN[i] = sConfig_IHM.sParam_Zx[1].u8LoiDeau[i] * 10;
+				u16LoiDeau_MIN[i] = (uint16_t)sConfig_IHM.sParam_Zx[1].u8LoiDeau[i] * 10;
 			}
 			else
 			{
-				u16LoiDeau_MAX[i] = fmin(sConfig_IHM.sParam_Zx[0].u8LoiDeau[i] * 10, u16TermoMAX);
+				u16LoiDeau_MAX[i] = fmin(u16TermoMAX, (uint16_t)sConfig_IHM.sParam_Zx[0].u8LoiDeau[i] * 10);
 				u16LoiDeau_MIN[i] = 200;
 			}
 		}
@@ -84,12 +85,12 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 		}
 	}
 
-//	slider_text_m25_deg.setValue((int) u16LoiDeau[5]);
-//	slider_text_m10_deg.setValue((int) u16LoiDeau[4]);
-//	slider_text_0_deg.setValue((int) u16LoiDeau[3]);
-//	slider_text_10_deg.setValue((int) u16LoiDeau[2]);
-//	slider_text_15_deg.setValue((int) u16LoiDeau[1]);
-//	slider_text_20_deg.setValue((int) u16LoiDeau[0]);
+	slider_text_m25_deg.setValue((int) u16LoiDeau[5]);
+	slider_text_m10_deg.setValue((int) u16LoiDeau[4]);
+	slider_text_0_deg.setValue((int) u16LoiDeau[3]);
+	slider_text_10_deg.setValue((int) u16LoiDeau[2]);
+	slider_text_15_deg.setValue((int) u16LoiDeau[1]);
+	slider_text_20_deg.setValue((int) u16LoiDeau[0]);
 }
 
 void Installation_courbe_loi_d_eauView::setupScreen()
@@ -829,6 +830,11 @@ void Installation_courbe_loi_d_eauView::pave_numerique(bool bPaveNum)
 	button_loi_eau_m10.invalidate();
 	button_loi_eau_m25.setTouchable(!bPaveNum);
 	button_loi_eau_m25.invalidate();
+}
+
+void Installation_courbe_loi_d_eauView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
+{
+	;
 }
 
 void Installation_courbe_loi_d_eauView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

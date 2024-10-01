@@ -40,6 +40,8 @@ public:
     void bouton_valider_pave_num();
     void pave_numerique(bool bPaveNum);
 
+
+    virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);//SER
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);

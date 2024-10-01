@@ -4,12 +4,14 @@
 
 Installation_hydrauliqueView::Installation_hydrauliqueView()
 {
+	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));//SER
 	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
 	sDate_old.Date = 0;
 	u16ErreurAffichee = 0;
 	changeDate(&sDate);
 	bConnexionDistance = false;
 	changeErreur(u16ErreurEncours);
+	changeConfig(&sConfig_IHM);//SER
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
@@ -407,10 +409,64 @@ void Installation_hydrauliqueView::affichage_zones()
 	}
 }
 
-void Installation_hydrauliqueView::bouton_valider()
+void Installation_hydrauliqueView::bouton_valider() //SER
 {
-
+//	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));//SER
+//	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
+//	sConfig_Hydrau_temp
+	sConfig_IHM.sParam_PAC.TypeRegul = sConfig_Hydrau_temp.u8TypeRegul;
+	sConfig_IHM.sOption_PAC.sZone = sConfig_Hydrau_temp.sZones;
+	presenter->c_install_param();
+//	if(bCartePhoenix == false)
+//	{
+//		// Vitesse circulateur
+//		sConfig_IHM.sParam_PAC.eGestionCirculateurPrimaire = u8VitesseCirculateur;
+//		// Marche forcée
+//		if(toggleButton_oui_oui_non_marche_forcee.getState())
+//		{
+//			sConfig_IHM.sParam_PAC.bCirculateurPrimaireForce = 1;
+//		}
+//		else sConfig_IHM.sParam_PAC.bCirculateurPrimaireForce = 0;
+//		// Type circulateur
+//		if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT).getId())
+//		{
+//			sConfig_IHM.sParam_PAC.TypeCirculateur = TYPE_RELAIS;
+//		}
+//		else sConfig_IHM.sParam_PAC.TypeCirculateur = TYPE_GRUNDFOS;
+//		//
+//		presenter->c_install_param();
+//	}
+//	else
+//	{
+//		if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_PWM_CENTRE_DEFAUT).getId())
+//		{
+//			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = TYPE_GRUNDFOS;
+//		}
+//		else if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_0_10V_CENTRE_DEFAUT).getId())
+//		{
+//			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = TYPE_WILO;
+//		}
+//		else if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT).getId())
+//		{
+//			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = TYPE_RELAIS;
+//		}
+//		//
+//		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = u8VitesseCirculateur;
+//		// Marche forcée
+//		if(toggleButton_oui_oui_non_marche_forcee.getState())
+//		{
+//			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bCirculateurPrimaireForce = 1;
+//		}
+//		else sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bCirculateurPrimaireForce = 0;
+//		//
+//		presenter->c_usine_phoenix(0);
+//	}
 	application().gotoInstallationScreenNoTransition();
+}
+
+void Installation_hydrauliqueView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
+{
+	;
 }
 
 void Installation_hydrauliqueView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
