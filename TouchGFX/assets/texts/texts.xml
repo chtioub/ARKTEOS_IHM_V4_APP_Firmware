@@ -8,6 +8,36 @@
     <Language Id="DE" />
   </Languages>
   <Texts>
+    <TextGroup Id="Installation_repartition_PW_Zone">
+      <Text Id="text_centre_titre_repartition_puissance_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Répartition de la puissance entre les zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_part_volume_zone2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">50</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_part_volume_zone1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">50</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_part_valume_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;%</Translation>
+        <Translation Language="PT">&lt;Value&gt;%</Translation>
+        <Translation Language="NL">&lt;Value&gt;%</Translation>
+        <Translation Language="DE">&lt;Value&gt;%</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Erreurs">
       <Text Id="text_err_202_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Erreur : Sonde température TEV_OUT</Translation>
@@ -638,6 +668,27 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_part_volume_zone2" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="GB">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="PT">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="NL">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="DE">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+      </Text>
+      <Text Id="text_part_volume_zone1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Part du volume de la Zone 1 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="GB">text_part_volume_zone1</Translation>
+        <Translation Language="PT" Alignment="Right">text_part_volume_zone1</Translation>
+        <Translation Language="NL">text_part_volume_zone1</Translation>
+        <Translation Language="DE">text_part_volume_zone1</Translation>
+      </Text>
+      <Text Id="ResourceId1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_hz_comp_droite" Alignment="Right" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;Hz</Translation>
         <Translation Language="GB">&lt;Value&gt;Hz</Translation>

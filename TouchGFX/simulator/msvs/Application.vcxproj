@@ -250,6 +250,9 @@
     <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_repartition_PW_zone_screen\installation_hydraulique_repartition_PW_zonePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_repartition_PW_zone_screen\installation_hydraulique_repartition_PW_zoneView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_repartition_pw_zone_screen\Installation_hydraulique_repartition_PW_zoneViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -629,6 +632,9 @@
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_repartition_PW_zone_screen\Installation_hydraulique_repartition_PW_zonePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_repartition_PW_zone_screen\Installation_hydraulique_repartition_PW_zoneView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_repartition_pw_zone_screen\Installation_hydraulique_repartition_PW_zoneViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

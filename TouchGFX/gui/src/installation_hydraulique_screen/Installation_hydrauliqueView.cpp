@@ -409,6 +409,16 @@ void Installation_hydrauliqueView::affichage_zones()
 	}
 }
 
+void Installation_hydrauliqueView ::bouton_repartition_puissance_zone()
+{
+	application().gotoInstallation_hydraulique_repartition_PW_zoneScreenNoTransition();
+}
+
+void Installation_hydrauliqueView ::bouton_hysteresis_regul_directe()
+{
+	application().gotoInstallation_hysteresisScreenNoTransition();
+}
+
 void Installation_hydrauliqueView::bouton_valider() //SER
 {
 //	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));//SER

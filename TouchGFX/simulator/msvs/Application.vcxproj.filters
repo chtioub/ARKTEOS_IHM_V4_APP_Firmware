@@ -1060,6 +1060,18 @@
     <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_sonde_rf_screen">
       <UniqueIdentifier>6BBB81AE-032D-FE63-A10C-B379B55ED635</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\installation_hydraulique_repartition_PW_zone_screen">
+      <UniqueIdentifier>25E60ABA-5854-24C2-877B-B49F35F4AF95</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_hydraulique_repartition_PW_zone_screen">
+      <UniqueIdentifier>1D004570-4FFA-DA35-18B3-FD8B3FCE364E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_repartition_pw_zone_screen">
+      <UniqueIdentifier>0ABFE7E9-A27B-D578-01BD-F9AED792132F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_repartition_pw_zone_screen">
+      <UniqueIdentifier>28D15241-D0E1-9AC6-BC37-87DC81EAF1B5</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1778,6 +1790,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_hydraulique_sonde_rf_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_repartition_PW_zone_screen\installation_hydraulique_repartition_PW_zonePresenter.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_repartition_PW_zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_hydraulique_repartition_PW_zone_screen\installation_hydraulique_repartition_PW_zoneView.cpp">
+      <Filter>Source Files\gui\installation_hydraulique_repartition_PW_zone_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_repartition_pw_zone_screen\Installation_hydraulique_repartition_PW_zoneViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_hydraulique_repartition_pw_zone_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2907,6 +2928,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_sonde_rf_screen\Installation_hydraulique_sonde_rfViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_hydraulique_sonde_rf_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_repartition_PW_zone_screen\Installation_hydraulique_repartition_PW_zonePresenter.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_repartition_PW_zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_repartition_PW_zone_screen\Installation_hydraulique_repartition_PW_zoneView.hpp">
+      <Filter>Header Files\gui\installation_hydraulique_repartition_PW_zone_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_repartition_pw_zone_screen\Installation_hydraulique_repartition_PW_zoneViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_hydraulique_repartition_pw_zone_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -16,3 +16,13 @@ void Installation_hysteresisPresenter::deactivate()
 {
 
 }
+
+void Installation_hysteresisPresenter::Red_Butt()
+{
+	view.Red_Butt();
+}
+
+void Installation_hysteresisPresenter::Blue_Butt()
+{
+	view.Blue_Butt();
+}
