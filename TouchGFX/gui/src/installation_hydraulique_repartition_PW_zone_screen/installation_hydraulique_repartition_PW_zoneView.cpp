@@ -18,7 +18,7 @@ Installation_hydraulique_repartition_PW_zoneView::Installation_hydraulique_repar
 	// Titre
 	barre_titre.recupConfig(false);
 	barre_titre.connexionDistante(false);
-	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CENTRE_TITRE_REPARTITION_PUISSANCE_ZONE).getText());
+	Unicode::snprintf(textAreaBuffer_Titre, 50, touchgfx::TypedText(T_TEXT_CENTRE_TITRE_REPARTITION_PUISSANCE_ZONE).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 
 

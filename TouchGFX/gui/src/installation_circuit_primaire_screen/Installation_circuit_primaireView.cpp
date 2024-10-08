@@ -68,10 +68,11 @@ Installation_circuit_primaireView::Installation_circuit_primaireView()
 				break;
 			case TYPE_RELAIS:
 				textArea_valeur_type_circulateur.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT));
+				container_vitesse_circulateur.setVisible(false);
 				break;
 		}
 		//
-		u8VitesseCirculateur = sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire;
+		u8VitesseCirculateur = sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eGestionCirculateurPrimaire;
 		vitesseCirculateur();
 		// Marche forcée
 		if(sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bCirculateurPrimaireForce == 0)
@@ -305,7 +306,7 @@ void Installation_circuit_primaireView::bouton_valider()
 			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = TYPE_RELAIS;
 		}
 		//
-		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = u8VitesseCirculateur;
+		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eGestionCirculateurPrimaire = u8VitesseCirculateur;
 		// Marche forcée
 		if(toggleButton_oui_oui_non_marche_forcee.getState())
 		{
