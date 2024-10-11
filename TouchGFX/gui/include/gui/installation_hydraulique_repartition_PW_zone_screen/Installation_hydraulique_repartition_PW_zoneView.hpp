@@ -37,12 +37,12 @@ public:
     virtual void Update_Percent_value();
 protected:
     bool bConnexionDistance;
-    uint8_t u7temp_Percent_Zone1, u7temp_Percent_Zone2;
+    unsigned short u7temp_Percent_Zone1, u7temp_Percent_Zone2;
     uint16_t u16ErreurAffichee;
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9],textAreaBuffer_part_zone1[8], textAreaBuffer_part_zone2[8];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[50], textAreaBuffer_Heure[6], textAreaBuffer_Date[9],textAreaBuffer_part_zone1[8], textAreaBuffer_part_zone2[8];
     //, textAreaBuffer_nb_pac[2], textAreaBuffer_nom_zone1[11], textAreaBuffer_nom_zone2[11];
 };
 

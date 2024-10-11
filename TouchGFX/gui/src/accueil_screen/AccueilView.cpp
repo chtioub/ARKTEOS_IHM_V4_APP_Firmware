@@ -1447,8 +1447,16 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		{
 			case GEOTWIN_IV:
 			case INVERTERRA:
-				container_pression_geo.setVisible(true);
-				container_pression_aero.setVisible(false);
+				if (sConfig_IHM->sConfig_PAC.ConfigGeo.eTypeDeCaptage == E_TYPE_CAPTAGE_NAPPE_DIRECTE)
+				{
+					container_pression_geo.setVisible(false);
+					container_pression_aero.setVisible(true);
+				}
+				else
+				{
+					container_pression_geo.setVisible(true);
+					container_pression_aero.setVisible(false);
+				}
 				break;
 			default:
 				container_pression_geo.setVisible(false);

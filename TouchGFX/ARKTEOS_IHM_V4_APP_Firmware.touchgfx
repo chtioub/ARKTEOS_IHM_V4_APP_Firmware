@@ -44639,7 +44639,7 @@
                       },
                       {
                         "Type": "ToggleButton",
-                        "Name": "toggleButton_oui_oui_non_pilotage_pompe_puits",
+                        "Name": "toggleButton_oui_oui_non_pilotage_vit_pompe_puits",
                         "X": 233,
                         "Y": 76,
                         "Width": 216,
@@ -44649,7 +44649,7 @@
                       },
                       {
                         "Type": "ToggleButton",
-                        "Name": "toggleButton_non_oui_non_pilotage_pompe_puits",
+                        "Name": "toggleButton_non_oui_non_pilotage_vit_pompe_puits",
                         "Y": 76,
                         "Width": 216,
                         "Height": 53,
@@ -44921,7 +44921,7 @@
                         "Type": "ToggleButton",
                         "Name": "toggleButton_oui_oui_non_marche_forcee",
                         "X": 233,
-                        "Y": 76,
+                        "Y": 75,
                         "Width": 216,
                         "Height": 53,
                         "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
@@ -45104,7 +45104,7 @@
                       {
                         "Type": "Button",
                         "Name": "button_gauche_type_circulateur",
-                        "Y": 76,
+                        "Y": 74,
                         "Width": 75,
                         "Height": 53,
                         "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
@@ -45259,6 +45259,20 @@
                         "Released": "Fleche_Droite_Unclicked_L75xH53.png"
                       }
                     ]
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_pilotage_pompe_puits",
+                    "X": 486,
+                    "Y": 303,
+                    "Width": 449,
+                    "Height": 129,
+                    "TextId": "text_pilotage_pompe_puits",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255
+                    },
+                    "WideTextAction": 1
                   }
                 ]
               },
@@ -45297,6 +45311,160 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_oui_pilotage_vit_pompe_de_puits",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_oui_oui_non_pilotage_vit_pompe_puits"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_oui_pilotage_vit_pompe_puits"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_non_pilotage_vit_pompe_puits",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_non_oui_non_pilotage_vit_pompe_puits"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_non_pilotage_vit_pompe_puits"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_plus_vitesse_min_pompe_puits",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_vitesse_min_pompe_puits"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_vitesse_min_pompe_puits"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_moins_vitesse_min_pompe_puits",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_vitesse_min_pompe_puits"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_vitesse_min_pompe_puits"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_moins_vitesse_max_pompe_puits",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_vitesse_max_pompe_puits"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_vitesse_max_pompe_puits"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_plus_vitesse_max_pompe_puits",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_vitesse_max_pompe_puits"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_vitesse_max_pompe_puits"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_gauche_type_oirculateur",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_type_circulateur"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche_type_circulateur"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_droite_type_circulateur",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_type_circulateur"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droite_type_circulateur"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_plus_vitesse_circulateur",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_vitesse_circulateur"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_plus_vitesse_circ"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_moins_vitesse_circualteur",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_vitesse_circulateur"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_moins_vitesse_circ"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_gauche_type_capteur",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_type_capteur"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche_type_capteur"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_droite_type_capteur",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_type_capteur"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droite_type_capteur"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_oui_marche_forcee",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_oui_oui_non_marche_forcee"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_oui_marche_forcee"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_non_marche_forcee",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_non_oui_non_marche_forcee"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_non_marche_forcee"
             }
           }
         ]
@@ -50500,7 +50668,7 @@
             }
           },
           {
-            "InteractionName": "BTNClicked_reisstance_term_esclave_fct",
+            "InteractionName": "BTNClicked_resistance_term_esclave_fct",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonWithLabel_resistance_terminaison_regul_esclave"
@@ -50646,6 +50814,27 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_hysteresis"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_resistance_terminaison_2zones",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_resistance_terminaison_regul_2_zones"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_resistance_terminaison"
             }
           }
         ]
@@ -67956,7 +68145,7 @@
             "Wildcard1": {
               "TextId": "titre_text_2_centre_large",
               "UseBuffer": true,
-              "BufferSize": 40
+              "BufferSize": 50
             }
           }
         ],
