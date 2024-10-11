@@ -23,9 +23,15 @@ extern "C"
 #include "arkteos_defauts.h"
 #include <texts/TextKeysAndLanguages.hpp>
 
-#define VEILLE_1_COUNT          1000
-#define VEILLE_2_COUNT          5000
+#define VEILLE_1_TIME           60              // Temps avant mise en veille 1 en secondes
+#define VEILLE_2_TIME           300             // Temps avant mise en veille 1 en secondes
 #define PWM_VEILLE_1            5u
+
+
+
+
+#define VEILLE_1_COUNT          (VEILLE_1_TIME*60)
+#define VEILLE_2_COUNT          (VEILLE_2_TIME*60)
 
 typedef enum
 {
