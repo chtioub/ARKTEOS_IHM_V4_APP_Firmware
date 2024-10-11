@@ -38,6 +38,7 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 
 	if(bCartePhoenix == false)
 	{
+		//Capteur Géotwin
 		if (sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
 		{
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT));
@@ -47,7 +48,9 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 			container_oui_non_marche_forcee.setVisible(true);
 			container_vitesse_min_pompe_puits.setVisible(false);
 			container_vitesse_max_pompe_puits.setVisible(false);
+			container_type_circulateur.setVisible(false);
 		}
+		//Nappe Directe Géotwin
 		else if (sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage == E_TYPE_CAPTAGE_NAPPE_DIRECTE)
 		{
 
@@ -106,14 +109,60 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 			container_type_circulateur.setVisible(false);
 			container_vitesse_circulateur.setVisible(false);
 		}
+		//Nappe Barrage Géotwin
 		else
 		{
+			container_type_circulateur.setVisible(false);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT));
 			textArea_valeur_type_capteur.invalidate();
 			container_oui_non_pilotage_pompe_puits.setXY(15, 304);
 			container_oui_non_pilotage_pompe_puits.invalidate();
 //			container_oui_non_pilotage_pompe_puits.setVisible(false);
 //			container_vitesse_pompe_puits_geotwin.setVisible(true);
+
+			//Ajout
+			if (bPilotagePompedePuits == true)
+			{
+				container_vitesse_min_pompe_puits.setVisible(true);
+				toggleButton_oui_oui_non_pilotage_vit_pompe_puits.forceState(true);
+				toggleButton_oui_oui_non_pilotage_vit_pompe_puits.setTouchable(false);
+				toggleButton_non_oui_non_pilotage_vit_pompe_puits.forceState(false);
+				toggleButton_non_oui_non_pilotage_vit_pompe_puits.setTouchable(true);
+
+				textArea_pilotage_pompe_puits.setXY(486, 303);
+				textArea_pilotage_pompe_puits.setVisible(true);
+				textArea_pilotage_pompe_puits.invalidate();
+				update_vitesse_min_pompe_puits();
+				update_vitesse_max_pompe_puits();
+
+				if (sConfig_IHM.sModele_PAC.nbCompresseur == NB_COMPRESSEUR_2)
+				{
+					container_vitesse_max_pompe_puits.setXY(486, 152);
+					container_vitesse_max_pompe_puits.setVisible(true);
+					container_vitesse_max_pompe_puits.invalidate();
+				}
+				else
+				{
+					textArea_vitesse_min_pompe_puits.setTypedText(touchgfx::TypedText(T_TEXT_VITESSE_POMPE_DE_PUITS));
+					textArea_vitesse_min_pompe_puits.invalidate();
+					container_vitesse_max_pompe_puits.setVisible(false);
+					container_vitesse_max_pompe_puits.invalidate();
+				}
+			}
+			else
+			{
+				container_vitesse_min_pompe_puits.setVisible(false);
+				container_vitesse_min_pompe_puits.invalidate();
+				container_vitesse_max_pompe_puits.setVisible(false);
+				container_vitesse_max_pompe_puits.invalidate();
+				toggleButton_oui_oui_non_pilotage_vit_pompe_puits.forceState(false);
+				toggleButton_oui_oui_non_pilotage_vit_pompe_puits.setTouchable(true);
+				toggleButton_non_oui_non_pilotage_vit_pompe_puits.forceState(true);
+				toggleButton_non_oui_non_pilotage_vit_pompe_puits.setTouchable(false);
+
+				textArea_pilotage_pompe_puits.setVisible(false);
+			}
+			//Ajout
 
 		}
 
@@ -173,6 +222,8 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 
 			if (bPilotagePompedePuits)
 			{
+				update_vitesse_min_pompe_puits();
+				update_vitesse_max_pompe_puits();
 				container_vitesse_min_pompe_puits.setVisible(true);
 				container_vitesse_min_pompe_puits.invalidate();
 				container_vitesse_max_pompe_puits.setVisible(true);
@@ -557,6 +608,8 @@ void Installation_circuit_captageView::bouton_gauche_type_capteur()
 		{
 			//container_type_capteur.setVisible(true);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT));
+			container_oui_non_pilotage_pompe_puits.setXY(15, 304);
+			container_oui_non_pilotage_pompe_puits.invalidate();
 		}
 		else
 		{
