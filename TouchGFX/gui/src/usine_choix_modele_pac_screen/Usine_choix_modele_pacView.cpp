@@ -1,4 +1,6 @@
 #include <gui/usine_choix_modele_pac_screen/Usine_choix_modele_pacView.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/Utils.hpp>
 
 Usine_choix_modele_pacView::Usine_choix_modele_pacView()
 {

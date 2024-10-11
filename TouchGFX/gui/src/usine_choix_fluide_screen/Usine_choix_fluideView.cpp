@@ -12,13 +12,18 @@ Usine_choix_fluideView::Usine_choix_fluideView()
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
 	// Titre
-	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_MARCHE_GENERAL_CENTRE_DEFAUT).getText());
+	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CHOIX_FLUIDE_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 	//
 	if(sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO_PP)
 	{
 		toggleButton_baguio_pp.forceState(true);
 		textArea_on_off_baguio_pp.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+	}
+	if(sConfig_IHM.sModele_PAC.u8ModelePAC == AJPAC_III)
+	{
+		container_choix_fluide_c2.setVisible(true);
+		container_choix_fluide_c2.invalidate();
 	}
 	//
 	u8FluideC1 = sConfig_IHM.sModele_PAC.Gaz_C1;
