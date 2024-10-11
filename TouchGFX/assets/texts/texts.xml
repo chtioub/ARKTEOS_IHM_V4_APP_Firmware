@@ -7402,21 +7402,21 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_tri_24_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_tri_24_ajpac_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Tri 24kW</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_tri_20_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_tri_20_ajpac_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Tri 20kW</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_tri_16_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_tri_16_ajpac_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Tri 16kW</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
