@@ -49037,6 +49037,113 @@
         ]
       },
       {
+        "Name": "Installation_hydraulique_message_multizones",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_valider",
+                "X": 862,
+                "Y": 460,
+                "Width": 79,
+                "Height": 55,
+                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_texte_rouge_groupes",
+                "X": 15,
+                "Y": 453,
+                "Width": 831,
+                "Height": 57,
+                "TextId": "text_rouge_message_multizones_groupe",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_text_blanc_groupes",
+                "X": 15,
+                "Y": 149,
+                "Width": 920,
+                "Height": 148,
+                "TextId": "text_blanc_message_multizones_groupe",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_text_blanc_zones_seules",
+                "X": 15,
+                "Y": 149,
+                "Width": 920,
+                "Height": 148,
+                "Visible": false,
+                "TextId": "text_blanc_message_multizones_zones_seules",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_texte_rouge_zones_seules",
+                "X": 15,
+                "Y": 439,
+                "Width": 789,
+                "Height": 76,
+                "Visible": false,
+                "TextId": "text_rouge_message_multizones_zones_seules",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      },
+      {
         "Name": "Installation_hydraulique",
         "CanvasBufferSize": 15360,
         "Components": [
@@ -49101,6 +49208,199 @@
                 },
                 "ScrollbarsAlpha": 255,
                 "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "container_regul_multizones",
+                    "X": 15,
+                    "Y": 152,
+                    "Width": 920,
+                    "Height": 205,
+                    "Components": [
+                      {
+                        "Type": "ButtonWithLabel",
+                        "Name": "buttonWithLabel_parametrage_groupes_zones",
+                        "X": 471,
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 53,
+                        "Pressed": "Bouton_Gris_Clicked_L449xH53.png",
+                        "Released": "Bouton_Gris_Unclicked_L449xH53.png",
+                        "TextId": "text_parametrage_zone_independantes",
+                        "ReleasedColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "PressedColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "TextRotation": "0"
+                      },
+                      {
+                        "Type": "ButtonWithLabel",
+                        "Name": "buttonWithLabel_hysteresis_sonde_ballon_regul_2_zones_1",
+                        "X": 471,
+                        "Width": 449,
+                        "Height": 53,
+                        "Pressed": "Bouton_Gris_Clicked_L449xH53.png",
+                        "Released": "Bouton_Gris_Unclicked_L449xH53.png",
+                        "TextId": "text_hysteresis_sonde_ballon_centre_defaut",
+                        "ReleasedColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "PressedColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "TextRotation": "0"
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "container_oui_non_regroupement",
+                        "Y": 76,
+                        "Width": 449,
+                        "Height": 129,
+                        "Components": [
+                          {
+                            "Type": "Line",
+                            "Name": "line_bas_oui_non_regroupement",
+                            "Y": 127,
+                            "Width": 449,
+                            "Height": 2,
+                            "Color": {
+                              "Red": 76,
+                              "Green": 76,
+                              "Blue": 76
+                            },
+                            "StartY": 1.0,
+                            "EndX": 449.0,
+                            "EndY": 1.0,
+                            "LineWidth": 2.0,
+                            "LineEndingStyle": "Round"
+                          },
+                          {
+                            "Type": "Line",
+                            "Name": "line_haut_oui_non_regroupement",
+                            "Width": 449,
+                            "Height": 2,
+                            "Color": {
+                              "Red": 76,
+                              "Green": 76,
+                              "Blue": 76
+                            },
+                            "StartY": 1.0,
+                            "EndX": 449.0,
+                            "EndY": 1.0,
+                            "LineWidth": 2.0,
+                            "LineEndingStyle": "Round"
+                          },
+                          {
+                            "Type": "Line",
+                            "Name": "line_gauche_oui_non_regroupement",
+                            "Width": 2,
+                            "Height": 129,
+                            "Color": {
+                              "Red": 76,
+                              "Green": 76,
+                              "Blue": 76
+                            },
+                            "StartX": 1.0,
+                            "EndX": 1.0,
+                            "EndY": 129.0,
+                            "LineWidth": 2.0,
+                            "LineEndingStyle": "Round"
+                          },
+                          {
+                            "Type": "Line",
+                            "Name": "line_droite_oui_non_regroupement",
+                            "X": 447,
+                            "Width": 2,
+                            "Height": 129,
+                            "Color": {
+                              "Red": 76,
+                              "Green": 76,
+                              "Blue": 76
+                            },
+                            "StartX": 1.0,
+                            "EndX": 1.0,
+                            "EndY": 129.0,
+                            "LineWidth": 2.0,
+                            "LineEndingStyle": "Round"
+                          },
+                          {
+                            "Type": "ToggleButton",
+                            "Name": "toggleButton_oui_oui_non_regroupement",
+                            "X": 233,
+                            "Y": 76,
+                            "Width": 216,
+                            "Height": 53,
+                            "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                            "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                          },
+                          {
+                            "Type": "ToggleButton",
+                            "Name": "toggleButton_non_oui_non_regroupement",
+                            "Y": 76,
+                            "Width": 216,
+                            "Height": 53,
+                            "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                            "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_question_oui_non_regroupement",
+                            "X": 8,
+                            "Y": 8,
+                            "Width": 433,
+                            "Height": 60,
+                            "TextId": "text_regroupement_zones_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "WideTextAction": 1
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_non_oui_non_regroupement",
+                            "X": 62,
+                            "Y": 89,
+                            "Width": 92,
+                            "Height": 24,
+                            "TextId": "text_non_marche_forcee_circ_prim_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            }
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_oui_oui_non_regroupement",
+                            "X": 295,
+                            "Y": 89,
+                            "Width": 92,
+                            "Height": 24,
+                            "TextId": "text_oui_marche_forcee_circ_prim_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
                   {
                     "Type": "Container",
                     "Name": "container_regul_esclave",
@@ -49334,7 +49634,7 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_regul_multizones",
+                        "Name": "container_reg_externe",
                         "Width": 920,
                         "Height": 205,
                         "Visible": false,
@@ -49912,6 +50212,7 @@
                     "Y": 152,
                     "Width": 920,
                     "Height": 205,
+                    "Visible": false,
                     "Components": [
                       {
                         "Type": "Button",
@@ -50258,7 +50559,6 @@
                     "X": 486,
                     "Width": 449,
                     "Height": 129,
-                    "Visible": false,
                     "Components": [
                       {
                         "Type": "Line",
@@ -50817,16 +51117,6 @@
             }
           },
           {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone"
-            }
-          },
-          {
             "InteractionName": "BTNClicked_resistance_terminaison_2zones",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -50835,6 +51125,28 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_resistance_terminaison"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_non_regroupement_zones",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_non_oui_non_regroupement"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_non_regroupement"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_oui_regroupement_zones",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_oui_oui_non_regroupement"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_oui_regroupement"
             }
           }
         ]
