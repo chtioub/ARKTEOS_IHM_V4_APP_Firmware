@@ -26,6 +26,11 @@ public:
     virtual void deactivate();
 
     virtual ~Installation_hydraulique_message_multizonesPresenter() {}
+    virtual void changeDate(S_DATE *sDate);
+    virtual void changeErreur(uint16_t u16Erreur);
+    virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+    virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+    virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
 
 private:
     Installation_hydraulique_message_multizonesPresenter();

@@ -99,6 +99,31 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 		image_on_off_resistance_terminaison_regul_esclave.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 		textArea_on_off_resistance_terminaison_regul_esclave.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
+
+	// Multizones
+	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == true || sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == true)
+		{
+			toggleButton_non_oui_non_regroupement.forceState(false);
+			toggleButton_non_oui_non_regroupement.invalidate();
+			toggleButton_oui_oui_non_regroupement.forceState(true);
+			toggleButton_oui_oui_non_regroupement.invalidate();
+			buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAM_GROUPE_ZONE_CENTRE_DEFAUT));
+			buttonWithLabel_parametrage_groupes_zones.invalidate();
+			bRegroupementZoneTemp = true;
+		}
+		else
+		{
+			toggleButton_non_oui_non_regroupement.forceState(true);
+			toggleButton_non_oui_non_regroupement.invalidate();
+			toggleButton_oui_oui_non_regroupement.forceState(false);
+			toggleButton_oui_oui_non_regroupement.invalidate();
+			buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAMETRAGE_ZONE_INDEPENDANTES));
+			buttonWithLabel_parametrage_groupes_zones.invalidate();
+			bRegroupementZoneTemp = false;
+		}
+	}
 }
 
 void Installation_hydrauliqueView::setupScreen()
@@ -434,30 +459,6 @@ void Installation_hydrauliqueView::affichage_zones()
 		buttonWithLabel_repartition_puissance_zones_regul_directe.invalidate();
 		textArea_regul_plancher.setVisible(false);
 		textArea_regul_plancher.invalidate();
-	}
-
-	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
-	{
-		if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == true || sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == true)
-		{
-			toggleButton_non_oui_non_regroupement.forceState(false);
-			toggleButton_non_oui_non_regroupement.invalidate();
-			toggleButton_oui_oui_non_regroupement.forceState(true);
-			toggleButton_oui_oui_non_regroupement.invalidate();
-			buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAM_GROUPE_ZONE_CENTRE_DEFAUT));
-			buttonWithLabel_parametrage_groupes_zones.invalidate();
-			bRegroupementZoneTemp = true;
-		}
-		else
-		{
-			toggleButton_non_oui_non_regroupement.forceState(true);
-			toggleButton_non_oui_non_regroupement.invalidate();
-			toggleButton_oui_oui_non_regroupement.forceState(false);
-			toggleButton_oui_oui_non_regroupement.invalidate();
-			buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAMETRAGE_ZONE_INDEPENDANTES));
-			buttonWithLabel_parametrage_groupes_zones.invalidate();
-			bRegroupementZoneTemp = false;
-		}
 	}
 }
 

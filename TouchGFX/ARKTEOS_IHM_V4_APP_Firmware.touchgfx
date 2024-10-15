@@ -51148,6 +51148,30 @@
               "Type": "ActionCustom",
               "FunctionName": "bouton_oui_regroupement"
             }
+          },
+          {
+            "InteractionName": "BTNClicked_non_regroupement_open_page",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_non_oui_non_regroupement"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_hydraulique_message_multizones"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_oui_regroupement_open_page",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_oui_oui_non_regroupement"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_hydraulique_message_multizones"
+            }
           }
         ]
       },
