@@ -220,7 +220,7 @@ extern uint8_t au8Prog_ModeSilence[7][24];
 extern uint8_t u8Prog[7][24], u8JourProg;
 extern uint8_t u8ZoneSelect;
 extern uint8_t u8PositionX, u8PositionY;
-extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine;
+extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp;
 extern S_HISTO_ERR sHisto_Erreur;
 extern uint16_t u16NumAction;
 extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000];

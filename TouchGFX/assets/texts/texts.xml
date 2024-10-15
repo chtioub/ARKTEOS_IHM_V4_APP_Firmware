@@ -9,6 +9,13 @@
   </Languages>
   <Texts>
     <TextGroup Id="Installation_repartition_PW_Zone">
+      <Text Id="text_rouge_message_multizones_groupe" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">INFORMATION :&#10;Nécessite la présence d'une à deux cartes Multi-zones.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_centre_titre_repartition_puissance_zone" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Répartition de la puissance entre les zones</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -817,6 +824,41 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_blanc_message_multizones_zones_seules" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Vous pouvez gérer jusqu'à 8 Zones. Chacune des zones dispose alors :&#10; - d'une consigne de température d'eau (loi d'eau)&#10; - d'une consigne d'ambiance</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_blanc_message_multizones_groupe" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR" Alignment="Left">Vous pouvez gérer jusqu'à 8 Zones avec une consigne de température d'eau individuelle pour chacunes.&#10;&#10;OU&#10;&#10;Effectuer un regroupement de Zones afin de créer jusqu'à 2 groupes avec  les zones ayant besoin d'un même seuil de température d'eau.&#10;Vous pouvez aussi panacher les zones regroupées et celles régulées séparément.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_rouge_message_multizones_zones_seules" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">INFORMATIONS :&#10;Nécessite la présence d'une à deux cartes Multi-zones.&#10;Dans le cas d'un gainable, il faut impérativement créer un groupe d'eau au minimum.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_parametrage_zone_independantes" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramétrage des zones indépendantes</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_parametrage_groupes_et_zones" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">paramétrage des groupes d'eau et des zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_pilotage_pompe_puits" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Nécessite l'utilisationd'une carte&#10;additionnelle.</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -837,13 +879,6 @@
         <Translation Language="PT" Alignment="Right">text_part_volume_zone1</Translation>
         <Translation Language="NL">text_part_volume_zone1</Translation>
         <Translation Language="DE">text_part_volume_zone1</Translation>
-      </Text>
-      <Text Id="ResourceId1" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">New Text</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_hz_comp_droite" Alignment="Right" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;Hz</Translation>
