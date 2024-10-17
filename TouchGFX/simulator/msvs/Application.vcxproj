@@ -256,6 +256,21 @@
     <ClCompile Include="..\..\gui\src\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_parametrage_groupes_screen\Installation_MZ_parametrage_groupesPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_parametrage_groupes_screen\Installation_MZ_parametrage_groupesView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_parametrage_groupes_screen\Installation_MZ_parametrage_groupesViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_config_groupe_screen\Installation_MZ_config_groupePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_config_groupe_screen\Installation_MZ_config_groupeView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_config_groupe_screen\Installation_MZ_config_groupeViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_config_zone_screen\Installation_MZ_config_zonePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_config_zone_screen\Installation_MZ_config_zoneView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_config_zone_screen\Installation_MZ_config_zoneViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_groupe_screen\Installation_MZ_param_complementaires_groupePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_groupe_screen\Installation_MZ_param_complementaires_groupeView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_param_complementaires_groupe_screen\Installation_MZ_param_complementaires_groupeViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_param_ou_regroupement_zones_screen\Installation_MZ_param_ou_regroupement_zonesPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_param_ou_regroupement_zones_screen\Installation_MZ_param_ou_regroupement_zonesView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_param_ou_regroupement_zones_screen\Installation_MZ_param_ou_regroupement_zonesViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -641,6 +656,21 @@
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_parametrage_groupes_screen\Installation_MZ_parametrage_groupesPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_parametrage_groupes_screen\Installation_MZ_parametrage_groupesView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_parametrage_groupes_screen\Installation_MZ_parametrage_groupesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_config_groupe_screen\Installation_MZ_config_groupePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_config_groupe_screen\Installation_MZ_config_groupeView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_config_groupe_screen\Installation_MZ_config_groupeViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_config_zone_screen\Installation_MZ_config_zonePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_config_zone_screen\Installation_MZ_config_zoneView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_config_zone_screen\Installation_MZ_config_zoneViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_param_complementaires_groupe_screen\Installation_MZ_param_complementaires_groupePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_param_complementaires_groupe_screen\Installation_MZ_param_complementaires_groupeView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_param_complementaires_groupe_screen\Installation_MZ_param_complementaires_groupeViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_param_ou_regroupement_zones_screen\Installation_MZ_param_ou_regroupement_zonesPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_param_ou_regroupement_zones_screen\Installation_MZ_param_ou_regroupement_zonesView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_param_ou_regroupement_zones_screen\Installation_MZ_param_ou_regroupement_zonesViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
