@@ -9,6 +9,34 @@
   </Languages>
   <Texts>
     <TextGroup Id="Installation_repartition_PW_Zone">
+      <Text Id="text_value_sortie_voie3" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_sortie_voie2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_sortie_voie1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_mz_sortie_voie" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_rouge_message_multizones_groupe" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">INFORMATION :&#10;Nécessite la présence d'une à deux cartes Multi-zones.</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -824,6 +852,188 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_JYA5" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_IHPF" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_FNEY" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_7H6M" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_6JGZ" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_8527" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_K1BK" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_rattachement_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Autonome</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_VM0R" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Zone 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_acces_cfg_zone" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Accès Cfg. Zone</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_rattachement" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Rattachement</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_renommer_groupe" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Renommer le groupe</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_hysteresis_sonde_eau" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Hystérésis sonde d'eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_activer_mode" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le mode ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_emetteur_dans_groupe" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type d'émetteur dans le groupe</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_sortie_voie" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie / Voie</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_carte_MZ" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Carte Multi-zone</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_type" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mz_carte_MZ1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">MZ1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_groupe_eau_plancher" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Plancher</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_groupe_eau_gainable" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Gainable</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mz_sortie_voie_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_mz_carte_MZ2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">MZ2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mz_groupe_B_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Groupe B</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mz_groupe_A_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Groupe A</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_rouge_message_multizones_zones_seules" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">INFORMATION :&#10;Nécessite la présence d'une à deux cartes Multi-zones.&#10;Dans le cas d'un gainable, il faut impérativement créer un groupe d'eau au minimum.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_blanc_message_multizones_zones_seules" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Vous pouvez gérer jusqu'à 8 Zones. Chacune des zones dispose alors :&#10; - d'une consigne de température d'eau (loi d'eau)&#10; - d'une consigne d'ambiance</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -833,13 +1043,6 @@
       </Text>
       <Text Id="text_blanc_message_multizones_groupe" Alignment="Left" TypographyId="Default">
         <Translation Language="FR" Alignment="Left">Vous pouvez gérer jusqu'à 8 Zones avec une consigne de température d'eau individuelle pour chacunes.&#10;&#10;OU&#10;&#10;Effectuer un regroupement de Zones afin de créer jusqu'à 2 groupes avec  les zones ayant besoin d'un même seuil de température d'eau.&#10;Vous pouvez aussi panacher les zones regroupées et celles régulées séparément.</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_rouge_message_multizones_zones_seules" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">INFORMATIONS :&#10;Nécessite la présence d'une à deux cartes Multi-zones.&#10;Dans le cas d'un gainable, il faut impérativement créer un groupe d'eau au minimum.</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -5140,6 +5343,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Multizones">
+      <Text Id="text_regroupement_zones_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Regroupement de Zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_multizones_zone_7_init_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Zone 7</Translation>
         <Translation Language="GB">Zone 7</Translation>
@@ -5160,6 +5370,13 @@
         <Translation Language="PT">Zone 6</Translation>
         <Translation Language="NL">Zone 6</Translation>
         <Translation Language="DE">Zone 6</Translation>
+      </Text>
+      <Text Id="text_parametrage_zones_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramétrage des zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_multizones_zone_6_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;</Translation>
