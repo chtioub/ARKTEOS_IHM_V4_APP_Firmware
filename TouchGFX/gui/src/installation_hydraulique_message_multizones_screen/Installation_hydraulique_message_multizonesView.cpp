@@ -17,7 +17,27 @@ Installation_hydraulique_message_multizonesView::Installation_hydraulique_messag
 		container.setXY(u8PositionX, u8PositionY);
 		if (bRegroupementZoneTemp)
 		{
-			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_INSTALLATION_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_REGROUPEMENT_ZONES_CENTRE).getText());
+			textArea_text_blanc_groupes.setVisible(true);
+			textArea_text_rouge_groupes.setVisible(true);
+			textArea_text_blanc_zones_seules.setVisible(false);
+			textArea_text_rouge_zones_seules.setVisible(false);
+			textArea_text_blanc_groupes.invalidate();
+			textArea_text_rouge_groupes.invalidate();
+			textArea_text_blanc_zones_seules.invalidate();
+			textArea_text_rouge_zones_seules.invalidate();
+		}
+		else
+		{
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PARAMETRAGE_ZONES_CENTRE).getText());
+			textArea_text_blanc_groupes.setVisible(false);
+			textArea_text_rouge_groupes.setVisible(false);
+			textArea_text_blanc_zones_seules.setVisible(true);
+			textArea_text_rouge_zones_seules.setVisible(true);
+			textArea_text_blanc_groupes.invalidate();
+			textArea_text_rouge_groupes.invalidate();
+			textArea_text_blanc_zones_seules.invalidate();
+			textArea_text_rouge_zones_seules.invalidate();
 		}
 		barre_titre.titre(textAreaBuffer_Titre);
 }
@@ -34,15 +54,12 @@ void Installation_hydraulique_message_multizonesView::tearDownScreen()
 
 void Installation_hydraulique_message_multizonesView::bouton_retour()
 {
-	if(bMaintenanceDepuisUsine)
-	{
-		application().gotoUsineScreenNoTransition();
-	}
-	else application().gotoConfigurationScreenNoTransition();
+	application().gotoInstallation_hydrauliqueScreenNoTransition();
 }
 
-void Installation_hydraulique_message_multizonesView::bouton_valider() //SER
+void Installation_hydraulique_message_multizonesView::bouton_valider()
 {
+	application().gotoInstallation_hydrauliqueScreenNoTransition();
 //	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));//SER
 //	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
 //	sConfig_Hydrau_temp
