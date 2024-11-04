@@ -49037,7 +49037,7 @@
         ]
       },
       {
-        "Name": "Installation_hydraulique_message_multizones",
+        "Name": "Installation_MZ_message_multizones",
         "Components": [
           {
             "Type": "Box",
@@ -49062,16 +49062,6 @@
               },
               {
                 "Type": "Button",
-                "Name": "button_valider",
-                "X": 862,
-                "Y": 460,
-                "Width": 79,
-                "Height": 55,
-                "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
-                "Released": "Bouton_Valider_Unclicked_L79xH55.png"
-              },
-              {
-                "Type": "Button",
                 "Name": "button_retour",
                 "X": 881,
                 "Y": 67,
@@ -49081,76 +49071,112 @@
                 "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               },
               {
-                "Type": "TextArea",
-                "Name": "textArea_text_rouge_groupes",
-                "X": 15,
-                "Y": 453,
-                "Width": 831,
-                "Height": 57,
-                "TextId": "text_rouge_message_multizones_groupe",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textArea_text_blanc_groupes",
-                "X": 15,
+                "Type": "Container",
+                "Name": "container_groupes",
                 "Y": 149,
-                "Width": 920,
-                "Height": 148,
-                "TextId": "text_blanc_message_multizones_groupe",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                }
+                "Width": 950,
+                "Height": 375,
+                "Components": [
+                  {
+                    "Type": "Button",
+                    "Name": "button_valider_groupes",
+                    "X": 862,
+                    "Y": 311,
+                    "Width": 79,
+                    "Height": 55,
+                    "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                    "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_text_blanc_groupes",
+                    "X": 15,
+                    "Width": 920,
+                    "Height": 148,
+                    "TextId": "text_blanc_message_multizones_groupe",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_text_rouge_groupes",
+                    "X": 15,
+                    "Y": 304,
+                    "Width": 831,
+                    "Height": 57,
+                    "TextId": "text_rouge_message_multizones_groupe",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255
+                    }
+                  }
+                ]
               },
               {
-                "Type": "TextArea",
-                "Name": "textArea_text_blanc_zones_seules",
-                "X": 15,
+                "Type": "Container",
+                "Name": "container_zones_seules",
                 "Y": 149,
-                "Width": 920,
-                "Height": 148,
+                "Width": 950,
+                "Height": 375,
                 "Visible": false,
-                "TextId": "text_blanc_message_multizones_zones_seules",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                }
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textArea_text_rouge_zones_seules",
-                "X": 15,
-                "Y": 439,
-                "Width": 789,
-                "Height": 76,
-                "Visible": false,
-                "TextId": "text_rouge_message_multizones_zones_seules",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255
-                }
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_text_rouge_zones_seules",
+                    "X": 15,
+                    "Y": 290,
+                    "Width": 789,
+                    "Height": 76,
+                    "TextId": "text_rouge_message_multizones_zones_seules",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_text_blanc_zones_seules",
+                    "X": 15,
+                    "Width": 920,
+                    "Height": 148,
+                    "TextId": "text_blanc_message_multizones_zones_seules",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_valider_zones_seules",
+                    "X": 862,
+                    "Y": 311,
+                    "Width": 79,
+                    "Height": 55,
+                    "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                    "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+                  }
+                ]
               }
             ]
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "BTNClicked_valider",
+            "InteractionName": "BTNClicked_valider_zones_seules",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "button_valider"
+              "TriggerComponent": "button_valider_zones_seules"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "bouton_valider"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_MZ_param_ou_regroupement_zones"
             }
           },
           {
@@ -49162,6 +49188,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_retour"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_groupes",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider_groupes"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_MZ_parametrage_groupes"
             }
           }
         ]
@@ -50939,13 +50977,59 @@
                     "Components": [
                       {
                         "Type": "Container",
-                        "Name": "container_rattachement_Z3_5",
+                        "Name": "container_sortie_voie_Z8",
+                        "X": 699,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_rattachement_Z3_5",
+                            "Name": "button_sortie_voie_Z8",
+                            "Width": 216,
+                            "Height": 53,
+                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
+                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_droite_sortie_voie_Z8",
+                            "X": 163,
+                            "Width": 53,
+                            "Height": 53,
+                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
+                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_sortie_voie_Z8",
+                            "Y": 12,
+                            "Width": 163,
+                            "Height": 26,
+                            "TextId": "text_mz_sortie_voie_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_value_sortie_voie4carte2",
+                              "UseBuffer": true,
+                              "BufferSize": 3
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "container_cart_MZ_Z8",
+                        "X": 466,
+                        "Width": 216,
+                        "Height": 53,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_gris_carteMZ_MZ_Z8",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -50953,11 +51037,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_rattachement_Z3_5",
+                            "Name": "textArea_bouton_carte_MZ_Z8",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_rattachement_zone",
+                            "TextId": "text_mz_carte_MZ2_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -50967,7 +51051,7 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_rattachement_Z3_5",
+                            "Name": "button_droite_carte_MZ_Z8",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -50978,14 +51062,14 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cfg_Z3_5",
+                        "Name": "container_cfg_Z8",
                         "X": 233,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_cfg_Z3_5",
+                            "Name": "button_cfg_Z8",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Clicked_L216xH53.png",
@@ -50993,7 +51077,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_cfg_Z3_5",
+                            "Name": "textArea_bouton_cfg_Z8",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
@@ -51007,7 +51091,7 @@
                           },
                           {
                             "Type": "Image",
-                            "Name": "image_cfg_Z3_5",
+                            "Name": "image_cfg_Z8",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51015,7 +51099,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_cfg_Z3_5",
+                            "Name": "textArea_cfg_Z8",
                             "X": 163,
                             "Y": 13,
                             "Width": 53,
@@ -51032,14 +51116,13 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cart_MZ_Z3_5",
-                        "X": 466,
+                        "Name": "container_rattachement_Z8",
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_carteMZ_MZ_Z3_5",
+                            "Name": "button_gris_rattachement_Z8",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51047,11 +51130,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_carte_MZ_Z3_5",
+                            "Name": "textArea_bouton_rattachement_Z8",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_mz_carte_MZ1_centre_defaut",
+                            "TextId": "text_rattachement_zone",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51061,57 +51144,12 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_droite_carte_MZ_Z3_5",
+                            "Name": "button_rattachement_Z8",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
                             "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
                             "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_sortie_voie_Z3_5",
-                        "X": 699,
-                        "Width": 216,
-                        "Height": 53,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_sortie_voie_Z3_5",
-                            "Width": 216,
-                            "Height": 53,
-                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
-                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_droite_sortie_voie_Z3_5",
-                            "X": 163,
-                            "Width": 53,
-                            "Height": 53,
-                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
-                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_sortie_voie_Z3_5",
-                            "Y": 12,
-                            "Width": 163,
-                            "Height": 26,
-                            "TextId": "text_mz_sortie_voie_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_value_sortie_voie3",
-                              "UseBuffer": true,
-                              "BufferSize": 3
-                            }
                           }
                         ]
                       }
@@ -51127,13 +51165,59 @@
                     "Components": [
                       {
                         "Type": "Container",
-                        "Name": "container_rattachement_Z3_4",
+                        "Name": "container_sortie_voie_Z7",
+                        "X": 699,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_rattachement_Z3_4",
+                            "Name": "button_sortie_voie_Z7",
+                            "Width": 216,
+                            "Height": 53,
+                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
+                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_droite_sortie_voie_Z7",
+                            "X": 163,
+                            "Width": 53,
+                            "Height": 53,
+                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
+                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_sortie_voie_Z7",
+                            "Y": 12,
+                            "Width": 163,
+                            "Height": 26,
+                            "TextId": "text_mz_sortie_voie_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_value_sortie_voie3carte2",
+                              "UseBuffer": true,
+                              "BufferSize": 3
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "container_cart_MZ_Z7",
+                        "X": 466,
+                        "Width": 216,
+                        "Height": 53,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_gris_carteMZ_MZ_Z7",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51141,11 +51225,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_rattachement_Z3_4",
+                            "Name": "textArea_bouton_carte_MZ_Z7",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_rattachement_zone",
+                            "TextId": "text_mz_carte_MZ2_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51155,7 +51239,7 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_rattachement_Z3_4",
+                            "Name": "button_droite_carte_MZ_Z7",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51166,14 +51250,14 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cfg_Z3_4",
+                        "Name": "container_cfg_Z7",
                         "X": 233,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_cfg_Z3_4",
+                            "Name": "button_cfg_Z7",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Clicked_L216xH53.png",
@@ -51181,7 +51265,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_cfg_Z3_4",
+                            "Name": "textArea_bouton_cfg_Z7",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
@@ -51195,7 +51279,7 @@
                           },
                           {
                             "Type": "Image",
-                            "Name": "image_cfg_Z3_4",
+                            "Name": "image_cfg_Z7",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51203,7 +51287,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_cfg_Z3_4",
+                            "Name": "textArea_cfg_Z7",
                             "X": 163,
                             "Y": 13,
                             "Width": 53,
@@ -51220,14 +51304,13 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cart_MZ_Z3_4",
-                        "X": 466,
+                        "Name": "container_rattachement_Z7",
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_carteMZ_MZ_Z3_4",
+                            "Name": "button_gris_rattachement_Z7",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51235,11 +51318,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_carte_MZ_Z3_4",
+                            "Name": "textArea_bouton_rattachement_Z7",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_mz_carte_MZ1_centre_defaut",
+                            "TextId": "text_rattachement_zone",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51249,57 +51332,12 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_droite_carte_MZ_Z3_4",
+                            "Name": "button_rattachement_Z7",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
                             "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
                             "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_sortie_voie_Z3_4",
-                        "X": 699,
-                        "Width": 216,
-                        "Height": 53,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_sortie_voie_Z3_4",
-                            "Width": 216,
-                            "Height": 53,
-                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
-                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_droite_sortie_voie_Z3_4",
-                            "X": 163,
-                            "Width": 53,
-                            "Height": 53,
-                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
-                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_sortie_voie_Z3_4",
-                            "Y": 12,
-                            "Width": 163,
-                            "Height": 26,
-                            "TextId": "text_mz_sortie_voie_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_value_sortie_voie3",
-                              "UseBuffer": true,
-                              "BufferSize": 3
-                            }
                           }
                         ]
                       }
@@ -51315,13 +51353,59 @@
                     "Components": [
                       {
                         "Type": "Container",
-                        "Name": "container_rattachement_Z3_3",
+                        "Name": "container_sortie_voie_Z6",
+                        "X": 699,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_rattachement_Z3_3",
+                            "Name": "button_sortie_voie_Z6",
+                            "Width": 216,
+                            "Height": 53,
+                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
+                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_droite_sortie_voie_Z6",
+                            "X": 163,
+                            "Width": 53,
+                            "Height": 53,
+                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
+                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_sortie_voie_Z6",
+                            "Y": 12,
+                            "Width": 163,
+                            "Height": 26,
+                            "TextId": "text_mz_sortie_voie_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_value_sortie_voie2carte2",
+                              "UseBuffer": true,
+                              "BufferSize": 3
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "container_cart_MZ_Z6",
+                        "X": 466,
+                        "Width": 216,
+                        "Height": 53,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_gris_carteMZ_MZ_Z6",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51329,11 +51413,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_rattachement_Z3_3",
+                            "Name": "textArea_bouton_carte_MZ_Z6",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_rattachement_zone",
+                            "TextId": "text_mz_carte_MZ2_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51343,7 +51427,7 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_rattachement_Z3_3",
+                            "Name": "button_droite_carte_MZ_Z6",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51354,14 +51438,14 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cfg_Z3_3",
+                        "Name": "container_cfg_Z6",
                         "X": 233,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_cfg_Z3_3",
+                            "Name": "button_cfg_Z6",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Clicked_L216xH53.png",
@@ -51369,7 +51453,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_cfg_Z3_3",
+                            "Name": "textArea_bouton_cfg_Z6",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
@@ -51383,7 +51467,7 @@
                           },
                           {
                             "Type": "Image",
-                            "Name": "image_cfg_Z3_3",
+                            "Name": "image_cfg_Z6",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51391,7 +51475,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_cfg_Z3_3",
+                            "Name": "textArea_cfg_Z6",
                             "X": 163,
                             "Y": 13,
                             "Width": 53,
@@ -51408,14 +51492,13 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cart_MZ_Z3_3",
-                        "X": 466,
+                        "Name": "container_rattachement_Z6",
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_carteMZ_MZ_Z3_3",
+                            "Name": "button_gris_rattachement_Z6",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51423,11 +51506,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_carte_MZ_Z3_3",
+                            "Name": "textArea_bouton_rattachement_Z6",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_mz_carte_MZ1_centre_defaut",
+                            "TextId": "text_rattachement_zone",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51437,57 +51520,12 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_droite_carte_MZ_Z3_3",
+                            "Name": "button_rattachement_Z6",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
                             "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
                             "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_sortie_voie_Z3_3",
-                        "X": 699,
-                        "Width": 216,
-                        "Height": 53,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_sortie_voie_Z3_3",
-                            "Width": 216,
-                            "Height": 53,
-                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
-                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_droite_sortie_voie_Z3_3",
-                            "X": 163,
-                            "Width": 53,
-                            "Height": 53,
-                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
-                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_sortie_voie_Z3_3",
-                            "Y": 12,
-                            "Width": 163,
-                            "Height": 26,
-                            "TextId": "text_mz_sortie_voie_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_value_sortie_voie3",
-                              "UseBuffer": true,
-                              "BufferSize": 3
-                            }
                           }
                         ]
                       }
@@ -51503,13 +51541,59 @@
                     "Components": [
                       {
                         "Type": "Container",
-                        "Name": "container_rattachement_Z3_2",
+                        "Name": "container_sortie_voie_Z5",
+                        "X": 699,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_rattachement_Z3_2",
+                            "Name": "button_sortie_voie_Z5",
+                            "Width": 216,
+                            "Height": 53,
+                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
+                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_droite_sortie_voie_Z5",
+                            "X": 163,
+                            "Width": 53,
+                            "Height": 53,
+                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
+                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_sortie_voie_Z5",
+                            "Y": 12,
+                            "Width": 163,
+                            "Height": 26,
+                            "TextId": "text_mz_sortie_voie_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_value_sortie_voie1carte2",
+                              "UseBuffer": true,
+                              "BufferSize": 3
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "container_cart_MZ_Z5",
+                        "X": 466,
+                        "Width": 216,
+                        "Height": 53,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_gris_carteMZ_MZ_Z5",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51517,11 +51601,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_rattachement_Z3_2",
+                            "Name": "textArea_bouton_carte_MZ_Z5",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_rattachement_zone",
+                            "TextId": "text_mz_carte_MZ2_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51531,7 +51615,7 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_rattachement_Z3_2",
+                            "Name": "button_droite_carte_MZ_Z5",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51542,14 +51626,14 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cfg_Z3_2",
+                        "Name": "container_cfg_Z5",
                         "X": 233,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_cfg_Z3_2",
+                            "Name": "button_cfg_Z5",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Clicked_L216xH53.png",
@@ -51557,7 +51641,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_cfg_Z3_2",
+                            "Name": "textArea_bouton_cfg_Z5",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
@@ -51571,7 +51655,7 @@
                           },
                           {
                             "Type": "Image",
-                            "Name": "image_cfg_Z3_2",
+                            "Name": "image_cfg_Z5",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51579,7 +51663,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_cfg_Z3_2",
+                            "Name": "textArea_cfg_Z5",
                             "X": 163,
                             "Y": 13,
                             "Width": 53,
@@ -51596,14 +51680,13 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cart_MZ_Z3_2",
-                        "X": 466,
+                        "Name": "container_rattachement_Z5",
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_carteMZ_MZ_Z3_2",
+                            "Name": "button_gris_rattachement_Z5",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51611,11 +51694,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_carte_MZ_Z3_2",
+                            "Name": "textArea_bouton_rattachement_Z5",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_mz_carte_MZ1_centre_defaut",
+                            "TextId": "text_rattachement_zone",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51625,57 +51708,12 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_droite_carte_MZ_Z3_2",
+                            "Name": "button_rattachement_Z5",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
                             "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
                             "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_sortie_voie_Z3_2",
-                        "X": 699,
-                        "Width": 216,
-                        "Height": 53,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_sortie_voie_Z3_2",
-                            "Width": 216,
-                            "Height": 53,
-                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
-                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_droite_sortie_voie_Z3_2",
-                            "X": 163,
-                            "Width": 53,
-                            "Height": 53,
-                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
-                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_sortie_voie_Z3_2",
-                            "Y": 12,
-                            "Width": 163,
-                            "Height": 26,
-                            "TextId": "text_mz_sortie_voie_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_value_sortie_voie3",
-                              "UseBuffer": true,
-                              "BufferSize": 3
-                            }
                           }
                         ]
                       }
@@ -51691,13 +51729,59 @@
                     "Components": [
                       {
                         "Type": "Container",
-                        "Name": "container_rattachement_Z3_1",
+                        "Name": "container_sortie_voie_Z4",
+                        "X": 699,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_rattachement_Z3_1",
+                            "Name": "button_sortie_voie_Z4",
+                            "Width": 216,
+                            "Height": 53,
+                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
+                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_droite_sortie_voie_Z4",
+                            "X": 163,
+                            "Width": 53,
+                            "Height": 53,
+                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
+                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_sortie_voie_Z4",
+                            "Y": 12,
+                            "Width": 163,
+                            "Height": 26,
+                            "TextId": "text_mz_sortie_voie_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_value_sortie_voie4",
+                              "UseBuffer": true,
+                              "BufferSize": 3
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "container_cart_MZ_Z4",
+                        "X": 466,
+                        "Width": 216,
+                        "Height": 53,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_gris_carteMZ_MZ_Z4",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51705,11 +51789,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_rattachement_Z3_1",
+                            "Name": "textArea_bouton_carte_MZ_Z4",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_rattachement_zone",
+                            "TextId": "text_mz_carte_MZ1_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51719,7 +51803,7 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_rattachement_Z3_1",
+                            "Name": "button_droite_carte_MZ_Z4",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51730,14 +51814,14 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cfg_Z3_1",
+                        "Name": "container_cfg_Z4",
                         "X": 233,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_cfg_Z3_1",
+                            "Name": "button_cfg_Z4",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Clicked_L216xH53.png",
@@ -51745,7 +51829,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_cfg_Z3_1",
+                            "Name": "textArea_bouton_cfg_Z4",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
@@ -51759,7 +51843,7 @@
                           },
                           {
                             "Type": "Image",
-                            "Name": "image_cfg_Z3_1",
+                            "Name": "image_cfg_Z4",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51767,7 +51851,7 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_cfg_Z3_1",
+                            "Name": "textArea_cfg_Z4",
                             "X": 163,
                             "Y": 13,
                             "Width": 53,
@@ -51784,14 +51868,13 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cart_MZ_Z3_1",
-                        "X": 466,
+                        "Name": "container_rattachement_Z4",
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_carteMZ_MZ_Z3_1",
+                            "Name": "button_gris_rattachement_Z4",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51799,11 +51882,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_carte_MZ_Z3_1",
+                            "Name": "textArea_bouton_rattachement_Z4",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_mz_carte_MZ1_centre_defaut",
+                            "TextId": "text_rattachement_zone",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51813,57 +51896,12 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_droite_carte_MZ_Z3_1",
+                            "Name": "button_rattachement_Z4",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
                             "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
                             "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_sortie_voie_Z3_1",
-                        "X": 699,
-                        "Width": 216,
-                        "Height": 53,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_sortie_voie_Z3_1",
-                            "Width": 216,
-                            "Height": 53,
-                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
-                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_droite_sortie_voie_Z3_1",
-                            "X": 163,
-                            "Width": 53,
-                            "Height": 53,
-                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
-                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_sortie_voie_Z3_1",
-                            "Y": 12,
-                            "Width": 163,
-                            "Height": 26,
-                            "TextId": "text_mz_sortie_voie_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_value_sortie_voie3",
-                              "UseBuffer": true,
-                              "BufferSize": 3
-                            }
                           }
                         ]
                       }
@@ -51879,13 +51917,59 @@
                     "Components": [
                       {
                         "Type": "Container",
-                        "Name": "container_rattachement_Z3",
+                        "Name": "container_sortie_voie_Z3",
+                        "X": 699,
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_rattachement_Z3",
+                            "Name": "button_sortie_voie_Z3",
+                            "Width": 216,
+                            "Height": 53,
+                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
+                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
+                          },
+                          {
+                            "Type": "Button",
+                            "Name": "button_droite_sortie_voie_Z3",
+                            "X": 163,
+                            "Width": 53,
+                            "Height": 53,
+                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
+                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
+                          },
+                          {
+                            "Type": "TextArea",
+                            "Name": "textArea_sortie_voie_Z3",
+                            "Y": 12,
+                            "Width": 163,
+                            "Height": 26,
+                            "TextId": "text_mz_sortie_voie_centre_defaut",
+                            "TextRotation": "0",
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "Wildcard1": {
+                              "TextId": "text_value_sortie_voie2carte2",
+                              "UseBuffer": true,
+                              "BufferSize": 3
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "container_cart_MZ_Z3",
+                        "X": 466,
+                        "Width": 216,
+                        "Height": 53,
+                        "Components": [
+                          {
+                            "Type": "Button",
+                            "Name": "button_gris_carteMZ_MZ_Z3",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51893,11 +51977,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_rattachement_Z3",
+                            "Name": "textArea_bouton_carte_MZ_Z3",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_rattachement_zone",
+                            "TextId": "text_mz_carte_MZ1_centre_defaut",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -51907,7 +51991,7 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_rattachement_Z3",
+                            "Name": "button_droite_carte_MZ_Z3",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
@@ -51972,14 +52056,13 @@
                       },
                       {
                         "Type": "Container",
-                        "Name": "container_cart_MZ_Z3",
-                        "X": 466,
+                        "Name": "container_rattachement_Z3",
                         "Width": 216,
                         "Height": 53,
                         "Components": [
                           {
                             "Type": "Button",
-                            "Name": "button_gris_carteMZ_MZ_Z3",
+                            "Name": "button_gris_rattachement_Z3",
                             "Width": 216,
                             "Height": 53,
                             "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
@@ -51987,11 +52070,11 @@
                           },
                           {
                             "Type": "TextArea",
-                            "Name": "textArea_bouton_carte_MZ_Z3",
+                            "Name": "textArea_bouton_rattachement_Z3",
                             "Y": 12,
                             "Width": 163,
                             "Height": 26,
-                            "TextId": "text_mz_carte_MZ1_centre_defaut",
+                            "TextId": "text_rattachement_zone",
                             "TextRotation": "0",
                             "Color": {
                               "Red": 255,
@@ -52001,57 +52084,12 @@
                           },
                           {
                             "Type": "Button",
-                            "Name": "button_droite_carte_MZ_Z3",
+                            "Name": "button_rattachement_Z3",
                             "X": 163,
                             "Width": 53,
                             "Height": 53,
                             "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
                             "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_sortie_voie_Z3",
-                        "X": 699,
-                        "Width": 216,
-                        "Height": 53,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_sortie_voie_Z3",
-                            "Width": 216,
-                            "Height": 53,
-                            "Pressed": "Bouton_Gris_Unclicked_L216xH53.png",
-                            "Released": "Bouton_Gris_Unclicked_L216xH53.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_droite_sortie_voie_Z3",
-                            "X": 163,
-                            "Width": 53,
-                            "Height": 53,
-                            "Pressed": "Fleche_Droite_Clicked_L53xH53.png",
-                            "Released": "Fleche_Droite_Unclicked_L53xH53.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_sortie_voie_Z3",
-                            "Y": 12,
-                            "Width": 163,
-                            "Height": 26,
-                            "TextId": "text_mz_sortie_voie_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_value_sortie_voie3",
-                              "UseBuffer": true,
-                              "BufferSize": 3
-                            }
                           }
                         ]
                       }
@@ -52282,7 +52320,7 @@
                               "Blue": 255
                             },
                             "Wildcard1": {
-                              "TextId": "text_value_sortie_voie1",
+                              "TextId": "text_value_sortie_voie1carte2",
                               "UseBuffer": true,
                               "BufferSize": 3
                             }
@@ -52504,7 +52542,19 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_retour"
+            }
+          }
+        ]
       },
       {
         "Name": "Installation_MZ_parametrage_groupes",
@@ -53088,7 +53138,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Installation_hydraulique_message_multizones"
+              "ActionComponent": "Installation_hydraulique"
             }
           },
           {
@@ -53124,15 +53174,6 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_MZ_config_groupe"
-            }
-          },
-          {
-            "InteractionName": "Interaction1",
-            "Trigger": {
-              "Type": "TriggerClicked"
-            },
-            "Action": {
-              "Type": "ActionNone"
             }
           },
           {
@@ -54464,7 +54505,6 @@
                         "Name": "container_reg_externe",
                         "Width": 920,
                         "Height": 205,
-                        "Visible": false,
                         "Components": [
                           {
                             "Type": "Container",
@@ -54658,28 +54698,6 @@
                                 }
                               }
                             ]
-                          },
-                          {
-                            "Type": "ButtonWithLabel",
-                            "Name": "buttonWithLabel_param_groupe_zone_regul_multizones",
-                            "X": 471,
-                            "Y": 76,
-                            "Width": 449,
-                            "Height": 53,
-                            "Pressed": "Bouton_Gris_Clicked_L449xH53.png",
-                            "Released": "Bouton_Gris_Unclicked_L449xH53.png",
-                            "TextId": "text_param_groupe_zone_centre_defaut",
-                            "ReleasedColor": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "PressedColor": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "TextRotation": "0"
                           },
                           {
                             "Type": "ButtonWithLabel",
@@ -55852,7 +55870,7 @@
             }
           },
           {
-            "InteractionName": "BTNClicked_reisstance_term_externe_fct",
+            "InteractionName": "BTNClicked_resistance_term_externe_fct",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonWithLabel_resistance_terminaison_regul_externe"
@@ -55985,7 +56003,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Installation_hydraulique_message_multizones"
+              "ActionComponent": "Installation_MZ_message_multizones"
             }
           },
           {
@@ -55997,7 +56015,19 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Installation_hydraulique_message_multizones"
+              "ActionComponent": "Installation_MZ_message_multizones"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_param_groupes_zones",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_parametrage_groupes_zones"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_parametrage_groupes_zones"
             }
           }
         ]

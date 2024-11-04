@@ -29,6 +29,7 @@ public:
     void bouton_oui_regroupement();
     void bouton_non_regroupement();
     void bouton_parametrage_groupes_zones();
+    void MAJ_Etat_Bouton_Oui_Non_Multizone();
 
 
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);

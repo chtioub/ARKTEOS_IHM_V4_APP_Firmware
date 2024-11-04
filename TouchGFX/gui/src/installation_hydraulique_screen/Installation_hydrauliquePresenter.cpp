@@ -41,3 +41,8 @@ void Installation_hydrauliquePresenter::changeErreur(uint16_t u16Erreur)
 {
 	view.changeErreur(u16Erreur);
 }
+
+void Installation_hydrauliquePresenter::changeConfig(S_CONFIG_IHM *sConfig_IHM)
+{
+	view.changeConfig(sConfig_IHM);
+}

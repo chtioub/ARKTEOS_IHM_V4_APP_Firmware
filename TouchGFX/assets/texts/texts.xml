@@ -9,8 +9,29 @@
   </Languages>
   <Texts>
     <TextGroup Id="Installation_repartition_PW_Zone">
-      <Text Id="text_value_sortie_voie3" Alignment="Left" TypographyId="Default">
+      <Text Id="text_value_sortie_voie4carte2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_sortie_voie3carte2" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_sortie_voie4" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_sortie_voie2carte2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">2</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -23,7 +44,7 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_value_sortie_voie1" Alignment="Left" TypographyId="Default">
+      <Text Id="text_value_sortie_voie1carte2" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">1</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -853,35 +874,35 @@
     </TextGroup>
     <TextGroup Id="Unsorted">
       <Text Id="__SingleUse_JYA5" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="FR">Zone 8</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_IHPF" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="FR">Zone 7</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_FNEY" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="FR">Zone 6</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_7H6M" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="FR">Zone 5</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="__SingleUse_6JGZ" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="FR">Zone 4</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -915,7 +936,7 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_titre_acces_cfg_zone" Alignment="Left" TypographyId="Default">
+      <Text Id="text_titre_acces_cfg_zone" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Accès Cfg. Zone</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -5343,6 +5364,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Multizones">
+      <Text Id="text_parametrage_groupes_eau_centre_large" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramétrage des groupes d'eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_regroupement_zones_centre" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Regroupement de Zones</Translation>
         <Translation Language="GB">New Text</Translation>

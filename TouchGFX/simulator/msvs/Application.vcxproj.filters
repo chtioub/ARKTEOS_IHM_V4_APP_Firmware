@@ -1072,18 +1072,6 @@
     <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_repartition_pw_zone_screen">
       <UniqueIdentifier>28D15241-D0E1-9AC6-BC37-87DC81EAF1B5</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\installation_hydraulique_message_multizones_screen">
-      <UniqueIdentifier>3337C727-CEDE-7103-9444-CA037B658EB2</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\installation_hydraulique_message_multizones_screen">
-      <UniqueIdentifier>EF180C9A-3858-949B-D31B-275732FBCEE2</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_message_multizones_screen">
-      <UniqueIdentifier>92B6AC68-EEB0-E3C7-D21A-C39A4DF69048</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\installation_hydraulique_message_multizones_screen">
-      <UniqueIdentifier>CAF2E1A9-8F05-4779-816B-629C0570F47E</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\installation_mz_parametrage_groupes_screen">
       <UniqueIdentifier>4F5852EB-0CD3-D2A2-8653-33AEFB5C4252</UniqueIdentifier>
     </Filter>
@@ -1143,6 +1131,18 @@
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\installation_mz_config_groupe_screen">
       <UniqueIdentifier>CC46F602-8E45-0B06-868E-951230D1FCB6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_mz_message_multizones_screen">
+      <UniqueIdentifier>68DAEA58-F65F-9EFB-4539-BA7B11593A59</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_mz_message_multizones_screen">
+      <UniqueIdentifier>A4A1198E-911C-9959-3B98-49C995EF5D73</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_mz_message_multizones_screen">
+      <UniqueIdentifier>AA49BB38-BFA9-4E4B-6556-B2932922427F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_mz_message_multizones_screen">
+      <UniqueIdentifier>2BE99D8E-1C66-1724-1F3E-A34777DE6C9B</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1872,15 +1872,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_repartition_pw_zone_screen\Installation_hydraulique_repartition_PW_zoneViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_hydraulique_repartition_pw_zone_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesPresenter.cpp">
-      <Filter>Source Files\gui\installation_hydraulique_message_multizones_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesView.cpp">
-      <Filter>Source Files\gui\installation_hydraulique_message_multizones_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\installation_hydraulique_message_multizones_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\installation_mz_parametrage_groupes_screen\Installation_MZ_parametrage_groupesPresenter.cpp">
       <Filter>Source Files\gui\installation_mz_parametrage_groupes_screen</Filter>
     </ClCompile>
@@ -1925,6 +1916,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_param_ou_regroupement_zones_screen\Installation_MZ_param_ou_regroupement_zonesViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_mz_param_ou_regroupement_zones_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesPresenter.cpp">
+      <Filter>Source Files\gui\installation_mz_message_multizones_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesView.cpp">
+      <Filter>Source Files\gui\installation_mz_message_multizones_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_mz_message_multizones_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3064,15 +3064,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_repartition_pw_zone_screen\Installation_hydraulique_repartition_PW_zoneViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_hydraulique_repartition_pw_zone_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesPresenter.hpp">
-      <Filter>Header Files\gui\installation_hydraulique_message_multizones_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesView.hpp">
-      <Filter>Header Files\gui\installation_hydraulique_message_multizones_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_message_multizones_screen\Installation_hydraulique_message_multizonesViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\installation_hydraulique_message_multizones_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\installation_mz_parametrage_groupes_screen\Installation_MZ_parametrage_groupesPresenter.hpp">
       <Filter>Header Files\gui\installation_mz_parametrage_groupes_screen</Filter>
     </ClInclude>
@@ -3117,6 +3108,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_param_ou_regroupement_zones_screen\Installation_MZ_param_ou_regroupement_zonesViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_mz_param_ou_regroupement_zones_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesPresenter.hpp">
+      <Filter>Header Files\gui\installation_mz_message_multizones_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesView.hpp">
+      <Filter>Header Files\gui\installation_mz_message_multizones_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_mz_message_multizones_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
