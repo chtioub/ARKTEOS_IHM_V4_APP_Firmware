@@ -20,6 +20,17 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 	barre_titre.connexionDistante(false);
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
+
+	// Copie des zones
+	for (int i = 0; i < 8; i++)
+	{
+		sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
+	}
+	// Copie des groupes
+	for (int i = 8; i < 10; i++)
+	{
+		sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
+	}
     //
 	u8Nb_PAC = sConfig_IHM.sParam_PAC.numEsclave + 1;
 	//
@@ -103,26 +114,7 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 	// Multizones
 	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
 	{
-		if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == true || sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == true)
-		{
-			toggleButton_non_oui_non_regroupement.forceState(false);
-			toggleButton_non_oui_non_regroupement.invalidate();
-			toggleButton_oui_oui_non_regroupement.forceState(true);
-			toggleButton_oui_oui_non_regroupement.invalidate();
-			buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAM_GROUPE_ZONE_CENTRE_DEFAUT));
-			buttonWithLabel_parametrage_groupes_zones.invalidate();
-			bRegroupementZoneTemp = true;
-		}
-		else
-		{
-			toggleButton_non_oui_non_regroupement.forceState(true);
-			toggleButton_non_oui_non_regroupement.invalidate();
-			toggleButton_oui_oui_non_regroupement.forceState(false);
-			toggleButton_oui_oui_non_regroupement.invalidate();
-			buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAMETRAGE_ZONE_INDEPENDANTES));
-			buttonWithLabel_parametrage_groupes_zones.invalidate();
-			bRegroupementZoneTemp = false;
-		}
+		MAJ_Etat_Bouton_Oui_Non_Multizone();
 	}
 }
 
@@ -230,6 +222,7 @@ void Installation_hydrauliqueView::affichage_type_regul()
 		case REGUL_BAL_TAMPON_MULTI_ZONE:
 			textArea_valeur_type_regulation.setTypedText(touchgfx::TypedText(T_TEXT_REGUL_MULTI_ZONES_CENTRE_DEFAUT));
 			container_regul_multizones.setVisible(true);
+			MAJ_Etat_Bouton_Oui_Non_Multizone();
 			break;
 		case REGUL_EXTERNE:
 			textArea_valeur_type_regulation.setTypedText(touchgfx::TypedText(T_TEXT_REGUL_EXTERNE_CENTRE_DEFAUT));
@@ -345,6 +338,30 @@ void Installation_hydrauliqueView::bouton_param_zone_2()
 	application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 }
 
+void Installation_hydrauliqueView::MAJ_Etat_Bouton_Oui_Non_Multizone()
+{
+	if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif == true || sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif == true)
+	{
+		toggleButton_non_oui_non_regroupement.forceState(false);
+		toggleButton_non_oui_non_regroupement.invalidate();
+		toggleButton_oui_oui_non_regroupement.forceState(true);
+		toggleButton_oui_oui_non_regroupement.invalidate();
+		buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAM_GROUPE_ZONE_CENTRE_DEFAUT));
+		buttonWithLabel_parametrage_groupes_zones.invalidate();
+		bRegroupementZoneTemp = true;
+	}
+	else
+	{
+		toggleButton_non_oui_non_regroupement.forceState(true);
+		toggleButton_non_oui_non_regroupement.invalidate();
+		toggleButton_oui_oui_non_regroupement.forceState(false);
+		toggleButton_oui_oui_non_regroupement.invalidate();
+		buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAMETRAGE_ZONE_INDEPENDANTES));
+		buttonWithLabel_parametrage_groupes_zones.invalidate();
+		bRegroupementZoneTemp = false;
+	}
+}
+
 void Installation_hydrauliqueView::bouton_oui_regroupement()
 {
 	toggleButton_non_oui_non_regroupement.forceState(false);
@@ -370,7 +387,14 @@ void Installation_hydrauliqueView::bouton_non_regroupement()
 
 void Installation_hydrauliqueView::bouton_parametrage_groupes_zones()
 {
-
+	if (bRegroupementZoneTemp)
+	{
+		application().gotoInstallation_MZ_parametrage_groupesScreenNoTransition();
+	}
+	else
+	{
+		application().gotoInstallation_MZ_param_ou_regroupement_zonesScreenNoTransition();
+	}
 }
 
 void Installation_hydrauliqueView::affichage_zones()

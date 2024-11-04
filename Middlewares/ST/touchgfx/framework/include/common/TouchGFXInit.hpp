@@ -18,7 +18,11 @@
 #ifndef TOUCHGFX_TOUCHGFXINIT_HPP
 #define TOUCHGFX_TOUCHGFXINIT_HPP
 
+#include <BitmapDatabase.hpp>
+#include <fonts/ApplicationFontProvider.hpp>
+#include <gui/common/FrontendHeap.hpp>
 #include <platform/driver/touch/TouchController.hpp>
+#include <texts/TypedTextDatabase.hpp>
 #include <touchgfx/Application.hpp>
 #include <touchgfx/Bitmap.hpp>
 #include <touchgfx/Texts.hpp>
@@ -27,10 +31,6 @@
 #include <touchgfx/hal/HAL.hpp>
 #include <touchgfx/hal/Types.hpp>
 #include <touchgfx/lcd/LCD.hpp>
-#include <BitmapDatabase.hpp>
-#include <fonts/ApplicationFontProvider.hpp>
-#include <texts/TypedTextDatabase.hpp>
-#include <gui/common/FrontendHeap.hpp>
 
 static ApplicationFontProvider fontProvider; ///< The font provider
 

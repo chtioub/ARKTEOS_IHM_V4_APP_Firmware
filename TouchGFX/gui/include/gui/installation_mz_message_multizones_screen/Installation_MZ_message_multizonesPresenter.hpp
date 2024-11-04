@@ -1,17 +1,17 @@
-#ifndef INSTALLATION_MZ_PARAM_OU_REGROUPEMENT_ZONESPRESENTER_HPP
-#define INSTALLATION_MZ_PARAM_OU_REGROUPEMENT_ZONESPRESENTER_HPP
+#ifndef INSTALLATION_MZ_MESSAGE_MULTIZONESPRESENTER_HPP
+#define INSTALLATION_MZ_MESSAGE_MULTIZONESPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Installation_MZ_param_ou_regroupement_zonesView;
+class Installation_MZ_message_multizonesView;
 
-class Installation_MZ_param_ou_regroupement_zonesPresenter : public touchgfx::Presenter, public ModelListener
+class Installation_MZ_message_multizonesPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Installation_MZ_param_ou_regroupement_zonesPresenter(Installation_MZ_param_ou_regroupement_zonesView& v);
+    Installation_MZ_message_multizonesPresenter(Installation_MZ_message_multizonesView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,8 +25,7 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Installation_MZ_param_ou_regroupement_zonesPresenter() {}
-
+    virtual ~Installation_MZ_message_multizonesPresenter() {}
     virtual void changeDate(S_DATE *sDate);
 	virtual void changeErreur(uint16_t u16Erreur);
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
@@ -34,9 +33,9 @@ public:
 	virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
 
 private:
-    Installation_MZ_param_ou_regroupement_zonesPresenter();
+    Installation_MZ_message_multizonesPresenter();
 
-    Installation_MZ_param_ou_regroupement_zonesView& view;
+    Installation_MZ_message_multizonesView& view;
 };
 
-#endif // INSTALLATION_MZ_PARAM_OU_REGROUPEMENT_ZONESPRESENTER_HPP
+#endif // INSTALLATION_MZ_MESSAGE_MULTIZONESPRESENTER_HPP
