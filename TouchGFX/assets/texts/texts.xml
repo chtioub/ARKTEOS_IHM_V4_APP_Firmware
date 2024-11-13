@@ -8,6 +8,29 @@
     <Language Id="DE" />
   </Languages>
   <Texts>
+    <TextGroup Id="Group1">
+      <Text Id="text_voulez_vous_activer_le_groupe" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">A</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_groupe_B_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Groupe B</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_GroupeA" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Groupe A</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Installation_repartition_PW_Zone">
       <Text Id="text_value_sortie_voie4carte2" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">4</Translation>
@@ -873,6 +896,48 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_question_activation_groupe" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer  &lt;value&gt; ?</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_attention_info" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Pas de Vanne 3 voies mélangeuse sur la voie/sortie n°1 de la&#10;carte REG. La voie/sortie n°1 de la carte REG doit avoir :&#10;&#10;- La loi d'eau la plus élevée en mode chauffage&#10;- La consigne d'eau la plus basse en mode rafraichissement</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_attention_titre" Alignment="Left" TypographyId="Large">
+        <Translation Language="FR">*** ATTENTION  ***</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mz_groupe_A_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_value_mz_centre_groupe_B" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Groupe B</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mz_groupe_B_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_JYA5" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Zone 8</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -1029,20 +1094,6 @@
       </Text>
       <Text Id="text_mz_carte_MZ2_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">MZ2</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_mz_groupe_B_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Groupe B</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_mz_groupe_A_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Groupe A</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -3198,7 +3249,7 @@
         <Translation Language="DE">&lt;Value&gt; : Température d'eau départ groupe &lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_groupe_A_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">A</Translation>
+        <Translation Language="FR">Groupe B</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -5364,6 +5415,20 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Multizones">
+      <Text Id="text_mz_carte_REG_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sous_station_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sous-station</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_parametrage_groupes_eau_centre_large" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Paramétrage des groupes d'eau</Translation>
         <Translation Language="GB">New Text</Translation>

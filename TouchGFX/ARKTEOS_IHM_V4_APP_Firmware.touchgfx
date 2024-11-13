@@ -52696,7 +52696,7 @@
                   },
                   {
                     "Type": "Container",
-                    "Name": "container_groupe_b_type",
+                    "Name": "container_groupe_B_type",
                     "X": 248,
                     "Y": 100,
                     "Width": 216,
@@ -52770,8 +52770,8 @@
                       },
                       {
                         "Type": "TextArea",
-                        "Name": "textArea_valeur_type_regulation_1_1",
-                        "Y": 13,
+                        "Name": "textArea_valeur_type_groupe_B",
+                        "Y": 12,
                         "Width": 216,
                         "Height": 26,
                         "TextId": "text_type_groupe_eau_plancher",
@@ -52812,6 +52812,9 @@
                           "Red": 255,
                           "Green": 255,
                           "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_groupe_A_centre_defaut"
                         }
                       },
                       {
@@ -52928,7 +52931,7 @@
                   },
                   {
                     "Type": "Container",
-                    "Name": "container_groupe_a_type",
+                    "Name": "container_groupe_A_type",
                     "X": 248,
                     "Y": 25,
                     "Width": 216,
@@ -53002,7 +53005,7 @@
                       },
                       {
                         "Type": "TextArea",
-                        "Name": "textArea_valeur_type_regulation_1",
+                        "Name": "textArea_valeur_type_groupe_A",
                         "Y": 13,
                         "Width": 216,
                         "Height": 26,
@@ -53044,6 +53047,9 @@
                           "Red": 255,
                           "Green": 255,
                           "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_value_GroupeA"
                         }
                       },
                       {
@@ -53112,6 +53118,62 @@
                       "Green": 255,
                       "Blue": 255
                     }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_attention",
+                    "X": 175,
+                    "Width": 600,
+                    "Height": 250,
+                    "Components": [
+                      {
+                        "Type": "Image",
+                        "Name": "image_arriere_plan",
+                        "Width": 600,
+                        "Height": 250,
+                        "RelativeFilename": "Arriere_Plan_L600xH250.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_attention_info",
+                        "X": 20,
+                        "Y": 60,
+                        "Width": 560,
+                        "Height": 121,
+                        "TextId": "text_attention_info",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_titre_attention",
+                        "X": 150,
+                        "Y": 15,
+                        "Width": 300,
+                        "Height": 33,
+                        "TextId": "text_attention_titre",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_valider_attention",
+                        "X": 508,
+                        "Y": 182,
+                        "Width": 79,
+                        "Height": 55,
+                        "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
+                        "Released": "Bouton_Valider_Unclicked_L79xH55.png"
+                      }
+                    ]
                   }
                 ]
               },
@@ -53186,6 +53248,83 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_MZ_config_zone"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_carte_groupe_A",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_carte_MZ_groupe_A"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_choix_carte_MZ_groupe_A"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_carte_groupe_B",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_carte_MZ_groupe_B"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_choix_carte_MZ_groupe_B"
+            }
+          },
+          {
+            "InteractionName": "BTNCLicked_bouton_voie_groupe_A",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_sortie_voie_groupe_A"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_sortie_groupe_A"
+            }
+          },
+          {
+            "InteractionName": "BTNCLicked_bouton_voie_groupe_B",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_sortie_voie_groupe_B"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_sortie_groupe_B"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_groupe_A_Fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_groupe_A"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_groupe_A"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_groupe_B_Fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_groupe_B"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_groupe_B"
+            }
+          },
+          {
+            "InteractionName": "BTNCliked_attention_valid_button",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider_attention"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "attention_valid_button_clicked"
             }
           }
         ]
@@ -53654,12 +53793,15 @@
                     "Y": 8,
                     "Width": 433,
                     "Height": 60,
-                    "TextId": "text_question_cumul_energie_centre_defaut",
+                    "TextId": "text_question_activation_groupe",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
                       "Green": 255,
                       "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_voulez_vous_activer_le_groupe"
                     },
                     "WideTextAction": 2
                   },
