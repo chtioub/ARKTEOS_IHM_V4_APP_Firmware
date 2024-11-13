@@ -16,8 +16,34 @@ Installation_MZ_config_groupeView::Installation_MZ_config_groupeView()
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
 
-	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_INSTALLATION_CENTRE_DEFAUT).getText());
+//	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_INSTALLATION_CENTRE_DEFAUT).getText());
+//	barre_titre.titre(textAreaBuffer_Titre);
+
+	//sParamZxMZtemp[] sConfig_Hydrau_temp.
+
+	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_PARAMETRES_CENTRE_DEFAUT).getText());
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
+	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
+	//Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", (sConfig_Hydrau_temp.u8NumZone == 8) ? 'A' : 'B');
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
 	barre_titre.titre(textAreaBuffer_Titre);
+
+//	Unicode::snprintf(textAreaBuffer_Question, 60,touchgfx::TypedText(T_TEXT_QUESTION_ACTIVATION_GROUPE).getText());
+//	Unicode::snprintf(&textAreaBuffer_Question[Unicode::strlen(textAreaBuffer_Question)], 5, " ");
+//	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Question[Unicode::strlen(textAreaBuffer_Question)], 10);
+//	Unicode::snprintf(&textAreaBuffer_Question[Unicode::strlen(textAreaBuffer_Question)], 3, " ?");
+//	textArea_question_oui_non.setWildcard(textAreaBuffer_Question);
+
+
+//	Unicode::snprintf(textAreaBuffer_Question, 50,touchgfx::TypedText(T_TEXT_QUESTION_ACTIVATION_GROUPE).getText());
+//	//Unicode::snprintf(&textAreaBuffer_Question[Unicode::strlen(textAreaBuffer_Question)], 50, " ");
+////	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Question[Unicode::strlen(textAreaBuffer_Question)], 50);
+////	Unicode::snprintf(&textAreaBuffer_Question[Unicode::strlen(textAreaBuffer_Question)], 50, " ?");
+//	textArea_question_oui_non.setWildcard(textAreaBuffer_Question);
+//	textArea_question_oui_non.invalidate();
+	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, textAreaBuffer_Question, 10);
+	textArea_question_oui_non.setWildcard(textAreaBuffer_Question);
+	textArea_question_oui_non.invalidate();
 }
 
 void Installation_MZ_config_groupeView::setupScreen()

@@ -21,17 +21,7 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIG_INSTALL_HYDRAU_CENTRE_LARGE).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 
-	// Copie des zones
-	for (int i = 0; i < 8; i++)
-	{
-		sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
-	}
-	// Copie des groupes
-	for (int i = 8; i < 10; i++)
-	{
-		sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
-	}
-    //
+
 	u8Nb_PAC = sConfig_IHM.sParam_PAC.numEsclave + 1;
 	//
 	if(sConfig_IHM.sOption_PAC.TypeAppoint != 0)
@@ -114,6 +104,16 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 	// Multizones
 	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
 	{
+		// Copie des zones
+		for (int i = 0; i < 8; i++)
+		{
+			sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
+		}
+		// Copie des groupes
+		for (int i = 8; i < 10; i++)
+		{
+			sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
+		}
 		MAJ_Etat_Bouton_Oui_Non_Multizone();
 	}
 }
