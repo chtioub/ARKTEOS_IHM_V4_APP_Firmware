@@ -53957,14 +53957,14 @@
             }
           },
           {
-            "InteractionName": "BTNClicked_bouton_droit_emetteur",
+            "InteractionName": "BTNClicked_bouton_droite_emetteur",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "bouton_droite_type_emett"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "bouton_droit_type_emetteur"
+              "FunctionName": "bouton_droite_type_emetteur"
             }
           },
           {
@@ -54320,7 +54320,43 @@
             ]
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_MZ_config_groupe"
+            }
+          },
+          {
+            "InteractionName": "BTN_Clicked_valider_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTN_Clicked_valider_change_screen",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_MZ_config_groupe"
+            }
+          }
+        ]
       },
       {
         "Name": "Installation_MZ_param_complementaires_groupe",

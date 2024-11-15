@@ -87,60 +87,79 @@ Installation_MZ_config_groupeView::Installation_MZ_config_groupeView()
 
 void Installation_MZ_config_groupeView::bouton_droite_type_emetteur()
 {
-	switch(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur)
-	{
-		case PLANCHER:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = VENTILO;
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
-			break;
-		case VENTILO:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = RADIATEUR;
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur, sizeof(u8Loideau_Radiateur));
-			break;
-		case RADIATEUR:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = GAINABLE;
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Gainable, sizeof(u8Loideau_Gainable));
-			break;
-		case GAINABLE:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = SOUS_STATION;
-			break;
-		case SOUS_STATION:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = PLANCHER;
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
-			break;
-		default:
-			break;
-	}
+//	switch(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur)
+//	{
+//		case PLANCHER:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = VENTILO;
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
+//			break;
+//		case VENTILO:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = RADIATEUR;
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur, sizeof(u8Loideau_Radiateur));
+//			break;
+//		case RADIATEUR:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = GAINABLE;
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Gainable, sizeof(u8Loideau_Gainable));
+//			break;
+//		case GAINABLE:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = SOUS_STATION;
+//			break;
+//		case SOUS_STATION:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = PLANCHER;
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
+//			break;
+//		default:
+//			break;
+//	}
 	//
+
+	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur < 4)
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur++;
+	}
+	else
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = 0;
+	}
+
 	affichage_type_emetteur();
 }
 
 void Installation_MZ_config_groupeView::bouton_gauche_type_emetteur()
 {
-	switch(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur)
+//	switch(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur)
+//	{
+//		case PLANCHER:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = SOUS_STATION;
+//			//memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
+//			break;
+//		case VENTILO:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = PLANCHER;
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
+//			break;
+//		case RADIATEUR:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = VENTILO;
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
+//			break;
+//		case GAINABLE:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = RADIATEUR;
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
+//			break;
+//		case SOUS_STATION:
+//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = GAINABLE;
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur, sizeof(u8Loideau_Gainable));
+//			break;
+//		default:
+//			break;
+//	}
+
+	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur > 0)
 	{
-		case PLANCHER:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = SOUS_STATION;
-			//memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
-			break;
-		case VENTILO:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = PLANCHER;
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
-			break;
-		case RADIATEUR:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = VENTILO;
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
-			break;
-		case GAINABLE:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = RADIATEUR;
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
-			break;
-		case SOUS_STATION:
-			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = GAINABLE;
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur, sizeof(u8Loideau_Gainable));
-			break;
-		default:
-			break;
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur--;
+	}
+	else
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = 4;
 	}
 	//
 	affichage_type_emetteur();
