@@ -271,6 +271,9 @@
     <ClCompile Include="..\..\gui\src\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesViewBase.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidView.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -671,6 +674,9 @@
     <ClInclude Include="..\..\gui\include\gui\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

@@ -896,6 +896,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_rafraichissement_groupe_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le rafraichissement&#10;du Groupe ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_question_activation_groupe" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Voulez-vous activer  &lt;value&gt; ?</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>

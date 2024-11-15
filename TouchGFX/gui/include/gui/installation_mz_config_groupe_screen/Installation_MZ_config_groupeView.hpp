@@ -13,6 +13,11 @@ public:
     virtual void tearDownScreen();
 
     void bouton_retour();
+    void bouton_droite_type_emetteur();
+    void bouton_gauche_type_emetteur();
+    void affichage_type_emetteur();
+    void bouton_non();
+    void bouton_oui();
 
 
 	virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
@@ -21,6 +26,10 @@ public:
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
+	uint8_t u8Loideau_Plancher[6] = {29, 31, 34, 38, 42, 45};
+	uint8_t u8Loideau_Ventilo[6] = {40, 43, 45, 50, 55, 55};
+	uint8_t u8Loideau_Radiateur[6] = {45, 47, 48, 53, 55, 55};
+	uint8_t u8Loideau_Gainable[6] = {40, 44, 47, 51, 53, 55};
 	bool bConnexionDistance;
 	uint16_t u16ErreurAffichee;
 	S_DATE sDate_old;

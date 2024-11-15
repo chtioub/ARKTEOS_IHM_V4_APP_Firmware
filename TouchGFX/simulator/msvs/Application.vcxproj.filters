@@ -1144,6 +1144,18 @@
     <Filter Include="Source Files\generated\gui_generated\installation_mz_message_multizones_screen">
       <UniqueIdentifier>2BE99D8E-1C66-1724-1F3E-A34777DE6C9B</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\installation_mz_param_complementaires_froid_screen">
+      <UniqueIdentifier>1ED0FBD3-9EBD-ADF5-30BC-2504C43F0ADA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_mz_param_complementaires_froid_screen">
+      <UniqueIdentifier>B82FB719-2348-6936-EE0E-36FCA97CF53E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_mz_param_complementaires_froid_screen">
+      <UniqueIdentifier>AD61D39F-0B79-7868-1F4C-83C0ACF4638A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_mz_param_complementaires_froid_screen">
+      <UniqueIdentifier>06B3A20C-6F12-3CD0-D3FB-88CC46CBD960</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1925,6 +1937,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_mz_message_multizones_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_mz_param_complementaires_froid_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidPresenter.cpp">
+      <Filter>Source Files\gui\installation_mz_param_complementaires_froid_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidView.cpp">
+      <Filter>Source Files\gui\installation_mz_param_complementaires_froid_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3117,6 +3138,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_message_multizones_screen\Installation_MZ_message_multizonesViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_mz_message_multizones_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidPresenter.hpp">
+      <Filter>Header Files\gui\installation_mz_param_complementaires_froid_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidView.hpp">
+      <Filter>Header Files\gui\installation_mz_param_complementaires_froid_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_mz_param_complementaires_froid_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
