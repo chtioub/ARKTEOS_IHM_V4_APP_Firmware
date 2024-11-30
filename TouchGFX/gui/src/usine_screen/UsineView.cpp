@@ -1,4 +1,6 @@
 #include <gui/usine_screen/UsineView.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/Utils.hpp>
 
 UsineView::UsineView()
 {

@@ -54,7 +54,7 @@ uint8_t au8Prog_ModeSilence[7][24];
 uint8_t u8Prog[7][24], u8JourProg;
 uint8_t u8ZoneSelect;
 uint8_t u8PositionX, u8PositionY;
-bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine;
+bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp;
 S_HISTO_ERR sHisto_Erreur;
 uint16_t u16NumAction;
 uint32_t u32ValAction, eAnciennePage;

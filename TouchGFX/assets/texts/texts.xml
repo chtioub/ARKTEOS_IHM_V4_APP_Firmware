@@ -8,6 +8,43 @@
     <Language Id="DE" />
   </Languages>
   <Texts>
+    <TextGroup Id="Installation_repartition_PW_Zone">
+      <Text Id="text_rouge_message_multizones_groupe" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">INFORMATION :&#10;Nécessite la présence d'une à deux cartes Multi-zones.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_centre_titre_repartition_puissance_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Répartition de la puissance entre les zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_part_volume_zone2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">50</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_part_volume_zone1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">50</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_part_valume_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;%</Translation>
+        <Translation Language="PT">&lt;Value&gt;%</Translation>
+        <Translation Language="NL">&lt;Value&gt;%</Translation>
+        <Translation Language="DE">&lt;Value&gt;%</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Erreurs">
       <Text Id="text_err_202_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Erreur : Sonde température TEV_OUT</Translation>
@@ -637,7 +674,212 @@
         <Translation Language="DE">(&lt;Value&gt;°C)</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="Installation_circuit_capteur">
+      <Text Id="text_valeur_vitesse_max_pompe_puits_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">100</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_vitesse_max_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;%</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_vitesse_max_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Vitesse maximum de la pompe de puits</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_valeur_vitesse_min_pompe_puits_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">60</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_vitesse_min_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;%</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_vitesse_min_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Vitesse minimum de la pompe de puits</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_oui_non_pilotage_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous piloter la vitesse de la pompe de puits ?</Translation>
+        <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="PT">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="NL">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="DE">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+      </Text>
+      <Text Id="text_non_pilotage_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+        <Translation Language="NL">Non</Translation>
+        <Translation Language="DE">Non</Translation>
+      </Text>
+      <Text Id="text_oui_pilotage_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="PT">Sim</Translation>
+        <Translation Language="NL">Oui</Translation>
+        <Translation Language="DE">Oui</Translation>
+      </Text>
+      <Text Id="text_oui_marche_forcee_circ_capt_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Oui</Translation>
+        <Translation Language="GB">Yes</Translation>
+        <Translation Language="PT">Sim</Translation>
+        <Translation Language="NL">Oui</Translation>
+        <Translation Language="DE">Oui</Translation>
+      </Text>
+      <Text Id="text_non_marche_forcee_circ_capt_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">No</Translation>
+        <Translation Language="PT">Não</Translation>
+        <Translation Language="NL">Non</Translation>
+        <Translation Language="DE">Non</Translation>
+      </Text>
+      <Text Id="text_oui_non_marche_forcee_circ_capt_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous une marche circulateur forcée ?</Translation>
+        <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="PT">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="NL">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+        <Translation Language="DE">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
+      </Text>
+      <Text Id="text_valeur_vitesse_type_circ_capteur_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">V100</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_vitesse_type_circ_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_vitesse_type_circ_capteur_init_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Valeur</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_type_circulateur_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type de circulateur</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_valeur_type_circulateur_capteur_init_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">PWM</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_type_circulateur_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_type_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type de capteur</Translation>
+        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
+        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
+        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
+      </Text>
+      <Text Id="text_valeur_type_capteur_nappe_barrage_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Nappe barrage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_type_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_blanc_message_multizones_zones_seules" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Vous pouvez gérer jusqu'à 8 Zones. Chacune des zones dispose alors :&#10; - d'une consigne de température d'eau (loi d'eau)&#10; - d'une consigne d'ambiance</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_blanc_message_multizones_groupe" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR" Alignment="Left">Vous pouvez gérer jusqu'à 8 Zones avec une consigne de température d'eau individuelle pour chacunes.&#10;&#10;OU&#10;&#10;Effectuer un regroupement de Zones afin de créer jusqu'à 2 groupes avec  les zones ayant besoin d'un même seuil de température d'eau.&#10;Vous pouvez aussi panacher les zones regroupées et celles régulées séparément.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_rouge_message_multizones_zones_seules" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">INFORMATIONS :&#10;Nécessite la présence d'une à deux cartes Multi-zones.&#10;Dans le cas d'un gainable, il faut impérativement créer un groupe d'eau au minimum.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_parametrage_zone_independantes" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramétrage des zones indépendantes</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_parametrage_groupes_et_zones" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">paramétrage des groupes d'eau et des zones</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_pilotage_pompe_puits" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Nécessite l'utilisationd'une carte&#10;additionnelle.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_part_volume_zone2" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="GB">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="PT">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="NL">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="DE">Part du volume de la Zone 2 sur le volume&#10;total chauffé</Translation>
+      </Text>
+      <Text Id="text_part_volume_zone1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Part du volume de la Zone 1 sur le volume&#10;total chauffé</Translation>
+        <Translation Language="GB">text_part_volume_zone1</Translation>
+        <Translation Language="PT" Alignment="Right">text_part_volume_zone1</Translation>
+        <Translation Language="NL">text_part_volume_zone1</Translation>
+        <Translation Language="DE">text_part_volume_zone1</Translation>
+      </Text>
       <Text Id="text_hz_comp_droite" Alignment="Right" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;Hz</Translation>
         <Translation Language="GB">&lt;Value&gt;Hz</Translation>
@@ -1059,14 +1301,14 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_question_resistance_terminaison_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Voulez-vous activer la résistance de terminaison ?</Translation>
+        <Translation Language="FR">Voulez-vous activer la résistance&#10;de terminaison ?</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_texte_resistance_terminaison_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Dans le cas de la régulation cascade, il est nécessaire d'activer la résistance de terminaison pour les deux machines aux extrémitées du bus de communication.</Translation>
+        <Translation Language="FR">Dans le cas de la régulation cascade, il est nécessaire d'activer la résistance de terminaison pour les deux machines aux extrémités du bus de communication.</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -4453,6 +4695,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation">
+      <Text Id="text_vitesse_pompe_de_puits" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Vitesse de la pompe de puits</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_courbe_loi_eau_centre_large" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">Courbe loi d'eau</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -6197,155 +6446,6 @@
         <Translation Language="DE">Mode simultané</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Installation_circuit_capteur">
-      <Text Id="text_valeur_vitesse_max_pompe_puits_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">100</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_valeur_vitesse_max_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="text_vitesse_max_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Vitesse maximum de la pompe de puits</Translation>
-        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
-        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
-        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-      </Text>
-      <Text Id="text_valeur_vitesse_min_pompe_puits_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">60</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_valeur_vitesse_min_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="text_vitesse_min_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Vitesse minimum de la pompe de puits</Translation>
-        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
-        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
-        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-      </Text>
-      <Text Id="text_oui_non_pilotage_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Voulez-vous piloter la vitesse de la pompe de puits ?</Translation>
-        <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
-        <Translation Language="PT">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
-        <Translation Language="NL">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
-        <Translation Language="DE">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
-      </Text>
-      <Text Id="text_non_pilotage_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Non</Translation>
-        <Translation Language="GB">No</Translation>
-        <Translation Language="PT">Não</Translation>
-        <Translation Language="NL">Non</Translation>
-        <Translation Language="DE">Non</Translation>
-      </Text>
-      <Text Id="text_oui_pilotage_pompe_puits_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Oui</Translation>
-        <Translation Language="GB">Yes</Translation>
-        <Translation Language="PT">Sim</Translation>
-        <Translation Language="NL">Oui</Translation>
-        <Translation Language="DE">Oui</Translation>
-      </Text>
-      <Text Id="text_oui_marche_forcee_circ_capt_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Oui</Translation>
-        <Translation Language="GB">Yes</Translation>
-        <Translation Language="PT">Sim</Translation>
-        <Translation Language="NL">Oui</Translation>
-        <Translation Language="DE">Oui</Translation>
-      </Text>
-      <Text Id="text_non_marche_forcee_circ_capt_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Non</Translation>
-        <Translation Language="GB">No</Translation>
-        <Translation Language="PT">Não</Translation>
-        <Translation Language="NL">Non</Translation>
-        <Translation Language="DE">Non</Translation>
-      </Text>
-      <Text Id="text_oui_non_marche_forcee_circ_capt_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Voulez-vous une marche circulateur forcée ?</Translation>
-        <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
-        <Translation Language="PT">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
-        <Translation Language="NL">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
-        <Translation Language="DE">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
-      </Text>
-      <Text Id="text_valeur_vitesse_type_circ_capteur_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">V100</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_valeur_vitesse_type_circ_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="text_vitesse_type_circ_capteur_init_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Valeur</Translation>
-        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
-        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
-        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-      </Text>
-      <Text Id="text_type_circulateur_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Type de circulateur</Translation>
-        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
-        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
-        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-      </Text>
-      <Text Id="text_valeur_type_circulateur_capteur_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">PWM</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_valeur_type_circulateur_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="text_type_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Type de capteur</Translation>
-        <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
-        <Translation Language="PT">Duração máxima do ciclo termodinâmico ou desativação da função</Translation>
-        <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-        <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
-      </Text>
-      <Text Id="text_valeur_type_capteur_nappe_barrage_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Nappe barrage</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_valeur_type_capteur_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="PT">&lt;value&gt;</Translation>
-        <Translation Language="NL">&lt;value&gt;</Translation>
-        <Translation Language="DE">&lt;value&gt;</Translation>
-      </Text>
-    </TextGroup>
     <TextGroup Id="Installation_ecs_avances">
       <Text Id="text_type_echangeur_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Type d'échangeur ECS ?&#10;(ajout des phases d'équilibrage)</Translation>
@@ -7337,21 +7437,21 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_tri_24_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_tri_24_ajpac_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Tri 24kW</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_tri_20_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_tri_20_ajpac_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Tri 20kW</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_tri_16_ajpac_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_tri_16_ajpac_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Tri 16kW</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>

@@ -47,27 +47,6 @@ void Usine_config_ajpacView::tearDownScreen()
 
 void Usine_config_ajpacView::bouton_droite_ajpac()
 {
-	//
-	if(u8TypeAJPAC == MONO_16KW)
-	{
-		u8TypeAJPAC = TRI_24KW;
-	}
-	else if(u8TypeAJPAC == TRI_16KW)
-	{
-		u8TypeAJPAC = MONO_16KW;
-	}
-	else if(u8TypeAJPAC == TRI_20KW)
-	{
-		u8TypeAJPAC = TRI_16KW;
-	}
-	else u8TypeAJPAC = TRI_20KW;
-	//
-	afficheTypeAJPAC();
-}
-
-void Usine_config_ajpacView::bouton_gauche_ajpac()
-{
-	//
 	if(u8TypeAJPAC == MONO_16KW)
 	{
 		u8TypeAJPAC = TRI_16KW;
@@ -81,6 +60,25 @@ void Usine_config_ajpacView::bouton_gauche_ajpac()
 		u8TypeAJPAC = TRI_24KW;
 	}
 	else u8TypeAJPAC = MONO_16KW;
+	//
+	afficheTypeAJPAC();
+}
+
+void Usine_config_ajpacView::bouton_gauche_ajpac()
+{
+	if(u8TypeAJPAC == MONO_16KW)
+	{
+		u8TypeAJPAC = TRI_24KW;
+	}
+	else if(u8TypeAJPAC == TRI_16KW)
+	{
+		u8TypeAJPAC = MONO_16KW;
+	}
+	else if(u8TypeAJPAC == TRI_20KW)
+	{
+		u8TypeAJPAC = TRI_16KW;
+	}
+	else u8TypeAJPAC = TRI_20KW;
 	//
 	afficheTypeAJPAC();
 }

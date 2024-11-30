@@ -163,7 +163,7 @@ void InstallationView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		buttonWithLabel_param_circ_prim_on.invalidate();
 	}
 	// Circualateur capteur
-	if((sConfig_IHM->sConfig_PAC.ConfigGeo.bGestionCirculateurCaptageForce != sConfig_IHM_old.sConfig_PAC.ConfigGeo.bGestionCirculateurCaptageForce) || (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bCirculateurCaptageForce != sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bCirculateurCaptageForce))
+	if((sConfig_IHM->sConfig_PAC.ConfigGeo.bGestionCirculateurCaptageForce != sConfig_IHM_old.sConfig_PAC.ConfigGeo.bGestionCirculateurCaptageForce) || (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bCirculateurCaptageForce != sConfig_IHM_old.sConfigFrigo[0].sModele_FRIGO.bCirculateurCaptageForce))
 	{
 		if(sConfig_IHM->sConfig_PAC.ConfigGeo.bGestionCirculateurCaptageForce && sConfig_IHM->sModele_PAC.u8ModelePAC == GEOTWIN_IV)
 		{

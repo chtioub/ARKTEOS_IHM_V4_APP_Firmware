@@ -11,6 +11,9 @@ public:
     virtual ~Installation_hysteresisView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void Red_Butt();
+    virtual void Blue_Butt();
 protected:
 };
 

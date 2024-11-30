@@ -99,6 +99,31 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 		image_on_off_resistance_terminaison_regul_esclave.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 		textArea_on_off_resistance_terminaison_regul_esclave.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
+
+	// Multizones
+	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == true || sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == true)
+		{
+			toggleButton_non_oui_non_regroupement.forceState(false);
+			toggleButton_non_oui_non_regroupement.invalidate();
+			toggleButton_oui_oui_non_regroupement.forceState(true);
+			toggleButton_oui_oui_non_regroupement.invalidate();
+			buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAM_GROUPE_ZONE_CENTRE_DEFAUT));
+			buttonWithLabel_parametrage_groupes_zones.invalidate();
+			bRegroupementZoneTemp = true;
+		}
+		else
+		{
+			toggleButton_non_oui_non_regroupement.forceState(true);
+			toggleButton_non_oui_non_regroupement.invalidate();
+			toggleButton_oui_oui_non_regroupement.forceState(false);
+			toggleButton_oui_oui_non_regroupement.invalidate();
+			buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAMETRAGE_ZONE_INDEPENDANTES));
+			buttonWithLabel_parametrage_groupes_zones.invalidate();
+			bRegroupementZoneTemp = false;
+		}
+	}
 }
 
 void Installation_hydrauliqueView::setupScreen()
@@ -320,6 +345,34 @@ void Installation_hydrauliqueView::bouton_param_zone_2()
 	application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 }
 
+void Installation_hydrauliqueView::bouton_oui_regroupement()
+{
+	toggleButton_non_oui_non_regroupement.forceState(false);
+	toggleButton_non_oui_non_regroupement.invalidate();
+	toggleButton_oui_oui_non_regroupement.forceState(true);
+	toggleButton_oui_oui_non_regroupement.invalidate();
+	buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAM_GROUPE_ZONE_CENTRE_DEFAUT));
+	buttonWithLabel_parametrage_groupes_zones.invalidate();
+	bRegroupementZoneTemp = true;
+	//application().gotoInstallation_hydraulique_message_multizonesScreenNoTransition();
+}
+
+void Installation_hydrauliqueView::bouton_non_regroupement()
+{
+	toggleButton_non_oui_non_regroupement.forceState(true);
+	toggleButton_non_oui_non_regroupement.invalidate();
+	toggleButton_oui_oui_non_regroupement.forceState(false);
+	toggleButton_oui_oui_non_regroupement.invalidate();
+	buttonWithLabel_parametrage_groupes_zones.setLabelText(touchgfx::TypedText(T_TEXT_PARAMETRAGE_ZONE_INDEPENDANTES));
+	buttonWithLabel_parametrage_groupes_zones.invalidate();
+	bRegroupementZoneTemp = false;
+}
+
+void Installation_hydrauliqueView::bouton_parametrage_groupes_zones()
+{
+
+}
+
 void Installation_hydrauliqueView::affichage_zones()
 {
 	// Zone 1
@@ -393,14 +446,14 @@ void Installation_hydrauliqueView::affichage_zones()
 		textArea_zone_2_on_off_regul_2_zones.invalidate();
 	}
 	//
-	if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && button_zone_1_regul_directe.isVisible() && button_zone_2_regul_directe.isVisible() && buttonWithLabel_repartition_puissance_zones_regul_directe.isVisible() == false)
+	if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2)// button_zone_1_regul_directe.isVisible() && button_zone_2_regul_directe.isVisible() && buttonWithLabel_repartition_puissance_zones_regul_directe.isVisible() == false)
 	{
 		buttonWithLabel_repartition_puissance_zones_regul_directe.setVisible(true);
 		buttonWithLabel_repartition_puissance_zones_regul_directe.invalidate();
 		textArea_regul_plancher.setVisible(true);
 		textArea_regul_plancher.invalidate();
 	}
-	else if(sConfig_Hydrau_temp.u8TypeRegul != REGUL_DIRECTE || ((button_zone_1_regul_directe.isVisible() == false || button_zone_2_regul_directe.isVisible() == false) && buttonWithLabel_repartition_puissance_zones_regul_directe.isVisible() == true))
+	else //if(sConfig_Hydrau_temp.u8TypeRegul != REGUL_DIRECTE || ((button_zone_1_regul_directe.isVisible() == false || button_zone_2_regul_directe.isVisible() == false) && buttonWithLabel_repartition_puissance_zones_regul_directe.isVisible() == true))
 	{
 		buttonWithLabel_repartition_puissance_zones_regul_directe.setVisible(false);
 		buttonWithLabel_repartition_puissance_zones_regul_directe.invalidate();
@@ -409,12 +462,23 @@ void Installation_hydrauliqueView::affichage_zones()
 	}
 }
 
+void Installation_hydrauliqueView ::bouton_repartition_puissance_zone()
+{
+	application().gotoInstallation_hydraulique_repartition_PW_zoneScreenNoTransition();
+}
+
+void Installation_hydrauliqueView ::bouton_hysteresis_regul_directe()
+{
+	application().gotoInstallation_hysteresisScreenNoTransition();
+}
+
 void Installation_hydrauliqueView::bouton_valider() //SER
 {
 //	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));//SER
 //	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
 //	sConfig_Hydrau_temp
 	sConfig_IHM.sParam_PAC.TypeRegul = sConfig_Hydrau_temp.u8TypeRegul;
+	sConfig_IHM.sParam_PAC.numEsclave = u8Nb_PAC - 1;
 	sConfig_IHM.sOption_PAC.sZone = sConfig_Hydrau_temp.sZones;
 	presenter->c_install_param();
 //	if(bCartePhoenix == false)
