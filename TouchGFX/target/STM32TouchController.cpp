@@ -30,10 +30,27 @@ uint8_t gTouched = 0;
 
 void STM32TouchController::init()
 {
-    /**
-     * Initialize touch controller and driver
-     *
-     */
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  HAL_GPIO_WritePin(LCD_RST_GPIO_Port, LCD_RST_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(LCD_INT_GPIO_Port, LCD_INT_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = LCD_INT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LCD_INT_GPIO_Port, &GPIO_InitStruct);
+
+  HAL_Delay(1);     // T2 > 100us
+  HAL_GPIO_WritePin(LCD_RST_GPIO_Port, LCD_RST_Pin, GPIO_PIN_SET);
+  HAL_Delay(6);     // T3 > 5ms
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = LCD_INT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(LCD_INT_GPIO_Port, &GPIO_InitStruct);
 }
 
 bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
