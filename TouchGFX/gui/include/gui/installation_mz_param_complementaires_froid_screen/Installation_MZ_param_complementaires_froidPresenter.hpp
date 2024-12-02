@@ -27,6 +27,13 @@ public:
 
     virtual ~Installation_MZ_param_complementaires_froidPresenter() {}
 
+    void c_install_zx(uint8_t u8NumZone);
+
+  virtual void changeDate(S_DATE *sDate);
+  virtual void changeErreur(uint16_t u16Erreur);
+  virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+  virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+
 private:
     Installation_MZ_param_complementaires_froidPresenter();
 

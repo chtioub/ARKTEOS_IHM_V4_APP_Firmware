@@ -18,6 +18,10 @@ public:
     void affichage_type_emetteur();
     void bouton_non();
     void bouton_oui();
+    void bouton_froid();
+    void bouton_chaud();
+    void affichage_information();
+    void bouton_valider_information();
 
 
 	virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
@@ -26,16 +30,17 @@ public:
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
-	uint8_t u8Loideau_Plancher[6] = {29, 31, 34, 38, 42, 45};
-	uint8_t u8Loideau_Ventilo[6] = {40, 43, 45, 50, 55, 55};
-	uint8_t u8Loideau_Radiateur[6] = {45, 47, 48, 53, 55, 55};
+	uint8_t u8Loideau_Plancher[6] =	{29, 31, 34, 38, 42, 45};
+	uint8_t u8Loideau_Ventilo[6] = 	{40, 43, 45, 50, 55, 55};
+	uint8_t u8Loideau_Radiateur[6] ={45, 47, 48, 53, 55, 55};
 	uint8_t u8Loideau_Gainable[6] = {40, 44, 47, 51, 53, 55};
 	bool bConnexionDistance;
+	unsigned short TypeEmetteur : 3;
 	uint16_t u16ErreurAffichee;
 	S_DATE sDate_old;
 	S_CONFIG_IHM sConfig_IHM_old;
 	S_STATUT_PAC sStatut_PAC_old;
-	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_Question[50];
+	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_Question[50],textAreaBuffer_MessTitre[40], textAreaBuffer_MessMess[500];
 };
 
 #endif // INSTALLATION_MZ_CONFIG_GROUPEVIEW_HPP

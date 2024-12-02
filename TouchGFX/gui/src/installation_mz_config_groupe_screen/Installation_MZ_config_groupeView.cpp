@@ -22,16 +22,26 @@ Installation_MZ_config_groupeView::Installation_MZ_config_groupeView()
 	//sParamZxMZtemp[] sConfig_Hydrau_temp.
 
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_PARAMETRES_CENTRE_DEFAUT).getText());
-	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
-	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 4, " - ");
+	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
 	//Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", (sConfig_Hydrau_temp.u8NumZone == 8) ? 'A' : 'B');
 	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
 	barre_titre.titre(textAreaBuffer_Titre);
 
-	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, textAreaBuffer_Question, 10);
+	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, textAreaBuffer_Question, 11);
 	textArea_question_oui_non.setWildcard(textAreaBuffer_Question);
 	textArea_question_oui_non.invalidate();
 
+	Unicode::snprintf(textAreaBuffer_MessTitre, 40, touchgfx::TypedText(T_TEXT_MESSAGE_INFORMATION_TITRE).getText());
+	message_information.titre(textAreaBuffer_MessTitre);
+	Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_MESSAGE_FROID_NON_AUTORISE).getText());
+	message_information.message(textAreaBuffer_MessMess);
+	modalWindow_information.hide();
+	modalWindow_information.invalidate();
+
+	//Obligé de créer un bouton fictif pour qu'il génère la fonction de changement de page vers les paramètres
+	//complémentaire du mode froid (fonction utilisée plus bas : application().gotoInstallation_MZ_param_complementaires_froidScreenNoTransition();)
+	toggleButton_invisible_froid.setVisible(false);
 
 	// Groupe actif oui_non
 	if(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.bGroupeActif == 0)
@@ -78,48 +88,42 @@ Installation_MZ_config_groupeView::Installation_MZ_config_groupeView()
 	toggleButton_chaud.invalidate();
 	toggleButton_froid.invalidate();
 
+	TypeEmetteur = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur;
+//	sConfig_Hydrau_temp.u8NumZone = 8;
 	affichage_type_emetteur();
 
 //	sConfig_Hydrau_temp.u8NumZone = 8;
 //	sParamZxMZtemp
 }
 
-
+//sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid = 0;
 void Installation_MZ_config_groupeView::bouton_droite_type_emetteur()
 {
-//	switch(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur)
-//	{
-//		case PLANCHER:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = VENTILO;
-//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
-//			break;
-//		case VENTILO:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = RADIATEUR;
-//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur, sizeof(u8Loideau_Radiateur));
-//			break;
-//		case RADIATEUR:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = GAINABLE;
-//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Gainable, sizeof(u8Loideau_Gainable));
-//			break;
-//		case GAINABLE:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = SOUS_STATION;
-//			break;
-//		case SOUS_STATION:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = PLANCHER;
-//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
-//			break;
-//		default:
-//			break;
-//	}
-	//
-
-	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur < 4)
+	if (TypeEmetteur == SOUS_STATION)
 	{
-		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur++;
+		TypeEmetteur = PLANCHER;
 	}
 	else
 	{
-		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = 0;
+		TypeEmetteur++;
+	}
+
+	switch(TypeEmetteur)
+	{
+		case PLANCHER:
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
+			break;
+		case VENTILO:
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
+			break;
+		case RADIATEUR:
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
+			break;
+		case GAINABLE:
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Gainable, sizeof(u8Loideau_Gainable));
+			break;
+		default:
+			break;
 	}
 
 	affichage_type_emetteur();
@@ -127,41 +131,34 @@ void Installation_MZ_config_groupeView::bouton_droite_type_emetteur()
 
 void Installation_MZ_config_groupeView::bouton_gauche_type_emetteur()
 {
-//	switch(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur)
-//	{
-//		case PLANCHER:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = SOUS_STATION;
-//			//memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
-//			break;
-//		case VENTILO:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = PLANCHER;
-//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
-//			break;
-//		case RADIATEUR:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = VENTILO;
-//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
-//			break;
-//		case GAINABLE:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = RADIATEUR;
-//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
-//			break;
-//		case SOUS_STATION:
-//			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = GAINABLE;
-//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], &u8Loideau_Radiateur, sizeof(u8Loideau_Gainable));
-//			break;
-//		default:
-//			break;
-//	}
-
-	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur > 0)
+	if(TypeEmetteur == PLANCHER)
 	{
-		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur--;
+		TypeEmetteur = SOUS_STATION;
 	}
 	else
 	{
-		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = 4;
+		TypeEmetteur--;
 	}
-	//
+
+	switch(TypeEmetteur)
+	{
+		case PLANCHER:
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
+			break;
+		case VENTILO:
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
+			break;
+		case RADIATEUR:
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
+			break;
+		case GAINABLE:
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Gainable, sizeof(u8Loideau_Gainable));
+			break;
+		default:
+			break;
+	}
+
+
 	affichage_type_emetteur();
 }
 
@@ -169,10 +166,13 @@ void Installation_MZ_config_groupeView::affichage_type_emetteur()
 {
 //	//textArea_type_emet_dans_groupe.setTypedText(touchgfx::TypedText(T_TEXT_RADIATEUR_CENTRE_DEFAUT));
 //
-	switch(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur)
+	switch(TypeEmetteur)
 	{
 		case RADIATEUR:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_RADIATEUR_CENTRE_DEFAUT));
+			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid = 0;
+			toggleButton_froid.forceState(false);
+			toggleButton_froid.invalidate();
 			break;
 		case VENTILO:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_VENTILO_CENTRE_DEFAUT));
@@ -189,7 +189,7 @@ void Installation_MZ_config_groupeView::affichage_type_emetteur()
 		default:
 			break;
 	}
-	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == SOUS_STATION)
+	if (TypeEmetteur == SOUS_STATION)
 	{
 		container_oui_non_activer_mode.setVisible(false);
 		buttonWithLabel_courbe_loi_eau.setVisible(false);
@@ -211,14 +211,14 @@ void Installation_MZ_config_groupeView::affichage_type_emetteur()
 	buttonWithLabel_param_comp.invalidate();
 	buttonWithLabel_gestion_circ.invalidate();
 	buttonWithLabel_renommer_groupe.invalidate();
-}
 
+	sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur = TypeEmetteur;
+}
 
 
 void Installation_MZ_config_groupeView::bouton_non()
 {
-//	sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.bGroupeActif = 0;
-//	updatetogglebutton_nonoui();
+	sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.bGroupeActif = 0;
 	if(toggleButton_non_oui_non.getState())
 	{
 		toggleButton_oui_oui_non.forceState(false);
@@ -231,6 +231,7 @@ void Installation_MZ_config_groupeView::bouton_non()
 
 void Installation_MZ_config_groupeView::bouton_oui()
 {
+	sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.bGroupeActif = 1;
 	if(toggleButton_oui_oui_non.getState())
 	{
 		toggleButton_non_oui_non.forceState(false);
@@ -239,6 +240,49 @@ void Installation_MZ_config_groupeView::bouton_oui()
 		toggleButton_oui_oui_non.setTouchable(false);
 		toggleButton_oui_oui_non.invalidate();
 	}
+}
+
+void Installation_MZ_config_groupeView::bouton_froid()
+{
+
+	if(TypeEmetteur == RADIATEUR || sConfig_IHM.sModele_PAC.bReversible == false)
+	{
+		toggleButton_froid.forceState(false);
+		toggleButton_froid.invalidate();
+		affichage_information();
+	}
+	else
+	{
+		application().gotoInstallation_MZ_param_complementaires_froidScreenNoTransition();
+	}
+}
+
+void Installation_MZ_config_groupeView::bouton_chaud()
+{
+	if(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeChaud == 1)
+	{
+		toggleButton_chaud.forceState(false);
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeChaud = 0;
+	}
+	else
+	{
+		toggleButton_chaud.forceState(true);
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeChaud = 1;
+	}
+	toggleButton_chaud.invalidate();
+}
+
+
+void Installation_MZ_config_groupeView:: affichage_information()
+{
+	modalWindow_information.show();
+	modalWindow_information.invalidate();
+}
+
+void Installation_MZ_config_groupeView:: bouton_valider_information()
+{
+	modalWindow_information.hide();
+	modalWindow_information.invalidate();
 }
 
 //void Installation_MZ_config_groupeView::bouton_chaud()
@@ -271,6 +315,15 @@ void Installation_MZ_config_groupeView::tearDownScreen()
     Installation_MZ_config_groupeViewBase::tearDownScreen();
 }
 
+//void Installation_MZ_config_groupeView::bouton_valider()
+//{
+//	if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
+//	{
+//		//presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
+//		memcpy(&sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone], &sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], sizeof(S_PARAM_ZX));
+//		presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
+//	}
+//}
 
 void Installation_MZ_config_groupeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {

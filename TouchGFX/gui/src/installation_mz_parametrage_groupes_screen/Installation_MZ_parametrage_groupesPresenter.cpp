@@ -17,6 +17,10 @@ void Installation_MZ_parametrage_groupesPresenter::deactivate()
 
 }
 
+void Installation_MZ_parametrage_groupesPresenter::c_install_zx(uint8_t u8NumZone)
+{
+	model->c_install_zx(u8NumZone);
+}
 
 void Installation_MZ_parametrage_groupesPresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {

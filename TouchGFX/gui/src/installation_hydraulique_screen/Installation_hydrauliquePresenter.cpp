@@ -22,6 +22,11 @@ void Installation_hydrauliquePresenter::c_install_param()
 	model->c_install_param();
 }
 
+void Installation_hydrauliquePresenter::c_install_param_zx()
+{
+	model->c_install_param_zx();
+}
+
 void Installation_hydrauliquePresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);

@@ -17,6 +17,12 @@ void Installation_MZ_config_groupePresenter::deactivate()
 
 }
 
+void Installation_MZ_config_groupePresenter::c_install_zx(uint8_t u8NumZone)
+{
+	model->c_install_zx(u8NumZone);
+}
+
+
 void Installation_MZ_config_groupePresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);

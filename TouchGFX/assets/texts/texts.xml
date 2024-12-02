@@ -9,6 +9,216 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1">
+      <Text Id="text_n" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">n</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_v" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">v</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_x" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">x</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_w" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">w</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_m" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">m</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_l" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">l</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_k" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">k</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_j" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">j</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_h" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">h</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_g" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">g</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_f" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">f</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_d" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">d</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_s" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">s</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_q" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">q</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_p" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">p</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_o" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">o</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_i" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">i</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_u" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">u</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_message_information_titre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">***INFORMATION***</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_y" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">y</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_t" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">t</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_r" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">r</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_e" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">e</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_z" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">z</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_c" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">c</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_b" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">b</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_message_attention_titre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">***ATTENTION***</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_message_exemple_message" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Ceci est un texte d'exemple pour les messages d'information.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_message_exemple_titre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">***TITRE EXEMPLE***</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mode_rafraichissement_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Mode Rafraichissement</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_voulez_vous_activer_le_groupe" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">A</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -54,7 +264,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_value_sortie_voie2carte2" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">2</Translation>
+        <Translation Language="FR">3</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -896,6 +1106,524 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_H986" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Groupe X</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_IKR4" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_MXE7" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_XNCQ" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_7KJ1" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_EV14" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_JYMN" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OZWQ" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_E6N1" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_6U6C" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_4KVB" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_IA1M" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_WRY0" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_LKIN" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_P2ON" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JSU6" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_V6WT" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_GAMA" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_BT2R" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_message_froid_non_autorise" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Fonctionnalité non accessible :&#10;&#10;Le type d'émetteur sélectionné est du type radiateur, ou alors&#10;votre Pompe à Chaleur n'est pas réversible.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_P05J" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_VSQS" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_6F19" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_HSII" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CGEF" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_36U9" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_J9G3" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_A7HM" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z7KC" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_S346" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1DS4" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_CBBU" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_5MJL" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_193O" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_J8P2" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_SG25" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_F26A" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZHKA" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_H69D" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_LDMZ" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_A3IC" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_U7RV" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4LU2" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_DKOU" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KIGI" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_GE9F" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZT4R" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_HTNI" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_VAA8" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_2V8N" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_EE2L" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_TLJ5" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_A3BY" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_COKQ" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR"></Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_2SK0" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">Directe&lt;value&gt;</Translation>
+        <Translation Language="PT">Directe&lt;value&gt;</Translation>
+        <Translation Language="NL">Directe&lt;value&gt;</Translation>
+        <Translation Language="DE">Directe&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_10KD" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">7</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_LSA9" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_3WP3" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">9</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y7UN" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_HVN4" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">ESPACE</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_S4ZO" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_TE0Q" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">_</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_DDYB" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">@</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_CIEV" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">-</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_U85J" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_4FST" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_EMJZ" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_J5K4" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_G13D" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_a" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">a</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_espace" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">ESPACE</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_nom_large_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_message_vanne_melange_groupe" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Pas de Vanne 3 voies mélangeuse sur la voie/sortie n°1 de la&#10;carte REG. La voie/sortie n°1 de la carte REG doit avoir :&#10;&#10;- La loi d'eau la plus élevée en mode chauffage&#10;- La consigne d'eau la plus basse en mode rafraichissement</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_attention" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">*** ATTENTION  ***</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_rafraichissement_groupe_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Voulez-vous activer le rafraichissement&#10;du Groupe ?</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -910,19 +1638,19 @@
         <Translation Language="NL">&lt;value&gt;</Translation>
         <Translation Language="DE">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="text_attention_info" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Pas de Vanne 3 voies mélangeuse sur la voie/sortie n°1 de la&#10;carte REG. La voie/sortie n°1 de la carte REG doit avoir :&#10;&#10;- La loi d'eau la plus élevée en mode chauffage&#10;- La consigne d'eau la plus basse en mode rafraichissement</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
+      <Text Id="text_message_message" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="text_attention_titre" Alignment="Left" TypographyId="Large">
-        <Translation Language="FR">*** ATTENTION  ***</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
+      <Text Id="text_message_titre" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="PT">&lt;value&gt;</Translation>
+        <Translation Language="NL">&lt;value&gt;</Translation>
+        <Translation Language="DE">&lt;value&gt;</Translation>
       </Text>
       <Text Id="text_mz_groupe_A_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;</Translation>
@@ -8221,7 +8949,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="a b" WildcardCharacterRanges="0-9,a-z,A-Z,0x20,0x2A" />
+    <Typography Id="Default" Font="segoeuib.ttf" Size="19" Bpp="8" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="a b" WildcardCharacterRanges="0-9,a-z,A-Z,0x20,0x2A,0x40" />
     <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacterRanges="0x20-0xff" />
     <Typography Id="Texte" Font="segoeui.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>

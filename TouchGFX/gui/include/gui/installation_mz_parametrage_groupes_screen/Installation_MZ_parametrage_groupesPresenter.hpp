@@ -24,6 +24,7 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
+    void c_install_zx(uint8_t u8NumZone);
 
     virtual ~Installation_MZ_parametrage_groupesPresenter() {}
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
