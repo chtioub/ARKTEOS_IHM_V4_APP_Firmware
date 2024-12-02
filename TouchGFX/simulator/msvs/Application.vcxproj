@@ -238,9 +238,6 @@
     <ClCompile Include="..\..\gui\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\installation_clavier_screen\Installation_clavierPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\installation_clavier_screen\Installation_clavierView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\installation_clavier_screen\Installation_clavierViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfViewBase.cpp"/>
@@ -274,6 +271,11 @@
     <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidView.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\Message.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\MessageBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\renommer_screen\RenommerPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\renommer_screen\RenommerView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\renommer_screen\RenommerViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -641,9 +643,6 @@
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\installation_clavier_screen\Installation_clavierPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\installation_clavier_screen\Installation_clavierView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_clavier_screen\Installation_clavierViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfViewBase.hpp"/>
@@ -677,6 +676,11 @@
     <ClInclude Include="..\..\gui\include\gui\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\Message.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MessageBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\renommer_screen\RenommerPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\renommer_screen\RenommerView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renommer_screen\RenommerViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

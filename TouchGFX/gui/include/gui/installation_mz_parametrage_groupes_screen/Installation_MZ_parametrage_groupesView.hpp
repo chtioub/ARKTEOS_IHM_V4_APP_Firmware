@@ -15,6 +15,8 @@ public:
     void bouton_retour();
     void MAJ_Type_GroupeA();
 	void MAJ_Type_GroupeB();
+	void MAJ_Carte_GroupeA();
+	void MAJ_Carte_GroupeB();
 	void bouton_choix_carte_MZ_groupe_A();
 	void bouton_choix_carte_MZ_groupe_B();
 	void bouton_sortie_groupe_A();
@@ -23,6 +25,8 @@ public:
 	void bouton_groupe_B();
 	void affichage_attention();
 	void attention_valid_button_clicked();
+	void bouton_valider();
+
 
 
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
@@ -31,13 +35,15 @@ public:
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
-	bool bConnexionDistance, bGroupeAOnOff, bGroupeBOnOff, bAttentionClicked;
-	uint16_t u16ErreurAffichee, u16CarteGroupeA, u16CarteGroupeB, u16NumVoieGroupeA, u16NumVoieGroupeB;
+	bool bConnexionDistance, bAttentionClicked;
+	unsigned char bGroupeAOnOff : 1, bGroupeBOnOff : 1;
+	unsigned short u3CarteGroupeA : 3, u3CarteGroupeB : 3, u3NumVoieGroupeA : 3, u3NumVoieGroupeB : 3;
+	uint16_t u16ErreurAffichee;
 	S_DATE sDate_old;
 	S_CONFIG_IHM sConfig_IHM_old;
 	S_STATUT_PAC sStatut_PAC_old;
 	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9],textAreaBuffer_GroupeA[11],  textAreaBuffer_GroupeB[11],
-	textAreaBuffer_Voie_GroupeA[2], textAreaBuffer_Voie_GroupeB[2];
+	textAreaBuffer_Voie_GroupeA[2], textAreaBuffer_Voie_GroupeB[2],textAreaBuffer_MessTitre[40], textAreaBuffer_MessMess[500];
 };
 
 #endif // INSTALLATION_MZ_PARAMETRAGE_GROUPESVIEW_HPP

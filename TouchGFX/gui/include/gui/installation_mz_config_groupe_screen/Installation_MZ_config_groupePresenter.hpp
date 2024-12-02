@@ -32,6 +32,7 @@ public:
    	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
    	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
    	virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
+   	void c_install_zx(uint8_t u8NumZone);
 
 private:
     Installation_MZ_config_groupePresenter();

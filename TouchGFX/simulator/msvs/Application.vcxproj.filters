@@ -1012,18 +1012,6 @@
     <Filter Include="Header Files\generated\gui_generated\installation_hydraulique_gestion_circulateur_screen">
       <UniqueIdentifier>1CD3C318-EE1D-D36E-FD12-1B1E7C82FD92</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\installation_clavier_screen">
-      <UniqueIdentifier>7A4AB3EB-EC8E-FE9B-5678-F51DC02E9531</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\gui\installation_clavier_screen">
-      <UniqueIdentifier>C6757B18-9393-B309-73C9-D17F3EC2F44F</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\installation_clavier_screen">
-      <UniqueIdentifier>3D1C2F01-65B6-F10A-D531-A1205A6A0FC4</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\installation_clavier_screen">
-      <UniqueIdentifier>C73A2FC7-661A-F3DD-E615-B4558464138F</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\installation_hydraulique_sonde_rf_screen">
       <UniqueIdentifier>A668D7A9-9479-CF44-DA2C-D2F87006A2B7</UniqueIdentifier>
     </Filter>
@@ -1155,6 +1143,18 @@
     </Filter>
     <Filter Include="Source Files\gui\installation_mz_param_complementaires_froid_screen">
       <UniqueIdentifier>06B3A20C-6F12-3CD0-D3FB-88CC46CBD960</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\renommer_screen">
+      <UniqueIdentifier>BE89EA34-9C2F-660E-6965-5AC74219E3EC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\renommer_screen">
+      <UniqueIdentifier>54B041E0-85A5-0735-AFDA-E9E537648424</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\renommer_screen">
+      <UniqueIdentifier>2BF71112-8AA9-85A3-BB0E-353822C03DF8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\renommer_screen">
+      <UniqueIdentifier>E9CDBCB8-0988-2D8E-9C5E-71A10309C7CE</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1839,15 +1839,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_hydraulique_gestion_circulateur_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\installation_clavier_screen\Installation_clavierPresenter.cpp">
-      <Filter>Source Files\gui\installation_clavier_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\installation_clavier_screen\Installation_clavierView.cpp">
-      <Filter>Source Files\gui\installation_clavier_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\installation_clavier_screen\Installation_clavierViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\installation_clavier_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfPresenter.cpp">
       <Filter>Source Files\gui\installation_hydraulique_numero_sonde_rf_screen</Filter>
     </ClCompile>
@@ -1946,6 +1937,21 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidView.cpp">
       <Filter>Source Files\gui\installation_mz_param_complementaires_froid_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\Message.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\MessageBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\renommer_screen\RenommerPresenter.cpp">
+      <Filter>Source Files\gui\renommer_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\renommer_screen\RenommerView.cpp">
+      <Filter>Source Files\gui\renommer_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\renommer_screen\RenommerViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\renommer_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3040,15 +3046,6 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_hydraulique_gestion_circulateur_screen\Installation_hydraulique_gestion_circulateurViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_hydraulique_gestion_circulateur_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\installation_clavier_screen\Installation_clavierPresenter.hpp">
-      <Filter>Header Files\gui\installation_clavier_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\installation_clavier_screen\Installation_clavierView.hpp">
-      <Filter>Header Files\gui\installation_clavier_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_clavier_screen\Installation_clavierViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\installation_clavier_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\installation_hydraulique_numero_sonde_rf_screen\Installation_hydraulique_numero_sonde_rfPresenter.hpp">
       <Filter>Header Files\gui\installation_hydraulique_numero_sonde_rf_screen</Filter>
     </ClInclude>
@@ -3147,6 +3144,21 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_param_complementaires_froid_screen\Installation_MZ_param_complementaires_froidViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_mz_param_complementaires_froid_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\Message.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\MessageBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\renommer_screen\RenommerPresenter.hpp">
+      <Filter>Header Files\gui\renommer_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\renommer_screen\RenommerView.hpp">
+      <Filter>Header Files\gui\renommer_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renommer_screen\RenommerViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\renommer_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

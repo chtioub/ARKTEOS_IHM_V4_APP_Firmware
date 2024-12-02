@@ -65,6 +65,7 @@ public:
     void c_install_raz_histo_err();
     void c_install_reg_ext();
     void c_install_zx(uint8_t u8Zone);
+    void c_install_param_zx();
 
     void c_install_th_association(uint8_t u8NumZone);
     void c_install_th_dissociation(uint8_t u8NumZone);

@@ -104,16 +104,16 @@ Installation_hydrauliqueView::Installation_hydrauliqueView()
 	// Multizones
 	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
 	{
-		// Copie des zones
-		for (int i = 0; i < 8; i++)
-		{
-			sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
-		}
-		// Copie des groupes
-		for (int i = 8; i < 10; i++)
-		{
-			sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
-		}
+//		// Copie des zones
+//		for (int i = 0; i < 8; i++)
+//		{
+//			sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
+//		}
+//		// Copie des groupes
+//		for (int i = 8; i < 10; i++)
+//		{
+//			sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
+//		}
 		MAJ_Etat_Bouton_Oui_Non_Multizone();
 	}
 }
@@ -340,6 +340,17 @@ void Installation_hydrauliqueView::bouton_param_zone_2()
 
 void Installation_hydrauliqueView::MAJ_Etat_Bouton_Oui_Non_Multizone()
 {
+//	// Copie des zones
+//	for (int i = 0; i < 8; i++)
+//	{
+//		sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
+//	}
+//	// Copie des groupes
+//	for (int i = 8; i < 10; i++)
+//	{
+//		sParamZxMZtemp[i] = sConfig_IHM.sParam_Zx[i];
+//	}
+
 	if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif == true || sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif == true)
 	{
 		toggleButton_non_oui_non_regroupement.forceState(false);
@@ -505,6 +516,22 @@ void Installation_hydrauliqueView::bouton_valider() //SER
 	sConfig_IHM.sParam_PAC.numEsclave = u8Nb_PAC - 1;
 	sConfig_IHM.sOption_PAC.sZone = sConfig_Hydrau_temp.sZones;
 	presenter->c_install_param();
+
+
+
+	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		for (int i=0; i< 10; i++)
+		{
+			memcpy(&sConfig_IHM.sParam_Zx[i], &sParamZxMZtemp[i], sizeof(S_PARAM_ZX));
+		}
+//		memcpy(&sConfig_IHM.sParam_RegulExt, &sParamZxMZtemp[i], sizeof(S_PARAM_REG_EXT));
+//		memcpy(&sConfig_IHM.sParam_ECS, &sParamZxMZtemp[i], sizeof(S_PARAM_ECS));
+//		memcpy(&sConfig_IHM.sParam_Piscine, &sParamZxMZtemp[i], sizeof(S_PARAM_PISCINE));
+		presenter->c_install_param_zx();
+	}
+
+
 //	if(bCartePhoenix == false)
 //	{
 //		// Vitesse circulateur

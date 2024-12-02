@@ -140,7 +140,7 @@ int main(void)
     // Données envoyées
     if(((HAL_GetTick() - u32LastCyclique) > 100 && (HAL_GetTick() - u32LastCyclique) < 900) && (HAL_GetTick() - u32LastEnvoi) > 100)
     {
-		if(txData[u8Pointeur_envoi].size != 0)
+	if(txData[u8Pointeur_envoi].size != 0)
 		{
 			u32LastEnvoi = HAL_GetTick();
 			//

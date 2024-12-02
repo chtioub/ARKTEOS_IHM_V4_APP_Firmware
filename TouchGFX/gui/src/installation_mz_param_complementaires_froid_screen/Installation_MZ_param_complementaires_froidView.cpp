@@ -5,33 +5,181 @@
 
 Installation_MZ_param_complementaires_froidView::Installation_MZ_param_complementaires_froidView()
 {
-		memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));
-		memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
-		sDate_old.Date = 0;
-		u16ErreurAffichee = 0;
-		changeDate(&sDate);
-		bConnexionDistance = false;
-		changeErreur(u16ErreurEncours);
-		changeConfig(&sConfig_IHM);
-		changeStatutPAC(&sStatut_PAC);
-		changeStatutEther(&sCycEther);
-		container.setXY(u8PositionX, u8PositionY);
+	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));
+	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
+	sDate_old.Date = 0;
+	u16ErreurAffichee = 0;
+	changeDate(&sDate);
+	bConnexionDistance = false;
+	changeErreur(u16ErreurEncours);
+	changeConfig(&sConfig_IHM);
+	changeStatutPAC(&sStatut_PAC);
+	changeStatutEther(&sCycEther);
+	container.setXY(u8PositionX, u8PositionY);
 
-	//	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_INSTALLATION_CENTRE_DEFAUT).getText());
-	//	barre_titre.titre(textAreaBuffer_Titre);
+	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_MODE_RAFRAICHISSEMENT_CENTRE_DEFAUT).getText());
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
+	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
+	//Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", (sConfig_Hydrau_temp.u8NumZone == 8) ? 'A' : 'B');
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
+	barre_titre.titre(textAreaBuffer_Titre);
 
-		//sParamZxMZtemp[] sConfig_Hydrau_temp.
+	// Mode Froid actif oui/non
+	bModeFroid = (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid == 1) ? true : false;
+	if(bModeFroid == false)
+	{
+		toggleButton_oui_oui_non_rafraichissement.forceState(false);
+		toggleButton_oui_oui_non_rafraichissement.setTouchable(true);
+		toggleButton_oui_oui_non_rafraichissement.invalidate();
+		toggleButton_non_oui_non_rafraichissement.forceState(true);
+		toggleButton_non_oui_non_rafraichissement.setTouchable(false);
+		toggleButton_non_oui_non_rafraichissement.invalidate();
+		container_temp_depart_eau_raf.setVisible(false);
+	}
+	else
+	{
+		toggleButton_oui_oui_non_rafraichissement.forceState(true);
+		toggleButton_oui_oui_non_rafraichissement.setTouchable(false);
+		toggleButton_oui_oui_non_rafraichissement.invalidate();
+		toggleButton_non_oui_non_rafraichissement.forceState(false);
+		toggleButton_non_oui_non_rafraichissement.setTouchable(true);
+		toggleButton_non_oui_non_rafraichissement.invalidate();
+		container_temp_depart_eau_raf.setVisible(true);
+	}
+	container_temp_depart_eau_raf.invalidate();
 
-		Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_PARAMETRES_CENTRE_DEFAUT).getText());
-		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
-		Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
-		//Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", (sConfig_Hydrau_temp.u8NumZone == 8) ? 'A' : 'B');
-		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
-		barre_titre.titre(textAreaBuffer_Titre);
+	// Consigne Froid
+	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == PLANCHER)
+	{
+		if ((sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid + 7) < 17)
+		{
+			u16ConsigneFroid = 17;
+		}
+		else if ((sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid + 7) > 22)
+		{
+			u16ConsigneFroid = 22;
+		}
+		else
+		{
+			u16ConsigneFroid = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid + 7;
+		}
+	}
+	else
+	{
+		if ((sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid + 7) < 7)
+		{
+			u16ConsigneFroid = 7;
+		}
+		else if ((sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid + 7) > 17)
+		{
+			u16ConsigneFroid = 17;
+		}
+		else
+		{
+			u16ConsigneFroid = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid + 7;
+		}
+	}
 
-//		Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, textAreaBuffer_Question, 10);
-//		textArea_question_oui_non.setWildcard(textAreaBuffer_Question);
-//		textArea_question_oui_non.invalidate();
+	Unicode::snprintf(textAreaBuffer_Consigne, 3, "%d", u16ConsigneFroid);
+	textArea_valeur_temp_depart_eau_raf.setWildcard(textAreaBuffer_Consigne);
+	textArea_valeur_temp_depart_eau_raf.invalidate();
+}
+
+void Installation_MZ_param_complementaires_froidView::bouton_droite_consigne()
+{
+	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == PLANCHER)
+	{
+		if (u16ConsigneFroid < 22)
+		{
+			u16ConsigneFroid++;
+		}
+	}
+	else
+	{
+		if (u16ConsigneFroid < 17)
+		{
+			u16ConsigneFroid++;
+		}
+	}
+
+//	Unicode::snprintf(textArea_Buffer_pw_produite, 6, "%d", sStatut_PAC->u16PWinstantaneeProduite);
+//		textArea_puissance_produite_val.setWildcard(textArea_Buffer_pw_produite);
+//		textArea_puissance_produite_val.invalidate();
+
+//	Unicode::snprintf(textArea_Buffer_pw_produite, 6, "%d", sStatut_PAC->u16PWinstantaneeProduite);
+//	textArea_puissance_produite_val.setWildcard(textArea_Buffer_pw_produite);
+//	textArea_puissance_produite_val.invalidate();
+
+	Unicode::snprintf(textAreaBuffer_Consigne, 3, "%d", u16ConsigneFroid);
+	textArea_valeur_temp_depart_eau_raf.setWildcard(textAreaBuffer_Consigne);
+	textArea_valeur_temp_depart_eau_raf.invalidate();
+}
+
+void Installation_MZ_param_complementaires_froidView::bouton_gauche_consigne()
+{
+	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == PLANCHER)
+	{
+		if (u16ConsigneFroid > 17)
+		{
+			u16ConsigneFroid--;
+		}
+	}
+	else
+	{
+		if (u16ConsigneFroid  > 7)
+		{
+			u16ConsigneFroid--;
+		}
+	}
+
+	Unicode::snprintf(textAreaBuffer_Consigne, 3, "%d", u16ConsigneFroid);
+	textArea_valeur_temp_depart_eau_raf.setWildcard(textAreaBuffer_Consigne);
+	textArea_valeur_temp_depart_eau_raf.invalidate();
+}
+
+
+//void Page_oui_nonView::bouton_oui_page_oui_non()
+//{
+//	if(toggleButton_oui_oui_non.getState())
+//	{
+//		toggleButton_non_oui_non.forceState(false);
+//		toggleButton_non_oui_non.setTouchable(true);
+//		toggleButton_non_oui_non.invalidate();
+//		toggleButton_oui_oui_non.setTouchable(false);
+//		toggleButton_oui_oui_non.invalidate();
+//	}
+//}
+
+void Installation_MZ_param_complementaires_froidView::bouton_oui()
+{
+	if (toggleButton_oui_oui_non_rafraichissement.getState())
+	{
+		toggleButton_oui_oui_non_rafraichissement.setTouchable(false);
+		toggleButton_oui_oui_non_rafraichissement.invalidate();
+		toggleButton_non_oui_non_rafraichissement.forceState(false);
+		toggleButton_non_oui_non_rafraichissement.setTouchable(true);
+		toggleButton_non_oui_non_rafraichissement.invalidate();
+		bModeFroid = true;
+
+		container_temp_depart_eau_raf.setVisible(true);
+		container_temp_depart_eau_raf.invalidate();
+	}
+}
+
+void Installation_MZ_param_complementaires_froidView::bouton_non()
+{
+	if (toggleButton_non_oui_non_rafraichissement.getState())
+	{
+		toggleButton_non_oui_non_rafraichissement.setTouchable(false);
+		toggleButton_non_oui_non_rafraichissement.invalidate();
+		toggleButton_oui_oui_non_rafraichissement.forceState(false);
+		toggleButton_oui_oui_non_rafraichissement.setTouchable(true);
+		toggleButton_oui_oui_non_rafraichissement.invalidate();
+		bModeFroid = false;
+
+		container_temp_depart_eau_raf.setVisible(false);
+		container_temp_depart_eau_raf.invalidate();
+	}
 }
 
 void Installation_MZ_param_complementaires_froidView::setupScreen()
@@ -47,58 +195,15 @@ void Installation_MZ_param_complementaires_froidView::tearDownScreen()
 
 void Installation_MZ_param_complementaires_froidView::bouton_valider()
 {
-//	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));//SER
-//	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
-//	sConfig_Hydrau_temp
-//	sConfig_IHM.sParam_PAC.TypeRegul = sConfig_Hydrau_temp.u8TypeRegul;
-//	sConfig_IHM.sParam_PAC.numEsclave = u8Nb_PAC - 1;
-//	sConfig_IHM.sOption_PAC.sZone = sConfig_Hydrau_temp.sZones;
-//	presenter->c_install_param();
-//	if(bCartePhoenix == false)
-//	{
-//		// Vitesse circulateur
-//		sConfig_IHM.sParam_PAC.eGestionCirculateurPrimaire = u8VitesseCirculateur;
-//		// Marche forcée
-//		if(toggleButton_oui_oui_non_marche_forcee.getState())
-//		{
-//			sConfig_IHM.sParam_PAC.bCirculateurPrimaireForce = 1;
-//		}
-//		else sConfig_IHM.sParam_PAC.bCirculateurPrimaireForce = 0;
-//		// Type circulateur
-//		if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT).getId())
-//		{
-//			sConfig_IHM.sParam_PAC.TypeCirculateur = TYPE_RELAIS;
-//		}
-//		else sConfig_IHM.sParam_PAC.TypeCirculateur = TYPE_GRUNDFOS;
-//		//
-//		presenter->c_install_param();
-//	}
-//	else
-//	{
-//		if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_PWM_CENTRE_DEFAUT).getId())
-//		{
-//			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = TYPE_GRUNDFOS;
-//		}
-//		else if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_0_10V_CENTRE_DEFAUT).getId())
-//		{
-//			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = TYPE_WILO;
-//		}
-//		else if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT).getId())
-//		{
-//			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = TYPE_RELAIS;
-//		}
-//		//
-//		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeCirculateurPrimaire = u8VitesseCirculateur;
-//		// Marche forcée
-//		if(toggleButton_oui_oui_non_marche_forcee.getState())
-//		{
-//			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bCirculateurPrimaireForce = 1;
-//		}
-//		else sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bCirculateurPrimaireForce = 0;
-//		//
-//		presenter->c_usine_phoenix(0);
-//	}
-	//application().gotoInstallationScreenNoTransition();
+	sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid = (( unsigned char)u16ConsigneFroid - 7);
+	if (bModeFroid == true)
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid = 1;
+	}
+	else
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid = 0;
+	}
 }
 
 void Installation_MZ_param_complementaires_froidView::changeConfig(S_CONFIG_IHM *sConfig_IHM)

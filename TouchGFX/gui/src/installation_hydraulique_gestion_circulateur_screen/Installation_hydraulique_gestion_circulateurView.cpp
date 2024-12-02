@@ -11,13 +11,42 @@ Installation_hydraulique_gestion_circulateurView::Installation_hydraulique_gesti
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
-	// Titre
-	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_GESTION_CIRCULATEUR_CENTRE_DEFAUT).getText());
-	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
-	Unicode::fromUTF8(sConfig_Hydrau_temp.sParamZx.u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
-	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
 
+	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		bMultizone = true;
+	}
+	else
+	{
+		bMultizone = false;
+	}
+
+	// Titre
+	Unicode::snprintf(textAreaBuffer_Titre, 50, touchgfx::TypedText(T_TEXT_GESTION_CIRCULATEUR_CENTRE_DEFAUT).getText());
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
+
+
+	if (bMultizone == false)
+	{
+		Unicode::fromUTF8(sConfig_Hydrau_temp.sParamZx.u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
+		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
+	}
+	else
+	{
+		if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
+		{
+			Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
+			Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5,(sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
+		}
+		else
+		{
+			Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
+			Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
+		}
+	}
 	barre_titre.titre(textAreaBuffer_Titre);
+	barre_titre.invalidate();
+
 	//
 	if(sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
 	{
@@ -197,6 +226,18 @@ void Installation_hydraulique_gestion_circulateurView::bouton_valider()
 	//
 	presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
 	application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+}
+
+void Installation_hydraulique_gestion_circulateurView::bouton_retour()
+{
+	if (bMultizone && (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9))
+	{
+		application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+	}
+	else
+	{
+		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+	}
 }
 
 void Installation_hydraulique_gestion_circulateurView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
