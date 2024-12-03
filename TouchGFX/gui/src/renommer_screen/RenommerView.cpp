@@ -248,8 +248,14 @@ void RenommerView::bouton_valider()
 		//memcpy(&sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone], &sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], sizeof(S_PARAM_ZX));
 		if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
 		{
-			//presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
-			application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+			if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == SOUS_STATION)
+			{
+				application().gotoInstallation_MZ_config_groupeScreenNoTransition();
+			}
+			else
+			{
+				application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+			}
 		}
 		else
 		{

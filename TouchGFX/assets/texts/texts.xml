@@ -9,6 +9,13 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1">
+      <Text Id="text_value_vit_ventil_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">70</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_n" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">n</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -1106,6 +1113,34 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_WIVN" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;%</Translation>
+        <Translation Language="GB">Par défaut&lt;value&gt;</Translation>
+        <Translation Language="PT">Par défaut&lt;value&gt;</Translation>
+        <Translation Language="NL">Par défaut&lt;value&gt;</Translation>
+        <Translation Language="DE">Par défaut&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_vitesse_max_ventilateur_attention" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Plafonnement de la vitesse maximale du ventilateur - Attention au bruit</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_activer_ventilation_forcee" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Activer la ventilation forcée ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_vitesse_max_ventilateur" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Plafonnement de la vitesse maximale du ventilateur</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="__SingleUse_H986" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Groupe X</Translation>
         <Translation Language="GB">New Text</Translation>

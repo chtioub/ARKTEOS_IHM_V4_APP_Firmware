@@ -21,8 +21,106 @@ Installation_MZ_param_complementaires_groupeView::Installation_MZ_param_compleme
 	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
 	barre_titre.titre(textAreaBuffer_Titre);
 
+	if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == GAINABLE)
+	{
+		u7VitesseVentilateur = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.u7VitesseMaxVentilateur;
+		vitesseVentilateur();
+		// Marche forcée
+		if(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.bFanForce == 0)
+		{
+			toggleButton_oui_oui_non_marche_forcee.forceState(false);
+			toggleButton_oui_oui_non_marche_forcee.setTouchable(true);
+			toggleButton_non_oui_non_marche_forcee.forceState(true);
+			toggleButton_non_oui_non_marche_forcee.setTouchable(false);
+		}
+		else
+		{
+			toggleButton_oui_oui_non_marche_forcee.forceState(true);
+			toggleButton_oui_oui_non_marche_forcee.setTouchable(false);
+			toggleButton_non_oui_non_marche_forcee.forceState(false);
+			toggleButton_non_oui_non_marche_forcee.setTouchable(true);
+		}
+		container_oui_non_ventil_forcee.setVisible(true);
+		container_vitesse_max_ventil.setVisible(true);
+	}
+	else
+	{
+		container_oui_non_ventil_forcee.setVisible(false);
+		container_vitesse_max_ventil.setVisible(false);
+	}
+	container_oui_non_ventil_forcee.invalidate();
+	container_vitesse_max_ventil.invalidate();
 }
 
+void Installation_MZ_param_complementaires_groupeView::vitesseVentilateur()
+{
+    // MAJ de la valeur
+     Unicode::snprintf(textAreaBuffer_Vitesse_Ventil, 5, "%d", u7VitesseVentilateur);
+     textArea_valeur_vitesse_ventilateur.setWildcard(textAreaBuffer_Vitesse_Ventil);
+     textArea_valeur_vitesse_ventilateur.invalidate();
+
+     if (u7VitesseVentilateur > 70)
+     {
+		 textArea_vitesse_ventilateur.setTypedText(touchgfx::TypedText(T_TEXT_VITESSE_MAX_VENTILATEUR_ATTENTION));
+     }
+     else
+     {
+    	 textArea_vitesse_ventilateur.setTypedText(touchgfx::TypedText(T_TEXT_VITESSE_MAX_VENTILATEUR));
+     }
+     textArea_vitesse_ventilateur.invalidate();
+}
+
+void Installation_MZ_param_complementaires_groupeView::bouton_vitesse_gauche()
+{
+	if(u7VitesseVentilateur > 0)
+	{
+		u7VitesseVentilateur--;
+	}
+	vitesseVentilateur();
+}
+
+void Installation_MZ_param_complementaires_groupeView::bouton_vitesse_droite()
+{
+	if(u7VitesseVentilateur < 100)
+	{
+		u7VitesseVentilateur++;
+	}
+	vitesseVentilateur();
+}
+
+void Installation_MZ_param_complementaires_groupeView::bouton_non_marche_forcee()
+{
+	if(toggleButton_non_oui_non_marche_forcee.getState())
+	{
+		toggleButton_oui_oui_non_marche_forcee.forceState(false);
+		toggleButton_oui_oui_non_marche_forcee.setTouchable(true);
+		toggleButton_oui_oui_non_marche_forcee.invalidate();
+		toggleButton_non_oui_non_marche_forcee.setTouchable(false);
+		toggleButton_non_oui_non_marche_forcee.invalidate();
+	}
+}
+
+void Installation_MZ_param_complementaires_groupeView::bouton_oui_marche_forcee()
+{
+	if(toggleButton_oui_oui_non_marche_forcee.getState())
+	{
+		toggleButton_non_oui_non_marche_forcee.forceState(false);
+		toggleButton_non_oui_non_marche_forcee.setTouchable(true);
+		toggleButton_non_oui_non_marche_forcee.invalidate();
+		toggleButton_oui_oui_non_marche_forcee.setTouchable(false);
+		toggleButton_oui_oui_non_marche_forcee.invalidate();
+	}
+}
+
+
+void Installation_MZ_param_complementaires_groupeView::bouton_valider()
+{
+	if(toggleButton_oui_oui_non_marche_forcee.getState())
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.bFanForce = 1;
+	}
+	sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.u7VitesseMaxVentilateur = u7VitesseVentilateur;
+}
 
 void Installation_MZ_param_complementaires_groupeView::setupScreen()
 {
