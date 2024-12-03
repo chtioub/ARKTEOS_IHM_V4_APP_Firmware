@@ -12,6 +12,7 @@ Installation_hydraulique_gestion_circulateurView::Installation_hydraulique_gesti
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
 
+
 	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
 	{
 		bMultizone = true;
@@ -47,33 +48,69 @@ Installation_hydraulique_gestion_circulateurView::Installation_hydraulique_gesti
 	barre_titre.titre(textAreaBuffer_Titre);
 	barre_titre.invalidate();
 
-	//
-	if(sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
+	if (bMultizone == false)
 	{
-		textArea_valeur_type_circulateur.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_PILOTE_CENTRE_DEFAUT));
+		if(sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
+		{
+			textArea_valeur_type_circulateur.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_PILOTE_CENTRE_DEFAUT));
+			textArea_circuit_primaire.setVisible(true);
+		}
+		else
+		{
+			textArea_circuit_primaire.setVisible(false);
+			container_vitesse_circulateur.setVisible(false);
+			textArea_valeur_type_circulateur.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT));
+		}
+		//
+		u8VitesseCirculateur = sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.GestionCirculateur;
+		vitesseCirculateur();
+		// Marche forcée
+		if(sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bCirculateurForce == 0)
+		{
+			toggleButton_oui_oui_non_marche_forcee.forceState(false);
+			toggleButton_oui_oui_non_marche_forcee.setTouchable(true);
+			toggleButton_non_oui_non_marche_forcee.forceState(true);
+			toggleButton_non_oui_non_marche_forcee.setTouchable(false);
+		}
+		else
+		{
+			toggleButton_oui_oui_non_marche_forcee.forceState(true);
+			toggleButton_oui_oui_non_marche_forcee.setTouchable(false);
+			toggleButton_non_oui_non_marche_forcee.forceState(false);
+			toggleButton_non_oui_non_marche_forcee.setTouchable(true);
+		}
 	}
-	else
+	else //Multizone
 	{
-		container_vitesse_circulateur.setVisible(false);
-		textArea_valeur_type_circulateur.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT));
-	}
-	//
-	u8VitesseCirculateur = sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.GestionCirculateur;
-	vitesseCirculateur();
-	// Marche forcée
-	if(sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bCirculateurForce == 0)
-	{
-		toggleButton_oui_oui_non_marche_forcee.forceState(false);
-		toggleButton_oui_oui_non_marche_forcee.setTouchable(true);
-		toggleButton_non_oui_non_marche_forcee.forceState(true);
-		toggleButton_non_oui_non_marche_forcee.setTouchable(false);
-	}
-	else
-	{
-		toggleButton_oui_oui_non_marche_forcee.forceState(true);
-		toggleButton_oui_oui_non_marche_forcee.setTouchable(false);
-		toggleButton_non_oui_non_marche_forcee.forceState(false);
-		toggleButton_non_oui_non_marche_forcee.setTouchable(true);
+		if(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
+		{
+			textArea_valeur_type_circulateur.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_PILOTE_CENTRE_DEFAUT));
+			textArea_circuit_primaire.setVisible(true);
+		}
+		else
+		{
+			textArea_circuit_primaire.setVisible(false);
+			container_vitesse_circulateur.setVisible(false);
+			textArea_valeur_type_circulateur.setTypedText(touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT));
+		}
+		//
+		u8VitesseCirculateur = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.GestionCirculateur;
+		vitesseCirculateur();
+		// Marche forcée
+		if(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bCirculateurForce == 0)
+		{
+			toggleButton_oui_oui_non_marche_forcee.forceState(false);
+			toggleButton_oui_oui_non_marche_forcee.setTouchable(true);
+			toggleButton_non_oui_non_marche_forcee.forceState(true);
+			toggleButton_non_oui_non_marche_forcee.setTouchable(false);
+		}
+		else
+		{
+			toggleButton_oui_oui_non_marche_forcee.forceState(true);
+			toggleButton_oui_oui_non_marche_forcee.setTouchable(false);
+			toggleButton_non_oui_non_marche_forcee.forceState(false);
+			toggleButton_non_oui_non_marche_forcee.setTouchable(true);
+		}
 	}
 }
 
@@ -185,7 +222,6 @@ void Installation_hydraulique_gestion_circulateurView::bouton_gauche_type_circul
 
 void Installation_hydraulique_gestion_circulateurView::bouton_droite_type_circulateur()
 {
-	//
 	if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT).getId())
 	{
 		textArea_circuit_primaire.setVisible(true);
@@ -205,27 +241,58 @@ void Installation_hydraulique_gestion_circulateurView::bouton_droite_type_circul
 
 void Installation_hydraulique_gestion_circulateurView::bouton_valider()
 {
-	// Vitesse circulateur
-	sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.GestionCirculateur = u8VitesseCirculateur;
-	// Marche forcée
-	if(toggleButton_oui_oui_non_marche_forcee.getState())
+	if (bMultizone == false)
 	{
-		sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bCirculateurForce = 1;
+		// Vitesse circulateur
+		sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.GestionCirculateur = u8VitesseCirculateur;
+		// Marche forcée
+		if(toggleButton_oui_oui_non_marche_forcee.getState())
+		{
+			sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bCirculateurForce = 1;
+		}
+		else sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bCirculateurForce = 0;
+		// Type circulateur
+		if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT).getId())
+		{
+			sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur = TYPE_RELAIS;
+		}
+		else sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur = TYPE_GRUNDFOS;
+		//
+		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.GestionCirculateur = sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.GestionCirculateur;
+		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bTypeCirculateur = sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur;
+		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bCirculateurForce = sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bCirculateurForce;
+		//
+		presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
+		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bCirculateurForce = 0;
-	// Type circulateur
-	if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT).getId())
+	else
 	{
-		sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur = TYPE_RELAIS;
+		// Vitesse circulateur
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.GestionCirculateur = u8VitesseCirculateur;
+		// Marche forcée
+		if(toggleButton_oui_oui_non_marche_forcee.getState())
+		{
+			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bCirculateurForce = 1;
+		}
+		else sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bCirculateurForce = 0;
+		// Type circulateur
+		if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_RELAIS_CENTRE_DEFAUT).getId())
+		{
+			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bTypeCirculateur = TYPE_RELAIS;
+		}
+		else sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bTypeCirculateur = TYPE_GRUNDFOS;
+		//
+		//
+		//presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
+		if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == SOUS_STATION)
+		{
+			application().gotoInstallation_MZ_config_groupeScreenNoTransition();
+		}
+		else
+		{
+			application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+		}
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur = TYPE_GRUNDFOS;
-	//
-	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.GestionCirculateur = sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.GestionCirculateur;
-	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bTypeCirculateur = sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bTypeCirculateur;
-	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_emetteur.plan_rad_vent.bCirculateurForce = sConfig_Hydrau_temp.sParamZx.type_emetteur.plan_rad_vent.bCirculateurForce;
-	//
-	presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
-	application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 }
 
 void Installation_hydraulique_gestion_circulateurView::bouton_retour()

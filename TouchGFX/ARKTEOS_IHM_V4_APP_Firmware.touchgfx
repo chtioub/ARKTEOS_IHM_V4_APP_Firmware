@@ -55136,6 +55136,30 @@
               "Type": "ActionCustom",
               "FunctionName": "bouton_chaud"
             }
+          },
+          {
+            "InteractionName": "BTNClicked_gestion_circ",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_gestion_circ"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_hydraulique_gestion_circulateur"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_renommer",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_renommer_groupe"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Renommer"
+            }
           }
         ]
       },
@@ -55551,6 +55575,7 @@
       },
       {
         "Name": "Installation_MZ_param_complementaires_groupe",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -55571,6 +55596,7 @@
                 "Name": "barre_titre",
                 "Width": 950,
                 "Height": 126,
+                "LockPosition": true,
                 "CustomContainerDefinitionName": "Barre_titre"
               },
               {
@@ -55658,6 +55684,284 @@
                   "Blue": 255
                 },
                 "TextRotation": "0"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_vitesse_max_ventil",
+                "X": 15,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_vitesse_circulateur",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_vitesse_circulateur",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_vitesse_circulateur",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_vitesse_circulateur",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_vitesse_circulateur",
+                    "Y": 76,
+                    "Width": 449,
+                    "Height": 53,
+                    "RelativeFilename": "Bouton_Gris_Unclicked_L449xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_vitesse_ventilateur",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_vitesse_max_ventilateur",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_valeur_vitesse_ventilateur",
+                    "X": 75,
+                    "Y": 89,
+                    "Width": 301,
+                    "Height": 24,
+                    "TextId": "__SingleUse_WIVN",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_value_vit_ventil_centre_defaut"
+                    }
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_gauche_vitesse_ventilateur",
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Button",
+                    "Name": "button_droite_vitesse_ventilateur",
+                    "X": 374,
+                    "Y": 76,
+                    "Width": 75,
+                    "Height": 53,
+                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_oui_non_ventil_forcee",
+                "X": 486,
+                "Y": 149,
+                "Width": 449,
+                "Height": 129,
+                "Components": [
+                  {
+                    "Type": "Line",
+                    "Name": "line_bas_oui_non_marche_forcee",
+                    "Y": 127,
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_haut_oui_non_marche_forcee",
+                    "Width": 449,
+                    "Height": 2,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartY": 1.0,
+                    "EndX": 449.0,
+                    "EndY": 1.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_gauche_oui_non_marche_forcee",
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_droite_oui_non_marche_forcee",
+                    "X": 447,
+                    "Width": 2,
+                    "Height": 129,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 1.0,
+                    "EndX": 1.0,
+                    "EndY": 129.0,
+                    "LineWidth": 2.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_oui_oui_non_marche_forcee",
+                    "X": 233,
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "ToggleButton",
+                    "Name": "toggleButton_non_oui_non_marche_forcee",
+                    "Y": 76,
+                    "Width": 216,
+                    "Height": 53,
+                    "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                    "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_question_oui_non_marche_forcee",
+                    "X": 8,
+                    "Y": 8,
+                    "Width": 433,
+                    "Height": 60,
+                    "TextId": "text_activer_ventilation_forcee",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_non_oui_non_marche_forcee",
+                    "X": 62,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_non_marche_forcee_circ_prim_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_oui_oui_non_marche_forcee",
+                    "X": 295,
+                    "Y": 89,
+                    "Width": 92,
+                    "Height": 24,
+                    "TextId": "text_oui_marche_forcee_circ_prim_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -55711,17 +56015,6 @@
             }
           },
           {
-            "InteractionName": "BTNCLicked_gestion_circulateur_fct",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel_gestion_circulaterur"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "getsion_circulateur"
-            }
-          },
-          {
             "InteractionName": "BTNCLicked_Hysteresis_chgt",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -55754,6 +56047,50 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Renommer"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_oui_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_oui_oui_non_marche_forcee"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_oui_marche_forcee"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_non_fct",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "toggleButton_non_oui_non_marche_forcee"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_non_marche_forcee"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_vitesse_droite",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_vitesse_ventilateur"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_vitesse_droite"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_gauche_vitesse",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_vitesse_ventilateur"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_vitesse_gauche"
             }
           }
         ]
