@@ -9,6 +9,13 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1">
+      <Text Id="text_hyst_moins_val" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">-4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_value_vit_ventil_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">70</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -1113,6 +1120,34 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_hyst_plus" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_hyst_moins" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_7G7U" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="GB">New Text&lt;value&gt;</Translation>
+        <Translation Language="PT">New Text&lt;value&gt;</Translation>
+        <Translation Language="NL">New Text&lt;value&gt;</Translation>
+        <Translation Language="DE">New Text&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="text_message_meme_carte_voie_groupe" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Plusieurs zones ou groupes sont affectés à la même voie&#10;de la même carte. (Carte et Sortie/Voie identiques)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="__SingleUse_WIVN" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;%</Translation>
         <Translation Language="GB">Par défaut&lt;value&gt;</Translation>
@@ -6683,7 +6718,7 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_pisc_vert_clair_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_hy" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;value&gt;°C</Translation>
         <Translation Language="GB">New Text&lt;value&gt;</Translation>
         <Translation Language="PT">New Text&lt;value&gt;</Translation>
@@ -8918,8 +8953,8 @@
         <Translation Language="NL">New Text&lt;value&gt;</Translation>
         <Translation Language="DE">New Text&lt;value&gt;</Translation>
       </Text>
-      <Text Id="text_zone_temp_rouge_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">12.0</Translation>
+      <Text Id="text_hyst_plus_val" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">4</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>

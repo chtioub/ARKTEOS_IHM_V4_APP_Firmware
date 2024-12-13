@@ -39,11 +39,19 @@ protected:
 	unsigned char bGroupeAOnOff : 1, bGroupeBOnOff : 1;
 	unsigned short u3CarteGroupeA : 3, u3CarteGroupeB : 3, u3NumVoieGroupeA : 3, u3NumVoieGroupeB : 3;
 	uint16_t u16ErreurAffichee;
+	uint8_t eTypeMess = 0;
 	S_DATE sDate_old;
 	S_CONFIG_IHM sConfig_IHM_old;
 	S_STATUT_PAC sStatut_PAC_old;
 	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9],textAreaBuffer_GroupeA[11],  textAreaBuffer_GroupeB[11],
 	textAreaBuffer_Voie_GroupeA[2], textAreaBuffer_Voie_GroupeB[2],textAreaBuffer_MessTitre[40], textAreaBuffer_MessMess[500];
+	typedef enum
+	{
+		MESS_CARTE_REG = 1,
+		MESS_MEME_VOIE_CARTE = 2,
+	} E_TYPE_MESS;
+
+
 };
 
 #endif // INSTALLATION_MZ_PARAMETRAGE_GROUPESVIEW_HPP
