@@ -27,8 +27,8 @@ public:
 
     virtual ~Installation_hysteresisPresenter() {}
 
-    virtual void Red_Butt();
-	virtual void Blue_Butt();
+//    virtual void Red_Butt();
+//	virtual void Blue_Butt();
 
 private:
     Installation_hysteresisPresenter();

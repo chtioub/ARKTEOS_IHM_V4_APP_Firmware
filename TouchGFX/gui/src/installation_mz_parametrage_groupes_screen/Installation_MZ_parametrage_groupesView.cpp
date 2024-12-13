@@ -31,8 +31,7 @@ Installation_MZ_parametrage_groupesView::Installation_MZ_parametrage_groupesView
 	bAttentionClicked = false;
 	Unicode::snprintf(textAreaBuffer_MessTitre, 40, touchgfx::TypedText(T_TEXT_MESSAGE_ATTENTION_TITRE).getText());
 	message_attention.titre(textAreaBuffer_MessTitre);
-	Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_MESSAGE_VANNE_MELANGE_GROUPE).getText());
-	message_attention.message(textAreaBuffer_MessMess);
+
 
 
 //	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_PARAMETRES_CENTRE_DEFAUT).getText());
@@ -56,6 +55,7 @@ Installation_MZ_parametrage_groupesView::Installation_MZ_parametrage_groupesView
 		if (u3NumVoieGroupeB > VOIE_2) u3NumVoieGroupeB = VOIE_2;
 	}
 	else if(u3NumVoieGroupeB > VOIE_5) u3NumVoieGroupeB = VOIE_5;
+
 
 	Unicode::snprintf(textAreaBuffer_Voie_GroupeA, 2, "%d", u3NumVoieGroupeA + 1);
 	textArea_sortie_voie_groupe_A.setWildcard(textAreaBuffer_Voie_GroupeA);
@@ -88,17 +88,30 @@ void Installation_MZ_parametrage_groupesView::MAJ_Carte_GroupeA()
 	{
 		case CARTE_MZ1:
 			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ1_CENTRE_DEFAUT));
+			if (u3CarteGroupeB != CARTE_REG)
+			{
+				textArea_message_rouge_carte_reg.setVisible(false);
+				textArea_message_rouge_carte_reg.invalidate();
+			}
 			break;
 		case CARTE_MZ2:
 			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ2_CENTRE_DEFAUT));
+			if (u3CarteGroupeB != CARTE_REG)
+			{
+				textArea_message_rouge_carte_reg.setVisible(false);
+				textArea_message_rouge_carte_reg.invalidate();
+			}
 			break;
 		case CARTE_REG:
 			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_REG_CENTRE_DEFAUT));
+			textArea_message_rouge_carte_reg.setVisible(true);
+			textArea_message_rouge_carte_reg.invalidate();
 			break;
 		default:
 			break;
 	}
 	textArea_bouton_carte_MZ_groupe_A.invalidate();
+
 }
 
 void Installation_MZ_parametrage_groupesView::MAJ_Carte_GroupeB()
@@ -107,12 +120,24 @@ void Installation_MZ_parametrage_groupesView::MAJ_Carte_GroupeB()
 	{
 		case CARTE_MZ1:
 			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ1_CENTRE_DEFAUT));
+			if (u3CarteGroupeA != CARTE_REG)
+			{
+				textArea_message_rouge_carte_reg.setVisible(false);
+				textArea_message_rouge_carte_reg.invalidate();
+			}
 			break;
 		case CARTE_MZ2:
 			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ2_CENTRE_DEFAUT));
+			if (u3CarteGroupeA != CARTE_REG)
+			{
+				textArea_message_rouge_carte_reg.setVisible(false);
+				textArea_message_rouge_carte_reg.invalidate();
+			}
 			break;
 		case CARTE_REG:
 			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_REG_CENTRE_DEFAUT));
+			textArea_message_rouge_carte_reg.setVisible(true);
+			textArea_message_rouge_carte_reg.invalidate();
 			break;
 		default:
 			break;
@@ -207,6 +232,11 @@ void Installation_MZ_parametrage_groupesView::bouton_choix_carte_MZ_groupe_A()
 		case CARTE_MZ1:
 			u3CarteGroupeA = CARTE_MZ2;
 			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ2_CENTRE_DEFAUT));
+			if (u3CarteGroupeB != CARTE_REG)
+			{
+				textArea_message_rouge_carte_reg.setVisible(false);
+				textArea_message_rouge_carte_reg.invalidate();
+			}
 			break;
 		case CARTE_MZ2:
 			u3CarteGroupeA = CARTE_REG;
@@ -217,12 +247,21 @@ void Installation_MZ_parametrage_groupesView::bouton_choix_carte_MZ_groupe_A()
 			textArea_sortie_voie_groupe_A.invalidate();
 			if (bAttentionClicked == false)
 			{
+				bAttentionClicked = true;
+				eTypeMess = MESS_CARTE_REG;
 				affichage_attention();
 			}
+			textArea_message_rouge_carte_reg.setVisible(true);
+			textArea_message_rouge_carte_reg.invalidate();
 			break;
 		case CARTE_REG:
 			u3CarteGroupeA = CARTE_MZ1;
 			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ1_CENTRE_DEFAUT));
+			if (u3CarteGroupeB != CARTE_REG)
+			{
+				textArea_message_rouge_carte_reg.setVisible(false);
+				textArea_message_rouge_carte_reg.invalidate();
+			}
 			break;
 		default:
 			break;
@@ -238,6 +277,11 @@ void Installation_MZ_parametrage_groupesView::bouton_choix_carte_MZ_groupe_B()
 		case CARTE_MZ1:
 			u3CarteGroupeB = CARTE_MZ2;
 			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ2_CENTRE_DEFAUT));
+			if (u3CarteGroupeA != CARTE_REG)
+			{
+				textArea_message_rouge_carte_reg.setVisible(false);
+				textArea_message_rouge_carte_reg.invalidate();
+			}
 			break;
 		case CARTE_MZ2:
 			u3CarteGroupeB = CARTE_REG;
@@ -248,12 +292,21 @@ void Installation_MZ_parametrage_groupesView::bouton_choix_carte_MZ_groupe_B()
 			textArea_sortie_voie_groupe_B.invalidate();
 			if (bAttentionClicked == false)
 			{
+				bAttentionClicked = true;
+				eTypeMess = MESS_CARTE_REG;
 				affichage_attention();
 			}
+			textArea_message_rouge_carte_reg.setVisible(true);
+			textArea_message_rouge_carte_reg.invalidate();
 			break;
 		case CARTE_REG:
 			u3CarteGroupeB = CARTE_MZ1;
 			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ1_CENTRE_DEFAUT));
+			if (u3CarteGroupeA != CARTE_REG)
+			{
+				textArea_message_rouge_carte_reg.setVisible(false);
+				textArea_message_rouge_carte_reg.invalidate();
+			}
 			break;
 		default:
 			break;
@@ -307,19 +360,43 @@ void Installation_MZ_parametrage_groupesView:: bouton_groupe_B()
 
 void Installation_MZ_parametrage_groupesView:: affichage_attention()
 {
-	bAttentionClicked = true;
+	switch (eTypeMess)
+	{
+		case MESS_CARTE_REG:
+			Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_MESSAGE_VANNE_MELANGE_GROUPE).getText());
+			message_attention.message(textAreaBuffer_MessMess);
+			break;
+
+		case MESS_MEME_VOIE_CARTE:
+			Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_MESSAGE_MEME_CARTE_VOIE_GROUPE).getText());
+			message_attention.message(textAreaBuffer_MessMess);
+			break;
+
+		default:
+			break;
+	}
+
 	modalWindow_attention.show();
 	modalWindow_attention.invalidate();
 }
 
 void Installation_MZ_parametrage_groupesView:: bouton_valider()
 {
-	sParamZxMZtemp[8].NumCarteMZ = u3CarteGroupeA;
-	sParamZxMZtemp[9].NumCarteMZ = u3CarteGroupeB;
-	sParamZxMZtemp[8].NumVoieMZ = u3NumVoieGroupeA;
-	sParamZxMZtemp[9].NumVoieMZ = u3NumVoieGroupeB;
-	sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif = bGroupeAOnOff;
-	sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif = bGroupeBOnOff;
+	if (u3CarteGroupeA == u3CarteGroupeB && u3NumVoieGroupeA == u3NumVoieGroupeB && bGroupeAOnOff == 1 && bGroupeBOnOff == 1)
+	{
+		eTypeMess = MESS_MEME_VOIE_CARTE;
+		affichage_attention();
+	}
+	else
+	{
+		sParamZxMZtemp[8].NumCarteMZ = u3CarteGroupeA;
+		sParamZxMZtemp[9].NumCarteMZ = u3CarteGroupeB;
+		sParamZxMZtemp[8].NumVoieMZ = u3NumVoieGroupeA;
+		sParamZxMZtemp[9].NumVoieMZ = u3NumVoieGroupeB;
+		sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif = bGroupeAOnOff;
+		sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif = bGroupeBOnOff;
+		application().gotoInstallation_MZ_param_ou_regroupement_zonesScreenNoTransition();
+	}
 }
 
 void Installation_MZ_parametrage_groupesView:: attention_valid_button_clicked()

@@ -2193,7 +2193,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextId": "text_hy",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40320,7 +40320,6 @@
                 "Y": 410,
                 "Width": 600,
                 "Height": 74,
-                "Visible": false,
                 "Components": [
                   {
                     "Type": "Button",
@@ -40364,7 +40363,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextId": "text_hy",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40372,7 +40371,7 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "text_zone_temp_rouge_init_centre_defaut",
+                      "TextId": "text_hyst_plus_val",
                       "UseBuffer": true,
                       "BufferSize": 5
                     }
@@ -40430,7 +40429,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextId": "text_hy",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40496,7 +40495,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextId": "text_hy",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40562,7 +40561,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextId": "text_hy",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40628,7 +40627,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextId": "text_hy",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40694,7 +40693,7 @@
                     "Y": 51,
                     "Width": 83,
                     "Height": 23,
-                    "TextId": "text_pisc_vert_clair_centre_defaut",
+                    "TextId": "text_hy",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -54214,6 +54213,22 @@
                       "Green": 255,
                       "Blue": 255
                     }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_message_rouge_carte_reg",
+                    "X": 15,
+                    "Y": 174,
+                    "Width": 550,
+                    "Height": 125,
+                    "TextId": "__SingleUse_7G7U",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_message_vanne_melange_groupe"
+                    }
                   }
                 ]
               },
@@ -54234,6 +54249,7 @@
             "Name": "modalWindow_attention",
             "Width": 1024,
             "Height": 600,
+            "Visible": false,
             "FileName": "Arriere_Plan_L600xH300.png",
             "ModalX": 212,
             "ModalY": 150,
@@ -54307,18 +54323,6 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_MZ_config_groupe"
-            }
-          },
-          {
-            "InteractionName": "BTNClicked_bouton_valider_chgPage",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "button_valider"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Installation_MZ_param_ou_regroupement_zones"
             }
           },
           {
@@ -57943,6 +57947,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_parametrage_groupes_zones"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_hysteresis_page",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_hysteresis_sonde_ballon_regul_multizones"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_hysteresis"
             }
           }
         ]
@@ -66119,6 +66135,7 @@
       },
       {
         "Name": "Installation_hysteresis",
+        "CanvasBufferSize": 15360,
         "Components": [
           {
             "Type": "Box",
@@ -66152,42 +66169,6 @@
                 "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
               {
-                "Type": "Slider",
-                "Name": "slider_hysteresis_plus",
-                "X": 46,
-                "Y": 231,
-                "Width": 844,
-                "Height": 63,
-                "IsHorizontalSlider": true,
-                "BackgroundUnselected": "Hysteresis_L844xH63-79.png",
-                "BackgroundSelected": "Hysteresis_L844xH63-79.png",
-                "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_round_dark.png",
-                "IndicatorPos": 16,
-                "IndicatorMax": 783,
-                "IndicatorMin": 5,
-                "ValueMax": 40,
-                "ValueMin": -40,
-                "InitValue": 40
-              },
-              {
-                "Type": "Slider",
-                "Name": "slider_hysteresis_moins",
-                "X": 46,
-                "Y": 231,
-                "Width": 844,
-                "Height": 63,
-                "IsHorizontalSlider": true,
-                "BackgroundUnselected": "Hysteresis_L844xH63-79.png",
-                "BackgroundSelected": "Hysteresis_L844xH63-79.png",
-                "Indicator": "__generated\\alternate_theme_images_widgets_slider_horizontal_thick_round_dark.png",
-                "IndicatorPos": 16,
-                "IndicatorMax": 783,
-                "IndicatorMin": 5,
-                "ValueMax": 40,
-                "ValueMin": -40,
-                "InitValue": 40
-              },
-              {
                 "Type": "Button",
                 "Name": "button_retour",
                 "X": 881,
@@ -66198,76 +66179,278 @@
                 "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               },
               {
-                "Type": "FlexButton",
-                "Name": "blue_butt",
-                "X": 2,
-                "Y": 350,
-                "Width": 30,
-                "Height": 30,
-                "ButtonTrigger": {
-                  "Type": "TouchButtonTrigger"
-                },
-                "ButtonStyles": [
+                "Type": "Container",
+                "Name": "container_global",
+                "X": 5,
+                "Y": 149,
+                "Width": 950,
+                "Height": 307,
+                "Components": [
                   {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "Width": 30,
-                    "Height": 30,
-                    "ColorReleased": {
-                      "Green": 102,
-                      "Blue": 153
+                    "Type": "Container",
+                    "Name": "container_zone_hyst",
+                    "X": 53,
+                    "Y": 10,
+                    "Width": 844,
+                    "Height": 300,
+                    "Components": [
+                      {
+                        "Type": "Image",
+                        "Name": "image1",
+                        "Y": 22,
+                        "Width": 844,
+                        "Height": 244,
+                        "RelativeFilename": "Hysteresis_L844xH243.png"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "lineV_hyst_moins",
+                        "X": 21,
+                        "Y": 50,
+                        "Width": 803,
+                        "Height": 190,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "EndY": 190.0,
+                        "LineWidth": 6.0,
+                        "LineEndingStyle": "Square"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "lineV_hyst_plus",
+                        "X": 21,
+                        "Y": 50,
+                        "Width": 803,
+                        "Height": 190,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "StartX": 800.0,
+                        "EndX": 800.0,
+                        "EndY": 186.0,
+                        "LineWidth": 6.0,
+                        "LineEndingStyle": "Square"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "lineH_hyst_basse",
+                        "X": 21,
+                        "Y": 236,
+                        "Width": 800,
+                        "Height": 8,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "EndX": 800.0,
+                        "LineWidth": 10.0,
+                        "LineEndingStyle": "Square"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "lineH_hyst_haute",
+                        "X": 21,
+                        "Y": 50,
+                        "Width": 800,
+                        "Height": 8,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "EndX": 800.0,
+                        "LineWidth": 10.0,
+                        "LineEndingStyle": "Square"
+                      },
+                      {
+                        "Type": "Slider",
+                        "Name": "slider_hyst_plus",
+                        "X": 28,
+                        "Y": 222,
+                        "Width": 810,
+                        "Height": 32,
+                        "IsHorizontalSlider": true,
+                        "BackgroundUnselected": "Barre_Slider_Transparente_L782xH2.png",
+                        "BackgroundSelected": "Barre_Slider_Transparente_L782xH2.png",
+                        "Indicator": "Balle_Hysteresis_L30xH30.png",
+                        "BackgroundY": 30,
+                        "IndicatorMax": 780,
+                        "ValueMax": 400,
+                        "ValueMin": -380,
+                        "InitValue": 400
+                      },
+                      {
+                        "Type": "Slider",
+                        "Name": "slider_hyst_moins",
+                        "X": 7,
+                        "Y": 35,
+                        "Width": 810,
+                        "Height": 32,
+                        "IsHorizontalSlider": true,
+                        "BackgroundUnselected": "Barre_Slider_Transparente_L782xH2.png",
+                        "BackgroundSelected": "Barre_Slider_Transparente_L782xH2.png",
+                        "Indicator": "Balle_Hysteresis_L30xH30.png",
+                        "BackgroundY": 30,
+                        "IndicatorMax": 780,
+                        "ValueMax": 380,
+                        "ValueMin": -400,
+                        "InitValue": -400
+                      },
+                      {
+                        "Type": "Slider",
+                        "Name": "slider_hyst_plus_1",
+                        "X": 28,
+                        "Y": 103,
+                        "Width": 810,
+                        "Height": 32,
+                        "Visible": false,
+                        "IsHorizontalSlider": true,
+                        "BackgroundUnselected": "Barre_Slider_Transparente_L782xH2.png",
+                        "BackgroundSelected": "Barre_Slider_Transparente_L782xH2.png",
+                        "Indicator": "Balle_Hysteresis_L30xH30.png",
+                        "BackgroundY": 30,
+                        "IndicatorMax": 780,
+                        "ValueMax": 40,
+                        "ValueMin": -38,
+                        "InitValue": 40
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "fleche_gauche",
+                        "X": -4,
+                        "Y": 117,
+                        "Width": 56,
+                        "Height": 56,
+                        "Components": [
+                          {
+                            "Type": "Line",
+                            "Name": "line_up_g",
+                            "Width": 56,
+                            "Height": 56,
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "StartX": 27.0,
+                            "StartY": 27.0,
+                            "EndX": 41.0,
+                            "EndY": 50.0,
+                            "LineWidth": 6.0,
+                            "LineEndingStyle": "Round"
+                          },
+                          {
+                            "Type": "Line",
+                            "Name": "line_up_d",
+                            "Width": 56,
+                            "Height": 56,
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "StartX": 15.0,
+                            "StartY": 50.0,
+                            "EndX": 27.0,
+                            "EndY": 27.0,
+                            "LineWidth": 6.0,
+                            "LineEndingStyle": "Round"
+                          }
+                        ]
+                      },
+                      {
+                        "Type": "Container",
+                        "Name": "fleche_droite",
+                        "X": 794,
+                        "Y": 117,
+                        "Width": 56,
+                        "Height": 56,
+                        "Components": [
+                          {
+                            "Type": "Line",
+                            "Name": "line_down_g",
+                            "Width": 56,
+                            "Height": 56,
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "StartX": 27.0,
+                            "StartY": 27.0,
+                            "EndX": 41.0,
+                            "EndY": 5.0,
+                            "LineWidth": 6.0,
+                            "LineEndingStyle": "Round"
+                          },
+                          {
+                            "Type": "Line",
+                            "Name": "line_down_d",
+                            "Width": 56,
+                            "Height": 56,
+                            "Color": {
+                              "Red": 255,
+                              "Green": 255,
+                              "Blue": 255
+                            },
+                            "StartX": 15.0,
+                            "StartY": 5.0,
+                            "EndX": 27.0,
+                            "EndY": 27.0,
+                            "LineWidth": 6.0,
+                            "LineEndingStyle": "Round"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_hyst_moins",
+                    "X": 35,
+                    "Y": 12,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_hyst_moins",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
-                    "ColorPressed": {
-                      "Green": 153,
-                      "Blue": 204
+                    "Wildcard1": {
+                      "TextId": "text_hyst_moins_val",
+                      "UseBuffer": true,
+                      "BufferSize": 5
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_hyst_plus",
+                    "X": 835,
+                    "Y": 274,
+                    "Width": 83,
+                    "Height": 23,
+                    "TextId": "text_hyst_plus",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
                     },
-                    "ColorBorderReleased": {
-                      "Green": 51,
-                      "Blue": 102
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 51,
-                      "Green": 102,
-                      "Blue": 153
+                    "Wildcard1": {
+                      "TextId": "text_hyst_plus_val",
+                      "UseBuffer": true,
+                      "BufferSize": 5
                     }
                   }
-                ],
-                "Draggable": true
-              },
-              {
-                "Type": "FlexButton",
-                "Name": "red_butt",
-                "X": 800,
-                "Y": 350,
-                "Width": 30,
-                "Height": 30,
-                "ButtonTrigger": {
-                  "Type": "TouchButtonTrigger"
-                },
-                "ButtonStyles": [
-                  {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "Width": 30,
-                    "Height": 30,
-                    "ColorReleased": {
-                      "Red": 153,
-                      "Blue": 31
-                    },
-                    "ColorPressed": {
-                      "Green": 153,
-                      "Blue": 204
-                    },
-                    "ColorBorderReleased": {
-                      "Green": 51,
-                      "Blue": 102
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 51,
-                      "Green": 102,
-                      "Blue": 153
-                    }
-                  }
-                ],
-                "Draggable": true
+                ]
               }
             ]
           }
@@ -66280,8 +66463,9 @@
               "TriggerComponent": "button_retour"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "bouton_retour"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Installation_hydraulique"
             }
           },
           {
@@ -66296,25 +66480,43 @@
             }
           },
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "BTNSlider_Plus_move",
             "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 1
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_hyst_plus"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "Red_Butt"
+              "FunctionName": "Slider_Plus"
+            }
+          },
+          {
+            "InteractionName": "BTNSlider_Moins_Move",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "slider_hyst_moins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Slider_Moins"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionNone"
             }
           },
           {
             "InteractionName": "Interaction2",
             "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 1
+              "Type": "TriggerNone"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "Blue_Butt"
+              "Type": "ActionNone"
             }
           }
         ]
