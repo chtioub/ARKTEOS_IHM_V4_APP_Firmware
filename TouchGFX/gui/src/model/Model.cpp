@@ -1318,6 +1318,43 @@ void Model::c_install_zx(uint8_t u8Zone)
 	}
 }
 
+void Model::c_install_param_zx()
+{
+	uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PARAM_ZX;
+	txData[u8Pointeur_buffer_tx].data[4] = (((sizeof(S_PARAM_ZX))*10) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT))&0xFF;
+	txData[u8Pointeur_buffer_tx].data[5] = ((((sizeof(S_PARAM_ZX))*10) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT) >> 8)) & 0xFF;
+	u16Pointeur = 6;
+
+	for (int i = 0; i < 10 ; i++)
+	{
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_Zx[i], sizeof(S_PARAM_ZX));
+		u16Pointeur += sizeof(S_PARAM_ZX);
+	}
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_RegulExt, sizeof(S_PARAM_REG_EXT));
+	u16Pointeur += sizeof(S_PARAM_REG_EXT);
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_ECS, sizeof(S_PARAM_ECS));
+	u16Pointeur += sizeof(S_PARAM_ECS);
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParam_Piscine, sizeof(S_PARAM_PISCINE));
+	u16Pointeur += sizeof(S_PARAM_PISCINE);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
 void Model::c_install_th_association(uint8_t u8NumZone)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;

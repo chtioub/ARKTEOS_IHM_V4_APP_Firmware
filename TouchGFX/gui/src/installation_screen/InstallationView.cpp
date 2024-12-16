@@ -32,6 +32,11 @@ void InstallationView::bouton_mem_config()
 {
     sConfig_Hydrau_temp.u8TypeRegul = sConfig_IHM.sParam_PAC.TypeRegul;
 	sConfig_Hydrau_temp.sZones = sConfig_IHM.sOption_PAC.sZone;
+	for (int i=0; i< 10; i++)
+	{
+		memcpy(&sParamZxMZtemp[i],&sConfig_IHM.sParam_Zx[i], sizeof(S_PARAM_ZX));
+		//memcpy(&sConfig_IHM.sParam_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ZX) * NB_VOIE);
+	}
 }
 
 void InstallationView::bouton_mem_config_piscine()

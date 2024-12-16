@@ -63,6 +63,7 @@ S_CONFIG_PISCINE_TEMP sConfig_Piscine_temp;
 S_PARAM_ECS sParam_ECS_temp;
 uint32_t u32LastCyclique;
 uint8_t u8Pointeur_buffer_tx, u8Pointeur_envoi;
+S_PARAM_ZX sParamZxMZtemp[10];
 
 void setBackLightPWM(uint8_t pwm)
 {

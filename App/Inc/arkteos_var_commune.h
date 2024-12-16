@@ -1237,7 +1237,7 @@ typedef struct
             unsigned char   bCommandeRegistre       :1;     // E_COMMANDE_EMETTEUR
             unsigned char   u2Spare                 :2;
 
-            int8_t              i8PertesDeCharges;              // Pertes de charges par les gaines (-90% � +90%)
+            int8_t          i8PertesDeCharges;              // Pertes de charges par les gaines (-90% � +90%)
 
             unsigned char   CorrectionDebitAir      :7;     // Correction du d�bit d'air (valeur max de ventilation pour la zone)
             unsigned char   bActivationCorrection   :1;     // Activation de la correction du d�bit d'air
@@ -2709,7 +2709,7 @@ typedef struct
 	S_PARAM_REG_EXT sParam_RegulExt;
 	S_PARAM_FRIGO sParam_Frigo;
 	S_PARAM_SAV sParam_SAV;
-	S_PARAM_ZX sParam_Zx[20];
+	S_PARAM_ZX sParam_Zx[10];
 	S_CONFIG_FRIGO sConfigFrigo[NB_UE_MAX];
 
 	uint16_t u16RecupConfig;

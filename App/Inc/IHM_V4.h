@@ -229,6 +229,7 @@ extern S_CONFIG_PISCINE_TEMP sConfig_Piscine_temp;
 extern S_PARAM_ECS sParam_ECS_temp;
 extern uint32_t u32LastCyclique;
 extern uint8_t u8Pointeur_buffer_tx, u8Pointeur_envoi;
+extern S_PARAM_ZX sParamZxMZtemp[10];
 
 void setBackLightPWM(uint8_t pwm);
 uint8_t decodeRxData(rxData_t *rxData);

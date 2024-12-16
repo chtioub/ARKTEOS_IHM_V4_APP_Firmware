@@ -22,6 +22,11 @@ void Installation_hydrauliquePresenter::c_install_param()
 	model->c_install_param();
 }
 
+void Installation_hydrauliquePresenter::c_install_param_zx()
+{
+	model->c_install_param_zx();
+}
+
 void Installation_hydrauliquePresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);
@@ -40,4 +45,9 @@ void Installation_hydrauliquePresenter::changeDate(S_DATE *sDate)
 void Installation_hydrauliquePresenter::changeErreur(uint16_t u16Erreur)
 {
 	view.changeErreur(u16Erreur);
+}
+
+void Installation_hydrauliquePresenter::changeConfig(S_CONFIG_IHM *sConfig_IHM)
+{
+	view.changeConfig(sConfig_IHM);
 }

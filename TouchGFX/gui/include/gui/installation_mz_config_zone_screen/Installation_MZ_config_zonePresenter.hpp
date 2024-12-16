@@ -1,17 +1,17 @@
-#ifndef INSTALLATION_HYDRAULIQUE_MESSAGE_MULTIZONESPRESENTER_HPP
-#define INSTALLATION_HYDRAULIQUE_MESSAGE_MULTIZONESPRESENTER_HPP
+#ifndef INSTALLATION_MZ_CONFIG_ZONEPRESENTER_HPP
+#define INSTALLATION_MZ_CONFIG_ZONEPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Installation_hydraulique_message_multizonesView;
+class Installation_MZ_config_zoneView;
 
-class Installation_hydraulique_message_multizonesPresenter : public touchgfx::Presenter, public ModelListener
+class Installation_MZ_config_zonePresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Installation_hydraulique_message_multizonesPresenter(Installation_hydraulique_message_multizonesView& v);
+    Installation_MZ_config_zonePresenter(Installation_MZ_config_zoneView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,7 +25,8 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Installation_hydraulique_message_multizonesPresenter() {}
+    virtual ~Installation_MZ_config_zonePresenter() {}
+
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
@@ -33,9 +34,9 @@ public:
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
 
 private:
-    Installation_hydraulique_message_multizonesPresenter();
+    Installation_MZ_config_zonePresenter();
 
-    Installation_hydraulique_message_multizonesView& view;
+    Installation_MZ_config_zoneView& view;
 };
 
-#endif // INSTALLATION_HYDRAULIQUE_MESSAGE_MULTIZONESPRESENTER_HPP
+#endif // INSTALLATION_MZ_CONFIG_ZONEPRESENTER_HPP

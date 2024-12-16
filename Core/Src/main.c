@@ -17,6 +17,7 @@
  */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <app_touchgfx.h>
 #include "main.h"
 #include "crc.h"
 #include "dma2d.h"
@@ -27,10 +28,6 @@
 #include "usart.h"
 #include "gpio.h"
 #include "fmc.h"
-#include "app_touchgfx.h"
-
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
 #include "IHM_V4.h"
 /* USER CODE END Includes */
 
@@ -143,7 +140,7 @@ int main(void)
     // Données envoyées
     if(((HAL_GetTick() - u32LastCyclique) > 100 && (HAL_GetTick() - u32LastCyclique) < 900) && (HAL_GetTick() - u32LastEnvoi) > 100)
     {
-		if(txData[u8Pointeur_envoi].size != 0)
+	if(txData[u8Pointeur_envoi].size != 0)
 		{
 			u32LastEnvoi = HAL_GetTick();
 			//
