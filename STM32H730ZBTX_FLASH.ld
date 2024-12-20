@@ -48,8 +48,8 @@ MEMORY
   RAM_D1  (xrw)    : ORIGIN = 0x24000000,   LENGTH = 320K
   RAM_D2  (xrw)    : ORIGIN = 0x30000000,   LENGTH = 32K
   RAM_D3  (xrw)    : ORIGIN = 0x38000000,   LENGTH = 16K
-  FLASH    (rx)    : ORIGIN = 0x90000000,   LENGTH = 4M
-  FLASH_GFX (r)    : ORIGIN = 0x90000000 + 4M,   LENGTH = 32M-4M
+  FLASH    (rx)    : ORIGIN = 0x90000000,   LENGTH = 8M
+  FLASH_GFX (r)    : ORIGIN = 0x90000000 + 8M,   LENGTH = 32M-8M
 }
 
 /* Define output sections */
