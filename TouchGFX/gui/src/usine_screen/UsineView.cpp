@@ -62,6 +62,12 @@ void UsineView::bouton_derog_pression_bp()
 	application().gotoPage_oui_nonScreenNoTransition();
 }
 
+void UsineView::bouton_retour()
+{
+	bPageAccueil = false;
+	application().gotoAccueilScreenNoTransition();
+}
+
 void UsineView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 {
 	// Recup config

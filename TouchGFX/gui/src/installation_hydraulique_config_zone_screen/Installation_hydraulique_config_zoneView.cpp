@@ -14,6 +14,8 @@ Installation_hydraulique_config_zoneView::Installation_hydraulique_config_zoneVi
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
+	barre_titre.recupConfig(false);
+	barre_titre.connexionDistante(false);
 	//
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_PARAMETRES_CENTRE_DEFAUT).getText());
 	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
@@ -173,6 +175,12 @@ void Installation_hydraulique_config_zoneView::affichage_type_sonde()
 	container_sonde_rf.invalidate();
 	buttonWithLabel_sonde_modbus.invalidate();
 }
+
+void Installation_hydraulique_config_zoneView:: renommer_zone()
+{
+	eTypeClavierAlpha = RENOMMER_ZONE_GROUPE;
+}
+
 
 void Installation_hydraulique_config_zoneView::bouton_valider()
 {

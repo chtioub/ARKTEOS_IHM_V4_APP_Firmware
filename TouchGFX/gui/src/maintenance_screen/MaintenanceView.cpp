@@ -43,7 +43,12 @@ void MaintenanceView::bouton_retour()
 	{
 		application().gotoUsineScreenNoTransition();
 	}
-	else application().gotoConfigurationScreenNoTransition();
+	else
+	{
+		bPageAccueil = false;
+		application().gotoAccueilScreenNoTransition();
+//		application().gotoConfigurationScreenNoTransition();
+	}
 }
 
 void MaintenanceView::bouton_raz_histo_err()

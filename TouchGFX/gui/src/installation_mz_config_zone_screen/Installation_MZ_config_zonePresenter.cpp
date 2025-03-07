@@ -41,3 +41,8 @@ void Installation_MZ_config_zonePresenter::changeConfig(S_CONFIG_IHM *sConfig_IH
 {
 	view.changeConfig(sConfig_IHM);
 }
+
+void Installation_MZ_config_zonePresenter::changeStatutRF(S_STATUT_RF *sStatut_RF)
+{
+	view.changeStatutRF(sStatut_RF);
+}

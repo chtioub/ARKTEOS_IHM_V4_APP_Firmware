@@ -288,18 +288,26 @@ void Installation_hydraulique_gestion_circulateurView::bouton_valider()
 		{
 			application().gotoInstallation_MZ_config_groupeScreenNoTransition();
 		}
-		else
+		else if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
 		{
 			application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
 		}
+		else application().gotoInstallation_MZ_config_zoneScreenNoTransition();
 	}
 }
 
 void Installation_hydraulique_gestion_circulateurView::bouton_retour()
 {
-	if (bMultizone && (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9))
+	if (bMultizone)
 	{
-		application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+		if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
+		{
+			application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+		}
+		else
+		{
+			application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+		}
 	}
 	else
 	{

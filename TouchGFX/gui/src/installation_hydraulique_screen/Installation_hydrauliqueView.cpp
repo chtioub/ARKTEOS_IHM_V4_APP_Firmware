@@ -502,8 +502,15 @@ void Installation_hydrauliqueView ::bouton_repartition_puissance_zone()
 	application().gotoInstallation_hydraulique_repartition_PW_zoneScreenNoTransition();
 }
 
-void Installation_hydrauliqueView ::bouton_hysteresis_regul_directe()
+void Installation_hydrauliqueView ::bouton_hysteresis_sonde_primaire()
 {
+	eHysteresis = HYST_PRIM;
+	application().gotoInstallation_hysteresisScreenNoTransition();
+}
+
+void Installation_hydrauliqueView ::bouton_hysteresis_sonde_ballon()
+{
+	eHysteresis = HYST_TEAU;
 	application().gotoInstallation_hysteresisScreenNoTransition();
 }
 

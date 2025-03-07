@@ -15,6 +15,7 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
+	u8NumZone = sConfig_Hydrau_temp.u8NumZone;
     //
 	container_pave_numeric.setVisible(false);
 	// Thermo max
@@ -33,6 +34,19 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 		// Titre
 	    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
 	    barre_titre.titre(textAreaBuffer_Titre);
+	}
+	else if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		for(int i = 0; i < 6; i++)
+		{
+			u16LoiDeau[i] = (uint16_t)sParamZxMZtemp[u8NumZone].u8LoiDeau[i] * 10;
+		}
+		// Titre
+		Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
+		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
+		Unicode::fromUTF8(sParamZxMZtemp[u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
+		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", u8NumZone + 1);
+		barre_titre.titre(textAreaBuffer_Titre);
 	}
 	else
 	{
@@ -109,6 +123,10 @@ void Installation_courbe_loi_d_eauView::bouton_retour()
 	{
 		application().gotoInstallation_hydrauliqueScreenNoTransition();
 	}
+	else if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+	}
 	else if(sConfig_Hydrau_temp.u8TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 	{
 		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
@@ -127,8 +145,21 @@ void Installation_courbe_loi_d_eauView::bouton_valider()
 		presenter->c_install_reg_ext();
 		application().gotoInstallation_hydrauliqueScreenNoTransition();
 	}
+	else if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		for(int i = 0; i < 6; i++)
+		{
+			sParamZxMZtemp[u8NumZone].u8LoiDeau[i]= u16LoiDeau[i] / 10;
+		}
+		application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+	}
 	else if(sConfig_Hydrau_temp.u8TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 	{
+		for(int i = 0; i < 6; i++)
+		{
+			sConfig_Hydrau_temp.sParamZx.u8LoiDeau[i] = u16LoiDeau[i] / 10;
+		}
+
 		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 	}
 }

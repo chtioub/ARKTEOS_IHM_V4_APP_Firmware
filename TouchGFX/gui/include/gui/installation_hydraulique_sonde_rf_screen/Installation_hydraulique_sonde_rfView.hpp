@@ -34,6 +34,7 @@ protected:
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;
     S_STATUT_RF sStatut_RF_old;
+    unsigned char   bVerouillageConsigne,bArretZoneDefautSonde;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_num_sonde[3];
 };
 

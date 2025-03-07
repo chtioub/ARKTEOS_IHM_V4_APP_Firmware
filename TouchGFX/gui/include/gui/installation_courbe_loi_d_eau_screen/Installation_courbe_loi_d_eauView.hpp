@@ -49,6 +49,7 @@ public:
 protected:
     bool bConnexionDistance;
     uint16_t u16ErreurAffichee;
+    uint8_t u8NumZone;
     S_DATE sDate_old;
     S_STATUT_PAC sStatut_PAC_old;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_20[3], textAreaBuffer_15[3], textAreaBuffer_10[3], textAreaBuffer_0[3], textAreaBuffer_m10[3], textAreaBuffer_m25[3], *textAreaBuffer;

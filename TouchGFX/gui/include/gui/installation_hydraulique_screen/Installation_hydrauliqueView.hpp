@@ -24,7 +24,8 @@ public:
     void bouton_param_zone_1();
     void bouton_param_zone_2();
     void bouton_repartition_puissance_zone();
-    void bouton_hysteresis_regul_directe();
+    void bouton_hysteresis_sonde_primaire();
+    void bouton_hysteresis_sonde_ballon();
     void bouton_valider();
     void bouton_oui_regroupement();
     void bouton_non_regroupement();

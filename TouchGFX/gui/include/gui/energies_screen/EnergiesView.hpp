@@ -14,6 +14,7 @@ public:
 
     void bouton_histo_conso();
     void bouton_cumul_conso();
+    void bouton_retour();
 
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
     virtual void changeDate(S_DATE *sDate);

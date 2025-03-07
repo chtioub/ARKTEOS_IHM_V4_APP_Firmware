@@ -33,9 +33,6 @@
     <ClCompile Include="..\..\gui\src\code_web_screen\Code_webPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\code_web_screen\Code_webView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\code_web_screen\Code_webViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heurePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heureView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\date_heure_screen\Date_heureViewBase.cpp"/>
@@ -276,6 +273,30 @@
     <ClCompile Include="..\..\gui\src\renommer_screen\RenommerPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\renommer_screen\RenommerView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\renommer_screen\RenommerViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registrePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registreView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registreViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_gestion_v3v_screen\Installation_gestion_v3vPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_gestion_v3v_screen\Installation_gestion_v3vView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_gestion_v3v_screen\Installation_gestion_v3vViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_regulation_avancee_screen\Installation_regulation_avanceePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_regulation_avancee_screen\Installation_regulation_avanceeView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_regulation_avancee_screen\Installation_regulation_avanceeViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_config_modbus_screen\Installation_config_modbusPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_config_modbus_screen\Installation_config_modbusView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_config_modbus_screen\Installation_config_modbusViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mode_silencieux_screen\Installation_mode_silencieuxPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_mode_silencieux_screen\Installation_mode_silencieuxView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mode_silencieux_screen\Installation_mode_silencieuxViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_reduction_pw_screen\Installation_reduction_pwPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\installation_reduction_pw_screen\Installation_reduction_pwView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_reduction_pw_screen\Installation_reduction_pwViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -432,9 +453,6 @@
     <ClInclude Include="..\..\gui\include\gui\code_web_screen\Code_webPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\code_web_screen\Code_webView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\code_web_screen\Code_webViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heurePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heureView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\date_heure_screen\Date_heureViewBase.hpp"/>
@@ -681,6 +699,30 @@
     <ClInclude Include="..\..\gui\include\gui\renommer_screen\RenommerPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\renommer_screen\RenommerView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renommer_screen\RenommerViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registrePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registreView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registreViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_gestion_v3v_screen\Installation_gestion_v3vPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_gestion_v3v_screen\Installation_gestion_v3vView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_gestion_v3v_screen\Installation_gestion_v3vViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_regulation_avancee_screen\Installation_regulation_avanceePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_regulation_avancee_screen\Installation_regulation_avanceeView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_regulation_avancee_screen\Installation_regulation_avanceeViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_modbus_screen\Installation_config_modbusPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_modbus_screen\Installation_config_modbusView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_config_modbus_screen\Installation_config_modbusViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mode_silencieux_screen\Installation_mode_silencieuxPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_mode_silencieux_screen\Installation_mode_silencieuxView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mode_silencieux_screen\Installation_mode_silencieuxViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_reduction_pw_screen\Installation_reduction_pwPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\installation_reduction_pw_screen\Installation_reduction_pwView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_reduction_pw_screen\Installation_reduction_pwViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

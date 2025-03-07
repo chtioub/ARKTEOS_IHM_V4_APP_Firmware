@@ -12,6 +12,9 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
 
+    void bouton_retour();
+    void bouton_accueil();
+
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

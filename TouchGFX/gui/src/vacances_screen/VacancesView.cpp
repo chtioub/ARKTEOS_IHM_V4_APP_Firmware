@@ -663,7 +663,15 @@ void VacancesView::bouton_valider()
 	// Envoi de la trame
 	presenter->c_user_vacances();
 	// Retour à la page configuration
-	application().gotoConfigurationScreenNoTransition();
+	bPageAccueil = false;
+	application().gotoAccueilScreenNoTransition();
+//	application().gotoConfigurationScreenNoTransition();
+}
+
+void VacancesView::bouton_retour()
+{
+	bPageAccueil = false;
+	application().gotoAccueilScreenNoTransition();
 }
 
 void VacancesView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

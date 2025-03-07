@@ -62,7 +62,12 @@ void InstallationView::bouton_retour()
 	{
 		application().gotoUsineScreenNoTransition();
 	}
-	else application().gotoConfigurationScreenNoTransition();
+	else
+	{
+		bPageAccueil = false;
+		application().gotoAccueilScreenNoTransition();
+//		application().gotoConfigurationScreenNoTransition();
+	}
 }
 
 void InstallationView::bouton_raz_config()

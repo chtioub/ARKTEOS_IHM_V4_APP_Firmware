@@ -98,7 +98,7 @@ ProgrammationView::ProgrammationView()
 			image2 = touchgfx::Bitmap(BITMAP_BARRE_PROG_HEBDO_CHAUD_CONFORT_PLUS_L8XH46_ID);
 			image3 = touchgfx::Bitmap(BITMAP_BARRE_PROG_HEBDO_CHAUD_CONFORT_PLUS_L8XH46_ID);
 			// Titre
-			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_PISCINE_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_SILENCE_CENTRE_DEFAUT).getText());
 			barre_titre.titre(textAreaBuffer_Titre);
 			break;
 	}
@@ -344,6 +344,7 @@ void ProgrammationView::bouton_retour()
 			application().gotoBouclage_ecsScreenNoTransition();
 			break;
 		case PRO_SILENCE:
+			application().gotoInstallation_mode_silencieuxScreenNoTransition();
 			break;
 	}
 }
@@ -434,6 +435,15 @@ void ProgrammationView::bouton_valider()
 			application().gotoBouclage_ecsScreenNoTransition();
 			break;
 		case PRO_SILENCE:
+			if(memcmp(u8Prog, au8Prog_ModeSilence, sizeof(u8Prog)))
+			{
+				memcpy(au8Prog_ModeSilence, u8Prog, sizeof(u8Prog));
+#ifndef SIMULATOR
+				presenter->c_prog_silence(true);
+#endif
+			}
+			sConfig_IHM.sMode_PAC.bModeSilencieux = 1;
+			application().gotoInstallation_mode_silencieuxScreenNoTransition();
 			break;
 	}
 }

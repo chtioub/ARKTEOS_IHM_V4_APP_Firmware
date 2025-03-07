@@ -26,6 +26,8 @@ Installation_piscineView::Installation_piscineView()
 		toggleButton_non_oui_non_piscine.forceState(false);
 		toggleButton_non_oui_non_piscine.setTouchable(true);
 	}
+	toggleButton_non_oui_non_piscine.invalidate();
+	toggleButton_oui_oui_non_piscine.invalidate();
 	//
 	if(sConfig_Piscine_temp.sParam_Piscine.PrioritePiscine == PRIORITE_PISCINE)
 	{

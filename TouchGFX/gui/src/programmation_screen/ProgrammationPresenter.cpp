@@ -71,3 +71,9 @@ void ProgrammationPresenter::c_prog_reg_ext_froid(bool bEnvoi)
 {
 	model->c_prog_reg_ext_froid(bEnvoi);
 }
+
+void ProgrammationPresenter::c_prog_silence(bool bEnvoi)
+{
+	model->c_prog_silence(bEnvoi);
+}
+

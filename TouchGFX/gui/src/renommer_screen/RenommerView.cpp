@@ -15,34 +15,53 @@ RenommerView::RenommerView()
 	container.setXY(u8PositionX, u8PositionY);
 	u8IndexCurseur = 9;
 
-	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
-	{
-		bMultizone = true;
-	}
-	else
-	{
-		bMultizone = false;
-	}
 
-	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_RENOMMER_CENTRE_DEFAUT).getText());
-	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 4, " - ");
-	if (bMultizone)
+
+	if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
 	{
-		Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
-		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
-		barre_titre.titre(textAreaBuffer_Titre);
+		Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_RENOMMER_CENTRE_DEFAUT).getText());
+		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 4, " - ");
+
+		if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+		{
+			bMultizone = true;
+		}
+		else
+		{
+			bMultizone = false;
+		}
+
+
+		if (bMultizone)
+		{
+			Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
+			if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
+			{
+				Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
+			}
+			else
+			{
+				Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)",sConfig_Hydrau_temp.u8NumZone + 1);
+
+			}
+			barre_titre.titre(textAreaBuffer_Titre);
+		}
+		else
+		{
+			Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
+			Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)",sConfig_Hydrau_temp.u8NumZone);
+			barre_titre.titre(textAreaBuffer_Titre);
+		}
 	}
-	else
+	else //Code Logo
 	{
-		Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
-		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)",sConfig_Hydrau_temp.u8NumZone);
-		barre_titre.titre(textAreaBuffer_Titre);
+
 	}
 
 	barre_titre.titre(textAreaBuffer_Titre);
 	barre_titre.invalidate();
 
-	if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
+	if (bMultizone)
 	{
 		for (int i = 0; i < 10; i++)
 		{
@@ -51,7 +70,7 @@ RenommerView::RenommerView()
 	}
 	else
 	{
-		for (int i = 0; i < 10; i++)
+		for (int i = 0; i < 2; i++)
 		{
 			u8NomTemp[i] = sConfig_Hydrau_temp.sParamZx.u8NomZone[i];
 		}
@@ -259,7 +278,6 @@ void RenommerView::bouton_valider()
 		}
 		else
 		{
-			//presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
 			application().gotoInstallation_MZ_config_zoneScreenNoTransition();
 		}
 	}

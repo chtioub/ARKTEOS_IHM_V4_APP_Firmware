@@ -17,6 +17,7 @@ Code_numeriqueView::Code_numeriqueView()
 	container.setXY(u8PositionX, u8PositionY);
 	modalWindow_code_inconnu.setBackground(touchgfx::BitmapId(BITMAP_BARRE_TITRE_L950XH63_ID), u8PositionX, u8PositionY + 524 - 64);
 	modalWindow_code_inconnu.hide();
+	modalWindow_code_inconnu.invalidate();
 
 #ifdef SIMULATOR
 			for (int i = 0; i<4;i++)
@@ -70,6 +71,7 @@ Code_numeriqueView::Code_numeriqueView()
 			break;
 	}
 	barre_titre.titre(textAreaBuffer_Titre);
+	barre_titre.invalidate();
 	affichageNumero();
 }
 
@@ -119,7 +121,9 @@ void Code_numeriqueView::bouton_retour()
 		case CODE_ACCES_INSTALL:
 		case CODE_ACCES_USINE:
 		case CODE_ACCES_MAINT:
-			application().gotoConfigurationScreenNoTransition();
+//			application().gotoConfigurationScreenNoTransition();
+			bPageAccueil = false;
+			application().gotoAccueilScreenNoTransition();
 			break;
 		case MODIF_CODE_INSTALL:
 			application().gotoInstallationScreenNoTransition();
@@ -144,7 +148,11 @@ void Code_numeriqueView::bouton_valider()
 			{
 				application().gotoInstallationScreenNoTransition();
 			}
-			else modalWindow_code_inconnu.show();
+			else
+			{
+				modalWindow_code_inconnu.show();
+				modalWindow_code_inconnu.invalidate();
+			}
 			break;
 		case CODE_ACCES_USINE:
 			Unicode::snprintf(BufferCodeUsine, 5, "%d", sDate.Date * 100 + sDate.Month + sDate.Year + 2000);
@@ -153,7 +161,11 @@ void Code_numeriqueView::bouton_valider()
 			{
 				application().gotoUsineScreenNoTransition();
 			}
-			else modalWindow_code_inconnu.show();
+			else
+			{
+				modalWindow_code_inconnu.show();
+				modalWindow_code_inconnu.invalidate();
+			}
 			break;
 		case CODE_ACCES_MAINT:
 			for (int i = 0; i< 4; i++)
@@ -171,7 +183,11 @@ void Code_numeriqueView::bouton_valider()
 //			{
 				application().gotoMaintenanceScreenNoTransition();
 			}
-			else modalWindow_code_inconnu.show();
+			else
+			{
+				modalWindow_code_inconnu.show();
+				modalWindow_code_inconnu.invalidate();
+			}
 			break;
 		case MODIF_CODE_INSTALL:
 			if(u8Longueur == 4)
@@ -218,6 +234,7 @@ void Code_numeriqueView::bouton_valider_modal_window()
 	u8Longueur = 0;
 	affichageNumero();
 	modalWindow_code_inconnu.hide();
+	modalWindow_code_inconnu.invalidate();
 }
 
 void Code_numeriqueView::bouton_supprimer()

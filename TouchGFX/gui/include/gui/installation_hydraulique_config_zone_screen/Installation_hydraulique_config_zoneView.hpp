@@ -18,6 +18,7 @@ public:
     void bouton_droite_type_sonde();
     void bouton_gauche_type_sonde();
     void affichage_type_sonde();
+    void renommer_zone();
     void bouton_valider();
 
     virtual void changeStatutRF(S_STATUT_RF *sStatut_RF);

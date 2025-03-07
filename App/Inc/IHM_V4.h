@@ -23,8 +23,8 @@ extern "C"
 #include "arkteos_defauts.h"
 #include <texts/TextKeysAndLanguages.hpp>
 
-#define VEILLE_1_TIME           60              // Temps avant mise en veille 1 en secondes
-#define VEILLE_2_TIME           300             // Temps avant mise en veille 1 en secondes
+#define VEILLE_1_TIME           600 //60              // Temps avant mise en veille 1 en secondes
+#define VEILLE_2_TIME           3000//300             // Temps avant mise en veille 1 en secondes
 #define PWM_VEILLE_1            5u
 
 
@@ -61,6 +61,7 @@ typedef enum
 	OUI_NON_RAZ_ENERGIES = 26,
 	OUI_NON_RESIST_TERM = 27,
 	OUI_NON_RESIST_TERM_SONDE = 28,
+	OUI_NON_RESIST_CARTER = 29,
 } E_OUI_NON;
 
 typedef enum
@@ -85,6 +86,12 @@ typedef enum
 
 typedef enum
 {
+	HYST_EXT_APPOINT = 1,
+	HYST_EXT_REGUL_AVANCEE= 2,
+} E_PAGE_HYST_EXT;
+
+typedef enum
+{
 	PRO_CHAUD = 1,
 	PRO_FROID = 2,
 	PRO_EXT_CHAUD = 3,
@@ -95,6 +102,12 @@ typedef enum
 	PRO_OPTION = 8,
 	PRO_SILENCE = 9,
 } E_PROG;
+
+typedef enum
+{
+	RENOMMER_ZONE_GROUPE = 1,
+	CODE_LOGO = 2,
+} E_CLAVIER_ALPHA;
 
 typedef struct
 {
@@ -184,8 +197,9 @@ extern arkteos_update_t arkteos_update;
 extern rxData_t rxData;
 extern uint8_t rxBuffer[TAILLE_BUFFER_UART];
 extern uint8_t dataUpdated;
-extern uint8_t eOuiNon, eCode;
+extern uint8_t eOuiNon, eCode, eTypeClavierAlpha;
 extern uint8_t eHysteresis;
+extern uint8_t ePageHystExt;
 extern uint8_t eProg;
 extern S_DATE sDate, sDate_modif;
 extern S_STATUT_PAC sStatut_PAC;
@@ -221,6 +235,7 @@ extern uint8_t u8Prog[7][24], u8JourProg;
 extern uint8_t u8ZoneSelect;
 extern uint8_t u8PositionX, u8PositionY;
 extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp;
+extern bool bPageAccueil;
 extern S_HISTO_ERR sHisto_Erreur;
 extern uint16_t u16NumAction;
 extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000];

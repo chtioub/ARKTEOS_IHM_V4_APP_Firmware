@@ -42,7 +42,7 @@ Installation_MZ_parametrage_groupesView::Installation_MZ_parametrage_groupesView
 
 	//Dans la trame de la REG on peut avoir un groupe sur la carte 6 !!! Pas d'explications
 	if (u3CarteGroupeA > CARTE_REG) u3CarteGroupeA = CARTE_MZ1;
-	if (u3CarteGroupeB > CARTE_REG) u3CarteGroupeB = CARTE_MZ1;
+	if (u3CarteGroupeB > CARTE_REG) u3CarteGroupeB = CARTE_MZ2;
 
 	if (u3CarteGroupeA == CARTE_REG)
 	{
@@ -86,8 +86,9 @@ void Installation_MZ_parametrage_groupesView::MAJ_Carte_GroupeA()
 {
 	switch(u3CarteGroupeA)
 	{
+		default:
 		case CARTE_MZ1:
-			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ1_CENTRE_DEFAUT));
+			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ1_CENTRE_DEFAUT));
 			if (u3CarteGroupeB != CARTE_REG)
 			{
 				textArea_message_rouge_carte_reg.setVisible(false);
@@ -95,7 +96,7 @@ void Installation_MZ_parametrage_groupesView::MAJ_Carte_GroupeA()
 			}
 			break;
 		case CARTE_MZ2:
-			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ2_CENTRE_DEFAUT));
+			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ2_CENTRE_DEFAUT));
 			if (u3CarteGroupeB != CARTE_REG)
 			{
 				textArea_message_rouge_carte_reg.setVisible(false);
@@ -106,8 +107,6 @@ void Installation_MZ_parametrage_groupesView::MAJ_Carte_GroupeA()
 			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_REG_CENTRE_DEFAUT));
 			textArea_message_rouge_carte_reg.setVisible(true);
 			textArea_message_rouge_carte_reg.invalidate();
-			break;
-		default:
 			break;
 	}
 	textArea_bouton_carte_MZ_groupe_A.invalidate();
@@ -126,6 +125,7 @@ void Installation_MZ_parametrage_groupesView::MAJ_Carte_GroupeB()
 				textArea_message_rouge_carte_reg.invalidate();
 			}
 			break;
+		default:
 		case CARTE_MZ2:
 			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ2_CENTRE_DEFAUT));
 			if (u3CarteGroupeA != CARTE_REG)
@@ -138,8 +138,6 @@ void Installation_MZ_parametrage_groupesView::MAJ_Carte_GroupeB()
 			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_REG_CENTRE_DEFAUT));
 			textArea_message_rouge_carte_reg.setVisible(true);
 			textArea_message_rouge_carte_reg.invalidate();
-			break;
-		default:
 			break;
 	}
 	textArea_bouton_carte_MZ_groupe_B.invalidate();
@@ -231,7 +229,7 @@ void Installation_MZ_parametrage_groupesView::bouton_choix_carte_MZ_groupe_A()
 	{
 		case CARTE_MZ1:
 			u3CarteGroupeA = CARTE_MZ2;
-			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ2_CENTRE_DEFAUT));
+			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ2_CENTRE_DEFAUT));
 			if (u3CarteGroupeB != CARTE_REG)
 			{
 				textArea_message_rouge_carte_reg.setVisible(false);
@@ -256,7 +254,7 @@ void Installation_MZ_parametrage_groupesView::bouton_choix_carte_MZ_groupe_A()
 			break;
 		case CARTE_REG:
 			u3CarteGroupeA = CARTE_MZ1;
-			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ1_CENTRE_DEFAUT));
+			textArea_bouton_carte_MZ_groupe_A.setTypedText(touchgfx::TypedText(T_TEXT_MZ1_CENTRE_DEFAUT));
 			if (u3CarteGroupeB != CARTE_REG)
 			{
 				textArea_message_rouge_carte_reg.setVisible(false);
@@ -276,7 +274,7 @@ void Installation_MZ_parametrage_groupesView::bouton_choix_carte_MZ_groupe_B()
 	{
 		case CARTE_MZ1:
 			u3CarteGroupeB = CARTE_MZ2;
-			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ2_CENTRE_DEFAUT));
+			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ2_CENTRE_DEFAUT));
 			if (u3CarteGroupeA != CARTE_REG)
 			{
 				textArea_message_rouge_carte_reg.setVisible(false);
@@ -301,7 +299,7 @@ void Installation_MZ_parametrage_groupesView::bouton_choix_carte_MZ_groupe_B()
 			break;
 		case CARTE_REG:
 			u3CarteGroupeB = CARTE_MZ1;
-			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ_CARTE_MZ1_CENTRE_DEFAUT));
+			textArea_bouton_carte_MZ_groupe_B.setTypedText(touchgfx::TypedText(T_TEXT_MZ1_CENTRE_DEFAUT));
 			if (u3CarteGroupeA != CARTE_REG)
 			{
 				textArea_message_rouge_carte_reg.setVisible(false);

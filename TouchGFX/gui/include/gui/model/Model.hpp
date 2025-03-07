@@ -52,6 +52,7 @@ public:
     void c_prog_ecs(bool bEnvoi);
     void c_prog_option(bool bEnvoi);
     void c_prog_piscine(bool bEnvoi);
+    void c_prog_silence(bool bEnvoi);
     void c_prog_zone_chaud(uint8_t u8Zone, bool bEnvoi);
     void c_prog_zone_froid(uint8_t u8Zone, bool bEnvoi);
     void c_prog_reg_ext_chaud(bool bEnvoi);
@@ -66,6 +67,7 @@ public:
     void c_install_reg_ext();
     void c_install_zx(uint8_t u8Zone);
     void c_install_param_zx();
+    void c_install_modbus();
 
     void c_install_th_association(uint8_t u8NumZone);
     void c_install_th_dissociation(uint8_t u8NumZone);

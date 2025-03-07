@@ -21,6 +21,7 @@ public:
 	void bouton_gauche_consigne();
 	void bouton_oui();
 	void bouton_non();
+	void bouton_retour();
 protected:
 		bool bConnexionDistance, bModeFroid;
 		uint16_t u16ErreurAffichee, u16ConsigneFroid;

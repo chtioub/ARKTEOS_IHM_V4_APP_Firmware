@@ -31,6 +31,8 @@ Installation_appointView::Installation_appointView()
 	i8TempExt = sConfig_IHM.sParam_PAC.i8Text_Ref_Appoint;
 	Unicode::snprintfFloat(textAreaBuffer_TempExt, 6, "%.1f", (float) i8TempExt);
 	textArea_valeur_temp_ext_equilibre.setWildcard(textAreaBuffer_TempExt);
+
+	ePageHystExt = HYST_EXT_APPOINT;
 }
 
 void Installation_appointView::setupScreen()

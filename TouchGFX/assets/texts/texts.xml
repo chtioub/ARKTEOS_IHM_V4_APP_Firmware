@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.24.1">
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
   <Languages>
     <Language Id="FR" />
     <Language Id="GB" />
@@ -9,8 +9,246 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1">
+      <Text Id="text_configuration_modbus_titre_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration Modbus</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_parite" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">None</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_nb_stopbit" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_vitesse_com" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">19200</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_val_reduc_pw" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">E : 100% / P : 100%</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_reduction_puissance_titre_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Réduction de puissance</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_prog_silence_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Prog. Mode Silence</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_gestion_des_vannes_3_voies" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Gestion des Vannes 3 Voies</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_tps_max_simultane_ecs" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1H</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_cycle_antilegionellose_centre_large" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Cycle Antilégionellose</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_chauffe_eau_centre_large" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Chauffe-eau</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_6" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_entree_3" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_entree_2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_entree_5" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_entree_1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zone8_default" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 8</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zone7_default" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 7</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zone6_default" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 6</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zone5_default" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zone4_default" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zone3_default" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zone2_default" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_zone1_default" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Zone 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_vitesse_ventil_max" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">5</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_registre" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_PDC_gaines" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_message_mode_chaud_pas_autorise" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Mode chaud non autorisé :&#10;&#10;- Le mode chaud n'est pas activé dans le groupe où est&#10;rattachée cette zone.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_message_mode_froid_pas_autorise" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Mode froid non autorisé :&#10;&#10;- Soit la pompe à chaleur n'est pas réversible&#10;- Soit le mode froid n'est pas activé dans le groupe où est&#10;rattachée cette zone.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_MZ2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">MZ2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_message_v3v_reg" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Vanne 3 voies mélangeuse indisponible sur la "Zone / Voie 1" &#10;de la carte REG :&#10;&#10;- La voie 1 de la Carte REG pilote la Zone ayant la température&#10;d'eau la plus élevée en mode chauffage.&#10;- La voie 1 de la Carte REG pilote la Zone ayant la température&#10;d'eau la plus basse en mode rafraîchissement.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_autonome" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Autonome</Translation>
+        <Translation Language="GB">Autonome</Translation>
+        <Translation Language="PT">Autonome</Translation>
+        <Translation Language="NL">Autonome</Translation>
+        <Translation Language="DE">Autonome</Translation>
+      </Text>
+      <Text Id="text_rattachement_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
       <Text Id="text_hyst_moins_val" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">-4</Translation>
+        <Translation Language="FR">-4.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -191,6 +429,20 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
+      <Text Id="text_regul_bcp_interne_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">BCP interne</Translation>
+        <Translation Language="GB">Directe</Translation>
+        <Translation Language="PT">Directe</Translation>
+        <Translation Language="NL">Directe</Translation>
+        <Translation Language="DE">Directe</Translation>
+      </Text>
+      <Text Id="text_value_sortie_voie2carte2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_c" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">c</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -272,13 +524,6 @@
       </Text>
       <Text Id="text_value_sortie_voie4" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">4</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_value_sortie_voie2carte2" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">3</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -971,6 +1216,97 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation_circuit_capteur">
+      <Text Id="text_min_v3v_ecs_90" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Min V3V ECS 90%</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_min_v3v_ecs_80" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Min V3V ECS 80%</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_min_v3v_ecs_70" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Min V3V ECS 70%</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_appoint_ecs_pac" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Appoint PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_appoint_ecs_ecs" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Résistance sur ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_min_v3v_ecs_60" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Min V3V ECS 60%</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_min_v3v_ecs_50" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Min V3V ECS 50%</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_min_v3v_ecs_40" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Min V3V ECS 40%</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_min_v3v_ecs_30" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Min V3V ECS 30%</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_pas_de_limitation" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Pas de limitation</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_3h" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">3H</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_2h" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">2H</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_1h" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1H</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_valeur_vitesse_max_pompe_puits_init_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">100</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -1120,6 +1456,664 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_value_parite" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_DNG2" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Choix de la parité</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_temp_zone_modbus" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Temp. des zones via modbus ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_nb_stopbit" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_choix_nb_stopbit" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Choix du nombre de stop bit</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_arret_pac__no_modbus" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Arret de la PAC en cas d'arrêt de la communication modbus ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_vitesse_com" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_choix_vitesse_com" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Choix de la vitesse de transmission</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_activer_resistance" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer la résistance de&#10;terminaison ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_adresse_modbus" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">16</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_adresse_modbus" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_choix_adresse_modbus" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Choix de l'adresse Modbus</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_resistance_carter_explication_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">En activant cette fonction, le préchauffage du compresseur sera réalisé de façon&#10;automatique en fonction des températures afin de se prémunir d'un éventuel&#10;coup de liquide au démarrage de celui-ci.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_resistance_carter_question_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous autoriser le fonctionnement&#10;de la résistance de carter en automatique ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_resistance_carter_titre_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Résistance de carter</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_reduc_pw" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_area_titre_percent_reduc_pw" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">% de réduction de puissance</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_commentaire_valeur_reduc_pw" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Réduction de puissance permanente sauf si le délestage est activé.&#10;(cf : menu "Configuration In/Out carte REG")</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_comentaire_reduc_pw" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_signification_reduc_pw" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">E : Appoint électrique&#10;P : Puissance max PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mode_silencieux_titre_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Mode silencieux</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_limitation_pw" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">80</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_limitation_pw" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;%</Translation>
+        <Translation Language="PT">&lt;Value&gt;%</Translation>
+        <Translation Language="NL">&lt;Value&gt;%</Translation>
+        <Translation Language="DE">&lt;Value&gt;%</Translation>
+      </Text>
+      <Text Id="text_niveau_limitation_puissance" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Niveau de limitation de la puissance de  la PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_commentaire_appoint_autorise" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Cette fonction n'empêche pas le fonctionnement de l'appoint.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_commentaire_silencieux" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Attention :&#10;La vitesse des ventilateurs sera réduite.&#10;Les dégivrages seront plus fréquents et la&#10;puissance sera moindre.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_activation_mode_silencieux" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Activation du mode silencieux ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_marche_prog" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Marche/Prog</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_degivrage_liaison_frigo_titre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dégivrage / Liaison Frigo</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_condition" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Condition</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_information_degivrage" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Ce paramètre modifie les conditions et la durée&#10;du cycle de dégivrage.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_froid_actif_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Froid actif</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_freecooling_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Freecooling</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_regulation_avancee_titre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Régulation Avancée</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_limitation_pw_froid" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Limitation de PW à 50% en mode froid</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_off_limitation_froid" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_limitation_pw_ecs" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Limitation PW à 50% en mode ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_off_limitation_ecs" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_attention_v3v" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Attention : Nécessite l'utilisation de V3V sans&#10;coupure de débit e débit lors du basculement&#10;(côté captage)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_hyst_sonde_ext_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Hystérésis sonde Extérieure</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_adaptation_loi_deau" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_temp_non_chauf" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_temp_non_chauf" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_choix_temp_non_chauf" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Choix Température Extérieure de Non Chauffage&#10;OFF inhibe la fonction</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_chaud_froid" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Non</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_chaud_froid_simu" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Chaud/Froid simultané</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_adaptation_loi_deau_temp_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Adaptation de la loi d'eau par rapport à la&#10;température de la Zone</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_type_gestion" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Type de Gestion</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_configuration_modbus" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Configuration&#10;Modbus</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_menu_special" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Menu Spécial</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_resistance_carter" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Résistance&#10;de carter</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_reduction_puissance" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Réduction de&#10;puissance</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_mode_silencieux" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Mode&#10;silencieux</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_degivrage_liaison" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Dégivrage&#10;Liaison</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_regulation_avancee" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Régulation&#10;Avancée</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_gestion_v3v" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Gestion V3V</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_temps_max_simultane_ecs" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_temps_max_simultane_ecs" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Temps maximum en simultané ECS&#10;(basculement en ECS seul ensuite)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_conflit_meme_entree" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">CONFLIT : Une ou plusieurs fonction(s) ont été affectées à la même entrée</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_conflit_meme_sortie" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">CONFLIT : Une ou plusieurs fonction(s) ont été affectées à la même sortie</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_carte_6" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_sortie_carte_1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_entree_carte_3" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_entree_carte_2" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_entree_carte_5" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_entree_sortie_carte_nu" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_entree_carte_1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_nom_zone8" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_nom_zone7" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_nom_zone6" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_nom_zone5" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Zone 5&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_nom_zone4" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_nom_zone3" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_nom_zone2" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_nom_zone1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_gestion_registre_zone_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Gestion registre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_reglage_debit_air_zone_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Réglage débit d'air</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_val_vitesse_ventil_max" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;%</Translation>
+        <Translation Language="PT">&lt;Value&gt;%</Translation>
+        <Translation Language="NL">&lt;Value&gt;%</Translation>
+        <Translation Language="DE">&lt;Value&gt;%</Translation>
+      </Text>
+      <Text Id="text_vitesse_ventilation_max" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Vitesse de ventilation maxi de la zone en fonctionnement seule (5% à 75%)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_activer_reglage_debit_air" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer le réglage du débit d'air ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_registre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;%</Translation>
+        <Translation Language="PT">&lt;Value&gt;%</Translation>
+        <Translation Language="NL">&lt;Value&gt;%</Translation>
+        <Translation Language="DE">&lt;Value&gt;%</Translation>
+      </Text>
+      <Text Id="text_valeur" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Valeur</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_forcer_registre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous forcer l'ouverture du registre ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="textArea_valeur_PDC_gaines" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;%</Translation>
+        <Translation Language="PT">&lt;Value&gt;%</Translation>
+        <Translation Language="NL">&lt;Value&gt;%</Translation>
+        <Translation Language="DE">&lt;Value&gt;%</Translation>
+      </Text>
+      <Text Id="text_titre_pertes_charges_gaines" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Prise en compte pertes de charge du réseau de gaines (-90% à + 90%)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_correction_debit_air" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Correction débit d'air</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="ResourceId2" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_volume_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_val_volume_zone" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_volume_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Volume de la zone (m3)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_gestion_registre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Gestion registre</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_activer_zone" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous activer la zone ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_MZ1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">MZ1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="ResourceId1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Autonome</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_hyst_plus" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;°C</Translation>
         <Translation Language="GB">&lt;Value&gt;°C</Translation>
@@ -1743,69 +2737,6 @@
         <Translation Language="NL">New Text&lt;value&gt;</Translation>
         <Translation Language="DE">New Text&lt;value&gt;</Translation>
       </Text>
-      <Text Id="__SingleUse_JYA5" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 8</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_IHPF" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 7</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_FNEY" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 6</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_7H6M" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 5</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_6JGZ" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 4</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_8527" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 3</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_K1BK" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 2</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_rattachement_zone" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Autonome</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="__SingleUse_VM0R" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Zone 1</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
-      </Text>
       <Text Id="text_titre_acces_cfg_zone" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Accès Cfg. Zone</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -1871,10 +2802,10 @@
       </Text>
       <Text Id="text_mz_carte_MZ1_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">MZ1</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
+        <Translation Language="GB">MZ1</Translation>
+        <Translation Language="PT">MZ1</Translation>
+        <Translation Language="NL">MZ1</Translation>
+        <Translation Language="DE">MZ1</Translation>
       </Text>
       <Text Id="text_type_groupe_eau_plancher" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Plancher</Translation>
@@ -1899,10 +2830,10 @@
       </Text>
       <Text Id="text_mz_carte_MZ2_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">MZ2</Translation>
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="PT">New Text</Translation>
-        <Translation Language="NL">New Text</Translation>
-        <Translation Language="DE">New Text</Translation>
+        <Translation Language="GB">MZ2</Translation>
+        <Translation Language="PT">MZ2</Translation>
+        <Translation Language="NL">MZ2</Translation>
+        <Translation Language="DE">MZ2</Translation>
       </Text>
       <Text Id="text_rouge_message_multizones_zones_seules" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">INFORMATION :&#10;Nécessite la présence d'une à deux cartes Multi-zones.&#10;Dans le cas d'un gainable, il faut impérativement créer un groupe d'eau au minimum.</Translation>
@@ -2234,7 +3165,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_arret_defaut_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Arret de la zone si defaut sonde</Translation>
+        <Translation Language="FR">Arrêt de la zone si défaut sonde</Translation>
         <Translation Language="GB">DHW loop</Translation>
         <Translation Language="PT">Ciclo de AQS</Translation>
         <Translation Language="NL">Bouclage ECS</Translation>
@@ -2465,14 +3396,14 @@
         <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
       </Text>
       <Text Id="text_chaud_froid_voie_2_gauche_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Chaud / froid voie 2</Translation>
+        <Translation Language="FR">Chaud / Froid voie 2</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
         <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
       </Text>
       <Text Id="text_chaud_froid_voie_1_gauche_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Chaud / froid voie 1</Translation>
+        <Translation Language="FR">Chaud / Froid voie 1</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
@@ -2486,7 +3417,7 @@
         <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
       </Text>
       <Text Id="text_info_chaud_froid_gauche_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Info chaud / froid</Translation>
+        <Translation Language="FR">Info Chaud / Froid</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
@@ -2625,7 +3556,7 @@
         <Translation Language="NL">Erreur : communication carte FRIGO</Translation>
         <Translation Language="DE">Erreur : communication carte FRIGO</Translation>
       </Text>
-      <Text Id="text_carte_centre_defaut" Alignment="Center" TypographyId="Default">
+      <Text Id="text_carte_reg_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">REG</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -3275,13 +4206,6 @@
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
-      </Text>
-      <Text Id="text_regul_bcp_interne_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">BCP interne</Translation>
-        <Translation Language="GB">Directe</Translation>
-        <Translation Language="PT">Directe</Translation>
-        <Translation Language="NL">Directe</Translation>
-        <Translation Language="DE">Directe</Translation>
       </Text>
       <Text Id="text_gainable_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Gainable</Translation>
@@ -4733,7 +5657,7 @@
         <Translation Language="DE">Bouclage ECS</Translation>
       </Text>
       <Text Id="text_hysteresis_sonde_ballon_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Hysteresis sonde ballon</Translation>
+        <Translation Language="FR">Hystérésis sonde ballon</Translation>
         <Translation Language="GB">Hysteresis DHW probe</Translation>
         <Translation Language="PT">Sonda de histerese para AQS</Translation>
         <Translation Language="NL">Hysteresis sonde ECS</Translation>
@@ -4761,7 +5685,7 @@
         <Translation Language="DE">Hysteresis sonde ECS</Translation>
       </Text>
       <Text Id="text_hysteresis_primaire_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Hysteresis sonde primaire</Translation>
+        <Translation Language="FR">Hystérésis sonde primaire</Translation>
         <Translation Language="GB">Hysteresis DHW probe</Translation>
         <Translation Language="PT">Sonda de histerese para AQS</Translation>
         <Translation Language="NL">Hysteresis sonde ECS</Translation>
@@ -5775,6 +6699,27 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation">
+      <Text Id="text_taux_humidite_eleve" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Taux Humidité Elevé</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_normal" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Normal</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_parametres_avances_titre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Paramètres Avancés</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_vitesse_pompe_de_puits" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Vitesse de la pompe de puits</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -5825,7 +6770,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_hysteresis_ext_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Hysteresis sonde extérieure</Translation>
+        <Translation Language="FR">Hystérésis sonde extérieure</Translation>
         <Translation Language="GB">Hysteresis DHW probe</Translation>
         <Translation Language="PT">Sonda de histerese para AQS</Translation>
         <Translation Language="NL">Hysteresis sonde ECS</Translation>
@@ -6482,7 +7427,7 @@
         <Translation Language="DE">Type d'émetteur de la zone</Translation>
       </Text>
       <Text Id="text_circulateur_pilotes_gauche_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Nécessite l'utilisation de ciruclateurs pilotés</Translation>
+        <Translation Language="FR">Nécessite l'utilisation de circulateurs pilotés</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">Nécessite l'utilisation de ciruclateurs pilotés</Translation>
@@ -7317,7 +8262,7 @@
         <Translation Language="DE">45°C</Translation>
       </Text>
       <Text Id="text_hysteresis_piscine_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Hysteresis sonde piscine</Translation>
+        <Translation Language="FR">Hystérésis sonde piscine</Translation>
         <Translation Language="GB">Hysteresis swimming pool probe</Translation>
         <Translation Language="PT">Sonda de histerese para piscina</Translation>
         <Translation Language="NL">Hysteresis sonde piscine</Translation>
@@ -7470,7 +8415,7 @@
         <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
       </Text>
       <Text Id="text_valeur_duree_cycle_thermo_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">1h30</Translation>
+        <Translation Language="FR">1 h 30</Translation>
         <Translation Language="GB">1h30</Translation>
         <Translation Language="PT">1h30</Translation>
         <Translation Language="NL">1h30</Translation>
@@ -7505,7 +8450,7 @@
         <Translation Language="DE">Cycle antilégionellose</Translation>
       </Text>
       <Text Id="text_hysteresis_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Hysteresis sonde ECS</Translation>
+        <Translation Language="FR">Hystérésis sonde ECS</Translation>
         <Translation Language="GB">Hysteresis DHW probe</Translation>
         <Translation Language="PT">Sonda de histerese para AQS</Translation>
         <Translation Language="NL">Hysteresis sonde ECS</Translation>
@@ -7562,6 +8507,34 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation_ecs_avances">
+      <Text Id="text_parametres_avances_ecs" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Paramètres Avancés ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_echangeur_ecs_bain_marie_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Bain Marie</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_echangeur_ecs_serpentin_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Serpentin</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_echangeur_ecs_plaque_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">A plaque</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_type_echangeur_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Type d'échangeur ECS ?&#10;(ajout des phases d'équilibrage)</Translation>
         <Translation Language="GB">Forced demand at the start of the cycle?&#10;(even if the DHW T° is &gt; the restart T°)</Translation>
@@ -7776,7 +8749,49 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation_ecs_cycle_legionel">
-      <Text Id="text_valeur_jour_cycle_legionel_e_ecs_init_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_valeur_jour_dimanche_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Dimanche</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_jour_samedi_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Samedi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_jour_vendredi_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Vendredi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_jour_jeudi_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Jeudi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_jour_mercredi_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Mercredi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_jour_mardi_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Mardi</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_jour_lundi_centre_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Lundi</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -7805,7 +8820,7 @@
         <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
       </Text>
       <Text Id="text_valeur_heure_cycle_legionel_eau_ecs_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">0h00</Translation>
+        <Translation Language="FR">0 h 00</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -7872,14 +8887,14 @@
     </TextGroup>
     <TextGroup Id="Installation_ecs_puissance_app">
       <Text Id="text_valeur_type_app_ecs_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">1000 watts</Translation>
+        <Translation Language="FR">1000</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_valeur_type_app_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="FR">&lt;value&gt; watts</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
         <Translation Language="NL">&lt;value&gt;</Translation>
@@ -7894,6 +8909,27 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation_ecs_puissance_ech">
+      <Text Id="text_valeur_ech_ecs_20kw_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">20 kW</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_ech_ecs_16kw_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">16 kW</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_ech_ecs_12kw_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">12 kW</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_puissance_ech_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Sélection de la puissance de l'échangeur ECS</Translation>
         <Translation Language="GB">Maximum thermodynamic cycle duration or deactivate the function</Translation>
@@ -7901,7 +8937,7 @@
         <Translation Language="NL">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
         <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
       </Text>
-      <Text Id="text_valeur_type_ech_ecs_init_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_valeur_ech_ecs_8kw_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">8 kW</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -7946,14 +8982,14 @@
         <Translation Language="DE">Durée du cycle thermodynamique max ou désactiver la fonction</Translation>
       </Text>
       <Text Id="text_valeur_reduc_temp_eau_ecs_init_centre_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">0°C</Translation>
+        <Translation Language="FR">0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_valeur_reduc_temp_eau_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;value&gt;</Translation>
+        <Translation Language="FR">&lt;value&gt;°C</Translation>
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="PT">&lt;value&gt;</Translation>
         <Translation Language="NL">&lt;value&gt;</Translation>
@@ -7982,6 +9018,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Installation_ecs_solaire">
+      <Text Id="text_valeur_etat_contact_solaire_ecs_ouvert_centre_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Ouvert</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_contact_solaire_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Entrée solaire activée pour autoriser la production d'ECS ?</Translation>
         <Translation Language="GB">Voulez-vous activer la gestion ECS&#10;en simultané ?</Translation>
@@ -8003,7 +9046,7 @@
         <Translation Language="NL">Non</Translation>
         <Translation Language="DE">Non</Translation>
       </Text>
-      <Text Id="text_valeur_etat_contact_solaire_ecs_init_centre_defaut" Alignment="Left" TypographyId="Default">
+      <Text Id="text_valeur_etat_contact_solaire_ecs_ferme_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Fermé</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
@@ -8954,7 +9997,7 @@
         <Translation Language="DE">New Text&lt;value&gt;</Translation>
       </Text>
       <Text Id="text_hyst_plus_val" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">4</Translation>
+        <Translation Language="FR">4.0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>

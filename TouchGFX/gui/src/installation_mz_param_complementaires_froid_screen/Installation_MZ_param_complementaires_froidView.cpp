@@ -21,7 +21,7 @@ Installation_MZ_param_complementaires_froidView::Installation_MZ_param_complemen
 	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
 	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
 	//Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", (sConfig_Hydrau_temp.u8NumZone == 8) ? 'A' : 'B');
-	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
+	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : (sConfig_Hydrau_temp.u8NumZone == 9) ?" (B)":"");
 	barre_titre.titre(textAreaBuffer_Titre);
 
 	// Mode Froid actif oui/non
@@ -182,6 +182,21 @@ void Installation_MZ_param_complementaires_froidView::bouton_non()
 	}
 }
 
+void Installation_MZ_param_complementaires_froidView::bouton_retour()
+{
+	//Boutons fictifs pour les fonctions ci-dessous
+
+	//Cas de groupes
+	if (sConfig_Hydrau_temp.u8NumZone < 8)
+	{
+		application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+	}
+	else //Cas des zones
+	{
+		application().gotoInstallation_MZ_config_groupeScreenNoTransition();
+	}
+}
+
 void Installation_MZ_param_complementaires_froidView::setupScreen()
 {
     Installation_MZ_param_complementaires_froidViewBase::setupScreen();
@@ -203,6 +218,15 @@ void Installation_MZ_param_complementaires_froidView::bouton_valider()
 	else
 	{
 		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid = 0;
+	}
+	//Cas de groupes
+	if (sConfig_Hydrau_temp.u8NumZone < 8)
+	{
+		application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+	}
+	else //Cas des zones
+	{
+		application().gotoInstallation_MZ_config_groupeScreenNoTransition();
 	}
 }
 

@@ -34,14 +34,27 @@ Installation_hydraulique_sonde_rfView::Installation_hydraulique_sonde_rfView()
 		toggleButton_dissocer.forceState(true);
 		toggleButton_dissocer.setTouchable(false);
 	}
-	//
-	if(sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne)
+
+	//Affectation variables temporaires suivant que l'on est en MZ ou STD
+	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		bVerouillageConsigne = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne;
+		bArretZoneDefautSonde = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde;
+	}
+	else
+	{
+		bVerouillageConsigne = sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne;
+		bArretZoneDefautSonde = sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde;
+	}
+
+
+	if(bVerouillageConsigne)
 	{
 		toggleButton_verrouillage_consigne.forceState(true);
 		textArea_on_off_verrouillage_consigne.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
 	//
-	if(sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde)
+	if(bArretZoneDefautSonde)
 	{
 		toggleButton_arret_defaut.forceState(true);
 		textArea_on_off_arret_defaut.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
@@ -72,25 +85,32 @@ void Installation_hydraulique_sonde_rfView::bouton_mem_config()
 	//
 	if(toggleButton_verrouillage_consigne.getState())
 	{
-		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 1;
+		bVerouillageConsigne = 1;
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 0;
+	else bVerouillageConsigne = 0;
 	//
 	if(toggleButton_arret_defaut.getState())
 	{
-		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 1;
+		bArretZoneDefautSonde = 1;
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 0;
+	else bArretZoneDefautSonde = 0;
 }
 
 void Installation_hydraulique_sonde_rfView::bouton_retour()
 {
-	sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne;
-	sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde;
+//	sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne;
+//	sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde;
+//
+//	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne = bVerouillageConsigne;
+//	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde = bArretZoneDefautSonde;
 	//
 	if(sConfig_Hydrau_temp.u8TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 	{
 		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+	}
+	else
+	{
+		application().gotoInstallation_MZ_config_zoneScreenNoTransition();
 	}
 }
 
@@ -147,15 +167,15 @@ void Installation_hydraulique_sonde_rfView::bouton_hysteresis()
 	//
 	if(toggleButton_verrouillage_consigne.getState())
 	{
-		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 1;
+		bVerouillageConsigne = 1;
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 0;
+	else bVerouillageConsigne = 0;
 	//
 	if(toggleButton_arret_defaut.getState())
 	{
-		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 1;
+		bArretZoneDefautSonde = 1;
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 0;
+	else bArretZoneDefautSonde = 0;
 	//
 	eHysteresis = HYST_TINT;
 	application().gotoInstallation_hysteresisScreenNoTransition();
@@ -166,15 +186,15 @@ void Installation_hydraulique_sonde_rfView::bouton_resistance_terminaison()
 	//
 	if(toggleButton_verrouillage_consigne.getState())
 	{
-		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 1;
+		bVerouillageConsigne = 1;
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 0;
+	else bVerouillageConsigne = 0;
 	//
 	if(toggleButton_arret_defaut.getState())
 	{
-		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 1;
+		bArretZoneDefautSonde = 1;
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 0;
+	else bArretZoneDefautSonde = 0;
 	//
 	eOuiNon = OUI_NON_RESIST_TERM_SONDE;
 	application().gotoPage_oui_nonScreenNoTransition();
@@ -185,18 +205,18 @@ void Installation_hydraulique_sonde_rfView::bouton_valider()
 	//
 	if(toggleButton_verrouillage_consigne.getState())
 	{
-		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 1;
+		bVerouillageConsigne = 1;
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 0;
+	else bVerouillageConsigne = 0;
 	//
 	if(toggleButton_arret_defaut.getState())
 	{
-		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 1;
+		bArretZoneDefautSonde = 1;
 	}
-	else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 0;
+	else bArretZoneDefautSonde = 0;
 	//
-	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne = sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne;
-	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde = sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde;
+	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne = bVerouillageConsigne;
+	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde = bArretZoneDefautSonde;
 	//
 	presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
 	application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();

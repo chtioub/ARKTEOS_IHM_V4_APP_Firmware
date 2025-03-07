@@ -67,6 +67,7 @@ public:
     void bouton_vacances_oui();
     void bouton_vacances_non();
     void bouton_valider();
+    void bouton_retour();
     void text_vacances_off();
     void affichageZone(uint8_t u8Zone, touchgfx::Container *container_zone, touchgfx::ToggleButton *toggleButton_zone, touchgfx::Container *container_slider_zone, touchgfx::TextAreaWithOneWildcard *textArea_vacances_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_Zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_TempZone, touchgfx::Slider *slider_zone, touchgfx::TextAreaWithOneWildcard *textArea_zone);
 protected:

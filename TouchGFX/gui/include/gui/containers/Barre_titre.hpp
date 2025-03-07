@@ -18,6 +18,7 @@ public:
     void sansRetour();
     void sansAccueil();
     void erreur(uint16_t u16Erreur);
+    void bouton_accueil();
 protected:
     touchgfx::Unicode::UnicodeChar textArea_Erreur[4];
 };

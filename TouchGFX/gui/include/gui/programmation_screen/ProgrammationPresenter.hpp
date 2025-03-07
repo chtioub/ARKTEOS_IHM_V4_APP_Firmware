@@ -35,6 +35,7 @@ public:
     void c_prog_ecs(bool bEnvoi);
     void c_prog_option(bool bEnvoi);
     void c_prog_piscine(bool bEnvoi);
+    void c_prog_silence(bool bEnvoi);
     void c_prog_zone_chaud(uint8_t u8Zone, bool bEnvoi);
     void c_prog_zone_froid(uint8_t u8Zone, bool bEnvoi);
     void c_prog_reg_ext_chaud(bool bEnvoi);

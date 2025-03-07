@@ -27,6 +27,7 @@ public:
 
     virtual ~Installation_MZ_config_zonePresenter() {}
 
+    virtual void changeStatutRF(S_STATUT_RF *sStatut_RF);
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);

@@ -112,6 +112,11 @@ void Installation_MZ_param_complementaires_groupeView::bouton_oui_marche_forcee(
 	}
 }
 
+void Installation_MZ_param_complementaires_groupeView:: renommer_groupe()
+{
+	eTypeClavierAlpha = RENOMMER_ZONE_GROUPE;
+}
+
 
 void Installation_MZ_param_complementaires_groupeView::bouton_valider()
 {

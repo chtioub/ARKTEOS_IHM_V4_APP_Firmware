@@ -941,7 +941,13 @@ typedef struct
 
 typedef union
 {
-    uint64_t u64val;                                         // 8 Octets Max
+    uint64_t u64val;
+    struct
+	{
+		int8_t i8Hysteresis_Primaire_Plus;
+		int8_t i8Hysteresis_Primaire_Moins;
+	}CommunAllConfig;
+    // 8 Octets Max
     struct
     {
         int8_t i8Hysteresis_Primaire_Plus;                  // Hyst�r�sis sur T� eau des Arret et D�marrage de Compresseur

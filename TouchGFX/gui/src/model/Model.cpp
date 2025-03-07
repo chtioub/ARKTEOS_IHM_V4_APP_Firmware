@@ -13,6 +13,8 @@ extern uint8_t gTouched;
 Model::Model() :
     modelListener(0), veilleCounter(0)
 {
+	//Utilisé pour init du Slid Page accueil/config
+	bPageAccueil = true;
 #if defined(SIMULATOR) || defined(DEMO_ARKTEOS)
 	// Options PAC
 	sConfig_IHM.sOption_PAC.sZone.bZone1 = 1;
@@ -972,6 +974,39 @@ void Model::c_prog_piscine(bool bEnvoi)
 	}
 }
 
+void Model::c_prog_silence(bool bEnvoi)
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USER_PROG;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_PROG_MODE_SILENCE;
+  if(bEnvoi == false)
+  {
+		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
+		txData[u8Pointeur_buffer_tx].data[4] = 0;
+  }
+  else txData[0].data[4] = sizeof(au8Prog_ModeSilence);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+  if(bEnvoi == true)
+  {
+		memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &au8Prog_ModeSilence, sizeof(au8Prog_ModeSilence));
+    u16Pointeur += sizeof(au8Prog_ModeSilence);
+  }
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
 void Model::c_prog_zone_chaud(uint8_t u8Zone, bool bEnvoi)
 {
   uint16_t u16Pointeur = 0, u16CRC = 0;
@@ -1240,6 +1275,33 @@ void Model::c_install_param()
 	}
 }
 
+void Model::c_install_modbus()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_MODBUS;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_PARAM_ETHER_MODBUS_III);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sParamModbus, sizeof(S_PARAM_ETHER_MODBUS_III));
+  u16Pointeur += sizeof(S_PARAM_ETHER_MODBUS_III);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
 void Model::c_install_raz_histo_err()
 {
   uint16_t u16Pointeur = 0, u16CRC = 0;
@@ -1327,7 +1389,7 @@ void Model::c_install_param_zx()
 	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
 	txData[u8Pointeur_buffer_tx].data[3] = SC_PARAM_ZX;
 	txData[u8Pointeur_buffer_tx].data[4] = (((sizeof(S_PARAM_ZX))*10) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT))&0xFF;
-	txData[u8Pointeur_buffer_tx].data[5] = ((((sizeof(S_PARAM_ZX))*10) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT) >> 8)) & 0xFF;
+	txData[u8Pointeur_buffer_tx].data[5] = ((((sizeof(S_PARAM_ZX))*10) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT)) >> 8) & 0xFF;
 	u16Pointeur = 6;
 
 	for (int i = 0; i < 10 ; i++)

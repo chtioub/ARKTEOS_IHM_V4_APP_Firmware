@@ -40,6 +40,12 @@ void SecoursView::bouton_secours_pac()
 	application().gotoPage_oui_nonScreenNoTransition();
 }
 
+void SecoursView::bouton_retour()
+{
+	bPageAccueil = false;
+	application().gotoAccueilScreenNoTransition();
+}
+
 void SecoursView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	if(bConnexionDistance != sCycEther->bAppletConnect)
@@ -49,7 +55,6 @@ void SecoursView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 		barre_titre.invalidate();
 	}
 }
-
 
 void SecoursView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 {

@@ -71,6 +71,12 @@ void Historiques_fonctionnementView::bouton_gauche()
 	changement_page();
 }
 
+void Historiques_fonctionnementView::bouton_retour()
+{
+	bPageAccueil = false;
+	application().gotoAccueilScreenNoTransition();
+}
+
 void Historiques_fonctionnementView::changement_page()
 {
     touchgfx_printf("changment page = %d\n", u8AffichageGraphiques);

@@ -14,6 +14,7 @@ public:
 
     void bouton_secours_ecs();
     void bouton_secours_pac();
+    void bouton_retour();
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);

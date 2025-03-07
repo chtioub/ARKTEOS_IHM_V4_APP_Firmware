@@ -290,6 +290,21 @@ Page_oui_nonView::Page_oui_nonView()
 			textArea_texte_oui_non.setVisible(true);
 			textArea_question_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_QUESTION_RESISTANCE_TERMINAISON_CENTRE_DEFAUT));
 			break;
+		case OUI_NON_RESIST_CARTER:
+			if(sConfig_IHM.sConfig_PAC.ConfigGeoInverter.bUseCarterHeater)
+			{
+				toggleButton_oui_oui_non.forceState(true);
+				toggleButton_oui_oui_non.setTouchable(false);
+				toggleButton_non_oui_non.forceState(false);
+				toggleButton_non_oui_non.setTouchable(true);
+			}
+			// Titre
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_RESISTANCE_CARTER_TITRE_CENTRE_DEFAUT).getText());
+			barre_titre.titre(textAreaBuffer_Titre);
+			textArea_texte_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_RESISTANCE_CARTER_EXPLICATION_CENTRE_DEFAUT));
+			textArea_texte_oui_non.setVisible(true);
+			textArea_question_oui_non.setTypedText(touchgfx::TypedText(T_TEXT_RESISTANCE_CARTER_QUESTION_CENTRE_DEFAUT));
+			break;
 
 	}
 }
@@ -396,7 +411,7 @@ void Page_oui_nonView::bouton_retour()
 			application().gotoInstallationScreenNoTransition();
 			break;
 		case OUI_NON_SIMULTANE_PISCINE:
-			application().gotoPiscineScreenNoTransition();
+			application().gotoInstallation_piscineScreenNoTransition();
 			break;
 		case OUI_NON_RAZ_TPS_FONCT:
 			application().gotoUsine_param_avancesScreenNoTransition();
@@ -413,6 +428,9 @@ void Page_oui_nonView::bouton_retour()
 				application().gotoInstallation_hydraulique_sonde_modbusScreenNoTransition();
 			}
 			else application().gotoInstallation_hydraulique_sonde_rfScreenNoTransition();
+			break;
+		case OUI_NON_RESIST_CARTER:
+			application().gotoInstallation_param_avancesScreenNoTransition();
 			break;
 	}
 }
@@ -635,8 +653,9 @@ void Page_oui_nonView::bouton_valider()
 				sConfig_IHM.sParam_Piscine.bGestionSimultanee = 1;
 			}
 			else sConfig_IHM.sParam_Piscine.bGestionSimultanee = 0;
+			sConfig_Piscine_temp.sParam_Piscine.bGestionSimultanee = sConfig_IHM.sParam_Piscine.bGestionSimultanee;
 			presenter->c_install_piscine();
-			application().gotoPiscineScreenNoTransition();
+			application().gotoInstallation_piscineScreenNoTransition();
 			break;
 		case OUI_NON_RAZ_TPS_FONCT:
 			if(toggleButton_oui_oui_non.getState())
@@ -673,6 +692,15 @@ void Page_oui_nonView::bouton_valider()
 				application().gotoInstallation_hydraulique_sonde_modbusScreenNoTransition();
 			}
 			else application().gotoInstallation_hydraulique_sonde_rfScreenNoTransition();
+			break;
+		case OUI_NON_RESIST_CARTER:
+			if(toggleButton_oui_oui_non.getState())
+			{
+				sConfig_IHM.sConfig_PAC.ConfigGeoInverter.bUseCarterHeater = 1;
+			}
+			else sConfig_IHM.sConfig_PAC.ConfigGeoInverter.bUseCarterHeater = 0;
+			presenter->c_install_config_pac();
+			application().gotoInstallation_param_avancesScreenNoTransition();
 			break;
 	}
 }

@@ -172,11 +172,20 @@ Programmation_zoomView::Programmation_zoomView()
 			break;
 		case PRO_SILENCE:
 			// Definition des images
-			image1 = touchgfx::Bitmap(BITMAP_BARRE_PROG_HEBDO_PISCINE_REDUIT_L8XH46_ID);
-			image2 = touchgfx::Bitmap(BITMAP_BARRE_PROG_HEBDO_PISCINE_L8XH46_ID);
-			image3 = touchgfx::Bitmap(BITMAP_BARRE_PROG_HEBDO_PISCINE_CONFORT_L8XH46_ID);
+			image1 = touchgfx::Bitmap(BITMAP_BARRE_PROG_HEBDO_CHAUFFE_EAU_L8XH46_ID);
+			image2 = touchgfx::Bitmap(BITMAP_BARRE_PROG_HEBDO_CHAUD_CONFORT_PLUS_L8XH46_ID);
+			image3 = touchgfx::Bitmap(BITMAP_BARRE_PROG_HEBDO_CHAUD_CONFORT_PLUS_L8XH46_ID);
+			//
+			bouton1 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUFFE_EAU_ON_L108XH71_ID);
+			bouton2 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUD_CONFORT_PLUS_L108XH71_ID);
+			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUD_CONFORT_PLUS_L108XH71_ID);
+			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUFFE_EAU_ZOOM_L108XH71_ID);
+			//
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_1, 5, touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_2, 5, touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_3, 5, touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
 			// Titre
-			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_PISCINE_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_SILENCE_CENTRE_DEFAUT).getText());
 			barre_titre.titre(textAreaBuffer_Titre);
 			break;
 	}

@@ -272,6 +272,11 @@ void Installation_MZ_config_groupeView::bouton_chaud()
 	toggleButton_chaud.invalidate();
 }
 
+void Installation_MZ_config_groupeView:: renommer_groupe()
+{
+	eTypeClavierAlpha = RENOMMER_ZONE_GROUPE;
+}
+
 
 void Installation_MZ_config_groupeView:: affichage_information()
 {

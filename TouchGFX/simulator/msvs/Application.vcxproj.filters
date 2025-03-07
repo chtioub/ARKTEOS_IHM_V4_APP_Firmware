@@ -337,14 +337,8 @@
     <Filter Include="Source Files\gui\installation_ecs_avances_screen">
       <UniqueIdentifier>2AAE5229-E17B-DA5F-CE96-58BFACDA28EA</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\configuration_screen">
-      <UniqueIdentifier>D0BBDEC6-F84E-293F-FDE5-BD20A15439E0</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\installation_courbe_loi_d_eau_screen">
       <UniqueIdentifier>71EDDC84-C63E-A5E9-4F10-F2B0DA54ADD5</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\configuration_screen">
-      <UniqueIdentifier>6F287B48-0B47-1B42-D96B-597B94BA04A3</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\gui\installation_courbe_loi_d_eau_screen">
       <UniqueIdentifier>88DE0780-51A4-8312-C0CD-83DE68D9D022</UniqueIdentifier>
@@ -655,17 +649,11 @@
     <Filter Include="Source Files\generated\gui_generated\installation_circuit_captage_screen">
       <UniqueIdentifier>5487E456-4999-A838-E6B8-6F91B767264A</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\configuration_screen">
-      <UniqueIdentifier>EB3BEC80-939F-1658-DB84-E23B5EEE4D46</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\generated\gui_generated\installation_circuit_captage_screen">
       <UniqueIdentifier>D9FE6C02-0595-0AD4-F2D9-762893BC58F8</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\installation_circuit_primaire_screen">
       <UniqueIdentifier>EA15144A-40A1-D904-90A6-77A5FE36ED01</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\configuration_screen">
-      <UniqueIdentifier>6116AD34-CF4B-B73B-2DF1-ECE9B88086E1</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\programmation_screen">
       <UniqueIdentifier>4C7ECD20-D19B-23C4-5D93-B53A1D622CAA</UniqueIdentifier>
@@ -1156,6 +1144,102 @@
     <Filter Include="Source Files\generated\gui_generated\renommer_screen">
       <UniqueIdentifier>E9CDBCB8-0988-2D8E-9C5E-71A10309C7CE</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\gui\installation_mz_reglage_debit_air_screen">
+      <UniqueIdentifier>DF06C977-B406-AA36-330C-D6280F882DA5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_mz_reglage_debit_air_screen">
+      <UniqueIdentifier>07D50B42-5218-AD98-1930-4696E609E867</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_mz_gestion_registre_screen">
+      <UniqueIdentifier>8C1B77BD-9FC3-B306-D759-7C2CB4BA2892</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_mz_gestion_registre_screen">
+      <UniqueIdentifier>996908B0-4B3F-A22A-B7B4-E0E5C891D043</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_mz_reglage_debit_air_screen">
+      <UniqueIdentifier>59DBA701-0474-02AF-586F-565633A0116B</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_mz_reglage_debit_air_screen">
+      <UniqueIdentifier>9B8FE0B9-01E3-E761-5E22-2C72B80C8A3F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_mz_gestion_registre_screen">
+      <UniqueIdentifier>FC3FA737-C80E-A24C-E230-D1B86190974F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_mz_gestion_registre_screen">
+      <UniqueIdentifier>4C596D59-ACAC-852F-5E46-6045A033BA95</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_gestion_v3v_screen">
+      <UniqueIdentifier>FBE1335E-7C6F-33EA-1ADD-E5AD57DD8F59</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_gestion_v3v_screen">
+      <UniqueIdentifier>3E0A4C87-E098-9203-056B-5AA23DD9CB8D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_gestion_v3v_screen">
+      <UniqueIdentifier>5A841CD1-73F7-C70C-0CED-9628314F13B7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_gestion_v3v_screen">
+      <UniqueIdentifier>D491339F-7592-B344-63E2-2029E2F7915D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_regulation_avancee_screen">
+      <UniqueIdentifier>3F8E3E0D-2CB6-7FA8-BC1D-0B3E9E27EE08</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_regulation_avancee_screen">
+      <UniqueIdentifier>044CD18F-589F-717C-FC11-5464EC2C6D7E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_regulation_avancee_screen">
+      <UniqueIdentifier>160402D1-F2F3-95DF-7FAD-7A77CE4D1DDA</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_regulation_avancee_screen">
+      <UniqueIdentifier>979C9166-3034-5543-6633-507804B53F37</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_reduction_pw_screen">
+      <UniqueIdentifier>6C8205B0-98D4-7C14-D3BF-A9C8529C0883</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_reduction_pw_screen">
+      <UniqueIdentifier>4AFCBBAB-70DA-4C93-04AB-C38D20226F3F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_mode_silencieux_screen">
+      <UniqueIdentifier>18B9A3BD-B427-A347-396D-8981BEA655E7</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_mode_silencieux_screen">
+      <UniqueIdentifier>6D8E1689-BEAB-3140-C660-80AA7D86D393</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_config_modbus_screen">
+      <UniqueIdentifier>49609CB7-7BDC-5E01-86B4-5E550629036A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_config_modbus_screen">
+      <UniqueIdentifier>BCC34FC2-884F-34E2-4DBC-63158EFA1803</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\installation_degivrage_liaison_frigo_screen">
+      <UniqueIdentifier>5DAA4512-5D28-6F97-32D4-AA283EFC8459</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\installation_degivrage_liaison_frigo_screen">
+      <UniqueIdentifier>5737F71F-733E-AC56-D3A8-370B355AE30A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_reduction_pw_screen">
+      <UniqueIdentifier>B5CAE783-C1C8-EA55-C21F-756F7331090F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_reduction_pw_screen">
+      <UniqueIdentifier>C86B6E2C-6AA9-49DB-BAFE-7D8F3D63FCF8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_mode_silencieux_screen">
+      <UniqueIdentifier>8CC1D563-1C03-39D0-03A0-D9C603327867</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_mode_silencieux_screen">
+      <UniqueIdentifier>C06544E4-DF52-805C-E5A9-CE5D287A2D73</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_degivrage_liaison_frigo_screen">
+      <UniqueIdentifier>9F8BB3B4-CD39-7E58-DF91-FE6786BC2C74</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_degivrage_liaison_frigo_screen">
+      <UniqueIdentifier>FCF99806-1C9E-4278-90C6-263CA1444C79</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\installation_config_modbus_screen">
+      <UniqueIdentifier>9768E510-624A-5240-B166-96DC25BCF1B6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\installation_config_modbus_screen">
+      <UniqueIdentifier>68E6E931-9AD0-1C95-7D56-4A7078B6C08E</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -1223,15 +1307,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\code_web_screen\Code_webViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\code_web_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp">
-      <Filter>Source Files\gui\configuration_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp">
-      <Filter>Source Files\gui\configuration_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\configuration_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\date_heure_screen\Date_heurePresenter.cpp">
       <Filter>Source Files\gui\date_heure_screen</Filter>
@@ -1953,6 +2028,78 @@
     <ClCompile Include="..\..\generated\gui_generated\src\renommer_screen\RenommerViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\renommer_screen</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registrePresenter.cpp">
+      <Filter>Source Files\gui\installation_mz_gestion_registre_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registreView.cpp">
+      <Filter>Source Files\gui\installation_mz_gestion_registre_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registreViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_mz_gestion_registre_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airPresenter.cpp">
+      <Filter>Source Files\gui\installation_mz_reglage_debit_air_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airView.cpp">
+      <Filter>Source Files\gui\installation_mz_reglage_debit_air_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_mz_reglage_debit_air_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_gestion_v3v_screen\Installation_gestion_v3vPresenter.cpp">
+      <Filter>Source Files\gui\installation_gestion_v3v_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_gestion_v3v_screen\Installation_gestion_v3vView.cpp">
+      <Filter>Source Files\gui\installation_gestion_v3v_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_gestion_v3v_screen\Installation_gestion_v3vViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_gestion_v3v_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_regulation_avancee_screen\Installation_regulation_avanceePresenter.cpp">
+      <Filter>Source Files\gui\installation_regulation_avancee_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_regulation_avancee_screen\Installation_regulation_avanceeView.cpp">
+      <Filter>Source Files\gui\installation_regulation_avancee_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_regulation_avancee_screen\Installation_regulation_avanceeViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_regulation_avancee_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_config_modbus_screen\Installation_config_modbusPresenter.cpp">
+      <Filter>Source Files\gui\installation_config_modbus_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_config_modbus_screen\Installation_config_modbusView.cpp">
+      <Filter>Source Files\gui\installation_config_modbus_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_config_modbus_screen\Installation_config_modbusViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_config_modbus_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoPresenter.cpp">
+      <Filter>Source Files\gui\installation_degivrage_liaison_frigo_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoView.cpp">
+      <Filter>Source Files\gui\installation_degivrage_liaison_frigo_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_degivrage_liaison_frigo_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mode_silencieux_screen\Installation_mode_silencieuxPresenter.cpp">
+      <Filter>Source Files\gui\installation_mode_silencieux_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_mode_silencieux_screen\Installation_mode_silencieuxView.cpp">
+      <Filter>Source Files\gui\installation_mode_silencieux_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_mode_silencieux_screen\Installation_mode_silencieuxViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_mode_silencieux_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_reduction_pw_screen\Installation_reduction_pwPresenter.cpp">
+      <Filter>Source Files\gui\installation_reduction_pw_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\installation_reduction_pw_screen\Installation_reduction_pwView.cpp">
+      <Filter>Source Files\gui\installation_reduction_pw_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\installation_reduction_pw_screen\Installation_reduction_pwViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\installation_reduction_pw_screen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml">
@@ -2412,15 +2559,6 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\code_web_screen\Code_webViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\code_web_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp">
-      <Filter>Header Files\gui\configuration_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp">
-      <Filter>Header Files\gui\configuration_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\configuration_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\date_heure_screen\Date_heurePresenter.hpp">
       <Filter>Header Files\gui\date_heure_screen</Filter>
@@ -3159,6 +3297,78 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\renommer_screen\RenommerViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\renommer_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registrePresenter.hpp">
+      <Filter>Header Files\gui\installation_mz_gestion_registre_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registreView.hpp">
+      <Filter>Header Files\gui\installation_mz_gestion_registre_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_gestion_registre_screen\Installation_MZ_gestion_registreViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_mz_gestion_registre_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airPresenter.hpp">
+      <Filter>Header Files\gui\installation_mz_reglage_debit_air_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airView.hpp">
+      <Filter>Header Files\gui\installation_mz_reglage_debit_air_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mz_reglage_debit_air_screen\Installation_MZ_reglage_debit_airViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_mz_reglage_debit_air_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_gestion_v3v_screen\Installation_gestion_v3vPresenter.hpp">
+      <Filter>Header Files\gui\installation_gestion_v3v_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_gestion_v3v_screen\Installation_gestion_v3vView.hpp">
+      <Filter>Header Files\gui\installation_gestion_v3v_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_gestion_v3v_screen\Installation_gestion_v3vViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_gestion_v3v_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_regulation_avancee_screen\Installation_regulation_avanceePresenter.hpp">
+      <Filter>Header Files\gui\installation_regulation_avancee_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_regulation_avancee_screen\Installation_regulation_avanceeView.hpp">
+      <Filter>Header Files\gui\installation_regulation_avancee_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_regulation_avancee_screen\Installation_regulation_avanceeViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_regulation_avancee_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_modbus_screen\Installation_config_modbusPresenter.hpp">
+      <Filter>Header Files\gui\installation_config_modbus_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_config_modbus_screen\Installation_config_modbusView.hpp">
+      <Filter>Header Files\gui\installation_config_modbus_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_config_modbus_screen\Installation_config_modbusViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_config_modbus_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoPresenter.hpp">
+      <Filter>Header Files\gui\installation_degivrage_liaison_frigo_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoView.hpp">
+      <Filter>Header Files\gui\installation_degivrage_liaison_frigo_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_degivrage_liaison_frigo_screen\Installation_degivrage_liaison_frigoViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_degivrage_liaison_frigo_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mode_silencieux_screen\Installation_mode_silencieuxPresenter.hpp">
+      <Filter>Header Files\gui\installation_mode_silencieux_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_mode_silencieux_screen\Installation_mode_silencieuxView.hpp">
+      <Filter>Header Files\gui\installation_mode_silencieux_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_mode_silencieux_screen\Installation_mode_silencieuxViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_mode_silencieux_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_reduction_pw_screen\Installation_reduction_pwPresenter.hpp">
+      <Filter>Header Files\gui\installation_reduction_pw_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\installation_reduction_pw_screen\Installation_reduction_pwView.hpp">
+      <Filter>Header Files\gui\installation_reduction_pw_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_reduction_pw_screen\Installation_reduction_pwViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\installation_reduction_pw_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

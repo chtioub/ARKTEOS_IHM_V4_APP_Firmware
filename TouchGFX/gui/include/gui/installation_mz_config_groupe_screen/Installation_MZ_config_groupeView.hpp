@@ -22,6 +22,7 @@ public:
     void bouton_chaud();
     void affichage_information();
     void bouton_valider_information();
+    void renommer_groupe();
 
 
 	virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);

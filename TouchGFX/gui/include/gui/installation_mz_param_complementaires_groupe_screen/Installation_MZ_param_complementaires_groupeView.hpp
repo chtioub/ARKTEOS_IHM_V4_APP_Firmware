@@ -18,6 +18,7 @@ public:
     void bouton_oui_marche_forcee();
     void bouton_non_marche_forcee();
     void vitesseVentilateur();
+    void renommer_groupe();
     void bouton_valider();
 
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
