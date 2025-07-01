@@ -39,6 +39,9 @@ void Infos_systemeView::bouton_retour()
 void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
 	uint16_t u16TmpBuffer[2];
+	u16TmpBuffer[0] = 0;
+	u16TmpBuffer[1] = 0;
+
 	// Type gamme
 	if(sConfig_IHM_old.sModele_PAC.u8ModelePAC != sConfig_IHM->sModele_PAC.u8ModelePAC)
 	{

@@ -211,7 +211,10 @@ void Model::tick()
 #ifndef SIMULATOR
 	if(gTouched == 0)// && u16ErreurEncours == 0)
 	{
+		if (oui_veille == 1)
+		{
 		veilleCounter++;
+		}
 		if(veilleCounter == VEILLE_1_COUNT)
 		{
 			setBackLightPWM(PWM_VEILLE_1);
@@ -296,24 +299,34 @@ void Model::tick()
     modelListener->changeStatutZx(7, &sStatut_Zx[7]);
     arkteos_update.statut_zx_update[7] = false;
   }
+  if(arkteos_update.statut_zx_update[8])
+  {
+    modelListener->changeStatutZx(8, &sStatut_Zx[8]);
+    arkteos_update.statut_zx_update[8] = false;
+  }
+  if(arkteos_update.statut_zx_update[9])
+  {
+    modelListener->changeStatutZx(9, &sStatut_Zx[9]);
+    arkteos_update.statut_zx_update[9] = false;
+  }
   if(arkteos_update.statut_pac_update)
   {
-    modelListener->changeStatutPAC(&sStatut_PAC);
-		if(sStatut_PAC.ModifConfig)
+	  modelListener->changeStatutPAC(&sStatut_PAC);
+	if(sStatut_PAC.ModifConfig)
+	{
+		c_recup_config(0);
+		c_recup_config(1);
+		c_recup_config(2);
+		if(sConfig_IHM.sModele_PAC.u8ModelePAC == INVERTERRA || sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX || sConfig_IHM.sModele_PAC.u8ModelePAC == ARKTEA)
 		{
-			c_recup_config(0);
-			c_recup_config(1);
-			c_recup_config(2);
-			if(sConfig_IHM.sModele_PAC.u8ModelePAC == INVERTERRA || sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX || sConfig_IHM.sModele_PAC.u8ModelePAC == ARKTEA)
-			{
-				c_recup_config(3);
-			}
+			c_recup_config(3);
 		}
-		else if(sStatut_PAC.ModifConfigSimple)
-		{
-			c_recup_config(1);
-		}
-    arkteos_update.statut_pac_update = false;
+	}
+	else if(sStatut_PAC.ModifConfigSimple)
+	{
+		c_recup_config(1);
+	}
+	arkteos_update.statut_pac_update = false;
   }
   if(arkteos_update.statut_ether_update)
   {
@@ -350,16 +363,23 @@ void Model::tick()
     modelListener->changeDemandeFrigo(&sDemandeFrigo);
     arkteos_update.demande_frigo_update = false;
   }
-	if(arkteos_update.statut_rf_update)
-	{
-		modelListener->changeStatutRF(&sStatut_RF[0]);
-		arkteos_update.statut_rf_update = false;
-	}
-	if(arkteos_update.statut_regul_esclave_update)
-	{
-		modelListener->changeStatutRegulEsclave(&sStatut_RegulEsclave);
-		arkteos_update.statut_regul_esclave_update = false;
-	}
+  if(arkteos_update.statut_rf_update)
+  {
+	modelListener->changeStatutRF(&sStatut_RF[0]);
+	arkteos_update.statut_rf_update = false;
+  }
+
+  if(arkteos_update.statut_regul_esclave_update)
+  {
+	modelListener->changeStatutRegulEsclave(&sStatut_RegulEsclave);
+	arkteos_update.statut_regul_esclave_update = false;
+  }
+
+  if(arkteos_update.statut_tps_fonct_update)
+   {
+ 	modelListener->changeStatutTempsFonct(&sStatut_TpsFonct);
+ 	arkteos_update.statut_tps_fonct_update = false;
+   }
 }
 
 //void Model::energieState(uint16_t state)
@@ -841,28 +861,30 @@ void Model::c_ener_histo_24h_prod()
 
 void Model::c_recup_config(uint8_t u8RecupConfig)
 {
-  uint16_t u16Pointeur = 0, u16CRC = 0;
+	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-  if(u8RecupConfig == 0)
-  {
+	if(u8RecupConfig == 0)
+	{
 		txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
-  }
-  else txData[0].data[0] = N_ADD_REG;
+	}
+	else txData[0].data[0] = N_ADD_REG;
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = RECUP_CONFIG;
-//	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
-  if(u8RecupConfig == 2)
-  {
+	//	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
+
+	if(u8RecupConfig == 2)
+	{
 		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_TRAME2;
-  }
-  else if(u8RecupConfig == 3)
-  {
+	}
+	else if(u8RecupConfig == 3)
+	{
 		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_CONFIG_PHOENIX;
-  }
-  else txData[0].data[3] = SC_RECUP_GENERAL;
+	}
+	else txData[0].data[3] = SC_RECUP_GENERAL;
+
 	txData[u8Pointeur_buffer_tx].data[4] = 0;
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
-  u16Pointeur = 6;
+    u16Pointeur = 6;
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
@@ -888,7 +910,7 @@ void Model::c_prog_ecs(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else txData[0].data[4] = sizeof(au8Prog_ECS);
+  else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_ECS); //txData[0].data[4] = 168;//sizeof(au8Prog_ECS);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -921,7 +943,7 @@ void Model::c_prog_option(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else txData[0].data[4] = sizeof(au8Prog_Options);
+ else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Options);//txData[0].data[4] = sizeof(au8Prog_Options);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -954,7 +976,7 @@ void Model::c_prog_piscine(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else txData[0].data[4] = sizeof(au8Prog_Piscine);
+  else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Piscine);//txData[0].data[4] = sizeof(au8Prog_Piscine);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -987,7 +1009,7 @@ void Model::c_prog_silence(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else txData[0].data[4] = sizeof(au8Prog_ModeSilence);
+  else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_ModeSilence);//txData[0].data[4] = sizeof(au8Prog_ModeSilence);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -1020,7 +1042,7 @@ void Model::c_prog_zone_chaud(uint8_t u8Zone, bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else txData[0].data[4] = sizeof(au8Prog_Chaud_Zx[u8Zone]);
+  else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Chaud_Zx[u8Zone]);//txData[0].data[4] = sizeof(au8Prog_Chaud_Zx[u8Zone]);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -1053,7 +1075,7 @@ void Model::c_prog_zone_froid(uint8_t u8Zone, bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else txData[0].data[4] = sizeof(au8Prog_Froid_Zx[u8Zone]);
+  else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Froid_Zx[u8Zone]);//txData[0].data[4] = sizeof(au8Prog_Froid_Zx[u8Zone]);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -1086,7 +1108,7 @@ void Model::c_prog_reg_ext_chaud(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Chaud);
+  else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Regul_Ext_Chaud);//txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Chaud);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -1119,7 +1141,7 @@ void Model::c_prog_reg_ext_froid(bool bEnvoi)
 		txData[u8Pointeur_buffer_tx].data[3] += CONTROL_READ;
 		txData[u8Pointeur_buffer_tx].data[4] = 0;
   }
-  else txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Froid);
+  else txData[u8Pointeur_buffer_tx].data[4] = sizeof(au8Prog_Regul_Ext_Froid);//txData[0].data[4] = sizeof(au8Prog_Regul_Ext_Froid);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
   if(bEnvoi == true)
@@ -1163,6 +1185,33 @@ void Model::c_install_raz_config()
 	}
 }
 
+void Model::c_install_date_install()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_DATE_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_CONFIG_PAC);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sInstall_PAC.sDateMiseEnService, sizeof(sConfig_IHM.sInstall_PAC.sDateMiseEnService));
+  u16Pointeur += sizeof(sConfig_IHM.sInstall_PAC.sDateMiseEnService);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
 void Model::c_install_config_pac()
 {
   uint16_t u16Pointeur = 0, u16CRC = 0;
@@ -1177,6 +1226,33 @@ void Model::c_install_config_pac()
 
 	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sConfig_PAC, sizeof(S_CONFIG_PAC));
   u16Pointeur += sizeof(S_CONFIG_PAC);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_install_install_pac()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_INSTALL;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_INSTALL_INSTALL_PAC;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_INSTALL_PAC);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sInstall_PAC, sizeof(S_INSTALL_PAC));
+  u16Pointeur += sizeof(S_INSTALL_PAC);
 
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
@@ -1732,6 +1808,132 @@ void Model::c_sav_raz_log()
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
 	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_RAZ_LOG;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_sav_mode_commande()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_FRIGO;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_HISTO_ERR; //Normal
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(u16CodeCommande);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &u16CodeCommande, sizeof(u16CodeCommande));
+  u16Pointeur += sizeof(u16CodeCommande);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_sav_par21()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_FRIGO;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_PAR21; //Normal
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(u16CodeCommande);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &u16CodeCommande, sizeof(u16CodeCommande));
+  u16Pointeur += sizeof(u16CodeCommande);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_sav_mode_pump_down_recup_ue()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = S_TYPE_PUMP_DOWN_RECUP_UE;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_sav_mode_pump_down_recup_ui()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = S_TYPE_PUMP_DOWN_RECUP_UI;
+	txData[u8Pointeur_buffer_tx].data[4] = 0;
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_sav_mode_pump_down_stop()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = S_TYPE_PUMP_DOWN_STOP;
 	txData[u8Pointeur_buffer_tx].data[4] = 0;
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;

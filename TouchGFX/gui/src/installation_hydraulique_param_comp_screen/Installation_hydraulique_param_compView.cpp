@@ -109,11 +109,13 @@ Installation_hydraulique_param_compView::Installation_hydraulique_param_compView
 	if(container_oui_non_rafraichissement.isVisible() && toggleButton_oui_oui_non_rafraichissement.getState() && sConfig_Hydrau_temp.u8TypeRegul != REGUL_ESCLAVE && (sConfig_Hydrau_temp.u8TypeRegul != REGUL_DIRECTE || sConfig_Hydrau_temp.u8NumZone == 0 || sConfig_Hydrau_temp.sZones.bZone1 == 0 || sConfig_Hydrau_temp.sZones.bZone2 == 0 || sConfig_IHM.sParam_Zx[0].bModeFroid == 0))
 	{
 		container_temp_depart_eau_raf.setVisible(true);
+		container_temp_depart_eau_raf.invalidate();
 	}
 	//
 	if(sConfig_Hydrau_temp.u8TypeRegul < REGUL_EXTERNE && container_oui_non_rafraichissement.isVisible() && toggleButton_oui_oui_non_rafraichissement.getState() && sConfig_Hydrau_temp.sParamZx.type_zone.zone.TypeThermostat == TH_CONTACT)
 	{
 		container_change_over.setVisible(true);
+		container_change_over.invalidate();
 	}
 	if(sConfig_IHM.sParam_PAC.bThermostatContactModeFroid)
 	{
@@ -290,7 +292,7 @@ void Installation_hydraulique_param_compView::bouton_valider()
 		// Temp depart eau
 		sConfig_IHM.sParam_RegulExt.u4ConsigneEauFroid = u8TempDepartEau - 7;
 		//
-		presenter->c_install_param();
+		presenter->c_install_reg_ext();//c_install_param();
 		application().gotoInstallation_hydrauliqueScreenNoTransition();
 	}
 	else

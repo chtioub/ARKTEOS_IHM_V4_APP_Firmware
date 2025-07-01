@@ -41,6 +41,8 @@ public:
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt);
+
+    void c_prog_ecs(bool bEnvoi);
 private:
     AccueilPresenter();
 

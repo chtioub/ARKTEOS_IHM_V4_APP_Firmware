@@ -114,7 +114,13 @@ ProgrammationView::ProgrammationView()
 				switch((u8Prog[j][i] >> (k * 2)) & 0x3)
 				{
 					case 0:
-						image_prog[j][i * 4 + k].setBitmap(image_off);
+						if (eProg == PRO_PISCINE_CONFORT || eProg == PRO_CHAUD)
+						{
+							u8Prog[j][i] = u8Prog[j][i] | (0b01 << (k * 2));
+							image_prog[j][i * 4 + k].setBitmap(image1);
+						}
+						else
+							image_prog[j][i * 4 + k].setBitmap(image_off);
 						break;
 					case 1:
 						image_prog[j][i * 4 + k].setBitmap(image1);
@@ -351,7 +357,6 @@ void ProgrammationView::bouton_retour()
 
 void ProgrammationView::bouton_valider()
 {
-	//
 	switch(eProg)
 	{
 		case PRO_CHAUD:

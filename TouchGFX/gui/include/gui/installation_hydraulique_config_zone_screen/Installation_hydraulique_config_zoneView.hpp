@@ -29,8 +29,8 @@ public:
 
 protected:
     bool bConnexionDistance;
-    uint8_t u8Loideau_Plancher[6] = {29, 31, 34, 38, 42, 45};
-    uint8_t u8Loideau_Ventilo[6] = {40, 43, 45, 50, 55, 55};
+    uint8_t u8Loideau_Plancher[6] =  {29, 31, 34, 38, 42, 45};
+    uint8_t u8Loideau_Ventilo[6] =   {40, 43, 45, 50, 55, 55};
     uint8_t u8Loideau_Radiateur[6] = {45, 47, 48, 53, 55, 55};
     uint16_t u16ErreurAffichee;
     S_DATE sDate_old;

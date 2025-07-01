@@ -81,6 +81,11 @@ void MaintenanceView::bouton_redemarrer_ihm()
 	application().gotoPage_oui_nonScreenNoTransition();
 }
 
+void MaintenanceView::bouton_histo_erreurs()
+{
+	presenter->c_sav_histo_err();
+}
+
 void MaintenanceView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 {
 	// Recup config

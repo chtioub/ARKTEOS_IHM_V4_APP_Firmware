@@ -27,6 +27,8 @@ public:
 
     virtual ~RenommerPresenter() {}
 
+    void c_install_install_pac();
+
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);

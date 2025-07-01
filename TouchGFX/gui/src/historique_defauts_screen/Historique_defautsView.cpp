@@ -61,17 +61,39 @@ Historique_defautsView::Historique_defautsView()
 			textArea_def_num[i].setTypedText(touchgfx::TypedText(T_TEXT_TEMP_EXT_CENTRE_DEFAUT));
 			scrollableContainer.add(textArea_def_num[i]);
 			// Titre du défaut
-			textArea_def[i].setPosition(95, 24 + 74 * i, 600, 23);
+//			textArea_def[i].setPosition(95, 24 + 74 * i, 600, 23);
+//			textArea_def[i].setColor(BLANC);
+//			textArea_def[i].setLinespacing(0);
+//
+//
+//			if(u32Erreurs[sHisto_Erreur.Defaut[pointeur] & 0x3ff] != 0)
+//			{
+//				textArea_def[i].setTypedText(touchgfx::TypedText(u32Erreurs[sHisto_Erreur.Defaut[pointeur] & 0x3ff]));
+//			}
+//			else textArea_def[i].setTypedText(touchgfx::TypedText(T_TEXT_ERR_INCONNUE_GAUCHE_DEFAUT));
+//
+//			scrollableContainer.add(textArea_def[i]);
+
+
+			scrollableContainerLabelDef[i].setPosition(95,22 + 74 * i,600,27);
+
+			textArea_def[i].setPosition(0, 0, 800, 23);
 			textArea_def[i].setColor(BLANC);
 			textArea_def[i].setLinespacing(0);
+
 			if(u32Erreurs[sHisto_Erreur.Defaut[pointeur] & 0x3ff] != 0)
 			{
 				textArea_def[i].setTypedText(touchgfx::TypedText(u32Erreurs[sHisto_Erreur.Defaut[pointeur] & 0x3ff]));
 			}
 			else textArea_def[i].setTypedText(touchgfx::TypedText(T_TEXT_ERR_INCONNUE_GAUCHE_DEFAUT));
-			scrollableContainer.add(textArea_def[i]);
+
+			scrollableContainerLabelDef[i].add(textArea_def[i]);
+			scrollableContainerLabelDef[i].invalidate();
+
+			scrollableContainer.add(scrollableContainerLabelDef[i]);
 		}
 	}
+	scrollableContainer.invalidate();
 }
 
 void Historique_defautsView::setupScreen()

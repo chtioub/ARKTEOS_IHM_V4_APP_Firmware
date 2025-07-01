@@ -27,7 +27,7 @@ Eau_chaude_sanitaireView::Eau_chaude_sanitaireView()
 	barre_titre.titre(textAreaBuffer_Titre);
 	// Récupération des progs
 #ifndef SIMULATOR
-	presenter->c_prog_ecs(false);
+	//presenter->c_prog_ecs(false); //déplacé dans accueil SER
 //	presenter->c_prog_option(false);
 #endif
 }

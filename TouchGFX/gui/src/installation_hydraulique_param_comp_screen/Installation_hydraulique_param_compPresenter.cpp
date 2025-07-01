@@ -42,6 +42,11 @@ void Installation_hydraulique_param_compPresenter::c_install_param()
 	model->c_install_param();
 }
 
+void Installation_hydraulique_param_compPresenter::c_install_reg_ext()
+{
+	model->c_install_reg_ext();
+}
+
 void Installation_hydraulique_param_compPresenter::c_install_zx(uint8_t u8Zone)
 {
 	model->c_install_zx(u8Zone);

@@ -104,11 +104,24 @@ void ErreursView::changeErreur(uint16_t u16Erreur)
 			textArea_def[i].setPosition(95, 24 + 74 * i, 600, 23);
 			textArea_def[i].setColor(BLANC);
 			textArea_def[i].setLinespacing(0);
-			if(u32Erreurs[u16ListeErreurEncours[i] & 0x3ff] != 0)
+
+			//Inverterra
+			if(sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
 			{
-				textArea_def[i].setTypedText(touchgfx::TypedText(u32Erreurs[u16ListeErreurEncours[i] & 0x3ff]));
+				if(u32ErreursINV[u16ListeErreurEncours[i] & 0x3ff] != 0)
+				{
+					textArea_def[i].setTypedText(touchgfx::TypedText(u32ErreursINV[u16ListeErreurEncours[i] & 0x3ff]));
+				}
+				else textArea_def[i].setTypedText(touchgfx::TypedText(T_TEXT_ERR_INCONNUE_GAUCHE_DEFAUT));
 			}
-			else textArea_def[i].setTypedText(touchgfx::TypedText(T_TEXT_ERR_INCONNUE_GAUCHE_DEFAUT));
+			else
+			{
+				if(u32Erreurs[u16ListeErreurEncours[i] & 0x3ff] != 0)
+				{
+					textArea_def[i].setTypedText(touchgfx::TypedText(u32Erreurs[u16ListeErreurEncours[i] & 0x3ff]));
+				}
+				else textArea_def[i].setTypedText(touchgfx::TypedText(T_TEXT_ERR_INCONNUE_GAUCHE_DEFAUT));
+			}
 			scrollableContainer.add(textArea_def[i]);
 		}
 		else break;

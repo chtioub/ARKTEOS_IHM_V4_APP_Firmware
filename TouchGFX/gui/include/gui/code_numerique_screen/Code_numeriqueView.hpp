@@ -28,6 +28,8 @@ public:
     void bouton_8();
     void bouton_9();
 
+
+    virtual void changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo);
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
@@ -39,7 +41,7 @@ protected:
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_Valeur[25];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_Valeur[25], textAreaBuffer_Registre[6], textAreaBuffer_Val16b[10], textAreaBuffer_Val106b[10], textAreaBuffer_Val88b[10];
 };
 
 #endif // CODE_NUMERIQUEVIEW_HPP

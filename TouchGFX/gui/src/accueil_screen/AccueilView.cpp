@@ -34,7 +34,7 @@ AccueilView::AccueilView()//:
 	circle_point_page_accueil.invalidate();
 	textArea_accueil_page.invalidate();
 
-
+	memset(&sDate_old, 0, sizeof(sDate));
 	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM));
 	memset(&sStatut_Primaire_old, 0, sizeof(sStatut_Primaire));
 	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC));
@@ -95,7 +95,22 @@ AccueilView::AccueilView()//:
 	}
 	container.setXY(u8PositionX, u8PositionY);
 
-
+	if (oui_veille == 1)
+	{
+		toggleButton_oui_oui_non_veille.forceState(false);
+		toggleButton_oui_oui_non_veille.setTouchable(true);
+		toggleButton_non_oui_non_veille.forceState(true);
+		toggleButton_non_oui_non_veille.setTouchable(false);
+	}
+	else
+	{
+		toggleButton_oui_oui_non_veille.forceState(true);
+		toggleButton_oui_oui_non_veille.setTouchable(false);
+		toggleButton_non_oui_non_veille.forceState(false);
+		toggleButton_non_oui_non_veille.setTouchable(true);
+	}
+	toggleButton_oui_oui_non_veille.invalidate();
+	toggleButton_non_oui_non_veille.invalidate();
 
 	//
 #ifndef SIMULATOR
@@ -151,6 +166,29 @@ void AccueilView::Timer_Swipe_Detection()
 	textArea_config_page.invalidate();
 	circle_point_page_accueil.invalidate();
 	textArea_accueil_page.invalidate();
+}
+
+
+void AccueilView::bouton_oui_veille()
+{
+	toggleButton_oui_oui_non_veille.forceState(true);
+	toggleButton_oui_oui_non_veille.setTouchable(false);
+	toggleButton_non_oui_non_veille.forceState(false);
+	toggleButton_non_oui_non_veille.setTouchable(true);
+	oui_veille = 0;
+	toggleButton_oui_oui_non_veille.invalidate();
+	toggleButton_non_oui_non_veille.invalidate();
+}
+
+void AccueilView::bouton_non_veille()
+{
+	toggleButton_oui_oui_non_veille.forceState(false);
+	toggleButton_oui_oui_non_veille.setTouchable(true);
+	toggleButton_non_oui_non_veille.forceState(true);
+	toggleButton_non_oui_non_veille.setTouchable(false);
+	oui_veille = 1;
+	toggleButton_oui_oui_non_veille.invalidate();
+	toggleButton_non_oui_non_veille.invalidate();
 }
 
 
@@ -314,51 +352,53 @@ void AccueilView::Timer_500ms()
 
 void AccueilView::changeLogo(bool bVisible)
 {
-	//
-	Image_arkteos.setVisible(false);
-	Image_alppac.setVisible(false);
-//	Image_ces.setVisible(false);
-//	Image_cfd.setVisible(false);
-//	Image_enelia.setVisible(false);
-//	Image_etienne_energies.setVisible(false);
 //	Image_qualiclim.setVisible(false);
-	//
+//	Image_cfd.setVisible(false);
+//	Image_ces.setVisible(false);
+//	Image_enelia.setVisible(false);
+//	Image_bltec.setVisible(false);
+//	Image_variation.setVisible(false);
+//	Image_gourdon.setVisible(false);
+//	Image_etienne.setVisible(false);
+	Image_alppac.setVisible(false);
+	Image_arkteos.setVisible(false);
+
+	//Bltec x:225	y:24
+	//CES 	x:220	y:-6
+	//cfd	x:232	y:17
+	//enelia x:244	y:10
+	//etienne	x:261	y:24
+	//gourdon	x:225	y:11
+	//qualiclim	x:253	y:3
+	//variation x:225	y:19
+	//alppac	x:233	y:40
+
+
 	if(bVisible)
 	{
-		if(memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)
-		{
-			Image_alppac.setVisible(true);
-		}
-	//	else if(strcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366"))
-	//	{
-	//		Image_cfd.setVisible(true);
-	//	}
-	//	else
-	//	if(strcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718"))
-	//	{
-	//		Image_ces.setVisible(true);
-	//	}
-	//	else if(strcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664"))
-	//	{
-	//		Image_enelia.setVisible(true);
-	//	}
-	//	else if(strcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796"))
-	//	{
-	//		Image_etienne_energies.setVisible(true);
-	//	}
-	//	else if(memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", ))
-	//	{
-	//		Image_qualiclim.setVisible(true);
-	//	}
-		else Image_arkteos.setVisible(true);
+//		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) 		Image_qualiclim.setVisible(true);
+//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) 		Image_cfd.setVisible(true);
+//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
+//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
+//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
+//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
+//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
+//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
+//		else
+		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
+		else
+			Image_arkteos.setVisible(true);
 	}
-	Image_arkteos.invalidate();
-	Image_alppac.invalidate();
-//	Image_ces.invalidate();
-//	Image_cfd.invalidate();
-//	Image_enelia.invalidate();
-//	Image_etienne_energies.invalidate();
 //	Image_qualiclim.invalidate();
+//	Image_cfd.invalidate();
+//	Image_ces.invalidate();
+//	Image_enelia.invalidate();
+//	Image_bltec.invalidate();
+//	Image_variation.invalidate();
+//	Image_gourdon.invalidate();
+//	Image_etienne.invalidate();
+	Image_alppac.invalidate();
+	Image_arkteos.invalidate();
 }
 
 void AccueilView::bouton_marche_arret()
@@ -393,6 +433,11 @@ void AccueilView::bouton_zone_2()
 {
 	u8ZoneSelect = u8Zone2;
 	application().gotoZoneScreenNoTransition();
+}
+
+void AccueilView::bouton_ecs()
+{
+	presenter->c_prog_ecs(false);
 }
 
 void AccueilView::changeModePac(bool marche)
@@ -523,7 +568,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 		Image_dalle.invalidate();
 	}
 	// Icone état
-	if(sStatut_PAC_old.S_Mode != sStatut_PAC->S_Mode)
+	if(sStatut_PAC_old.S_Mode != sStatut_PAC->S_Mode || sStatut_PAC->S_Mode == S_ARRET)
 	{
 		// RAZ de l'affichage
 		Image_arret.setVisible(false);
@@ -535,46 +580,65 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 		scalableImage_maison_etat_pac.setVisible(false);
 		circle_demande_pac.setVisible(false);
 		circle_mode_pac.setVisible(false);
+
+		Image_arret.invalidate();
+		Image_attente.invalidate();
+		scalableImage_ext_chaud.invalidate();
+		scalableImage_ext_froid.invalidate();
+		scalableImage_ecs.invalidate();
+		scalableImage_piscine.invalidate();
+		scalableImage_ecs.invalidate();
+		scalableImage_maison_etat_pac.invalidate();
+		circle_demande_pac.invalidate();
+		circle_mode_pac.invalidate();
 		//
 		switch(sStatut_PAC->S_Mode & 0x07)
 		{
 			case S_ARRET:
-				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
+				if(((sStatut_PAC->S_Mode & S_ECS) == S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_ecs.setPosition(206, 415, 43, 45);
+				    scalableImage_ecs.setPosition(206, 280, 43, 45);
 					scalableImage_ecs.setVisible(true);
-				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+				    scalableImage_piscine.setPosition(249, 280, 54, 47);
 					scalableImage_piscine.setVisible(true);
 				}
-				else if(sStatut_PAC->S_Mode & S_ECS)
+				else if((sStatut_PAC->S_Mode & S_ECS) == S_ECS)
 				{
-				    scalableImage_ecs.setPosition(218, 415, 52, 60);
-				    scalableImage_piscine.setPosition(214, 417, 60, 55);
+				    scalableImage_ecs.setPosition(218, 265, 52, 60);
+//				    scalableImage_piscine.setPosition(214, 290, 60, 55);
 					scalableImage_ecs.setVisible(true);
 				}
-				else if(sStatut_PAC->S_Mode & S_PISCINE)
+				else if((sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_piscine.setPosition(214, 417, 60, 55);
+				    scalableImage_piscine.setPosition(214, 280, 54, 47); //OK
 					scalableImage_piscine.setVisible(true);
 				}
-				else Image_arret.setVisible(true);
+				else
+				{
+					Image_arret.setVisible(true);
+//					circle_demande_zone_1Painter.setColor(BLANC);
+//					circle_demande_zone_1.invalidate();
+				}
+				//Peut être rajouter ici le point intérieur des zones en blanc
+				//ou plutôt dans la tempo de refresh des 500 ms
 				break;
 			case S_ATTENTE:
-				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
+				if(((sStatut_PAC->S_Mode & S_ECS) == S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_ecs.setPosition(206, 415, 43, 45);
+				    scalableImage_ecs.setPosition(206, 280, 43, 45);
 					scalableImage_ecs.setVisible(true);
-				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+				    scalableImage_piscine.setPosition(249, 280, 54, 47);
 					scalableImage_piscine.setVisible(true);
 				}
-				else if(sStatut_PAC->S_Mode & S_ECS)
+				else if((sStatut_PAC->S_Mode & S_ECS) == S_ECS)
 				{
-				    scalableImage_ecs.setPosition(218, 415, 52, 60);
+					scalableImage_ecs.setPosition(218, 265, 52, 60);
 					scalableImage_ecs.setVisible(true);
 				}
-				else if(sStatut_PAC->S_Mode & S_PISCINE)
+				else if((sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_piscine.setPosition(214, 417, 60, 55);
+//				    scalableImage_piscine.setPosition(214, 290, 60, 55);
+				    scalableImage_piscine.setPosition(214, 280, 54, 47); //OK
 					scalableImage_piscine.setVisible(true);
 				}
 				else Image_attente.setVisible(true);
@@ -583,17 +647,19 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				scalableImage_maison_etat_pac.setVisible(true);
 		        circle_demande_pac.setVisible(true);
 		        circle_mode_pac.setVisible(true);
-				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
+				if(((sStatut_PAC->S_Mode & S_ECS) == S_ECS) && ((sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE))
 				{
-				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+					//Normalement cas qui n'existe pas
+					//scalableImage_ecs.setPosition(255, 265, 43, 45);
+				    scalableImage_ecs.setPosition(210, 280, 30, 29);
 					scalableImage_ecs.setVisible(true);
 					//
-				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+				    scalableImage_piscine.setPosition(249, 290, 37, 32);
 					scalableImage_piscine.setVisible(true);
 					//
-					scalableImage_maison_etat_pac.setPosition(228, 451, 40, 34);
+					scalableImage_maison_etat_pac.setPosition(228, 290, 40, 34);
 					//
-				    circle_demande_pac.setPosition(245, 469, 7, 7);
+				    circle_demande_pac.setPosition(245, 290, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -601,7 +667,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 				    //
-				    circle_mode_pac.setPosition(240, 464, 17, 17);
+				    circle_mode_pac.setPosition(240, 290, 17, 17);
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -610,14 +676,14 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_mode_pacPainter.setColor(ROUGE_CHAUD);
 				    circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
-				else if(sStatut_PAC->S_Mode & S_ECS)
+				else if((sStatut_PAC->S_Mode & S_ECS) == S_ECS)//OK
 				{
-				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+				    scalableImage_ecs.setPosition(255, 280, 43, 45);
 					scalableImage_ecs.setVisible(true);
 
-					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+					scalableImage_maison_etat_pac.setPosition(199, 281, 52, 44);
 
-				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setPosition(222, 306, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -625,7 +691,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 
-				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setPosition(217, 301, 17, 17);//285
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -633,14 +699,14 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_mode_pac.setCapPrecision(10);
 				    circle_mode_pacPainter.setColor(ROUGE_CHAUD);
 				}
-				else if(sStatut_PAC->S_Mode & S_PISCINE)
+				else if((sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)//OK
 				{
-				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+					scalableImage_piscine.setPosition(255, 280, 54, 47);
 					scalableImage_piscine.setVisible(true);
 
-					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+					scalableImage_maison_etat_pac.setPosition(199, 265, 52, 44);
 
-				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setPosition(222, 290, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -648,7 +714,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 
-				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setPosition(217, 285, 17, 17);
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -658,9 +724,11 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				}
 				else
 				{
-				    scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+				    //scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+					//scalableImage_maison_etat_pac.setPosition(228, 302, 68, 58);
+					scalableImage_maison_etat_pac.setPosition(207, 266, 67, 58);
 				    //
-				    circle_demande_pac.setPosition(235, 448, 14, 14);
+				    circle_demande_pac.setPosition(234, 294, 14, 14);
 					circle_demande_pac.setCenter(7, 7);
 					circle_demande_pac.setRadius(6.5f);
 					circle_demande_pac.setLineWidth(0);
@@ -668,7 +736,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 					circle_demande_pacPainter.setColor(ROUGE_CHAUD);
 					circle_demande_pac.setPainter(circle_demande_pacPainter);
 					//
-					circle_mode_pac.setPosition(230, 443, 24, 24);
+					circle_mode_pac.setPosition(229, 289, 24, 24);
 					circle_mode_pac.setCenter(12, 12);
 					circle_mode_pac.setRadius(11);
 					circle_mode_pac.setLineWidth(2);
@@ -682,17 +750,17 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				scalableImage_maison_etat_pac.setVisible(true);
 		        circle_demande_pac.setVisible(true);
 		        circle_mode_pac.setVisible(true);
-				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
+				if(((sStatut_PAC->S_Mode & S_ECS) == S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+				    scalableImage_ecs.setPosition(210, 290, 30, 29);
 					scalableImage_ecs.setVisible(true);
 					//
-				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+				    scalableImage_piscine.setPosition(249, 290, 37, 32);
 					scalableImage_piscine.setVisible(true);
 					//
-					scalableImage_maison_etat_pac.setPosition(228, 451, 40, 34);
+					scalableImage_maison_etat_pac.setPosition(228, 290, 40, 34);
 					//
-				    circle_demande_pac.setPosition(245, 469, 7, 7);
+				    circle_demande_pac.setPosition(245, 290, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -700,7 +768,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(BLEU_FROID);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 				    //
-				    circle_mode_pac.setPosition(240, 464, 17, 17);
+				    circle_mode_pac.setPosition(240, 290, 17, 17);
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -709,14 +777,14 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_mode_pacPainter.setColor(BLEU_FROID);
 				    circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
-				else if(sStatut_PAC->S_Mode & S_ECS)
+				else if((sStatut_PAC->S_Mode & S_ECS) == S_ECS)
 				{
-				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+				    scalableImage_ecs.setPosition(255, 265, 43, 45);
 					scalableImage_ecs.setVisible(true);
 					//
-					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+					scalableImage_maison_etat_pac.setPosition(199, 290, 52, 44);
 					//
-				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setPosition(222, 290, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -724,7 +792,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(BLEU_FROID);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 				    //
-				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setPosition(217, 290, 17, 17);
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -732,14 +800,14 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_mode_pac.setCapPrecision(10);
 				    circle_mode_pacPainter.setColor(BLEU_FROID);
 				}
-				else if(sStatut_PAC->S_Mode & S_PISCINE)
+				else if((sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+				    scalableImage_piscine.setPosition(249, 280, 54, 47);
 					scalableImage_piscine.setVisible(true);
 					//
-					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+					scalableImage_maison_etat_pac.setPosition(199, 290, 52, 44);
 					//
-				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setPosition(222, 290, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -747,7 +815,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(BLEU_FROID);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 				    //
-				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setPosition(217, 290, 17, 17);
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -757,9 +825,9 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				}
 				else
 				{
-				    scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+				    scalableImage_maison_etat_pac.setPosition(207, 266, 67, 58);
 				    //
-				    circle_demande_pac.setPosition(235, 448, 14, 14);
+				    circle_demande_pac.setPosition(234, 294, 14, 14);
 					circle_demande_pac.setCenter(7, 7);
 					circle_demande_pac.setRadius(6.5f);
 					circle_demande_pac.setLineWidth(0);
@@ -767,7 +835,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 					circle_demande_pacPainter.setColor(BLEU_FROID);
 					circle_demande_pac.setPainter(circle_demande_pacPainter);
 					//
-					circle_mode_pac.setPosition(230, 443, 24, 24);
+					circle_mode_pac.setPosition(229, 289, 24, 24);
 					circle_mode_pac.setCenter(12, 12);
 					circle_mode_pac.setRadius(11);
 					circle_mode_pac.setLineWidth(2);
@@ -782,9 +850,9 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 		        circle_demande_pac.setVisible(true);
 		        circle_mode_pac.setVisible(true);
 		        //
-			    scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+			    scalableImage_maison_etat_pac.setPosition(207, 266, 67, 58);
 			    //
-			    circle_demande_pac.setPosition(235, 448, 14, 14);
+			    circle_demande_pac.setPosition(234, 294, 14, 14);
 				circle_demande_pac.setCenter(7, 7);
 				circle_demande_pac.setRadius(6.5f);
 				circle_demande_pac.setLineWidth(0);
@@ -792,7 +860,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				circle_demande_pacPainter.setColor(ORANGE_HORS_GEL);
 				circle_demande_pac.setPainter(circle_demande_pacPainter);
 				//
-				circle_mode_pac.setPosition(230, 443, 24, 24);
+				circle_mode_pac.setPosition(229, 289, 24, 24);
 				circle_mode_pac.setCenter(12, 12);
 				circle_mode_pac.setRadius(11);
 				circle_mode_pac.setLineWidth(2);
@@ -803,77 +871,77 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				break;
 			case S_EXT_CHAUD:
 			    scalableImage_ext_chaud.setVisible(true);
-				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
+				if(((sStatut_PAC->S_Mode & S_ECS) == S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+				    scalableImage_ecs.setPosition(210, 270, 30, 29);//290->270
 					scalableImage_ecs.setVisible(true);
 					//
-				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+				    scalableImage_piscine.setPosition(249, 270, 37, 32);//290->270
 					scalableImage_piscine.setVisible(true);
 					//
-					scalableImage_ext_chaud.setPosition(229, 452, 33, 33);
+					scalableImage_ext_chaud.setPosition(229, 310, 33, 33);//290-> 310
 				}
-				else if(sStatut_PAC->S_Mode & S_ECS)
+				else if((sStatut_PAC->S_Mode & S_ECS) == S_ECS)
 				{
-				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+				    scalableImage_ecs.setPosition(255, 280, 43, 45);
 					scalableImage_ecs.setVisible(true);
-					scalableImage_ext_chaud.setPosition(205, 416, 46, 45);
+					scalableImage_ext_chaud.setPosition(205, 290, 46, 45);
 				}
-				else if(sStatut_PAC->S_Mode & S_PISCINE)
+				else if((sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+				    scalableImage_piscine.setPosition(255, 280, 54, 47);//249->255
 					scalableImage_piscine.setVisible(true);
-					scalableImage_ext_chaud.setPosition(205, 416, 46, 45);
+					scalableImage_ext_chaud.setPosition(205, 290, 46, 45);
 				}
 				else
 				{
-				    scalableImage_ext_chaud.setPosition(209, 416, 61, 60);
+				    scalableImage_ext_chaud.setPosition(209, 265, 61, 60);
 				}
 				break;
 			case S_EXT_FROID:
 			    scalableImage_ext_froid.setVisible(true);
-				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
+				if(((sStatut_PAC->S_Mode & S_ECS) == S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+				    scalableImage_ecs.setPosition(210, 270, 30, 29);
 					scalableImage_ecs.setVisible(true);
 					//
-				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+				    scalableImage_piscine.setPosition(249, 270, 37, 32);
 					scalableImage_piscine.setVisible(true);
 					//
-				    scalableImage_ext_froid.setPosition(229, 452, 33, 33);
+				    scalableImage_ext_froid.setPosition(229, 310, 33, 33);
 				}
-				else if(sStatut_PAC->S_Mode & S_ECS)
+				else if((sStatut_PAC->S_Mode & S_ECS)== S_ECS)
 				{
-				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+				    scalableImage_ecs.setPosition(255, 290, 43, 45);
 					scalableImage_ecs.setVisible(true);
-				    scalableImage_ext_froid.setPosition(205, 416, 46, 45);
+				    scalableImage_ext_froid.setPosition(205, 290, 46, 45);
 				}
-				else if(sStatut_PAC->S_Mode & S_PISCINE)
+				else if((sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+				    scalableImage_piscine.setPosition(249, 280, 54, 47);
 					scalableImage_piscine.setVisible(true);
-				    scalableImage_ext_froid.setPosition(205, 413, 46, 45);
+				    scalableImage_ext_froid.setPosition(205, 290, 46, 45);
 				}
 				else
 				{
-				    scalableImage_ext_froid.setPosition(216, 413, 53, 61);
+				    scalableImage_ext_froid.setPosition(216, 265, 53, 61);
 				}
 				break;
 			case S_CHAUD_FROID:
 				scalableImage_maison_etat_pac.setVisible(true);
 		        circle_demande_pac.setVisible(true);
 		        circle_mode_pac.setVisible(true);
-				if((sStatut_PAC->S_Mode & S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
+				if(((sStatut_PAC->S_Mode & S_ECS) == S_ECS) && (sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_ecs.setPosition(210, 418, 30, 29);
+				    scalableImage_ecs.setPosition(210, 280, 30, 29);
 					scalableImage_ecs.setVisible(true);
 					//
-				    scalableImage_piscine.setPosition(249, 416, 37, 32);
+				    scalableImage_piscine.setPosition(249, 280, 37, 32);
 					scalableImage_piscine.setVisible(true);
 					//
-					scalableImage_maison_etat_pac.setPosition(228, 451, 40, 34);
+					scalableImage_maison_etat_pac.setPosition(228, 290, 40, 34);
 					//
-				    circle_demande_pac.setPosition(245, 469, 7, 7);
+				    circle_demande_pac.setPosition(245, 290, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -881,7 +949,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 				    //
-				    circle_mode_pac.setPosition(240, 464, 17, 17);
+				    circle_mode_pac.setPosition(240, 290, 17, 17);
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -890,14 +958,14 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_mode_pacPainter.setColor(BLEU_FROID);
 				    circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
-				else if(sStatut_PAC->S_Mode & S_ECS)
+				else if((sStatut_PAC->S_Mode & S_ECS) == S_ECS)
 				{
-				    scalableImage_ecs.setPosition(255, 415, 43, 45);
+				    scalableImage_ecs.setPosition(255, 280, 43, 45);
 					scalableImage_ecs.setVisible(true);
 
-					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+					scalableImage_maison_etat_pac.setPosition(199, 290, 52, 44);
 
-				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setPosition(222, 290, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -905,7 +973,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 
-				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setPosition(217, 290, 17, 17);
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -914,14 +982,14 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_mode_pacPainter.setColor(BLEU_FROID);
 				    circle_mode_pac.setPainter(circle_mode_pacPainter);
 				}
-				else if(sStatut_PAC->S_Mode & S_PISCINE)
+				else if((sStatut_PAC->S_Mode & S_PISCINE) == S_PISCINE)
 				{
-				    scalableImage_piscine.setPosition(249, 415, 54, 47);
+				    scalableImage_piscine.setPosition(249, 280, 54, 47);
 					scalableImage_piscine.setVisible(true);
 
-					scalableImage_maison_etat_pac.setPosition(199, 417, 52, 44);
+					scalableImage_maison_etat_pac.setPosition(199, 290, 52, 44);
 
-				    circle_demande_pac.setPosition(222, 445, 7, 7);
+				    circle_demande_pac.setPosition(222, 290, 7, 7);
 				    circle_demande_pac.setCenter(3, 3);
 				    circle_demande_pac.setRadius(3);
 				    circle_demande_pac.setLineWidth(0);
@@ -929,7 +997,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				    circle_demande_pacPainter.setColor(ROUGE_CHAUD);
 				    circle_demande_pac.setPainter(circle_demande_pacPainter);
 
-				    circle_mode_pac.setPosition(217, 440, 17, 17);
+				    circle_mode_pac.setPosition(217, 290, 17, 17);
 				    circle_mode_pac.setCenter(8.0f, 8.1f);
 				    circle_mode_pac.setRadius(7);
 				    circle_mode_pac.setLineWidth(2);
@@ -939,9 +1007,9 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 				}
 				else
 				{
-				    scalableImage_maison_etat_pac.setPosition(208, 417, 68, 58);
+				    scalableImage_maison_etat_pac.setPosition(208, 290, 68, 58);
 				    //
-				    circle_demande_pac.setPosition(235, 448, 14, 14);
+				    circle_demande_pac.setPosition(235, 290, 14, 14);
 					circle_demande_pac.setCenter(7, 7);
 					circle_demande_pac.setRadius(6.5f);
 					circle_demande_pac.setLineWidth(0);
@@ -949,7 +1017,7 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 					circle_demande_pacPainter.setColor(ROUGE_CHAUD);
 					circle_demande_pac.setPainter(circle_demande_pacPainter);
 					//
-					circle_mode_pac.setPosition(230, 443, 24, 24);
+					circle_mode_pac.setPosition(230, 290, 24, 24);
 					circle_mode_pac.setCenter(12, 12);
 					circle_mode_pac.setRadius(11);
 					circle_mode_pac.setLineWidth(2);
@@ -966,9 +1034,11 @@ void AccueilView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 		scalableImage_ext_froid.invalidate();
 		scalableImage_ecs.invalidate();
 		scalableImage_piscine.invalidate();
+		scalableImage_ecs.invalidate();
 		scalableImage_maison_etat_pac.invalidate();
 		circle_demande_pac.invalidate();
 		circle_mode_pac.invalidate();
+		//container_etat.invalidate();
 	}
 	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
 }
@@ -1003,6 +1073,66 @@ void AccueilView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 	    textArea_temp_ext.setWildcard(textAreaBuffer_Temp_Ext);
 	    textArea_temp_ext.invalidate();
 	}
+	//Logo Température extérieure
+	bMarche = false;
+	bDegivrage = false;
+
+	if ((sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX || sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER) && sConfig_IHM.sParam_PAC.bGestionCascade !=0)
+	{
+		if (sCyclRegFrigo->commun.sStatut.bCycleDegivrage != 0)
+		{
+			bDegivrage = true;
+		}
+
+		if (sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX && sCyclRegFrigo->pac.phoenix.sRetourRukingRe.u16CompSpeedDemande != 0)
+		{
+			bMarche = true;
+		}
+		else if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER && sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.u16CompSpeedDemande != 0)
+		{
+			bMarche = true;
+		}
+	}
+	else
+	{
+		if (sCyclRegFrigo->commun.sStatut.bCycleDegivrage != 0)
+		{
+			bDegivrage = true;
+		}
+		else if ((sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV && (sCyclRegFrigo->pac.geotwin.OutTor.REL_Compresseur1 != 0 || sCyclRegFrigo->pac.geotwin.OutTor.REL_Compresseur2 != 0))
+				|| ((sConfig_IHM.sModele_PAC.u8ModelePAC == BAGUIO_ZURAN_IV || sConfig_IHM.sModele_PAC.u8ModelePAC == TIMAX_III) && sCyclRegFrigo->pac.zuba.sStatutMitsu.Freq_Cible != 0)
+				||  (sConfig_IHM.sModele_PAC.u8ModelePAC == AJPAC_III && sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.Palier_Comp410 != 0)
+				||  (sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX && sCyclRegFrigo->pac.phoenix.sRetourRukingRe.sDriveStatusInformation.u16CompressorRunningSpeed != 0)
+				||  (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER && sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorRunningSpeed != 0))
+		{
+			bMarche = true;
+		}
+	}
+
+	if (bMarche)
+	{
+		circle_sonde_ext_1Painter.setColor(VERT);
+		circle_sonde_ext_2Painter.setColor(VERT);
+	}
+	else
+	{
+		circle_sonde_ext_1Painter.setColor(BLANC);
+		circle_sonde_ext_2Painter.setColor(BLANC);
+	}
+	circle_sonde_ext_1.setPainter(circle_sonde_ext_1Painter);
+	circle_sonde_ext_2.setPainter(circle_sonde_ext_2Painter);
+	circle_sonde_ext_1.invalidate();
+	circle_sonde_ext_2.invalidate();
+
+	if (bDegivrage)
+	{
+		Image_degivrage.setVisible(true);
+	}
+	Image_degivrage.setVisible(false);
+	Image_degivrage.invalidate();
+
+
+
 	// Pression capteur
 	if(sConfig_IHM_old.sModele_PAC.u8ModelePAC == GEOTWIN_IV && sCyclRegFrigo_old.pac.geotwin.InPress.i16Pression_EauCaptage != sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage)
 	{
@@ -1034,7 +1164,7 @@ void AccueilView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx)
 		if(u8Zone == u8Zone1)
 		{
 			// Mode et demande de la zone
-			if((sStatut_Zx_old[u8Zone].Mode != sStatut_Zx->Mode) || (sStatut_Zx_old[u8Zone].Exception != sStatut_Zx->Exception))
+			if((sStatut_Zx_old[u8Zone].Mode != sStatut_Zx->Mode) || (sStatut_Zx_old[u8Zone].Exception != sStatut_Zx->Exception) || (sStatut_Zx_old[u8Zone].i16ConsigneTeau != sStatut_Zx->i16ConsigneTeau))
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -1068,17 +1198,45 @@ void AccueilView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx)
 				circle_demande_zone_1.invalidate();
 			}
 			//
-			if(sStatut_Zx_old[u8Zone].i16Tint != sStatut_Zx->i16Tint)
+			if (sConfig_IHM.sParam_Zx[u8Zone].type_zone.zone.TypeThermostat != TH_CONTACT)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
-				textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
+				textArea_on_off_temp_zone_1.setVisible(false);
+				textArea_on_off_temp_zone_1.invalidate();
+
+				if(sStatut_Zx_old[u8Zone].i16Tint != sStatut_Zx->i16Tint)
+				{
+					Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
+					textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
+					textArea_temp_zone_1.setVisible(true);
+					textArea_temp_zone_1.invalidate();
+				}
+			}
+			else
+			{
+				textArea_temp_zone_1.setVisible(false);
 				textArea_temp_zone_1.invalidate();
+
+				if (sStatut_Zx->Mode == ARRET)
+				{
+					Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 7, touchgfx::TypedText(T_TEXT_ARRET_CENTRE_DEFAUT).getText());
+				}
+				else if (sStatut_Zx->bTorThermostat == 1)
+				{
+					Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 7, touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
+				}
+				else
+				{
+					Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 7, touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT).getText());
+				}
+				textArea_on_off_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
+				textArea_on_off_temp_zone_1.setVisible(true);
+				textArea_on_off_temp_zone_1.invalidate();
 			}
 		}
 		else if(u8Zone == u8Zone2)
 		{
 			// Mode et demande de la zone
-			if((sStatut_Zx_old[u8Zone].Mode != sStatut_Zx->Mode) || (sStatut_Zx_old[u8Zone].Exception != sStatut_Zx->Exception))
+			if((sStatut_Zx_old[u8Zone].Mode != sStatut_Zx->Mode) || (sStatut_Zx_old[u8Zone].Exception != sStatut_Zx->Exception) || (sStatut_Zx_old[u8Zone].i16ConsigneTeau != sStatut_Zx->i16ConsigneTeau))
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -1112,11 +1270,38 @@ void AccueilView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx)
 				circle_demande_zone_2.invalidate();
 			}
 			//
-			if(sStatut_Zx_old[u8Zone].i16Tint != sStatut_Zx->i16Tint)
+			if (sConfig_IHM.sParam_Zx[u8Zone].type_zone.zone.TypeThermostat != TH_CONTACT)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_2, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
-				textArea_temp_zone_2.setWildcard(textAreaBuffer_Temp_Zone_2);
+				textArea_on_off_temp_zone_2.setVisible(false);
+				textArea_on_off_temp_zone_2.invalidate();
+
+				if(sStatut_Zx_old[u8Zone].i16Tint != sStatut_Zx->i16Tint)
+				{
+					Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_2, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
+					textArea_temp_zone_2.setWildcard(textAreaBuffer_Temp_Zone_2);
+					textArea_temp_zone_2.invalidate();
+				}
+			}
+			else
+			{
+				textArea_temp_zone_2.setVisible(false);
 				textArea_temp_zone_2.invalidate();
+
+				if (sStatut_Zx->Mode == ARRET)
+				{
+					Unicode::snprintf(textAreaBuffer_Temp_Zone_2, 7, touchgfx::TypedText(T_TEXT_ARRET_CENTRE_DEFAUT).getText());
+				}
+				else if (sStatut_Zx->bTorThermostat == 1)
+				{
+					Unicode::snprintf(textAreaBuffer_Temp_Zone_2, 7, touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
+				}
+				else
+				{
+					Unicode::snprintf(textAreaBuffer_Temp_Zone_2, 7, touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT).getText());
+				}
+				textArea_on_off_temp_zone_2.setWildcard(textAreaBuffer_Temp_Zone_2);
+				textArea_on_off_temp_zone_2.setVisible(true);
+				textArea_on_off_temp_zone_2.invalidate();
 			}
 		}
 	}
@@ -1129,7 +1314,7 @@ void AccueilView::changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt)
 	if(sConfig_IHM_old.sParam_PAC.TypeRegul >= REGUL_EXTERNE)
 	{
 		// Mode et demande de la zone
-		if((sStatut_RegulExt_old.Mode != sStatut_RegulExt->Mode) || (sStatut_RegulExt_old.Exception != sStatut_RegulExt->Exception))
+		if((sStatut_RegulExt_old.Mode != sStatut_RegulExt->Mode) || (sStatut_RegulExt_old.Exception != sStatut_RegulExt->Exception) || (sStatut_RegulExt_old.i16ConsigneTeau != sStatut_RegulExt->i16ConsigneTeau))
 		{
 			switch(sStatut_RegulExt->Mode)
 			{
@@ -1169,6 +1354,23 @@ void AccueilView::changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt)
 
 void AccueilView::changeStatutECS(S_STATUT_ECS *sStatut_ECS)
 {
+	if(sConfig_IHM.sOption_PAC.ECS != 0)
+	{
+		if (sStatut_ECS->i16TeauMilieu < sConfig_IHM.sMode_ECS.i16Consigne_ECS_Relance)
+		{
+			Image_sondes_ecs.setVisible(false);
+			Image_sondes_ecs_relance.setVisible(true);
+		}
+		else
+		{
+			Image_sondes_ecs_relance.setVisible(false);
+			Image_sondes_ecs.setVisible(true);
+		}
+		//container_statut_ecs.invalidate();
+		Image_sondes_ecs_relance.invalidate();
+		Image_sondes_ecs.invalidate();
+	}
+
 	if(sStatut_ECS_old.bOutTor_Spare1 != sStatut_ECS->bOutTor_Spare1)
 	{
 		if(sStatut_ECS->bOutTor_Spare1)
@@ -1191,6 +1393,17 @@ void AccueilView::changeStatutECS(S_STATUT_ECS *sStatut_ECS)
 		Unicode::snprintfFloat(textAreaBuffer_ECS_Bas, 7, "%.1f", ((float) sStatut_ECS->i16TeauBas) / 10);
 		textArea_ecs_bas.setWildcard(textAreaBuffer_ECS_Bas);
 		textArea_ecs_bas.invalidate();
+	}
+
+	if (sStatut_ECS_old.bOutTorAppoint_ECS != sStatut_ECS->bOutTorAppoint_ECS)
+	{
+		if (sStatut_ECS->bOutTorAppoint_ECS)
+		{
+			circle_appoint_ecs.setVisible(true);
+		}
+		else circle_appoint_ecs.setVisible(false);
+		circle_appoint_ecs.invalidate();
+		container_statut_ecs.invalidate();
 	}
 	memcpy(&sStatut_ECS_old, sStatut_ECS, sizeof(S_STATUT_ECS));
 }
@@ -1515,13 +1728,38 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	{
 		if(sConfig_IHM->sOption_PAC.ECS != 0)
 		{
+			if (sStatut_ECS.i16TeauMilieu <  sConfig_IHM->sMode_ECS.i16Consigne_ECS_Relance)
+			{
+				Image_sondes_ecs.setVisible(false);
+				Image_sondes_ecs_relance.setVisible(true);
+			}
+			else
+			{
+				Image_sondes_ecs_relance.setVisible(false);
+				Image_sondes_ecs.setVisible(true);
+			}
+
+			if(sStatut_ECS.bOutTor_Spare1)
+			{
+				Image_bouclage_ecs.setVisible(true);
+			}
+			else Image_bouclage_ecs.setVisible(false);
+
+
+			if (sStatut_ECS.bOutTorAppoint_ECS)
+			{
+				circle_appoint_ecs.setVisible(true);
+			}
+			else circle_appoint_ecs.setVisible(false);
+			circle_appoint_ecs.invalidate();
+
 			container_ecs.setVisible(true);
 			container_statut_ecs.setVisible(true);
 		}
 		else
 		{
-			container_ecs.setVisible(false);
 			container_statut_ecs.setVisible(false);
+			container_ecs.setVisible(false);
 		}
 		container_ecs.invalidate();
 		container_statut_ecs.invalidate();
@@ -1547,12 +1785,13 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		container_marche.invalidate();
 	}
 	// Logo pression eau
-	if(sConfig_IHM_old.sModele_PAC.u8ModelePAC != sConfig_IHM->sModele_PAC.u8ModelePAC)
+	if(sConfig_IHM_old.sModele_PAC.u8ModelePAC != sConfig_IHM->sModele_PAC.u8ModelePAC ||
+			sConfig_IHM_old.sConfig_PAC.ConfigGeo.eTypeDeCaptage  != sConfig_IHM->sConfig_PAC.ConfigGeo.eTypeDeCaptage)
 	{
 		switch(sConfig_IHM->sModele_PAC.u8ModelePAC)
 		{
 			case GEOTWIN_IV:
-			case INVERTERRA:
+			case GEOINVERTER:
 				if (sConfig_IHM->sConfig_PAC.ConfigGeo.eTypeDeCaptage == E_TYPE_CAPTAGE_NAPPE_DIRECTE)
 				{
 					container_pression_geo.setVisible(false);
@@ -1583,25 +1822,31 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	S_ZONE sZone_tmp;
 	memset(&sZone_tmp, 0, sizeof(S_ZONE));
 
-	if(sConfig_IHM->sOption_PAC.TypeAppoint != sConfig_IHM_old.sOption_PAC.TypeAppoint || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sMode_ECS.bUserAppointECS != sConfig_IHM_old.sMode_ECS.bUserAppointECS))
-	{
+//	if(sConfig_IHM->sOption_PAC.TypeAppoint != sConfig_IHM_old.sOption_PAC.TypeAppoint || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sMode_ECS.bUserAppointECS != sConfig_IHM_old.sMode_ECS.bUserAppointECS))
+//	{
 		if(sConfig_IHM->sOption_PAC.TypeAppoint != NO_APPOINT || (sConfig_IHM->sOption_PAC.ECS == 1 && sConfig_IHM->sMode_ECS.bUserAppointECS == 1))
 		{
 			container_secours.setVisible(true);
 		}
 		else container_secours.setVisible(false);
 		container_secours.invalidate();
-	}
+//	}
 
-	if((sConfig_IHM->sMode_PAC.bSecours != sConfig_IHM_old.sMode_PAC.bSecours) || (sConfig_IHM->sMode_ECS.bUserECSSecours != sConfig_IHM_old.sMode_ECS.bUserECSSecours))
-	{
+//	if((sConfig_IHM->sMode_PAC.bSecours != sConfig_IHM_old.sMode_PAC.bSecours) || (sConfig_IHM->sMode_ECS.bUserECSSecours != sConfig_IHM_old.sMode_ECS.bUserECSSecours))
+//	{
 		if(sConfig_IHM->sMode_PAC.bSecours == 1 || sConfig_IHM->sMode_ECS.bUserECSSecours == 1)
 		{
+			buttonWithIcon_secours_off.setVisible(false);
 			buttonWithIcon_secours_on.setVisible(true);
 		}
-		else buttonWithIcon_secours_on.setVisible(false);
+		else
+		{
+			buttonWithIcon_secours_on.setVisible(false);
+			buttonWithIcon_secours_off.setVisible(true);
+		}
 		buttonWithIcon_secours_on.invalidate();
-	}
+		buttonWithIcon_secours_off.invalidate();
+//	}
 
 	if((sConfig_IHM->sParam_PAC.TypeRegul != sConfig_IHM_old.sParam_PAC.TypeRegul) || memcmp(&sConfig_IHM->sOption_PAC.sZone, &sConfig_IHM_old.sOption_PAC.sZone, sizeof(S_ZONE)) || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sOption_PAC.Piscine != sConfig_IHM_old.sOption_PAC.Piscine))
 	{
@@ -1630,90 +1875,96 @@ void AccueilView::changeDate(S_DATE *sDate)
 {
 	uint32_t u32Mois, u32Jour;
 
-	if(sDate_old.Date != sDate->Date)
-	{
-		// Affichage de la date
-	    Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
-	    barre_titre.date(textAreaBuffer_Date);
+
+//	if(sDate_old.Date != sDate->Date || sDate_old.Month != sDate->Month || sDate_old.Year != sDate->Year  || sDate_old.WeekDay != sDate->WeekDay
+//			|| sDate_old.Hours != sDate->Hours || sDate_old.Minutes != sDate->Minutes)
+//	{
 		// Affichage de l'heure
-	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
-	    barre_titre.heure(textAreaBuffer_Heure);
-		// Affichage du titre
-	    switch(sDate->WeekDay)
+		if(sDate_old.Hours != sDate->Hours || sDate_old.Minutes != sDate->Minutes)
 		{
-			default:
-				u32Jour = T_TEXT_LUNDI_CENTRE_LARGE;
-				break;
-			case 1:
-				u32Jour = T_TEXT_MARDI_CENTRE_LARGE;
-				break;
-			case 2:
-				u32Jour = T_TEXT_MERCREDI_CENTRE_LARGE;
-				break;
-			case 3:
-				u32Jour = T_TEXT_JEUDI_CENTRE_LARGE;
-				break;
-			case 4:
-				u32Jour = T_TEXT_VENDREDI_CENTRE_LARGE;
-				break;
-			case 5:
-				u32Jour = T_TEXT_SAMEDI_CENTRE_LARGE;
-				break;
-			case 6:
-				u32Jour = T_TEXT_DIMANCHE_CENTRE_LARGE;
-				break;
+				Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+				barre_titre.heure(textAreaBuffer_Heure);
 		}
-	    switch(sDate->Month)
+
+		if(sDate_old.Date != sDate->Date || sDate_old.Month != sDate->Month || sDate_old.Year != sDate->Year  || sDate_old.WeekDay != sDate->WeekDay)
 		{
-			default:
-				u32Mois = T_TEXT_MOIS_JANVIER_CENTRE_LARGE;
-				break;
-			case 2:
-				u32Mois = T_TEXT_MOIS_FEVRIER_CENTRE_LARGE;
-				break;
-			case 3:
-				u32Mois = T_TEXT_MOIS_MARS_CENTRE_LARGE;
-				break;
-			case 4:
-				u32Mois = T_TEXT_MOIS_AVRIL_CENTRE_LARGE;
-				break;
-			case 5:
-				u32Mois = T_TEXT_MOIS_MAI_CENTRE_LARGE;
-				break;
-			case 6:
-				u32Mois = T_TEXT_MOIS_JUIN_CENTRE_LARGE;
-				break;
-			case 7:
-				u32Mois = T_TEXT_MOIS_JUILLET_CENTRE_LARGE;
-				break;
-			case 8:
-				u32Mois = T_TEXT_MOIS_AOUT_CENTRE_LARGE;
-				break;
-			case 9:
-				u32Mois = T_TEXT_MOIS_SEPTEMBRE_CENTRE_LARGE;
-				break;
-			case 10:
-				u32Mois = T_TEXT_MOIS_OCTOBRE_CENTRE_LARGE;
-				break;
-			case 11:
-				u32Mois = T_TEXT_MOIS_NOVEMBRE_CENTRE_LARGE;
-				break;
-			case 12:
-				u32Mois = T_TEXT_MOIS_DECEMBRE_CENTRE_LARGE;
-				break;
+			// Affichage de la date
+			Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
+			barre_titre.date(textAreaBuffer_Date);
+
+			// Affichage du titre
+			switch(sDate->WeekDay)
+			{
+				default:
+					u32Jour = T_TEXT_LUNDI_CENTRE_LARGE;
+					break;
+				case 1:
+					u32Jour = T_TEXT_MARDI_CENTRE_LARGE;
+					break;
+				case 2:
+					u32Jour = T_TEXT_MERCREDI_CENTRE_LARGE;
+					break;
+				case 3:
+					u32Jour = T_TEXT_JEUDI_CENTRE_LARGE;
+					break;
+				case 4:
+					u32Jour = T_TEXT_VENDREDI_CENTRE_LARGE;
+					break;
+				case 5:
+					u32Jour = T_TEXT_SAMEDI_CENTRE_LARGE;
+					break;
+				case 6:
+					u32Jour = T_TEXT_DIMANCHE_CENTRE_LARGE;
+					break;
+			}
+			switch(sDate->Month)
+			{
+				default:
+					u32Mois = T_TEXT_MOIS_JANVIER_CENTRE_LARGE;
+					break;
+				case 2:
+					u32Mois = T_TEXT_MOIS_FEVRIER_CENTRE_LARGE;
+					break;
+				case 3:
+					u32Mois = T_TEXT_MOIS_MARS_CENTRE_LARGE;
+					break;
+				case 4:
+					u32Mois = T_TEXT_MOIS_AVRIL_CENTRE_LARGE;
+					break;
+				case 5:
+					u32Mois = T_TEXT_MOIS_MAI_CENTRE_LARGE;
+					break;
+				case 6:
+					u32Mois = T_TEXT_MOIS_JUIN_CENTRE_LARGE;
+					break;
+				case 7:
+					u32Mois = T_TEXT_MOIS_JUILLET_CENTRE_LARGE;
+					break;
+				case 8:
+					u32Mois = T_TEXT_MOIS_AOUT_CENTRE_LARGE;
+					break;
+				case 9:
+					u32Mois = T_TEXT_MOIS_SEPTEMBRE_CENTRE_LARGE;
+					break;
+				case 10:
+					u32Mois = T_TEXT_MOIS_OCTOBRE_CENTRE_LARGE;
+					break;
+				case 11:
+					u32Mois = T_TEXT_MOIS_NOVEMBRE_CENTRE_LARGE;
+					break;
+				case 12:
+					u32Mois = T_TEXT_MOIS_DECEMBRE_CENTRE_LARGE;
+					break;
+			}
+			Unicode::snprintf(textAreaBuffer_Titre_Date, 30, "%s %d %s 20%02d", touchgfx::TypedText(u32Jour).getText(), sDate->Date, touchgfx::TypedText(u32Mois).getText(), sDate->Year);
+			if (swipeContainerMain.getSelectedPage() == 0)
+			{
+				barre_titre.titre(textAreaBuffer_Titre_Date);
+				swipeContainerMain.invalidate();
+			}
 		}
-	    Unicode::snprintf(textAreaBuffer_Titre_Date, 30, "%s %d %s 20%02d", touchgfx::TypedText(u32Jour).getText(), sDate->Date, touchgfx::TypedText(u32Mois).getText(), sDate->Year);
-	    if (swipeContainerMain.getSelectedPage() == 0)
-	    {
-	    	barre_titre.titre(textAreaBuffer_Titre_Date);
-	    }
-	}
-	else if(sDate_old.Minutes != sDate->Minutes)
-	{
-		// Affichage de l'heure
-	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
-	    barre_titre.heure(textAreaBuffer_Heure);
-	}
-    barre_titre.invalidate();
-	memcpy(&sDate_old, sDate, sizeof(S_DATE));
+
+		barre_titre.invalidate();
+		memcpy(&sDate_old, sDate, sizeof(S_DATE));
+//	}
 }

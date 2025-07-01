@@ -16,6 +16,9 @@ InstallationView::InstallationView()
 
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_INSTALLATION_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
+
+	//Pour la page appoint
+	u8AppointPageZone = 0;
 }
 
 void InstallationView::setupScreen()

@@ -70,10 +70,11 @@ void Installation_hydraulique_config_zoneView::tearDownScreen()
 
 void Installation_hydraulique_config_zoneView::bouton_droite_type_emetteur()
 {
-	if(++sConfig_Hydrau_temp.sParamZx.TypeEmmetteur > RADIATEUR)
+	if(sConfig_Hydrau_temp.sParamZx.TypeEmmetteur == RADIATEUR)
 	{
 		sConfig_Hydrau_temp.sParamZx.TypeEmmetteur = PLANCHER;
 	}
+	else sConfig_Hydrau_temp.sParamZx.TypeEmmetteur++;
 	// Loi d'eau par défaut
 	switch(sConfig_Hydrau_temp.sParamZx.TypeEmmetteur)
 	{

@@ -64,6 +64,7 @@
 #define ROUGE_CHAUD		0xD81F2A
 #define BLEU_FROID		0x00628C
 #define ORANGE_HORS_GEL 0xE27E00
+#define VERT 			0xB3C10E
 
 /*****************************************************************************/
 //  DEFINITION DES ENUMS
@@ -131,7 +132,7 @@ typedef enum {P0=0,P33,P66,P100} E_PW_RELEC ; /*( P0, P33, P66, P100)*/
 typedef enum {T_CHAUD, T_FROID, T_PISCINE, T_ECS} E_MODE_TEST_PAC;
 
 // Parameters de configuration de la PAC
-typedef enum {PRIORITE_PISCINE=0, PRIORITE_CHAUD, PRIORITE_EGAL} E_PRIORITE_PISC ;
+typedef enum {PRIORITE_PISCINE=0, PRIORITE_CHAUD, PRIORITE_EGAL, PRIORITE_SIMULTANEE} E_PRIORITE_PISC ;
 typedef enum { GC_AUTO, GC_V40, GC_V50, GC_V60, GC_V70, GC_V80, GC_V90, GC_V100, 
                GC_Delta_T_5, GC_Delta_T_7, GC_Delta_T_10, GC_Delta_T_15 }   E_GESTION_CIRCULATEUR ;
 typedef enum {HUBA_DN_10, HUBA_DN_15, HUBA_DN_20, HUBA_DN_25, HUBA_DN_32, SIKA_DN_32, SIKA_DN_40, SIKA_VTR1050} E_TYPE_DEBITMETRE;
@@ -1689,6 +1690,29 @@ typedef struct
 	uint32_t             u32Debug8;
 } S_STATUT_DEBUG;
 
+
+typedef struct
+{
+	uint8_t u8Adresse[12];
+	uint32_t u32EnergieActiveSoutireeTotal;
+	uint32_t u32EnergieActiveInjecteeTotal;
+	uint32_t u32Statuts;
+	uint8_t u8Version;
+	uint8_t u8PuissanceReference;
+	uint8_t u8CourantPhase1;
+	uint8_t u8CourantPhase2;
+	uint8_t u8CourantPhase3;
+	uint8_t u8TensionPhase1;
+	uint8_t u8TensionPhase2;
+	uint8_t u8TensionPhase3;
+	uint16_t u16PuissanceAppSoutiree;
+	uint16_t u16PuissanceAppSoutireePhase1;
+	uint16_t u16PuissanceAppSoutireePhase2;
+	uint16_t u16PuissanceAppSoutireePhase3;
+	uint16_t u16PuissanceAppInjectee;
+	uint8_t u8Spare[18];
+} S_STATUT_LINKY;
+
 // Les Statuts pour faire du Debug de fonctionnement
 typedef struct
 {
@@ -1720,7 +1744,7 @@ typedef struct
 typedef struct
 {
 	unsigned char Niveau_pile;
-	char          Niveau_Reception;
+	signed char   Niveau_Reception;
 
 	unsigned char Tamb_Zx_Modif:1;
 	unsigned char Consigne_Zx_Modif:1;
@@ -1870,7 +1894,8 @@ typedef struct
 {
     uint16_t      Defaut[50];
     S_DATE  Date[50];
-    uint8_t      Pointeur;
+    //uint8_t      Pointeur;
+    int8_t	     Pointeur;
     uint8_t      u8Spare;
     uint16_t      u16Spare;
 } S_HISTO_ERR;              // 504 Octets

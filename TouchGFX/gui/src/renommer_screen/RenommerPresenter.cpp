@@ -17,6 +17,11 @@ void RenommerPresenter::deactivate()
 
 }
 
+void RenommerPresenter::c_install_install_pac()
+{
+	model->c_install_install_pac();
+}
+
 void RenommerPresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);

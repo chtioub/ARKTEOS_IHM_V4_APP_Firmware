@@ -38,14 +38,20 @@ Installation_param_avancesView::Installation_param_avancesView()
 	else buttonWithLabel_degivrage_liaison.setVisible(false);
 	buttonWithLabel_degivrage_liaison.invalidate();
 
-	//View/Hide silencieux button
+	//View/Hide Silencieux button / Resistance de carter button
 	if (sConfig_IHM.sModele_PAC.u8ModelePAC == AJPAC_III || sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER
 			|| sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX)
 	{
 		buttonWithLabel_mode_silencieux.setVisible(true);
+		buttonWithLabel_resistance_carter.setVisible(true);
 	}
-	else buttonWithLabel_mode_silencieux.setVisible(false);
+	else
+	{
+		buttonWithLabel_mode_silencieux.setVisible(false);
+		buttonWithLabel_resistance_carter.setVisible(false);
+	}
 	buttonWithLabel_mode_silencieux.invalidate();
+	buttonWithLabel_resistance_carter.invalidate();
 }
 
 void Installation_param_avancesView::setupScreen()

@@ -19,6 +19,7 @@ public:
     void bouton_redemarrer_pac();
     void bouton_redemarrer_ihm();
     void bouton_retour();
+    void bouton_histo_erreurs();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

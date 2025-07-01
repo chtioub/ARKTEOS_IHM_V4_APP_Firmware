@@ -42,6 +42,21 @@ void Variables_systemePresenter::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegF
 	view.changeStatutCyclFrigo(sCyclRegFrigo);
 }
 
+void Variables_systemePresenter::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx)
+{
+	view.changeStatutZx(u8Zone, sStatut_Zx);
+}
+
+void Variables_systemePresenter::changeStatutECS(S_STATUT_ECS *sStatut_ECS)
+{
+	view.changeStatutECS(sStatut_ECS);
+}
+
+void Variables_systemePresenter::changeStatutPiscine(S_STATUT_PISCINE *sStatut_Piscine)
+{
+	view.changeStatutPiscine(sStatut_Piscine);
+}
+
 void Variables_systemePresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);
@@ -50,6 +65,11 @@ void Variables_systemePresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 void Variables_systemePresenter::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 {
 	view.changeStatutPAC(sStatut_PAC);
+}
+
+void Variables_systemePresenter::changeStatutRF(S_STATUT_RF *sStatut_RF)
+{
+	view.changeStatutRF(sStatut_RF);
 }
 
 void Variables_systemePresenter::changeDate(S_DATE *sDate)

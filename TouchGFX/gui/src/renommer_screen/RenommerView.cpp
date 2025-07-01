@@ -15,6 +15,12 @@ RenommerView::RenommerView()
 	container.setXY(u8PositionX, u8PositionY);
 	u8IndexCurseur = 9;
 
+	//Utilisé que dans le cas du CodeL Logo
+	Unicode::snprintf(textAreaBuffer_MessTitre, 40, touchgfx::TypedText(T_TEXT_MESSAGE_ATTENTION_TITRE).getText());
+	message_attention.titre(textAreaBuffer_MessTitre);
+	Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_MESSAGE_CODE_INCORRECT_CENTRE_DEFAUT).getText());
+	message_attention.message(textAreaBuffer_MessMess);
+
 
 
 	if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
@@ -44,51 +50,64 @@ RenommerView::RenommerView()
 				Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)",sConfig_Hydrau_temp.u8NumZone + 1);
 
 			}
-			barre_titre.titre(textAreaBuffer_Titre);
 		}
 		else
 		{
-			Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
-			Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)",sConfig_Hydrau_temp.u8NumZone);
-			barre_titre.titre(textAreaBuffer_Titre);
+			Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
+			Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)",sConfig_Hydrau_temp.u8NumZone + 1);
 		}
+		u8NbMaxChar = NB_MAX_CHAR_NOM;
 	}
 	else //Code Logo
 	{
-
+		Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_VOTRE_CODE_TITRE_CENTRE_DEFAUT).getText());
+		u8NbMaxChar = NB_MAX_CHAR_LOGO;
 	}
-
 	barre_titre.titre(textAreaBuffer_Titre);
 	barre_titre.invalidate();
 
-	if (bMultizone)
+	if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
 	{
-		for (int i = 0; i < 10; i++)
+		if (bMultizone)
 		{
-			u8NomTemp[i] = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone[i];
+			for (int i = 0; i < u8NbMaxChar; i++)
+			{
+				u8TexteTemp[i] = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone[i];
+			}
+		}
+		else
+		{
+			for (int i = 0; i < u8NbMaxChar; i++)
+			{
+				u8TexteTemp[i] = sConfig_Hydrau_temp.sParamZx.u8NomZone[i];
+			}
+		}
+		affichageTexte();
+
+		for (int i = 0; i < u8NbMaxChar; i++)
+		{
+			if (u8TexteTemp[i] == 0)
+			{
+				u8IndexCurseur = i;
+				break;
+			}
+			if (i == (u8NbMaxChar - 1))
+			{
+				u8IndexCurseur = i;
+			}
 		}
 	}
 	else
 	{
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < u8NbMaxChar; i++)
 		{
-			u8NomTemp[i] = sConfig_Hydrau_temp.sParamZx.u8NomZone[i];
+			u8TexteTemp[i] = ' ';
 		}
+		u8IndexCurseur = 0;
+		affichageTexte();
 	}
-	affichageTexte();
 
-	for (int i = 0; i < 10; i++)
-	{
-		if (u8NomTemp[i] == 0)
-		{
-			u8IndexCurseur = i;
-			break;
-		}
-		if (i == 9)
-		{
-			u8IndexCurseur = i;
-		}
-	}
+
 	bMajActif = false;
 }
 
@@ -96,7 +115,6 @@ void RenommerView::bouton_maj()
 {
 	if (bMajActif == false)
 	{
-
 		Unicode::snprintf(textAreaBuffer_a, 2, "A");
 	    textArea_a.setWildcard(textAreaBuffer_a);
 	    Unicode::snprintf(textAreaBuffer_z, 2, "Z");
@@ -241,231 +259,282 @@ void RenommerView::bouton_maj()
 
 void RenommerView::bouton_retour()
 {
-	if (bMultizone)
+	if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
 	{
-//		u8NomTemp[i]
-		if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
+		if (bMultizone)
 		{
-			application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+			if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
+			{
+				application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+			}
+			else
+			{
+				application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+			}
 		}
 		else
 		{
-			application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+			application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 		}
 	}
 	else
 	{
-		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+		application().gotoInstallation_param_avancesScreenNoTransition();
 	}
 }
 
 void RenommerView::bouton_valider()
 {
-	if (bMultizone)
+	if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
 	{
-		memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &u8NomTemp, sizeof(u8NomTemp));
-		//memcpy(&sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone], &sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], sizeof(S_PARAM_ZX));
-		if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
+		if (bMultizone)
 		{
-			if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == SOUS_STATION)
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &u8TexteTemp, sizeof(u8TexteTemp));
+			//memcpy(&sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone], &sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone], sizeof(S_PARAM_ZX));
+			if (sConfig_Hydrau_temp.u8NumZone == 8 || sConfig_Hydrau_temp.u8NumZone == 9)
 			{
-				application().gotoInstallation_MZ_config_groupeScreenNoTransition();
+				if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == SOUS_STATION)
+				{
+					application().gotoInstallation_MZ_config_groupeScreenNoTransition();
+				}
+				else
+				{
+					application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+				}
 			}
 			else
 			{
-				application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
+				application().gotoInstallation_MZ_config_zoneScreenNoTransition();
 			}
 		}
 		else
 		{
-			application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+			memcpy(&sConfig_Hydrau_temp.sParamZx.u8NomZone, &u8TexteTemp, sizeof(u8TexteTemp));
+			//memcpy(&sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone], &sConfig_Hydrau_temp.sParamZx, sizeof(S_PARAM_ZX));
+			//presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
+			application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 		}
 	}
 	else
 	{
-		memcpy(&sConfig_Hydrau_temp.sParamZx.u8NomZone, &u8NomTemp, sizeof(u8NomTemp));
-		//memcpy(&sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone], &sConfig_Hydrau_temp.sParamZx, sizeof(S_PARAM_ZX));
-		//presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
-		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+		//u8TexteTemp
+		//if (u8IndexCurseur)
+		//if(memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)
+		if (memcmp(u8TexteTemp, "QUALICLIM5129", 13) == 0) 		code_logo_ok();
+		else if (memcmp(u8TexteTemp, "CFD2366", 7) == 0) 		code_logo_ok();
+		else if (memcmp(u8TexteTemp, "ARKTEOS1515", 11) == 0)   code_logo_ok();
+		else if (memcmp(u8TexteTemp, "CES1718", 7) == 0) 		code_logo_ok();
+		else if (memcmp(u8TexteTemp, "ENELIA5664", 10) == 0) 	code_logo_ok();
+		else if (memcmp(u8TexteTemp, "BLTEC3178", 9) == 0) 		code_logo_ok();
+		else if (memcmp(u8TexteTemp, "VARIATION4368", 13) == 0) code_logo_ok();
+		else if (memcmp(u8TexteTemp, "GOURDON5609", 11) == 0)   code_logo_ok();
+		else if (memcmp(u8TexteTemp, "ETIENNE5796", 11) == 0)   code_logo_ok();
+		else if (memcmp(u8TexteTemp, "CLIMDIFF3597", 12) == 0)  code_logo_ok();
+		else
+		{
+			modalWindow_attention.show();
+			modalWindow_attention.invalidate();
+		}
+//		{
+		//else if(strcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366"))
+		//	//	{
+			//		Image_cfd.setVisible(true);
+			//	}
+		//application().gotoInstallation_param_avancesScreenNoTransition();
+//		void RenommerView:: affichage_attention()
+//
 	}
 }
 
+void RenommerView::code_logo_ok()
+{
+//	sConfig_IHM.sInstall_PAC.CodeLogoClient = u8TexteTemp;
+	memcpy(&sConfig_IHM.sInstall_PAC.CodeLogoClient, u8TexteTemp, sizeof(sConfig_IHM.sInstall_PAC.CodeLogoClient));
+	presenter->c_install_install_pac();
+	application().gotoInstallation_param_avancesScreenNoTransition();
+}
+
+void RenommerView::bouton_valider_message_attention()
+{
+	modalWindow_attention.hide();
+	modalWindow_attention.invalidate();
+}
 
 void RenommerView::bouton_1()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '1';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_2()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '2';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_3()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '3';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_4()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '4';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_5()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '5';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_6()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '6';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_7()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '7';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_8()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '8';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_9()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '9';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_0()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '0';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_point()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '.';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton__()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '_';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_aro()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '@';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_tiret()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = '-';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_space()
 {
-	if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		u8Caractere = ' ';
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_supprimer()
 {
-	if (u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur]!= 0)
+	if ((u8IndexCurseur == (u8NbMaxChar - 1)) && u8TexteTemp[u8IndexCurseur] != 0)
 	{
-		u8NomTemp[u8IndexCurseur] = 0;
+		u8TexteTemp[u8IndexCurseur] = 0;
 		affichageTexte();
 	}
 	else if (u8IndexCurseur > 0)
 	{
-		u8NomTemp[u8IndexCurseur - 1] = 0;
+		u8TexteTemp[u8IndexCurseur - 1] = 0;
 		u8IndexCurseur--;
 		affichageTexte();
 	}
@@ -473,329 +542,329 @@ void RenommerView::bouton_supprimer()
 
 void RenommerView::bouton_a()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'A';}
 		else {u8Caractere = 'a';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_b()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'B';}
 		else {u8Caractere = 'b';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_c()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'C';}
 		else {u8Caractere = 'c';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_d()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'D';}
 		else {u8Caractere = 'd';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_e()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'E';}
 		else {u8Caractere = 'e';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_f()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'F';}
 		else {u8Caractere = 'f';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_g()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'G';}
 		else {u8Caractere = 'g';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_h()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'H';}
 		else {u8Caractere = 'h';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_i()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'I';}
 		else {u8Caractere = 'i';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_j()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'J';}
 		else {u8Caractere = 'j';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_k()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'K';}
 		else {u8Caractere = 'k';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_l()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'L';}
 		else {u8Caractere = 'l';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_m()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'M';}
 		else {u8Caractere = 'm';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_n()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'N';}
 		else {u8Caractere = 'n';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_o()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'O';}
 		else {u8Caractere = 'o';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_p()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'P';}
 		else {u8Caractere = 'p';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_q()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'Q';}
 		else {u8Caractere = 'q';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_r()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'R';}
 		else {u8Caractere = 'r';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_s()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'S';}
 		else {u8Caractere = 's';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_t()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'T';}
 		else {u8Caractere = 't';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_u()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'U';}
 		else {u8Caractere = 'u';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_v()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'V';}
 		else {u8Caractere = 'v';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_w()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'W';}
 		else {u8Caractere = 'w';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_x()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'X';}
 		else {u8Caractere = 'x';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_y()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'Y';}
 		else {u8Caractere = 'y';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::bouton_z()
 {
-    if ((u8IndexCurseur < 10) && (!(u8IndexCurseur == 9 && u8NomTemp[u8IndexCurseur] != 0)))
+	if ((u8IndexCurseur < u8NbMaxChar) && (!(u8IndexCurseur == (u8NbMaxChar - 1) && u8TexteTemp[u8IndexCurseur] != 0)))
 	{
 		if (bMajActif){u8Caractere = 'Z';}
 		else {u8Caractere = 'z';}
-		u8NomTemp[u8IndexCurseur] = u8Caractere;
-		if (u8IndexCurseur < 9) u8IndexCurseur++;
+		u8TexteTemp[u8IndexCurseur] = u8Caractere;
+		if (u8IndexCurseur < (u8NbMaxChar - 1)) u8IndexCurseur++;
 		affichageTexte();
 	}
 }
 
 void RenommerView::affichageTexte()
 {
-	touchgfx::Unicode::UnicodeChar textAreaBuffer_Nom_tmp[11];
+	touchgfx::Unicode::UnicodeChar textAreaBuffer_Nom_tmp[u8NbMaxChar + 1];
 
-	int longueur = 10;
+//	int longueur = 10;
 
-	for(int i = 0; i < 10; i++)
+	for(int i = 0; i < u8NbMaxChar; i++)
 	{
-		textAreaBuffer_Nom_tmp[i] =  u8NomTemp[i];
+		textAreaBuffer_Nom_tmp[i] =  u8TexteTemp[i];
 	}
-	textAreaBuffer_Nom_tmp[10] = 0;
-	Unicode::strncpy(textAreaBuffer_Nom, textAreaBuffer_Nom_tmp, longueur+1 );
-	textArea_value.setWildcard(textAreaBuffer_Nom);
+	textAreaBuffer_Nom_tmp[u8NbMaxChar] = 0;
+	Unicode::strncpy(textAreaBuffer_Texte, textAreaBuffer_Nom_tmp, u8NbMaxChar + 1 );
+	textArea_value.setWildcard(textAreaBuffer_Texte);
 	textArea_value.invalidate();
 }
 

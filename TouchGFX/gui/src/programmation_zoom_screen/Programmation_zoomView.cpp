@@ -72,9 +72,9 @@ Programmation_zoomView::Programmation_zoomView()
 			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUD_CONFORT_PLUS_L108XH71_ID);
 			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUD_ZOOM_L108XH71_ID);
 			//
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 5, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Reduit) - 200);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 5, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Normal) - 200);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 5, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
+			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Reduit) - 200);
+			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Normal) - 200);
+			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
 			// Titre
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_REGUL_EXT_CHAUD_CENTRE_DEFAUT).getText());
 			barre_titre.titre(textAreaBuffer_Titre);
@@ -91,9 +91,9 @@ Programmation_zoomView::Programmation_zoomView()
 			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_FROID_CONFORT_L108XH71_ID);
 			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_FROID_ZOOM_L108XH71_ID);
 			//
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 5, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Reduit) - 200);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 5, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 5, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
+			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Reduit) - 200);
+			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
+			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
 			// Titre
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_REGUL_EXT_RAFRAICHISSEMENT_CENTRE_DEFAUT).getText());
 			barre_titre.titre(textAreaBuffer_Titre);
@@ -241,7 +241,11 @@ Programmation_zoomView::Programmation_zoomView()
 			switch((u8Prog_jour[i] >> (k * 2)) & 0x3)
 			{
 				case 0:
-					image_prog[i * 4 + k].setBitmap(image_off);
+					if (eProg == PRO_PISCINE_CONFORT || eProg == PRO_CHAUD)
+					{
+						image_prog[i * 4 + k].setBitmap(image1);
+					}
+					else image_prog[i * 4 + k].setBitmap(image_off);
 					break;
 				case 1:
 					image_prog[i * 4 + k].setBitmap(image1);
@@ -591,11 +595,23 @@ void Programmation_zoomView::boutonProg(uint8_t u8NumeroProg,uint8_t u8Prog)
 			switch(u8Prog)
 			{
 				case 0:
-					Image_prog_1.setBitmap(bouton_off);
-					textArea_value_1.setVisible(true);
-					textArea_value_temp_1.setVisible(false);
-					textArea_value_1.setWildcard(textAreaBuffer_Temp_Affichee_0);
-					textArea_value_temp_1.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					if (eProg == PRO_PISCINE_CONFORT || eProg == PRO_CHAUD)
+					{
+						Image_prog_1.setBitmap(bouton1);
+						textArea_value_1.setVisible(false);
+						textArea_value_temp_1.setVisible(true);
+
+						textArea_value_1.setWildcard(textAreaBuffer_Temp_Affichee_1);
+						textArea_value_temp_1.setWildcard(textAreaBuffer_Temp_Affichee_1);
+					}
+					else
+					{
+						Image_prog_1.setBitmap(bouton_off);
+						textArea_value_1.setVisible(true);
+						textArea_value_temp_1.setVisible(false);
+						textArea_value_1.setWildcard(textAreaBuffer_Temp_Affichee_0);
+						textArea_value_temp_1.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					}
 					break;
 				case 1:
 					Image_prog_1.setBitmap(bouton1);
@@ -657,11 +673,23 @@ void Programmation_zoomView::boutonProg(uint8_t u8NumeroProg,uint8_t u8Prog)
 			switch(u8Prog)
 			{
 				case 0:
-					Image_prog_2.setBitmap(bouton_off);
-					textArea_value_2.setVisible(true);
-					textArea_value_temp_2.setVisible(false);
-					textArea_value_2.setWildcard(textAreaBuffer_Temp_Affichee_0);
-					textArea_value_temp_2.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					if (eProg == PRO_PISCINE_CONFORT || eProg == PRO_CHAUD)
+					{
+						Image_prog_2.setBitmap(bouton1);
+						textArea_value_2.setVisible(false);
+						textArea_value_temp_2.setVisible(true);
+
+						textArea_value_2.setWildcard(textAreaBuffer_Temp_Affichee_1);
+						textArea_value_temp_2.setWildcard(textAreaBuffer_Temp_Affichee_1);
+					}
+					else
+					{
+						Image_prog_2.setBitmap(bouton_off);
+						textArea_value_2.setVisible(true);
+						textArea_value_temp_2.setVisible(false);
+						textArea_value_2.setWildcard(textAreaBuffer_Temp_Affichee_0);
+						textArea_value_temp_2.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					}
 					break;
 				case 1:
 					Image_prog_2.setBitmap(bouton1);
@@ -723,11 +751,23 @@ void Programmation_zoomView::boutonProg(uint8_t u8NumeroProg,uint8_t u8Prog)
 			switch(u8Prog)
 			{
 				case 0:
-					Image_prog_3.setBitmap(bouton_off);
-					textArea_value_3.setVisible(true);
-					textArea_value_temp_3.setVisible(false);
-					textArea_value_3.setWildcard(textAreaBuffer_Temp_Affichee_0);
-					textArea_value_temp_3.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					if (eProg == PRO_PISCINE_CONFORT || eProg == PRO_CHAUD)
+					{
+						Image_prog_3.setBitmap(bouton1);
+						textArea_value_3.setVisible(false);
+						textArea_value_temp_3.setVisible(true);
+
+						textArea_value_3.setWildcard(textAreaBuffer_Temp_Affichee_1);
+						textArea_value_temp_3.setWildcard(textAreaBuffer_Temp_Affichee_1);
+					}
+					else
+					{
+						Image_prog_3.setBitmap(bouton_off);
+						textArea_value_3.setVisible(true);
+						textArea_value_temp_3.setVisible(false);
+						textArea_value_3.setWildcard(textAreaBuffer_Temp_Affichee_0);
+						textArea_value_temp_3.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					}
 					break;
 				case 1:
 					Image_prog_3.setBitmap(bouton1);
@@ -789,11 +829,23 @@ void Programmation_zoomView::boutonProg(uint8_t u8NumeroProg,uint8_t u8Prog)
 			switch(u8Prog)
 			{
 				case 0:
-					Image_prog_4.setBitmap(bouton_off);
-					textArea_value_4.setVisible(true);
-					textArea_value_temp_4.setVisible(false);
-					textArea_value_4.setWildcard(textAreaBuffer_Temp_Affichee_0);
-					textArea_value_temp_4.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					if (eProg == PRO_PISCINE_CONFORT || eProg == PRO_CHAUD)
+					{
+						Image_prog_4.setBitmap(bouton1);
+						textArea_value_4.setVisible(false);
+						textArea_value_temp_4.setVisible(true);
+
+						textArea_value_4.setWildcard(textAreaBuffer_Temp_Affichee_1);
+						textArea_value_temp_4.setWildcard(textAreaBuffer_Temp_Affichee_1);
+					}
+					else
+					{
+						Image_prog_4.setBitmap(bouton_off);
+						textArea_value_4.setVisible(true);
+						textArea_value_temp_4.setVisible(false);
+						textArea_value_4.setWildcard(textAreaBuffer_Temp_Affichee_0);
+						textArea_value_temp_4.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					}
 					break;
 				case 1:
 					Image_prog_4.setBitmap(bouton1);
@@ -855,11 +907,23 @@ void Programmation_zoomView::boutonProg(uint8_t u8NumeroProg,uint8_t u8Prog)
 			switch(u8Prog)
 			{
 				case 0:
-					Image_prog_5.setBitmap(bouton_off);
-					textArea_value_5.setVisible(true);
-					textArea_value_temp_5.setVisible(false);
-					textArea_value_5.setWildcard(textAreaBuffer_Temp_Affichee_0);
-					textArea_value_temp_5.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					if (eProg == PRO_PISCINE_CONFORT || eProg == PRO_CHAUD)
+					{
+						Image_prog_5.setBitmap(bouton1);
+						textArea_value_5.setVisible(false);
+						textArea_value_temp_5.setVisible(true);
+
+						textArea_value_5.setWildcard(textAreaBuffer_Temp_Affichee_1);
+						textArea_value_temp_5.setWildcard(textAreaBuffer_Temp_Affichee_1);
+					}
+					else
+					{
+						Image_prog_5.setBitmap(bouton_off);
+						textArea_value_5.setVisible(true);
+						textArea_value_temp_5.setVisible(false);
+						textArea_value_5.setWildcard(textAreaBuffer_Temp_Affichee_0);
+						textArea_value_temp_5.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					}
 					break;
 				case 1:
 					Image_prog_5.setBitmap(bouton1);
@@ -921,11 +985,23 @@ void Programmation_zoomView::boutonProg(uint8_t u8NumeroProg,uint8_t u8Prog)
 			switch(u8Prog)
 			{
 				case 0:
-					Image_prog_6.setBitmap(bouton_off);
-					textArea_value_6.setVisible(true);
-					textArea_value_temp_6.setVisible(false);
-					textArea_value_6.setWildcard(textAreaBuffer_Temp_Affichee_0);
-					textArea_value_temp_6.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					if (eProg == PRO_PISCINE_CONFORT || eProg == PRO_CHAUD)
+					{
+						Image_prog_6.setBitmap(bouton1);
+						textArea_value_6.setVisible(false);
+						textArea_value_temp_6.setVisible(true);
+
+						textArea_value_6.setWildcard(textAreaBuffer_Temp_Affichee_1);
+						textArea_value_temp_6.setWildcard(textAreaBuffer_Temp_Affichee_1);
+					}
+					else
+					{
+						Image_prog_6.setBitmap(bouton_off);
+						textArea_value_6.setVisible(true);
+						textArea_value_temp_6.setVisible(false);
+						textArea_value_6.setWildcard(textAreaBuffer_Temp_Affichee_0);
+						textArea_value_temp_6.setWildcard(textAreaBuffer_Temp_Affichee_0);
+					}
 					break;
 				case 1:
 					Image_prog_6.setBitmap(bouton1);
@@ -986,11 +1062,15 @@ void Programmation_zoomView::boutonProg(uint8_t u8NumeroProg,uint8_t u8Prog)
 }
 
 
-void Programmation_zoomView::editer_prog(uint8_t u8NumeroProg)
+void Programmation_zoomView::editer_prog(uint8_t u8NumeroProg)//5
 {
 	// Modification de l'affichage
 	if(eProg == PRO_CHAUD || eProg == PRO_EXT_CHAUD || eProg == PRO_PISCINE_CONFORT)	// NIVEAU 1 / NIVEAU 2 / NIVEAU 3
 	{
+		if((eProg == PRO_CHAUD || eProg == PRO_PISCINE_CONFORT) && u8Prog_bouton[u8NumeroProg] == 0)
+		{
+			u8Prog_bouton[u8NumeroProg] = 1;
+		}
 		if(++u8Prog_bouton[u8NumeroProg] > 3)
 		{
 			u8Prog_bouton[u8NumeroProg] = 1;
@@ -1119,7 +1199,14 @@ void Programmation_zoomView::editer_prog(uint8_t u8NumeroProg)
 			switch((u8Prog_jour[i] >> (k * 2)) & 0x3)
 			{
 				case 0:
-					image_prog[i * 4 + k].setBitmap(image_off);
+					if(eProg == PRO_CHAUD || eProg == PRO_PISCINE_CONFORT)
+					{
+						image_prog[i * 4 + k].setBitmap(image1);
+					}
+					else
+					{
+						image_prog[i * 4 + k].setBitmap(image_off);
+					}
 					break;
 				case 1:
 					image_prog[i * 4 + k].setBitmap(image1);

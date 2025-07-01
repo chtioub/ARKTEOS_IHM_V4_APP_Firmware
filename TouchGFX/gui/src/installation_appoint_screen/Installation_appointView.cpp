@@ -15,7 +15,14 @@ Installation_appointView::Installation_appointView()
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_APPOINT_CHAUFF_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 	//
-	u8TypeAppoint = sConfig_IHM.sOption_PAC.TypeAppoint;
+	if (u8AppointPageZone != 0) //Ajouter pour garder le choix lorsque l'on va dans la page hyst et que l'on revient
+	{
+		u8TypeAppoint = u8AppointPageZone;
+	}
+	else
+	{
+		u8TypeAppoint = sConfig_IHM.sOption_PAC.TypeAppoint;
+	}
 	if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && u8TypeAppoint > ELEC)
 	{
 		u8TypeAppoint = NO_APPOINT;
@@ -52,6 +59,7 @@ void Installation_appointView::bouton_type_appoint_droite()
 		u8TypeAppoint = NO_APPOINT;
 	}
 	else u8TypeAppoint++;
+	u8AppointPageZone = u8TypeAppoint;
 	affichage_type_appoint();
 }
 
@@ -70,6 +78,7 @@ void Installation_appointView::bouton_type_appoint_gauche()
 		u8TypeAppoint = ELEC;
 	}
 	else u8TypeAppoint--;
+	u8AppointPageZone = u8TypeAppoint;
 	affichage_type_appoint();
 }
 

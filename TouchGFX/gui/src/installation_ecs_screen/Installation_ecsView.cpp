@@ -90,6 +90,13 @@ void Installation_ecsView::update_demande_forcee()
 
 void Installation_ecsView::update_simultane()
 {
+	if (sConfig_IHM.sParam_PAC.TypeRegul != REGUL_DIRECTE)
+	{
+		container_simultane_ecs.setVisible(true);
+	}
+	else container_simultane_ecs.setVisible(false);
+	container_simultane_ecs.invalidate();
+
 	if (sParam_ECS_temp.bGestionSimultanee == 1)
 	{
 		buttonWithLabel_on_simultane_ecs.setVisible(true);

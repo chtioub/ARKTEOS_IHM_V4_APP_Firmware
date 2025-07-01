@@ -297,6 +297,18 @@
     <ClCompile Include="..\..\gui\src\installation_reduction_pw_screen\Installation_reduction_pwPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\installation_reduction_pw_screen\Installation_reduction_pwView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_reduction_pw_screen\Installation_reduction_pwViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_mode_commande_screen\Maintenance_mode_commandePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_mode_commande_screen\Maintenance_mode_commandeView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_mode_commande_screen\Maintenance_mode_commandeViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_pump_down_screen\Maintenance_pump_downPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\maintenance_pump_down_screen\Maintenance_pump_downView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_pump_down_screen\Maintenance_pump_downViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\linky_screen\LinkyPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\linky_screen\LinkyView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\linky_screen\LinkyViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -723,6 +735,18 @@
     <ClInclude Include="..\..\gui\include\gui\installation_reduction_pw_screen\Installation_reduction_pwPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\installation_reduction_pw_screen\Installation_reduction_pwView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_reduction_pw_screen\Installation_reduction_pwViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_mode_commande_screen\Maintenance_mode_commandePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_mode_commande_screen\Maintenance_mode_commandeView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_mode_commande_screen\Maintenance_mode_commandeViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_pump_down_screen\Maintenance_pump_downPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_pump_down_screen\Maintenance_pump_downView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_pump_down_screen\Maintenance_pump_downViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\linky_screen\LinkyPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\linky_screen\LinkyView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\linky_screen\LinkyViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

@@ -22,6 +22,10 @@ public:
     void changeLogo(bool bVisible);
     void change_to_config_screen();
     void change_to_accueil_screen();
+    void bouton_oui_veille();
+    void bouton_non_veille();
+    void bouton_ecs();
+
 //    void update_titre_page();
     virtual void changeModePac(bool marche);
     virtual void changeDate(S_DATE *sDate);
@@ -35,8 +39,9 @@ public:
     virtual void changeStatutPiscine(S_STATUT_PISCINE *sStatut_Piscine);
     virtual void changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo);
     virtual void changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt);
+
 protected:
-    bool bConnexionDistance;
+    bool bConnexionDistance, bMarche, bDegivrage;
 	uint8_t u8NbZones, u8Zone1 = 0xff, u8Zone2 = 0xff;
     uint16_t u16ErreurAffichee;
     S_DATE sDate_old;

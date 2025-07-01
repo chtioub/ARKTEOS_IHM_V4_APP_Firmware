@@ -17,6 +17,11 @@ void Installation_courbe_loi_d_eauPresenter::deactivate()
 
 }
 
+void Installation_courbe_loi_d_eauPresenter::changeConfig(S_CONFIG_IHM *sConfig_IHM)
+{
+	view.changeConfig(sConfig_IHM);
+}
+
 void Installation_courbe_loi_d_eauPresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);

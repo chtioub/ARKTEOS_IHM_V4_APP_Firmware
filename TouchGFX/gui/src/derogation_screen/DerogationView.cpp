@@ -1,4 +1,5 @@
 #include <gui/derogation_screen/DerogationView.hpp>
+#include <gui/zone_screen/ZoneView.hpp>
 
 DerogationView::DerogationView()
 {
@@ -66,12 +67,17 @@ DerogationView::DerogationView()
 	// Température de consigne dérogation
 	if(u8ZoneSelect == 0xff)
 	{
+
 		u16Consigne_Derogation = sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Sablier;
+		u16Consigne_Derogation = fmin(u16Consigne_Derogation,u16ValMax);
+		u16Consigne_Derogation = fmax(u16Consigne_Derogation,u16ValMin);
 		Unicode::snprintfFloat(textAreaBuffer_Consigne, 6, "%.1f", ((float) u16Consigne_Derogation) / 10);
 	}
 	else
 	{
 		u16Consigne_Derogation = sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Sablier;
+		u16Consigne_Derogation = fmin(u16Consigne_Derogation,u16ValMax);
+		u16Consigne_Derogation = fmax(u16Consigne_Derogation,u16ValMin);
 		Unicode::snprintfFloat(textAreaBuffer_Consigne, 6, "%.1f", ((float) u16Consigne_Derogation) / 10);
 	}
 	textArea_valeur_consigne_derog.setWildcard(textAreaBuffer_Consigne);

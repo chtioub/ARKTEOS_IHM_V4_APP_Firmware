@@ -4,10 +4,18 @@
 ZoneView::ZoneView()
 {
 	// Affichage des barres de la bonne longueur
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff || (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		u16ValMin = 180;
-		u16ValMax = 220;
+		if ((sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_FROID && u8ZoneSelect != 0xff) || (sConfig_IHM.sMode_RegulExt.Mode== AUTO_FROID  && u8ZoneSelect == 0xff))
+		{
+			u16ValMin = 190;
+			u16ValMax = 210;
+		}
+		else
+		{
+			u16ValMin = 180;
+			u16ValMax = 220;
+		}
 		textArea_consigne.setTypedText(touchgfx::TypedText(T_TEXT_OFFSET_LOI_EAU_CENTRE_DEFAUT));
 	}
 	else
@@ -16,17 +24,17 @@ ZoneView::ZoneView()
 		u16ValMax = 300;
 		textArea_consigne.setTypedText(touchgfx::TypedText(T_TEXT_TEMP_CONS_CENTRE_DEFAUT));
 	}
-    slider_jaune.setValue(180);
+    slider_jaune.setValue(190);
 	slider_jaune.setValueRange(u16ValMin, u16ValMax);
-	slider_bleu_reduit.setValue(180);
+	slider_bleu_reduit.setValue(190);//180);
 	slider_bleu_reduit.setValueRange(u16ValMin, u16ValMax);
-	slider_orange.setValue(180);
+	slider_orange.setValue(190);
 	slider_orange.setValueRange(u16ValMin, u16ValMax);
-	slider_bleu_ciel.setValue(180);
+	slider_bleu_ciel.setValue(190);//180);
 	slider_bleu_ciel.setValueRange(u16ValMin, u16ValMax);
-	slider_rouge.setValue(180);
+	slider_rouge.setValue(190);
 	slider_rouge.setValueRange(u16ValMin, u16ValMax);
-	slider_bleu.setValue(180);
+	slider_bleu.setValue(190);//190);//180);
 	slider_bleu.setValueRange(u16ValMin, u16ValMax);
 	// Init des variables
 	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));
@@ -249,10 +257,17 @@ void ZoneView::slider_reduit(int sliderValue)
 	u16TempoEnvoiConsigne = 10;
 	//
 	u16ConsigneReduit = sliderValue;
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff || (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
-		positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu_reduit.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -280,10 +295,17 @@ void ZoneView::bouton_plus_reduit()
 	slider_jaune.invalidate();
 	slider_bleu_reduit.setValue(u16ConsigneReduit);
 	slider_bleu_reduit.invalidate();
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
-		positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu_reduit.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -311,10 +333,17 @@ void ZoneView::bouton_moins_reduit()
 	slider_jaune.invalidate();
 	slider_bleu_reduit.setValue(u16ConsigneReduit);
 	slider_bleu_reduit.invalidate();
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
-		positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu_reduit.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -336,10 +365,17 @@ void ZoneView::slider_normal(int sliderValue)
 	u16TempoEnvoiConsigne = 10;
 	//
 	u16ConsigneNormal = sliderValue;
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
-		positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu_ciel.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -367,10 +403,17 @@ void ZoneView::bouton_plus_normal()
 	slider_orange.invalidate();
 	slider_bleu_ciel.setValue(u16ConsigneNormal);
 	slider_bleu_ciel.invalidate();
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
-		positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu_ciel.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -398,10 +441,17 @@ void ZoneView::bouton_moins_normal()
 	slider_orange.invalidate();
 	slider_bleu_ciel.setValue(u16ConsigneNormal);
 	slider_bleu_ciel.invalidate();
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
-		positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu_ciel.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -423,10 +473,17 @@ void ZoneView::slider_confort(int sliderValue)
 	u16TempoEnvoiConsigne = 10;
 	//
 	u16ConsigneConfort = sliderValue;
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff || (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
-		positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -455,10 +512,17 @@ void ZoneView::bouton_plus_confort()
 	slider_rouge.invalidate();
 	slider_bleu.setValue(u16ConsigneConfort);
 	slider_bleu.invalidate();
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
-		positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -487,10 +551,17 @@ void ZoneView::bouton_moins_confort()
 	slider_rouge.invalidate();
 	slider_bleu.setValue(u16ConsigneConfort);
 	slider_bleu.invalidate();
-	if(u8ZoneSelect == 0xff)
+	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
 		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
-		positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
+		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
+		{
+			positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
+		}
+		else
+		{
+			positionEcran = ((float) slider_bleu.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 190) * (float) 17.8);
+		}
 	}
 	else
 	{
@@ -538,6 +609,7 @@ void ZoneView::timer_100ms()
 
 void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
+	//Régul Ext
 	if(u8ZoneSelect == 0xff)
 	{
 		Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_BALLON_TAMPON_CENTRE_DEFAUT).getText());
@@ -599,8 +671,6 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 					container_auto_prog.setVisible(true);
 					button_prog_on.setVisible(false);
 					container_derogation.setVisible(true);
-					container_auto_prog.setVisible(true);
-					container_derogation.setVisible(true);
 					container_slider_jaune.setVisible(false);
 					container_slider_orange.setVisible(false);
 					container_slider_rouge.setVisible(false);
@@ -625,7 +695,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 					container_slider_bleu.setVisible(false);
 					container_slider_bleu_ciel.setVisible(false);
 					container_slider_bleu_reduit.setVisible(false);
-					textArea_consigne.setVisible(true);
+					textArea_consigne.setVisible(false);
 					break;
 				case MARCHE_FROID:
 					toggleButton_arret.forceState(false);
@@ -703,19 +773,15 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			slider_jaune.invalidate();
 			slider_bleu_reduit.setValue((int) u16ConsigneReduit);
 			slider_bleu_reduit.invalidate();
-			if(u8ZoneSelect == 0xff)
-			{
-				Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
-			}
-			else
-			{
-				Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", ((float) u16ConsigneReduit) / 10);
-			}
+
+			Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
+
 			textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
 			textArea_jaune.moveTo((int) ((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9), 51);
 			textArea_jaune.invalidate();
+
 			textArea_bleu_reduit.setWildcard(textAreaBuffer_ConsigneReduit);
-			textArea_bleu_reduit.moveTo((int) ((float) slider_bleu_reduit.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9), 51);
+			textArea_bleu_reduit.moveTo((int) ((float) slider_bleu_reduit.getX() + 19 - textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 190) * (float) 17.8), 51);
 			textArea_bleu_reduit.invalidate();
 		}
 
@@ -726,18 +792,13 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			slider_orange.invalidate();
 			slider_bleu_ciel.setValue(u16ConsigneNormal);
 			slider_bleu_ciel.invalidate();
-			if(u8ZoneSelect == 0xff)
-			{
-				Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
-			}
-			else
-			{
-				Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", ((float) u16ConsigneNormal) / 10);
-			}
-			textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
+
+			Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
+
+			textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 - textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
 			textArea_orange.invalidate();
 			textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
-			textArea_bleu_ciel.moveTo((int) ((float) slider_bleu_ciel.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
+			textArea_bleu_ciel.moveTo((int) ((float) slider_bleu_ciel.getX() + 19 - textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
 			textArea_bleu_ciel.invalidate();
 		}
 
@@ -748,19 +809,14 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			slider_rouge.invalidate();
 			slider_bleu.setValue(u16ConsigneConfort);
 			slider_bleu.invalidate();
-			if(u8ZoneSelect == 0xff)
-			{
-				Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
-			}
-			else
-			{
-				Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", ((float) u16ConsigneConfort) / 10);
-			}
+
+			Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
+
 			textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
-			textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
+			textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 - textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
 			textArea_rouge.invalidate();
 			textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
-			textArea_bleu.moveTo((int) ((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
+			textArea_bleu.moveTo((int) ((float) slider_bleu.getX() + 19 - textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 190) * (float) 17.8), 51);
 			textArea_bleu.invalidate();
 		}
 
@@ -773,7 +829,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			else button_derog_on.setVisible(false);
 			button_derog_on.invalidate();
 		}
-	}
+	} //Fin de Régul Externe
 	else
 	{
 		if(memcmp(&sConfig_IHM_old.sOption_PAC.sZone, &sConfig_IHM->sOption_PAC.sZone, sizeof(sConfig_IHM_old.sOption_PAC.sZone)))
@@ -857,8 +913,6 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 					container_auto_prog.setVisible(true);
 					button_prog_on.setVisible(false);
 					container_derogation.setVisible(true);
-					container_auto_prog.setVisible(true);
-					container_derogation.setVisible(true);
 					container_slider_jaune.setVisible(false);
 					container_slider_orange.setVisible(true);
 					container_slider_rouge.setVisible(false);
@@ -939,6 +993,23 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 					textArea_consigne.setVisible(false);
 					break;
 			}
+
+			//Pour MAJ des Sliders min/max suivant que l'on est sur l'eau ou sur l'ambiance
+			if (sConfig_IHM->sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT)
+			{
+				container_derogation.setVisible(false);
+
+				if (sConfig_IHM->sMode_Zx[u8ZoneSelect].Mode == MARCHE_CHAUD || sConfig_IHM->sMode_Zx[u8ZoneSelect].Mode == MARCHE_FROID)
+				{
+					container_slider_jaune.setVisible(false);
+					container_slider_orange.setVisible(false);
+					container_slider_rouge.setVisible(false);
+					container_slider_bleu.setVisible(false);
+					container_slider_bleu_ciel.setVisible(false);
+					container_slider_bleu_reduit.setVisible(false);
+					textArea_consigne.setVisible(false);
+				}
+			}
 			toggleButton_arret.invalidate();
 			button_chaud_on.invalidate();
 			button_froid_on.invalidate();
@@ -954,52 +1025,180 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			textArea_consigne.invalidate();
 		}
 
-		if(sConfig_IHM_old.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit != sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit)
+		//Pour MAJ des Consignes Slider en Thermosat Contact
+//		if (sConfig_IHM->sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT)
+//		{
+//			if(sConfig_IHM_old.sMode_RegulExt.i16Consigne_Eau_Reduit != sConfig_IHM->sMode_RegulExt.i16Consigne_Eau_Reduit)
+//			{
+//				u16ConsigneReduit = sConfig_IHM->sMode_RegulExt.i16Consigne_Eau_Reduit;
+//				slider_jaune.setValue((int) u16ConsigneReduit);
+//				slider_jaune.invalidate();
+//				slider_bleu_reduit.setValue((int) u16ConsigneReduit);
+//				slider_bleu_reduit.invalidate();
+//
+//				Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
+//
+//				textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
+//				textArea_jaune.moveTo((int) ((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9), 51);
+//				textArea_jaune.invalidate();
+//				textArea_bleu_reduit.setWildcard(textAreaBuffer_ConsigneReduit);
+//				textArea_bleu_reduit.moveTo((int) ((float) slider_bleu_reduit.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9), 51);
+//				textArea_bleu_reduit.invalidate();
+//			}
+//
+//			if(sConfig_IHM_old.sMode_RegulExt.i16Consigne_Eau_Normal != sConfig_IHM->sMode_RegulExt.i16Consigne_Eau_Normal)
+//			{
+//				u16ConsigneNormal = sConfig_IHM->sMode_RegulExt.i16Consigne_Eau_Normal;
+//				slider_orange.setValue(u16ConsigneNormal);
+//				slider_orange.invalidate();
+//				slider_bleu_ciel.setValue(u16ConsigneNormal);
+//				slider_bleu_ciel.invalidate();
+//
+//				Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
+//
+//				textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
+//				textArea_orange.invalidate();
+//				textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
+//				textArea_bleu_ciel.moveTo((int) ((float) slider_bleu_ciel.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
+//				textArea_bleu_ciel.invalidate();
+//			}
+//
+//			if(sConfig_IHM_old.sMode_RegulExt.i16Consigne_Eau_Confort != sConfig_IHM->sMode_RegulExt.i16Consigne_Eau_Confort)
+//			{
+//				u16ConsigneConfort = sConfig_IHM->sMode_RegulExt.i16Consigne_Eau_Confort;
+//				slider_rouge.setValue(u16ConsigneConfort);
+//				slider_rouge.invalidate();
+//				slider_bleu.setValue(u16ConsigneConfort);
+//				slider_bleu.invalidate();
+//
+//				Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
+//
+//				textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
+//				textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
+//				textArea_rouge.invalidate();
+//				textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
+//				textArea_bleu.moveTo((int) ((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
+//				textArea_bleu.invalidate();
+//			}
+//		}
+//		else
 		{
-			u16ConsigneReduit = sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit;
-			slider_jaune.setValue((int) u16ConsigneReduit);
-			slider_jaune.invalidate();
-			slider_bleu_reduit.setValue((int) u16ConsigneReduit);
-			slider_bleu_reduit.invalidate();
-			Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", ((float) u16ConsigneReduit) / 10);
-			textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
-			textArea_jaune.moveTo((int) ((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 120) * (float) 1.98), 51);
-			textArea_jaune.invalidate();
-			textArea_bleu_reduit.setWildcard(textAreaBuffer_ConsigneReduit);
-			textArea_bleu_reduit.moveTo((int) ((float) slider_bleu_reduit.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 120) * (float) 1.98), 51);
-			textArea_bleu_reduit.invalidate();
-		}
+			if(sConfig_IHM_old.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit != sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit)
+			{
+				u16ConsigneReduit = sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit;
+				slider_jaune.setValue((int) u16ConsigneReduit);
+				slider_jaune.invalidate();
+				slider_bleu_reduit.setValue((int) u16ConsigneReduit);
+				slider_bleu_reduit.invalidate();
 
-		if(sConfig_IHM_old.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal != sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal)
-		{
-			u16ConsigneNormal = sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal;
-			slider_orange.setValue(u16ConsigneNormal);
-			slider_orange.invalidate();
-			slider_bleu_ciel.setValue(u16ConsigneNormal);
-			slider_bleu_ciel.invalidate();
-			Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", ((float) u16ConsigneNormal) / 10);
-			textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
-			textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 120) * (float) 1.98), 51);
-			textArea_orange.invalidate();
-			textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
-			textArea_bleu_ciel.moveTo((int) ((float) slider_bleu_ciel.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 120) * (float) 1.98), 51);
-			textArea_bleu_ciel.invalidate();
-		}
+				if (sConfig_IHM->sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT)
+				{
+					Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
+					textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
+					textArea_jaune.moveTo((int) ((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9), 51);
+					textArea_jaune.invalidate();
+					textArea_bleu_reduit.setWildcard(textAreaBuffer_ConsigneReduit);
+					textArea_bleu_reduit.moveTo((int) ((float) slider_bleu_reduit.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 190) * (float) 17.8), 51);
+					textArea_bleu_reduit.invalidate();
+				}
+				else
+				{
+					Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", ((float) u16ConsigneReduit) / 10);
+					textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
+					textArea_jaune.moveTo((int) ((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 120) * (float) 1.98), 51);
+					textArea_jaune.invalidate();
+					if (sConfig_IHM->sMode_Zx[u8ZoneSelect].Mode == AUTO_FROID)
+					{
+						textArea_bleu_reduit.setWildcard(textAreaBuffer_ConsigneReduit);
+						textArea_bleu_reduit.moveTo((int) ((float) slider_bleu_reduit.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 190) * (float) 17.8), 51);
+						textArea_bleu_reduit.invalidate();
+					}
+					else
+					{
+						textArea_bleu_reduit.setWildcard(textAreaBuffer_ConsigneReduit);
+						textArea_bleu_reduit.moveTo((int) ((float) slider_bleu_reduit.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_bleu_reduit.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 120) * (float) 1.98), 51);
+						textArea_bleu_reduit.invalidate();
+					}
 
-		if(sConfig_IHM_old.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort != sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort)
-		{
-			u16ConsigneConfort = sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort;
-			slider_rouge.setValue(u16ConsigneConfort);
-			slider_rouge.invalidate();
-			slider_bleu.setValue(u16ConsigneConfort);
-			slider_bleu.invalidate();
-			Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", ((float) u16ConsigneConfort) / 10);
-			textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
-			textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 120) * (float) 1.98), 51);
-			textArea_rouge.invalidate();
-			textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
-			textArea_bleu.moveTo((int) ((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 120) * (float) 1.98), 51);
-			textArea_bleu.invalidate();
+				}
+			}
+
+			if(sConfig_IHM_old.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal != sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal)
+			{
+				u16ConsigneNormal = sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal;
+				slider_orange.setValue(u16ConsigneNormal);
+				slider_orange.invalidate();
+				slider_bleu_ciel.setValue(u16ConsigneNormal);
+				slider_bleu_ciel.invalidate();
+
+				if (sConfig_IHM->sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT)
+				{
+					Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
+					textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
+					textArea_orange.invalidate();
+//					textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
+//					textArea_bleu_ciel.moveTo((int) ((float) slider_bleu_ciel.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
+//					textArea_bleu_ciel.invalidate();
+				}
+				else
+				{
+					Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", ((float) u16ConsigneNormal) / 10);
+					textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
+					textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 120) * (float) 1.98), 51);
+					textArea_orange.invalidate();
+					if (sConfig_IHM->sMode_Zx[u8ZoneSelect].Mode == AUTO_FROID)
+					{
+						textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
+						textArea_bleu_ciel.moveTo((int) ((float) slider_bleu_ciel.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 190) * (float) 17.8), 51);
+						textArea_bleu_ciel.invalidate();
+					}
+					else
+					{
+						textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
+						textArea_bleu_ciel.moveTo((int) ((float) slider_bleu_ciel.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_bleu_ciel.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 120) * (float) 1.98), 51);
+						textArea_bleu_ciel.invalidate();
+					}
+				}
+			}
+
+			if(sConfig_IHM_old.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort != sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort)
+			{
+				u16ConsigneConfort = sConfig_IHM->sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort;
+				slider_rouge.setValue(u16ConsigneConfort);
+				slider_rouge.invalidate();
+				slider_bleu.setValue(u16ConsigneConfort);
+				slider_bleu.invalidate();
+
+				if (sConfig_IHM->sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT)
+				{
+					Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
+					textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
+					textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
+					textArea_rouge.invalidate();
+					if (sConfig_IHM->sMode_Zx[u8ZoneSelect].Mode == AUTO_FROID)
+					{
+						textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
+						textArea_bleu.moveTo((int) ((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 190) * (float) 17.8), 51);
+						textArea_bleu.invalidate();
+					}
+					else
+					{
+						textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
+						textArea_bleu.moveTo((int) ((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
+						textArea_bleu.invalidate();
+					}
+				}
+				else
+				{
+					Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", ((float) u16ConsigneConfort) / 10);
+					textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
+					textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 120) * (float) 1.98), 51);
+					textArea_rouge.invalidate();
+					textArea_bleu.setWildcard(textAreaBuffer_ConsigneConfort);
+					textArea_bleu.moveTo((int) ((float) slider_bleu.getX() + 19 /*+ slider_bleu.background.getX()*/- textArea_bleu.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 120) * (float) 1.98), 51);
+					textArea_bleu.invalidate();
+				}
+			}
 		}
 
 		if(sConfig_IHM_old.sMode_Zx[u8ZoneSelect].Exception != sConfig_IHM->sMode_Zx[u8ZoneSelect].Exception)

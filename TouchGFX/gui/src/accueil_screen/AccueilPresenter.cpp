@@ -22,6 +22,11 @@ void AccueilPresenter::changeModePac(bool marche)
   view.changeModePac(marche);
 }
 
+void AccueilPresenter::c_prog_ecs(bool bEnvoi)
+{
+	model->c_prog_ecs(bEnvoi);
+}
+
 void AccueilPresenter::changeDate(S_DATE *sDate)
 {
 	view.changeDate(sDate);

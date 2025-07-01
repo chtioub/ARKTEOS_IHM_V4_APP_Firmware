@@ -58,6 +58,7 @@ public:
     void c_prog_reg_ext_chaud(bool bEnvoi);
     void c_prog_reg_ext_froid(bool bEnvoi);
 
+    void c_install_date_install();
     void c_install_raz_config();
     void c_install_config_pac();
     void c_install_ecs();
@@ -68,6 +69,7 @@ public:
     void c_install_zx(uint8_t u8Zone);
     void c_install_param_zx();
     void c_install_modbus();
+    void c_install_install_pac();
 
     void c_install_th_association(uint8_t u8NumZone);
     void c_install_th_dissociation(uint8_t u8NumZone);
@@ -84,6 +86,11 @@ public:
     void c_sav_raz_tps_fonct(uint8_t u8Esclave);
     void c_sav_raz_soft_flash();
     void c_sav_raz_log();
+    void c_sav_mode_commande();
+    void c_sav_mode_pump_down_recup_ue();
+    void c_sav_mode_pump_down_recup_ui();
+    void c_sav_mode_pump_down_stop();
+    void c_sav_par21();
 
     void c_restart();
 

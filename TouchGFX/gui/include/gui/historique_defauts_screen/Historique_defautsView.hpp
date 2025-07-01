@@ -21,6 +21,7 @@ public:
 protected:
     bool bConnexionDistance;
     uint16_t u16ErreurAffichee;
+    int8_t pointeur;
     S_DATE sDate_old;
     S_STATUT_PAC sStatut_PAC_old;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9];
@@ -32,6 +33,7 @@ protected:
     touchgfx::TextArea textArea_def[50];
     touchgfx::Unicode::UnicodeChar textArea_date_heure_def_Buffer[50][20];
     touchgfx::Unicode::UnicodeChar textArea_def_num_Buffer[50][4];
+    touchgfx::ScrollableContainer scrollableContainerLabelDef[50];
 };
 
 #endif // HISTORIQUE_DEFAUTSVIEW_HPP

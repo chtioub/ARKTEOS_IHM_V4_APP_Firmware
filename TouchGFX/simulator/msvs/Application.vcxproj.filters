@@ -1240,6 +1240,54 @@
     <Filter Include="Source Files\generated\gui_generated\installation_config_modbus_screen">
       <UniqueIdentifier>68E6E931-9AD0-1C95-7D56-4A7078B6C08E</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\maintenance_frequence_historiques_screen">
+      <UniqueIdentifier>9A01003C-BCC4-2DC6-F853-32C3E54B0744</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\maintenance_frequence_historiques_screen">
+      <UniqueIdentifier>285BF676-DBA6-B1B8-7D1D-A54457ABC4FB</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\maintenance_mode_commande_screen">
+      <UniqueIdentifier>C7FA0BA2-E96A-E371-518E-83DE0EFF27E9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\maintenance_mode_commande_screen">
+      <UniqueIdentifier>EAF63A9B-3091-5AFE-0536-581A2DFEC199</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\maintenance_mode_commande_screen">
+      <UniqueIdentifier>DC192B50-F68A-6D2A-20B0-F718C3C65583</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\maintenance_mode_commande_screen">
+      <UniqueIdentifier>60955238-BBB6-B4C9-222C-3AAA08B53E7C</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\maintenance_frequence_historiques_screen">
+      <UniqueIdentifier>C928D2E2-1586-0136-5239-F48643EDA984</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\maintenance_frequence_historiques_screen">
+      <UniqueIdentifier>1785C95E-D350-B20C-D1E5-EE86262F0499</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\maintenance_pump_down_screen">
+      <UniqueIdentifier>15B53B69-B86F-E309-5464-402AE735C96F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\maintenance_pump_down_screen">
+      <UniqueIdentifier>C8E30DAB-D9B0-B309-C601-4C50C7CFF850</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\maintenance_pump_down_screen">
+      <UniqueIdentifier>A59629E2-9D0A-4B9C-D375-87A40480186A</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\maintenance_pump_down_screen">
+      <UniqueIdentifier>41BDA737-8EAE-131E-3B53-6A29BC6732D1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\linky_screen">
+      <UniqueIdentifier>01B714CE-4C1D-E2E8-97D6-1FA755135610</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\linky_screen">
+      <UniqueIdentifier>EBCA776E-D3BA-B8C7-B45F-E35F8448F8FC</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\linky_screen">
+      <UniqueIdentifier>D86EBDB2-F3D9-AFF3-5A5A-A12E96CA710E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\linky_screen">
+      <UniqueIdentifier>D943060D-7C3D-408F-8022-C46F83189789</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -2099,6 +2147,42 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\installation_reduction_pw_screen\Installation_reduction_pwViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\installation_reduction_pw_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesPresenter.cpp">
+      <Filter>Source Files\gui\maintenance_frequence_historiques_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesView.cpp">
+      <Filter>Source Files\gui\maintenance_frequence_historiques_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\maintenance_frequence_historiques_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_mode_commande_screen\Maintenance_mode_commandePresenter.cpp">
+      <Filter>Source Files\gui\maintenance_mode_commande_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_mode_commande_screen\Maintenance_mode_commandeView.cpp">
+      <Filter>Source Files\gui\maintenance_mode_commande_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_mode_commande_screen\Maintenance_mode_commandeViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\maintenance_mode_commande_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_pump_down_screen\Maintenance_pump_downPresenter.cpp">
+      <Filter>Source Files\gui\maintenance_pump_down_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\maintenance_pump_down_screen\Maintenance_pump_downView.cpp">
+      <Filter>Source Files\gui\maintenance_pump_down_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\maintenance_pump_down_screen\Maintenance_pump_downViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\maintenance_pump_down_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\linky_screen\LinkyPresenter.cpp">
+      <Filter>Source Files\gui\linky_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\linky_screen\LinkyView.cpp">
+      <Filter>Source Files\gui\linky_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\linky_screen\LinkyViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\linky_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3369,6 +3453,42 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\installation_reduction_pw_screen\Installation_reduction_pwViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\installation_reduction_pw_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesPresenter.hpp">
+      <Filter>Header Files\gui\maintenance_frequence_historiques_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesView.hpp">
+      <Filter>Header Files\gui\maintenance_frequence_historiques_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_frequence_historiques_screen\Maintenance_frequence_historiquesViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\maintenance_frequence_historiques_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_mode_commande_screen\Maintenance_mode_commandePresenter.hpp">
+      <Filter>Header Files\gui\maintenance_mode_commande_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_mode_commande_screen\Maintenance_mode_commandeView.hpp">
+      <Filter>Header Files\gui\maintenance_mode_commande_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_mode_commande_screen\Maintenance_mode_commandeViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\maintenance_mode_commande_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_pump_down_screen\Maintenance_pump_downPresenter.hpp">
+      <Filter>Header Files\gui\maintenance_pump_down_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\maintenance_pump_down_screen\Maintenance_pump_downView.hpp">
+      <Filter>Header Files\gui\maintenance_pump_down_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\maintenance_pump_down_screen\Maintenance_pump_downViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\maintenance_pump_down_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\linky_screen\LinkyPresenter.hpp">
+      <Filter>Header Files\gui\linky_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\linky_screen\LinkyView.hpp">
+      <Filter>Header Files\gui\linky_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\linky_screen\LinkyViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\linky_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

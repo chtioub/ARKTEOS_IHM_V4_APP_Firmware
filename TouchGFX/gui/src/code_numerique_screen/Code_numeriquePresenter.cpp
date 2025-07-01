@@ -17,6 +17,21 @@ void Code_numeriquePresenter::deactivate()
 
 }
 
+void Code_numeriquePresenter::c_sav_mode_commande()
+{
+	model->c_sav_mode_commande();
+}
+
+void Code_numeriquePresenter::c_install_date_install()
+{
+	model->c_install_date_install();
+}
+
+void Code_numeriquePresenter::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
+{
+	view.changeStatutCyclFrigo(sCyclRegFrigo);
+}
+
 void Code_numeriquePresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);

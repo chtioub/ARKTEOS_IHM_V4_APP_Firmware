@@ -1,6 +1,7 @@
 #include <gui/code_numerique_screen/Code_numeriqueView.hpp>
 #include <images/BitmapDatabase.hpp>
 #include <touchgfx/Utils.hpp>
+#include "stdio.h"
 
 
 
@@ -14,10 +15,24 @@ Code_numeriqueView::Code_numeriqueView()
 	changeErreur(u16ErreurEncours);
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
+	changeStatutCyclFrigo(&sCyclRegFrigo[0]);
 	container.setXY(u8PositionX, u8PositionY);
 	modalWindow_code_inconnu.setBackground(touchgfx::BitmapId(BITMAP_BARRE_TITRE_L950XH63_ID), u8PositionX, u8PositionY + 524 - 64);
 	modalWindow_code_inconnu.hide();
 	modalWindow_code_inconnu.invalidate();
+
+	if (eCode == MODE_COMMANDE_PH)
+	{
+		container_clavier.setX(0);
+		container_mode_cde.setVisible(true);
+	}
+	else
+	{
+		container_clavier.setX(196);
+		container_mode_cde.setVisible(false);
+	}
+	container_clavier.invalidate();
+	container_mode_cde.invalidate();
 
 #ifdef SIMULATOR
 			for (int i = 0; i<4;i++)
@@ -46,11 +61,11 @@ Code_numeriqueView::Code_numeriqueView()
 			break;
 		case MODIF_CODE_INSTALL:
 			//
-			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_MODIF_CODE_ACCES_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_MODIF_CODE_ACCES_TITRE_CENTRE_DEFAUT).getText());
 			break;
 		case MODIF_CODE_MAINT:
 			//
-			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_MODIF_CODE_ACCES_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_MODIF_CODE_ACCES_TITRE_CENTRE_DEFAUT).getText());
 			break;
 		case NUM_SERIE:
 			for(int i = 0; i < 12; i++)
@@ -68,6 +83,9 @@ Code_numeriqueView::Code_numeriqueView()
 			}
 			//
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_NUM_SERIE_DROITE_DEFAUT).getText());
+			break;
+		case MODE_COMMANDE_PH:
+			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_MODE_COMMANDE_TITRE_CENTRE_DEFAUT).getText());
 			break;
 	}
 	barre_titre.titre(textAreaBuffer_Titre);
@@ -93,6 +111,10 @@ void Code_numeriqueView::affichageNumero()
 	if(eCode == NUM_SERIE)
 	{
 		longueur = 12;
+	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueur = 5;
 	}
 	//
 	for(int i = 0; i < longueur; i++)
@@ -134,6 +156,9 @@ void Code_numeriqueView::bouton_retour()
 		case NUM_SERIE:
 			application().gotoUsine_choix_modele_pacScreenNoTransition();
 			break;
+		case MODE_COMMANDE_PH:
+			application().gotoMaintenance_fct_avancesScreenNoTransition();
+			break;
 	}
 }
 
@@ -146,6 +171,13 @@ void Code_numeriqueView::bouton_valider()
 		case CODE_ACCES_INSTALL:
 			if(u8Longueur == 4 && memcmp(&sConfig_IHM.sInstall_PAC.auc8PW_Installateur[0], &u8BufferCode[0], 4) == 0)
 			{
+				if (sConfig_IHM.sInstall_PAC.sDateMiseEnService.Date == 0 && sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month == 0)
+				{
+					sConfig_IHM.sInstall_PAC.sDateMiseEnService.Date = sDate.Date;
+					sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month = sDate.Month;
+					sConfig_IHM.sInstall_PAC.sDateMiseEnService.Year = sDate.Year;
+					presenter->c_install_date_install();
+				}
 				application().gotoInstallationScreenNoTransition();
 			}
 			else
@@ -225,6 +257,19 @@ void Code_numeriqueView::bouton_valider()
 				else application().gotoUsine_choix_fluideScreenNoTransition();
 			}
 			break;
+		case MODE_COMMANDE_PH:
+			if(u8Longueur >= 1)
+			{
+				char valtemp[5];
+				for (int i= 0; i <= u8Longueur; i++)
+				{
+					valtemp[i] = (char)(u8BufferCode[i]);
+				}
+				u16CodeCommande = atoi(valtemp);
+
+				presenter->c_sav_mode_commande();
+			}
+			break;
 	}
 }
 
@@ -255,6 +300,10 @@ void Code_numeriqueView::bouton_0()
 	{
 		longueurMax = 12;
 	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
+	}
 	//
 	if(u8Longueur < longueurMax)
 	{
@@ -270,6 +319,10 @@ void Code_numeriqueView::bouton_1()
 	if(eCode == NUM_SERIE)
 	{
 		longueurMax = 12;
+	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
 	}
 	//
 	if(u8Longueur < longueurMax)
@@ -287,6 +340,10 @@ void Code_numeriqueView::bouton_2()
 	{
 		longueurMax = 12;
 	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
+	}
 	//
 	if(u8Longueur < longueurMax)
 	{
@@ -302,6 +359,10 @@ void Code_numeriqueView::bouton_3()
 	if(eCode == NUM_SERIE)
 	{
 		longueurMax = 12;
+	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
 	}
 	//
 	if(u8Longueur < longueurMax)
@@ -319,6 +380,10 @@ void Code_numeriqueView::bouton_4()
 	{
 		longueurMax = 12;
 	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
+	}
 	//
 	if(u8Longueur < longueurMax)
 	{
@@ -334,6 +399,10 @@ void Code_numeriqueView::bouton_5()
 	if(eCode == NUM_SERIE)
 	{
 		longueurMax = 12;
+	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
 	}
 	//
 	if(u8Longueur < longueurMax)
@@ -351,6 +420,10 @@ void Code_numeriqueView::bouton_6()
 	{
 		longueurMax = 12;
 	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
+	}
 	//
 	if(u8Longueur < longueurMax)
 	{
@@ -366,6 +439,10 @@ void Code_numeriqueView::bouton_7()
 	if(eCode == NUM_SERIE)
 	{
 		longueurMax = 12;
+	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
 	}
 	//
 	if(u8Longueur < longueurMax)
@@ -383,6 +460,10 @@ void Code_numeriqueView::bouton_8()
 	{
 		longueurMax = 12;
 	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
+	}
 	//
 	if(u8Longueur < longueurMax)
 	{
@@ -399,11 +480,56 @@ void Code_numeriqueView::bouton_9()
 	{
 		longueurMax = 12;
 	}
+	else if (eCode == MODE_COMMANDE_PH)
+	{
+		longueurMax = 5;
+	}
 	//
 	if(u8Longueur < longueurMax)
 	{
 		u8BufferCode[u8Longueur++] = '9';
 		affichageNumero();
+	}
+}
+
+void Code_numeriqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
+{
+	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER || sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX)
+	{
+		if(sConfig_IHM.sModele_PAC.u8ModelePAC == PHOENIX)
+		{
+			Unicode::snprintf(textAreaBuffer_Registre, 5, "%d", sCyclRegFrigo->pac.phoenix.sInfoTrameRuking.u16RequestedRegister);
+			Unicode::snprintf(textAreaBuffer_Val16b, 10, "%d", sCyclRegFrigo->pac.phoenix.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav);
+
+			Unicode::snprintf(textAreaBuffer_Val106b, 5, "%d", (sCyclRegFrigo->pac.phoenix.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav >> 6 & 0x3FF));
+			Unicode::snprintf(&textAreaBuffer_Val106b[Unicode::strlen(textAreaBuffer_Val106b)], 2, ",");
+			Unicode::snprintf(&textAreaBuffer_Val106b[Unicode::strlen(textAreaBuffer_Val106b)], 3, "%d", (sCyclRegFrigo->pac.phoenix.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav & 0x3F));
+
+			Unicode::snprintf(textAreaBuffer_Val88b, 4, "%d", (sCyclRegFrigo->pac.phoenix.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav >> 8 & 0xFF));
+			Unicode::snprintf(&textAreaBuffer_Val88b[Unicode::strlen(textAreaBuffer_Val88b)], 2, ",");
+			Unicode::snprintf(&textAreaBuffer_Val88b[Unicode::strlen(textAreaBuffer_Val88b)], 4, "%d", (sCyclRegFrigo->pac.phoenix.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav & 0xFF));
+		}
+		else if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
+		{
+			Unicode::snprintf(textAreaBuffer_Registre, 5, "%d", sCyclRegFrigo->pac.geoinverter.sInfoTrameRuking.u16RequestedRegister);
+			Unicode::snprintf(textAreaBuffer_Val16b, 10, "%d", sCyclRegFrigo->pac.geoinverter.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav);
+
+			Unicode::snprintf(textAreaBuffer_Val106b, 5, "%d", (sCyclRegFrigo->pac.geoinverter.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav >> 6 & 0x3FF));
+			Unicode::snprintf(&textAreaBuffer_Val106b[Unicode::strlen(textAreaBuffer_Val106b)], 2, ",");
+			Unicode::snprintf(&textAreaBuffer_Val106b[Unicode::strlen(textAreaBuffer_Val106b)], 3, "%d", (sCyclRegFrigo->pac.geoinverter.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav & 0x3F));
+
+			Unicode::snprintf(textAreaBuffer_Val88b, 4, "%d", (sCyclRegFrigo->pac.geoinverter.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav >> 8 & 0xFF));
+			Unicode::snprintf(&textAreaBuffer_Val88b[Unicode::strlen(textAreaBuffer_Val88b)], 2, ",");
+			Unicode::snprintf(&textAreaBuffer_Val88b[Unicode::strlen(textAreaBuffer_Val88b)], 4, "%d", (sCyclRegFrigo->pac.geoinverter.sInfoTrameRuking.u16Resultat_Trame_Ihm_Sav & 0xFF));
+		}
+		textArea_val_registre.setWildcard(textAreaBuffer_Registre);
+		textArea_val_registre.invalidate();
+		textArea_val_16b.setWildcard(textAreaBuffer_Val16b);
+		textArea_val_16b.invalidate();
+		textArea_val_106b.setWildcard(textAreaBuffer_Val106b);
+		textArea_val_106b.invalidate();
+		textArea_val_88b.setWildcard(textAreaBuffer_Val88b);
+		textArea_val_88b.invalidate();
 	}
 }
 

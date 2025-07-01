@@ -23,8 +23,8 @@ extern "C"
 #include "arkteos_defauts.h"
 #include <texts/TextKeysAndLanguages.hpp>
 
-#define VEILLE_1_TIME           600 //60              // Temps avant mise en veille 1 en secondes
-#define VEILLE_2_TIME           3000//300             // Temps avant mise en veille 1 en secondes
+#define VEILLE_1_TIME           5//600 //60              // Temps avant mise en veille 1 en secondes
+#define VEILLE_2_TIME           10//3000//300             // Temps avant mise en veille 1 en secondes
 #define PWM_VEILLE_1            5u
 
 
@@ -72,6 +72,7 @@ typedef enum
 	MODIF_CODE_INSTALL = 4,
 	MODIF_CODE_MAINT = 5,
 	NUM_SERIE = 6,
+	MODE_COMMANDE_PH = 7,
 } E_CODE;
 
 typedef enum
@@ -201,6 +202,7 @@ extern uint8_t eOuiNon, eCode, eTypeClavierAlpha;
 extern uint8_t eHysteresis;
 extern uint8_t ePageHystExt;
 extern uint8_t eProg;
+extern uint8_t u8AppointPageZone;
 extern S_DATE sDate, sDate_modif;
 extern S_STATUT_PAC sStatut_PAC;
 extern S_STATUT_PRIMAIRE sStatut_Primaire;
@@ -238,20 +240,23 @@ extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuis
 extern bool bPageAccueil;
 extern S_HISTO_ERR sHisto_Erreur;
 extern uint16_t u16NumAction;
-extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000];
+extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000],u32ErreursINV[1000], u32ErreursINV1[240],u32ErreursINV2[100];
 extern S_CONFIG_HYDRAU_TEMP sConfig_Hydrau_temp;
 extern S_CONFIG_PISCINE_TEMP sConfig_Piscine_temp;
 extern S_PARAM_ECS sParam_ECS_temp;
 extern uint32_t u32LastCyclique;
 extern uint8_t u8Pointeur_buffer_tx, u8Pointeur_envoi;
 extern S_PARAM_ZX sParamZxMZtemp[10];
+extern uint16_t u16CodeCommande;
+extern S_STATUT_LINKY sStatutLinky;
+extern uint8_t oui_veille;
 
 void setBackLightPWM(uint8_t pwm);
 uint8_t decodeRxData(rxData_t *rxData);
 uint8_t computeTxData(txData_t *txData, txData_t *cosebe_tx);
 bool verifErreurs(void);
 int ConvertPressionToTemperature(E_TYPE_GAZ typegaz, int PressionHP, int valpression);
-
+int16_t ConvertTemperatureToPression(E_TYPE_GAZ typegaz, int16_t temperature);
 
 
 

@@ -28,6 +28,7 @@ public:
     virtual ~Installation_hydraulique_param_compPresenter() {}
 
     void c_install_param();
+    void c_install_reg_ext();
     void c_install_zx(uint8_t u8Zone);
 
     virtual void changeDate(S_DATE *sDate);

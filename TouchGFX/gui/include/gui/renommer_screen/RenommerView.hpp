@@ -58,6 +58,8 @@ public:
     void bouton_maj();
     void bouton_supprimer();
     void affichageTexte();
+    void bouton_valider_message_attention();
+    void code_logo_ok();
 
 
 
@@ -65,15 +67,20 @@ public:
 	virtual void changeErreur(uint16_t u16Erreur);
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
-protected:
-     	 bool bConnexionDistance, bMajActif, bMultizone;
-     	 uint8_t u8Caractere, u8NomTemp[10], u8IndexCurseur;
-         uint16_t u16ErreurAffichee;
-         S_DATE sDate_old;
-         S_STATUT_PAC sStatut_PAC_old;
 
-         touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_a[2], textAreaBuffer_z[2], textAreaBuffer_e[2], textAreaBuffer_r[2], textAreaBuffer_t[2], textAreaBuffer_y[2], textAreaBuffer_u[2], textAreaBuffer_i[2], textAreaBuffer_o[2], textAreaBuffer_p[2], textAreaBuffer_q[2], textAreaBuffer_s[2], textAreaBuffer_d[2], textAreaBuffer_f[2]
-										 , textAreaBuffer_g[2], textAreaBuffer_h[2], textAreaBuffer_j[2], textAreaBuffer_k[2], textAreaBuffer_l[2], textAreaBuffer_m[2], textAreaBuffer_w[2], textAreaBuffer_x[2], textAreaBuffer_c[2], textAreaBuffer_v[2], textAreaBuffer_b[2], textAreaBuffer_n[2], textAreaBuffer_Nom[11];
+
+
+protected:
+	#define NB_MAX_CHAR_NOM 10
+	#define NB_MAX_CHAR_LOGO 13
+	 bool bConnexionDistance, bMajActif, bMultizone;
+	 uint8_t u8Caractere, u8TexteTemp[15], u8IndexCurseur, u8NbMaxChar;
+	 uint16_t u16ErreurAffichee;
+	 S_DATE sDate_old;
+	 S_STATUT_PAC sStatut_PAC_old;
+
+	 touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_a[2], textAreaBuffer_z[2], textAreaBuffer_e[2], textAreaBuffer_r[2], textAreaBuffer_t[2], textAreaBuffer_y[2], textAreaBuffer_u[2], textAreaBuffer_i[2], textAreaBuffer_o[2], textAreaBuffer_p[2], textAreaBuffer_q[2], textAreaBuffer_s[2], textAreaBuffer_d[2], textAreaBuffer_f[2]
+									 , textAreaBuffer_g[2], textAreaBuffer_h[2], textAreaBuffer_j[2], textAreaBuffer_k[2], textAreaBuffer_l[2], textAreaBuffer_m[2], textAreaBuffer_w[2], textAreaBuffer_x[2], textAreaBuffer_c[2], textAreaBuffer_v[2], textAreaBuffer_b[2], textAreaBuffer_n[2], textAreaBuffer_Texte[14],textAreaBuffer_MessTitre[40], textAreaBuffer_MessMess[500];
 
 };
 

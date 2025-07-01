@@ -36,6 +36,10 @@ public:
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
     virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+    virtual void changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx);
+    virtual void changeStatutRF(S_STATUT_RF *sStatut_RF) ;
+    virtual void changeStatutECS(S_STATUT_ECS *sStatut_ECS);
+    virtual void changeStatutPiscine(S_STATUT_PISCINE *sStatut_Piscine);
 
 private:
     Variables_systemePresenter();

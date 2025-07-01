@@ -52,9 +52,34 @@ Installation_MZ_config_zoneView::Installation_MZ_config_zoneView()
 
 void Installation_MZ_config_zoneView::ViewHideButtonContainer()
 {
+	bool bRattachement = false;
 	//Si rattaché à un groupe du type gainable
 	if ((sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].TypeEmmetteur == GAINABLE)
 			|| (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].TypeEmmetteur == GAINABLE))
+	{
+		bRattachement = true;
+		TypeEmetteur = GAINABLE;
+	}
+	else if ((sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].TypeEmmetteur == PLANCHER)
+			|| (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].TypeEmmetteur == PLANCHER))
+	{
+		bRattachement = true;
+		TypeEmetteur = PLANCHER;
+	}
+	else if ((sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].TypeEmmetteur == VENTILO)
+			|| (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].TypeEmmetteur == VENTILO))
+	{
+		bRattachement = true;
+		TypeEmetteur = VENTILO;
+	}
+	else if((sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].TypeEmmetteur == RADIATEUR)
+			|| (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].TypeEmmetteur == RADIATEUR))
+	{
+		bRattachement = true;
+		TypeEmetteur = RADIATEUR;
+	}
+
+	if (bRattachement)
 	{
 		button_gauche_type_emetteur.setVisible(false);
 		button_droite_type_emetteur.setVisible(false);
@@ -262,7 +287,7 @@ void Installation_MZ_config_zoneView::record_zone_active_oui_non()
 
 void Installation_MZ_config_zoneView::bouton_froid()
 {
-	if(sParamZxMZtemp[u8NumZone].TypeEmmetteur == RADIATEUR || sConfig_IHM.sModele_PAC.bReversible == false ||
+	if(TypeEmetteur == RADIATEUR || sConfig_IHM.sModele_PAC.bReversible == false ||
 			(sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].bModeFroid == 0 ) ||
 			(sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].bModeFroid == 0 ) )
 	{
@@ -336,7 +361,7 @@ void Installation_MZ_config_zoneView::MAJEmetteur()
 {
 //	//textArea_type_emet_dans_groupe.setTypedText(touchgfx::TypedText(T_TEXT_RADIATEUR_CENTRE_DEFAUT));
 //
-	switch(sParamZxMZtemp[u8NumZone].TypeEmmetteur)
+	switch(TypeEmetteur)
 	{
 		case RADIATEUR:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_RADIATEUR_CENTRE_DEFAUT));
@@ -365,15 +390,15 @@ void Installation_MZ_config_zoneView::MAJEmetteur()
 
 void Installation_MZ_config_zoneView::bouton_droite_type_emetteur()
 {
-	if (sParamZxMZtemp[u8NumZone].TypeEmmetteur < RADIATEUR) sParamZxMZtemp[u8NumZone].TypeEmmetteur++;
-	else sParamZxMZtemp[u8NumZone].TypeEmmetteur = PLANCHER;
+	if (TypeEmetteur < RADIATEUR) TypeEmetteur++;
+	else TypeEmetteur = PLANCHER;
 	MAJEmetteur();
 }
 
 void Installation_MZ_config_zoneView::bouton_gauche_type_emetteur()
 {
-	if (sParamZxMZtemp[u8NumZone].TypeEmmetteur > PLANCHER) sParamZxMZtemp[u8NumZone].TypeEmmetteur--;
-	else sParamZxMZtemp[u8NumZone].TypeEmmetteur = RADIATEUR;
+	if (TypeEmetteur > PLANCHER) TypeEmetteur--;
+	else TypeEmetteur = RADIATEUR;
 	MAJEmetteur();
 }
 
@@ -496,6 +521,7 @@ void Installation_MZ_config_zoneView::bouton_valider()
 			application().gotoInstallation_hydrauliqueScreenNoTransition();
 		}
 	}
+	sParamZxMZtemp[u8NumZone].TypeEmmetteur = TypeEmetteur;
 }
 
 void Installation_MZ_config_zoneView::bouton_retour()

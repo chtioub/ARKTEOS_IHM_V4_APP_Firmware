@@ -129,7 +129,7 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 				toggleButton_non_oui_non_pilotage_vit_pompe_puits.forceState(false);
 				toggleButton_non_oui_non_pilotage_vit_pompe_puits.setTouchable(true);
 
-				textArea_pilotage_pompe_puits.setXY(486, 303);
+				textArea_pilotage_pompe_puits.setXY(486, 304);
 				textArea_pilotage_pompe_puits.setVisible(true);
 				textArea_pilotage_pompe_puits.invalidate();
 				update_vitesse_min_pompe_puits();
@@ -137,7 +137,10 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 
 				if (sConfig_IHM.sModele_PAC.nbCompresseur == NB_COMPRESSEUR_2)
 				{
-					container_vitesse_max_pompe_puits.setXY(486, 152);
+					container_vitesse_min_pompe_puits.setXY(15, 459);
+					container_vitesse_min_pompe_puits.setVisible(true);
+					container_vitesse_min_pompe_puits.invalidate();
+					container_vitesse_max_pompe_puits.setXY(486, 459);
 					container_vitesse_max_pompe_puits.setVisible(true);
 					container_vitesse_max_pompe_puits.invalidate();
 				}
@@ -489,7 +492,7 @@ void Installation_circuit_captageView::bouton_oui_pilotage_vit_pompe_puits()
 		{
 			if (sConfig_IHM.sModele_PAC.nbCompresseur == NB_COMPRESSEUR_2)
 			{
-				container_vitesse_max_pompe_puits.setXY(486, 152);
+				container_vitesse_max_pompe_puits.setXY(486, 459);
 				container_vitesse_max_pompe_puits.setVisible(true);
 				container_vitesse_max_pompe_puits.invalidate();
 			}
@@ -609,12 +612,14 @@ void Installation_circuit_captageView::bouton_gauche_type_capteur()
 			//container_type_capteur.setVisible(true);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT));
 			container_oui_non_pilotage_pompe_puits.setXY(15, 304);
-			container_oui_non_pilotage_pompe_puits.invalidate();
+			container_oui_non_pilotage_pompe_puits.setVisible(true);
+			//container_oui_non_pilotage_pompe_puits.invalidate();
 		}
 		else
 		{
 			//container_type_capteur.setVisible(false);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT));
+			container_oui_non_pilotage_pompe_puits.setVisible(false);
 		}
 
 	}
@@ -653,11 +658,14 @@ void Installation_circuit_captageView::bouton_droite_type_capteur()
 		{
 			//container_type_capteur.setVisible(true);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT));
+			container_oui_non_pilotage_pompe_puits.setXY(15, 304);
+			container_oui_non_pilotage_pompe_puits.setVisible(true);
 		}
 		else
 		{
 			//container_type_capteur.setVisible(false);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT));
+			container_oui_non_pilotage_pompe_puits.setVisible(false);
 		}
 
 	}
