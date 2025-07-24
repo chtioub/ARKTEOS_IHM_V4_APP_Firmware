@@ -23,7 +23,7 @@ Installation_hydraulique_config_zoneView::Installation_hydraulique_config_zoneVi
 	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
 	barre_titre.titre(textAreaBuffer_Titre);
 	//
-	if(sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2 && sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE)
+	if(sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE)
 	{
 		if(sConfig_Hydrau_temp.u8NumZone == 1)
 		{
@@ -38,7 +38,7 @@ Installation_hydraulique_config_zoneView::Installation_hydraulique_config_zoneVi
 		}
 		buttonWithLabel_gestion_circulateur.setVisible(false);
 	}
-	else if(sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2 && sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES)
+	else if(sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES)
 	{
 		if(sConfig_Hydrau_temp.u8NumZone == 1)
 		{
@@ -158,7 +158,7 @@ void Installation_hydraulique_config_zoneView::affichage_type_sonde()
 	container_sonde_rf.setVisible(false);
 	buttonWithLabel_sonde_modbus.setVisible(false);
 	//
-	switch(sConfig_Hydrau_temp.sParamZx.type_zone.zone.TypeThermostat)
+	switch (sConfig_Hydrau_temp.sParamZx.type_zone.zone.TypeThermostat)
 	{
 		case TH_RF:
 			container_sonde_rf.setVisible(true);
@@ -188,6 +188,16 @@ void Installation_hydraulique_config_zoneView::bouton_valider()
 	memcpy(&sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone], &sConfig_Hydrau_temp.sParamZx, sizeof(S_PARAM_ZX));
 	presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
 	application().gotoInstallation_hydrauliqueScreenNoTransition();
+
+
+
+	//A 0 pour les 2
+//	Unicode::snprintf(textAreaBuffer_Titre, 4, "%d  ", sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid);
+//	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 4, "%d  ", sConfig_IHM.sParam_Zx[0].bModeFroid);
+//	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 4, "%d  ", sConfig_Hydrau_temp.sParamZx.u4ConsigneTeauFroid);
+//	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 4, "%d  ", sConfig_Hydrau_temp.sParamZx.bModeFroid);
+//	barre_titre.titre(textAreaBuffer_Titre);
+//	barre_titre.invalidate();
 }
 
 void Installation_hydraulique_config_zoneView::changeStatutRF(S_STATUT_RF *sStatut_RF)

@@ -1,4 +1,5 @@
 #include <gui/accueil_screen/AccueilView.hpp>
+#include <images/BitmapDatabase.hpp>
 
 AccueilView::AccueilView()//:
         //swipeCallback(this, &AccueilView::swipeCallbackHandler)
@@ -111,6 +112,18 @@ AccueilView::AccueilView()//:
 	}
 	toggleButton_oui_oui_non_veille.invalidate();
 	toggleButton_non_oui_non_veille.invalidate();
+
+	//Container Vacances
+	if ((sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_MULTI_ZONE && sConfig_IHM.sOption_PAC.sZone.u8val != 0)
+			|| sConfig_IHM.sOption_PAC.ECS != 0 || sConfig_IHM.sOption_PAC.Piscine != 0)
+	{
+		container_vacances.setVisible(true);
+	}
+	else
+	{
+		container_vacances.setVisible(false);
+	}
+	container_vacances.invalidate();
 
 	//
 #ifndef SIMULATOR
@@ -248,42 +261,42 @@ void AccueilView::Timer_500ms()
 		// Zone suivante
 		for(int i = (u8Zone1 + 1); i < ((u8Zone1 + 1) + NB_ZONE); i++)
 		{
-			if((i % NB_ZONE) == 0 && sConfig_IHM_old.sOption_PAC.sZone.bZone1)
+			if((i % NB_ZONE) == 0 && sConfig_IHM_old.sOption_PAC.sZone.zone.bZone1)
 			{
 				u8Zone1 = (i % NB_ZONE);
 				break;
 			}
-			else if((i % NB_ZONE) == 1 && sConfig_IHM_old.sOption_PAC.sZone.bZone2)
+			else if((i % NB_ZONE) == 1 && sConfig_IHM_old.sOption_PAC.sZone.zone.bZone2)
 			{
 				u8Zone1 = (i % NB_ZONE);
 				break;
 			}
-			else if((i % NB_ZONE) == 2 && sConfig_IHM_old.sOption_PAC.sZone.bZone3)
+			else if((i % NB_ZONE) == 2 && sConfig_IHM_old.sOption_PAC.sZone.zone.bZone3)
 			{
 				u8Zone1 = (i % NB_ZONE);
 				break;
 			}
-			else if((i % NB_ZONE) == 3 && sConfig_IHM_old.sOption_PAC.sZone.bZone4)
+			else if((i % NB_ZONE) == 3 && sConfig_IHM_old.sOption_PAC.sZone.zone.bZone4)
 			{
 				u8Zone1 = (i % NB_ZONE);
 				break;
 			}
-			else if((i % NB_ZONE) == 4 && sConfig_IHM_old.sOption_PAC.sZone.bZone5)
+			else if((i % NB_ZONE) == 4 && sConfig_IHM_old.sOption_PAC.sZone.zone.bZone5)
 			{
 				u8Zone1 = (i % NB_ZONE);
 				break;
 			}
-			else if((i % NB_ZONE) == 5 && sConfig_IHM_old.sOption_PAC.sZone.bZone6)
+			else if((i % NB_ZONE) == 5 && sConfig_IHM_old.sOption_PAC.sZone.zone.bZone6)
 			{
 				u8Zone1 = (i % NB_ZONE);
 				break;
 			}
-			else if((i % NB_ZONE) == 6 && sConfig_IHM_old.sOption_PAC.sZone.bZone7)
+			else if((i % NB_ZONE) == 6 && sConfig_IHM_old.sOption_PAC.sZone.zone.bZone7)
 			{
 				u8Zone1 = (i % NB_ZONE);
 				break;
 			}
-			else if((i % NB_ZONE) == 7 && sConfig_IHM_old.sOption_PAC.sZone.bZone8)
+			else if((i % NB_ZONE) == 7 && sConfig_IHM_old.sOption_PAC.sZone.zone.bZone8)
 			{
 				u8Zone1 = (i % NB_ZONE);
 				break;
@@ -352,53 +365,107 @@ void AccueilView::Timer_500ms()
 
 void AccueilView::changeLogo(bool bVisible)
 {
-//	Image_qualiclim.setVisible(false);
-//	Image_cfd.setVisible(false);
-//	Image_ces.setVisible(false);
-//	Image_enelia.setVisible(false);
-//	Image_bltec.setVisible(false);
-//	Image_variation.setVisible(false);
-//	Image_gourdon.setVisible(false);
-//	Image_etienne.setVisible(false);
-	Image_alppac.setVisible(false);
-	Image_arkteos.setVisible(false);
+////	Image_qualiclim.setVisible(false);
+////	Image_cfd.setVisible(false);
+////	Image_ces.setVisible(false);
+////	Image_enelia.setVisible(false);
+////	Image_bltec.setVisible(false);
+////	Image_variation.setVisible(false);
+////	Image_gourdon.setVisible(false);
+////	Image_etienne.setVisible(false);
+////	Image_alppac.setVisible(false);
+//	Image_arkteos.setVisible(false);
+//
+//
+//	//Bltec x:225	y:24
+//	//CES 	x:220	y:-6
+//	//cfd	x:232	y:17
+//	//enelia x:244	y:10
+//	//etienne	x:261	y:24
+//	//gourdon	x:225	y:11
+//	//qualiclim	x:253	y:3
+//	//variation x:225	y:19
+//	//alppac	x:233	y:40
+//
+//
+//	if(bVisible)
+//	{
+//////		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) 		Image_qualiclim.setVisible(true);
+//////		else
+////			if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) 		scalableImageLogo.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_CFD_L486_H200_ID));
+////				//Image_cfd.setVisible(true);
+//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
+//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
+//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
+//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
+//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
+//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
+//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
+////		else scalableImageLogo.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_ARKTEOS_L381_H131_ID));
+//			Image_arkteos.setVisible(true);
+//	}
+////
+////	scalableImageLogo.invalidate();
+////	scalableImage_appoint.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_CFD_L486_H200_ID));
+////	Image_qualiclim.invalidate();
+////	Image_cfd.invalidate();
+////	Image_ces.invalidate();
+////	Image_enelia.invalidate();
+////	Image_bltec.invalidate();
+////	Image_variation.invalidate();
+////	Image_gourdon.invalidate();
+////	Image_etienne.invalidate();
+////	Image_alppac.invalidate();
+//	Image_arkteos.invalidate();
 
-	//Bltec x:225	y:24
-	//CES 	x:220	y:-6
-	//cfd	x:232	y:17
-	//enelia x:244	y:10
-	//etienne	x:261	y:24
-	//gourdon	x:225	y:11
-	//qualiclim	x:253	y:3
-	//variation x:225	y:19
-	//alppac	x:233	y:40
+
+	//	Image_qualiclim.setVisible(false);
+	//	Image_cfd.setVisible(false);
+	//	Image_ces.setVisible(false);
+	//	Image_enelia.setVisible(false);
+	//	Image_bltec.setVisible(false);
+	//	Image_variation.setVisible(false);
+	//	Image_gourdon.setVisible(false);
+	//	Image_etienne.setVisible(false);
+		Image_alppac.setVisible(false);
+		Image_arkteos.setVisible(false);
+
+		//Bltec x:225	y:24
+		//CES 	x:220	y:-6
+		//cfd	x:232	y:17
+		//enelia x:244	y:10
+		//etienne	x:261	y:24
+		//gourdon	x:225	y:11
+		//qualiclim	x:253	y:3
+		//variation x:225	y:19
+		//alppac	x:233	y:40
 
 
-	if(bVisible)
-	{
-//		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) 		Image_qualiclim.setVisible(true);
-//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) 		Image_cfd.setVisible(true);
-//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
-//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
-//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
-//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
-//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
-//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
-//		else
-		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
-		else
-			Image_arkteos.setVisible(true);
-	}
-//	Image_qualiclim.invalidate();
-//	Image_cfd.invalidate();
-//	Image_ces.invalidate();
-//	Image_enelia.invalidate();
-//	Image_bltec.invalidate();
-//	Image_variation.invalidate();
-//	Image_gourdon.invalidate();
-//	Image_etienne.invalidate();
-	Image_alppac.invalidate();
-	Image_arkteos.invalidate();
+		if(bVisible)
+		{
+	//		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) 		Image_qualiclim.setVisible(true);
+	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) 		Image_cfd.setVisible(true);
+	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
+	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
+	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
+	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
+	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
+	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
+	//		else
+			if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
+			else
+				Image_arkteos.setVisible(true);
+		}
+	//	Image_qualiclim.invalidate();
+	//	Image_cfd.invalidate();
+	//	Image_ces.invalidate();
+	//	Image_enelia.invalidate();
+	//	Image_bltec.invalidate();
+	//	Image_variation.invalidate();
+	//	Image_gourdon.invalidate();
+	//	Image_etienne.invalidate();
+		Image_alppac.invalidate();
+		Image_arkteos.invalidate();
 }
 
 void AccueilView::bouton_marche_arret()
@@ -448,14 +515,28 @@ void AccueilView::changeModePac(bool marche)
 
 void AccueilView::bouton_maintenance()
 {
-	eCode = CODE_ACCES_MAINT;
-	application().gotoCode_numeriqueScreenNoTransition();
+	if (bAutorisationNoCode)
+	{
+		application().gotoMaintenanceScreenNoTransition();
+	}
+	else
+	{
+		eCode = CODE_ACCES_MAINT;
+		application().gotoCode_numeriqueScreenNoTransition();
+	}
 }
 
 void AccueilView::bouton_installation()
 {
-	eCode = CODE_ACCES_INSTALL;
-	application().gotoCode_numeriqueScreenNoTransition();
+	if (bAutorisationNoCode)
+	{
+		application().gotoInstallationScreenNoTransition();
+	}
+	else
+	{
+		eCode = CODE_ACCES_INSTALL;
+		application().gotoCode_numeriqueScreenNoTransition();
+	}
 }
 
 void AccueilView::bouton_usine()
@@ -1427,16 +1508,16 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		// Bouton zones
 		if(memcmp(&sConfig_IHM_old.sOption_PAC.sZone, &sConfig_IHM->sOption_PAC.sZone, sizeof(S_ZONE)) || sConfig_IHM_old.sParam_PAC.TypeRegul != sConfig_IHM->sParam_PAC.TypeRegul)
 		{
-			u8NbZones = sConfig_IHM->sOption_PAC.sZone.bZone1 +
-						sConfig_IHM->sOption_PAC.sZone.bZone2 +
-						sConfig_IHM->sOption_PAC.sZone.bZone3 +
-						sConfig_IHM->sOption_PAC.sZone.bZone4 +
-						sConfig_IHM->sOption_PAC.sZone.bZone5 +
-						sConfig_IHM->sOption_PAC.sZone.bZone6 +
-						sConfig_IHM->sOption_PAC.sZone.bZone7 +
-						sConfig_IHM->sOption_PAC.sZone.bZone8;
+			u8NbZones = sConfig_IHM->sOption_PAC.sZone.zone.bZone1 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone2 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone3 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone4 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone5 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone6 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone7 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone8;
 			// Zone 1
-			if((u8NbZones == 1 && sConfig_IHM->sOption_PAC.sZone.bZone2 == 0) || u8NbZones >= 2)
+			if((u8NbZones == 1 && sConfig_IHM->sOption_PAC.sZone.zone.bZone2 == 0) || u8NbZones >= 2)
 			{
 				Image_maison_zone_1.setVisible(true);
 				container_zone_1.setVisible(true);
@@ -1444,7 +1525,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			else container_zone_1.setVisible(false);
 			container_zone_1.invalidate();
 			// Zone 2
-			if(u8NbZones == 2 || (u8NbZones == 1 && sConfig_IHM->sOption_PAC.sZone.bZone2))
+			if(u8NbZones == 2 || (u8NbZones == 1 && sConfig_IHM->sOption_PAC.sZone.zone.bZone2))
 			{
 				container_zone_2.setVisible(true);
 			}
@@ -1453,11 +1534,11 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			// Définition de la zone
 			if(u8NbZones <= 2)
 			{
-				if(sConfig_IHM->sOption_PAC.sZone.bZone1)
+				if(sConfig_IHM->sOption_PAC.sZone.zone.bZone1)
 				{
 					u8Zone1 = 0;
 				}
-				if(sConfig_IHM->sOption_PAC.sZone.bZone2)
+				if(sConfig_IHM->sOption_PAC.sZone.zone.bZone2)
 				{
 					if(u8NbZones == 1)
 					{
@@ -1472,7 +1553,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						u8Zone2 = 1;
 					}
 				}
-				if(sConfig_IHM->sOption_PAC.sZone.bZone3)
+				if(sConfig_IHM->sOption_PAC.sZone.zone.bZone3)
 				{
 					if(u8Zone1 == 0xff)
 					{
@@ -1483,7 +1564,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						u8Zone2 = 2;
 					}
 				}
-				if(sConfig_IHM->sOption_PAC.sZone.bZone4)
+				if(sConfig_IHM->sOption_PAC.sZone.zone.bZone4)
 				{
 					if(u8Zone1 == 0xff)
 					{
@@ -1494,7 +1575,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						u8Zone2 = 3;
 					}
 				}
-				if(sConfig_IHM->sOption_PAC.sZone.bZone5)
+				if(sConfig_IHM->sOption_PAC.sZone.zone.bZone5)
 				{
 					if(u8Zone1 == 0xff)
 					{
@@ -1505,7 +1586,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						u8Zone2 = 4;
 					}
 				}
-				if(sConfig_IHM->sOption_PAC.sZone.bZone6)
+				if(sConfig_IHM->sOption_PAC.sZone.zone.bZone6)
 				{
 					if(u8Zone1 == 0xff)
 					{
@@ -1516,7 +1597,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						u8Zone2 = 5;
 					}
 				}
-				if(sConfig_IHM->sOption_PAC.sZone.bZone7)
+				if(sConfig_IHM->sOption_PAC.sZone.zone.bZone7)
 				{
 					if(u8Zone1 == 0xff)
 					{
@@ -1527,7 +1608,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						u8Zone2 = 6;
 					}
 				}
-				if(sConfig_IHM->sOption_PAC.sZone.bZone8)
+				if(sConfig_IHM->sOption_PAC.sZone.zone.bZone8)
 				{
 					if(u8Zone1 == 0xff)
 					{
@@ -1547,28 +1628,41 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		// Affichage de la zone 1
 		if((u8Zone1_old != u8Zone1) || memcmp(&sConfig_IHM_old.sParam_Zx[u8Zone1], &sConfig_IHM->sParam_Zx[u8Zone1], sizeof(S_PARAM_ZX)))
 		{
+			//
+			if(sConfig_IHM->sParam_PAC.TypeRegul < REGUL_BAL_TAMPON_MULTI_ZONE)
+			{
+				button_marron_zone_1.setVisible(false);
+				button_violet_zone_1.setVisible(false);
+				button_orange_zone_1.setVisible(true);
+			}
+			else
+			{
+				switch(sConfig_IHM->sParam_Zx[u8Zone1].u2RattachementGroupe)
+				{
+					case AUTONOME:
+						button_marron_zone_1.setVisible(false);
+						button_violet_zone_1.setVisible(false);
+						button_orange_zone_1.setVisible(true);
+						break;
+					case GROUPE_A:
+						button_marron_zone_1.setVisible(false);
+						button_violet_zone_1.setVisible(true);
+						button_orange_zone_1.setVisible(false);
+						break;
+					case GROUPE_B:
+						button_marron_zone_1.setVisible(true);
+						button_violet_zone_1.setVisible(false);
+						button_orange_zone_1.setVisible(false);
+						break;
+				}
+			}
+			button_marron_zone_1.invalidate();
+			button_violet_zone_1.invalidate();
+			button_orange_zone_1.invalidate();
 			// Nom de la zone
 			Unicode::fromUTF8(sConfig_IHM->sParam_Zx[u8Zone1].u8NomZone, textAreaBuffer_Zone_1, 10);
 			textArea_zone_1.setWildcard(textAreaBuffer_Zone_1);
 			textArea_zone_1.invalidate();
-			//
-			switch(sConfig_IHM->sParam_Zx[u8Zone1].u2RattachementGroupe)
-			{
-				case AUTONOME:
-					button_marron_zone_1.setVisible(false);
-					button_violet_zone_1.setVisible(false);
-					break;
-				case GROUPE_A:
-					button_marron_zone_1.setVisible(false);
-					button_violet_zone_1.setVisible(true);
-					break;
-				case GROUPE_B:
-					button_marron_zone_1.setVisible(true);
-					button_violet_zone_1.setVisible(false);
-					break;
-			}
-			button_marron_zone_1.invalidate();
-			button_violet_zone_1.invalidate();
 			// Mode et demande de la zone
 			if((sStatut_Zx_old[u8Zone1].Mode != sStatut_Zx->Mode) || (sStatut_Zx_old[u8Zone1].Exception != sStatut_Zx->Exception))
 			{
@@ -1610,27 +1704,41 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		// Affichage de la zone 2
 		if((u8Zone2_old != u8Zone2) || memcmp(&sConfig_IHM_old.sParam_Zx[u8Zone2], &sConfig_IHM->sParam_Zx[u8Zone2], sizeof(S_PARAM_ZX)))
 		{
-			Unicode::fromUTF8(sConfig_IHM->sParam_Zx[u8Zone2].u8NomZone, textAreaBuffer_Zone_2, 10);
-			textArea_zone_2.setWildcard(textAreaBuffer_Zone_2);
-			textArea_zone_2.invalidate();
 			//
-			switch(sConfig_IHM->sParam_Zx[u8Zone2].u2RattachementGroupe)
+			if(sConfig_IHM->sParam_PAC.TypeRegul < REGUL_BAL_TAMPON_MULTI_ZONE)
 			{
-				case AUTONOME:
-					button_marron_zone_2.setVisible(false);
-					button_violet_zone_2.setVisible(false);
-					break;
-				case GROUPE_A:
-					button_marron_zone_2.setVisible(false);
-					button_violet_zone_2.setVisible(true);
-					break;
-				case GROUPE_B:
-					button_marron_zone_2.setVisible(true);
-					button_violet_zone_2.setVisible(false);
-					break;
+				button_marron_zone_2.setVisible(false);
+				button_violet_zone_2.setVisible(false);
+				button_orange_zone_2.setVisible(true);
+			}
+			else
+			{
+				switch(sConfig_IHM->sParam_Zx[u8Zone2].u2RattachementGroupe)
+				{
+					case AUTONOME:
+						button_marron_zone_2.setVisible(false);
+						button_violet_zone_2.setVisible(false);
+						button_orange_zone_2.setVisible(true);
+						break;
+					case GROUPE_A:
+						button_marron_zone_2.setVisible(false);
+						button_violet_zone_2.setVisible(true);
+						button_orange_zone_2.setVisible(false);
+						break;
+					case GROUPE_B:
+						button_marron_zone_2.setVisible(true);
+						button_violet_zone_2.setVisible(false);
+						button_orange_zone_2.setVisible(false);
+						break;
+				}
 			}
 			button_marron_zone_2.invalidate();
 			button_violet_zone_2.invalidate();
+			button_orange_zone_2.invalidate();
+			//Nom Zone
+			Unicode::fromUTF8(sConfig_IHM->sParam_Zx[u8Zone2].u8NomZone, textAreaBuffer_Zone_2, 10);
+			textArea_zone_2.setWildcard(textAreaBuffer_Zone_2);
+			textArea_zone_2.invalidate();
 			// Mode et demande de la zone
 			switch(sStatut_Zx_old[u8Zone2].Mode)
 			{

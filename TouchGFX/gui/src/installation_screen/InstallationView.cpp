@@ -19,6 +19,7 @@ InstallationView::InstallationView()
 
 	//Pour la page appoint
 	u8AppointPageZone = 0;
+	u8Nb_PAC = sConfig_IHM.sParam_PAC.numEsclave + 1;
 }
 
 void InstallationView::setupScreen()

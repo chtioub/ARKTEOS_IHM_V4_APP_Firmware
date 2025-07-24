@@ -46,6 +46,7 @@ public:
     void bouton_param_zone_6();
     void bouton_param_zone_7();
     void bouton_param_zone_8();
+    void bouton_valider();
 
 
 
@@ -58,13 +59,16 @@ public:
     virtual void RefreshVoieZone();
     virtual void RefreshZoneActive();
     virtual void affichage_information();
+    virtual void affichage_meme_voie_utilisee();
+    virtual void verification_loi_deau();
+    virtual void affichage_erreur_config_loi_deau();
 	virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
 	virtual void changeDate(S_DATE *sDate);
 	virtual void changeErreur(uint16_t u16Erreur);
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
-    bool bConnexionDistance,bMessageAttentionVu;
+    bool bConnexionDistance,bMessageAttentionVu, bErreurConfigurationLoiEau;
     uint16_t u16ErreurAffichee;
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;

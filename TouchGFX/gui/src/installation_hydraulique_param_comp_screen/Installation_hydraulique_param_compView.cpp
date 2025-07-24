@@ -26,6 +26,7 @@ Installation_hydraulique_param_compView::Installation_hydraulique_param_compView
 	    Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
 	}
 	barre_titre.titre(textAreaBuffer_Titre);
+
 	//
 	if(sConfig_Hydrau_temp.u8TypeRegul >= REGUL_EXTERNE)
 	{
@@ -98,15 +99,36 @@ Installation_hydraulique_param_compView::Installation_hydraulique_param_compView
 		u8TempDepartEau = sConfig_Hydrau_temp.sParamZx.u4ConsigneTeauFroid + 7;
 	}
 	// Oui non rafraichissement
-	if(sConfig_IHM.sModele_PAC.bReversible != 0 || (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV && (sConfig_IHM.sConfig_PAC.ConfigGeo.bFreecooling || sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeSimultaneChaudFroid)) || (sConfig_IHM.sModele_PAC.u8ModelePAC == INVERTERRA && (sConfig_IHM.sConfig_PAC.ConfigGeoInverter.bFreecooling || sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeSimultaneChaudFroid)))
+	if(sConfig_IHM.sModele_PAC.bReversible != 0 || (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV && (sConfig_IHM.sConfig_PAC.ConfigGeo.bFreecooling
+			|| sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeSimultaneChaudFroid)) || (sConfig_IHM.sModele_PAC.u8ModelePAC == INVERTERRA && (sConfig_IHM.sConfig_PAC.ConfigGeoInverter.bFreecooling || sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeSimultaneChaudFroid)))
 	{
 		if(sConfig_Hydrau_temp.u8TypeRegul >= REGUL_EXTERNE || sConfig_Hydrau_temp.sParamZx.TypeEmmetteur < RADIATEUR)
 		{
 			container_oui_non_rafraichissement.setVisible(true);
 		}
+		else
+		{
+			container_oui_non_rafraichissement.setVisible(false);
+			sConfig_Hydrau_temp.sParamZx.bModeFroid = 0;
+			toggleButton_oui_oui_non_rafraichissement.forceState(false);
+			toggleButton_oui_oui_non_rafraichissement.setTouchable(true);
+			toggleButton_non_oui_non_rafraichissement.forceState(true);
+			toggleButton_non_oui_non_rafraichissement.setTouchable(false);
+		}
 	}
+	else
+	{
+		container_oui_non_rafraichissement.setVisible(false);
+		sConfig_Hydrau_temp.sParamZx.bModeFroid = 0;
+		toggleButton_oui_oui_non_rafraichissement.forceState(false);
+		toggleButton_oui_oui_non_rafraichissement.setTouchable(true);
+		toggleButton_non_oui_non_rafraichissement.forceState(true);
+		toggleButton_non_oui_non_rafraichissement.setTouchable(false);
+	}
+	container_oui_non_rafraichissement.invalidate();
 	// Bouton consigne eau
-	if(container_oui_non_rafraichissement.isVisible() && toggleButton_oui_oui_non_rafraichissement.getState() && sConfig_Hydrau_temp.u8TypeRegul != REGUL_ESCLAVE && (sConfig_Hydrau_temp.u8TypeRegul != REGUL_DIRECTE || sConfig_Hydrau_temp.u8NumZone == 0 || sConfig_Hydrau_temp.sZones.bZone1 == 0 || sConfig_Hydrau_temp.sZones.bZone2 == 0 || sConfig_IHM.sParam_Zx[0].bModeFroid == 0))
+	if((container_oui_non_rafraichissement.isVisible() && toggleButton_oui_oui_non_rafraichissement.getState() && (sConfig_Hydrau_temp.u8TypeRegul != REGUL_DIRECTE || sConfig_Hydrau_temp.u8NumZone == 0))
+			|| (sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && toggleButton_non_oui_non_rafraichissement.getState() && sConfig_IHM.sParam_Zx[0].bModeFroid == 0 && sConfig_Hydrau_temp.u8NumZone == 1))
 	{
 		container_temp_depart_eau_raf.setVisible(true);
 		container_temp_depart_eau_raf.invalidate();
@@ -129,7 +151,8 @@ Installation_hydraulique_param_compView::Installation_hydraulique_param_compView
 	}
 	else u8TempDepartEau_MIN = 7;
 	// Temperature max eau
-	if((sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES) && sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2 && sConfig_Hydrau_temp.u8NumZone == 1)
+	if((sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES) && sConfig_Hydrau_temp.sZones.zone.bZone1
+			&& sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.u8NumZone == 1 && sConfig_IHM.sParam_Zx[0].bModeFroid == 1)
 	{
 		if(u8TempDepartEau_MIN < (sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid + 7))
 		{
@@ -137,7 +160,8 @@ Installation_hydraulique_param_compView::Installation_hydraulique_param_compView
 		}
 	}
 	// Temperature max eau
-	if((sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES) && sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2 && sConfig_Hydrau_temp.u8NumZone == 0)
+	if((sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES)
+			&& sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.u8NumZone == 0 && sConfig_IHM.sParam_Zx[1].bModeFroid == 1)
 	{
 		u8TempDepartEau_MAX = sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid + 7;
 	}
@@ -223,7 +247,7 @@ void Installation_hydraulique_param_compView::bouton_oui_rafraichissement()
 		toggleButton_oui_oui_non_rafraichissement.setTouchable(false);
 		toggleButton_oui_oui_non_rafraichissement.invalidate();
 		//
-		if(sConfig_Hydrau_temp.u8TypeRegul != REGUL_ESCLAVE && (sConfig_Hydrau_temp.u8TypeRegul != REGUL_DIRECTE || sConfig_Hydrau_temp.u8NumZone == 0 || sConfig_Hydrau_temp.sZones.bZone1 == 0 || sConfig_Hydrau_temp.sZones.bZone2 == 0 || sConfig_IHM.sParam_Zx[0].bModeFroid == 0))
+		if(sConfig_Hydrau_temp.u8TypeRegul != REGUL_ESCLAVE && (sConfig_Hydrau_temp.u8TypeRegul != REGUL_DIRECTE || sConfig_Hydrau_temp.u8NumZone == 0 || sConfig_Hydrau_temp.sZones.zone.bZone1 == 0 || sConfig_Hydrau_temp.sZones.zone.bZone2 == 0 || sConfig_IHM.sParam_Zx[0].bModeFroid == 0))
 		{
 			container_temp_depart_eau_raf.setVisible(true);
 			container_temp_depart_eau_raf.invalidate();
@@ -304,7 +328,7 @@ void Installation_hydraulique_param_compView::bouton_valider()
 		}
 		else sConfig_Hydrau_temp.sParamZx.bModeChaud = 0;
 		//
-		if(container_oui_non_rafraichissement.isVisible() && toggleButton_oui_oui_non_rafraichissement.getState())
+		if(/*container_oui_non_rafraichissement.isVisible() && */toggleButton_oui_oui_non_rafraichissement.getState())
 		{
 			sConfig_Hydrau_temp.sParamZx.bModeFroid = 1;
 		}
@@ -312,50 +336,53 @@ void Installation_hydraulique_param_compView::bouton_valider()
 		// Temp depart eau
 		sConfig_Hydrau_temp.sParamZx.u4ConsigneTeauFroid = u8TempDepartEau - 7;
 		//
-		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].bModeChaud = sConfig_Hydrau_temp.sParamZx.bModeChaud;
-		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].bModeFroid = sConfig_Hydrau_temp.sParamZx.bModeFroid;
-		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid = sConfig_Hydrau_temp.sParamZx.u4ConsigneTeauFroid;
+//		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].bModeChaud = sConfig_Hydrau_temp.sParamZx.bModeChaud;
+//		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].bModeFroid = sConfig_Hydrau_temp.sParamZx.bModeFroid;
+//		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].u4ConsigneTeauFroid = sConfig_Hydrau_temp.sParamZx.u4ConsigneTeauFroid;
 		//
-		if(sConfig_Hydrau_temp.sZones.bZone1 && sConfig_Hydrau_temp.sZones.bZone2)
-		{
+//		if(sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone2)
+//		{
 			//
-			if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && container_temp_depart_eau_raf.isVisible())
-			{
-				if(sConfig_Hydrau_temp.u8NumZone == 0)
-				{
-					sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid = u8TempDepartEau - 7;
-					presenter->c_install_zx(1);
-				}
-				else
-				{
-					sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid = u8TempDepartEau - 7;
-					presenter->c_install_zx(0);
-				}
-			}
+//			if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_DIRECTE && container_temp_depart_eau_raf.isVisible())
+//			{
+//				if(sConfig_Hydrau_temp.u8NumZone == 1)
+//				{
+//					sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid = u8TempDepartEau - 7;
+//					sConfig_Hydrau_temp.sParamZx.u4ConsigneTeauFroid = u8TempDepartEau - 7;
+//					presenter->c_install_zx(1);
+//				}
+//				else
+//				{
+//					sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid = u8TempDepartEau - 7;
+//					presenter->c_install_zx(0);
+//				}
+//			}
 			//
-			if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES)
-			{
-				//
-				if(sConfig_Hydrau_temp.u8NumZone == 0 && sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid < sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid)
-				{
-					sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid = sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid;
-					presenter->c_install_zx(1);
-				}
-				//
-				if(sConfig_Hydrau_temp.u8NumZone == 1 && sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid < sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid)
-				{
-					sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid = sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid;
-					presenter->c_install_zx(0);
-				}
-			}
-		}
+//			if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES)
+//			{
+//				//
+//				if(sConfig_Hydrau_temp.u8NumZone == 0 && sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid < sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid)
+//				{
+//					sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid = sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid;
+//					presenter->c_install_zx(1);
+//				}
+//				//
+//				if(sConfig_Hydrau_temp.u8NumZone == 1 && sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid < sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid)
+//				{
+//					sConfig_IHM.sParam_Zx[0].u4ConsigneTeauFroid = sConfig_IHM.sParam_Zx[1].u4ConsigneTeauFroid;
+//					presenter->c_install_zx(0);
+//				}
+//			}
+//		}
+
+
 		//
 		if(sConfig_IHM.sParam_PAC.bThermostatContactModeFroid != toggleButton_change_over.getState())
 		{
 			sConfig_IHM.sParam_PAC.bThermostatContactModeFroid = toggleButton_change_over.getState();
 			presenter->c_install_param();
 		}
-		//
+
 		presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
 		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
 	}

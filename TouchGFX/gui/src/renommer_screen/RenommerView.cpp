@@ -854,16 +854,35 @@ void RenommerView::bouton_z()
 
 void RenommerView::affichageTexte()
 {
-	touchgfx::Unicode::UnicodeChar textAreaBuffer_Nom_tmp[u8NbMaxChar + 1];
+	//if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
+//	{
+//		touchgfx::Unicode::UnicodeChar textAreaBuffer_Nom_tmp[NB_MAX_CHAR_NOM + 1];
+//	}
+//	else touchgfx::Unicode::UnicodeChar textAreaBuffer_Nom_tmp[NB_MAX_CHAR_LOGO+ 1];
 
 //	int longueur = 10;
 
 	for(int i = 0; i < u8NbMaxChar; i++)
 	{
-		textAreaBuffer_Nom_tmp[i] =  u8TexteTemp[i];
+		if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
+		{
+			textAreaBuffer_Nom_tmp[i] =  u8TexteTemp[i];
+		}
+		else
+		{
+			textAreaBuffer_Logo_tmp[i] =  u8TexteTemp[i];
+		}
 	}
 	textAreaBuffer_Nom_tmp[u8NbMaxChar] = 0;
-	Unicode::strncpy(textAreaBuffer_Texte, textAreaBuffer_Nom_tmp, u8NbMaxChar + 1 );
+	textAreaBuffer_Logo_tmp[u8NbMaxChar] = 0;
+	if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
+	{
+		Unicode::strncpy(textAreaBuffer_Texte, textAreaBuffer_Nom_tmp, u8NbMaxChar + 1 );
+	}
+	else
+	{
+		Unicode::strncpy(textAreaBuffer_Texte, textAreaBuffer_Logo_tmp, u8NbMaxChar + 1 );
+	}
 	textArea_value.setWildcard(textAreaBuffer_Texte);
 	textArea_value.invalidate();
 }

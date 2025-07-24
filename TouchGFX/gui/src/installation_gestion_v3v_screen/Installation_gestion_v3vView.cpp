@@ -22,37 +22,41 @@ Installation_gestion_v3vView::Installation_gestion_v3vView()
 
 void Installation_gestion_v3vView::bouton_droit()
 {
-	if (Type_Gestion_V3V == 0) Type_Gestion_V3V = 1;
-	else Type_Gestion_V3V = 0;
+	if (Type_Gestion_V3V == E_TYPE_GESTION_V3V_MODE_2) Type_Gestion_V3V = E_TYPE_GESTION_V3V_MODE_1;
+	else Type_Gestion_V3V = E_TYPE_GESTION_V3V_MODE_2;
 	update_gestion_v3v();
 }
 
 void Installation_gestion_v3vView::bouton_gauche()
 {
-	if (Type_Gestion_V3V == 0) Type_Gestion_V3V = 1;
-	else Type_Gestion_V3V = 0;
+	if (Type_Gestion_V3V == E_TYPE_GESTION_V3V_MODE_2) Type_Gestion_V3V = E_TYPE_GESTION_V3V_MODE_1;
+	else Type_Gestion_V3V = E_TYPE_GESTION_V3V_MODE_2;
 	update_gestion_v3v();
 }
 
 void Installation_gestion_v3vView::update_gestion_v3v()
 {
-	if (Type_Gestion_V3V == 0)
-	{
-		image_ecs.setX(27);
-		image_piscine.setX(172);
-		container_maison.setX(324);
-	}
-	else
+	if (Type_Gestion_V3V == E_TYPE_GESTION_V3V_MODE_2)
 	{
 		image_ecs.setX(176);
 		image_piscine.setX(318);
 		container_maison.setX(26);
 	}
+	else
+	{
+		image_ecs.setX(27);
+		image_piscine.setX(172);
+		container_maison.setX(324);
+	}
 //	image_ecs.invalidate();
 //	image_piscine.invalidate();
 //	container_maison.invalidate();
 	container_images.invalidate();
-	Unicode::snprintf(textAreaBuffer_GestionV3V, 2, "%d", Type_Gestion_V3V + 1);
+	if (Type_Gestion_V3V == E_TYPE_GESTION_V3V_MODE_2)
+	{
+		Unicode::snprintf(textAreaBuffer_GestionV3V, 2, "2");
+	}
+	else Unicode::snprintf(textAreaBuffer_GestionV3V, 2, "1");
 	textArea_valeur_type_gestion.setWildcard(textAreaBuffer_GestionV3V);
 	textArea_valeur_type_gestion.invalidate();
 }

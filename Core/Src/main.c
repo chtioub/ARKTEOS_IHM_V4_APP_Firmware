@@ -143,7 +143,7 @@ int main(void)
     // Données envoyées
     if(((HAL_GetTick() - u32LastCyclique) > 100 && (HAL_GetTick() - u32LastCyclique) < 900) && (HAL_GetTick() - u32LastEnvoi) > 100)
     {
-	if(txData[u8Pointeur_envoi].size != 0)
+    	if(txData[u8Pointeur_envoi].size != 0)
 		{
 			u32LastEnvoi = HAL_GetTick();
 			//
@@ -155,6 +155,18 @@ int main(void)
 				u8Pointeur_envoi = 0;
 			}
 		}
+    }
+
+    //u32LastTick = HAL_GetTick();
+
+    if ((HAL_GetTick() - u32LastTick) > 100 && TimerNoNeededCode > 0 && bAutorisationNoCode)
+	{
+    	u32LastTick = HAL_GetTick();
+    	TimerNoNeededCode = TimerNoNeededCode - 100;
+	}
+    else if (TimerNoNeededCode <= 0)
+    {
+    	bAutorisationNoCode = false;
     }
   }
   /* USER CODE END 3 */

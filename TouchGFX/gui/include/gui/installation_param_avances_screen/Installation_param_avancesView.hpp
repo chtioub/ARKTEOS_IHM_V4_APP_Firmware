@@ -14,6 +14,7 @@ public:
 
     void bouton_resistance_carter();
     void bouton_menu_special();
+    void bouton_regul_avancee();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

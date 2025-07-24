@@ -82,7 +82,7 @@ protected:
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBufferEJP[3], textAreaBufferDelestage[3],
-	textAreaBufferAbaissement[3], textAreaBufferTh1[3], textAreaBufferTh2[3], textAreaBufferMarcheArretZones[3],  textAreaBufferChaudFroid[3],  textAreaBufferMarcheArretGeneral[3],
+	textAreaBufferAbaissement[3], textAreaBufferTh1[3], textAreaBufferTh2[3], textAreaBufferMarcheArretZones[3],  textAreaBufferInChaudFroid[3],  textAreaBufferMarcheArretGeneral[3],
 	textAreaBufferFonction4[3], textAreaBufferFonction5[3], textAreaBufferFonction6[3], textAreaBufferFonction7[3], textAreaBufferAdaptLoiDeau[3], textAreaBufferAdaptConsigne[3],
 	textAreaBufferResistanceCarter[3], textAreaBufferRelevePac[3], textAreaBufferInfoChaudFroid[3], textAreaBufferDefautGeneralPac[3], textAreaBufferChaudFroidVoie1[3], textAreaBufferChaudFroidVoie2[3],
 	textAreaBufferMarcheArretComp[3], textAreaBufferFonction8[3], textAreaBufferFonction9[3], textAreaBufferFonction10[3];

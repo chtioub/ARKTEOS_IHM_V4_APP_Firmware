@@ -134,6 +134,12 @@ void Installation_ecsView::bouton_non_ecs()
 	bOptionECS = 0;
 }
 
+void Installation_ecsView::bouton_ecs_avance()
+{
+	bBouclageECSTemp2 = (sParam_ECS_temp.bBouclageECS != 0) ? true:false;
+	u2TypeEchangeurECSTemp2 = sParam_ECS_temp.u2TypeEchangeur & 0b11;
+}
+
 void Installation_ecsView::bouton_demande_forcee()
 {
 	if (sParam_ECS_temp.bModeGestionHysteresis == 1) sParam_ECS_temp.bModeGestionHysteresis = 0;
@@ -163,6 +169,10 @@ void Installation_ecsView::bouton_hysteresis_ECS()
 
 void Installation_ecsView::bouton_valider()
 {
+	//Ajouté sinon on écrasait l'hystérésis précédemment ajouté
+	sParam_ECS_temp.i8HysteresisECSMoins = sConfig_IHM.sParam_ECS.i8HysteresisECSMoins;
+	sParam_ECS_temp.i8HysteresisECSPlus = sConfig_IHM.sParam_ECS.i8HysteresisECSPlus;
+
 	sConfig_IHM.sParam_ECS = sParam_ECS_temp;
 	sConfig_IHM.sOption_PAC.ECS = bOptionECS;
 	presenter->c_install_ecs();

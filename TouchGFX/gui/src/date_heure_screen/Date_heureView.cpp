@@ -327,7 +327,7 @@ void Date_heureView::changeErreur(uint16_t u16Erreur)
 
 void Date_heureView::changeDate(S_DATE *sDate)
 {
-	if(sDate_old.Date != sDate->Date)
+	if(sDate_old.Date != sDate->Date || sDate_old.Month!= sDate->Month || sDate_old.Year!= sDate->Year )
 	{
 		// Affichage de la date
 	    Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
@@ -336,7 +336,7 @@ void Date_heureView::changeDate(S_DATE *sDate)
 	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
 	    barre_titre.heure(textAreaBuffer_Heure);
 	}
-	else if(sDate_old.Minutes != sDate->Minutes)
+	else if(sDate_old.Minutes != sDate->Minutes || sDate_old.Hours != sDate->Hours)
 	{
 		// Affichage de l'heure
 	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);

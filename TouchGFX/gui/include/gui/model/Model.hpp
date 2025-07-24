@@ -91,6 +91,7 @@ public:
     void c_sav_mode_pump_down_recup_ui();
     void c_sav_mode_pump_down_stop();
     void c_sav_par21();
+    void c_sav_test_pac();
 
     void c_restart();
 

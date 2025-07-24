@@ -546,12 +546,20 @@ void Model::c_user_zx_all()
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = C_USER;
 	txData[u8Pointeur_buffer_tx].data[3] = SC_USER_ZX;
-	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_ZX) * NB_ZONE;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_MODE_PAC)+ sizeof(S_MODE_ZX) * NB_ZONE  + sizeof(S_MODE_REG_EXT) + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
 
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_PAC, sizeof(S_MODE_PAC));
+  u16Pointeur += sizeof(S_MODE_PAC);
 	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_Zx[0], sizeof(S_MODE_ZX) * NB_ZONE);
   u16Pointeur += sizeof(S_MODE_ZX) * NB_ZONE;
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_RegulExt, sizeof(S_MODE_REG_EXT));
+u16Pointeur += sizeof(S_MODE_REG_EXT);
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_ECS, sizeof(S_MODE_ECS));
+  u16Pointeur += sizeof(S_MODE_ECS);
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_IHM.sMode_Piscine, sizeof(S_MODE_PISCINE));
+  u16Pointeur += sizeof(S_MODE_PISCINE);
 
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
@@ -1838,6 +1846,33 @@ void Model::c_sav_mode_commande()
 
 	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &u16CodeCommande, sizeof(u16CodeCommande));
   u16Pointeur += sizeof(u16CodeCommande);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_sav_test_pac()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_TEST_PAC;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_PARAM_TEST_PAC);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sParam_Test_PAC, sizeof(S_PARAM_TEST_PAC));
+	u16Pointeur += sizeof(S_PARAM_TEST_PAC);
 
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;

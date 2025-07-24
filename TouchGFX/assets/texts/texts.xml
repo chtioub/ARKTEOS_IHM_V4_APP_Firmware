@@ -3408,6 +3408,27 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Group1">
+      <Text Id="text_message_meme_numero_sonde" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Une autre sonde Modbus ou RF est déjà attribuée avec le&#10;même numéro de sonde.&#10;- Si votre actuelle sonde est du type Modbus, contrôler les&#10;numéros attribués sur vos sondes RF.&#10;- Si votre actuelle sonde est du type RF, contrôler les&#10;numéros attribués sur vos sondes Modbus.</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_erreur_config_loi_deau" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Configuration loi d'eau REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_message_meme_sortie" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Plusieurs zones ou groupes sont affectés à la même sortie&#10;(carte Multi-zone et voie identiques).</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_var_sys_inv_normal_adresse" Alignment="Right" TypographyId="Default">
         <Translation Language="FR">Normal (adresse </Translation>
         <Translation Language="GB">New Text</Translation>
@@ -3549,7 +3570,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_val_test_code" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">0</Translation>
+        <Translation Language="FR">0,0</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -4671,6 +4692,76 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_question_envoyer_offset" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous corriger l'offset de la sonde&#10;avec la nouvelle valeur ?</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_39JS" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">2,3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_value_retour_offset" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Valeur offset : &lt;value&gt;°C</Translation>
+        <Translation Language="GB">Valeur offset : &lt;value&gt;°C</Translation>
+        <Translation Language="PT">Valeur offset : &lt;value&gt;°C</Translation>
+        <Translation Language="NL">Valeur offset : &lt;value&gt;°C</Translation>
+        <Translation Language="DE">Valeur offset : &lt;value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_consulter_offset" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Consulter l'offset de la sonde </Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_JGDL" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Départ primaire</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_valeur_sonde_a_calibrer" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="text_valeur_offset_sonde" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_titre_offset_sonde" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Offset de température à appliquer&#10;à la sonde</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_sonde_a_calibrer" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sonde de température à calibrer</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_usine_offset_sondes" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Calibrage Offset&#10;sondes</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_var_sys_ajp_val_vide_3" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt;</Translation>
@@ -5735,7 +5826,7 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_var_sys_geo_val_press_temp_hp" Alignment="Left" TypographyId="Default">
+      <Text Id="text_var_sys_geo_val_press_temp_hp" Alignment="Right" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt; bar / &lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt; bar / &lt;Value&gt;</Translation>
         <Translation Language="PT">&lt;Value&gt; bar / &lt;Value&gt;</Translation>
@@ -8893,7 +8984,7 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_var_sys_shunt_tempo" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt; : Config : shunt temporistion</Translation>
+        <Translation Language="FR">&lt;Value&gt; : Config : shunt temporisation</Translation>
         <Translation Language="GB">&lt;Value&gt;</Translation>
         <Translation Language="PT">&lt;Value&gt;</Translation>
         <Translation Language="NL">&lt;Value&gt;</Translation>
@@ -12694,7 +12785,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_var_sys_hysteresis_droit_defaut" Alignment="Right" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt; / &lt;Value&gt; Hz</Translation>
+        <Translation Language="FR">&lt;Value&gt;&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt; / &lt;Value&gt;</Translation>
         <Translation Language="PT">&lt;Value&gt; / &lt;Value&gt;</Translation>
         <Translation Language="NL">&lt;Value&gt; / &lt;Value&gt;</Translation>
@@ -12729,7 +12820,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_var_sys_demande_pac_gauche_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt; : Demande PAC</Translation>
+        <Translation Language="FR">&lt;Value&gt; : Demande PAC et température d'eau</Translation>
         <Translation Language="GB">&lt;Value&gt; : Marche arrêt général</Translation>
         <Translation Language="PT">&lt;Value&gt; : Marche arrêt général</Translation>
         <Translation Language="NL">&lt;Value&gt; : Marche arrêt général</Translation>
@@ -12799,7 +12890,7 @@
         <Translation Language="DE">&lt;Value&gt;°C</Translation>
       </Text>
       <Text Id="text_var_sys_pression_prim_gauche_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt; : Pression primaire</Translation>
+        <Translation Language="FR">&lt;Value&gt; : Pression d'eau primaire</Translation>
         <Translation Language="GB">&lt;Value&gt; : Marche arrêt général</Translation>
         <Translation Language="PT">&lt;Value&gt; : Marche arrêt général</Translation>
         <Translation Language="NL">&lt;Value&gt; : Marche arrêt général</Translation>

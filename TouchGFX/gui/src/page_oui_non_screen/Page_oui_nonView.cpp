@@ -486,7 +486,7 @@ void Page_oui_nonView::bouton_valider()
 		case OUI_NON_MODE_DATE:
 			if(toggleButton_oui_oui_non.getState())
 			{
-				memcpy(&sDate, &sDate_modif, sizeof(S_DATE));
+				//memcpy(&sDate, &sDate_modif, sizeof(S_DATE));
 				presenter->c_user_date();
 			}
 			application().gotoParametresScreenNoTransition();

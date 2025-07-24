@@ -34,7 +34,7 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 			u16LoiDeau[i] = ((uint16_t)sConfig_IHM.sParam_RegulExt.u8LoiDeau[i]);
 		}
 		// Titre
-	    Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
+	    Unicode::snprintf(textAreaBuffer_Titre, 30, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
 	    barre_titre.titre(textAreaBuffer_Titre);
 	}
 	else if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
@@ -44,10 +44,10 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 			u16LoiDeau[i] = ((uint16_t)sParamZxMZtemp[u8NumZone].u8LoiDeau[i]);
 		}
 		// Titre
-		Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
+		Unicode::snprintf(textAreaBuffer_Titre, 30, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
 		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
 		Unicode::fromUTF8(sParamZxMZtemp[u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
-		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", u8NumZone + 1);
+		Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 6, " (%d)", u8NumZone + 1);
 		barre_titre.titre(textAreaBuffer_Titre);
 	}
 	else
@@ -57,33 +57,57 @@ Installation_courbe_loi_d_eauView::Installation_courbe_loi_d_eauView()
 			u16LoiDeau[i] = ((uint16_t)sConfig_Hydrau_temp.sParamZx.u8LoiDeau[i]);
 		}
 		// Titre
-	    Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
+	    Unicode::snprintf(textAreaBuffer_Titre, 30, touchgfx::TypedText(T_TEXT_COURBE_LOI_EAU_CENTRE_LARGE).getText());
 	    Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
 		Unicode::fromUTF8(sConfig_Hydrau_temp.sParamZx.u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
-	    Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
+	    Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 6, " (%d)", sConfig_Hydrau_temp.u8NumZone + 1);
 	    barre_titre.titre(textAreaBuffer_Titre);
 	}
 
 	for(int i = 0; i < 6; i++)
 	{
-		if((sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES) && sConfig_Hydrau_temp.sZones.bZone1 == 1 && sConfig_Hydrau_temp.sZones.bZone2 == 1)
+		if((sConfig_Hydrau_temp.u8TypeRegul == REGUL_BCP_INTERNE || sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_2_ZONES) && sConfig_Hydrau_temp.sZones.zone.bZone1 == 1 && sConfig_Hydrau_temp.sZones.zone.bZone2 == 1)
 		{
 			if(sConfig_Hydrau_temp.u8NumZone == 0)
 			{
 				u16LoiDeau_MAX[i] = (uint16_t)(fmax(u16TermoMAX, 0));
+				if (sConfig_Hydrau_temp.sParamZx.TypeEmmetteur == PLANCHER)
+				{
+					u16LoiDeau_MAX[i] = (uint16_t)(fmin(u16LoiDeau_MAX[i], 50));
+				}
 				u16LoiDeau_MIN[i] = ((uint16_t)sConfig_IHM.sParam_Zx[1].u8LoiDeau[i]);
 			}
 			else
 			{
 				u16LoiDeau_MAX[i] = (uint16_t)fmin(u16TermoMAX, ((uint16_t)sConfig_IHM.sParam_Zx[0].u8LoiDeau[i])) ;
+				if (sConfig_Hydrau_temp.sParamZx.TypeEmmetteur == PLANCHER)
+				{
+					u16LoiDeau_MAX[i] = (uint16_t)(fmin(u16LoiDeau_MAX[i], 50));
+				}
 				u16LoiDeau_MIN[i] = 20;
 			}
+		}
+		else if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+		{
+			u16LoiDeau_MAX[i] = (uint16_t)(fmax(u16TermoMAX, 0));
+			if (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].TypeEmmetteur == PLANCHER)
+			{
+				u16LoiDeau_MAX[i] = (uint16_t)(fmin(u16LoiDeau_MAX[i], 50));
+			}
+			else
+			u16LoiDeau_MIN[i] = 20;
 		}
 		else
 		{
 			u16LoiDeau_MAX[i] = (uint16_t)(fmax(u16TermoMAX, 0));
+			if (sConfig_Hydrau_temp.sParamZx.TypeEmmetteur == PLANCHER)
+			{
+				u16LoiDeau_MAX[i] = (uint16_t)(fmin(u16LoiDeau_MAX[i], 50));
+			}
+			else
 			u16LoiDeau_MIN[i] = 20;
 		}
+
 		// Verif max
 		if(u16LoiDeau[i] > u16LoiDeau_MAX[i])
 		{
@@ -128,7 +152,11 @@ void Installation_courbe_loi_d_eauView::bouton_retour()
 	}
 	else if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
 	{
-		application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+		if (u8NumZone < 8)
+		{
+			application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+		}
+		else application().gotoInstallation_MZ_config_groupeScreenNoTransition();
 	}
 	else if(sConfig_Hydrau_temp.u8TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 	{
@@ -150,11 +178,16 @@ void Installation_courbe_loi_d_eauView::bouton_valider()
 	}
 	else if(sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
 	{
+
 		for(int i = 0; i < 6; i++)
 		{
 			sParamZxMZtemp[u8NumZone].u8LoiDeau[i]= u16LoiDeau[i];
 		}
-		application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+		if (u8NumZone < 8)
+		{
+			application().gotoInstallation_MZ_config_zoneScreenNoTransition();
+		}
+		else application().gotoInstallation_MZ_config_groupeScreenNoTransition();
 	}
 	else if(sConfig_Hydrau_temp.u8TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 	{
@@ -418,11 +451,23 @@ void Installation_courbe_loi_d_eauView::slider_m10(int sliderValue)
 void Installation_courbe_loi_d_eauView::slider_m25(int sliderValue)
 {
 	u16LoiDeau[5] = ((uint16_t)sliderValue);
+	//uint16_t u16LoiDeauTemp = ((uint16_t)sliderValue);
+
+//	// Verif pour éviter le dépassement négatif
+//	else if(sliderValue < u16LoiDeau_MIN[0])
+//	{
+//		slider_text_20_deg.setValue((int) u16LoiDeau_MIN[0]);
+//		slider_text_20_deg.invalidate();
+//		sliderValue = u16LoiDeau_MIN[0];
+//		u16LoiDeau[0] = u16LoiDeau_MIN[0];
+//	}
+
 
 	// Verif pour éviter le dépassement positif
 	if(sliderValue > u16LoiDeau_MAX[5])
 	{
-		slider_text_m25_deg.setValue((int)u16TermoMAX);
+//		slider_text_m25_deg.setValue((int)u16TermoMAX);
+		slider_text_m25_deg.setValue((int)u16LoiDeau_MAX[5]);
 		slider_text_m25_deg.invalidate();
 		sliderValue = u16LoiDeau_MAX[5];
 		u16LoiDeau[5] = u16LoiDeau_MAX[5];
@@ -437,8 +482,8 @@ void Installation_courbe_loi_d_eauView::slider_m25(int sliderValue)
 	}
 	else if(sliderValue < u16LoiDeau_MIN[5])
 	{
-		slider_text_m10_deg.setValue((int) u16LoiDeau_MIN[5]);
-		slider_text_m10_deg.invalidate();
+		slider_text_m25_deg.setValue((int) u16LoiDeau_MIN[5]);
+		slider_text_m25_deg.invalidate();
 		sliderValue = u16LoiDeau_MIN[5];
 		u16LoiDeau[5] = u16LoiDeau_MIN[5];
 	}
@@ -454,6 +499,58 @@ void Installation_courbe_loi_d_eauView::slider_m25(int sliderValue)
 		line_loi_eau_5.invalidate();
 	}
 }
+
+//void Installation_courbe_loi_d_eauView::slider_m25(int sliderValue)
+//{
+//	//u16LoiDeau[5] = ((uint16_t)sliderValue);
+//	uint16_t u16LoiDeauTemp = ((uint16_t)sliderValue);
+//
+//	// Verif pour éviter le dépassement positif
+//	if(u16LoiDeauTemp > u16LoiDeau_MAX[5])
+//	{
+//		u16LoiDeauTemp = u16LoiDeau_MAX[5];
+////		slider_text_m25_deg.setValue((int)u16TermoMAX);
+////		slider_text_m25_deg.invalidate();
+////		sliderValue = u16LoiDeau_MAX[5];
+////		u16LoiDeau[5] = u16LoiDeau_MAX[5];
+//	}
+//	// Verif pour éviter le dépassement négatif
+//	else if(u16LoiDeauTemp < u16LoiDeau[4])
+//	{
+//		u16LoiDeauTemp = u16LoiDeau[4];
+////		slider_text_m25_deg.setValue((int) u16LoiDeau[4]);
+////		slider_text_m25_deg.invalidate();
+////		sliderValue = u16LoiDeau[4];
+////		u16LoiDeau[5] = u16LoiDeau[4];
+//	}
+//	else if(u16LoiDeauTemp < u16LoiDeau_MIN[5])
+//	{
+//		u16LoiDeauTemp = u16LoiDeau_MIN[5];
+////		slider_text_m10_deg.setValue((int) u16LoiDeau_MIN[5]);
+////		slider_text_m10_deg.invalidate();
+////		sliderValue = u16LoiDeau_MIN[5];
+////		u16LoiDeau[5] = u16LoiDeau_MIN[5];
+//	}
+//
+////	else
+////	{
+////	if (u16LoiDeau[5] != u16LoiDeauTemp)
+////	{
+//		u16LoiDeau[5] = u16LoiDeauTemp;
+//		slider_text_m25_deg.setValue((int) u16LoiDeau[5]);
+//		slider_text_m25_deg.invalidate();
+////	}
+//
+//		Unicode::snprintf(textAreaBuffer_m25, 3, "%d", (sliderValue));
+//		textArea_temp_loi_eau_6.setWildcard(textAreaBuffer_m25);
+//		textArea_temp_loi_eau_6.invalidate();
+//		line_loi_eau_5.setVisible(false);
+//		line_loi_eau_5.invalidate();
+//		line_loi_eau_5.setEnd(267, (int) ((float)434.6 - ((float)(sliderValue) *  5.43)));
+//		line_loi_eau_5.setVisible(true);
+//		line_loi_eau_5.invalidate();
+////	}
+//}
 
 void Installation_courbe_loi_d_eauView::bouton_loi_eau_20()
 {

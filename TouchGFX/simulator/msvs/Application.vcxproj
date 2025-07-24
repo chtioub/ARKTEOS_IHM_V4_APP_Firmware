@@ -309,6 +309,9 @@
     <ClCompile Include="..\..\gui\src\linky_screen\LinkyPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\linky_screen\LinkyView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\linky_screen\LinkyViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\usine_calibrage_offset_screen\Usine_calibrage_offsetPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\usine_calibrage_offset_screen\Usine_calibrage_offsetView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_calibrage_offset_screen\Usine_calibrage_offsetViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -747,6 +750,9 @@
     <ClInclude Include="..\..\gui\include\gui\linky_screen\LinkyPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\linky_screen\LinkyView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\linky_screen\LinkyViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\usine_calibrage_offset_screen\Usine_calibrage_offsetPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\usine_calibrage_offset_screen\Usine_calibrage_offsetView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_calibrage_offset_screen\Usine_calibrage_offsetViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

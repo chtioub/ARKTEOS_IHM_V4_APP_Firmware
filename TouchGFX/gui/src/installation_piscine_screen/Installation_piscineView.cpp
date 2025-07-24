@@ -213,6 +213,10 @@ void Installation_piscineView::bouton_valider()
 	sConfig_Piscine_temp.sParam_Piscine.i16ConsigneDepartEauPiscine = u16ConsignePiscine;
 	// Mémorisation
 	sConfig_IHM.sOption_PAC.Piscine = sConfig_Piscine_temp.bPiscine;
+	//Car sinon l'hystérésis précédemment entré était écrasé
+	sConfig_Piscine_temp.sParam_Piscine.i8HysteresisEauPlus = sConfig_IHM.sParam_Piscine.i8HysteresisEauPlus;
+	sConfig_Piscine_temp.sParam_Piscine.i8HysteresisEauMoins = sConfig_IHM.sParam_Piscine.i8HysteresisEauMoins;
+
 	memcpy(&sConfig_IHM.sParam_Piscine, &sConfig_Piscine_temp.sParam_Piscine, sizeof(S_PARAM_PISCINE));
 	// Multiple trame
 	presenter->c_install_param();

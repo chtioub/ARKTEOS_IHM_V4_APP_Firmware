@@ -40,7 +40,7 @@ public:
     virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
     bool bConnexionDistance;
-    uint8_t u8Nb_PAC;
+
     uint16_t u16ErreurAffichee;
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;

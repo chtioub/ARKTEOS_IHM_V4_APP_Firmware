@@ -1288,6 +1288,18 @@
     <Filter Include="Source Files\generated\gui_generated\linky_screen">
       <UniqueIdentifier>D943060D-7C3D-408F-8022-C46F83189789</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\usine_calibrage_offset_screen">
+      <UniqueIdentifier>ED1101AE-8E22-BAB7-69BB-4337B009571E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\usine_calibrage_offset_screen">
+      <UniqueIdentifier>0B211227-23FE-5FFF-D30B-9B0FD2B4ADC6</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\usine_calibrage_offset_screen">
+      <UniqueIdentifier>68D70846-3976-D2D9-FA05-D8FB498B4E26</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\usine_calibrage_offset_screen">
+      <UniqueIdentifier>5F867748-9EE8-74AF-898A-3BB5EEA8FD2D</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -2183,6 +2195,15 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\linky_screen\LinkyViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\linky_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_calibrage_offset_screen\Usine_calibrage_offsetPresenter.cpp">
+      <Filter>Source Files\gui\usine_calibrage_offset_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\usine_calibrage_offset_screen\Usine_calibrage_offsetView.cpp">
+      <Filter>Source Files\gui\usine_calibrage_offset_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\usine_calibrage_offset_screen\Usine_calibrage_offsetViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\usine_calibrage_offset_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3489,6 +3510,15 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\linky_screen\LinkyViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\linky_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_calibrage_offset_screen\Usine_calibrage_offsetPresenter.hpp">
+      <Filter>Header Files\gui\usine_calibrage_offset_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\usine_calibrage_offset_screen\Usine_calibrage_offsetView.hpp">
+      <Filter>Header Files\gui\usine_calibrage_offset_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_calibrage_offset_screen\Usine_calibrage_offsetViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\usine_calibrage_offset_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

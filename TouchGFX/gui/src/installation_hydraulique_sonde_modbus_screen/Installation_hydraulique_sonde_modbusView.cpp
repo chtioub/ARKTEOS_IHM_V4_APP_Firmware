@@ -40,6 +40,10 @@ Installation_hydraulique_sonde_modbusView::Installation_hydraulique_sonde_modbus
 	Unicode::snprintf(textAreaBuffer_num_sonde, 2, "%d", u8NumSonde + 1);
 	textArea_valeur_num_sonde.setWildcard(textAreaBuffer_num_sonde);
 	textArea_adresse.setWildcard(textAreaBuffer_num_sonde);
+
+	bAttentionClicked = false;
+	Unicode::snprintf(textAreaBuffer_MessTitre, 40, touchgfx::TypedText(T_TEXT_MESSAGE_ATTENTION_TITRE).getText());
+	message_attention.titre(textAreaBuffer_MessTitre);
 }
 
 void Installation_hydraulique_sonde_modbusView::setupScreen()
@@ -147,7 +151,16 @@ void Installation_hydraulique_sonde_modbusView::bouton_resistance_terminaison()
 	application().gotoPage_oui_nonScreenNoTransition();
 }
 
-void Installation_hydraulique_sonde_modbusView::bouton_valider()
+void Installation_hydraulique_sonde_modbusView:: affichage_attention()
+{
+	Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_MESSAGE_MEME_NUMERO_SONDE).getText());
+	message_attention.message(textAreaBuffer_MessMess);
+
+	modalWindow_attention.show();
+	modalWindow_attention.invalidate();
+}
+
+void Installation_hydraulique_sonde_modbusView::bouton_valider_attention()
 {
 	//
 	if(toggleButton_verrouillage_consigne.getState())
@@ -170,6 +183,51 @@ void Installation_hydraulique_sonde_modbusView::bouton_valider()
 	//
 	presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
 	application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+}
+
+void Installation_hydraulique_sonde_modbusView::bouton_valider()
+{
+	bool bFlagSonde = false;
+	//Affichage message qu'une autre sonde porte le même numéro
+	for (int i = 0;i<NB_ZONE; i++)
+	{
+		if ((((sConfig_IHM.sOption_PAC.sZone.u8val >> i) & 0b01) ==1) && sParamZxMZtemp[i].type_zone.zone.TypeThermostat == TH_RF && i !=sConfig_Hydrau_temp.u8NumZone)
+		{
+			if (sParamZxMZtemp[i].type_zone.zone.NumSonde == u8NumSonde)
+			{
+//				if (bAttentionClicked == false)
+//				{
+//					bAttentionClicked = true;
+					affichage_attention();
+					bFlagSonde = true;
+//				}
+			}
+		}
+	}
+	if (bFlagSonde == false)
+	{
+		//
+		if(toggleButton_verrouillage_consigne.getState())
+		{
+			sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 1;
+		}
+		else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = 0;
+		//
+		if(toggleButton_arret_defaut.getState())
+		{
+			sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 1;
+		}
+		else sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = 0;
+		//
+		sConfig_Hydrau_temp.sParamZx.type_zone.zone.NumSonde = u8NumSonde;
+		//
+		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.NumSonde = u8NumSonde;
+		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne = sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne;
+		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde = sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde;
+		//
+		presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);
+		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
+	}
 }
 
 void Installation_hydraulique_sonde_modbusView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

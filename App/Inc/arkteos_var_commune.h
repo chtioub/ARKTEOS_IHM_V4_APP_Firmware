@@ -891,16 +891,20 @@ typedef struct
 } S_MODELE_PAC;                                     // 8 Octets
 
 // Structure pour l'option des Zones NB les zones sont assoic�es au physique des cartes options
-typedef struct
+typedef union
 {
-	unsigned char bZone1:1;
-	unsigned char bZone2:1;
-	unsigned char bZone3:1;
-	unsigned char bZone4:1;
-	unsigned char bZone5:1;
-	unsigned char bZone6:1;
-	unsigned char bZone7:1;
-	unsigned char bZone8:1;
+	uint8_t u8val;
+	struct
+	{
+		unsigned char bZone1:1;
+		unsigned char bZone2:1;
+		unsigned char bZone3:1;
+		unsigned char bZone4:1;
+		unsigned char bZone5:1;
+		unsigned char bZone6:1;
+		unsigned char bZone7:1;
+		unsigned char bZone8:1;
+	}zone;
 }S_ZONE;                            // 1 octet
 
 

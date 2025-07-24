@@ -37,7 +37,7 @@ public:
 protected:
 	bool bConnexionDistance, bAttentionClicked;
 	unsigned char bGroupeAOnOff : 1, bGroupeBOnOff : 1;
-	unsigned short u3CarteGroupeA : 3, u3CarteGroupeB : 3, u3NumVoieGroupeA : 3, u3NumVoieGroupeB : 3;
+//	unsigned short u3CarteGroupeA : 3, u3CarteGroupeB : 3, u3NumVoieGroupeA : 3, u3NumVoieGroupeB : 3;
 	uint16_t u16ErreurAffichee;
 	uint8_t eTypeMess = 0;
 	S_DATE sDate_old;

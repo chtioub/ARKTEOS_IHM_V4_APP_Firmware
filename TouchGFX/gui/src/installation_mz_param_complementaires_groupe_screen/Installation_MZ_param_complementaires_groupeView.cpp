@@ -112,6 +112,20 @@ void Installation_MZ_param_complementaires_groupeView::bouton_oui_marche_forcee(
 	}
 }
 
+void Installation_MZ_param_complementaires_groupeView::bouton_hysteresis()
+{
+	//u7VitesseVentilateur = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.u7VitesseMaxVentilateur;
+//	if(toggleButton_oui_oui_non_marche_forcee.getState())
+//	{
+//		toggleButton_non_oui_non_marche_forcee.forceState(false);
+//		toggleButton_non_oui_non_marche_forcee.setTouchable(true);
+//		toggleButton_non_oui_non_marche_forcee.invalidate();
+//		toggleButton_oui_oui_non_marche_forcee.setTouchable(false);
+//		toggleButton_oui_oui_non_marche_forcee.invalidate();
+//	}
+	eHysteresis = HYST_TEAU;
+}
+
 void Installation_MZ_param_complementaires_groupeView:: renommer_groupe()
 {
 	eTypeClavierAlpha = RENOMMER_ZONE_GROUPE;
@@ -124,6 +138,7 @@ void Installation_MZ_param_complementaires_groupeView::bouton_valider()
 	{
 		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.bFanForce = 1;
 	}
+	else sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.bFanForce = 0;
 	sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.u7VitesseMaxVentilateur = u7VitesseVentilateur;
 }
 

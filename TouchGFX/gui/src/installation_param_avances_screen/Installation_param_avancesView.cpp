@@ -64,6 +64,40 @@ void Installation_param_avancesView::tearDownScreen()
     Installation_param_avancesViewBase::tearDownScreen();
 }
 
+void Installation_param_avancesView::bouton_regul_avancee()
+{
+	bUserAdaptationLoiDeau = sConfig_IHM.sMode_PAC.bUserAdaptationLoiDeau;
+	TempNonChauffage = sConfig_IHM.sParam_PAC.TempNonChauffage;
+	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
+	{
+		eTypeSimultaneChaudFroid = sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeSimultaneChaudFroid;
+
+	}
+	else if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
+	{
+		eTypeSimultaneChaudFroid = sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeSimultaneChaudFroid;
+	}
+
+	//Limitation froid & ECS
+	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
+	{
+		bLimitationPW_Froid = sConfig_IHM.sConfig_PAC.ConfigGeo.bLimitationPW_Froid;
+		if (sConfig_IHM.sModele_PAC.nbCompresseur == NB_COMPRESSEUR_2 && sConfig_IHM.sOption_PAC.ECS)
+		{
+			bLimitationPW_ECS = sConfig_IHM.sConfig_PAC.ConfigGeo.bLimitationPW_ECS;
+		}
+		else
+		{
+			bLimitationPW_ECS = 0;
+		}
+	}
+	else
+	{
+		bLimitationPW_Froid = 0;
+		bLimitationPW_ECS = 0;
+	}
+}
+
 void Installation_param_avancesView::bouton_resistance_carter()
 {
 	eOuiNon = OUI_NON_RESIST_CARTER;

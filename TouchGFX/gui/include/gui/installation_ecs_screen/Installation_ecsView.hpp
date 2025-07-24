@@ -22,6 +22,7 @@ public:
     void bouton_oui_ecs();
     void bouton_non_ecs();
     void bouton_valider();
+    void bouton_ecs_avance();
 
     virtual void changeDate(S_DATE *sDate);
 	virtual void changeErreur(uint16_t u16Erreur);

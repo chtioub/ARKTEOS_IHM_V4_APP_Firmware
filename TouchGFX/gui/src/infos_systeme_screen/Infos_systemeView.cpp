@@ -385,7 +385,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		textArea_fluide_c1.invalidate();
 	}
 	// Type emetteur
-	if((sConfig_IHM_old.sParam_PAC.TypeRegul != sConfig_IHM->sParam_PAC.TypeRegul) || (sConfig_IHM_old.sOption_PAC.sZone.bZone1 != sConfig_IHM->sOption_PAC.sZone.bZone1) || (sConfig_IHM_old.sOption_PAC.sZone.bZone2 != sConfig_IHM->sOption_PAC.sZone.bZone2))
+	if((sConfig_IHM_old.sParam_PAC.TypeRegul != sConfig_IHM->sParam_PAC.TypeRegul) || (sConfig_IHM_old.sOption_PAC.sZone.zone.bZone1 != sConfig_IHM->sOption_PAC.sZone.zone.bZone1) || (sConfig_IHM_old.sOption_PAC.sZone.zone.bZone2 != sConfig_IHM->sOption_PAC.sZone.zone.bZone2))
 	{
 		switch(sConfig_IHM->sParam_PAC.TypeRegul)
 		{
@@ -419,7 +419,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		}
 		else
 		{
-			if(sConfig_IHM->sOption_PAC.sZone.bZone1)
+			if(sConfig_IHM->sOption_PAC.sZone.zone.bZone1)
 			{
 				textArea_emetteur_zone_1.setVisible(true);
 				textArea_emet_1.setVisible(true);
@@ -432,7 +432,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			textArea_emetteur_zone_1.invalidate();
 			textArea_emet_1.invalidate();
 
-			if(sConfig_IHM->sOption_PAC.sZone.bZone2)
+			if(sConfig_IHM->sOption_PAC.sZone.zone.bZone2)
 			{
 				textArea_emetteur_zone_2.setVisible(true);
 				textArea_emet_2.setVisible(true);

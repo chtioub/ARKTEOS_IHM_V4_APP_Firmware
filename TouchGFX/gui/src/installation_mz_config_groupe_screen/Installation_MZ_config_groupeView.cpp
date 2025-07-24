@@ -108,24 +108,6 @@ void Installation_MZ_config_groupeView::bouton_droite_type_emetteur()
 		TypeEmetteur++;
 	}
 
-	switch(TypeEmetteur)
-	{
-		case PLANCHER:
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
-			break;
-		case VENTILO:
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
-			break;
-		case RADIATEUR:
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
-			break;
-		case GAINABLE:
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Gainable, sizeof(u8Loideau_Gainable));
-			break;
-		default:
-			break;
-	}
-
 	affichage_type_emetteur();
 }
 
@@ -140,25 +122,6 @@ void Installation_MZ_config_groupeView::bouton_gauche_type_emetteur()
 		TypeEmetteur--;
 	}
 
-	switch(TypeEmetteur)
-	{
-		case PLANCHER:
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
-			break;
-		case VENTILO:
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
-			break;
-		case RADIATEUR:
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
-			break;
-		case GAINABLE:
-			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Gainable, sizeof(u8Loideau_Gainable));
-			break;
-		default:
-			break;
-	}
-
-
 	affichage_type_emetteur();
 }
 
@@ -171,17 +134,21 @@ void Installation_MZ_config_groupeView::affichage_type_emetteur()
 		case RADIATEUR:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_RADIATEUR_CENTRE_DEFAUT));
 			sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid = 0;
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
 			toggleButton_froid.forceState(false);
 			toggleButton_froid.invalidate();
 			break;
 		case VENTILO:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_VENTILO_CENTRE_DEFAUT));
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
 			break;
 		case PLANCHER:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_PLANCHER_CENTRE_DEFAUT));
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
 			break;
 		case GAINABLE:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_GAINABLE_CENTRE_DEFAUT));
+			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Gainable, sizeof(u8Loideau_Gainable));
 			break;
 		case SOUS_STATION:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_SOUS_STATION_CENTRE_DEFAUT));
@@ -189,6 +156,26 @@ void Installation_MZ_config_groupeView::affichage_type_emetteur()
 		default:
 			break;
 	}
+
+//	switch(TypeEmetteur)
+//	{
+//		case PLANCHER:
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
+//			break;
+//		case VENTILO:
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
+//			break;
+//		case RADIATEUR:
+//			memcpy(&sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8LoiDeau, &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
+//			break;
+//		case GAINABLE:
+//
+//			break;
+//		default:
+//			break;
+//	}
+
+
 	if (TypeEmetteur == SOUS_STATION)
 	{
 		container_oui_non_activer_mode.setVisible(false);

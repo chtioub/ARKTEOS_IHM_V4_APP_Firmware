@@ -27,7 +27,7 @@ protected:
 	uint16_t u16ErreurAffichee;
 	S_DATE sDate_old;
 	S_STATUT_PAC sStatut_PAC_old;
-	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_ReductionPW[20];;
+	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_ReductionPW[20];
 };
 
 #endif // INSTALLATION_REDUCTION_PWVIEW_HPP

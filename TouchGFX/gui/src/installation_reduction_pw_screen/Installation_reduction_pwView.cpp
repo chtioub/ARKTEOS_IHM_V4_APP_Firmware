@@ -12,7 +12,7 @@ Installation_reduction_pwView::Installation_reduction_pwView()
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
 	// Titre
-	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_MODE_SILENCIEUX_TITRE_CENTRE_DEFAUT).getText());
+	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_REDUCTION_PUISSANCE_TITRE_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 	barre_titre.invalidate();
 

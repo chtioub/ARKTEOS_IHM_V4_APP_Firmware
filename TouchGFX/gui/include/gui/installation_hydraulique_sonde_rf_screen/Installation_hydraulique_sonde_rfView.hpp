@@ -14,7 +14,7 @@ public:
 
     void bouton_associer();
     void bouton_dissocier();
-    void bouton_mem_config();
+    void bouton_num_sonde();
     void bouton_retour();
     void bouton_verrouillage_consigne();
     void bouton_arret_defaut();

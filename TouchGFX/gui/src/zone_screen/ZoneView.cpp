@@ -834,14 +834,14 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	{
 		if(memcmp(&sConfig_IHM_old.sOption_PAC.sZone, &sConfig_IHM->sOption_PAC.sZone, sizeof(sConfig_IHM_old.sOption_PAC.sZone)))
 		{
-			u8NbZone = sConfig_IHM->sOption_PAC.sZone.bZone1 +
-						sConfig_IHM->sOption_PAC.sZone.bZone2 +
-						sConfig_IHM->sOption_PAC.sZone.bZone3 +
-						sConfig_IHM->sOption_PAC.sZone.bZone4 +
-						sConfig_IHM->sOption_PAC.sZone.bZone5 +
-						sConfig_IHM->sOption_PAC.sZone.bZone6 +
-						sConfig_IHM->sOption_PAC.sZone.bZone7 +
-						sConfig_IHM->sOption_PAC.sZone.bZone8;
+			u8NbZone =  sConfig_IHM->sOption_PAC.sZone.zone.bZone1 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone2 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone3 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone4 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone5 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone6 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone7 +
+						sConfig_IHM->sOption_PAC.sZone.zone.bZone8;
 		}
 
 		if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneSelect].u8NomZone[0], &sConfig_IHM->sParam_Zx[u8ZoneSelect].u8NomZone[0], 10))

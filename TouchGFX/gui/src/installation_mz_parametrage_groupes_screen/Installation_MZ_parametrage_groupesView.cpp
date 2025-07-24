@@ -21,10 +21,10 @@ Installation_MZ_parametrage_groupesView::Installation_MZ_parametrage_groupesView
 	barre_titre.connexionDistante(false);
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PARAMETRAGE_GROUPES_EAU_CENTRE_LARGE).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
-	u3CarteGroupeA = sParamZxMZtemp[8].NumCarteMZ;
-	u3CarteGroupeB = sParamZxMZtemp[9].NumCarteMZ;
-	u3NumVoieGroupeA = sParamZxMZtemp[8].NumVoieMZ;
-	u3NumVoieGroupeB = sParamZxMZtemp[9].NumVoieMZ;
+//	u3CarteGroupeA = sParamZxMZtemp[8].NumCarteMZ;
+//	u3CarteGroupeB = sParamZxMZtemp[9].NumCarteMZ;
+//	u3NumVoieGroupeA = sParamZxMZtemp[8].NumVoieMZ;
+//	u3NumVoieGroupeB = sParamZxMZtemp[9].NumVoieMZ;
 	bGroupeAOnOff = sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif;
 	bGroupeBOnOff = sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif;
 

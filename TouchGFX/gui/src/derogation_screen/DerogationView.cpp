@@ -69,17 +69,14 @@ DerogationView::DerogationView()
 	{
 
 		u16Consigne_Derogation = sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Sablier;
-		u16Consigne_Derogation = fmin(u16Consigne_Derogation,u16ValMax);
-		u16Consigne_Derogation = fmax(u16Consigne_Derogation,u16ValMin);
-		Unicode::snprintfFloat(textAreaBuffer_Consigne, 6, "%.1f", ((float) u16Consigne_Derogation) / 10);
 	}
 	else
 	{
 		u16Consigne_Derogation = sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Sablier;
-		u16Consigne_Derogation = fmin(u16Consigne_Derogation,u16ValMax);
-		u16Consigne_Derogation = fmax(u16Consigne_Derogation,u16ValMin);
-		Unicode::snprintfFloat(textAreaBuffer_Consigne, 6, "%.1f", ((float) u16Consigne_Derogation) / 10);
 	}
+	u16Consigne_Derogation = (u16Consigne_Derogation < u16ValMax)? u16Consigne_Derogation : u16ValMax;
+	u16Consigne_Derogation = (u16Consigne_Derogation > u16ValMin)? u16Consigne_Derogation : u16ValMin;
+	Unicode::snprintfFloat(textAreaBuffer_Consigne, 6, "%.1f", ((float) u16Consigne_Derogation) / 10);
 	textArea_valeur_consigne_derog.setWildcard(textAreaBuffer_Consigne);
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_ZONE_DEROGATION_CENTRE_DEFAUT).getText());

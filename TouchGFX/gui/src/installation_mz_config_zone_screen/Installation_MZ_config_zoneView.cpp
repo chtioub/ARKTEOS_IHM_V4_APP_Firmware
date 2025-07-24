@@ -10,6 +10,9 @@ Installation_MZ_config_zoneView::Installation_MZ_config_zoneView()
 	sDate_old.Date = 0;
 	u16ErreurAffichee = 0;
 
+	//A garder avant tous les "change....."
+	u8NumZone = sConfig_Hydrau_temp.u8NumZone;
+
 	changeDate(&sDate);
 	bConnexionDistance = false;
 	changeErreur(u16ErreurEncours);
@@ -21,7 +24,7 @@ Installation_MZ_config_zoneView::Installation_MZ_config_zoneView()
 	container.setXY(u8PositionX, u8PositionY);
 	barre_titre.recupConfig(false);
 	barre_titre.connexionDistante(false);
-	u8NumZone = sConfig_Hydrau_temp.u8NumZone;
+
 	bZoneActive = false;
 //	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
 //	barre_titre.titre(textAreaBuffer_Titre);
@@ -84,14 +87,19 @@ void Installation_MZ_config_zoneView::ViewHideButtonContainer()
 		button_gauche_type_emetteur.setVisible(false);
 		button_droite_type_emetteur.setVisible(false);
 		container_oui_non_activer_zone.setY(532);
-		buttonWithLabel_gestion_registre.setVisible(true);
-		buttonWithLabel_gestion_circulateur.setVisible(false);
+		buttonWithLabel_gestion_circulateur.setVisible(true);
 		buttonWithLabel_courbe_loi_eau.setVisible(false);
 		container_oui_non_activer_mode.setY(304);
-		container_volume_zone.setVisible(true);
-		container_correction_debit_air.setVisible(true);
 		buttonWithLabel_renommer.setY(456);
-		container_pertes_charges_gaines.setVisible(true);
+
+		if (TypeEmetteur == GAINABLE)
+		{
+			buttonWithLabel_gestion_registre.setVisible(true);
+			container_volume_zone.setVisible(true);
+			container_correction_debit_air.setVisible(true);
+			container_pertes_charges_gaines.setVisible(true);
+			buttonWithLabel_gestion_circulateur.setVisible(false);
+		}
 	}
 	else
 	{
@@ -148,22 +156,22 @@ void Installation_MZ_config_zoneView::InitContainer()
 
 void Installation_MZ_config_zoneView::MAJBoutonActiverZone()
 {
-	if (u8NumZone == 0 && sConfig_Hydrau_temp.sZones.bZone1) 		bZoneActive = true;
-	else if (u8NumZone == 0 && !sConfig_Hydrau_temp.sZones.bZone1) 	bZoneActive = false;
-	else if (u8NumZone == 1 && sConfig_Hydrau_temp.sZones.bZone2) 	bZoneActive = true;
-	else if (u8NumZone == 1 && !sConfig_Hydrau_temp.sZones.bZone2) 	bZoneActive = false;
-	else if (u8NumZone == 2 && sConfig_Hydrau_temp.sZones.bZone3) 	bZoneActive = true;
-	else if (u8NumZone == 2 && !sConfig_Hydrau_temp.sZones.bZone3) 	bZoneActive = false;
-	else if (u8NumZone == 3 && sConfig_Hydrau_temp.sZones.bZone4) 	bZoneActive = true;
-	else if (u8NumZone == 3 && !sConfig_Hydrau_temp.sZones.bZone4) 	bZoneActive = false;
-	else if (u8NumZone == 4 && sConfig_Hydrau_temp.sZones.bZone5) 	bZoneActive = true;
-	else if (u8NumZone == 4 && !sConfig_Hydrau_temp.sZones.bZone5) 	bZoneActive = false;
-	else if (u8NumZone == 5 && sConfig_Hydrau_temp.sZones.bZone6) 	bZoneActive = true;
-	else if (u8NumZone == 5 && !sConfig_Hydrau_temp.sZones.bZone6) 	bZoneActive = false;
-	else if (u8NumZone == 6 && sConfig_Hydrau_temp.sZones.bZone7) 	bZoneActive = true;
-	else if (u8NumZone == 6 && !sConfig_Hydrau_temp.sZones.bZone7) 	bZoneActive = false;
-	else if (u8NumZone == 7 && sConfig_Hydrau_temp.sZones.bZone8) 	bZoneActive = true;
-	else if (u8NumZone == 7 && !sConfig_Hydrau_temp.sZones.bZone8) 	bZoneActive = false;
+	if (u8NumZone == 0 && sConfig_Hydrau_temp.sZones.zone.bZone1) 		bZoneActive = true;
+	else if (u8NumZone == 0 && !sConfig_Hydrau_temp.sZones.zone.bZone1) 	bZoneActive = false;
+	else if (u8NumZone == 1 && sConfig_Hydrau_temp.sZones.zone.bZone2) 	bZoneActive = true;
+	else if (u8NumZone == 1 && !sConfig_Hydrau_temp.sZones.zone.bZone2) 	bZoneActive = false;
+	else if (u8NumZone == 2 && sConfig_Hydrau_temp.sZones.zone.bZone3) 	bZoneActive = true;
+	else if (u8NumZone == 2 && !sConfig_Hydrau_temp.sZones.zone.bZone3) 	bZoneActive = false;
+	else if (u8NumZone == 3 && sConfig_Hydrau_temp.sZones.zone.bZone4) 	bZoneActive = true;
+	else if (u8NumZone == 3 && !sConfig_Hydrau_temp.sZones.zone.bZone4) 	bZoneActive = false;
+	else if (u8NumZone == 4 && sConfig_Hydrau_temp.sZones.zone.bZone5) 	bZoneActive = true;
+	else if (u8NumZone == 4 && !sConfig_Hydrau_temp.sZones.zone.bZone5) 	bZoneActive = false;
+	else if (u8NumZone == 5 && sConfig_Hydrau_temp.sZones.zone.bZone6) 	bZoneActive = true;
+	else if (u8NumZone == 5 && !sConfig_Hydrau_temp.sZones.zone.bZone6) 	bZoneActive = false;
+	else if (u8NumZone == 6 && sConfig_Hydrau_temp.sZones.zone.bZone7) 	bZoneActive = true;
+	else if (u8NumZone == 6 && !sConfig_Hydrau_temp.sZones.zone.bZone7) 	bZoneActive = false;
+	else if (u8NumZone == 7 && sConfig_Hydrau_temp.sZones.zone.bZone8) 	bZoneActive = true;
+	else if (u8NumZone == 7 && !sConfig_Hydrau_temp.sZones.zone.bZone8) 	bZoneActive = false;
 
 	if (bZoneActive)
 	{
@@ -216,7 +224,7 @@ void Installation_MZ_config_zoneView::MAJBoutonActiverFroid()
 
 void Installation_MZ_config_zoneView::bouton_non()
 {
-	//sConfig_Hydrau_temp.sZones.bZone1 = 0;
+	//sConfig_Hydrau_temp.sZones.zone.bZone1 = 0;
 	bZoneActive = false;
 	if(toggleButton_non_activer_zone.getState())
 	{
@@ -231,7 +239,7 @@ void Installation_MZ_config_zoneView::bouton_non()
 
 void Installation_MZ_config_zoneView::bouton_oui()
 {
-	//sConfig_Hydrau_temp.sZones.bZone1 = 1;
+	//sConfig_Hydrau_temp.sZones.zone.bZone1 = 1;
 	bZoneActive = true;
 	if(toggleButton_oui_activer_zone.getState())
 	{
@@ -249,36 +257,36 @@ void Installation_MZ_config_zoneView::record_zone_active_oui_non()
 	switch (u8NumZone)
 	{
 		case 0:
-			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.bZone1 = 1;
-			else sConfig_Hydrau_temp.sZones.bZone1 = 0;
+			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.zone.bZone1 = 1;
+			else sConfig_Hydrau_temp.sZones.zone.bZone1 = 0;
 			break;
 		case 1:
-			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.bZone2 = 1;
-			else sConfig_Hydrau_temp.sZones.bZone2 = 0;
+			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.zone.bZone2 = 1;
+			else sConfig_Hydrau_temp.sZones.zone.bZone2 = 0;
 			break;
 		case 2:
-			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.bZone3 = 1;
-			else sConfig_Hydrau_temp.sZones.bZone3 = 0;
+			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.zone.bZone3 = 1;
+			else sConfig_Hydrau_temp.sZones.zone.bZone3 = 0;
 			break;
 		case 3:
-			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.bZone4 = 1;
-			else sConfig_Hydrau_temp.sZones.bZone4 = 0;
+			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.zone.bZone4 = 1;
+			else sConfig_Hydrau_temp.sZones.zone.bZone4 = 0;
 			break;
 		case 4:
-			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.bZone5 = 1;
-			else sConfig_Hydrau_temp.sZones.bZone5 = 0;
+			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.zone.bZone5 = 1;
+			else sConfig_Hydrau_temp.sZones.zone.bZone5 = 0;
 			break;
 		case 5:
-			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.bZone6 = 1;
-			else sConfig_Hydrau_temp.sZones.bZone6 = 0;
+			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.zone.bZone6 = 1;
+			else sConfig_Hydrau_temp.sZones.zone.bZone6 = 0;
 			break;
 		case 6:
-			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.bZone7 = 1;
-			else sConfig_Hydrau_temp.sZones.bZone7 = 0;
+			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.zone.bZone7 = 1;
+			else sConfig_Hydrau_temp.sZones.zone.bZone7 = 0;
 			break;
 		case 7:
-			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.bZone8 = 1;
-			else sConfig_Hydrau_temp.sZones.bZone8 = 0;
+			if (bZoneActive == true)	sConfig_Hydrau_temp.sZones.zone.bZone8 = 1;
+			else sConfig_Hydrau_temp.sZones.zone.bZone8 = 0;
 			break;
 		default:
 			break;
@@ -378,27 +386,84 @@ void Installation_MZ_config_zoneView::MAJEmetteur()
 		case GAINABLE:
 			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_GAINABLE_CENTRE_DEFAUT));
 			break;
-		case SOUS_STATION:
-			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_SOUS_STATION_CENTRE_DEFAUT));
-			break;
+//		case SOUS_STATION:
+//			textArea_valeur_type_emetteur.setTypedText(touchgfx::TypedText(T_TEXT_SOUS_STATION_CENTRE_DEFAUT));
+//			break;
 		default:
 			break;
 	}
 	textArea_valeur_type_emetteur.invalidate();
-//	sParamZxMZtemp[u8NumZone].TypeEmmetteur = TypeEmetteur;
+	sParamZxMZtemp[u8NumZone].TypeEmmetteur = TypeEmetteur;
 }
 
+//void Installation_MZ_config_zoneView::bouton_droite_type_emetteur()
+//{
+//	if (TypeEmetteur < RADIATEUR) TypeEmetteur++;
+//	else TypeEmetteur = PLANCHER;
+//	MAJEmetteur();
+//}
+//
+//void Installation_MZ_config_zoneView::bouton_gauche_type_emetteur()
+//{
+//	if (TypeEmetteur > PLANCHER) TypeEmetteur--;
+//	else TypeEmetteur = RADIATEUR;
+//	MAJEmetteur();
+//}
 void Installation_MZ_config_zoneView::bouton_droite_type_emetteur()
 {
-	if (TypeEmetteur < RADIATEUR) TypeEmetteur++;
-	else TypeEmetteur = PLANCHER;
+	if (TypeEmetteur == RADIATEUR)
+	{
+		TypeEmetteur = PLANCHER;
+	}
+	else
+	{
+		TypeEmetteur++;
+	}
+
+	switch(TypeEmetteur)
+	{
+		case PLANCHER:
+			memcpy(&sParamZxMZtemp[u8NumZone].u8LoiDeau, &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
+			break;
+		case VENTILO:
+			memcpy(&sParamZxMZtemp[u8NumZone].u8LoiDeau, &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
+			break;
+		case RADIATEUR:
+			memcpy(&sParamZxMZtemp[u8NumZone].u8LoiDeau, &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
+			break;
+		default:
+			break;
+	}
+
 	MAJEmetteur();
 }
 
 void Installation_MZ_config_zoneView::bouton_gauche_type_emetteur()
 {
-	if (TypeEmetteur > PLANCHER) TypeEmetteur--;
-	else TypeEmetteur = RADIATEUR;
+	if(TypeEmetteur == PLANCHER)
+	{
+		TypeEmetteur = RADIATEUR;
+	}
+	else
+	{
+		TypeEmetteur--;
+	}
+
+	switch(TypeEmetteur)
+	{
+		case PLANCHER:
+			memcpy(&sParamZxMZtemp[u8NumZone].u8LoiDeau, &u8Loideau_Plancher, sizeof(u8Loideau_Plancher));
+			break;
+		case VENTILO:
+			memcpy(&sParamZxMZtemp[u8NumZone].u8LoiDeau, &u8Loideau_Ventilo, sizeof(u8Loideau_Ventilo));
+			break;
+		case RADIATEUR:
+			memcpy(&sParamZxMZtemp[u8NumZone].u8LoiDeau, &u8Loideau_Radiateur,  sizeof(u8Loideau_Radiateur));
+			break;
+		default:
+			break;
+	}
+
 	MAJEmetteur();
 }
 

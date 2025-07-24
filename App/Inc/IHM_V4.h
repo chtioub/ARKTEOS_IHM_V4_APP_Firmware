@@ -26,7 +26,7 @@ extern "C"
 #define VEILLE_1_TIME           5//600 //60              // Temps avant mise en veille 1 en secondes
 #define VEILLE_2_TIME           10//3000//300             // Temps avant mise en veille 1 en secondes
 #define PWM_VEILLE_1            5u
-
+#define TPS_NO_CODE		        900000 //15 mn
 
 
 
@@ -250,6 +250,17 @@ extern S_PARAM_ZX sParamZxMZtemp[10];
 extern uint16_t u16CodeCommande;
 extern S_STATUT_LINKY sStatutLinky;
 extern uint8_t oui_veille;
+extern uint8_t u8Nb_PAC;
+extern uint8_t u3CarteGroupeA, u3CarteGroupeB, u3NumVoieGroupeA, u3NumVoieGroupeB;
+extern uint8_t eTypeSimultaneChaudFroid, bLimitationPW_Froid, bLimitationPW_ECS;
+extern uint8_t bUserAdaptationLoiDeau;
+extern uint16_t TempNonChauffage;
+extern bool bBouclageECSTemp2;
+extern unsigned char u2TypeEchangeurECSTemp2;
+extern S_PARAM_TEST_PAC sParam_Test_PAC;
+extern bool bAutorisationNoCode;
+extern uint16_t TimerNoNeededCode;
+extern uint32_t u32LastTick;
 
 void setBackLightPWM(uint8_t pwm);
 uint8_t decodeRxData(rxData_t *rxData);

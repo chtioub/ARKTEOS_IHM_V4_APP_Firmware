@@ -32,6 +32,8 @@ Installation_MZ_param_ou_regroupement_zonesView::Installation_MZ_param_ou_regrou
 	bMessageAttentionVu = false;
 	u8LigneZone = 0; //Pour définir quelle ligne et contrôle on vient de changer
 
+	bErreurConfigurationLoiEau = false;
+
 	//Initialisation des variables temporaires des zones
 	for (int i = 0; i<8; i++)
 	{
@@ -113,17 +115,17 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshRattachement()
 		case 0:
 			if (u2Rattachement[0] == AUTONOME)
 			{
-				Unicode::snprintf(textAreaBuffer_NomGroupeZ1, 10, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
+				Unicode::snprintf(textAreaBuffer_NomGroupeZ1, 11, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
 				textArea_bouton_rattachement_Z1.setWildcard(textAreaBuffer_NomGroupeZ1);
 			}
 			else if (u2Rattachement[0]== GROUPE_A)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ1, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ1, 11);
 				textArea_bouton_rattachement_Z1.setWildcard(textAreaBuffer_NomGroupeZ1);
 			}
 			else if (u2Rattachement[0] == GROUPE_B)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ1, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ1, 11);
 				textArea_bouton_rattachement_Z1.setWildcard(textAreaBuffer_NomGroupeZ1);
 			}
 			textArea_bouton_rattachement_Z1.invalidate();
@@ -131,17 +133,17 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshRattachement()
 		case 1:
 			if (u2Rattachement[1] == AUTONOME)
 			{
-				Unicode::snprintf(textAreaBuffer_NomGroupeZ2, 10, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
+				Unicode::snprintf(textAreaBuffer_NomGroupeZ2, 11, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
 				textArea_bouton_rattachement_Z2.setWildcard(textAreaBuffer_NomGroupeZ2);
 			}
 			else if (u2Rattachement[1]== GROUPE_A)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ2, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ2, 11);
 				textArea_bouton_rattachement_Z2.setWildcard(textAreaBuffer_NomGroupeZ2);
 			}
 			else if (u2Rattachement[1] == GROUPE_B)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ2, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ2, 11);
 				textArea_bouton_rattachement_Z2.setWildcard(textAreaBuffer_NomGroupeZ2);
 			}
 			textArea_bouton_rattachement_Z2.invalidate();
@@ -149,17 +151,17 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshRattachement()
 		case 2:
 			if (u2Rattachement[2] == AUTONOME)
 			{
-				Unicode::snprintf(textAreaBuffer_NomGroupeZ3, 10, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
+				Unicode::snprintf(textAreaBuffer_NomGroupeZ3, 11, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
 				textArea_bouton_rattachement_Z3.setWildcard(textAreaBuffer_NomGroupeZ3);
 			}
 			else if (u2Rattachement[2]== GROUPE_A)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ3, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ3, 11);
 				textArea_bouton_rattachement_Z3.setWildcard(textAreaBuffer_NomGroupeZ3);
 			}
 			else if (u2Rattachement[2] == GROUPE_B)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ3, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ3, 11);
 				textArea_bouton_rattachement_Z3.setWildcard(textAreaBuffer_NomGroupeZ3);
 			}
 			textArea_bouton_rattachement_Z3.invalidate();
@@ -167,17 +169,17 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshRattachement()
 		case 3:
 			if (u2Rattachement[3] == AUTONOME)
 			{
-				Unicode::snprintf(textAreaBuffer_NomGroupeZ4, 10, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
+				Unicode::snprintf(textAreaBuffer_NomGroupeZ4, 11, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
 				textArea_bouton_rattachement_Z4.setWildcard(textAreaBuffer_NomGroupeZ4);
 			}
 			else if (u2Rattachement[3]== GROUPE_A)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ4, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ4, 11);
 				textArea_bouton_rattachement_Z4.setWildcard(textAreaBuffer_NomGroupeZ4);
 			}
 			else if (u2Rattachement[3] == GROUPE_B)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ4, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ4, 11);
 				textArea_bouton_rattachement_Z4.setWildcard(textAreaBuffer_NomGroupeZ4);
 			}
 			textArea_bouton_rattachement_Z4.invalidate();
@@ -185,17 +187,17 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshRattachement()
 		case 4:
 			if (u2Rattachement[4] == AUTONOME)
 			{
-				Unicode::snprintf(textAreaBuffer_NomGroupeZ5, 10, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
+				Unicode::snprintf(textAreaBuffer_NomGroupeZ5, 11, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
 				textArea_bouton_rattachement_Z5.setWildcard(textAreaBuffer_NomGroupeZ5);
 			}
 			else if (u2Rattachement[4]== GROUPE_A)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ5, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ5, 11);
 				textArea_bouton_rattachement_Z5.setWildcard(textAreaBuffer_NomGroupeZ5);
 			}
 			else if (u2Rattachement[4] == GROUPE_B)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ5, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ5, 11);
 				textArea_bouton_rattachement_Z5.setWildcard(textAreaBuffer_NomGroupeZ5);
 			}
 			textArea_bouton_rattachement_Z5.invalidate();
@@ -203,17 +205,17 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshRattachement()
 		case 5:
 			if (u2Rattachement[5] == AUTONOME)
 			{
-				Unicode::snprintf(textAreaBuffer_NomGroupeZ6, 10, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
+				Unicode::snprintf(textAreaBuffer_NomGroupeZ6, 11, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
 				textArea_bouton_rattachement_Z6.setWildcard(textAreaBuffer_NomGroupeZ6);
 			}
 			else if (u2Rattachement[5]== GROUPE_A)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ6, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ6, 11);
 				textArea_bouton_rattachement_Z6.setWildcard(textAreaBuffer_NomGroupeZ6);
 			}
 			else if (u2Rattachement[5] == GROUPE_B)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ6, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ6, 11);
 				textArea_bouton_rattachement_Z6.setWildcard(textAreaBuffer_NomGroupeZ6);
 			}
 			textArea_bouton_rattachement_Z6.invalidate();
@@ -221,17 +223,17 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshRattachement()
 		case 6:
 			if (u2Rattachement[6] == AUTONOME)
 			{
-				Unicode::snprintf(textAreaBuffer_NomGroupeZ7, 10, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
+				Unicode::snprintf(textAreaBuffer_NomGroupeZ7, 11, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
 				textArea_bouton_rattachement_Z7.setWildcard(textAreaBuffer_NomGroupeZ7);
 			}
 			else if (u2Rattachement[6]== GROUPE_A)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ7, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ7, 11);
 				textArea_bouton_rattachement_Z7.setWildcard(textAreaBuffer_NomGroupeZ7);
 			}
 			else if (u2Rattachement[6] == GROUPE_B)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ7, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ7, 11);
 				textArea_bouton_rattachement_Z7.setWildcard(textAreaBuffer_NomGroupeZ7);
 			}
 			textArea_bouton_rattachement_Z7.invalidate();
@@ -239,17 +241,17 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshRattachement()
 		case 7:
 			if (u2Rattachement[7] == AUTONOME)
 			{
-				Unicode::snprintf(textAreaBuffer_NomGroupeZ8, 10, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
+				Unicode::snprintf(textAreaBuffer_NomGroupeZ8, 11, touchgfx::TypedText(T_TEXT_AUTONOME).getText());
 				textArea_bouton_rattachement_Z8.setWildcard(textAreaBuffer_NomGroupeZ8);
 			}
 			else if (u2Rattachement[7]== GROUPE_A)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ8, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[8].u8NomZone, textAreaBuffer_NomGroupeZ8, 11);
 				textArea_bouton_rattachement_Z8.setWildcard(textAreaBuffer_NomGroupeZ8);
 			}
 			else if (u2Rattachement[7] == GROUPE_B)
 			{
-				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ8, 10);
+				Unicode::fromUTF8(sParamZxMZtemp[9].u8NomZone, textAreaBuffer_NomGroupeZ8, 11);
 				textArea_bouton_rattachement_Z8.setWildcard(textAreaBuffer_NomGroupeZ8);
 			}
 			textArea_bouton_rattachement_Z8.invalidate();
@@ -267,42 +269,42 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshNomZone()
 	switch (u8LigneZone)
 	{
 		case 0:
-			Unicode::fromUTF8(sParamZxMZtemp[0].u8NomZone, textAreaBuffer_NomZ1, 10);
+			Unicode::fromUTF8(sParamZxMZtemp[0].u8NomZone, textAreaBuffer_NomZ1, 11);
 			textArea_bouton_cfg_Z1.setWildcard(textAreaBuffer_NomZ1);
 			textArea_bouton_cfg_Z1.invalidate();
 			break;
 		case 1:
-			Unicode::fromUTF8(sParamZxMZtemp[1].u8NomZone, textAreaBuffer_NomZ2, 10);
+			Unicode::fromUTF8(sParamZxMZtemp[1].u8NomZone, textAreaBuffer_NomZ2, 11);
 			textArea_bouton_cfg_Z2.setWildcard(textAreaBuffer_NomZ2);
 			textArea_bouton_cfg_Z2.invalidate();
 			break;
 		case 2:
-			Unicode::fromUTF8(sParamZxMZtemp[2].u8NomZone, textAreaBuffer_NomZ3, 10);
+			Unicode::fromUTF8(sParamZxMZtemp[2].u8NomZone, textAreaBuffer_NomZ3, 11);
 			textArea_bouton_cfg_Z3.setWildcard(textAreaBuffer_NomZ3);
 			textArea_bouton_cfg_Z3.invalidate();
 			break;
 		case 3:
-			Unicode::fromUTF8(sParamZxMZtemp[3].u8NomZone, textAreaBuffer_NomZ4, 10);
+			Unicode::fromUTF8(sParamZxMZtemp[3].u8NomZone, textAreaBuffer_NomZ4, 11);
 			textArea_bouton_cfg_Z4.setWildcard(textAreaBuffer_NomZ4);
 			textArea_bouton_cfg_Z4.invalidate();
 			break;
 		case 4:
-			Unicode::fromUTF8(sParamZxMZtemp[4].u8NomZone, textAreaBuffer_NomZ5, 10);
+			Unicode::fromUTF8(sParamZxMZtemp[4].u8NomZone, textAreaBuffer_NomZ5, 11);
 			textArea_bouton_cfg_Z5.setWildcard(textAreaBuffer_NomZ5);
 			textArea_bouton_cfg_Z5.invalidate();
 			break;
 		case 5:
-			Unicode::fromUTF8(sParamZxMZtemp[5].u8NomZone, textAreaBuffer_NomZ6, 10);
+			Unicode::fromUTF8(sParamZxMZtemp[5].u8NomZone, textAreaBuffer_NomZ6, 11);
 			textArea_bouton_cfg_Z6.setWildcard(textAreaBuffer_NomZ6);
 			textArea_bouton_cfg_Z6.invalidate();
 			break;
 		case 6:
-			Unicode::fromUTF8(sParamZxMZtemp[6].u8NomZone, textAreaBuffer_NomZ7, 10);
+			Unicode::fromUTF8(sParamZxMZtemp[6].u8NomZone, textAreaBuffer_NomZ7, 11);
 			textArea_bouton_cfg_Z7.setWildcard(textAreaBuffer_NomZ7);
 			textArea_bouton_cfg_Z7.invalidate();
 			break;
 		case 7:
-			Unicode::fromUTF8(sParamZxMZtemp[7].u8NomZone, textAreaBuffer_NomZ8, 10);
+			Unicode::fromUTF8(sParamZxMZtemp[7].u8NomZone, textAreaBuffer_NomZ8, 11);
 			textArea_bouton_cfg_Z8.setWildcard(textAreaBuffer_NomZ8);
 			textArea_bouton_cfg_Z8.invalidate();
 			break;
@@ -636,6 +638,8 @@ void Installation_MZ_param_ou_regroupement_zonesView:: RefreshTypeCarte()
 
 void Installation_MZ_param_ou_regroupement_zonesView:: affichage_information()
 {
+	Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_MESSAGE_V3V_REG).getText());
+	message_information.message(textAreaBuffer_MessMess);
 	modalWindow_information.show();
 	modalWindow_information.invalidate();
 }
@@ -645,6 +649,1096 @@ void Installation_MZ_param_ou_regroupement_zonesView:: bouton_valider_informatio
 	modalWindow_information.hide();
 	modalWindow_information.invalidate();
 	bMessageAttentionVu = true;
+}
+
+void Installation_MZ_param_ou_regroupement_zonesView::affichage_meme_voie_utilisee()
+{
+	Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_MESSAGE_MEME_SORTIE).getText());
+	message_information.message(textAreaBuffer_MessMess);
+	modalWindow_information.show();
+	modalWindow_information.invalidate();
+}
+
+void Installation_MZ_param_ou_regroupement_zonesView::affichage_erreur_config_loi_deau()
+{
+	Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_ERREUR_CONFIG_LOI_DEAU).getText());
+	message_information.message(textAreaBuffer_MessMess);
+	modalWindow_information.show();
+	modalWindow_information.invalidate();
+}
+
+void Installation_MZ_param_ou_regroupement_zonesView::bouton_valider()
+{
+	verification_loi_deau();
+
+//	if (
+//	((sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone2 && (u8CarteMZ[0] == u8CarteMZ[1] && u8NumVoie[0] == u8NumVoie[1]) || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone3) && (u8CarteMZ[0] == u8CarteMZ[2] && u8NumVoie[0] == u8NumVoie[2]) || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone4) && (u8CarteMZ[0] == u8CarteMZ[3] && u8NumVoie[0] == u8NumVoie[3]) || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone5) && (u8CarteMZ[0] == u8CarteMZ[4] && u8NumVoie[0] == u8NumVoie[4]) || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone6) && (u8CarteMZ[0] == u8CarteMZ[5] && u8NumVoie[0] == u8NumVoie[5]) || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone7) && (u8CarteMZ[0] == u8CarteMZ[6] && u8NumVoie[0] == u8NumVoie[6]) || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone8) && (u8CarteMZ[0] == u8CarteMZ[7] && u8NumVoie[0] == u8NumVoie[7])) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone3) && (u8CarteMZ[1] == u8CarteMZ[2] && u8NumVoie[1] == u8NumVoie[2]) || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone4) && (u8CarteMZ[1] == u8CarteMZ[3] && u8NumVoie[1] == u8NumVoie[3]) || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone5) && (u8CarteMZ[1] == u8CarteMZ[4] && u8NumVoie[1] == u8NumVoie[4]) ||(sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone6) && (u8CarteMZ[1] == u8CarteMZ[5] && u8NumVoie[1] == u8NumVoie[5]) || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone7) && (u8CarteMZ[1] == u8CarteMZ[6] && u8NumVoie[1] == u8NumVoie[6]) || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone8) && (u8CarteMZ[1] == u8CarteMZ[7] && u8NumVoie[1] == u8NumVoie[7])) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone4) && (u8CarteMZ[2] == u8CarteMZ[3] && u8NumVoie[2] == u8NumVoie[3]) || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone5) && (u8CarteMZ[2] == u8CarteMZ[4] && u8NumVoie[2] == u8NumVoie[4]) || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone6) && (u8CarteMZ[2] == u8CarteMZ[5] && u8NumVoie[2] == u8NumVoie[5]) || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone7) && (u8CarteMZ[2] == u8CarteMZ[6] && u8NumVoie[2] == u8NumVoie[6]) || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone8) && (u8CarteMZ[2] == u8CarteMZ[7] && u8NumVoie[2] == u8NumVoie[7])) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone4 && sConfig_Hydrau_temp.sZones.zone.bZone5) && (u8CarteMZ[3] == u8CarteMZ[4] && u8NumVoie[3] == u8NumVoie[4]) || (sConfig_Hydrau_temp.sZones.zone.bZone4 && sConfig_Hydrau_temp.sZones.zone.bZone6) && (u8CarteMZ[3] == u8CarteMZ[5] && u8NumVoie[3] == u8NumVoie[5]) || (sConfig_Hydrau_temp.sZones.zone.bZone4 && sConfig_Hydrau_temp.sZones.zone.bZone7) && (u8CarteMZ[3] == u8CarteMZ[6] && u8NumVoie[3] == u8NumVoie[6]) || (sConfig_Hydrau_temp.sZones.zone.bZone4 && sConfig_Hydrau_temp.sZones.zone.bZone8) && (u8CarteMZ[3] == u8CarteMZ[7] && u8NumVoie[3] == u8NumVoie[7])) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone5 && sConfig_Hydrau_temp.sZones.zone.bZone6) && (u8CarteMZ[4] == u8CarteMZ[5] && u8NumVoie[4] == u8NumVoie[5]) || (sConfig_Hydrau_temp.sZones.zone.bZone5 && sConfig_Hydrau_temp.sZones.zone.bZone7) && (u8CarteMZ[4] == u8CarteMZ[6] && u8NumVoie[4] == u8NumVoie[6]) || (sConfig_Hydrau_temp.sZones.zone.bZone5 && sConfig_Hydrau_temp.sZones.zone.bZone8) && (u8CarteMZ[4] == u8CarteMZ[7] && u8NumVoie[4] == u8NumVoie[7])) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone6 && sConfig_Hydrau_temp.sZones.zone.bZone7) && (u8CarteMZ[5] == u8CarteMZ[6] && u8NumVoie[5] == u8NumVoie[6]) || (sConfig_Hydrau_temp.sZones.zone.bZone6 && sConfig_Hydrau_temp.sZones.zone.bZone8) && (u8CarteMZ[5] == u8CarteMZ[7] && u8NumVoie[5] == u8NumVoie[7])) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone7 && sConfig_Hydrau_temp.sZones.zone.bZone8) && (u8CarteMZ[6] == u8CarteMZ[7] && u8NumVoie[6] == u8NumVoie[7])) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone1 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[0] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[0] == sParamZxMZtemp[8].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone1 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[0] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[0] == sParamZxMZtemp[9].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone2 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[1] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[1] == sParamZxMZtemp[8].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone2 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[1] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[1] == sParamZxMZtemp[9].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone3 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[2] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[2] == sParamZxMZtemp[8].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone3 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[2] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[2] == sParamZxMZtemp[9].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone4 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[3] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[3] == sParamZxMZtemp[8].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone4 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[3] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[3] == sParamZxMZtemp[9].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone5 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[4] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[4] == sParamZxMZtemp[8].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone5 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[4] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[4] == sParamZxMZtemp[9].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone6 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[5] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[5] == sParamZxMZtemp[8].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone6 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[5] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[5] == sParamZxMZtemp[9].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone7 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[6] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[6] == sParamZxMZtemp[8].NumVoieMZ)) ||
+//	((sConfig_Hydrau_temp.sZones.zone.bZone7 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif) && (u8CarteMZ[6] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[6] == sParamZxMZtemp[9].NumVoieMZ))))
+//	{
+	if (
+	    (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone2 && (u8CarteMZ[0] == u8CarteMZ[1] && u8NumVoie[0] == u8NumVoie[1]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone3 && (u8CarteMZ[0] == u8CarteMZ[2] && u8NumVoie[0] == u8NumVoie[2]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone4 && (u8CarteMZ[0] == u8CarteMZ[3] && u8NumVoie[0] == u8NumVoie[3]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone5 && (u8CarteMZ[0] == u8CarteMZ[4] && u8NumVoie[0] == u8NumVoie[4]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone6 && (u8CarteMZ[0] == u8CarteMZ[5] && u8NumVoie[0] == u8NumVoie[5]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone7 && (u8CarteMZ[0] == u8CarteMZ[6] && u8NumVoie[0] == u8NumVoie[6]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sConfig_Hydrau_temp.sZones.zone.bZone8 && (u8CarteMZ[0] == u8CarteMZ[7] && u8NumVoie[0] == u8NumVoie[7]))
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone3 && (u8CarteMZ[1] == u8CarteMZ[2] && u8NumVoie[1] == u8NumVoie[2]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone4 && (u8CarteMZ[1] == u8CarteMZ[3] && u8NumVoie[1] == u8NumVoie[3]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone5 && (u8CarteMZ[1] == u8CarteMZ[4] && u8NumVoie[1] == u8NumVoie[4]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone6 && (u8CarteMZ[1] == u8CarteMZ[5] && u8NumVoie[1] == u8NumVoie[5]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone7 && (u8CarteMZ[1] == u8CarteMZ[6] && u8NumVoie[1] == u8NumVoie[6]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sConfig_Hydrau_temp.sZones.zone.bZone8 && (u8CarteMZ[1] == u8CarteMZ[7] && u8NumVoie[1] == u8NumVoie[7]))
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone4 && (u8CarteMZ[2] == u8CarteMZ[3] && u8NumVoie[2] == u8NumVoie[3]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone5 && (u8CarteMZ[2] == u8CarteMZ[4] && u8NumVoie[2] == u8NumVoie[4]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone6 && (u8CarteMZ[2] == u8CarteMZ[5] && u8NumVoie[2] == u8NumVoie[5]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone7 && (u8CarteMZ[2] == u8CarteMZ[6] && u8NumVoie[2] == u8NumVoie[6]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sConfig_Hydrau_temp.sZones.zone.bZone8 && (u8CarteMZ[2] == u8CarteMZ[7] && u8NumVoie[2] == u8NumVoie[7]))
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone4 && sConfig_Hydrau_temp.sZones.zone.bZone5 && (u8CarteMZ[3] == u8CarteMZ[4] && u8NumVoie[3] == u8NumVoie[4]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone4 && sConfig_Hydrau_temp.sZones.zone.bZone6 && (u8CarteMZ[3] == u8CarteMZ[5] && u8NumVoie[3] == u8NumVoie[5]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone4 && sConfig_Hydrau_temp.sZones.zone.bZone7 && (u8CarteMZ[3] == u8CarteMZ[6] && u8NumVoie[3] == u8NumVoie[6]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone4 && sConfig_Hydrau_temp.sZones.zone.bZone8 && (u8CarteMZ[3] == u8CarteMZ[7] && u8NumVoie[3] == u8NumVoie[7]))
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone5 && sConfig_Hydrau_temp.sZones.zone.bZone6 && (u8CarteMZ[4] == u8CarteMZ[5] && u8NumVoie[4] == u8NumVoie[5]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone5 && sConfig_Hydrau_temp.sZones.zone.bZone7 && (u8CarteMZ[4] == u8CarteMZ[6] && u8NumVoie[4] == u8NumVoie[6]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone5 && sConfig_Hydrau_temp.sZones.zone.bZone8 && (u8CarteMZ[4] == u8CarteMZ[7] && u8NumVoie[4] == u8NumVoie[7]))
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone6 && sConfig_Hydrau_temp.sZones.zone.bZone7 && (u8CarteMZ[5] == u8CarteMZ[6] && u8NumVoie[5] == u8NumVoie[6]))
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone6 && sConfig_Hydrau_temp.sZones.zone.bZone8 && (u8CarteMZ[5] == u8CarteMZ[7] && u8NumVoie[5] == u8NumVoie[7]))
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone7 && sConfig_Hydrau_temp.sZones.zone.bZone8 && (u8CarteMZ[6] == u8CarteMZ[7] && u8NumVoie[6] == u8NumVoie[7]))
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone1 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[0] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[0] == sParamZxMZtemp[8].NumVoieMZ)
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone1 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[0] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[0] == sParamZxMZtemp[9].NumVoieMZ)
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone2 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[1] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[1] == sParamZxMZtemp[8].NumVoieMZ)
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone2 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[1] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[1] == sParamZxMZtemp[9].NumVoieMZ)
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone3 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[2] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[2] == sParamZxMZtemp[8].NumVoieMZ)
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone3 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[2] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[2] == sParamZxMZtemp[9].NumVoieMZ)
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone4 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[3] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[3] == sParamZxMZtemp[8].NumVoieMZ)
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone4 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[3] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[3] == sParamZxMZtemp[9].NumVoieMZ)
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone5 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[4] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[4] == sParamZxMZtemp[8].NumVoieMZ)
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone5 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[4] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[4] == sParamZxMZtemp[9].NumVoieMZ)
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone6 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[5] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[5] == sParamZxMZtemp[8].NumVoieMZ)
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone6 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[5] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[5] == sParamZxMZtemp[9].NumVoieMZ)
+	    )
+	    || (
+	        (sConfig_Hydrau_temp.sZones.zone.bZone7 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[6] == sParamZxMZtemp[8].NumCarteMZ && u8NumVoie[6] == sParamZxMZtemp[8].NumVoieMZ)
+	        || (sConfig_Hydrau_temp.sZones.zone.bZone7 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && u8CarteMZ[6] == sParamZxMZtemp[9].NumCarteMZ && u8NumVoie[6] == sParamZxMZtemp[9].NumVoieMZ)
+	    )
+	)
+	{
+
+		affichage_meme_voie_utilisee();
+	}
+	else if (bErreurConfigurationLoiEau)
+	{
+		affichage_erreur_config_loi_deau();
+	}
+	else
+	{
+		application().gotoInstallation_hydrauliqueScreenNoTransition();
+	}
+}
+
+//void Installation_MZ_param_ou_regroupement_zonesView::affichage_debug()
+//{
+//	//Unicode::snprintf(textAreaBuffer_MessMess, 500, touchgfx::TypedText(T_TEXT_ERREUR_CONFIG_LOI_DEAU).getText());
+//
+//	Unicode::snprintf(textAreaBuffer_MessMess, 30, "%d %d %d %d %d %d %d %d %d", sConfig_Hydrau_temp.sZones.zone.bZone1, u8CarteMZ[0], sParamZxMZtemp[0].NumVoieMZ,sParamZxMZtemp[0].u8LoiDeau[0],sParamZxMZtemp[0].u8LoiDeau[1],sParamZxMZtemp[0].u8LoiDeau[2], sParamZxMZtemp[0].u8LoiDeau[3],sParamZxMZtemp[0].u8LoiDeau[4],sParamZxMZtemp[0].u8LoiDeau[5]);
+//	Unicode::snprintf(&textAreaBuffer_MessMess[Unicode::strlen(textAreaBuffer_MessMess)], 30, "%d %d %d %d %d %d %d %d %d", sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif, sParamZxMZtemp[8].NumCarteMZ, sParamZxMZtemp[8].NumVoieMZ,sParamZxMZtemp[8].u8LoiDeau[0],sParamZxMZtemp[8].u8LoiDeau[1],sParamZxMZtemp[8].u8LoiDeau[2], sParamZxMZtemp[8].u8LoiDeau[3],sParamZxMZtemp[8].u8LoiDeau[4],sParamZxMZtemp[8].u8LoiDeau[5]);
+//
+//	message_information.message(textAreaBuffer_MessMess);
+//	modalWindow_information.show();
+//	modalWindow_information.invalidate();
+//}
+
+
+void Installation_MZ_param_ou_regroupement_zonesView:: verification_loi_deau()
+{
+//	bErreurConfigurationLoiEau = false;
+	// ZONE 1
+	if (u8CarteMZ[0] == 3 && u8NumVoie[0] == 0 && u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+	{
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[0].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// ZONE 2
+	if (u8CarteMZ[1] == 3 &&  u8NumVoie[1] == 0 && u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+				bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[1].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// ZONE 3
+	if (u8CarteMZ[2] == 3 && u8NumVoie[2] == 0 && u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[2].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// ZONE 4
+	if (u8CarteMZ[3] == 3 && u8NumVoie[3] == 0 && u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+				bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[3].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// ZONE 5
+	if (u8CarteMZ[4] == 3 && u8NumVoie[4] == 0 && u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[4].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// ZONE 6
+	if (u8CarteMZ[5] == 3 && u8NumVoie[5] == 0 && u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+				bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[5].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// ZONE 7
+	if (u8CarteMZ[6] == 3 && u8NumVoie[6] == 0 && u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[6].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// ZONE 8
+	if (u8CarteMZ[7] == 3 && u8NumVoie[7] == 0 && u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[7].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// GROUPE A
+	if (sParamZxMZtemp[8].NumCarteMZ== 3 &&	sParamZxMZtemp[8].NumVoieMZ == 0 && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif
+	&& sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+		{
+		for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[9].u8LoiDeau[i] > sParamZxMZtemp[8].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+	// GROUPE B
+	if (sParamZxMZtemp[9].NumCarteMZ== 3 &&	sParamZxMZtemp[9].NumVoieMZ == 0 && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif
+	&& sParamZxMZtemp[9].TypeEmmetteur != SOUS_STATION)
+	{
+		if (u2Rattachement[0] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone1)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[0].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[1] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone2)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[1].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[2] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone3)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[2].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[3] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone4)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[3].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[4] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone5)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[4].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[5] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone6)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[5].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[6] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone7)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[6].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (u2Rattachement[7] == AUTONOME && sConfig_Hydrau_temp.sZones.zone.bZone8)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[7].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+		if (sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].TypeEmmetteur != SOUS_STATION)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				if (sParamZxMZtemp[8].u8LoiDeau[i] > sParamZxMZtemp[9].u8LoiDeau[i])
+				{
+					bErreurConfigurationLoiEau = true;
+				}
+			}
+		}
+	}
+
 }
 
 void Installation_MZ_param_ou_regroupement_zonesView:: Button_Voie_Z1()
@@ -707,7 +1801,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJVoie_Zone()
 			}
 			else
 			{
-				if (u8NumVoie[0] < VOIE_4) u8NumVoie[0]++;
+				if (u8NumVoie[0] < VOIE_5) u8NumVoie[0]++;
 				else u8NumVoie[0] = VOIE_1;
 			}
 			break;
@@ -719,7 +1813,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJVoie_Zone()
 			}
 			else
 			{
-				if (u8NumVoie[1] < VOIE_4) u8NumVoie[1]++;
+				if (u8NumVoie[1] < VOIE_5) u8NumVoie[1]++;
 				else u8NumVoie[1] = VOIE_1;
 			}
 			break;
@@ -731,7 +1825,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJVoie_Zone()
 			}
 			else
 			{
-				if (u8NumVoie[2] < VOIE_4) u8NumVoie[2]++;
+				if (u8NumVoie[2] < VOIE_5) u8NumVoie[2]++;
 				else u8NumVoie[2] = VOIE_1;
 			}
 			break;
@@ -743,7 +1837,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJVoie_Zone()
 			}
 			else
 			{
-				if (u8NumVoie[3] < VOIE_4) u8NumVoie[3]++;
+				if (u8NumVoie[3] < VOIE_5) u8NumVoie[3]++;
 				else u8NumVoie[3] = VOIE_1;
 			}
 			break;
@@ -755,7 +1849,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJVoie_Zone()
 			}
 			else
 			{
-				if (u8NumVoie[4] < VOIE_4) u8NumVoie[4]++;
+				if (u8NumVoie[4] < VOIE_5) u8NumVoie[4]++;
 				else u8NumVoie[4] = VOIE_1;
 			}
 			break;
@@ -767,7 +1861,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJVoie_Zone()
 			}
 			else
 			{
-				if (u8NumVoie[5] < VOIE_4) u8NumVoie[5]++;
+				if (u8NumVoie[5] < VOIE_5) u8NumVoie[5]++;
 				else u8NumVoie[5] = VOIE_1;
 			}
 			break;
@@ -779,7 +1873,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJVoie_Zone()
 			}
 			else
 			{
-				if (u8NumVoie[6] < VOIE_4) u8NumVoie[6]++;
+				if (u8NumVoie[6] < VOIE_5) u8NumVoie[6]++;
 				else u8NumVoie[6] = VOIE_1;
 			}
 			break;
@@ -791,7 +1885,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJVoie_Zone()
 			}
 			else
 			{
-				if (u8NumVoie[7] < VOIE_4) u8NumVoie[7]++;
+				if (u8NumVoie[7] < VOIE_5) u8NumVoie[7]++;
 				else u8NumVoie[7] = VOIE_1;
 			}
 			break;
@@ -855,7 +1949,6 @@ void Installation_MZ_param_ou_regroupement_zonesView:: RefreshVoieZone()
 void Installation_MZ_param_ou_regroupement_zonesView::bouton_param_zone_1()
 {
 	sConfig_Hydrau_temp.u8NumZone = 0;
-//	sParamZxMZtemp[u8NumZone]
 	memcpy(&sConfig_Hydrau_temp.sParamZx, &sConfig_IHM.sParam_Zx[0], sizeof(S_PARAM_ZX));
 }
 
@@ -906,7 +1999,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshZoneActive()
 	switch (u8LigneZone)
 	{
 		case 0:
-			if(sConfig_Hydrau_temp.sZones.bZone1 != 0)
+			if(sConfig_Hydrau_temp.sZones.zone.bZone1 != 0)
 			{
 				image_on_off_cfg_Z1.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 				textArea_on_off_cfg_Z1.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
@@ -921,7 +2014,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshZoneActive()
 			break;
 
 		case 1:
-			if(sConfig_Hydrau_temp.sZones.bZone2 != 0)
+			if(sConfig_Hydrau_temp.sZones.zone.bZone2 != 0)
 			{
 				image_on_off_cfg_Z2.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 				textArea_on_off_cfg_Z2.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
@@ -935,7 +2028,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshZoneActive()
 			textArea_on_off_cfg_Z2.invalidate();
 			break;
 		case 2:
-			if(sConfig_Hydrau_temp.sZones.bZone3 != 0)
+			if(sConfig_Hydrau_temp.sZones.zone.bZone3 != 0)
 			{
 				image_on_off_cfg_Z3.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 				textArea_on_off_cfg_Z3.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
@@ -949,7 +2042,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshZoneActive()
 			textArea_on_off_cfg_Z3.invalidate();
 			break;
 		case 3:
-			if(sConfig_Hydrau_temp.sZones.bZone4 != 0)
+			if(sConfig_Hydrau_temp.sZones.zone.bZone4 != 0)
 			{
 				image_on_off_cfg_Z4.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 				textArea_on_off_cfg_Z4.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
@@ -963,7 +2056,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshZoneActive()
 			textArea_on_off_cfg_Z4.invalidate();
 			break;
 		case 4:
-			if(sConfig_Hydrau_temp.sZones.bZone5 != 0)
+			if(sConfig_Hydrau_temp.sZones.zone.bZone5 != 0)
 			{
 				image_on_off_cfg_Z5.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 				textArea_on_off_cfg_Z5.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
@@ -977,7 +2070,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshZoneActive()
 			textArea_on_off_cfg_Z5.invalidate();
 			break;
 		case 5:
-			if(sConfig_Hydrau_temp.sZones.bZone6 != 0)
+			if(sConfig_Hydrau_temp.sZones.zone.bZone6 != 0)
 			{
 				image_on_off_cfg_Z6.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 				textArea_on_off_cfg_Z6.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
@@ -991,7 +2084,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshZoneActive()
 			textArea_on_off_cfg_Z6.invalidate();
 			break;
 		case 6:
-			if(sConfig_Hydrau_temp.sZones.bZone7 != 0)
+			if(sConfig_Hydrau_temp.sZones.zone.bZone7 != 0)
 			{
 				image_on_off_cfg_Z7.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 				textArea_on_off_cfg_Z7.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
@@ -1005,7 +2098,7 @@ void Installation_MZ_param_ou_regroupement_zonesView::RefreshZoneActive()
 			textArea_on_off_cfg_Z7.invalidate();
 			break;
 		case 7:
-			if(sConfig_Hydrau_temp.sZones.bZone8 != 0)
+			if(sConfig_Hydrau_temp.sZones.zone.bZone8 != 0)
 			{
 				image_on_off_cfg_Z8.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
 				textArea_on_off_cfg_Z8.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));

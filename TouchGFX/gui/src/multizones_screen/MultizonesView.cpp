@@ -146,44 +146,44 @@ void MultizonesView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	// Bouton zones
 	if(memcmp(&sConfig_IHM_old.sOption_PAC.sZone, &sConfig_IHM->sOption_PAC.sZone, sizeof(S_ZONE)))
 	{
-		u8NbZones = sConfig_IHM->sOption_PAC.sZone.bZone1 +
-					sConfig_IHM->sOption_PAC.sZone.bZone2 +
-					sConfig_IHM->sOption_PAC.sZone.bZone3 +
-					sConfig_IHM->sOption_PAC.sZone.bZone4 +
-					sConfig_IHM->sOption_PAC.sZone.bZone5 +
-					sConfig_IHM->sOption_PAC.sZone.bZone6 +
-					sConfig_IHM->sOption_PAC.sZone.bZone7 +
-					sConfig_IHM->sOption_PAC.sZone.bZone8;
+		u8NbZones = sConfig_IHM->sOption_PAC.sZone.zone.bZone1 +
+					sConfig_IHM->sOption_PAC.sZone.zone.bZone2 +
+					sConfig_IHM->sOption_PAC.sZone.zone.bZone3 +
+					sConfig_IHM->sOption_PAC.sZone.zone.bZone4 +
+					sConfig_IHM->sOption_PAC.sZone.zone.bZone5 +
+					sConfig_IHM->sOption_PAC.sZone.zone.bZone6 +
+					sConfig_IHM->sOption_PAC.sZone.zone.bZone7 +
+					sConfig_IHM->sOption_PAC.sZone.zone.bZone8;
 		//
-		if(sConfig_IHM->sOption_PAC.sZone.bZone1)
+		if(sConfig_IHM->sOption_PAC.sZone.zone.bZone1)
 		{
 			u8ZoneCorrespondante[u8Tmp++] = 0;
 		}
-		if(sConfig_IHM->sOption_PAC.sZone.bZone2)
+		if(sConfig_IHM->sOption_PAC.sZone.zone.bZone2)
 		{
 			u8ZoneCorrespondante[u8Tmp++] = 1;
 		}
-		if(sConfig_IHM->sOption_PAC.sZone.bZone3)
+		if(sConfig_IHM->sOption_PAC.sZone.zone.bZone3)
 		{
 			u8ZoneCorrespondante[u8Tmp++] = 2;
 		}
-		if(sConfig_IHM->sOption_PAC.sZone.bZone4)
+		if(sConfig_IHM->sOption_PAC.sZone.zone.bZone4)
 		{
 			u8ZoneCorrespondante[u8Tmp++] = 3;
 		}
-		if(sConfig_IHM->sOption_PAC.sZone.bZone5)
+		if(sConfig_IHM->sOption_PAC.sZone.zone.bZone5)
 		{
 			u8ZoneCorrespondante[u8Tmp++] = 4;
 		}
-		if(sConfig_IHM->sOption_PAC.sZone.bZone6)
+		if(sConfig_IHM->sOption_PAC.sZone.zone.bZone6)
 		{
 			u8ZoneCorrespondante[u8Tmp++] = 5;
 		}
-		if(sConfig_IHM->sOption_PAC.sZone.bZone7)
+		if(sConfig_IHM->sOption_PAC.sZone.zone.bZone7)
 		{
 			u8ZoneCorrespondante[u8Tmp++] = 6;
 		}
-		if(sConfig_IHM->sOption_PAC.sZone.bZone8)
+		if(sConfig_IHM->sOption_PAC.sZone.zone.bZone8)
 		{
 			u8ZoneCorrespondante[u8Tmp++] = 7;
 		}

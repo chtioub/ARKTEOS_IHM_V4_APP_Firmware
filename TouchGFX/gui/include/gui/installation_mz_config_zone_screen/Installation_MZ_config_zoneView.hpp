@@ -50,6 +50,9 @@ public:
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
+	uint8_t u8Loideau_Plancher[6] =	{29, 31, 34, 38, 42, 45};
+	uint8_t u8Loideau_Ventilo[6] = 	{40, 43, 45, 50, 55, 55};
+	uint8_t u8Loideau_Radiateur[6] ={45, 47, 48, 53, 55, 55};
     bool bConnexionDistance, bZoneActive;
     uint16_t u16ErreurAffichee;
     uint8_t u8NumZone;

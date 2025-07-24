@@ -16,31 +16,38 @@ Installation_regulation_avanceeView::Installation_regulation_avanceeView()
 	barre_titre.titre(textAreaBuffer_Titre);
 	barre_titre.invalidate();
 	//
-	bUserAdaptationLoiDeau = sConfig_IHM.sMode_PAC.bUserAdaptationLoiDeau;
-	TempNonChauffage = sConfig_IHM.sParam_PAC.TempNonChauffage;
+//	bUserAdaptationLoiDeau = sConfig_IHM.sMode_PAC.bUserAdaptationLoiDeau;
+//	TempNonChauffage = sConfig_IHM.sParam_PAC.TempNonChauffage;
 	//Simultané
+//	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
+//	{
+//		eTypeSimultaneChaudFroid = sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeSimultaneChaudFroid;
+//
+//	}
+//	else if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
+//	{
+//		eTypeSimultaneChaudFroid = sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeSimultaneChaudFroid;
+//	}
+	//Limitation froid & ECS ci-dessous à mettre en adéquation avec la page d'avant
 	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
 	{
-		eTypeSimultaneChaudFroid = sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeSimultaneChaudFroid;
-
-	}
-	else if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		eTypeSimultaneChaudFroid = sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeSimultaneChaudFroid;
-	}
-	//Limitation froid & ECS
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
-	{
-		bLimitationPW_Froid = sConfig_IHM.sConfig_PAC.ConfigGeo.bLimitationPW_Froid;
-		bLimitationPW_ECS = sConfig_IHM.sConfig_PAC.ConfigGeo.bLimitationPW_ECS;
 		container_limitation_froid.setVisible(true);
-		container_limitation_ECS.setVisible(true);
+		if (sConfig_IHM.sModele_PAC.nbCompresseur == NB_COMPRESSEUR_2 && sConfig_IHM.sOption_PAC.ECS)
+		{
+			container_limitation_ECS.setVisible(true);
+		}
+		else
+		{
+			container_limitation_ECS.setVisible(false);
+		}
 	}
 	else
 	{
 		container_limitation_froid.setVisible(false);
 		container_limitation_ECS.setVisible(false);
 	}
+
+
 
 	if (bLimitationPW_Froid) toggleButton_limitation_froid.forceState(true);
 	else toggleButton_limitation_froid.forceState(false);
@@ -226,6 +233,22 @@ void  Installation_regulation_avanceeView::update_limitation_froid()
 	textArea_on_off_limitation_froid.invalidate();
 }
 
+void  Installation_regulation_avanceeView::bouton_retour()
+{
+	bUserAdaptationLoiDeau = sConfig_IHM.sMode_PAC.bUserAdaptationLoiDeau;
+	TempNonChauffage = sConfig_IHM.sParam_PAC.TempNonChauffage;
+	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
+	{
+		eTypeSimultaneChaudFroid = sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeSimultaneChaudFroid ;
+	}
+	else if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
+	{
+		eTypeSimultaneChaudFroid = sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeSimultaneChaudFroid;
+	}
+	bLimitationPW_Froid = sConfig_IHM.sConfig_PAC.ConfigGeo.bLimitationPW_Froid;
+	bLimitationPW_ECS = sConfig_IHM.sConfig_PAC.ConfigGeo.bLimitationPW_ECS;
+}
+
 void  Installation_regulation_avanceeView::bouton_valider()
 {
 	sConfig_IHM.sMode_PAC.bUserAdaptationLoiDeau = bUserAdaptationLoiDeau;
@@ -239,6 +262,19 @@ void  Installation_regulation_avanceeView::bouton_valider()
 	{
 		sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeSimultaneChaudFroid = eTypeSimultaneChaudFroid;
 	}
+	//Simultané
+	if (eTypeSimultaneChaudFroid > 0)
+	{
+		sConfig_IHM.sParam_PAC.bChaudFroidSimultane = 1;
+		if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
+		{
+			sConfig_IHM.sParam_PAC.TypeRegul = REGUL_BAL_TAMPON_MULTI_ZONE;
+		}
+	}
+	else
+	{
+		sConfig_IHM.sParam_PAC.bChaudFroidSimultane = 0;
+	}
 	//Limitation froid & ECS
 	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
 	{
@@ -246,9 +282,9 @@ void  Installation_regulation_avanceeView::bouton_valider()
 		sConfig_IHM.sConfig_PAC.ConfigGeo.bLimitationPW_ECS = bLimitationPW_ECS;
 	}
 
-	presenter->c_install_config_pac();
 	presenter->c_install_param();
-	presenter->c_user_param();
+	presenter->c_user_zx_all();
+	presenter->c_usine_param();
 }
 
 

@@ -36,35 +36,35 @@ VacancesView::VacancesView()
 		toggleButton_oui_oui_non_vacances.setTouchable(true);
 	}
 	// Nombre de boutons
-	if(sConfig_IHM.sOption_PAC.sZone.bZone1)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone1)
 	{
 	    affichageZone(0, &container_zone_1, &toggleButton_zone_1, &container_slider_zone_1, &textArea_vacances_zone_1, textAreaBuffer_Zone1, textAreaBuffer_TempZone1, &slider_zone_1, &textArea_zone_1);
 	}
-	if(sConfig_IHM.sOption_PAC.sZone.bZone2)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone2)
 	{
 	    affichageZone(1, &container_zone_2, &toggleButton_zone_2, &container_slider_zone_2, &textArea_vacances_zone_2, textAreaBuffer_Zone2, textAreaBuffer_TempZone2, &slider_zone_2, &textArea_zone_2);
 	}
-	if(sConfig_IHM.sOption_PAC.sZone.bZone3)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone3)
 	{
 	    affichageZone(2, &container_zone_3, &toggleButton_zone_3, &container_slider_zone_3, &textArea_vacances_zone_3, textAreaBuffer_Zone3, textAreaBuffer_TempZone3, &slider_zone_3, &textArea_zone_3);
 	}
-	if(sConfig_IHM.sOption_PAC.sZone.bZone4)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone4)
 	{
 	    affichageZone(3, &container_zone_4, &toggleButton_zone_4, &container_slider_zone_4, &textArea_vacances_zone_4, textAreaBuffer_Zone4, textAreaBuffer_TempZone4, &slider_zone_4, &textArea_zone_4);
 	}
-	if(sConfig_IHM.sOption_PAC.sZone.bZone5)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone5)
 	{
 	    affichageZone(4, &container_zone_5, &toggleButton_zone_5, &container_slider_zone_5, &textArea_vacances_zone_5, textAreaBuffer_Zone5, textAreaBuffer_TempZone5, &slider_zone_5, &textArea_zone_5);
 	}
-	if(sConfig_IHM.sOption_PAC.sZone.bZone6)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone6)
 	{
 	    affichageZone(5, &container_zone_6, &toggleButton_zone_6, &container_slider_zone_6, &textArea_vacances_zone_6, textAreaBuffer_Zone6, textAreaBuffer_TempZone6, &slider_zone_6, &textArea_zone_6);
 	}
-	if(sConfig_IHM.sOption_PAC.sZone.bZone7)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone7)
 	{
 	    affichageZone(6, &container_zone_7, &toggleButton_zone_7, &container_slider_zone_7, &textArea_vacances_zone_7, textAreaBuffer_Zone7, textAreaBuffer_TempZone7, &slider_zone_7, &textArea_zone_7);
 	}
-	if(sConfig_IHM.sOption_PAC.sZone.bZone8)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone8)
 	{
 	    affichageZone(7, &container_zone_8, &toggleButton_zone_8, &container_slider_zone_8, &textArea_vacances_zone_8, textAreaBuffer_Zone8, textAreaBuffer_TempZone8, &slider_zone_8, &textArea_zone_8);
 	}
@@ -562,7 +562,7 @@ void VacancesView::bouton_valider()
 	}
 	else sConfig_IHM.sMode_ECS.Exception = NO_EXCEPTION;
 	// Zone 1
-	if(sConfig_IHM.sOption_PAC.sZone.bZone1)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone1)
 	{
 		if(toggleButton_zone_1.getState() && toggleButton_oui_oui_non_vacances.getState())
 		{
@@ -572,7 +572,7 @@ void VacancesView::bouton_valider()
 		sConfig_IHM.sMode_Zx[0].i16Consigne_Tint_Vacances = u16ConsigneTempVacances[0];
 	}
 	// Zone 2
-	if(sConfig_IHM.sOption_PAC.sZone.bZone2)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone2)
 	{
 		if(toggleButton_zone_2.getState() && toggleButton_oui_oui_non_vacances.getState())
 		{
@@ -582,7 +582,7 @@ void VacancesView::bouton_valider()
 		sConfig_IHM.sMode_Zx[1].i16Consigne_Tint_Vacances = u16ConsigneTempVacances[1];
 	}
 	// Zone 3
-	if(sConfig_IHM.sOption_PAC.sZone.bZone3)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone3)
 	{
 		if(toggleButton_zone_3.getState() && toggleButton_oui_oui_non_vacances.getState())
 		{
@@ -592,7 +592,7 @@ void VacancesView::bouton_valider()
 		sConfig_IHM.sMode_Zx[2].i16Consigne_Tint_Vacances = u16ConsigneTempVacances[2];
 	}
 	// Zone 4
-	if(sConfig_IHM.sOption_PAC.sZone.bZone4)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone4)
 	{
 		if(toggleButton_zone_1.getState() && toggleButton_oui_oui_non_vacances.getState())
 		{
@@ -602,7 +602,7 @@ void VacancesView::bouton_valider()
 		sConfig_IHM.sMode_Zx[3].i16Consigne_Tint_Vacances = u16ConsigneTempVacances[3];
 	}
 	// Zone 5
-	if(sConfig_IHM.sOption_PAC.sZone.bZone5)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone5)
 	{
 		if(toggleButton_zone_5.getState() && toggleButton_oui_oui_non_vacances.getState())
 		{
@@ -612,7 +612,7 @@ void VacancesView::bouton_valider()
 		sConfig_IHM.sMode_Zx[4].i16Consigne_Tint_Vacances = u16ConsigneTempVacances[4];
 	}
 	// Zone 6
-	if(sConfig_IHM.sOption_PAC.sZone.bZone6)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone6)
 	{
 		if(toggleButton_zone_6.getState() && toggleButton_oui_oui_non_vacances.getState())
 		{
@@ -622,7 +622,7 @@ void VacancesView::bouton_valider()
 		sConfig_IHM.sMode_Zx[5].i16Consigne_Tint_Vacances = u16ConsigneTempVacances[5];
 	}
 	// Zone 7
-	if(sConfig_IHM.sOption_PAC.sZone.bZone7)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone7)
 	{
 		if(toggleButton_zone_7.getState() && toggleButton_oui_oui_non_vacances.getState())
 		{
@@ -632,7 +632,7 @@ void VacancesView::bouton_valider()
 		sConfig_IHM.sMode_Zx[6].i16Consigne_Tint_Vacances = u16ConsigneTempVacances[6];
 	}
 	// Zone 8
-	if(sConfig_IHM.sOption_PAC.sZone.bZone8)
+	if(sConfig_IHM.sOption_PAC.sZone.zone.bZone8)
 	{
 		if(toggleButton_zone_8.getState() && toggleButton_oui_oui_non_vacances.getState())
 		{

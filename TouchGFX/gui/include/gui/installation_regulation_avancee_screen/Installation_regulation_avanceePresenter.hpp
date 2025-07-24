@@ -32,9 +32,14 @@ public:
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 
-	void c_install_config_pac();
+//	void c_install_config_pac();
+//	void c_install_param();
+//	void c_user_param();
+//
 	void c_install_param();
-	void c_user_param();
+	void c_user_zx_all();
+	void c_usine_param();
+
 
 //	void c_install_piscine();
 

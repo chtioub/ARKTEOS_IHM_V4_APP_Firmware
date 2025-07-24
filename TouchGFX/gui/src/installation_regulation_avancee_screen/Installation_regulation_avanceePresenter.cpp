@@ -17,9 +17,9 @@ void Installation_regulation_avanceePresenter::deactivate()
 
 }
 
-void Installation_regulation_avanceePresenter::c_install_config_pac()
+void Installation_regulation_avanceePresenter::c_user_zx_all()
 {
-	model->c_install_config_pac();
+	model->c_user_zx_all();
 }
 
 void Installation_regulation_avanceePresenter::c_install_param()
@@ -27,9 +27,9 @@ void Installation_regulation_avanceePresenter::c_install_param()
 	model->c_install_param();
 }
 
-void Installation_regulation_avanceePresenter::c_user_param()
+void Installation_regulation_avanceePresenter::c_usine_param()
 {
-	model->c_user_param();
+	model->c_usine_param();
 }
 
 void Installation_regulation_avanceePresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)

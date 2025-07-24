@@ -18,10 +18,10 @@ Installation_ecs_avancesView::Installation_ecs_avancesView()
 
 	Time_Bascul_V3V_ECS = sParam_ECS_temp.Time_Bascul_V3V_ECS;
 	bTypeAppointECS = sParam_ECS_temp.bTypeAppointECS;
-	u2TypeEchangeur = sParam_ECS_temp.u2TypeEchangeur;
+	u2TypeEchangeur = u2TypeEchangeurECSTemp2 & 0b11;
 	bSolaire = sParam_ECS_temp.bSolaire;
 	bCouplageEJP = sParam_ECS_temp.bCouplageEJP;
-	bBouclageECS = sParam_ECS_temp.bBouclageECS;
+	bBouclageECS = bBouclageECSTemp2;
 
 	//Pas de choix appoint si appoint chauffage non déclaré
 	if (sConfig_IHM.sOption_PAC.TypeAppoint == ELEC)
@@ -51,26 +51,35 @@ Installation_ecs_avancesView::Installation_ecs_avancesView()
 	buttonWithLabel_off_solaire_ecs.invalidate();
 	buttonWithLabel_on_solaire_ecs.invalidate();
 
+
 	if (bCouplageEJP == 1)
 	{
 		buttonWithLabel_off_ejp_ecs.setVisible(false);
 		buttonWithLabel_on_ejp_ecs.setVisible(true);
-		Unicode::snprintf(textAreaBuffer_BouclageECS, 4,touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
+		Unicode::snprintf(textAreaBuffer_CouplageEJP, 4,touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
 	}
 	else
 	{
 		buttonWithLabel_off_ejp_ecs.setVisible(true);
 		buttonWithLabel_on_ejp_ecs.setVisible(false);
-		Unicode::snprintf(textAreaBuffer_BouclageECS, 4,touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT).getText());
+		Unicode::snprintf(textAreaBuffer_CouplageEJP, 4,touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT).getText());
 	}
 	buttonWithLabel_off_ejp_ecs.invalidate();
 	buttonWithLabel_on_ejp_ecs.invalidate();
+
+	if (bBouclageECS == 1)
+	{
+		toggleButton_bouclage_ecs.forceState(true);
+		Unicode::snprintf(textAreaBuffer_BouclageECS, 4,touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
+	}
+	else
+	{
+		toggleButton_bouclage_ecs.forceState(false);
+		Unicode::snprintf(textAreaBuffer_BouclageECS, 4,touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT).getText());
+	}
+	toggleButton_bouclage_ecs.invalidate();
 	textArea_on_off_bouclage_ecs.setWildcard(textAreaBuffer_BouclageECS);
 	textArea_on_off_bouclage_ecs.invalidate();
-
-	if (bBouclageECS == 1) toggleButton_bouclage_ecs.forceState(true);
-	else  toggleButton_bouclage_ecs.forceState(false);
-	toggleButton_bouclage_ecs.invalidate();
 
 	update_temps_rotation_vanne();
 	update_type_appoint();
@@ -119,6 +128,7 @@ void Installation_ecs_avancesView::update_type_echangeur()
 	textArea_valeur_type_echangeur_ecs.setWildcard(textAreaBuffer_TypeEchangeur);
 	textArea_valeur_type_echangeur_ecs.invalidate();
 	buttonWithLabel_puissance_echangeur_ecs.invalidate();
+	u2TypeEchangeurECSTemp2 = u2TypeEchangeur;
 }
 
 void Installation_ecs_avancesView::bouton_gauche_type_appoint()
@@ -187,12 +197,14 @@ void Installation_ecs_avancesView::bouton_bouclage_ecs()
 	if (bBouclageECS == 1)
 	{
 		toggleButton_bouclage_ecs.forceState(false);
+		bBouclageECSTemp2 = 0;
 		bBouclageECS = 0;
 		Unicode::snprintf(textAreaBuffer_BouclageECS, 4,touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT).getText());
 	}
 	else
 	{
 		toggleButton_bouclage_ecs.forceState(true);
+		bBouclageECSTemp2 = 1;
 		bBouclageECS = 1;
 		Unicode::snprintf(textAreaBuffer_BouclageECS, 4,touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
 	}

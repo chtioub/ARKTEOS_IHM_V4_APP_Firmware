@@ -178,6 +178,9 @@ void Code_numeriqueView::bouton_valider()
 					sConfig_IHM.sInstall_PAC.sDateMiseEnService.Year = sDate.Year;
 					presenter->c_install_date_install();
 				}
+				bAutorisationNoCode = true;
+				TimerNoNeededCode = TPS_NO_CODE;
+				u32LastTick = HAL_GetTick();
 				application().gotoInstallationScreenNoTransition();
 			}
 			else
@@ -213,6 +216,9 @@ void Code_numeriqueView::bouton_valider()
 			{
 //			if(u8Longueur == 4 && memcmp(&sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[0], &sConfig_IHM.sInstall_PAC.auc8PW_Maintenance[0], 4) == 0)
 //			{
+				bAutorisationNoCode = true;
+				TimerNoNeededCode = TPS_NO_CODE;
+				u32LastTick = HAL_GetTick();
 				application().gotoMaintenanceScreenNoTransition();
 			}
 			else

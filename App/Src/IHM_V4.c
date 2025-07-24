@@ -71,6 +71,18 @@ S_PARAM_ZX sParamZxMZtemp[10];
 uint16_t u16CodeCommande;
 S_STATUT_LINKY sStatutLinky;
 uint8_t oui_veille = 1;
+uint8_t u8Nb_PAC;
+uint8_t u3CarteGroupeA, u3CarteGroupeB, u3NumVoieGroupeA, u3NumVoieGroupeB;
+uint8_t eTypeSimultaneChaudFroid, bLimitationPW_Froid, bLimitationPW_ECS;
+uint8_t bUserAdaptationLoiDeau;
+uint16_t TempNonChauffage;
+bool bBouclageECSTemp2;
+unsigned char u2TypeEchangeurECSTemp2;
+S_PARAM_TEST_PAC sParam_Test_PAC;
+bool bAutorisationNoCode = false;
+uint16_t TimerNoNeededCode;
+uint32_t u32LastTick;
+
 
 void setBackLightPWM(uint8_t pwm)
 {
@@ -275,8 +287,28 @@ uint8_t decodeRxData(rxData_t *rxData)
 							ptrRxBuffer += sizeof(S_STATUT_REGUL_ESCLAVE);
 							if(memcmp(&rxData->data[ptrRxBuffer], &sDate, sizeof(S_DATE)))
 							{
+								//memcpy(&sDate, &rxData->data[ptrRxBuffer], sizeof(S_DATE));
+								if(memcmp(&rxData->data[ptrRxBuffer], &sDate.Year, sizeof(sDate.Year)))
+								{
+									arkteos_update.date_update = true;
+								}
+								else if(memcmp(&rxData->data[ptrRxBuffer + 1], &sDate.Month, sizeof(sDate.Month)))
+								{
+									arkteos_update.date_update = true;
+								}
+								else if(memcmp(&rxData->data[ptrRxBuffer + 2], &sDate.Date, sizeof(sDate.Date)))
+								{
+									arkteos_update.date_update = true;
+								}
+								else if(memcmp(&rxData->data[ptrRxBuffer + 3], &sDate.Hours, sizeof(sDate.Hours)))
+								{
+									arkteos_update.date_update = true;
+								}
+								else if(memcmp(&rxData->data[ptrRxBuffer + 4], &sDate.Minutes, sizeof(sDate.Minutes)))
+								{
+									arkteos_update.date_update = true;
+								}
 								memcpy(&sDate, &rxData->data[ptrRxBuffer], sizeof(S_DATE));
-								arkteos_update.date_update = true;
 							}
 							ptrRxBuffer += sizeof(S_DATE);
 							if(memcmp(&rxData->data[ptrRxBuffer], &sDemandeFrigo, sizeof(S_DEMANDE_FRIGO)))
@@ -289,7 +321,7 @@ uint8_t decodeRxData(rxData_t *rxData)
 							{
 								if(memcmp(&rxData->data[ptrRxBuffer], &sStatut_RF[0], (sizeof(S_STATUT_RF) *8)))
 								{
-									memcpy(&sStatut_RF[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_RF));
+									memcpy(&sStatut_RF[0], &rxData->data[ptrRxBuffer], sizeof(S_STATUT_RF) * 8);
 									arkteos_update.statut_rf_update = true;
 								}
 							}

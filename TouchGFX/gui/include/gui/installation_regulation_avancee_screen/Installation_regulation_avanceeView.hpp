@@ -27,6 +27,7 @@ public:
     void update_limitation_froid();
 	void update_limitation_ecs();
     void bouton_valider();
+    void bouton_retour();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
@@ -34,12 +35,12 @@ public:
     virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
     bool bConnexionDistance;
-    unsigned char eTypeSimultaneChaudFroid :3;
-    unsigned char bLimitationPW_Froid :1;
-    unsigned char bLimitationPW_ECS :1;
+//    unsigned char eTypeSimultaneChaudFroid :3;
+//    unsigned char bLimitationPW_Froid :1;
+//    unsigned char bLimitationPW_ECS :1;
     uint16_t u16ErreurAffichee;
-    uint8_t bUserAdaptationLoiDeau:1;
-    uint16_t TempNonChauffage:4;
+//    uint8_t bUserAdaptationLoiDeau:1;
+//    uint16_t TempNonChauffage:4;
     S_DATE sDate_old;
     S_STATUT_PAC sStatut_PAC_old;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_TempNonChauf[8];

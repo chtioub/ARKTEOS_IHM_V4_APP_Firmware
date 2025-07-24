@@ -278,10 +278,10 @@ void Installation_config_in_outView::bouton_chaud_froid()
 
 void Installation_config_in_outView::MAJ_voie_InxChaudFroid()
 {
-	if (InxChaudFroid != 0 ) Unicode::snprintf(textAreaBufferChaudFroid, 3, "%d", InxChaudFroid);
-	else Unicode::snprintf(textAreaBufferChaudFroid, 3, touchgfx::TypedText(T_TEXT_NU_CENTRE_DEFAUT).getText());
+	if (InxChaudFroid != 0 ) Unicode::snprintf(textAreaBufferInChaudFroid, 3, "%d", InxChaudFroid);
+	else Unicode::snprintf(textAreaBufferInChaudFroid, 3, touchgfx::TypedText(T_TEXT_NU_CENTRE_DEFAUT).getText());
 
-	textArea_num_chaud_zones.setWildcard(textAreaBufferChaudFroid);
+	textArea_num_chaud_zones.setWildcard(textAreaBufferInChaudFroid);
 	textArea_num_chaud_zones.invalidate();
 }
 
@@ -458,10 +458,10 @@ void Installation_config_in_outView::bouton_info_chaud_froid()
 
 void Installation_config_in_outView::MAJ_voie_OutxChaudFroid()
 {
-	if (OutxModeChaudFroid!= 0 ) Unicode::snprintf(textAreaBufferChaudFroid, 3, "%d", OutxModeChaudFroid);
-	else Unicode::snprintf(textAreaBufferChaudFroid, 3, touchgfx::TypedText(T_TEXT_NU_CENTRE_DEFAUT).getText());
+	if (OutxModeChaudFroid!= 0 ) Unicode::snprintf(textAreaBufferInfoChaudFroid, 3, "%d", OutxModeChaudFroid);
+	else Unicode::snprintf(textAreaBufferInfoChaudFroid, 3, touchgfx::TypedText(T_TEXT_NU_CENTRE_DEFAUT).getText());
 
-	textArea_num_info_chaud_froid.setWildcard(textAreaBufferChaudFroid);
+	textArea_num_info_chaud_froid.setWildcard(textAreaBufferInfoChaudFroid);
 	textArea_num_info_chaud_froid.invalidate();
 }
 

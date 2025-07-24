@@ -2206,7 +2206,7 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 
 
 	//Zone 1 - Cons / Temp Int
-	if (sConfig_IHM->sOption_PAC.sZone.bZone1 == 1)
+	if (sConfig_IHM->sOption_PAC.sZone.zone.bZone1 == 1)
 	{
 		changeStatutZx(0, &sStatut_Zx[0]);
 	}
@@ -2233,7 +2233,7 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_val_hyst_sonde_ambiance_zone_1.invalidate();
 
 	//Zone 2 - Cons / Temp Int (à conserver en doublon pour MAJ consigne si changement TH
-	if (sConfig_IHM->sOption_PAC.sZone.bZone2 == 1)
+	if (sConfig_IHM->sOption_PAC.sZone.zone.bZone2 == 1)
 	{
 		changeStatutZx(1, &sStatut_Zx[1]);
 	}
@@ -2261,7 +2261,7 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 
 
 	//Zone 3 - Cons / Temp Int
-	if (sConfig_IHM->sOption_PAC.sZone.bZone3 == 1)
+	if (sConfig_IHM->sOption_PAC.sZone.zone.bZone3 == 1)
 	{
 		changeStatutZx(2, &sStatut_Zx[2]);
 	}
@@ -2288,7 +2288,7 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_val_hyst_sonde_ambiance_zone_3.invalidate();
 
 	//Zone 4 - Cons / Temp Int (à conserver en doublon pour MAJ consigne si changement TH
-	if (sConfig_IHM->sOption_PAC.sZone.bZone4 == 1)
+	if (sConfig_IHM->sOption_PAC.sZone.zone.bZone4 == 1)
 	{
 		changeStatutZx(3, &sStatut_Zx[3]);
 	}
@@ -2315,7 +2315,7 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_val_hyst_sonde_ambiance_zone_4.invalidate();
 
 	//Zone 5 - Cons / Temp Int
-	if (sConfig_IHM->sOption_PAC.sZone.bZone5 == 1)
+	if (sConfig_IHM->sOption_PAC.sZone.zone.bZone5 == 1)
 	{
 		changeStatutZx(4, &sStatut_Zx[4]);
 	}
@@ -2342,7 +2342,7 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_val_hyst_sonde_ambiance_zone_5.invalidate();
 
 	//Zone 6 - Cons / Temp Int (à conserver en doublon pour MAJ consigne si changement TH
-	if (sConfig_IHM->sOption_PAC.sZone.bZone6 == 1)
+	if (sConfig_IHM->sOption_PAC.sZone.zone.bZone6 == 1)
 	{
 		changeStatutZx(5, &sStatut_Zx[5]);
 	}
@@ -2369,7 +2369,7 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_val_hyst_sonde_ambiance_zone_6.invalidate();
 
 	//Zone 7 - Cons / Temp Int
-	if (sConfig_IHM->sOption_PAC.sZone.bZone7 == 1)
+	if (sConfig_IHM->sOption_PAC.sZone.zone.bZone7 == 1)
 	{
 		changeStatutZx(6, &sStatut_Zx[6]);
 	}
@@ -2395,7 +2395,7 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	}
 	textArea_val_hyst_sonde_ambiance_zone_7.invalidate();
 
-	if (sConfig_IHM->sOption_PAC.sZone.bZone8 == 1)
+	if (sConfig_IHM->sOption_PAC.sZone.zone.bZone8 == 1)
 	{
 		changeStatutZx(7, &sStatut_Zx[7]);
 	}
@@ -2421,18 +2421,12 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	}
 	textArea_val_hyst_sonde_ambiance_zone_8.invalidate();
 
-	//Groupe A
-	if(sConfig_IHM->sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1)
-	{
-		textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_MARCHE_DROITE_DEFAUT));
-	}
-	else textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_ARRET_DROITE_DEFAUT));
-	textArea_mode_groupe_a_val.invalidate();
+
 
 	//Groupe B
-	if(sConfig_IHM->sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1)
+	if(sConfig_IHM->sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 0)
 	{
-		textArea_mode_groupe_b_val.setTypedText(touchgfx::TypedText(T_TEXT_MARCHE_DROITE_DEFAUT));
+		textArea_mode_groupe_b_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
 	}
 	else textArea_mode_groupe_b_val.setTypedText(touchgfx::TypedText(T_TEXT_ARRET_DROITE_DEFAUT));
 	textArea_mode_groupe_b_val.invalidate();
@@ -2902,14 +2896,14 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 
 	//In_Out Nb Zones
 	uint8_t u8_nb_zones = 0;
-	if ((sConfig_IHM->sOption_PAC.sZone.bZone1  & 1) == 1) u8_nb_zones++;
-	if ((sConfig_IHM->sOption_PAC.sZone.bZone2  & 1) == 1) u8_nb_zones++;
-	if ((sConfig_IHM->sOption_PAC.sZone.bZone3  & 1) == 1) u8_nb_zones++;
-	if ((sConfig_IHM->sOption_PAC.sZone.bZone4  & 1) == 1) u8_nb_zones++;
-	if ((sConfig_IHM->sOption_PAC.sZone.bZone5  & 1) == 1) u8_nb_zones++;
-	if ((sConfig_IHM->sOption_PAC.sZone.bZone6  & 1) == 1) u8_nb_zones++;
-	if ((sConfig_IHM->sOption_PAC.sZone.bZone7  & 1) == 1) u8_nb_zones++;
-	if ((sConfig_IHM->sOption_PAC.sZone.bZone8  & 1) == 1) u8_nb_zones++;
+	if ((sConfig_IHM->sOption_PAC.sZone.zone.bZone1  & 1) == 1) u8_nb_zones++;
+	if ((sConfig_IHM->sOption_PAC.sZone.zone.bZone2  & 1) == 1) u8_nb_zones++;
+	if ((sConfig_IHM->sOption_PAC.sZone.zone.bZone3  & 1) == 1) u8_nb_zones++;
+	if ((sConfig_IHM->sOption_PAC.sZone.zone.bZone4  & 1) == 1) u8_nb_zones++;
+	if ((sConfig_IHM->sOption_PAC.sZone.zone.bZone5  & 1) == 1) u8_nb_zones++;
+	if ((sConfig_IHM->sOption_PAC.sZone.zone.bZone6  & 1) == 1) u8_nb_zones++;
+	if ((sConfig_IHM->sOption_PAC.sZone.zone.bZone7  & 1) == 1) u8_nb_zones++;
+	if ((sConfig_IHM->sOption_PAC.sZone.zone.bZone8  & 1) == 1) u8_nb_zones++;
 	Unicode::snprintf(textAreaBuffer_Nb_Zones, 3, "%d", u8_nb_zones);
 	textArea_val_option_nb_zones.setWildcard(textAreaBuffer_Nb_Zones);
 	textArea_val_option_nb_zones.invalidate();
@@ -3243,7 +3237,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 	{
 		case ZONE1 :
 			//Zone 1 - Mode
-			if (sConfig_IHM.sOption_PAC.sZone.bZone1 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 == 1)
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -3272,7 +3266,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 
 			//Zone 1 - T Int / Consigne
-			if (sConfig_IHM.sOption_PAC.sZone.bZone1 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[0].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
@@ -3326,13 +3320,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_int_zone_1.invalidate();
 
 			//Zone 1 - T°C Depart
-			if (sConfig_IHM.sOption_PAC.sZone.bZone1 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_DepartZone1, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"C");
 					textArea_val_temp_dep_zone_1.setWildcard(textAreaBuffer_DepartZone1);
 				}
 				else
@@ -3347,13 +3343,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_dep_zone_1.invalidate();
 
 			//Zone 1 - T°C Retour
-			if (sConfig_IHM.sOption_PAC.sZone.bZone1 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_RetourZone1, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"C");
 					textArea_val_temp_ret_zone_1.setWildcard(textAreaBuffer_RetourZone1);
 				}
 				else
@@ -3368,13 +3366,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_ret_zone_1.invalidate();
 
 			//Zone 1 - Cons Dép Eau
-			if (sConfig_IHM.sOption_PAC.sZone.bZone1 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone1, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone1[Unicode::strlen(textAreaBuffer_ConsigneTeauZone1)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone1[Unicode::strlen(textAreaBuffer_ConsigneTeauZone1)], 2,"C");
 					textArea_val_cons_temp_dep_zone_1.setWildcard(textAreaBuffer_ConsigneTeauZone1);
 				}
 				else
@@ -3388,7 +3388,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 1 - Debit
-			if (sConfig_IHM.sOption_PAC.sZone.bZone1 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 				{
@@ -3406,7 +3406,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 1 - Circulateur
-			if (sConfig_IHM.sOption_PAC.sZone.bZone1 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
 				{
@@ -3451,7 +3451,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_registre_zone_1.invalidate();
 			textArea_cons_v3v_zone_1.invalidate();
 
-			if (sConfig_IHM.sOption_PAC.sZone.bZone1 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VZone1, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
 				Unicode::snprintf(&textAreaBuffer_V3VZone1[Unicode::strlen(textAreaBuffer_V3VZone1)], 2,"%");
@@ -3465,7 +3465,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			break;
 		case ZONE2 :
 			//Zone 2 - Mode
-			if (sConfig_IHM.sOption_PAC.sZone.bZone2 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2 == 1)
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -3494,7 +3494,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 
 			//Zone 2 - T Int / Consigne
-			if (sConfig_IHM.sOption_PAC.sZone.bZone2 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[1].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
@@ -3548,13 +3548,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_int_zone_2.invalidate();
 
 			//Zone 2 - T°C Depart
-			if (sConfig_IHM.sOption_PAC.sZone.bZone2 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_DepartZone2, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"C");
 					textArea_val_temp_dep_zone_2.setWildcard(textAreaBuffer_DepartZone2);
 				}
 				else
@@ -3569,13 +3571,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_dep_zone_2.invalidate();
 
 			//Zone 2 - T°C Retour
-			if (sConfig_IHM.sOption_PAC.sZone.bZone2 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_RetourZone2, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"C");
 					textArea_val_temp_ret_zone_2.setWildcard(textAreaBuffer_RetourZone2);
 				}
 				else
@@ -3590,13 +3594,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_ret_zone_2.invalidate();
 
 			//Zone 2 - Cons Dép Eau
-			if (sConfig_IHM.sOption_PAC.sZone.bZone2 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone2, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone2[Unicode::strlen(textAreaBuffer_ConsigneTeauZone2)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone2[Unicode::strlen(textAreaBuffer_ConsigneTeauZone2)], 2,"C");
 					textArea_val_cons_temp_dep_zone_2.setWildcard(textAreaBuffer_ConsigneTeauZone2);
 				}
 				else
@@ -3610,7 +3616,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 2 - Debit
-			if (sConfig_IHM.sOption_PAC.sZone.bZone2 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 				{
@@ -3628,7 +3634,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 2 - Circulateur
-			if (sConfig_IHM.sOption_PAC.sZone.bZone2 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
 				{
@@ -3673,7 +3679,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_registre_zone_2.invalidate();
 			textArea_cons_v3v_zone_2.invalidate();
 
-			if (sConfig_IHM.sOption_PAC.sZone.bZone2 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2 == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VZone2, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
 				Unicode::snprintf(&textAreaBuffer_V3VZone2[Unicode::strlen(textAreaBuffer_V3VZone2)], 2,"%");
@@ -3688,7 +3694,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 		case ZONE3 :
 			//Zone 3 - Mode
-			if (sConfig_IHM.sOption_PAC.sZone.bZone3 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -3717,7 +3723,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 
 			//Zone 3 - T Int / Consigne
-			if (sConfig_IHM.sOption_PAC.sZone.bZone3 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[2].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
@@ -3771,13 +3777,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_int_zone_3.invalidate();
 
 			//Zone 3 - T°C Depart
-			if (sConfig_IHM.sOption_PAC.sZone.bZone3 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_DepartZone3, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"C");
 					textArea_val_temp_dep_zone_3.setWildcard(textAreaBuffer_DepartZone3);
 				}
 				else
@@ -3792,13 +3800,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_dep_zone_3.invalidate();
 
 			//Zone 3 - T°C Retour
-			if (sConfig_IHM.sOption_PAC.sZone.bZone3 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_RetourZone3, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"C");
 					textArea_val_temp_ret_zone_3.setWildcard(textAreaBuffer_RetourZone3);
 				}
 				else
@@ -3813,13 +3823,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_ret_zone_3.invalidate();
 
 			//Zone 3 - Cons Dép Eau
-			if (sConfig_IHM.sOption_PAC.sZone.bZone3 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone3, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone3[Unicode::strlen(textAreaBuffer_ConsigneTeauZone3)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone3[Unicode::strlen(textAreaBuffer_ConsigneTeauZone3)], 2,"C");
 					textArea_val_cons_temp_dep_zone_3.setWildcard(textAreaBuffer_ConsigneTeauZone3);
 				}
 				else
@@ -3833,7 +3845,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 3 - Debit
-			if (sConfig_IHM.sOption_PAC.sZone.bZone3 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 				{
@@ -3851,7 +3863,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 2- Circulateur
-			if (sConfig_IHM.sOption_PAC.sZone.bZone3 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
 				{
@@ -3896,7 +3908,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_registre_zone_3.invalidate();
 			textArea_cons_v3v_zone_3.invalidate();
 
-			if (sConfig_IHM.sOption_PAC.sZone.bZone3 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VZone3, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
 				Unicode::snprintf(&textAreaBuffer_V3VZone3[Unicode::strlen(textAreaBuffer_V3VZone3)], 2,"%");
@@ -3910,7 +3922,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			break;
 		case ZONE4 :
 			//Zone 4 - Mode
-			if (sConfig_IHM.sOption_PAC.sZone.bZone4 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone4 == 1)
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -3939,7 +3951,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 
 			//Zone 4 - T Int / Consigne
-			if (sConfig_IHM.sOption_PAC.sZone.bZone4 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone4 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[3].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
@@ -3993,13 +4005,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_int_zone_4.invalidate();
 
 			//Zone 4 - T°C Depart
-			if (sConfig_IHM.sOption_PAC.sZone.bZone4 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone4 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_DepartZone4, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"C");
 					textArea_val_temp_dep_zone_4.setWildcard(textAreaBuffer_DepartZone4);
 				}
 				else
@@ -4014,13 +4028,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_dep_zone_4.invalidate();
 
 			//Zone 4 - T°C Retour
-			if (sConfig_IHM.sOption_PAC.sZone.bZone4 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone4 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_RetourZone4, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"C");
 					textArea_val_temp_ret_zone_4.setWildcard(textAreaBuffer_RetourZone4);
 				}
 				else
@@ -4035,13 +4051,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_ret_zone_4.invalidate();
 
 			//Zone 4 - Cons Dép Eau
-			if (sConfig_IHM.sOption_PAC.sZone.bZone4 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone4 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone4, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone4[Unicode::strlen(textAreaBuffer_ConsigneTeauZone4)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone4[Unicode::strlen(textAreaBuffer_ConsigneTeauZone4)], 2,"C");
 					textArea_val_cons_temp_dep_zone_4.setWildcard(textAreaBuffer_ConsigneTeauZone4);
 				}
 				else
@@ -4055,7 +4073,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 4 - Debit
-			if (sConfig_IHM.sOption_PAC.sZone.bZone4 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone4 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 				{
@@ -4073,7 +4091,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 4 - Circulateur
-			if (sConfig_IHM.sOption_PAC.sZone.bZone4 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone4 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
 				{
@@ -4118,7 +4136,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_registre_zone_4.invalidate();
 			textArea_cons_v3v_zone_4.invalidate();
 
-			if (sConfig_IHM.sOption_PAC.sZone.bZone4 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone4 == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VZone4, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
 				Unicode::snprintf(&textAreaBuffer_V3VZone4[Unicode::strlen(textAreaBuffer_V3VZone4)], 2,"%");
@@ -4133,7 +4151,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 		case ZONE5 :
 			//Zone 5 - Mode
-			if (sConfig_IHM.sOption_PAC.sZone.bZone5 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone5 == 1)
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -4162,7 +4180,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 
 			//Zone 5 - T Int / Consigne
-			if (sConfig_IHM.sOption_PAC.sZone.bZone5 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone5 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[4].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
@@ -4216,13 +4234,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_int_zone_5.invalidate();
 
 			//Zone 5 - T°C Depart
-			if (sConfig_IHM.sOption_PAC.sZone.bZone5 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone5 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_DepartZone5, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"C");
 					textArea_val_temp_dep_zone_5.setWildcard(textAreaBuffer_DepartZone5);
 				}
 				else
@@ -4237,13 +4257,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_dep_zone_5.invalidate();
 
 			//Zone 5 - T°C Retour
-			if (sConfig_IHM.sOption_PAC.sZone.bZone5 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone5 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_RetourZone5, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"C");
 					textArea_val_temp_ret_zone_5.setWildcard(textAreaBuffer_RetourZone5);
 				}
 				else
@@ -4258,13 +4280,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_ret_zone_5.invalidate();
 
 			//Zone 5 - Cons Dép Eau
-			if (sConfig_IHM.sOption_PAC.sZone.bZone5 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone5 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone5, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone5[Unicode::strlen(textAreaBuffer_ConsigneTeauZone5)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone5[Unicode::strlen(textAreaBuffer_ConsigneTeauZone5)], 2,"C");
 					textArea_val_cons_temp_dep_zone_5.setWildcard(textAreaBuffer_ConsigneTeauZone5);
 				}
 				else
@@ -4278,7 +4302,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 5 - Debit
-			if (sConfig_IHM.sOption_PAC.sZone.bZone5 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone5 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 				{
@@ -4296,7 +4320,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 5 - Circulateur
-			if (sConfig_IHM.sOption_PAC.sZone.bZone5 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone5 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
 				{
@@ -4341,7 +4365,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_registre_zone_5.invalidate();
 			textArea_cons_v3v_zone_5.invalidate();
 
-			if (sConfig_IHM.sOption_PAC.sZone.bZone5 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone5 == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VZone5, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
 				Unicode::snprintf(&textAreaBuffer_V3VZone5[Unicode::strlen(textAreaBuffer_V3VZone5)], 2,"%");
@@ -4356,7 +4380,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 		case ZONE6 :
 			//Zone 6 - Mode
-			if (sConfig_IHM.sOption_PAC.sZone.bZone6 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone6 == 1)
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -4385,7 +4409,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 
 			//Zone 6 - T Int / Consigne
-			if (sConfig_IHM.sOption_PAC.sZone.bZone6 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone6 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[5].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
@@ -4439,13 +4463,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_int_zone_6.invalidate();
 
 			//Zone 6 - T°C Depart
-			if (sConfig_IHM.sOption_PAC.sZone.bZone6 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone6 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_DepartZone6, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"C");
 					textArea_val_temp_dep_zone_6.setWildcard(textAreaBuffer_DepartZone6);
 				}
 				else
@@ -4460,13 +4486,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_dep_zone_6.invalidate();
 
 			//Zone 6 - T°C Retour
-			if (sConfig_IHM.sOption_PAC.sZone.bZone6 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone6 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_RetourZone6, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"C");
 					textArea_val_temp_ret_zone_6.setWildcard(textAreaBuffer_RetourZone6);
 				}
 				else
@@ -4481,13 +4509,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_ret_zone_6.invalidate();
 
 			//Zone 6 - Cons Dép Eau
-			if (sConfig_IHM.sOption_PAC.sZone.bZone6 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone6 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone6, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone6[Unicode::strlen(textAreaBuffer_ConsigneTeauZone6)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone6[Unicode::strlen(textAreaBuffer_ConsigneTeauZone6)], 2,"C");
 					textArea_val_cons_temp_dep_zone_6.setWildcard(textAreaBuffer_ConsigneTeauZone6);
 				}
 				else
@@ -4501,7 +4531,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 6 - Debit
-			if (sConfig_IHM.sOption_PAC.sZone.bZone6 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone6 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 				{
@@ -4519,7 +4549,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 6 - Circulateur
-			if (sConfig_IHM.sOption_PAC.sZone.bZone6 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone6 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
 				{
@@ -4564,7 +4594,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_registre_zone_6.invalidate();
 			textArea_cons_v3v_zone_6.invalidate();
 
-			if (sConfig_IHM.sOption_PAC.sZone.bZone6 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone6 == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VZone6, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
 				Unicode::snprintf(&textAreaBuffer_V3VZone6[Unicode::strlen(textAreaBuffer_V3VZone6)], 2,"%");
@@ -4579,7 +4609,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 		case ZONE7 :
 			//Zone 7 - Mode
-			if (sConfig_IHM.sOption_PAC.sZone.bZone7 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone7 == 1)
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -4608,7 +4638,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 
 			//Zone 7 - T Int / Consigne
-			if (sConfig_IHM.sOption_PAC.sZone.bZone7 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone7 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[6].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
@@ -4662,13 +4692,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_int_zone_7.invalidate();
 
 			//Zone 7 - T°C Depart
-			if (sConfig_IHM.sOption_PAC.sZone.bZone7 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone7 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_DepartZone7, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"C");
 					textArea_val_temp_dep_zone_7.setWildcard(textAreaBuffer_DepartZone7);
 				}
 				else
@@ -4683,13 +4715,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_dep_zone_7.invalidate();
 
 			//Zone 7 - T°C Retour
-			if (sConfig_IHM.sOption_PAC.sZone.bZone7 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone7 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_RetourZone7, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"C");
 					textArea_val_temp_ret_zone_7.setWildcard(textAreaBuffer_RetourZone7);
 				}
 				else
@@ -4704,13 +4738,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_ret_zone_7.invalidate();
 
 			//Zone 7 - Cons Dép Eau
-			if (sConfig_IHM.sOption_PAC.sZone.bZone7 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone7 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone7, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone7[Unicode::strlen(textAreaBuffer_ConsigneTeauZone7)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone7[Unicode::strlen(textAreaBuffer_ConsigneTeauZone7)], 2,"C");
 					textArea_val_cons_temp_dep_zone_7.setWildcard(textAreaBuffer_ConsigneTeauZone7);
 				}
 				else
@@ -4724,7 +4760,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 7 - Debit
-			if (sConfig_IHM.sOption_PAC.sZone.bZone7 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone7 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 				{
@@ -4742,7 +4778,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 //			//Zone 7 - Circulateur
-			if (sConfig_IHM.sOption_PAC.sZone.bZone7 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone7 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
 				{
@@ -4787,7 +4823,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_registre_zone_7.invalidate();
 			textArea_cons_v3v_zone_7.invalidate();
 
-			if (sConfig_IHM.sOption_PAC.sZone.bZone7 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone7 == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VZone7, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
 				Unicode::snprintf(&textAreaBuffer_V3VZone7[Unicode::strlen(textAreaBuffer_V3VZone7)], 2,"%");
@@ -4802,7 +4838,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 		case ZONE8 :
 			//Zone 8 - Mode
-			if (sConfig_IHM.sOption_PAC.sZone.bZone8 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone8 == 1)
 			{
 				switch(sStatut_Zx->Mode)
 				{
@@ -4831,7 +4867,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 
 
 			//Zone 8 - T Int / Consigne
-			if (sConfig_IHM.sOption_PAC.sZone.bZone8 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone8 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[7].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
@@ -4885,13 +4921,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_int_zone_8.invalidate();
 
 			//Zone 8 - T°C Depart
-			if (sConfig_IHM.sOption_PAC.sZone.bZone8 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone8 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_DepartZone8, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"C");
 					textArea_val_temp_dep_zone_8.setWildcard(textAreaBuffer_DepartZone8);
 				}
 				else
@@ -4906,13 +4944,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_dep_zone_8.invalidate();
 
 			//Zone 8 - T°C Retour
-			if (sConfig_IHM.sOption_PAC.sZone.bZone8 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone8 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_RetourZone8, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"C");
 					textArea_val_temp_ret_zone_8.setWildcard(textAreaBuffer_RetourZone8);
 				}
 				else
@@ -4927,13 +4967,15 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_temp_ret_zone_8.invalidate();
 
 			//Zone 8 - Cons Dép Eau
-			if (sConfig_IHM.sOption_PAC.sZone.bZone8 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone8 == 1)
 			{
 				if (sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 0 ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
 					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone8, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone8[Unicode::strlen(textAreaBuffer_ConsigneTeauZone8)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone8[Unicode::strlen(textAreaBuffer_ConsigneTeauZone8)], 2,"C");
 					textArea_val_cons_temp_dep_zone_8.setWildcard(textAreaBuffer_ConsigneTeauZone8);
 				}
 				else
@@ -4947,7 +4989,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 
 			//Zone 8 - Debit
-			if (sConfig_IHM.sOption_PAC.sZone.bZone8 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone8 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 				{
@@ -4969,7 +5011,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 //			textArea_val_cons_int_zone_8.setWildcard(textAreaBuffer_ConsIntZone8);
 //
 			//Zone 8 - Circulateur
-			if (sConfig_IHM.sOption_PAC.sZone.bZone8 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone8 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
 				{
@@ -5014,7 +5056,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_registre_zone_8.invalidate();
 			textArea_cons_v3v_zone_8.invalidate();
 
-			if (sConfig_IHM.sOption_PAC.sZone.bZone8 == 1)
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone8 == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VZone8, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
 				Unicode::snprintf(&textAreaBuffer_V3VZone8[Unicode::strlen(textAreaBuffer_V3VZone8)], 2,"%");
@@ -5027,10 +5069,55 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_val_cons_v3v_registre_zone_8.invalidate();
 			break;
 		case ZONE_GROUPE_A :
+			///Mode Groupe A
+			if(sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 0)
+			{
+				textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+			}
+			else
+			{
+				switch (sStatut_Zx->Mode)
+				{
+					  case ARRET:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_ARRET_DROITE_DEFAUT));
+						break;
+					  case MARCHE_CHAUD:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_CHAUD_DROIT_DEFAUT));
+						break;
+					  case AUTO_CHAUD:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_CHAUD_DROIT_DEFAUT));
+//							) +
+//							' ' +
+//							FlutterI18n.translate(
+//							  context,
+//							  "AUTO_PROG",
+//							);
+						break;
+					  case HORS_GEL:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_HORS_GEL_DROITE_DEFAUT));
+						break;
+					  case MARCHE_FROID:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_FROID_MARCHE_DROITE_DEFAUT));
+						break;
+					  case AUTO_FROID:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_FROID_MARCHE_DROITE_DEFAUT));
+//							' ' +
+//							FlutterI18n.translate(
+//							  context,
+//							  "AUTO_PROG",
+//							);
+						break;
+					  default:
+						break;
+					}
+			}
+			textArea_mode_groupe_a_val.invalidate();
 			//T°C Depart
 			if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1)
 			{
 				Unicode::snprintfFloat(textAreaBuffer_DepartGroupeA, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartGroupeA[Unicode::strlen(textAreaBuffer_DepartGroupeA)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartGroupeA[Unicode::strlen(textAreaBuffer_DepartGroupeA)], 2,"C");
 				textArea_temp_dep_groupe_a_val.setWildcard(textAreaBuffer_DepartGroupeA);
 			}
 			else
@@ -5042,6 +5129,8 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1)
 			{
 				Unicode::snprintfFloat(textAreaBuffer_RetourGroupeA, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourGroupeA[Unicode::strlen(textAreaBuffer_RetourGroupeA)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourGroupeA[Unicode::strlen(textAreaBuffer_RetourGroupeA)], 2,"C");
 				textArea_temp_ret_groupe_a_val.setWildcard(textAreaBuffer_RetourGroupeA);
 			}
 			else
@@ -5053,6 +5142,8 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1)
 			{
 				Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauGroupeA, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+				Unicode::snprintf(&textAreaBuffer_ConsigneTeauGroupeA[Unicode::strlen(textAreaBuffer_ConsigneTeauGroupeA)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_ConsigneTeauGroupeA[Unicode::strlen(textAreaBuffer_ConsigneTeauGroupeA)], 2,"C");
 				textArea_cons_temp_dep_groupe_a_val.setWildcard(textAreaBuffer_ConsigneTeauGroupeA);
 			}
 			else
@@ -5061,22 +5152,60 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 			textArea_cons_temp_dep_groupe_a_val.invalidate();
 			//Circulateur
+//			textArea_circ_groupe_a_on_off_val.setVisible(false);
+//			textArea_circ_groupe_a_percent_val.setVisible(false);
+//			if(sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 0)
+//			{
+//				textArea_circ_groupe_a_on_off_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+//				textArea_circ_groupe_a_on_off_val.setVisible(true);
+//				textArea_circ_groupe_a_on_off_val.invalidate();
+//			}
+//			else if( sConfig_IHM.sParam_Zx[8].NumCarteMZ != 3 && sConfig_IHM.sParam_Zx[8].type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
+//			{
+//				Unicode::snprintf(textAreaBuffer_CirculateurGroupeA, 4, "%d", sStatut_Zx->u8ConsigneCirculateur);
+//				Unicode::snprintf(&textAreaBuffer_CirculateurGroupeA[Unicode::strlen(textAreaBuffer_CirculateurGroupeA)], 2,"%");
+//				textArea_circ_groupe_a_percent_val.setWildcard(textAreaBuffer_CirculateurGroupeA);
+//				textArea_circ_groupe_a_percent_val.setVisible(true);
+//				textArea_circ_groupe_a_percent_val.invalidate();
+//			}
+//			else
+//			{
+//				if (sStatut_Zx->u8ConsigneCirculateur == 1)
+//				{
+//					textArea_circ_groupe_a_on_off_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_ON_DROIT_DEFAUT));
+//				}
+//				else textArea_circ_groupe_a_on_off_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_OFF_DROIT_DEFAUT));
+//				textArea_circ_groupe_a_on_off_val.setVisible(true);
+//				textArea_circ_groupe_a_on_off_val.invalidate();
+//			}
 			textArea_circ_groupe_a_on_off_val.setVisible(false);
 			textArea_circ_groupe_a_percent_val.setVisible(false);
-			if(sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1 && sConfig_IHM.sParam_Zx[8].NumCarteMZ != 3 && sConfig_IHM.sParam_Zx[8].type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
+			if(sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 0)
+			{
+				textArea_circ_groupe_a_on_off_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				textArea_circ_groupe_a_on_off_val.setVisible(true);
+				textArea_circ_groupe_a_on_off_val.invalidate();
+			}
+			else if( sConfig_IHM.sParam_Zx[8].NumCarteMZ == 3 && sConfig_IHM.sParam_Zx[8].type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
 			{
 				Unicode::snprintf(textAreaBuffer_CirculateurGroupeA, 4, "%d", sStatut_Zx->u8ConsigneCirculateur);
+				Unicode::snprintf(&textAreaBuffer_CirculateurGroupeA[Unicode::strlen(textAreaBuffer_CirculateurGroupeA)], 2,"%");
+				textArea_circ_groupe_a_on_off_val.setVisible(false);
+				textArea_circ_groupe_a_on_off_val.invalidate();
 				textArea_circ_groupe_a_percent_val.setWildcard(textAreaBuffer_CirculateurGroupeA);
 				textArea_circ_groupe_a_percent_val.setVisible(true);
 				textArea_circ_groupe_a_percent_val.invalidate();
+
 			}
 			else
 			{
-				if (sStatut_Zx->u8ConsigneCirculateur == 1)
+				if (sStatut_Zx->u8ConsigneCirculateur != 0)
 				{
 					textArea_circ_groupe_a_on_off_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_ON_DROIT_DEFAUT));
 				}
 				else textArea_circ_groupe_a_on_off_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_OFF_DROIT_DEFAUT));
+				textArea_circ_groupe_a_percent_val.setVisible(false);
+				textArea_circ_groupe_a_percent_val.invalidate();
 				textArea_circ_groupe_a_on_off_val.setVisible(true);
 				textArea_circ_groupe_a_on_off_val.invalidate();
 			}
@@ -5084,6 +5213,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VGroupeA, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
+				Unicode::snprintf(&textAreaBuffer_V3VGroupeA[Unicode::strlen(textAreaBuffer_V3VGroupeA)], 2,"%");
 				textArea_cons_v3v_groupe_a_val.setWildcard(textAreaBuffer_V3VGroupeA);
 			}
 			else
@@ -5095,6 +5225,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == GAINABLE)
 			{
 				Unicode::snprintf(textAreaBuffer_ConsVentilGroupeA, 4, "%d", sStatut_Zx->u8ConsigneFanCassette);
+				Unicode::snprintf(&textAreaBuffer_ConsVentilGroupeA[Unicode::strlen(textAreaBuffer_ConsVentilGroupeA)], 2,"%");
 				textArea_cons_ventil_groupe_a_val.setWildcard(textAreaBuffer_ConsVentilGroupeA);
 			}
 			else
@@ -5104,10 +5235,55 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			textArea_cons_ventil_groupe_a_val.invalidate();
 			break;
 		case ZONE_GROUPE_B :
+			//Mode Groupe B
+			if(sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 0)
+			{
+				textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+			}
+			else
+			{
+				switch (sStatut_Zx->Mode)
+				{
+					  case ARRET:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_ARRET_DROITE_DEFAUT));
+						break;
+					  case MARCHE_CHAUD:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_CHAUD_DROIT_DEFAUT));
+						break;
+					  case AUTO_CHAUD:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_CHAUD_DROIT_DEFAUT));
+//							) +
+//							' ' +
+//							FlutterI18n.translate(
+//							  context,
+//							  "AUTO_PROG",
+//							);
+						break;
+					  case HORS_GEL:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_HORS_GEL_DROITE_DEFAUT));
+						break;
+					  case MARCHE_FROID:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_FROID_MARCHE_DROITE_DEFAUT));
+						break;
+					  case AUTO_FROID:
+						  textArea_mode_groupe_a_val.setTypedText(touchgfx::TypedText(T_TEXT_FROID_MARCHE_DROITE_DEFAUT));
+//							' ' +
+//							FlutterI18n.translate(
+//							  context,
+//							  "AUTO_PROG",
+//							);
+						break;
+					  default:
+						break;
+					}
+			}
+			textArea_mode_groupe_a_val.invalidate();
 			//T°C Depart
 			if (sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1)
 			{
 				Unicode::snprintfFloat(textAreaBuffer_DepartGroupeB, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartGroupeB[Unicode::strlen(textAreaBuffer_DepartGroupeB)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartGroupeB[Unicode::strlen(textAreaBuffer_DepartGroupeB)], 2,"C");
 				textArea_temp_dep_groupe_b_val.setWildcard(textAreaBuffer_DepartGroupeB);
 			}
 			else
@@ -5119,6 +5295,8 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			if (sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1)
 			{
 				Unicode::snprintfFloat(textAreaBuffer_RetourGroupeB, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourGroupeB[Unicode::strlen(textAreaBuffer_RetourGroupeB)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourGroupeB[Unicode::strlen(textAreaBuffer_RetourGroupeB)], 2,"C");
 				textArea_temp_ret_groupe_b_val.setWildcard(textAreaBuffer_RetourGroupeB);
 			}
 			else
@@ -5130,6 +5308,8 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			if (sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1)
 			{
 				Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauGroupeB, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+				Unicode::snprintf(&textAreaBuffer_ConsigneTeauGroupeB[Unicode::strlen(textAreaBuffer_ConsigneTeauGroupeB)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_ConsigneTeauGroupeB[Unicode::strlen(textAreaBuffer_ConsigneTeauGroupeB)], 2,"C");
 				textArea_cons_temp_dep_groupe_b_val.setWildcard(textAreaBuffer_ConsigneTeauGroupeB);
 			}
 			else
@@ -5140,9 +5320,16 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			//Circulateur
 			textArea_circ_groupe_b_on_off_val.setVisible(false);
 			textArea_circ_groupe_b_percent_val.setVisible(false);
-			if(sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1 && sConfig_IHM.sParam_Zx[9].NumCarteMZ != 3 && sConfig_IHM.sParam_Zx[9].type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
+			if(sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 0)
+			{
+				textArea_circ_groupe_b_on_off_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				textArea_circ_groupe_b_on_off_val.setVisible(true);
+				textArea_circ_groupe_b_on_off_val.invalidate();
+			}
+			else if(sConfig_IHM.sParam_Zx[9].NumCarteMZ != 3 && sConfig_IHM.sParam_Zx[9].type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
 			{
 				Unicode::snprintf(textAreaBuffer_CirculateurGroupeB, 4, "%d", sStatut_Zx->u8ConsigneCirculateur);
+				Unicode::snprintf(&textAreaBuffer_CirculateurGroupeB[Unicode::strlen(textAreaBuffer_CirculateurGroupeB)], 2,"%");
 				textArea_circ_groupe_b_percent_val.setWildcard(textAreaBuffer_CirculateurGroupeB);
 				textArea_circ_groupe_b_percent_val.setVisible(true);
 				textArea_circ_groupe_b_percent_val.invalidate();
@@ -5161,6 +5348,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			if (sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1)
 			{
 				Unicode::snprintf(textAreaBuffer_V3VGroupeB, 4, "%d", sStatut_Zx->u8ConsigneVanneMelange);
+				Unicode::snprintf(&textAreaBuffer_V3VGroupeB[Unicode::strlen(textAreaBuffer_V3VGroupeB)], 2,"%");
 				textArea_cons_v3v_groupe_b_val.setWildcard(textAreaBuffer_V3VGroupeA);
 			}
 			else
@@ -5172,6 +5360,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			if (sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == GAINABLE)
 			{
 				Unicode::snprintf(textAreaBuffer_ConsVentilGroupeB, 4, "%d", sStatut_Zx->u8ConsigneFanCassette);
+				Unicode::snprintf(&textAreaBuffer_ConsVentilGroupeB[Unicode::strlen(textAreaBuffer_ConsVentilGroupeB)], 2,"%");
 				textArea_cons_ventil_groupe_b_val.setWildcard(textAreaBuffer_ConsVentilGroupeB);
 			}
 			else
@@ -7816,9 +8005,9 @@ void Variables_systemeView::changeStatutRF(S_STATUT_RF *sStatut_RF)
 	else if (sConfig_IHM.sParam_Zx[7].type_zone.zone.TypeThermostat == TH_RF)
 	{
 		Unicode::snprintf(textAreaBuffer_TypeSondeZone8, 6, touchgfx::TypedText(T_TEXT_VAR_SYS_TH_RADIO_DROITE_DEFAUT).getText());
-		Unicode::snprintf(&textAreaBuffer_TypeSondeZone8[Unicode::strlen(textAreaBuffer_TypeSondeZone7)], 4, " / ");
-		Unicode::snprintf(&textAreaBuffer_TypeSondeZone8[Unicode::strlen(textAreaBuffer_TypeSondeZone7)], 5, "%d", sStatut_RF[7].Niveau_Reception);
-		Unicode::snprintf(&textAreaBuffer_TypeSondeZone8[Unicode::strlen(textAreaBuffer_TypeSondeZone7)], 4, " dB");
+		Unicode::snprintf(&textAreaBuffer_TypeSondeZone8[Unicode::strlen(textAreaBuffer_TypeSondeZone8)], 4, " / ");
+		Unicode::snprintf(&textAreaBuffer_TypeSondeZone8[Unicode::strlen(textAreaBuffer_TypeSondeZone8)], 5, "%d", sStatut_RF[7].Niveau_Reception);
+		Unicode::snprintf(&textAreaBuffer_TypeSondeZone8[Unicode::strlen(textAreaBuffer_TypeSondeZone8)], 4, " dB");
 	}
 	else Unicode::snprintf(textAreaBuffer_TypeSondeZone8, 3, touchgfx::TypedText(T_TEXT_VAR_SYS_TIRET_TIRET_DROITE_DEFAUT).getText());
 
