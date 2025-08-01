@@ -79,6 +79,7 @@ public:
     void c_usine_phoenix(int u8Esclave);
     void c_usine_raz_energie();
     void c_usine_raz_config();
+    void c_usine_offset();
 
     void c_sav_histo_err();
     void c_sav_param();
@@ -92,6 +93,7 @@ public:
     void c_sav_mode_pump_down_stop();
     void c_sav_par21();
     void c_sav_test_pac();
+
 
     void c_restart();
 

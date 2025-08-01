@@ -93231,6 +93231,21 @@
             "Height": 524,
             "Components": [
               {
+                "Type": "TextArea",
+                "Name": "textArea_2_points",
+                "X": 745,
+                "Y": 251,
+                "Width": 75,
+                "Height": 45,
+                "TextId": "__SingleUse_OEC3",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
                 "Type": "CustomContainerInstance",
                 "Name": "barre_titre",
                 "Width": 950,
@@ -93370,6 +93385,7 @@
                 "Y": 251,
                 "Width": 19,
                 "Height": 51,
+                "Visible": false,
                 "RelativeFilename": "Logo_Slash_L19xH51.png"
               },
               {
@@ -97643,6 +97659,18 @@
               "Type": "ActionCustom",
               "FunctionName": "bouton_raz_tps_fonct"
             }
+          },
+          {
+            "InteractionName": "BTNClicked_calibrage_chgt",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_offset_sondes"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Usine_calibrage_offset"
+            }
           }
         ]
       },
@@ -97678,7 +97706,6 @@
                 "Y": 460,
                 "Width": 79,
                 "Height": 55,
-                "Visible": false,
                 "Pressed": "Bouton_Valider_Clicked_L79xH55.png",
                 "Released": "Bouton_Valider_Unclicked_L79xH55.png"
               },
@@ -97691,46 +97718,6 @@
                 "Height": 55,
                 "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
                 "Released": "Bouton_Retour_Unclicked_L60xH54.png"
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textArea_retour_offset",
-                "X": 486,
-                "Y": 315,
-                "Width": 449,
-                "Height": 25,
-                "TextId": "text_value_retour_offset",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "Wildcard1": {
-                  "TextId": "__SingleUse_39JS"
-                }
-              },
-              {
-                "Type": "ButtonWithLabel",
-                "Name": "buttonWithLabel_consulter",
-                "X": 15,
-                "Y": 301,
-                "Width": 449,
-                "Height": 53,
-                "Pressed": "Bouton_Gris_Clicked_L449xH53.png",
-                "Released": "Bouton_Gris_Unclicked_L449xH53.png",
-                "TextId": "text_consulter_offset",
-                "ReleasedColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "PressedColor": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "TextRotation": "0"
               },
               {
                 "Type": "Container",
@@ -97972,24 +97959,6 @@
                     "WideTextAction": 1
                   },
                   {
-                    "Type": "TextArea",
-                    "Name": "textArea_valeur_offset",
-                    "X": 75,
-                    "Y": 90,
-                    "Width": 299,
-                    "Height": 23,
-                    "TextId": "text_valeur_offset_sonde",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "Wildcard1": {
-                      "TextId": "text_val_test_code"
-                    }
-                  },
-                  {
                     "Type": "Button",
                     "Name": "bouton_gauche_offset",
                     "Y": 76,
@@ -98123,7 +98092,7 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "__SingleUse_JGDL"
+                      "TextId": "text_depart_primaire_centre"
                     }
                   },
                   {
@@ -98148,6 +98117,24 @@
                 ]
               }
             ]
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea_valeur_offset",
+            "X": 598,
+            "Y": 277,
+            "Width": 299,
+            "Height": 23,
+            "TextId": "text_valeur_offset_sonde",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Wildcard1": {
+              "TextId": "text_val_test_code"
+            }
           }
         ],
         "Interactions": [
@@ -98160,30 +98147,18 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Maintenance_fct_avances"
+              "ActionComponent": "Usine_param_avances"
             }
           },
           {
-            "InteractionName": "BTNClicked_valider_chgt",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "button_valider"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Maintenance_fct_avances"
-            }
-          },
-          {
-            "InteractionName": "BTNClicked_gauche",
+            "InteractionName": "BTNClicked_gauche_sonde",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "bouton_gauche_sonde"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "bouton_gauche"
+              "FunctionName": "bouton_gauche_choix_sonde"
             }
           },
           {
@@ -98194,7 +98169,7 @@
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "bouton_droite"
+              "FunctionName": "bouton_droit_choix_sonde"
             }
           },
           {
@@ -98217,6 +98192,52 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_non"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_droit_offset",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_droite_offset"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droit_offset_sonde"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_gauche_offset",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_gauche_offset"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche_offset_sonde"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_fct",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_valider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_valider"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_valider_chgt",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "BTNClicked_valider_fct"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Usine_param_avances"
             }
           }
         ]

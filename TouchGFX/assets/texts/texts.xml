@@ -3570,7 +3570,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_val_test_code" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">0,0</Translation>
+        <Translation Language="FR">0.0°C</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -4692,15 +4692,78 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
-      <Text Id="text_question_envoyer_offset" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Voulez-vous corriger l'offset de la sonde&#10;avec la nouvelle valeur ?</Translation>
+      <Text Id="__SingleUse_OEC3" Alignment="Center" TypographyId="Large">
+        <Translation Language="FR">:</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+        <Translation Language="NL"></Translation>
+        <Translation Language="DE"></Translation>
+      </Text>
+      <Text Id="text_depart_primaire_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Départ Primaire</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="__SingleUse_39JS" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">2,3</Translation>
+      <Text Id="text_retour_primaire_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Retour Primaire</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_depart_capteur_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Départ Capteur</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_retour_capteur_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Retour Capteur</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ballon_tampon_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Ballon tampon</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_HP1_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">HP circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_HP2_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">HP circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ECS_haut_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">ECS Haute</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_ECS_bas_centre" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">ECS Basse</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_question_envoyer_offset" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Voulez-vous corriger l'offset de la sonde&#10;avec la nouvelle valeur ?</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -4713,15 +4776,15 @@
         <Translation Language="NL">Valeur offset : &lt;value&gt;°C</Translation>
         <Translation Language="DE">Valeur offset : &lt;value&gt;°C</Translation>
       </Text>
-      <Text Id="text_consulter_offset" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Consulter l'offset de la sonde </Translation>
+      <Text Id="text_titre_calibrage_offset_sondes" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Calibrage de l'offset des sondes</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="__SingleUse_JGDL" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Départ primaire</Translation>
+      <Text Id="text_consulter_offset" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Consulter l'offset de la sonde </Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -4735,7 +4798,7 @@
         <Translation Language="DE">&lt;Value&gt;</Translation>
       </Text>
       <Text Id="text_valeur_offset_sonde" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="FR">&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt;°C</Translation>
         <Translation Language="PT">&lt;Value&gt;°C</Translation>
         <Translation Language="NL">&lt;Value&gt;°C</Translation>
@@ -4755,7 +4818,7 @@
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>
       </Text>
-      <Text Id="text_usine_offset_sondes" Alignment="Left" TypographyId="Default">
+      <Text Id="text_usine_offset_sondes" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">Calibrage Offset&#10;sondes</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>

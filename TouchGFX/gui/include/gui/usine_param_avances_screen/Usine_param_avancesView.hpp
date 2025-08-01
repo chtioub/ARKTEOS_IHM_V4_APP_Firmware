@@ -17,6 +17,7 @@ public:
     void bouton_raz_log_ether();
     void bouton_raz_tps_fonct();
     void bouton_raz_energies();
+    //void bouton_calibrage_sondes();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

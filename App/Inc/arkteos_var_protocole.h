@@ -410,6 +410,7 @@ typedef enum
     SC_USINE_RAZ_ENERGIE,
     SC_USINE_RAZ_INSTALL,
     SC_USINE_ELEC_PW_FRIGO, // NU
+	SC_USINE_OFFSET,
 } E_SC_USINE;
 
 typedef enum

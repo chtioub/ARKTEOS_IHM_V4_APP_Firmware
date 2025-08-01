@@ -27,6 +27,8 @@ public:
 
     virtual ~Usine_param_avancesPresenter() {}
 
+    //void c_sav_calibrage();
+
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);

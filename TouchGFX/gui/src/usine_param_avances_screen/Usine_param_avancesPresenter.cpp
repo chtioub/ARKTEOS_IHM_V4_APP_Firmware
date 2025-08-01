@@ -17,6 +17,11 @@ void Usine_param_avancesPresenter::deactivate()
 
 }
 
+//void Usine_param_avancesPresenter::c_sav_calibrage()
+//{
+//	model->c_sav_calibrage();
+//}
+
 void Usine_param_avancesPresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);

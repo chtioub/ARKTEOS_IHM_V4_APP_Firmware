@@ -360,6 +360,33 @@ void Model::tick()
   }
   if(arkteos_update.demande_frigo_update)
   {
+
+//    switch (sDemandeFrigo.sSupplementPAC.)
+//    switch (sConfig_IHM.sModele_PAC.u8ModelePAC)
+//	{
+//    	case GEOTWIN_IV	:
+//    		sConfig_Offset.i8Val[sDemandeFrigo.sSupplementPAC.Geo.u4NumOffset] = sDemandeFrigo.sSupplementPAC.Geo.u8Offset;
+//    		break;
+//    	case GEOINVERTER:
+//    		sConfig_Offset.i8Val[sDemandeFrigo.sSupplementPAC.geoinverter.u4NumOffset] = sDemandeFrigo.sSupplementPAC.geoinverter.u8Offset;
+//    		break;
+//    	case CAIROX :
+//    		sConfig_Offset.i8Val[sDemandeFrigo.sSupplementPAC.geoinverter.u4NumOffset] = sDemandeFrigo.sSupplementPAC.geoinverter.u8Offset;
+//			break;
+//    	case BAGUIO_ZURAN_IV :
+//		case TIMAX_III:
+//			sConfig_Offset.i8Val[sDemandeFrigo.sSupplementPAC.ZuranBaguio.u4NumOffset] = sDemandeFrigo.sSupplementPAC.ZuranBaguio.u8Offset;
+//			break;
+//    	case AJPAC_III :
+//    		sConfig_Offset.i8Val[sDemandeFrigo.sSupplementPAC.Ajpac.u4NumOffset] = sDemandeFrigo.sSupplementPAC.Ajpac.u8Offset;
+//			break;
+//    	case PHOENIX :
+//    		sConfig_Offset.i8Val[sDemandeFrigo.sSupplementPAC.phoenix.u4NumOffset] = sDemandeFrigo.sSupplementPAC.phoenix.u8Offset;
+//    		break;
+//    	case ARKTEA:
+//    		sConfig_Offset.i8Val[sDemandeFrigo.sSupplementPAC.arktea.u4NumOffset] = sDemandeFrigo.sSupplementPAC.arktea.u8Offset;
+//    		break;
+//    }
     modelListener->changeDemandeFrigo(&sDemandeFrigo);
     arkteos_update.demande_frigo_update = false;
   }
@@ -1578,6 +1605,33 @@ void Model::c_usine_param()
 	}
 }
 
+void Model::c_usine_offset()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_USINE;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_USINE_OFFSET;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(S_CONFIG_OFFSET);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sConfig_Offset, sizeof(S_CONFIG_OFFSET));
+  u16Pointeur += sizeof(S_CONFIG_OFFSET);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
 void Model::c_usine_password()
 {
   uint16_t u16Pointeur = 0, u16CRC = 0;
@@ -1984,6 +2038,9 @@ void Model::c_sav_mode_pump_down_stop()
 		u8Pointeur_buffer_tx = 0;
 	}
 }
+
+
+
 
 void Model::c_restart()
 {

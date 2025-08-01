@@ -79,8 +79,9 @@ uint16_t TempNonChauffage;
 bool bBouclageECSTemp2;
 unsigned char u2TypeEchangeurECSTemp2;
 S_PARAM_TEST_PAC sParam_Test_PAC;
+S_CONFIG_OFFSET sConfig_Offset;
 bool bAutorisationNoCode = false;
-uint16_t TimerNoNeededCode;
+uint32_t TimerNoNeededCode;
 uint32_t u32LastTick;
 
 
@@ -608,6 +609,8 @@ uint8_t decodeRxData(rxData_t *rxData)
               memcpy(&sHisto_Erreur, &rxData->data[ptrRxBuffer], sizeof(S_HISTO_ERR));
             }
             break;
+          default:
+        	  break;
         }
         break;
       case C_WEB:

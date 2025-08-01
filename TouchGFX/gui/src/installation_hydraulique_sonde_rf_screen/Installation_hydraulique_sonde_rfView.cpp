@@ -277,6 +277,17 @@ void Installation_hydraulique_sonde_rfView::changeStatutRF(S_STATUT_RF *sStatut_
 		container_qualite_signal.invalidate();
 		textArea_signal.invalidate();
 	}
+	//
+	//Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_SONDE_RADIO_TITRE_CENTRE_DEFAUT).getText());
+	//Unicode::fromUTF8(sStatut_RF[sConfig_Hydrau_temp.u8NumZone].Erreur_RF, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 3);
+//
+//	Unicode::snprintf(textAreaBuffer_CirculateurPrimaire, 4, "%d", sCyclRegFrigo->pac.geoinverter.sOutAnaGeoinv.u8ConsigneCirculateurPrimaire);
+//	Unicode::snprintf(&textAreaBuffer_CirculateurPrimaire[Unicode::strlen(textAreaBuffer_CirculateurPrimaire)], 2, "%");
+//
+//	Unicode::snprintf(textAreaBuffer_Titre, 3, " %d", sStatut_RF[sConfig_Hydrau_temp.u8NumZone].Erreur_RF);
+//	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 3, " %d", sStatut_RF[sConfig_Hydrau_temp.u8NumZone].Transmis_Zx);
+//	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 3, " %d", sStatut_RF[sConfig_Hydrau_temp.u8NumZone].Valid_Zx);
+//	barre_titre.titre(textAreaBuffer_Titre);
 }
 
 void Installation_hydraulique_sonde_rfView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

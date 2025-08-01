@@ -218,6 +218,11 @@ typedef enum {SIMULTANE_CHAUD_FROID_NONE, SIMULTANE_CHAUD_FROID_CONFIGURATION_1,
 // Type AJPAC
 typedef enum { MONO_10KW, MONO_16KW, TRI_16KW, TRI_20KW, MONO_6KW, MONO_8KW, TRI_24KW } E_LISTE_PW;
 
+// Offset
+typedef enum {OFF_DEP_PRIM= 0, OFF_RET_PRIM, OFF_DEP_CAP, OFF_RET_CAP, OFF_BAL_TAMP, OFF_HP1, OFF_HP2,OFF_ECS_HAUTE, OFF_ECS_BASSE} E_OFFSET_SONDE;
+
+
+
 // </editor-fold>
 
 /*****************************************************************************/
@@ -1016,7 +1021,24 @@ typedef union
     {
         uint8_t futurConfigAjpac;
     } ConfigAjpac;
-} S_CONFIG_PAC;                // 8 Octets
+} S_CONFIG_PAC;                // 16 Octets
+
+typedef union
+{
+	int8_t i8Val[9];
+	struct
+	{
+		int8_t i8Depart_Primaire;
+		int8_t i8Retour_Primaire;
+		int8_t i8Depart_Capteur;
+		int8_t i8Retour_Capteur;
+		int8_t i8Ballon_Tampon;
+		int8_t i8HP1;
+		int8_t i8HP2;
+		int8_t i8ECS_Haute;
+		int8_t i8ECS_Basse;
+	}Sonde;
+}S_CONFIG_OFFSET;		// 9 Octets
 
 // </editor-fold>
 
@@ -1391,9 +1413,11 @@ typedef union
     {
         uint8_t  bCompresseurAdemarrer :1;       // Compresseur avec le moins de temps de fonctionnement; 0 = Compresseur 1; 1 = Compresseur 2
         uint8_t  bModeRafraichissement :1;       // Choix du mode de rafraichissement (freecooling ou froid)
-        uint8_t  u6Spare :6;
-        uint8_t  u8Spare;
-        uint16_t  u16Spare1;
+        uint8_t  bPompePuitsMaxStdByPac :1;      // Dans le cas de pompes de puits utilisées également pour l'arrosage il faut que la valeur renvoyée soit à 100%
+        uint8_t  bV3VFreeCoolApresBallon :1;     // Si mise en place de la vanne 3 voies Freecooling après le ballon tampon
+        uint8_t  u4NumOffset :4;
+        uint8_t  u8Offset;
+        uint16_t u16Spare1;
         int16_t  i16ConsigneTeauFroid;           // Consigne sur le ballon tampon froid captage
         int16_t  i16BallonTamponFroid;           // Ballon tampon froid sur le circuit captage (chaud / froid simultan�)
     } Geo;
@@ -1402,36 +1426,61 @@ typedef union
         int16_t  i16ConsigneTeauFroid;           // Consigne sur le ballon tampon froid captage
         int16_t  i16BallonTamponFroid;           // Ballon tampon froid sur le circuit captage (chaud / froid simultan�)
         uint8_t  bModeRafraichissement :1;       // Choix du mode de rafraichissement (freecooling ou froid)
-        uint8_t  u7Spare :7;
-        uint8_t  u8Spare;
-        uint16_t  u16Spare1;
+        uint8_t  bPompePuitsMaxStdByPac :1;      // Dans le cas de pompes de puits utilisées également pour l'arrosage il faut que la valeur renvoyée soit à 100%
+		uint8_t  bV3VFreeCoolApresBallon :1;     // Si mise en place de la vanne 3 voies Freecooling après le ballon tampon
+		uint8_t  u4Spare :1;
+		uint8_t  u4NumOffset :4;
+		uint8_t  u8Offset;
+		uint16_t u16Spare1;
     } geoinverter;
     struct
     {
         int16_t  i16TeauEcsMilieu;
         int16_t  i16TeauEcsBas;
         int16_t  i16TeauPiscine;
-        uint16_t  Spare;
+        uint8_t  Spare :4;
+        uint8_t  u4NumOffset :4;
+		uint8_t  u8Offset;
     } Cairox;
     struct
     {
         int16_t  i16TeauEcsBas;
-        uint16_t  u16Spare1;
-        uint16_t  u16Spare2;
-        uint16_t  u16Spare3;
+        uint8_t  u16Spare1 :4;
+        uint8_t  u4NumOffset :4;
+   		uint8_t  u8Offset;
+        uint16_t u16Spare2;
+        uint16_t u16Spare3;
     } ZuranBaguio;
     struct
     {
         uint8_t bPumpDown_V4V    :1;
         uint8_t u7Spare          :7;
+        uint8_t  u4Spare1 :4;
+        uint8_t  u4NumOffset :4;
+   		uint8_t  u8Offset;
+   		uint8_t  u8Spare1;
+   		uint16_t u16Spare2;
+		uint16_t u16Spare3;
     } Ajpac;
     struct
     {
-        uint64_t FuturSupplementPhoenix;
+    	uint8_t  u4Spare1 :4;
+		uint8_t  u4NumOffset :4;
+		uint8_t  u8Offset;
+		uint16_t u16Spare2;
+		uint16_t u16Spare3;
+		uint16_t u16Spare4;
+//        uint64_t FuturSupplementPhoenix;
     } phoenix;
     struct
     {
-        uint64_t FuturSupplementArktea;
+    	uint8_t  u4Spare1 :4;
+		uint8_t  u4NumOffset :4;
+		uint8_t  u8Offset;
+		uint16_t u16Spare2;
+		uint16_t u16Spare3;
+		uint16_t u16Spare4;
+//        uint64_t FuturSupplementArktea;
     } arktea;
 }S_DEMANDE_SUPPLEMENT;          // 8 Octets
 
@@ -2743,9 +2792,11 @@ typedef struct
 	S_PARAM_PISCINE sParam_Piscine;
 	S_PARAM_REG_EXT sParam_RegulExt;
 	S_PARAM_FRIGO sParam_Frigo;
+	S_CONFIG_OFFSET sConfig_Offset;
 	S_PARAM_SAV sParam_SAV;
 	S_PARAM_ZX sParam_Zx[10];
 	S_CONFIG_FRIGO sConfigFrigo[NB_UE_MAX];
+
 
 	uint16_t u16RecupConfig;
 	uint16_t u16NbCyclique;

@@ -259,8 +259,9 @@ extern bool bBouclageECSTemp2;
 extern unsigned char u2TypeEchangeurECSTemp2;
 extern S_PARAM_TEST_PAC sParam_Test_PAC;
 extern bool bAutorisationNoCode;
-extern uint16_t TimerNoNeededCode;
+extern uint32_t TimerNoNeededCode;
 extern uint32_t u32LastTick;
+extern S_CONFIG_OFFSET sConfig_Offset;
 
 void setBackLightPWM(uint8_t pwm);
 uint8_t decodeRxData(rxData_t *rxData);
