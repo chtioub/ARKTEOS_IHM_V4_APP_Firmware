@@ -70,7 +70,7 @@ void Installation_mode_silencieuxView:: update_toggle_boutons()
 	{
 		toggleButton_arret.setTouchable(true);
 		toggleButton_arret.forceState(false);
-		toggleButton_marche_prog.setTouchable(false);
+		toggleButton_marche_prog.setTouchable(true);
 		toggleButton_marche_prog.forceState(true);
 	}
 	else
@@ -92,6 +92,7 @@ void Installation_mode_silencieuxView::bouton_arret()
 
 void Installation_mode_silencieuxView::bouton_marche_prog()
 {
+	memcpy(u8Prog, au8Prog_ModeSilence, sizeof(u8Prog));
 	eProg = PRO_SILENCE;
 }
 

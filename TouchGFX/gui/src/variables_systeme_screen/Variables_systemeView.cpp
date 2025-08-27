@@ -8048,11 +8048,11 @@ void Variables_systemeView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 	textArea_appoint_en_cours_val.setWildcard2(textAreaBuffer_AppointEnCours);
 	textArea_appoint_en_cours_val.invalidate();
 	//
-	Unicode::snprintf(textArea_Buffer_pw_produite, 6, "%d", sStatut_PAC->u16PWinstantaneeProduite);
+	Unicode::snprintf(textArea_Buffer_pw_produite, 6, "%d", sStatut_PAC->u16PWinstantaneeProduite * 10);
 	textArea_puissance_produite_val.setWildcard(textArea_Buffer_pw_produite);
 	textArea_puissance_produite_val.invalidate();
 	//
-	Unicode::snprintf(textArea_Buffer_pw_consommee, 6, "%d", sStatut_PAC->u16PWinstantaneeConsommee);
+	Unicode::snprintf(textArea_Buffer_pw_consommee, 6, "%d", sStatut_PAC->u16PWinstantaneeConsommee * 10);
 	textArea_puissance_consommee_val.setWildcard(textArea_Buffer_pw_consommee);
 	textArea_puissance_consommee_val.invalidate();
 	//

@@ -42,11 +42,18 @@ Installation_hydraulique_config_zoneView::Installation_hydraulique_config_zoneVi
 	{
 		if(sConfig_Hydrau_temp.u8NumZone == 1)
 		{
-//			container_type_emetteur.setVisible(false);
-//			buttonWithLabel_courbe_loi_eau.setVisible(false);
 			if (sConfig_IHM.sParam_Zx[0].TypeEmmetteur == PLANCHER)
 			{
 				sConfig_Hydrau_temp.sParamZx.TypeEmmetteur = PLANCHER;
+				button_droite_type_emetteur.setVisible(false);
+				button_gauche_type_emetteur.setVisible(false);
+			}
+		}
+		else if(sConfig_Hydrau_temp.u8NumZone == 0)
+		{
+			if (sConfig_IHM.sParam_Zx[1].TypeEmmetteur == RADIATEUR)
+			{
+				sConfig_Hydrau_temp.sParamZx.TypeEmmetteur = RADIATEUR;
 				button_droite_type_emetteur.setVisible(false);
 				button_gauche_type_emetteur.setVisible(false);
 			}

@@ -288,7 +288,7 @@ void ProgrammationView::bouton_coller()
 	// Copie des datas
 	for(int i = 0; i < 24; i++)
 	{
-		if(eProg == PRO_ECS)
+		if(eProg == PRO_ECS || eProg == PRO_SILENCE)
 		{
 			u8Prog[u8BarreHeure][i] = (u8Prog[u8BarreHeure][i] & 0xAA) + (u8Prog[u8Copie][i] & 0x55);
 		}

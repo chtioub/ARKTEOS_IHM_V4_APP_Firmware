@@ -103554,6 +103554,7 @@
                     "Y": 10,
                     "Width": 79,
                     "Height": 55,
+                    "Visible": false,
                     "RelativeFilename": "Bouton_Defaut_Rouge_Unclicked_L79xH55.png"
                   },
                   {
@@ -103562,6 +103563,7 @@
                     "Y": 75,
                     "Width": 920,
                     "Height": 4,
+                    "Visible": false,
                     "Color": {
                       "Red": 255,
                       "Green": 255,
@@ -103580,6 +103582,7 @@
                     "Y": 24,
                     "Width": 257,
                     "Height": 22,
+                    "Visible": false,
                     "TextId": "text_date_heure_erreur_droite_defaut",
                     "TextRotation": "0",
                     "Color": {
@@ -103599,6 +103602,7 @@
                     "Y": 26,
                     "Width": 79,
                     "Height": 23,
+                    "Visible": false,
                     "TextId": "text_temp_ext_centre_defaut",
                     "TextRotation": "0",
                     "Color": {
@@ -103618,6 +103622,7 @@
                     "Y": 200,
                     "Width": 300,
                     "Height": 20,
+                    "Visible": false,
                     "HorizontalScrollEnabled": true,
                     "ScrollbarsVisibleOnPressed": true,
                     "ScrollbarsAlpha": 255,

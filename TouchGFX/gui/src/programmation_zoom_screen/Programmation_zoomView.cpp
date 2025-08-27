@@ -1092,12 +1092,9 @@ void Programmation_zoomView::editer_prog(uint8_t u8NumeroProg)//5
 	}
 	else if(eProg == PRO_ECS)
 	{
-		if(u8Prog_bouton[u8NumeroProg] <= 1)
+		if(++u8Prog_bouton[u8NumeroProg] > 1)
 		{
-			if(++u8Prog_bouton[u8NumeroProg] > 1)
-			{
-				u8Prog_bouton[u8NumeroProg] = 0;
-			}
+			u8Prog_bouton[u8NumeroProg] = 0;
 		}
 	}
 	boutonProg(u8NumeroProg + 1, u8Prog_bouton[u8NumeroProg]);
@@ -1107,24 +1104,8 @@ void Programmation_zoomView::editer_prog(uint8_t u8NumeroProg)//5
 		case 0:
 			for(int i = u8NumeroProg * 16; i < (16 + u8NumeroProg * 16); i++)
 			{
-//				switch(u8Prog_bouton[u8NumeroProg])
-//				{
-//					case 0:
-//						image_prog[i].setBitmap(image_off);
-//						break;
-//					case 1:
-//						image_prog[i].setBitmap(image1);
-//						break;
-//					case 2:
-//						image_prog[i].setBitmap(image2);
-//						break;
-//					case 3:
-//						image_prog[i].setBitmap(image3);
-//						break;
-//				}
-//				image_prog[i].invalidate();
 				// Init du tableau de valeur
-				if(eProg == PRO_ECS)
+				if(eProg == PRO_ECS || eProg == PRO_SILENCE)
 				{
 					u8Prog_jour[i / 4] = u8Prog_jour[i / 4] & 0xAA;
 					u8Prog_jour[i / 4] += (u8Prog_bouton[u8NumeroProg] + (u8Prog_bouton[u8NumeroProg] << 2) + (u8Prog_bouton[u8NumeroProg] << 4) + (u8Prog_bouton[u8NumeroProg] << 6)) & 0x55;
@@ -1135,24 +1116,8 @@ void Programmation_zoomView::editer_prog(uint8_t u8NumeroProg)//5
 		case 1:
 			for(int i = ((slider_zoom_rectangle.getValue() + u8NumeroProg) * 4); i < ((slider_zoom_rectangle.getValue() + u8NumeroProg) * 4) + 4; i++)
 			{
-//				switch(u8Prog_bouton[u8NumeroProg])
-//				{
-//					case 0:
-//						image_prog[i].setBitmap(image_off);
-//						break;
-//					case 1:
-//						image_prog[i].setBitmap(image1);
-//						break;
-//					case 2:
-//						image_prog[i].setBitmap(image2);
-//						break;
-//					case 3:
-//						image_prog[i].setBitmap(image3);
-//						break;
-//				}
-//				image_prog[i].invalidate();
 				// Init du tableau de valeur
-				if(eProg == PRO_ECS)
+				if(eProg == PRO_ECS || eProg == PRO_SILENCE)
 				{
 					u8Prog_jour[i / 4] = u8Prog_jour[i / 4] & 0xAA;
 					u8Prog_jour[i / 4] += (u8Prog_bouton[u8NumeroProg] + (u8Prog_bouton[u8NumeroProg] << 2) + (u8Prog_bouton[u8NumeroProg] << 4) + (u8Prog_bouton[u8NumeroProg] << 6)) & 0x55;
@@ -1161,28 +1126,12 @@ void Programmation_zoomView::editer_prog(uint8_t u8NumeroProg)//5
 			}
 			break;
 		case 2:
-//			switch(u8Prog_bouton[u8NumeroProg])
-//			{
-//				case 0:
-//					image_prog[slider_zoom_plus_rectangle.getValue() + u8NumeroProg].setBitmap(image_off);
-//					break;
-//				case 1:
-//					image_prog[slider_zoom_plus_rectangle.getValue() + u8NumeroProg].setBitmap(image1);
-//					break;
-//				case 2:
-//					image_prog[slider_zoom_plus_rectangle.getValue() + u8NumeroProg].setBitmap(image2);
-//					break;
-//				case 3:
-//					image_prog[slider_zoom_plus_rectangle.getValue() + u8NumeroProg].setBitmap(image3);
-//					break;
-//			}
-//			image_prog[slider_zoom_plus_rectangle.getValue() + u8NumeroProg].invalidate();
 			// Init du tableau de valeur
-			if(eProg == PRO_ECS)
+			if(eProg == PRO_ECS || eProg == PRO_SILENCE)
 			{
 
 				u8Prog_jour[(slider_zoom_plus_rectangle.getValue() + u8NumeroProg) / 4] = (u8Prog_jour[(slider_zoom_plus_rectangle.getValue() + u8NumeroProg) / 4] & ~(0x01 << (((slider_zoom_plus_rectangle.getValue() + u8NumeroProg) % 4) * 2)));
-				u8Prog_jour[(slider_zoom_plus_rectangle.getValue() + u8NumeroProg) / 4] += (u8Prog_bouton[u8NumeroProg] << (((slider_zoom_plus_rectangle.getValue() + u8NumeroProg) % 4) * 2)) & 0x01;
+				u8Prog_jour[(slider_zoom_plus_rectangle.getValue() + u8NumeroProg) / 4] += (u8Prog_bouton[u8NumeroProg] << (((slider_zoom_plus_rectangle.getValue() + u8NumeroProg) % 4) * 2));// & 0x01;//26/08/25
 			}
 			else
 			{
