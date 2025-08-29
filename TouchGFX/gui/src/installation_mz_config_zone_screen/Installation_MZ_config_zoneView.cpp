@@ -56,7 +56,7 @@ Installation_MZ_config_zoneView::Installation_MZ_config_zoneView()
 void Installation_MZ_config_zoneView::ViewHideButtonContainer()
 {
 	bool bRattachement = false;
-	//Si rattaché à un groupe du type gainable
+	//Si rattaché à un groupe du type ...
 	if ((sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].TypeEmmetteur == GAINABLE)
 			|| (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].TypeEmmetteur == GAINABLE))
 	{
@@ -81,8 +81,14 @@ void Installation_MZ_config_zoneView::ViewHideButtonContainer()
 		bRattachement = true;
 		TypeEmetteur = RADIATEUR;
 	}
+	else if((sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].TypeEmmetteur == SOUS_STATION)
+				|| (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].TypeEmmetteur == SOUS_STATION))
+	{
+		bRattachement = true;
+	}
 
-	if (bRattachement)
+	if (bRattachement && !(sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].TypeEmmetteur == SOUS_STATION)
+			&& !(sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].TypeEmmetteur == SOUS_STATION))
 	{
 		button_gauche_type_emetteur.setVisible(false);
 		button_droite_type_emetteur.setVisible(false);
@@ -104,7 +110,8 @@ void Installation_MZ_config_zoneView::ViewHideButtonContainer()
 	else
 	{
 		//Zone autonome
-		if (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == AUTONOME )
+		if (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == AUTONOME || (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_A && sParamZxMZtemp[8].TypeEmmetteur == SOUS_STATION)
+				|| (sParamZxMZtemp[u8NumZone].u2RattachementGroupe == GROUPE_B && sParamZxMZtemp[9].TypeEmmetteur == SOUS_STATION))
 		{
 			button_gauche_type_emetteur.setVisible(true);
 			button_droite_type_emetteur.setVisible(true);

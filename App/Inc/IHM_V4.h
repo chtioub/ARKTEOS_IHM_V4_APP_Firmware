@@ -23,8 +23,8 @@ extern "C"
 #include "arkteos_defauts.h"
 #include <texts/TextKeysAndLanguages.hpp>
 
-#define VEILLE_1_TIME           5//600 //60              // Temps avant mise en veille 1 en secondes
-#define VEILLE_2_TIME           10//3000//300             // Temps avant mise en veille 1 en secondes
+#define VEILLE_1_TIME           30//5//10//600 //60              // Temps avant mise en veille 1 en secondes
+#define VEILLE_2_TIME           40//10//3000//300             // Temps avant mise en veille 1 en secondes
 #define PWM_VEILLE_1            5u
 #define TPS_NO_CODE		        900000 //15 mn
 
@@ -262,6 +262,7 @@ extern bool bAutorisationNoCode;
 extern uint32_t TimerNoNeededCode;
 extern uint32_t u32LastTick;
 extern S_CONFIG_OFFSET sConfig_Offset;
+extern bool bAutorisationCompteurVeille;
 
 void setBackLightPWM(uint8_t pwm);
 uint8_t decodeRxData(rxData_t *rxData);

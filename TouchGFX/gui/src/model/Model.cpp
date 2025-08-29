@@ -209,7 +209,7 @@ Model::Model() :
 void Model::tick()
 {
 #ifndef SIMULATOR
-	if(gTouched == 0)// && u16ErreurEncours == 0)
+	if(gTouched == 0 && bAutorisationCompteurVeille)// && u16ErreurEncours == 0)
 	{
 		if (oui_veille == 1)
 		{
@@ -898,24 +898,57 @@ void Model::c_recup_config(uint8_t u8RecupConfig)
 {
 	uint16_t u16Pointeur = 0, u16CRC = 0;
 
-	if(u8RecupConfig == 0)
+//	if(u8RecupConfig == 0 || (u8RecupConfig == 3 && sConfig_IHM.sModele_PAC.u8ModelePAC != INVERTERRA))
+//	{
+//		txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+//	}
+//	else txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+//
+//	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+//	txData[u8Pointeur_buffer_tx].data[2] = RECUP_CONFIG;
+//	//	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
+//
+//	if(u8RecupConfig == 2)//|| u8RecupConfig == 5)
+//	{
+//		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_TRAME2;
+//	}
+//	else if(u8RecupConfig == 3 && sConfig_IHM.sModele_PAC.u8ModelePAC == INVERTERRA)
+//	{
+//		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_CONFIG_PHOENIX;
+//	}
+//	else txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_GENERAL;
+
+	//Ajout
+	switch(u8RecupConfig)
 	{
-		txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+		case 0:
+			txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+			txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_GENERAL;
+			break;
+		case 1:
+			txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+			txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_GENERAL;
+			break;
+		case 2:
+			txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+			txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_TRAME2;
+			break;
+		case 3:
+			if (sConfig_IHM.sModele_PAC.u8ModelePAC != INVERTERRA)
+			{
+				txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+				txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_GENERAL;
+			}
+			else
+			{
+				txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+				txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_CONFIG_PHOENIX;
+			}
+			break;
 	}
-	else txData[0].data[0] = N_ADD_REG;
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = RECUP_CONFIG;
-	//	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
-
-	if(u8RecupConfig == 2)
-	{
-		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_TRAME2;
-	}
-	else if(u8RecupConfig == 3)
-	{
-		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_CONFIG_PHOENIX;
-	}
-	else txData[0].data[3] = SC_RECUP_GENERAL;
+	//Fin ajout
 
 	txData[u8Pointeur_buffer_tx].data[4] = 0;
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
@@ -931,6 +964,45 @@ void Model::c_recup_config(uint8_t u8RecupConfig)
 		u8Pointeur_buffer_tx = 0;
 	}
 }
+
+//
+//void Model::c_recup_config(uint8_t u8RecupConfig)
+//{
+//	uint16_t u16Pointeur = 0, u16CRC = 0;
+//
+//	if(u8RecupConfig == 0)
+//	{
+//		txData[u8Pointeur_buffer_tx].data[0] = N_ADD_ETHER;
+//	}
+//	else txData[0].data[0] = N_ADD_REG;
+//	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+//	txData[u8Pointeur_buffer_tx].data[2] = RECUP_CONFIG;
+//	//	txData[u8Pointeur_buffer_tx].data[0] = CONTROL_WRITE;
+//
+//	if(u8RecupConfig == 2)
+//	{
+//		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_TRAME2;
+//	}
+//	else if(u8RecupConfig == 3)
+//	{
+//		txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_CONFIG_PHOENIX;
+//	}
+//	else txData[0].data[3] = SC_RECUP_GENERAL;
+//
+//	txData[u8Pointeur_buffer_tx].data[4] = 0;
+//	txData[u8Pointeur_buffer_tx].data[5] = 0;
+//    u16Pointeur = 6;
+//	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+//	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+//	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+//
+//	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+//
+//	if(++u8Pointeur_buffer_tx > 9)
+//	{
+//		u8Pointeur_buffer_tx = 0;
+//	}
+//}
 
 void Model::c_prog_ecs(bool bEnvoi)
 {

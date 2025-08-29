@@ -27,11 +27,6 @@ void Installation_circuit_captagePresenter::changeStatutPAC(S_STATUT_PAC *sStatu
 	view.changeStatutPAC(sStatut_PAC);
 }
 
-void Installation_circuit_captagePresenter::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
-{
-	view.changeStatutCyclFrigo(sCyclRegFrigo);
-}
-
 void Installation_circuit_captagePresenter::changeDate(S_DATE *sDate)
 {
 	view.changeDate(sDate);
@@ -44,9 +39,9 @@ void Installation_circuit_captagePresenter::changeErreur(uint16_t u16Erreur)
 
 
 
-void Installation_circuit_captagePresenter::c_usine_param()
+void Installation_circuit_captagePresenter::c_install_config_pac()
 {
-	model->c_usine_param();
+	model->c_install_config_pac();
 }
 
 void Installation_circuit_captagePresenter::c_usine_phoenix(int u8Esclave)

@@ -17,8 +17,6 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PARAM_CIRCUIT_CAPT_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 
-	changeStatutCyclFrigo(&sCyclRegFrigo[0]);
-
 
 	if(sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
 	{
@@ -49,6 +47,9 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 			container_vitesse_min_pompe_puits.setVisible(false);
 			container_vitesse_max_pompe_puits.setVisible(false);
 			container_type_circulateur.setVisible(false);
+			container_vitesse_min_pompe_puits.invalidate();
+			container_vitesse_max_pompe_puits.invalidate();
+			container_type_circulateur.invalidate();
 		}
 		//Nappe Directe Géotwin
 		else if (sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage == E_TYPE_CAPTAGE_NAPPE_DIRECTE)
@@ -292,7 +293,6 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 		toggleButton_oui_oui_non_marche_forcee.invalidate();
 		toggleButton_non_oui_non_marche_forcee.invalidate();
 	}
-
 }
 
 
@@ -475,6 +475,7 @@ void Installation_circuit_captageView::bouton_oui_pilotage_vit_pompe_puits()
 		toggleButton_non_oui_non_pilotage_vit_pompe_puits.invalidate();
 		toggleButton_oui_oui_non_pilotage_vit_pompe_puits.setTouchable(false);
 		toggleButton_oui_oui_non_pilotage_vit_pompe_puits.invalidate();
+
 		if(bCartePhoenix == false && sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage == E_TYPE_CAPTAGE_NAPPE_DIRECTE)
 		{
 			textArea_pilotage_pompe_puits.setXY(486, 0);
@@ -494,29 +495,26 @@ void Installation_circuit_captageView::bouton_oui_pilotage_vit_pompe_puits()
 			{
 				container_vitesse_max_pompe_puits.setXY(486, 459);
 				container_vitesse_max_pompe_puits.setVisible(true);
-				container_vitesse_max_pompe_puits.invalidate();
 			}
 			else
 			{
 				textArea_vitesse_min_pompe_puits.setTypedText(touchgfx::TypedText(T_TEXT_VITESSE_POMPE_DE_PUITS));
-				textArea_vitesse_min_pompe_puits.invalidate();
 				container_vitesse_max_pompe_puits.setVisible(false);
-				container_vitesse_max_pompe_puits.invalidate();
 			}
 		}
 		else
 		{
-			//container_vitesse_max_pompe_puits.setXY(486, 459);
+			container_vitesse_max_pompe_puits.setXY(486, 459);
 			container_vitesse_max_pompe_puits.setVisible(true);
-			container_vitesse_max_pompe_puits.invalidate();
 		}
 
 		container_vitesse_min_pompe_puits.setVisible(true);
 		container_vitesse_min_pompe_puits.invalidate();
 
+		container_vitesse_max_pompe_puits.invalidate();
+
 		update_vitesse_min_pompe_puits();
 		update_vitesse_max_pompe_puits();
-		//scrollableContainer.invalidate();
 	}
 }
 
@@ -653,7 +651,6 @@ void Installation_circuit_captageView::bouton_droite_type_capteur()
 {
 	if(bCartePhoenix == false)
 	{
-		//
 		if(textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT).getId())
 		{
 			//container_type_capteur.setVisible(true);
@@ -744,14 +741,14 @@ void Installation_circuit_captageView::bouton_valider()
 
 		sConfig_IHM.sConfig_PAC.ConfigGeo.u8ConsignePompePuitsMin = u8ConsignePompePuitsMin;
 		sConfig_IHM.sConfig_PAC.ConfigGeo.u8ConsignePompePuitsMax = u8ConsignePompePuitsMax;
-		presenter->c_usine_param();
+		presenter->c_install_config_pac();
 
 	}
 	else
 	{
 		sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMin = u8ConsignePompePuitsMin;
 		sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMax = u8ConsignePompePuitsMax;
-		presenter->c_usine_param();
+		presenter->c_install_config_pac();
 
 		// Type de circulateur
 		if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_PWM_CENTRE_DEFAUT).getId())
@@ -790,86 +787,6 @@ void Installation_circuit_captageView::bouton_valider()
 		presenter->c_usine_phoenix(0);
 	}
 	application().gotoInstallationScreenNoTransition();
-}
-
-void Installation_circuit_captageView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
-{
-//	int i16TempCond = 0;
-//	int i16TempEvap = 0;
-////	if(sCyclRegFrigo_old.pac. != sCyclRegFrigo->pac)
-////	{
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Prim_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire)/10));
-//		textArea_temp_DCh_invert.setWildcard(textAreaBuffer_Temp_Dep_Prim_Inv);
-//		textArea_temp_DCh_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Prim_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire)/10));
-//		textArea_temp_RCh_invert.setWildcard(textAreaBuffer_Temp_Ret_Prim_Inv);
-//		textArea_temp_RCh_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Capt_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur)/10));
-//		textArea_temp_RCa_invert.setWildcard(textAreaBuffer_Temp_Ret_Capt_Inv);
-//		textArea_temp_RCa_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Capt_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur)/10));
-//		textArea_temp_DCa_invert.setWildcard(textAreaBuffer_Temp_Dep_Capt_Inv);
-//		textArea_temp_DCa_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_Ext_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur)/10));
-//		textArea_temp_ext_invert.setWildcard(textAreaBuffer_Temp_Ext_Inv);
-//		textArea_temp_ext_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_HP_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1)/10));
-//		textArea_temp_HP_invert.setWildcard(textAreaBuffer_Temp_HP_Inv);
-//		textArea_temp_HP_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_BP_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1)/10));
-//		textArea_temp_BP_invert.setWildcard(textAreaBuffer_Temp_BP_Inv);
-//		textArea_temp_BP_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_Liq_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide)/10));
-//		textArea_temp_liquide_invert.setWildcard(textAreaBuffer_Temp_Liq_Inv);
-//		textArea_temp_liquide_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Press_Cond_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1)/10));
-//		textArea_pression_temp_hp_invert.setWildcard1(textAreaBuffer_Press_Cond_Inv);
-//		Unicode::snprintfFloat(textAreaBuffer_Press_Evap_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1)/10));
-//		textArea_pression_temp_bp_invert.setWildcard1(textAreaBuffer_Press_Evap_Inv);
-//
-//		i16TempCond = ConvertPressionToTemperature(GAZ_R454C, 1, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 + 10);
-//		i16TempEvap = ConvertPressionToTemperature(GAZ_R454C, 0, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 + 10);
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_Inv, 7,"%.1f", ((float)(i16TempCond)/10));
-//		textArea_pression_temp_hp_invert.setWildcard2(textAreaBuffer_Temp_Cond_Inv);
-//		textArea_pression_temp_hp_invert.invalidate();
-//		Unicode::snprintfFloat(textAreaBuffer_Temp_Evap_Inv, 7,"%.1f", ((float)(i16TempEvap)/10));
-//		textArea_pression_temp_bp_invert.setWildcard2(textAreaBuffer_Temp_Evap_Inv);
-//		textArea_pression_temp_bp_invert.invalidate();
-//		Unicode::snprintf(textAreaBuffer_Temp_HP_Cible_Inv, 6,"%d", sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16Temp_HP_Cible[0]);
-//		textArea_temp_HP_cible_invert.setWildcard(textAreaBuffer_Temp_HP_Cible_Inv);
-//		textArea_temp_HP_cible_invert.invalidate();
-//		Unicode::snprintf(textAreaBuffer_Debit_Prim_Inv, 6,"%d", sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.u16DebitPrimaire);
-//		textArea_debit_chauf_invert.setWildcard(textAreaBuffer_Debit_Prim_Inv);
-//		textArea_debit_chauf_invert.invalidate();
-//		Unicode::snprintf(textAreaBuffer_Debit_Capt_Inv, 6,"%d", sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.u16DebitCapteur);
-//		textArea_debit_capt_invert.setWildcard(textAreaBuffer_Debit_Capt_Inv);
-//		textArea_debit_capt_invert.invalidate();
-//		Unicode::snprintf(textAreaBuffer_Percent_Circ_Cap_Inv, 4,"%d", sCyclRegFrigo->pac.geoinverter.sOutAnaGeoinv.u8ConsigneCirculateurCapteur);
-//		textArea_circ_cap_invert.setWildcard(textAreaBuffer_Percent_Circ_Cap_Inv);
-//		textArea_circ_cap_invert.invalidate();
-//		Unicode::snprintf(textAreaBuffer_Percent_Circ_Prim_Inv, 4,"%d", sCyclRegFrigo->pac.geoinverter.sOutAnaGeoinv.u8ConsigneCirculateurPrimaire);
-//		textArea_circ_chauf_invert.setWildcard(textAreaBuffer_Percent_Circ_Prim_Inv);
-//		textArea_circ_chauf_invert.invalidate();
-//		Unicode::snprintf(textAreaBuffer_Hz_comp_invert, 4,"%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorRunningSpeed / 60);
-//		textArea_Hz_comp_invert.setWildcard(textAreaBuffer_Hz_comp_invert);
-//		textArea_Hz_comp_invert.invalidate();
-//		Unicode::snprintf(textAreaBuffer_Position_EEV, 4,"%d", sCyclRegFrigo->pac.geoinverter.sOutAnaGeoinv.u16PositionDetendeur1);
-//		textArea_EEV_invert.setWildcard(textAreaBuffer_Position_EEV);
-//		textArea_EEV_invert.invalidate();
-//
-//		if(sCyclRegFrigo->pac.geoinverter.sOutTorGeoinv.Appoint1 || sCyclRegFrigo->pac.geoinverter.sOutTorGeoinv.Appoint2_3)
-//		{
-//			textArea_appoint_invert.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-//		}
-//		else textArea_appoint_invert.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
-//		textArea_appoint_invert.invalidate();
-//
-//
-////		textArea_temp_ballon_froid.setTypedText(touchgfx::TypedText(T_TEXT_BALLON_TAMPON_FROID_GAUCHE_DEFAUT));
-//
-//		memcpy(&sCyclRegFrigo_old, sCyclRegFrigo, sizeof(S_CYCL_REG_FRI));
-////	}
-
 }
 
 

@@ -83,6 +83,7 @@ S_CONFIG_OFFSET sConfig_Offset;
 bool bAutorisationNoCode = false;
 uint32_t TimerNoNeededCode;
 uint32_t u32LastTick;
+bool bAutorisationCompteurVeille = false;
 
 
 void setBackLightPWM(uint8_t pwm)
@@ -615,6 +616,8 @@ uint8_t decodeRxData(rxData_t *rxData)
         break;
       case C_WEB:
         break;
+      default:
+    	  break;
     }
   }
   rxData->size = 0;

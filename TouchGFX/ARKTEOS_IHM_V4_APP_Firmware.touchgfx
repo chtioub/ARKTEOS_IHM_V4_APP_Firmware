@@ -124,7 +124,7 @@
             "InteractionName": "Timer_accueil_500ms",
             "Trigger": {
               "Type": "TriggerOnEveryTick",
-              "TickCount": 20
+              "TickCount": 50
             },
             "Action": {
               "Type": "ActionCustom",

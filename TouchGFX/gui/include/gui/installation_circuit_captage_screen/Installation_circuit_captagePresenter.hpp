@@ -31,9 +31,8 @@ public:
 	virtual void changeErreur(uint16_t u16Erreur);
 	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
-	virtual void changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo);
 
-	void c_usine_param();
+	void c_install_config_pac();
 	void c_usine_phoenix(int u8Esclave);
 private:
     Installation_circuit_captagePresenter();

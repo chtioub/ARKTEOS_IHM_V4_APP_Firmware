@@ -38,9 +38,10 @@ void Infos_systemeView::bouton_retour()
 
 void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
-	uint16_t u16TmpBuffer[2];
+	uint16_t u16TmpBuffer[4];
 	u16TmpBuffer[0] = 0;
 	u16TmpBuffer[1] = 0;
+
 
 	// Type gamme
 	if(sConfig_IHM_old.sModele_PAC.u8ModelePAC != sConfig_IHM->sModele_PAC.u8ModelePAC)
@@ -98,7 +99,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				textArea_capteur_val.setVisible(true);
 				textArea_type_capteur.setVisible(true);
 				break;
-			case INVERTERRA:
+			case GEOINVERTER:
 				Unicode::snprintf(textAreaBuffer_Gamme,11, "INVERTERRA");
 				textArea_capteur_val.setVisible(true);
 				textArea_type_capteur.setVisible(true);
@@ -371,12 +372,37 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			case ARKTEA:
 				Unicode::snprintf(textAreaBuffer_Modele, 11, "%d Kw - 1~", sConfig_IHM->sModele_PAC.u8PwPac);
 				break;
-			case INVERTERRA:
-				Unicode::snprintf(textAreaBuffer_Modele, 15, "HT - %dKW - ~%c", sConfig_IHM->sModele_PAC.u8PwPac, sConfig_IHM->sModele_PAC.bSupply == 0 ? '1' : '3');
+			case GEOINVERTER:
+				switch(sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u3SousType)
+				{
+					case GEOINV_STD:
+						Unicode::snprintf(textAreaBuffer_Modele, 7, "STD - ");
+						break;
+					case GEOINV_BI_COMP:
+						Unicode::snprintf(textAreaBuffer_Modele, 7, "BIC - ");
+						break;
+					case GEOINV_BI_ETAGE:
+						Unicode::snprintf(textAreaBuffer_Modele, 7, "BIE - ");
+						break;
+					case GEOINV_SAGITAIR:
+						Unicode::snprintf(textAreaBuffer_Modele, 7, "SAG - ");
+						break;
+					case GEOINV_DEFROST:
+						Unicode::snprintf(textAreaBuffer_Modele, 7, "DEF - ");
+						break;
+				}
+				if (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bReversible == 1)
+				{
+					Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 4, "R -");
+				}
+				Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 23," %d KW - %c~", sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u7Puissance, sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bSupply == 0 ? '1' : '3');
+
 				break;
 		}
+
 		textArea_model.setWildcard(textAreaBuffer_Modele);
 		textArea_model.invalidate();
+
 		if(sConfig_IHM->sModele_PAC.nbCompresseur == 0)
 		{
 			textArea_fluide_c1.setTypedText(T_TEXT_CHOIX_FLUIDE_C1_GAUCHE_DEFAUT);
@@ -513,7 +539,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		}
 		textArea_capteur_val.invalidate();
 	}
-	else if(sConfig_IHM->sModele_PAC.u8ModelePAC == INVERTERRA && sConfig_IHM->sConfig_PAC.ConfigGeoInverter.eTypeDeCaptage != sConfig_IHM_old.sConfig_PAC.ConfigGeoInverter.eTypeDeCaptage)
+	else if(sConfig_IHM->sModele_PAC.u8ModelePAC == GEOINVERTER && sConfig_IHM->sConfig_PAC.ConfigGeoInverter.eTypeDeCaptage != sConfig_IHM_old.sConfig_PAC.ConfigGeoInverter.eTypeDeCaptage)
 	{
 		switch(sConfig_IHM->sConfig_PAC.ConfigGeoInverter.eTypeDeCaptage)
 		{
@@ -564,7 +590,37 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		textArea_mod.invalidate();
 	}
 	// Type de fluides
-	if((sConfig_IHM->sModele_PAC.Gaz_C1 != sConfig_IHM_old.sModele_PAC.Gaz_C1) || (sConfig_IHM->sModele_PAC.Gaz_C2 != sConfig_IHM_old.sModele_PAC.Gaz_C2))
+	if (sConfig_IHM->sModele_PAC.u8ModelePAC == GEOINVERTER)
+	{
+		switch(sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u4TypeGaz)
+		{
+			case GAZ_NONE:
+				Unicode::snprintf(textAreaBuffer_Fluide, 6, "NA");
+				break;
+			case GAZ_R410:
+				Unicode::snprintf(textAreaBuffer_Fluide, 6, "R410A");
+				break;
+			case GAZ_R134:
+				Unicode::snprintf(textAreaBuffer_Fluide, 6, "R134a");
+				break;
+			case GAZ_R407:
+				Unicode::snprintf(textAreaBuffer_Fluide, 6, "R407C");
+				break;
+			case GAZ_R32:
+				Unicode::snprintf(textAreaBuffer_Fluide, 6, "R32");
+				break;
+			case GAZ_HELIUM:
+				Unicode::snprintf(textAreaBuffer_Fluide, 6, "He");
+				break;
+			case GAZ_R513:
+				Unicode::snprintf(textAreaBuffer_Fluide, 6, "R513");
+				break;
+			case GAZ_R454C:
+				Unicode::snprintf(textAreaBuffer_Fluide, 6, "R454C");
+				break;
+		}
+	}
+	else if((sConfig_IHM->sModele_PAC.Gaz_C1 != sConfig_IHM_old.sModele_PAC.Gaz_C1) || (sConfig_IHM->sModele_PAC.Gaz_C2 != sConfig_IHM_old.sModele_PAC.Gaz_C2))
 	{
 		switch(sConfig_IHM->sModele_PAC.Gaz_C1)
 		{
@@ -593,6 +649,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				Unicode::snprintf(textAreaBuffer_Fluide, 6, "R454C");
 				break;
 		}
+
 		if(sConfig_IHM->sModele_PAC.nbCompresseur != 0)
 		{
 			switch(sConfig_IHM->sModele_PAC.Gaz_C2)
@@ -623,9 +680,10 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 					break;
 			}
 		}
-		textArea_fluide.setWildcard(textAreaBuffer_Fluide);
-		textArea_fluide.invalidate();
 	}
+	textArea_fluide.setWildcard(textAreaBuffer_Fluide);
+	textArea_fluide.invalidate();
+
 	// Soft ETHER
 	if(memcmp(&sConfig_IHM->sParamSoft.Soft_ETH, &sConfig_IHM_old.sParamSoft.Soft_ETH, sizeof(sConfig_IHM_old.sParamSoft.Soft_ETH)))
 	{

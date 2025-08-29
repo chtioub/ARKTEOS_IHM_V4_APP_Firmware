@@ -102,6 +102,7 @@ void Installation_hydraulique_numero_sonde_rfView::bouton_valider()
 	{
 		sConfig_Hydrau_temp.sParamZx.type_zone.zone.NumSonde = u8NumSonde;
 		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.NumSonde = u8NumSonde;
+		sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.NumSonde = u8NumSonde;
 		//sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.NumSonde = u8NumSonde;
 		//
 		presenter->c_install_zx(sConfig_Hydrau_temp.u8NumZone);

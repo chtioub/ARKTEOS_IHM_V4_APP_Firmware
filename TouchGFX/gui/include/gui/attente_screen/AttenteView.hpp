@@ -16,6 +16,7 @@ public:
     void Timer_500ms();
 protected:
     uint16_t u16CompteurDemarrageSysteme;
+    uint8_t u8TempoAttenteTrameInverterra;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_RecupConfig[5];
 };
 

@@ -297,7 +297,8 @@ void Installation_courbe_loi_d_eauView::slider_10(int sliderValue)
 	u16LoiDeau[2] = ((uint16_t)sliderValue);
 
 	// Verif pour éviter le dépassement positif
-	if(sliderValue > u16LoiDeau[3] || sliderValue > u16LoiDeau_MAX[2])
+	//if(sliderValue > u16LoiDeau[3] || sliderValue > u16LoiDeau_MAX[2])
+	if(sliderValue > u16LoiDeau[3])
 	{
 		slider_text_10_deg.setValue((int) u16LoiDeau[3]);
 		slider_text_10_deg.invalidate();
