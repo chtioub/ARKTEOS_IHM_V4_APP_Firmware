@@ -95,8 +95,8 @@ void Installation_mode_silencieuxView::bouton_arret()
 
 void Installation_mode_silencieuxView::bouton_marche_prog()
 {
-//	memcpy(u8Prog, au8Prog_ModeSilence, sizeof(u8Prog));
-//	eProg = PRO_SILENCE;
+	memcpy(u8Prog, au8Prog_ModeSilence, sizeof(u8Prog));
+	eProg = PRO_SILENCE;
 }
 
 void Installation_mode_silencieuxView::bouton_valider()

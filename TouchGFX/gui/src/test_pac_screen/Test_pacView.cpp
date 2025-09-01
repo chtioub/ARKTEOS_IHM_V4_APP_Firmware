@@ -16,6 +16,7 @@ Test_pacView::Test_pacView()
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_TEST_PAC_MAINTENANCE_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 
+
 	ModeTest = sParam_Test_PAC.ModeTest;
 	bTestPAC = sParam_Test_PAC.bTestPAC;
 	Pw = sParam_Test_PAC.Pw;
@@ -23,7 +24,7 @@ Test_pacView::Test_pacView()
 
 	if (Teau == 0) Teau = 1;
 
-	if (bTestPAC == 0)
+	if (sStatut_PAC.Test == 0)
 	{
 		toggleButton_oui_oui_non_test_pac.forceState(false);
 		toggleButton_oui_oui_non_test_pac.setTouchable(true);

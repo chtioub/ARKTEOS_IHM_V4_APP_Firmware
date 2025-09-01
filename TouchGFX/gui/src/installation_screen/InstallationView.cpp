@@ -92,6 +92,13 @@ void InstallationView::bouton_dalle()
 	application().gotoPage_oui_nonScreenNoTransition();
 }
 
+void InstallationView::param_avances()
+{
+	presenter->c_prog_silence(false);
+//	memcpy(u8Prog, au8Prog_ModeSilence, sizeof(u8Prog));
+//	eProg = PRO_SILENCE;
+}
+
 void InstallationView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
 	// Bouton freecooling

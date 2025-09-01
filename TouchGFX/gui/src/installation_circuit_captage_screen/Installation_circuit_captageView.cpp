@@ -24,6 +24,7 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 		u8ConsignePompePuitsMin = sConfig_IHM.sConfig_PAC.ConfigGeo.u8ConsignePompePuitsMin;
 		u8ConsignePompePuitsMax = sConfig_IHM.sConfig_PAC.ConfigGeo.u8ConsignePompePuitsMax;
 		bPilotagePompedePuits = (sConfig_IHM.sConfig_PAC.ConfigGeo.u8ConsignePompePuitsMax != 0) ? true:false;
+		eTypeDeCaptage = sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage;
 	}
 	else
 	{
@@ -31,13 +32,14 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 		u8ConsignePompePuitsMin = sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMin;
 		u8ConsignePompePuitsMax = sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMax;
 		bPilotagePompedePuits = (sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMax != 0) ? true:false;
+		eTypeDeCaptage = sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeDeCaptage;
 	}
 
 
 	if(bCartePhoenix == false)
 	{
 		//Capteur Géotwin
-		if (sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
+		if (eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
 		{
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT));
 			textArea_valeur_type_capteur.invalidate();
@@ -52,7 +54,7 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 			container_type_circulateur.invalidate();
 		}
 		//Nappe Directe Géotwin
-		else if (sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage == E_TYPE_CAPTAGE_NAPPE_DIRECTE)
+		else if (eTypeDeCaptage == E_TYPE_CAPTAGE_NAPPE_DIRECTE)
 		{
 
 			scrollableContainer.setScrollbarsVisible(false);
@@ -200,9 +202,9 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 		toggleButton_oui_oui_non_marche_forcee.invalidate();
 		toggleButton_non_oui_non_marche_forcee.invalidate();
 	}
-	else
+	else //INVERTERRA
 	{
-		if (sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
+		if (eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
 		{
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT));
 			textArea_valeur_type_capteur.invalidate();
@@ -215,6 +217,10 @@ Installation_circuit_captageView::Installation_circuit_captageView()
 			container_vitesse_min_pompe_puits.invalidate();
 			container_vitesse_max_pompe_puits.setVisible(false);
 			container_vitesse_max_pompe_puits.invalidate();
+			toggleButton_oui_oui_non_pilotage_vit_pompe_puits.forceState(false);
+			toggleButton_oui_oui_non_pilotage_vit_pompe_puits.setTouchable(true);
+			toggleButton_non_oui_non_pilotage_vit_pompe_puits.forceState(true);
+			toggleButton_non_oui_non_pilotage_vit_pompe_puits.setTouchable(false);
 		}
 		else
 		{
@@ -605,30 +611,33 @@ void Installation_circuit_captageView::bouton_gauche_type_capteur()
 	if(bCartePhoenix == false)
 	{
 		//
-		if(textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT).getId())
+		if(eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
 		{
 			//container_type_capteur.setVisible(true);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT));
 			container_oui_non_pilotage_pompe_puits.setXY(15, 304);
 			container_oui_non_pilotage_pompe_puits.setVisible(true);
 			//container_oui_non_pilotage_pompe_puits.invalidate();
+			eTypeDeCaptage = E_TYPE_CAPTAGE_NAPPE_BARRAGE;
 		}
 		else
 		{
 			//container_type_capteur.setVisible(false);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT));
 			container_oui_non_pilotage_pompe_puits.setVisible(false);
+			eTypeDeCaptage = E_TYPE_CAPTAGE_CAPTEUR;
 		}
 
 	}
 	else
 	{
 
-		if(textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT).getId())
+		if(eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
 		{
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT));
 			container_oui_non_pilotage_pompe_puits.setXY(15, 304);
 			container_oui_non_pilotage_pompe_puits.setVisible(true);
+			eTypeDeCaptage = E_TYPE_CAPTAGE_NAPPE_BARRAGE;
 		}
 		else
 		{
@@ -637,6 +646,7 @@ void Installation_circuit_captageView::bouton_gauche_type_capteur()
 			textArea_pilotage_pompe_puits.setVisible(false);
 			container_vitesse_min_pompe_puits.setVisible(false);
 			container_vitesse_max_pompe_puits.setVisible(false);
+			eTypeDeCaptage = E_TYPE_CAPTAGE_CAPTEUR;
 		}
 	}
 	container_oui_non_pilotage_pompe_puits.invalidate();
@@ -651,29 +661,31 @@ void Installation_circuit_captageView::bouton_droite_type_capteur()
 {
 	if(bCartePhoenix == false)
 	{
-		if(textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT).getId())
+		if(eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
 		{
 			//container_type_capteur.setVisible(true);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT));
 			container_oui_non_pilotage_pompe_puits.setXY(15, 304);
 			container_oui_non_pilotage_pompe_puits.setVisible(true);
+			eTypeDeCaptage = E_TYPE_CAPTAGE_NAPPE_BARRAGE;
 		}
 		else
 		{
 			//container_type_capteur.setVisible(false);
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT));
 			container_oui_non_pilotage_pompe_puits.setVisible(false);
+			eTypeDeCaptage = E_TYPE_CAPTAGE_CAPTEUR;
 		}
-
 	}
 	else
 	{
 
-		if(textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT).getId())
+		if(eTypeDeCaptage == E_TYPE_CAPTAGE_CAPTEUR)
 		{
 			textArea_valeur_type_capteur.setTypedText(touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT));
 			container_oui_non_pilotage_pompe_puits.setXY(15, 304);
 			container_oui_non_pilotage_pompe_puits.setVisible(true);
+			eTypeDeCaptage = E_TYPE_CAPTAGE_NAPPE_BARRAGE;
 		}
 		else
 		{
@@ -682,6 +694,7 @@ void Installation_circuit_captageView::bouton_droite_type_capteur()
 			textArea_pilotage_pompe_puits.setVisible(false);
 			container_vitesse_min_pompe_puits.setVisible(false);
 			container_vitesse_max_pompe_puits.setVisible(false);
+			eTypeDeCaptage = E_TYPE_CAPTAGE_CAPTEUR;
 		}
 	}
 	container_oui_non_pilotage_pompe_puits.invalidate();
@@ -727,15 +740,7 @@ void Installation_circuit_captageView::bouton_valider()
 		else sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeCirculateurCaptage = TYPE_GRUNDFOS;
 
 		// Type de capteur
-		if(textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT).getId())
-		{
-			sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage = E_TYPE_CAPTAGE_CAPTEUR;
-		}
-		else if (textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT).getId())
-		{
-			sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage = E_TYPE_CAPTAGE_NAPPE_BARRAGE;
-		}
-		else sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage = E_TYPE_CAPTAGE_NAPPE_DIRECTE;
+	    sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage = eTypeDeCaptage;
 
 
 
@@ -746,10 +751,6 @@ void Installation_circuit_captageView::bouton_valider()
 	}
 	else
 	{
-		sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMin = u8ConsignePompePuitsMin;
-		sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMax = u8ConsignePompePuitsMax;
-		presenter->c_install_config_pac();
-
 		// Type de circulateur
 		if(textArea_valeur_type_circulateur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_TYPE_CIRCULATEUR_PWM_CENTRE_DEFAUT).getId())
 		{
@@ -765,15 +766,7 @@ void Installation_circuit_captageView::bouton_valider()
 		}
 
 		// Type de capteur
-		if(textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_CAPTEUR_CENTRE_DEFAUT).getId())
-		{
-			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeDeCaptage = E_TYPE_CAPTAGE_CAPTEUR;
-		}
-		else if (textArea_valeur_type_capteur.getTypedText().getId() == touchgfx::TypedText(T_TEXT_VALEUR_TYPE_CAPTEUR_NAPPE_BARRAGE_CENTRE_DEFAUT).getId())
-		{
-			sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeDeCaptage = E_TYPE_CAPTAGE_NAPPE_BARRAGE;
-		}
-		else sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eTypeDeCaptage = E_TYPE_CAPTAGE_NAPPE_DIRECTE;
+		sConfig_IHM.sConfig_PAC.ConfigGeoInverter.eTypeDeCaptage = eTypeDeCaptage;
 
 		// Vitesse circulateur
 		sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.eGestionCirculateurCaptage = u8VitesseCirculateur;
@@ -785,6 +778,10 @@ void Installation_circuit_captageView::bouton_valider()
 		else sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.bCirculateurCaptageForce = 0;
 		//
 		presenter->c_usine_phoenix(0);
+
+		sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMin = u8ConsignePompePuitsMin;
+		sConfig_IHM.sConfig_PAC.ConfigGeoInverter.u8ConsignePompePuitsMax = u8ConsignePompePuitsMax;
+		presenter->c_install_config_pac();
 	}
 	application().gotoInstallationScreenNoTransition();
 }

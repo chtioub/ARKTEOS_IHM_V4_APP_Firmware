@@ -33,6 +33,8 @@ public:
     virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
 
+    void c_prog_silence(bool bEnvoi);
+
 private:
     InstallationPresenter();
 

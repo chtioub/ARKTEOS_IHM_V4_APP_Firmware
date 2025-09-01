@@ -20,6 +20,7 @@ public:
     void bouton_freecooling();
     void bouton_dalle();
     void bouton_retour();
+    void param_avances();
 
     virtual void changeConfig(S_CONFIG_IHM *sConfig_IHM);
     virtual void changeDate(S_DATE *sDate);

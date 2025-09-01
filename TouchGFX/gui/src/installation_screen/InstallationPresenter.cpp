@@ -17,6 +17,11 @@ void InstallationPresenter::deactivate()
 
 }
 
+void InstallationPresenter::c_prog_silence(bool bEnvoi)
+{
+	model->c_prog_silence(bEnvoi);
+}
+
 void InstallationPresenter::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 {
 	view.changeStatutEther(sCycEther);

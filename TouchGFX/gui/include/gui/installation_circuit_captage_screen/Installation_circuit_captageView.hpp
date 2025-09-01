@@ -38,7 +38,7 @@ public:
 
 protected:
     bool bConnexionDistance, bCartePhoenix, bPilotagePompedePuits;
-    uint8_t u8VitesseCirculateur, u8ConsignePompePuitsMin, u8ConsignePompePuitsMax;
+    uint8_t u8VitesseCirculateur, u8ConsignePompePuitsMin, u8ConsignePompePuitsMax,eTypeDeCaptage;
     uint16_t u16ErreurAffichee;
     S_DATE sDate_old;
     S_STATUT_PAC sStatut_PAC_old;

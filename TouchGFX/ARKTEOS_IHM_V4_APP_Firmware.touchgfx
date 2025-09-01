@@ -54300,8 +54300,8 @@
           {
             "InteractionName": "BTNClicked_param_avances_chgsc_param_avances",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel_param_avances"
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "BTNClicked_param_avances"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -54385,6 +54385,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_mem_config_ecs"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_param_avances",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_param_avances"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "param_avances"
             }
           }
         ]
@@ -57489,7 +57501,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Maintenance"
+              "ActionComponent": "Usine"
             }
           },
           {
@@ -57579,7 +57591,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Maintenance"
+              "ActionComponent": "Usine"
             }
           },
           {
