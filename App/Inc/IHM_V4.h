@@ -23,8 +23,8 @@ extern "C"
 #include "arkteos_defauts.h"
 #include <texts/TextKeysAndLanguages.hpp>
 
-#define VEILLE_1_TIME           60              // Temps avant mise en veille 1 en secondes
-#define VEILLE_2_TIME           300             // Temps avant mise en veille 1 en secondes
+#define VEILLE_1_TIME           6000              // Temps avant mise en veille 1 en secondes
+#define VEILLE_2_TIME           30000             // Temps avant mise en veille 1 en secondes
 #define PWM_VEILLE_1            5u
 
 
