@@ -3333,12 +3333,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_dep_zone_1.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_DepartZone1, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"C");
+					textArea_val_temp_dep_zone_1.setWildcard(textAreaBuffer_DepartZone1);
 				}
 			}
 			else
 			{
-				textArea_val_temp_dep_zone_1.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_DepartZone1, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"C");
+				textArea_val_temp_dep_zone_1.setWildcard(textAreaBuffer_DepartZone1);
 			}
 			textArea_val_temp_dep_zone_1.invalidate();
 
@@ -3356,12 +3368,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_ret_zone_1.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_RetourZone1, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"C");
+					textArea_val_temp_ret_zone_1.setWildcard(textAreaBuffer_RetourZone1);
 				}
 			}
 			else
 			{
-				textArea_val_temp_ret_zone_1.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_RetourZone1, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"C");
+				textArea_val_temp_ret_zone_1.setWildcard(textAreaBuffer_RetourZone1);
 			}
 			textArea_val_temp_ret_zone_1.invalidate();
 
@@ -3561,12 +3585,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_dep_zone_2.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_DepartZone2, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"C");
+					textArea_val_temp_dep_zone_2.setWildcard(textAreaBuffer_DepartZone2);
 				}
 			}
 			else
 			{
-				textArea_val_temp_dep_zone_2.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_DepartZone2, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"C");
+				textArea_val_temp_dep_zone_2.setWildcard(textAreaBuffer_DepartZone2);
 			}
 			textArea_val_temp_dep_zone_2.invalidate();
 
@@ -3584,12 +3620,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_ret_zone_2.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_RetourZone2, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"C");
+					textArea_val_temp_ret_zone_2.setWildcard(textAreaBuffer_RetourZone2);
 				}
 			}
 			else
 			{
-				textArea_val_temp_ret_zone_2.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_RetourZone2, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"C");
+				textArea_val_temp_ret_zone_2.setWildcard(textAreaBuffer_RetourZone2);
 			}
 			textArea_val_temp_ret_zone_2.invalidate();
 
@@ -3790,12 +3838,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_dep_zone_3.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_DepartZone3, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"C");
+					textArea_val_temp_dep_zone_3.setWildcard(textAreaBuffer_DepartZone3);
 				}
 			}
 			else
 			{
-				textArea_val_temp_dep_zone_3.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_DepartZone3, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"C");
+				textArea_val_temp_dep_zone_3.setWildcard(textAreaBuffer_DepartZone3);
 			}
 			textArea_val_temp_dep_zone_3.invalidate();
 
@@ -3813,12 +3873,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_ret_zone_3.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_RetourZone3, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"C");
+					textArea_val_temp_ret_zone_3.setWildcard(textAreaBuffer_RetourZone3);
 				}
 			}
 			else
 			{
-				textArea_val_temp_ret_zone_3.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_RetourZone3, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"C");
+				textArea_val_temp_ret_zone_3.setWildcard(textAreaBuffer_RetourZone3);
 			}
 			textArea_val_temp_ret_zone_3.invalidate();
 
@@ -3862,7 +3934,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				textArea_val_debit_zone_3.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
 			}
 
-			//Zone 2- Circulateur
+			//Zone 3- Circulateur
 			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone3 == 1)
 			{
 				if (sConfig_IHM.sParam_PAC.TypeRegul == REGUL_DIRECTE)
@@ -4018,12 +4090,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_dep_zone_4.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_DepartZone4, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"C");
+					textArea_val_temp_dep_zone_4.setWildcard(textAreaBuffer_DepartZone4);
 				}
 			}
 			else
 			{
-				textArea_val_temp_dep_zone_4.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_DepartZone4, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"C");
+				textArea_val_temp_dep_zone_4.setWildcard(textAreaBuffer_DepartZone4);
 			}
 			textArea_val_temp_dep_zone_4.invalidate();
 
@@ -4041,12 +4125,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_ret_zone_4.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_RetourZone4, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"C");
+					textArea_val_temp_ret_zone_4.setWildcard(textAreaBuffer_RetourZone4);
 				}
 			}
 			else
 			{
-				textArea_val_temp_ret_zone_4.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_RetourZone4, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"C");
+				textArea_val_temp_ret_zone_4.setWildcard(textAreaBuffer_RetourZone4);
 			}
 			textArea_val_temp_ret_zone_4.invalidate();
 
@@ -4247,12 +4343,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_dep_zone_5.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_DepartZone5, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"C");
+					textArea_val_temp_dep_zone_5.setWildcard(textAreaBuffer_DepartZone5);
 				}
 			}
 			else
 			{
-				textArea_val_temp_dep_zone_5.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_DepartZone5, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"C");
+				textArea_val_temp_dep_zone_5.setWildcard(textAreaBuffer_DepartZone5);
 			}
 			textArea_val_temp_dep_zone_5.invalidate();
 
@@ -4270,12 +4378,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_ret_zone_5.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_RetourZone5, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"C");
+					textArea_val_temp_ret_zone_5.setWildcard(textAreaBuffer_RetourZone5);
 				}
 			}
 			else
 			{
-				textArea_val_temp_ret_zone_5.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_RetourZone5, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"C");
+				textArea_val_temp_ret_zone_5.setWildcard(textAreaBuffer_RetourZone5);
 			}
 			textArea_val_temp_ret_zone_5.invalidate();
 
@@ -4476,12 +4596,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_dep_zone_6.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_DepartZone6, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"C");
+					textArea_val_temp_dep_zone_6.setWildcard(textAreaBuffer_DepartZone6);
 				}
 			}
 			else
 			{
-				textArea_val_temp_dep_zone_6.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_DepartZone6, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"C");
+				textArea_val_temp_dep_zone_6.setWildcard(textAreaBuffer_DepartZone6);
 			}
 			textArea_val_temp_dep_zone_6.invalidate();
 
@@ -4499,12 +4631,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_ret_zone_6.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_RetourZone6, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"C");
+					textArea_val_temp_ret_zone_6.setWildcard(textAreaBuffer_RetourZone6);
 				}
 			}
 			else
 			{
-				textArea_val_temp_ret_zone_6.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_RetourZone6, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"C");
+				textArea_val_temp_ret_zone_6.setWildcard(textAreaBuffer_RetourZone6);
 			}
 			textArea_val_temp_ret_zone_6.invalidate();
 
@@ -4705,12 +4849,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_dep_zone_7.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_DepartZone7, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"C");
+					textArea_val_temp_dep_zone_7.setWildcard(textAreaBuffer_DepartZone7);
 				}
 			}
 			else
 			{
-				textArea_val_temp_dep_zone_7.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_DepartZone7, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"C");
+				textArea_val_temp_dep_zone_7.setWildcard(textAreaBuffer_DepartZone7);
 			}
 			textArea_val_temp_dep_zone_7.invalidate();
 
@@ -4728,12 +4884,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_ret_zone_7.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_RetourZone7, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"C");
+					textArea_val_temp_ret_zone_7.setWildcard(textAreaBuffer_RetourZone7);
 				}
 			}
 			else
 			{
-				textArea_val_temp_ret_zone_7.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_RetourZone7, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"C");
+				textArea_val_temp_ret_zone_7.setWildcard(textAreaBuffer_RetourZone7);
 			}
 			textArea_val_temp_ret_zone_7.invalidate();
 
@@ -4934,12 +5102,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_dep_zone_8.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_DepartZone8, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"C");
+					textArea_val_temp_dep_zone_8.setWildcard(textAreaBuffer_DepartZone8);
 				}
 			}
 			else
 			{
-				textArea_val_temp_dep_zone_8.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_DepartZone8, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"C");
+				textArea_val_temp_dep_zone_8.setWildcard(textAreaBuffer_DepartZone8);
 			}
 			textArea_val_temp_dep_zone_8.invalidate();
 
@@ -4957,12 +5137,24 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				}
 				else
 				{
-					textArea_val_temp_ret_zone_8.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+					Unicode::snprintf(textAreaBuffer_RetourZone8, 2, "(");
+					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 3,") ");
+					Unicode::snprintfFloat(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"%s", degre);
+					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"C");
+					textArea_val_temp_ret_zone_8.setWildcard(textAreaBuffer_RetourZone8);
 				}
 			}
 			else
 			{
-				textArea_val_temp_ret_zone_8.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT));
+				Unicode::snprintf(textAreaBuffer_RetourZone8, 2, "(");
+				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
+				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 3,") ");
+				Unicode::snprintfFloat(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"%s", degre);
+				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"C");
+				textArea_val_temp_ret_zone_8.setWildcard(textAreaBuffer_RetourZone8);
 			}
 			textArea_val_temp_ret_zone_8.invalidate();
 
@@ -5326,7 +5518,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				textArea_circ_groupe_b_on_off_val.setVisible(true);
 				textArea_circ_groupe_b_on_off_val.invalidate();
 			}
-			else if(sConfig_IHM.sParam_Zx[9].NumCarteMZ != 3 && sConfig_IHM.sParam_Zx[9].type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
+			else if(sConfig_IHM.sParam_Zx[9].NumCarteMZ == 3 && sConfig_IHM.sParam_Zx[9].type_emetteur.plan_rad_vent.bTypeCirculateur == TYPE_GRUNDFOS)
 			{
 				Unicode::snprintf(textAreaBuffer_CirculateurGroupeB, 4, "%d", sStatut_Zx->u8ConsigneCirculateur);
 				Unicode::snprintf(&textAreaBuffer_CirculateurGroupeB[Unicode::strlen(textAreaBuffer_CirculateurGroupeB)], 2,"%");
@@ -5336,7 +5528,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			}
 			else
 			{
-				if (sStatut_Zx->u8ConsigneCirculateur == 1)
+				if (sStatut_Zx->u8ConsigneCirculateur != 0)
 				{
 					textArea_circ_groupe_b_on_off_val.setTypedText(touchgfx::TypedText(T_TEXT_VAR_SYS_ON_DROIT_DEFAUT));
 				}

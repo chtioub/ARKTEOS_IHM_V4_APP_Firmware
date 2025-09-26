@@ -91,6 +91,7 @@ void Installation_ecs_avancesView::update_temps_rotation_vanne()
 	Unicode::snprintf(textAreaBuffer_TempsV3V, 13, "%d min %02d sec", Time_Bascul_V3V_ECS / 60, Time_Bascul_V3V_ECS % 60);
 	textArea_valeur_temps_vanne_ecs.setWildcard(textAreaBuffer_TempsV3V);
 	textArea_valeur_temps_vanne_ecs.invalidate();
+	sParam_ECS_temp.Time_Bascul_V3V_ECS = Time_Bascul_V3V_ECS;
 }
 
 void Installation_ecs_avancesView::update_type_appoint()
@@ -211,6 +212,11 @@ void Installation_ecs_avancesView::bouton_bouclage_ecs()
 	toggleButton_bouclage_ecs.invalidate();
 	textArea_on_off_bouclage_ecs.setWildcard(textAreaBuffer_BouclageECS);
 	textArea_on_off_bouclage_ecs.invalidate();
+}
+
+void Installation_ecs_avancesView::bouton_retour()
+{
+	sParam_ECS_temp.Time_Bascul_V3V_ECS = sConfig_IHM.sParam_ECS.Time_Bascul_V3V_ECS;
 }
 
 void Installation_ecs_avancesView::bouton_valider()

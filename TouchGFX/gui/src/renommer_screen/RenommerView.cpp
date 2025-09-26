@@ -13,7 +13,7 @@ RenommerView::RenommerView()
 	changeStatutPAC(&sStatut_PAC);
 	changeStatutEther(&sCycEther);
 	container.setXY(u8PositionX, u8PositionY);
-	u8IndexCurseur = 9;
+	//u8IndexCurseur = 9;
 
 	//Utilisé que dans le cas du CodeL Logo
 	Unicode::snprintf(textAreaBuffer_MessTitre, 40, touchgfx::TypedText(T_TEXT_MESSAGE_ATTENTION_TITRE).getText());
@@ -99,12 +99,15 @@ RenommerView::RenommerView()
 	}
 	else
 	{
-		for (int i = 0; i < u8NbMaxChar; i++)
-		{
-			u8TexteTemp[i] = ' ';
-		}
+//		for (int i = 0; i < u8NbMaxChar; i++)
+//		{
+//			u8TexteTemp[i] = ' ';
+//		}
 		u8IndexCurseur = 0;
-		affichageTexte();
+		Unicode::snprintf(textAreaBuffer_Texte, 2, "");
+		textArea_value.setWildcard(textAreaBuffer_Texte);
+		textArea_value.invalidate();
+		//affichageTexte();
 	}
 
 
@@ -873,8 +876,8 @@ void RenommerView::affichageTexte()
 			textAreaBuffer_Logo_tmp[i] =  u8TexteTemp[i];
 		}
 	}
-	textAreaBuffer_Nom_tmp[u8NbMaxChar] = 0;
-	textAreaBuffer_Logo_tmp[u8NbMaxChar] = 0;
+//	textAreaBuffer_Nom_tmp[u8NbMaxChar] = 0;
+//	textAreaBuffer_Logo_tmp[u8NbMaxChar] = 0;
 	if (eTypeClavierAlpha == RENOMMER_ZONE_GROUPE)
 	{
 		Unicode::strncpy(textAreaBuffer_Texte, textAreaBuffer_Nom_tmp, u8NbMaxChar + 1 );

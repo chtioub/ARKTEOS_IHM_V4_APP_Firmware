@@ -365,11 +365,11 @@ void AccueilView::Timer_500ms()
 
 void AccueilView::changeLogo(bool bVisible)
 {
-////	Image_qualiclim.setVisible(false);
+//	Image_qualiclim.setVisible(false);
 ////	Image_cfd.setVisible(false);
 ////	Image_ces.setVisible(false);
 ////	Image_enelia.setVisible(false);
-////	Image_bltec.setVisible(false);
+//	Image_bltec.setVisible(false);
 ////	Image_variation.setVisible(false);
 ////	Image_gourdon.setVisible(false);
 ////	Image_etienne.setVisible(false);
@@ -377,7 +377,7 @@ void AccueilView::changeLogo(bool bVisible)
 //	Image_arkteos.setVisible(false);
 //
 //
-//	//Bltec x:225	y:24
+//	Bltec x:225	y:24
 //	//CES 	x:220	y:-6
 //	//cfd	x:232	y:17
 //	//enelia x:244	y:10
@@ -396,7 +396,7 @@ void AccueilView::changeLogo(bool bVisible)
 ////				//Image_cfd.setVisible(true);
 //////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
 //////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
-//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
+//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
 //////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
 //////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
 //////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
@@ -419,14 +419,14 @@ void AccueilView::changeLogo(bool bVisible)
 //	Image_arkteos.invalidate();
 
 
-	//	Image_qualiclim.setVisible(false);
-	//	Image_cfd.setVisible(false);
-	//	Image_ces.setVisible(false);
-	//	Image_enelia.setVisible(false);
-	//	Image_bltec.setVisible(false);
-	//	Image_variation.setVisible(false);
-	//	Image_gourdon.setVisible(false);
-	//	Image_etienne.setVisible(false);
+		Image_qualiclim.setVisible(false);
+		Image_cfd.setVisible(false);
+		Image_ces.setVisible(false);
+		Image_enelia.setVisible(false);
+		Image_bltec.setVisible(false);
+		Image_variation.setVisible(false);
+		Image_gourdon.setVisible(false);
+		Image_etienne.setVisible(false);
 		Image_alppac.setVisible(false);
 		Image_arkteos.setVisible(false);
 
@@ -443,29 +443,28 @@ void AccueilView::changeLogo(bool bVisible)
 
 		if(bVisible)
 		{
-	//		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) 		Image_qualiclim.setVisible(true);
-	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) 		Image_cfd.setVisible(true);
-	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
-	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
-	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
-	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
-	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
-	//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
-	//		else
 			if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
-			else
-				Image_arkteos.setVisible(true);
+			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) Image_qualiclim.setVisible(true);
+			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
+			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) Image_cfd.setVisible(true);
+			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
+			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
+			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
+			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
+			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
+			else Image_arkteos.setVisible(true);
 		}
-	//	Image_qualiclim.invalidate();
-	//	Image_cfd.invalidate();
-	//	Image_ces.invalidate();
-	//	Image_enelia.invalidate();
-	//	Image_bltec.invalidate();
-	//	Image_variation.invalidate();
-	//	Image_gourdon.invalidate();
-	//	Image_etienne.invalidate();
+		Image_qualiclim.invalidate();
+		Image_cfd.invalidate();
+		Image_ces.invalidate();
+		Image_enelia.invalidate();
+		Image_bltec.invalidate();
+		Image_variation.invalidate();
+		Image_gourdon.invalidate();
+		Image_etienne.invalidate();
 		Image_alppac.invalidate();
 		Image_arkteos.invalidate();
+		scalableImageLogo.invalidate();
 }
 
 void AccueilView::bouton_marche_arret()

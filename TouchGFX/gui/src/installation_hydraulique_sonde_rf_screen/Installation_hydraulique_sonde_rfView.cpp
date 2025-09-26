@@ -104,6 +104,18 @@ void Installation_hydraulique_sonde_rfView::bouton_retour()
 //	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne = bVerouillageConsigne;
 //	sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde = bArretZoneDefautSonde;
 	//
+	//Affectation variables temporaires suivant que l'on est en MZ ou STD
+	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne = sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne;
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde = sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde;
+	}
+	else
+	{
+		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne;
+		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = sConfig_IHM.sParam_Zx[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde;
+	}
+
 	if(sConfig_Hydrau_temp.u8TypeRegul <= REGUL_BAL_TAMPON_2_ZONES)
 	{
 		application().gotoInstallation_hydraulique_config_zoneScreenNoTransition();
@@ -147,8 +159,22 @@ void Installation_hydraulique_sonde_rfView::bouton_verrouillage_consigne()
 	if(toggleButton_verrouillage_consigne.getState())
 	{
 		textArea_on_off_verrouillage_consigne.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		bVerouillageConsigne = true;
+
 	}
-	else textArea_on_off_verrouillage_consigne.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+	else
+	{
+		textArea_on_off_verrouillage_consigne.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+		bVerouillageConsigne = false;
+	}
+	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bVerouillageConsigne = bVerouillageConsigne;
+	}
+	else
+	{
+		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bVerouillageConsigne = bVerouillageConsigne;
+	}
 	textArea_on_off_verrouillage_consigne.invalidate();
 }
 
@@ -157,8 +183,21 @@ void Installation_hydraulique_sonde_rfView::bouton_arret_defaut()
 	if(toggleButton_arret_defaut.getState())
 	{
 		textArea_on_off_arret_defaut.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		bArretZoneDefautSonde = true;
 	}
-	else textArea_on_off_arret_defaut.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+	else
+	{
+		textArea_on_off_arret_defaut.setTypedText(touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT));
+		bArretZoneDefautSonde = false;
+	}
+	if (sConfig_Hydrau_temp.u8TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE)
+	{
+		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.zone.bArretZoneDefautSonde = bArretZoneDefautSonde;
+	}
+	else
+	{
+		sConfig_Hydrau_temp.sParamZx.type_zone.zone.bArretZoneDefautSonde = bArretZoneDefautSonde;
+	}
 	textArea_on_off_arret_defaut.invalidate();
 }
 

@@ -183,20 +183,104 @@
                         "X": 285,
                         "Y": 51,
                         "Width": 382,
-                        "Height": 132,
+                        "Height": 124,
                         "Visible": false,
                         "Filename": "Logo_Arkteos_L381_H131.png",
                         "ScalingAlgorithm": "Nearest-neighbor"
                       },
                       {
                         "Type": "Image",
-                        "Name": "Image_alppac",
-                        "X": 233,
-                        "Y": 40,
-                        "Width": 485,
-                        "Height": 142,
+                        "Name": "Image_cfd",
+                        "X": 295,
+                        "Width": 382,
+                        "Height": 158,
                         "Visible": false,
-                        "RelativeFilename": "Logo_Alpac_L485_H141.png"
+                        "RelativeFilename": "Logo_CFD_L382_H158.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_ces",
+                        "X": 285,
+                        "Width": 383,
+                        "Height": 164,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_CES_L382_H163.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_enelia",
+                        "X": 300,
+                        "Width": 383,
+                        "Height": 180,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Enelia_L382_H179.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_variation",
+                        "X": 285,
+                        "Width": 382,
+                        "Height": 151,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Variation_L382_H150.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_gourdon",
+                        "X": 285,
+                        "Width": 382,
+                        "Height": 163,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Gourdon_L382_H163.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_etienne",
+                        "X": 295,
+                        "Width": 383,
+                        "Height": 168,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Etienne_Energie_L382_H167.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_alppac",
+                        "X": 285,
+                        "Y": 40,
+                        "Width": 383,
+                        "Height": 112,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Alpac_L382_H111.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_bltec",
+                        "X": 285,
+                        "Y": 10,
+                        "Width": 382,
+                        "Height": 144,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Bltec_L382_H143.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_qualiclim",
+                        "X": 310,
+                        "Y": -50,
+                        "Width": 383,
+                        "Height": 241,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Qualiclim_L382_H240.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "_Image_arkteos",
+                        "X": 285,
+                        "Y": 51,
+                        "Width": 382,
+                        "Height": 132,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Arkteos_L381_H131.png"
                       },
                       {
                         "Type": "Image",
@@ -204,8 +288,9 @@
                         "X": 285,
                         "Y": 51,
                         "Width": 382,
-                        "Height": 132,
-                        "RelativeFilename": "Logo_Arkteos_L381_H131.png"
+                        "Height": 124,
+                        "Visible": false,
+                        "RelativeFilename": "Logo_Arkteos_2024_L381_H131.png"
                       },
                       {
                         "Type": "Container",
@@ -52367,6 +52452,15 @@
                   },
                   {
                     "Type": "Image",
+                    "Name": "image1",
+                    "X": 100,
+                    "Y": 10,
+                    "Width": 318,
+                    "Height": 185,
+                    "RelativeFilename": "Bloc_Compresseur1_Reversible_Froid_L318xH185.png"
+                  },
+                  {
+                    "Type": "Image",
                     "Name": "Image_condenseur_chauffage",
                     "X": 598,
                     "Y": 105,
@@ -68653,8 +68747,8 @@
           {
             "InteractionName": "BTNClicked_retour",
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "button_retour"
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "BTNClicked_retour_fct"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -68749,6 +68843,18 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_bouclage_ecs"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_retour_fct",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_retour"
             }
           }
         ]
@@ -80729,12 +80835,15 @@
                         "Y": 15,
                         "Width": 53,
                         "Height": 22,
-                        "TextId": "text_off_centre_defaut",
+                        "TextId": "text_off_resistance_terminaisaon",
                         "TextRotation": "0",
                         "Color": {
                           "Red": 255,
                           "Green": 255,
                           "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_off_centre_defaut"
                         }
                       }
                     ]

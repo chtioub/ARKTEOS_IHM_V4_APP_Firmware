@@ -49,15 +49,15 @@ Installation_hydraulique_config_zoneView::Installation_hydraulique_config_zoneVi
 				button_gauche_type_emetteur.setVisible(false);
 			}
 		}
-		else if(sConfig_Hydrau_temp.u8NumZone == 0)
-		{
-			if (sConfig_IHM.sParam_Zx[1].TypeEmmetteur == RADIATEUR)
-			{
-				sConfig_Hydrau_temp.sParamZx.TypeEmmetteur = RADIATEUR;
-				button_droite_type_emetteur.setVisible(false);
-				button_gauche_type_emetteur.setVisible(false);
-			}
-		}
+//		else if(sConfig_Hydrau_temp.u8NumZone == 0)
+//		{
+//			if (sConfig_IHM.sParam_Zx[1].TypeEmmetteur == RADIATEUR)
+//			{
+//				sConfig_Hydrau_temp.sParamZx.TypeEmmetteur = RADIATEUR;
+//				button_droite_type_emetteur.setVisible(false);
+//				button_gauche_type_emetteur.setVisible(false);
+//			}
+//		}
 	}
 	else buttonWithLabel_gestion_circulateur.setVisible(true);
 	//

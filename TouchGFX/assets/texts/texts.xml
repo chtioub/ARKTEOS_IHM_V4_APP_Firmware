@@ -4692,6 +4692,13 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="text_off_resistance_terminaisaon" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_OEC3" Alignment="Center" TypographyId="Large">
         <Translation Language="FR">:</Translation>
         <Translation Language="GB"></Translation>
@@ -11679,7 +11686,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_texte_shunt_tempo_centre_defaut" Alignment="Center" TypographyId="Default">
-        <Translation Language="FR">Attention : permet de réduie les temporisations, à n'utiliser que pour des tests.&#10;Enlever la fonction après vos tests.</Translation>
+        <Translation Language="FR">Attention : permet de réduire les temporisations, à n'utiliser que pour des tests.&#10;Enlever la fonction après vos tests.</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>

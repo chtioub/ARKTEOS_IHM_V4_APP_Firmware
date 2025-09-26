@@ -30,16 +30,19 @@ Installation_hydraulique_sonde_modbusView::Installation_hydraulique_sonde_modbus
 		textArea_on_off_arret_defaut.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
 	}
 	//
-	if(sConfig_IHM.sParam_PAC.bConfigThermostats120R)
-	{
-		image_on_off_resistance_terminaison.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
-		textArea_on_off_resistance_terminaison.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
-	}
+
 	// Numéro de sonde
 	u8NumSonde = sConfig_Hydrau_temp.sParamZx.type_zone.zone.NumSonde;
 	Unicode::snprintf(textAreaBuffer_num_sonde, 2, "%d", u8NumSonde + 1);
 	textArea_valeur_num_sonde.setWildcard(textAreaBuffer_num_sonde);
 	textArea_adresse.setWildcard(textAreaBuffer_num_sonde);
+
+	if(sConfig_IHM.sParam_PAC.bConfigThermostats120R)
+	{
+		image_on_off_resistance_terminaison.setBitmap(touchgfx::Bitmap(BITMAP_BOUTON_ON_OFF_UNCLICKED_L53XH53_ID));
+//		textArea_on_off_resistance_terminaison.setTypedText(touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT));
+		textArea_on_off_resistance_terminaison.setWildcard(textAreaBuffer_num_sonde);
+	}
 
 	bAttentionClicked = false;
 	Unicode::snprintf(textAreaBuffer_MessTitre, 40, touchgfx::TypedText(T_TEXT_MESSAGE_ATTENTION_TITRE).getText());

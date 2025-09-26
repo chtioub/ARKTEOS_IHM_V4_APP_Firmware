@@ -4,6 +4,7 @@
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
+
 using namespace touchgfx;
 
 class InstallationView;

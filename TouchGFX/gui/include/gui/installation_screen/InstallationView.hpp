@@ -3,6 +3,7 @@
 
 #include <gui_generated/installation_screen/InstallationViewBase.hpp>
 #include <gui/installation_screen/InstallationPresenter.hpp>
+#include <touchgfx/events/GestureEvent.hpp>
 
 class InstallationView : public InstallationViewBase
 {
@@ -27,6 +28,9 @@ public:
     virtual void changeErreur(uint16_t u16Erreur);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
     virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+
+    virtual void handleGestureEvent(const touchgfx::GestureEvent& evt) override;
+
 protected:
     bool bConnexionDistance;
     uint16_t u16ErreurAffichee;
