@@ -20,10 +20,8 @@ public:
     void bouton_installation();
     void bouton_usine();
     void changeLogo(bool bVisible);
-    void change_to_config_screen();
-    void change_to_accueil_screen();
-    void bouton_oui_veille();
-    void bouton_non_veille();
+//    void bouton_oui_veille();
+//    void bouton_non_veille();
     void bouton_ecs();
 
 //    void update_titre_page();
@@ -39,6 +37,8 @@ public:
     virtual void changeStatutPiscine(S_STATUT_PISCINE *sStatut_Piscine);
     virtual void changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo);
     virtual void changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt);
+
+    virtual void handleGestureEvent(const touchgfx::GestureEvent& evt) override;
 
 protected:
     bool bConnexionDistance, bMarche, bDegivrage;

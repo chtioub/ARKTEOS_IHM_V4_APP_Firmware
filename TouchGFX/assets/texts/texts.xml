@@ -2140,7 +2140,7 @@
         <Translation Language="DE">New Text</Translation>
       </Text>
       <Text Id="text_err_506_gauche_defaut" Alignment="Left" TypographyId="Default">
-        <Translation Language="FR">Erreur : Sonde de température de refoulement compresseur 1 (THP_1)</Translation>
+        <Translation Language="FR">Erreur : Sonde de température de refoulement compresseur 1 (THP_1) test pour saut de ligne des défauts longs</Translation>
         <Translation Language="GB">New Text</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
@@ -10635,8 +10635,8 @@
         <Translation Language="NL">text_part_volume_zone1</Translation>
         <Translation Language="DE">text_part_volume_zone1</Translation>
       </Text>
-      <Text Id="text_hz_comp_droite" Alignment="Right" TypographyId="Default">
-        <Translation Language="FR">&lt;Value&gt;Hz</Translation>
+      <Text Id="text_hz_comp_droite" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt;Hz</Translation>
         <Translation Language="PT">&lt;Value&gt;Hz</Translation>
         <Translation Language="NL">&lt;Value&gt;Hz</Translation>

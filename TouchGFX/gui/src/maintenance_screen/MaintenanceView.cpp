@@ -45,8 +45,7 @@ void MaintenanceView::bouton_retour()
 	}
 	else
 	{
-		bPageAccueil = false;
-		application().gotoAccueilScreenNoTransition();
+		application().gotoConfigurationScreenNoTransition();
 //		application().gotoConfigurationScreenNoTransition();
 	}
 }

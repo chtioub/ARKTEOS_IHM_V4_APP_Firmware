@@ -43,24 +43,6 @@ void InstallationView::bouton_mem_config()
 	}
 }
 
-
-void InstallationView::handleGestureEvent(const touchgfx::GestureEvent& evt)
-{
-    if (evt.getType() == touchgfx::GestureEvent::SWIPE_HORIZONTAL)
-    {
-        if (evt.getVelocity() > 0)
-        {
-            // Swipe de gauche vers droite
-        	application().gotoInstallation_piscineScreenNoTransition();
-        }
-        else
-        {
-            // Swipe de droite vers gauche
-        	application().gotoInstallation_ecsScreenNoTransition();
-        }
-    }
-}
-
 void InstallationView::bouton_mem_config_piscine()
 {
 	sConfig_Piscine_temp.bPiscine = sConfig_IHM.sOption_PAC.Piscine;
@@ -86,9 +68,7 @@ void InstallationView::bouton_retour()
 	}
 	else
 	{
-		bPageAccueil = false;
-		application().gotoAccueilScreenNoTransition();
-//		application().gotoConfigurationScreenNoTransition();
+		application().gotoConfigurationScreenNoTransition();
 	}
 }
 

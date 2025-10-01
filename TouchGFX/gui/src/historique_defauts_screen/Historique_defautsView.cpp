@@ -75,9 +75,10 @@ Historique_defautsView::Historique_defautsView()
 //			scrollableContainer.add(textArea_def[i]);
 
 
-			scrollableContainerLabelDef[i].setPosition(95,22 + 74 * i,600,27);
+			//scrollableContainerLabelDef[i].setPosition(95,22 + 74 * i,600,27);
 
-			textArea_def[i].setPosition(0, 0, 800, 23);
+			//textArea_def[i].setPosition(0, 0, 800, 23);
+			textArea_def[i].setPosition(95, 22 + 74 * i, 600, 27);
 			textArea_def[i].setColor(BLANC);
 			textArea_def[i].setLinespacing(0);
 
@@ -87,10 +88,11 @@ Historique_defautsView::Historique_defautsView()
 			}
 			else textArea_def[i].setTypedText(touchgfx::TypedText(T_TEXT_ERR_INCONNUE_GAUCHE_DEFAUT));
 
-			scrollableContainerLabelDef[i].add(textArea_def[i]);
-			scrollableContainerLabelDef[i].invalidate();
-
-			scrollableContainer.add(scrollableContainerLabelDef[i]);
+//			scrollableContainerLabelDef[i].add(textArea_def[i]);
+//			scrollableContainerLabelDef[i].invalidate();
+//
+//			scrollableContainer.add(scrollableContainerLabelDef[i]);
+			scrollableContainer.add(textArea_def[i]);
 		}
 	}
 	scrollableContainer.invalidate();

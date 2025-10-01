@@ -16,7 +16,6 @@ public:
     void bouton_raz_code_installation();
     void bouton_raz_config_usine();
     void bouton_derog_pression_bp();
-    void bouton_retour();
     void bouton_param_avances();
 
     virtual void changeDate(S_DATE *sDate);

@@ -1300,6 +1300,18 @@
     <Filter Include="Source Files\generated\gui_generated\usine_calibrage_offset_screen">
       <UniqueIdentifier>5F867748-9EE8-74AF-898A-3BB5EEA8FD2D</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\configuration_screen">
+      <UniqueIdentifier>25450C04-C08C-388A-A81B-CC1E366004A8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\configuration_screen">
+      <UniqueIdentifier>6D16EDBA-FC43-B19F-7F74-F867F1F648F8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\configuration_screen">
+      <UniqueIdentifier>D0B1CE08-5F2A-A3E1-124E-627C1139DC1D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\configuration_screen">
+      <UniqueIdentifier>095D5181-7D0C-85B6-2F83-5D913A3FF7B0</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -2204,6 +2216,18 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\usine_calibrage_offset_screen\Usine_calibrage_offsetViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\usine_calibrage_offset_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp">
+      <Filter>Source Files\gui\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp">
+      <Filter>Source Files\gui\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\configuration_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\DualSlider.cpp">
+      <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3519,6 +3543,18 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_calibrage_offset_screen\Usine_calibrage_offsetViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\usine_calibrage_offset_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp">
+      <Filter>Header Files\gui\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp">
+      <Filter>Header Files\gui\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\configuration_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\DualSlider.hpp">
+      <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -312,6 +312,10 @@
     <ClCompile Include="..\..\gui\src\usine_calibrage_offset_screen\Usine_calibrage_offsetPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\usine_calibrage_offset_screen\Usine_calibrage_offsetView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\usine_calibrage_offset_screen\Usine_calibrage_offsetViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\DualSlider.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -753,6 +757,10 @@
     <ClInclude Include="..\..\gui\include\gui\usine_calibrage_offset_screen\Usine_calibrage_offsetPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\usine_calibrage_offset_screen\Usine_calibrage_offsetView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\usine_calibrage_offset_screen\Usine_calibrage_offsetViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\DualSlider.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

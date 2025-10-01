@@ -57,10 +57,10 @@ void Barre_titre::sansAccueil()
 	button_accueil.invalidate();
 }
 
-void Barre_titre::bouton_accueil()
-{
-	bPageAccueil = true;
-}
+//void Barre_titre::bouton_accueil()
+//{
+//	bPageAccueil = true;
+//}
 
 void Barre_titre::erreur(uint16_t u16Erreur)
 {

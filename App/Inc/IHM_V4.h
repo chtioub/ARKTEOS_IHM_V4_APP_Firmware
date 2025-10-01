@@ -237,7 +237,7 @@ extern uint8_t u8Prog[7][24], u8JourProg;
 extern uint8_t u8ZoneSelect;
 extern uint8_t u8PositionX, u8PositionY;
 extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp;
-extern bool bPageAccueil;
+//extern bool bPageAccueil;
 extern S_HISTO_ERR sHisto_Erreur;
 extern uint16_t u16NumAction;
 extern uint32_t u32ValAction, eAnciennePage, u32Erreurs[1000],u32ErreursINV[1000], u32ErreursINV1[240],u32ErreursINV2[100];

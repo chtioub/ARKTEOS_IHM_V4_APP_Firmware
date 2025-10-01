@@ -144,8 +144,8 @@ void Code_numeriqueView::bouton_retour()
 		case CODE_ACCES_USINE:
 		case CODE_ACCES_MAINT:
 //			application().gotoConfigurationScreenNoTransition();
-			bPageAccueil = false;
-			application().gotoAccueilScreenNoTransition();
+//			bPageAccueil = false;
+			application().gotoConfigurationScreenNoTransition();
 			break;
 		case MODIF_CODE_INSTALL:
 			application().gotoInstallationScreenNoTransition();

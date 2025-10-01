@@ -41,11 +41,6 @@ void EnergiesView::tearDownScreen()
     EnergiesViewBase::tearDownScreen();
 }
 
-void EnergiesView::bouton_retour()
-{
-
-	bPageAccueil = false;
-}
 
 void EnergiesView::bouton_histo_conso()
 {

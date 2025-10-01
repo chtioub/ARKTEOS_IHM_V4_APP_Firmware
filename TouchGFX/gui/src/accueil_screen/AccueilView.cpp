@@ -5,33 +5,33 @@ AccueilView::AccueilView()//:
         //swipeCallback(this, &AccueilView::swipeCallbackHandler)
 {
 	//MAJ de la page en fonction de là d'ou on vient
-	if (bPageAccueil == true)
-	{
-		swipeContainerMain.setSelectedPage(0);
+//	if (bPageAccueil == true)
+//	{
+//		swipeContainerMain.setSelectedPage(0);
 //		swipeContainerMain.invalidate();
 		barre_titre.titre(textAreaBuffer_Titre_Date);
 //		barre_titre.invalidate();
-		circle_point_page_config.setVisible(false);
-		textArea_config_page.setVisible(false);
+//		circle_point_page_config.setVisible(false);
+//		textArea_config_page.setVisible(false);
 		circle_point_page_accueil.setVisible(true);
 		textArea_accueil_page.setVisible(true);
-	}
-	else
-	{
-		swipeContainerMain.setSelectedPage(1);
-//		swipeContainerMain.invalidate();
-		Unicode::snprintf(textAreaBuffer_Titre_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_CENTRE_DEFAUT).getText());
-		barre_titre.titre(textAreaBuffer_Titre_Titre);
-//		barre_titre.invalidate();
-		circle_point_page_accueil.setVisible(false);
-		textArea_accueil_page.setVisible(false);
-		circle_point_page_config.setVisible(true);
-		textArea_config_page.setVisible(true);
-	}
-	swipeContainerMain.invalidate();
+//	}
+//	else
+//	{
+//		swipeContainerMain.setSelectedPage(1);
+////		swipeContainerMain.invalidate();
+//		Unicode::snprintf(textAreaBuffer_Titre_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_CENTRE_DEFAUT).getText());
+//		barre_titre.titre(textAreaBuffer_Titre_Titre);
+////		barre_titre.invalidate();
+//		circle_point_page_accueil.setVisible(false);
+//		textArea_accueil_page.setVisible(false);
+//		circle_point_page_config.setVisible(true);
+//		textArea_config_page.setVisible(true);
+//	}
+//	swipeContainerMain.invalidate();
 	barre_titre.invalidate();
-	circle_point_page_config.invalidate();
-	textArea_config_page.invalidate();
+//	circle_point_page_config.invalidate();
+//	textArea_config_page.invalidate();
 	circle_point_page_accueil.invalidate();
 	textArea_accueil_page.invalidate();
 
@@ -96,34 +96,34 @@ AccueilView::AccueilView()//:
 	}
 	container.setXY(u8PositionX, u8PositionY);
 
-	if (oui_veille == 1)
-	{
-		toggleButton_oui_oui_non_veille.forceState(false);
-		toggleButton_oui_oui_non_veille.setTouchable(true);
-		toggleButton_non_oui_non_veille.forceState(true);
-		toggleButton_non_oui_non_veille.setTouchable(false);
-	}
-	else
-	{
-		toggleButton_oui_oui_non_veille.forceState(true);
-		toggleButton_oui_oui_non_veille.setTouchable(false);
-		toggleButton_non_oui_non_veille.forceState(false);
-		toggleButton_non_oui_non_veille.setTouchable(true);
-	}
-	toggleButton_oui_oui_non_veille.invalidate();
-	toggleButton_non_oui_non_veille.invalidate();
+//	if (oui_veille == 1)
+//	{
+//		toggleButton_oui_oui_non_veille.forceState(false);
+//		toggleButton_oui_oui_non_veille.setTouchable(true);
+//		toggleButton_non_oui_non_veille.forceState(true);
+//		toggleButton_non_oui_non_veille.setTouchable(false);
+//	}
+//	else
+//	{
+//		toggleButton_oui_oui_non_veille.forceState(true);
+//		toggleButton_oui_oui_non_veille.setTouchable(false);
+//		toggleButton_non_oui_non_veille.forceState(false);
+//		toggleButton_non_oui_non_veille.setTouchable(true);
+//	}
+//	toggleButton_oui_oui_non_veille.invalidate();
+//	toggleButton_non_oui_non_veille.invalidate();
 
-	//Container Vacances
-	if ((sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_MULTI_ZONE && sConfig_IHM.sOption_PAC.sZone.u8val != 0)
-			|| sConfig_IHM.sOption_PAC.ECS != 0 || sConfig_IHM.sOption_PAC.Piscine != 0)
-	{
-		container_vacances.setVisible(true);
-	}
-	else
-	{
-		container_vacances.setVisible(false);
-	}
-	container_vacances.invalidate();
+//	//Container Vacances
+//	if ((sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_MULTI_ZONE && sConfig_IHM.sOption_PAC.sZone.u8val != 0)
+//			|| sConfig_IHM.sOption_PAC.ECS != 0 || sConfig_IHM.sOption_PAC.Piscine != 0)
+//	{
+//		container_vacances.setVisible(true);
+//	}
+//	else
+//	{
+//		container_vacances.setVisible(false);
+//	}
+//	container_vacances.invalidate();
 
 	//
 #ifndef SIMULATOR
@@ -153,56 +153,74 @@ void AccueilView::tearDownScreen()
 //		application().gotoConfigurationScreenSlideTransitionEast();
 //    }
 //}
+
+void AccueilView::handleGestureEvent(const touchgfx::GestureEvent& evt)
+{
+    if (evt.getType() == touchgfx::GestureEvent::SWIPE_HORIZONTAL)
+    {
+        if (evt.getVelocity() > 0)
+        {
+            // Swipe de gauche vers droite
+        	application().gotoConfigurationScreenNoTransition();
+        }
+        else
+        {
+            // Swipe de droite vers gauche
+        	application().gotoConfigurationScreenNoTransition();
+        }
+    }
+}
+
 void AccueilView::Timer_Swipe_Detection()
 {
-	if (swipeContainerMain.getSelectedPage() == 0)
-	{
-		barre_titre.titre(textAreaBuffer_Titre_Date);
-		circle_point_page_config.setVisible(false);
-		textArea_config_page.setVisible(false);
-		circle_point_page_accueil.setVisible(true);
-		textArea_accueil_page.setVisible(true);
-		bPageAccueil = true;
-	}
-	else
-	{
-		Unicode::snprintf(textAreaBuffer_Titre_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_CENTRE_DEFAUT).getText());
-		barre_titre.titre(textAreaBuffer_Titre_Titre);
-		circle_point_page_accueil.setVisible(false);
-		textArea_accueil_page.setVisible(false);
-		circle_point_page_config.setVisible(true);
-		textArea_config_page.setVisible(true);
-		bPageAccueil = false;
-	}
-	barre_titre.invalidate();
-	circle_point_page_config.invalidate();
-	textArea_config_page.invalidate();
-	circle_point_page_accueil.invalidate();
-	textArea_accueil_page.invalidate();
+////	if (swipeContainerMain.getSelectedPage() == 0)
+////	{
+//		barre_titre.titre(textAreaBuffer_Titre_Date);
+////		circle_point_page_config.setVisible(false);
+////		textArea_config_page.setVisible(false);
+//		circle_point_page_accueil.setVisible(true);
+//		textArea_accueil_page.setVisible(true);
+////		bPageAccueil = true;
+////	}
+////	else
+////	{
+////		Unicode::snprintf(textAreaBuffer_Titre_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_CENTRE_DEFAUT).getText());
+////		barre_titre.titre(textAreaBuffer_Titre_Titre);
+////		circle_point_page_accueil.setVisible(false);
+////		textArea_accueil_page.setVisible(false);
+////		circle_point_page_config.setVisible(true);
+////		textArea_config_page.setVisible(true);
+////		bPageAccueil = false;
+////	}
+//	barre_titre.invalidate();
+////	circle_point_page_config.invalidate();
+////	textArea_config_page.invalidate();
+//	circle_point_page_accueil.invalidate();
+//	textArea_accueil_page.invalidate();
 }
 
 
-void AccueilView::bouton_oui_veille()
-{
-	toggleButton_oui_oui_non_veille.forceState(true);
-	toggleButton_oui_oui_non_veille.setTouchable(false);
-	toggleButton_non_oui_non_veille.forceState(false);
-	toggleButton_non_oui_non_veille.setTouchable(true);
-	oui_veille = 0;
-	toggleButton_oui_oui_non_veille.invalidate();
-	toggleButton_non_oui_non_veille.invalidate();
-}
-
-void AccueilView::bouton_non_veille()
-{
-	toggleButton_oui_oui_non_veille.forceState(false);
-	toggleButton_oui_oui_non_veille.setTouchable(true);
-	toggleButton_non_oui_non_veille.forceState(true);
-	toggleButton_non_oui_non_veille.setTouchable(false);
-	oui_veille = 1;
-	toggleButton_oui_oui_non_veille.invalidate();
-	toggleButton_non_oui_non_veille.invalidate();
-}
+//void AccueilView::bouton_oui_veille()
+//{
+//	toggleButton_oui_oui_non_veille.forceState(true);
+//	toggleButton_oui_oui_non_veille.setTouchable(false);
+//	toggleButton_non_oui_non_veille.forceState(false);
+//	toggleButton_non_oui_non_veille.setTouchable(true);
+//	oui_veille = 0;
+//	toggleButton_oui_oui_non_veille.invalidate();
+//	toggleButton_non_oui_non_veille.invalidate();
+//}
+//
+//void AccueilView::bouton_non_veille()
+//{
+//	toggleButton_oui_oui_non_veille.forceState(false);
+//	toggleButton_oui_oui_non_veille.setTouchable(true);
+//	toggleButton_non_oui_non_veille.forceState(true);
+//	toggleButton_non_oui_non_veille.setTouchable(false);
+//	oui_veille = 1;
+//	toggleButton_oui_oui_non_veille.invalidate();
+//	toggleButton_non_oui_non_veille.invalidate();
+//}
 
 
 void AccueilView::Timer_500ms()
@@ -544,23 +562,7 @@ void AccueilView::bouton_usine()
 	application().gotoCode_numeriqueScreenNoTransition();
 }
 
-void AccueilView::change_to_config_screen()
-{
-	if (swipeContainerMain.getSelectedPage() == 0)
-	{
-		swipeContainerMain.setSelectedPage(1);
-	}
-	swipeContainerMain.invalidate();
-}
 
-void AccueilView::change_to_accueil_screen()
-{
-	if (swipeContainerMain.getSelectedPage() == 1)
-	{
-		swipeContainerMain.setSelectedPage(0);
-	}
-	swipeContainerMain.invalidate();
-}
 
 void AccueilView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
 {
@@ -1931,49 +1933,49 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 
 //	if(sConfig_IHM->sOption_PAC.TypeAppoint != sConfig_IHM_old.sOption_PAC.TypeAppoint || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sMode_ECS.bUserAppointECS != sConfig_IHM_old.sMode_ECS.bUserAppointECS))
 //	{
-		if(sConfig_IHM->sOption_PAC.TypeAppoint != NO_APPOINT || (sConfig_IHM->sOption_PAC.ECS == 1 && sConfig_IHM->sMode_ECS.bUserAppointECS == 1))
-		{
-			container_secours.setVisible(true);
-		}
-		else container_secours.setVisible(false);
-		container_secours.invalidate();
+//		if(sConfig_IHM->sOption_PAC.TypeAppoint != NO_APPOINT || (sConfig_IHM->sOption_PAC.ECS == 1 && sConfig_IHM->sMode_ECS.bUserAppointECS == 1))
+//		{
+//			container_secours.setVisible(true);
+//		}
+//		else container_secours.setVisible(false);
+//		container_secours.invalidate();
 //	}
 
 //	if((sConfig_IHM->sMode_PAC.bSecours != sConfig_IHM_old.sMode_PAC.bSecours) || (sConfig_IHM->sMode_ECS.bUserECSSecours != sConfig_IHM_old.sMode_ECS.bUserECSSecours))
 //	{
-		if(sConfig_IHM->sMode_PAC.bSecours == 1 || sConfig_IHM->sMode_ECS.bUserECSSecours == 1)
-		{
-			buttonWithIcon_secours_off.setVisible(false);
-			buttonWithIcon_secours_on.setVisible(true);
-		}
-		else
-		{
-			buttonWithIcon_secours_on.setVisible(false);
-			buttonWithIcon_secours_off.setVisible(true);
-		}
-		buttonWithIcon_secours_on.invalidate();
-		buttonWithIcon_secours_off.invalidate();
+//		if(sConfig_IHM->sMode_PAC.bSecours == 1 || sConfig_IHM->sMode_ECS.bUserECSSecours == 1)
+//		{
+//			buttonWithIcon_secours_off.setVisible(false);
+//			buttonWithIcon_secours_on.setVisible(true);
+//		}
+//		else
+//		{
+//			buttonWithIcon_secours_on.setVisible(false);
+//			buttonWithIcon_secours_off.setVisible(true);
+//		}
+//		buttonWithIcon_secours_on.invalidate();
+//		buttonWithIcon_secours_off.invalidate();
 //	}
 
-	if((sConfig_IHM->sParam_PAC.TypeRegul != sConfig_IHM_old.sParam_PAC.TypeRegul) || memcmp(&sConfig_IHM->sOption_PAC.sZone, &sConfig_IHM_old.sOption_PAC.sZone, sizeof(S_ZONE)) || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sOption_PAC.Piscine != sConfig_IHM_old.sOption_PAC.Piscine))
-	{
-		if((sConfig_IHM->sParam_PAC.TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE && memcmp(&sConfig_IHM->sOption_PAC.sZone, &sZone_tmp, sizeof(S_ZONE))) || sConfig_IHM->sOption_PAC.ECS || sConfig_IHM->sOption_PAC.Piscine)
-		{
-			container_vacances.setVisible(true);
-		}
-		else container_vacances.setVisible(false);
-		container_vacances.invalidate();
-	}
-
-	if(sConfig_IHM->sMode_ECS.Exception != sConfig_IHM_old.sMode_ECS.Exception)
-	{
-		if(sConfig_IHM->sMode_ECS.Exception == VACANCES)
-		{
-			buttonWithIcon_vacances_on.setVisible(true);
-		}
-		else buttonWithIcon_vacances_on.setVisible(false);
-		buttonWithIcon_vacances_on.invalidate();
-	}
+//	if((sConfig_IHM->sParam_PAC.TypeRegul != sConfig_IHM_old.sParam_PAC.TypeRegul) || memcmp(&sConfig_IHM->sOption_PAC.sZone, &sConfig_IHM_old.sOption_PAC.sZone, sizeof(S_ZONE)) || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sOption_PAC.Piscine != sConfig_IHM_old.sOption_PAC.Piscine))
+//	{
+//		if((sConfig_IHM->sParam_PAC.TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE && memcmp(&sConfig_IHM->sOption_PAC.sZone, &sZone_tmp, sizeof(S_ZONE))) || sConfig_IHM->sOption_PAC.ECS || sConfig_IHM->sOption_PAC.Piscine)
+//		{
+//			container_vacances.setVisible(true);
+//		}
+//		else container_vacances.setVisible(false);
+//		container_vacances.invalidate();
+//	}
+//
+//	if(sConfig_IHM->sMode_ECS.Exception != sConfig_IHM_old.sMode_ECS.Exception)
+//	{
+//		if(sConfig_IHM->sMode_ECS.Exception == VACANCES)
+//		{
+//			buttonWithIcon_vacances_on.setVisible(true);
+//		}
+//		else buttonWithIcon_vacances_on.setVisible(false);
+//		buttonWithIcon_vacances_on.invalidate();
+//	}
 
 	memcpy(&sConfig_IHM_old, sConfig_IHM, sizeof(S_CONFIG_IHM));
 }
@@ -2064,11 +2066,11 @@ void AccueilView::changeDate(S_DATE *sDate)
 					break;
 			}
 			Unicode::snprintf(textAreaBuffer_Titre_Date, 30, "%s %d %s 20%02d", touchgfx::TypedText(u32Jour).getText(), sDate->Date, touchgfx::TypedText(u32Mois).getText(), sDate->Year);
-			if (swipeContainerMain.getSelectedPage() == 0)
-			{
-				barre_titre.titre(textAreaBuffer_Titre_Date);
-				swipeContainerMain.invalidate();
-			}
+//			if (swipeContainerMain.getSelectedPage() == 0)
+//			{
+//				barre_titre.titre(textAreaBuffer_Titre_Date);
+//				swipeContainerMain.invalidate();
+//			}
 		}
 
 		barre_titre.invalidate();

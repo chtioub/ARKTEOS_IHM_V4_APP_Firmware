@@ -3,6 +3,7 @@
 
 #include <gui_generated/installation_hysteresis_screen/Installation_hysteresisViewBase.hpp>
 #include <gui/installation_hysteresis_screen/Installation_hysteresisPresenter.hpp>
+#include <gui/containers/DualSlider.hpp>
 
 class Installation_hysteresisView : public Installation_hysteresisViewBase
 {
@@ -26,6 +27,8 @@ public:
     void bouton_valider();
     void bouton_retour();
 
+private:
+    DualSlider dualSlider;
 
 
 #define DELTA_MIN_HYST_PLUS_MOINS	20	//0.2°C

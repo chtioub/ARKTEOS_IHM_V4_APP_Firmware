@@ -663,14 +663,12 @@ void VacancesView::bouton_valider()
 	// Envoi de la trame
 	presenter->c_user_vacances();
 	// Retour à la page configuration
-	bPageAccueil = false;
-	application().gotoAccueilScreenNoTransition();
+	application().gotoConfigurationScreenNoTransition();
 //	application().gotoConfigurationScreenNoTransition();
 }
 
 void VacancesView::bouton_retour()
 {
-	bPageAccueil = false;
 	application().gotoAccueilScreenNoTransition();
 }
 

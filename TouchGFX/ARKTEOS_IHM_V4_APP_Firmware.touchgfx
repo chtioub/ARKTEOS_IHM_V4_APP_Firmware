@@ -159,262 +159,142 @@
                 "CustomContainerDefinitionName": "Barre_titre"
               },
               {
-                "Type": "SwipeContainer",
-                "Name": "swipeContainerMain",
+                "Type": "Container",
+                "Name": "container_zone_boutons",
                 "Y": 149,
                 "Width": 950,
                 "Height": 375,
-                "SwipeCutoff": 50,
-                "IndicatorImageNormal": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_off_normal.png",
-                "IndicatorImageHighlight": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_on_active.png",
-                "EndSwipeElasticWidth": 50,
-                "SelectedPage": "swipeContainerAccueil",
-                "Preset": "alternate_theme\\presets\\swipecontainer\\medium_active.json",
                 "Components": [
                   {
+                    "Type": "ScalableImage",
+                    "Name": "scalableImageLogo",
+                    "X": 285,
+                    "Y": 51,
+                    "Width": 382,
+                    "Height": 124,
+                    "Visible": false,
+                    "Filename": "Logo_Arkteos_L381_H131.png",
+                    "ScalingAlgorithm": "Nearest-neighbor"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_cfd",
+                    "X": 295,
+                    "Width": 382,
+                    "Height": 158,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_CFD_L382_H158.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ces",
+                    "X": 285,
+                    "Width": 383,
+                    "Height": 164,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_CES_L382_H163.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_enelia",
+                    "X": 300,
+                    "Width": 383,
+                    "Height": 180,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Enelia_L382_H179.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_variation",
+                    "X": 285,
+                    "Width": 382,
+                    "Height": 151,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Variation_L382_H150.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_gourdon",
+                    "X": 285,
+                    "Width": 382,
+                    "Height": 163,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Gourdon_L382_H163.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_etienne",
+                    "X": 295,
+                    "Width": 383,
+                    "Height": 168,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Etienne_Energie_L382_H167.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_alppac",
+                    "X": 285,
+                    "Y": 40,
+                    "Width": 383,
+                    "Height": 112,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Alpac_L382_H111.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_bltec",
+                    "X": 285,
+                    "Y": 10,
+                    "Width": 382,
+                    "Height": 144,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Bltec_L382_H143.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_qualiclim",
+                    "X": 310,
+                    "Y": -50,
+                    "Width": 383,
+                    "Height": 241,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Qualiclim_L382_H240.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "_Image_arkteos",
+                    "X": 285,
+                    "Y": 51,
+                    "Width": 382,
+                    "Height": 132,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Arkteos_L381_H131.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_arkteos",
+                    "X": 285,
+                    "Y": 51,
+                    "Width": 382,
+                    "Height": 124,
+                    "Visible": false,
+                    "RelativeFilename": "Logo_Arkteos_2024_L381_H131.png"
+                  },
+                  {
                     "Type": "Container",
-                    "Name": "swipeContainerAccueil",
-                    "Width": 950,
-                    "Height": 375,
+                    "Name": "container_statut_ecs",
+                    "X": 766,
+                    "Y": 259,
+                    "Width": 170,
+                    "Height": 85,
+                    "Visible": false,
                     "Components": [
                       {
-                        "Type": "ScalableImage",
-                        "Name": "scalableImageLogo",
-                        "X": 285,
-                        "Y": 51,
-                        "Width": 382,
-                        "Height": 124,
-                        "Visible": false,
-                        "Filename": "Logo_Arkteos_L381_H131.png",
-                        "ScalingAlgorithm": "Nearest-neighbor"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_cfd",
-                        "X": 295,
-                        "Width": 382,
-                        "Height": 158,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_CFD_L382_H158.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_ces",
-                        "X": 285,
-                        "Width": 383,
-                        "Height": 164,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_CES_L382_H163.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_enelia",
-                        "X": 300,
-                        "Width": 383,
-                        "Height": 180,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Enelia_L382_H179.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_variation",
-                        "X": 285,
-                        "Width": 382,
-                        "Height": 151,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Variation_L382_H150.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_gourdon",
-                        "X": 285,
-                        "Width": 382,
-                        "Height": 163,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Gourdon_L382_H163.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_etienne",
-                        "X": 295,
-                        "Width": 383,
-                        "Height": 168,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Etienne_Energie_L382_H167.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_alppac",
-                        "X": 285,
-                        "Y": 40,
-                        "Width": 383,
-                        "Height": 112,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Alpac_L382_H111.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_bltec",
-                        "X": 285,
-                        "Y": 10,
-                        "Width": 382,
-                        "Height": 144,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Bltec_L382_H143.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_qualiclim",
-                        "X": 310,
-                        "Y": -50,
-                        "Width": 383,
-                        "Height": 241,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Qualiclim_L382_H240.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "_Image_arkteos",
-                        "X": 285,
-                        "Y": 51,
-                        "Width": 382,
-                        "Height": 132,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Arkteos_L381_H131.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_arkteos",
-                        "X": 285,
-                        "Y": 51,
-                        "Width": 382,
-                        "Height": 124,
-                        "Visible": false,
-                        "RelativeFilename": "Logo_Arkteos_2024_L381_H131.png"
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_statut_ecs",
-                        "X": 766,
-                        "Y": 259,
-                        "Width": 170,
-                        "Height": 85,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_ecs_milieu",
-                            "X": 1,
-                            "Y": 1,
-                            "Width": 94,
-                            "Height": 21,
-                            "TextId": "text_temp_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_ecs_milieu_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_ecs_bas",
-                            "X": 1,
-                            "Y": 63,
-                            "Width": 94,
-                            "Height": 21,
-                            "TextId": "text_temp_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_ecs_bas_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          },
-                          {
-                            "Type": "Image",
-                            "Name": "Image_sondes_ecs",
-                            "X": 104,
-                            "Y": 1,
-                            "Width": 65,
-                            "Height": 83,
-                            "RelativeFilename": "Etat_Temperature_Chauffe_Eau_L65xH83.png"
-                          },
-                          {
-                            "Type": "Image",
-                            "Name": "Image_sondes_ecs_relance",
-                            "X": 104,
-                            "Y": 1,
-                            "Width": 65,
-                            "Height": 83,
-                            "RelativeFilename": "Etat_Temperature_Chauffe_Eau_Relance_L65xH83.png"
-                          },
-                          {
-                            "Type": "Image",
-                            "Name": "Image_bouclage_ecs",
-                            "X": 24,
-                            "Y": 32,
-                            "Width": 50,
-                            "Height": 24,
-                            "Visible": false,
-                            "RelativeFilename": "Etat_Temperature_Chauffe_Eau_Recyclage_L50xH23.png"
-                          },
-                          {
-                            "Type": "Circle",
-                            "Name": "circle_appoint_ecs",
-                            "X": 143,
-                            "Y": 64,
-                            "Width": 8,
-                            "Height": 8,
-                            "Visible": false,
-                            "Color": {
-                              "Red": 216,
-                              "Green": 31,
-                              "Blue": 42
-                            },
-                            "CenterX": 4.0,
-                            "CenterY": 4.0,
-                            "Radius": 3.1,
-                            "EndAngle": 360.0,
-                            "CapPrecision": "Butt"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Line",
-                        "Name": "line_4",
-                        "X": 757,
-                        "Y": 250,
-                        "Width": 3,
-                        "Height": 102,
-                        "Color": {
-                          "Red": 76,
-                          "Green": 76,
-                          "Blue": 76
-                        },
-                        "StartX": 2.5,
-                        "StartY": 2.5,
-                        "EndX": 2.5,
-                        "EndY": 99.5,
-                        "LineWidth": 5.0,
-                        "LineEndingStyle": "Round"
-                      },
-                      {
                         "Type": "TextArea",
-                        "Name": "textArea_temp_ext",
-                        "X": 572,
-                        "Y": 331,
-                        "Width": 185,
+                        "Name": "textArea_ecs_milieu",
+                        "X": 1,
+                        "Y": 1,
+                        "Width": 94,
                         "Height": 21,
                         "TextId": "text_temp_centre_defaut",
                         "TextRotation": "0",
@@ -424,24 +304,745 @@
                           "Blue": 255
                         },
                         "Wildcard1": {
-                          "TextId": "text_temp_ext_init_centre_defaut"
+                          "TextId": "text_ecs_milieu_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_ecs_bas",
+                        "X": 1,
+                        "Y": 63,
+                        "Width": 94,
+                        "Height": 21,
+                        "TextId": "text_temp_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_ecs_bas_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
                         }
                       },
                       {
                         "Type": "Image",
-                        "Name": "Image_degivrage",
-                        "X": 708,
-                        "Y": 271,
-                        "Width": 30,
-                        "Height": 38,
+                        "Name": "Image_sondes_ecs",
+                        "X": 104,
+                        "Y": 1,
+                        "Width": 65,
+                        "Height": 83,
+                        "RelativeFilename": "Etat_Temperature_Chauffe_Eau_L65xH83.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_sondes_ecs_relance",
+                        "X": 104,
+                        "Y": 1,
+                        "Width": 65,
+                        "Height": 83,
+                        "RelativeFilename": "Etat_Temperature_Chauffe_Eau_Relance_L65xH83.png"
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_bouclage_ecs",
+                        "X": 24,
+                        "Y": 32,
+                        "Width": 50,
+                        "Height": 24,
                         "Visible": false,
-                        "RelativeFilename": "Etat_Temp_Exterieure_Defrost_L30xH38.png"
+                        "RelativeFilename": "Etat_Temperature_Chauffe_Eau_Recyclage_L50xH23.png"
                       },
                       {
                         "Type": "Circle",
-                        "Name": "circle_sonde_ext_2",
-                        "X": 688,
-                        "Y": 297,
+                        "Name": "circle_appoint_ecs",
+                        "X": 143,
+                        "Y": 64,
+                        "Width": 8,
+                        "Height": 8,
+                        "Visible": false,
+                        "Color": {
+                          "Red": 216,
+                          "Green": 31,
+                          "Blue": 42
+                        },
+                        "CenterX": 4.0,
+                        "CenterY": 4.0,
+                        "Radius": 3.1,
+                        "EndAngle": 360.0,
+                        "CapPrecision": "Butt"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_4",
+                    "X": 757,
+                    "Y": 250,
+                    "Width": 3,
+                    "Height": 102,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 2.5,
+                    "StartY": 2.5,
+                    "EndX": 2.5,
+                    "EndY": 99.5,
+                    "LineWidth": 5.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_ext",
+                    "X": 572,
+                    "Y": 331,
+                    "Width": 185,
+                    "Height": 21,
+                    "TextId": "text_temp_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_temp_ext_init_centre_defaut"
+                    }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_degivrage",
+                    "X": 708,
+                    "Y": 271,
+                    "Width": 30,
+                    "Height": 38,
+                    "Visible": false,
+                    "RelativeFilename": "Etat_Temp_Exterieure_Defrost_L30xH38.png"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_sonde_ext_2",
+                    "X": 688,
+                    "Y": 297,
+                    "Width": 14,
+                    "Height": 14,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "CenterX": 7.0,
+                    "CenterY": 7.0,
+                    "Radius": 6.5,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_sonde_ext_1",
+                    "X": 683,
+                    "Y": 292,
+                    "Width": 24,
+                    "Height": 24,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "CenterX": 12.0,
+                    "CenterY": 12.0,
+                    "Radius": 11.0,
+                    "LineWidth": 2.0,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Round"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_maison_temp_ext",
+                    "X": 621,
+                    "Y": 261,
+                    "Width": 67,
+                    "Height": 58,
+                    "RelativeFilename": "Etat_Maison_L67xH58.png"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_3",
+                    "X": 569,
+                    "Y": 250,
+                    "Width": 3,
+                    "Height": 102,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 2.5,
+                    "StartY": 2.5,
+                    "EndX": 2.5,
+                    "EndY": 99.5,
+                    "LineWidth": 5.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_pression_aero",
+                    "X": 384,
+                    "Y": 281,
+                    "Width": 185,
+                    "Height": 71,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_pression",
+                        "Y": 50,
+                        "Width": 183,
+                        "Height": 21,
+                        "TextId": "text_pression_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_pression_init_centre_defaut"
+                        }
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_pression_aero",
+                        "X": 55,
+                        "Width": 72,
+                        "Height": 40,
+                        "RelativeFilename": "Etat_Pression_Eau_L72xH40.png"
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_pression_geo",
+                    "X": 384,
+                    "Y": 260,
+                    "Width": 185,
+                    "Height": 92,
+                    "Components": [
+                      {
+                        "Type": "Image",
+                        "Name": "Image_pression_geo",
+                        "X": 9,
+                        "Y": 21,
+                        "Width": 164,
+                        "Height": 40,
+                        "RelativeFilename": "Etat_Pression_Eau_Eau_L164xH40.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_bar",
+                        "X": 1,
+                        "Width": 183,
+                        "Height": 21,
+                        "TextId": "text_pression_bars_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_pression_capt",
+                        "Y": 71,
+                        "Width": 91,
+                        "Height": 21,
+                        "TextId": "text_ecs_milieu_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_pression_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_pression_chauf",
+                        "X": 92,
+                        "Y": 71,
+                        "Width": 91,
+                        "Height": 21,
+                        "TextId": "text_ecs_milieu_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_pression_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_2",
+                    "X": 381,
+                    "Y": 250,
+                    "Width": 3,
+                    "Height": 102,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 2.5,
+                    "StartY": 2.5,
+                    "EndX": 2.5,
+                    "EndY": 99.5,
+                    "LineWidth": 5.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_etat",
+                    "X": 203,
+                    "Y": 250,
+                    "Width": 168,
+                    "Height": 102,
+                    "Visible": false,
+                    "Components": []
+                  },
+                  {
+                    "Type": "ScalableImage",
+                    "Name": "scalableImage_appoint",
+                    "X": 328,
+                    "Y": 252,
+                    "Width": 27,
+                    "Height": 40,
+                    "Visible": false,
+                    "Filename": "Etat_Bouton_Appoint_Elec_L33xH63.png",
+                    "ScalingAlgorithm": "Nearest-neighbor"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_chaudiere",
+                    "X": 317,
+                    "Y": 261,
+                    "Width": 51,
+                    "Height": 23,
+                    "Visible": false,
+                    "RelativeFilename": "Etat_Releve_Chaudiere_L50xH22-96.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_dalle",
+                    "X": 317,
+                    "Y": 290,
+                    "Width": 47,
+                    "Height": 47,
+                    "Visible": false,
+                    "RelativeFilename": "Etat_Mise_En_Chauffe_Dalle_L46xH46.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_sablier",
+                    "X": 324,
+                    "Y": 296,
+                    "Width": 33,
+                    "Height": 39,
+                    "Visible": false,
+                    "RelativeFilename": "Etat_Sablier_L32xH38.png"
+                  },
+                  {
+                    "Type": "ScalableImage",
+                    "Name": "scalableImage_vacances",
+                    "X": 317,
+                    "Y": 297,
+                    "Width": 47,
+                    "Height": 36,
+                    "Visible": false,
+                    "Filename": "Etat_Bouton_Vacances_L70xH54.png",
+                    "ScalingAlgorithm": "Nearest-neighbor"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_legionnel",
+                    "X": 319,
+                    "Y": 297,
+                    "Width": 43,
+                    "Height": 39,
+                    "Visible": false,
+                    "RelativeFilename": "Etat_Legionelle_L42xH38.png"
+                  },
+                  {
+                    "Type": "ScalableImage",
+                    "Name": "scalableImage_ext_chaud",
+                    "X": 229,
+                    "Y": 303,
+                    "Width": 33,
+                    "Height": 33,
+                    "Visible": false,
+                    "Filename": "Etat_Chauffage_Soleil_L60xH60.png",
+                    "ScalingAlgorithm": "Nearest-neighbor"
+                  },
+                  {
+                    "Type": "ScalableImage",
+                    "Name": "scalableImage_ext_froid",
+                    "X": 229,
+                    "Y": 303,
+                    "Width": 33,
+                    "Height": 33,
+                    "Visible": false,
+                    "Filename": "Etat_Rafraichissement_Flocon_L52xH60.png",
+                    "ScalingAlgorithm": "Nearest-neighbor"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_attente",
+                    "X": 214,
+                    "Y": 265,
+                    "Width": 55,
+                    "Height": 61,
+                    "Visible": false,
+                    "RelativeFilename": "Etat_Arret_Vert_L54xH60.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_arret",
+                    "X": 214,
+                    "Y": 265,
+                    "Width": 55,
+                    "Height": 61,
+                    "Visible": false,
+                    "RelativeFilename": "Etat_Arret_Rouge_L54xH60.png"
+                  },
+                  {
+                    "Type": "ScalableImage",
+                    "Name": "scalableImage_piscine",
+                    "X": 249,
+                    "Y": 267,
+                    "Width": 37,
+                    "Height": 32,
+                    "Visible": false,
+                    "Filename": "Etat_Bouton_Piscine_L75xH66.png",
+                    "ScalingAlgorithm": "Nearest-neighbor"
+                  },
+                  {
+                    "Type": "ScalableImage",
+                    "Name": "scalableImage_ecs",
+                    "X": 210,
+                    "Y": 269,
+                    "Width": 30,
+                    "Height": 29,
+                    "Visible": false,
+                    "Filename": "Etat_Bouton_ECS_L59xH61.png",
+                    "ScalingAlgorithm": "Nearest-neighbor"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_etat",
+                    "X": 197,
+                    "Y": 331,
+                    "Width": 183,
+                    "Height": 21,
+                    "TextId": "text_etat_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "ScalableImage",
+                    "Name": "scalableImage_maison_etat_pac",
+                    "X": 228,
+                    "Y": 302,
+                    "Width": 40,
+                    "Height": 34,
+                    "Visible": false,
+                    "Filename": "Etat_Maison_L67xH58.png",
+                    "ScalingAlgorithm": "Nearest-neighbor"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_demande_pac",
+                    "X": 245,
+                    "Y": 320,
+                    "Width": 7,
+                    "Height": 7,
+                    "Visible": false,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "CenterX": 3.0,
+                    "CenterY": 3.0,
+                    "Radius": 3.0,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_mode_pac",
+                    "X": 240,
+                    "Y": 315,
+                    "Width": 17,
+                    "Height": 17,
+                    "Visible": false,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "CenterX": 8.0,
+                    "CenterY": 8.1,
+                    "Radius": 7.0,
+                    "LineWidth": 2.0,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Round"
+                  },
+                  {
+                    "Type": "Line",
+                    "Name": "line_1",
+                    "X": 193,
+                    "Y": 250,
+                    "Width": 3,
+                    "Height": 102,
+                    "Color": {
+                      "Red": 76,
+                      "Green": 76,
+                      "Blue": 76
+                    },
+                    "StartX": 2.5,
+                    "StartY": 2.5,
+                    "EndX": 2.5,
+                    "EndY": 99.5,
+                    "LineWidth": 5.0,
+                    "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_arret",
+                    "X": 15,
+                    "Y": 250,
+                    "Width": 168,
+                    "Height": 102,
+                    "Components": [
+                      {
+                        "Type": "ButtonWithIcon",
+                        "Name": "buttonWithIcon_arret",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Rouge_Clicked_L168xH102.png",
+                        "Released": "Bouton_Rouge_Unclicked_L168xH102.png",
+                        "IconPressed": "Etat_Marche_Arret_L55xH61.png",
+                        "IconReleased": "Etat_Marche_Arret_L55xH61.png",
+                        "IconX": 57,
+                        "IconY": 4,
+                        "IconHeight": 61,
+                        "IconWidth": 55
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_arret",
+                        "Y": 71,
+                        "Width": 168,
+                        "Height": 28,
+                        "TextId": "text_ecs_arret_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_marche",
+                    "X": 15,
+                    "Y": 250,
+                    "Width": 168,
+                    "Height": 102,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "ButtonWithIcon",
+                        "Name": "buttonWithIcon_marche",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                        "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                        "IconPressed": "Etat_Marche_Arret_L55xH61.png",
+                        "IconReleased": "Etat_Marche_Arret_L55xH61.png",
+                        "IconX": 57,
+                        "IconY": 4,
+                        "IconHeight": 61,
+                        "IconWidth": 55
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_marche",
+                        "Y": 71,
+                        "Width": 168,
+                        "Height": 28,
+                        "TextId": "text_marche_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_piscine",
+                    "X": 767,
+                    "Y": 125,
+                    "Width": 168,
+                    "Height": 102,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "Button",
+                        "Name": "button_piscine",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                        "Released": "Bouton_Orange_Unclicked_L168xH102.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_piscine",
+                        "Y": 71,
+                        "Width": 168,
+                        "Height": 28,
+                        "TextId": "text_accueil_piscine_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_piscine",
+                        "X": 86,
+                        "Y": 4,
+                        "Width": 75,
+                        "Height": 66,
+                        "RelativeFilename": "Etat_Bouton_Piscine_L75xH66.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_temp_piscine",
+                        "Y": 15,
+                        "Width": 94,
+                        "Height": 21,
+                        "TextId": "text_temp_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_temp_piscine_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_2",
+                    "X": 15,
+                    "Y": 125,
+                    "Width": 168,
+                    "Height": 102,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "Button",
+                        "Name": "button_orange_zone_2",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                        "Released": "Bouton_Orange_Unclicked_L168xH102.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_marron_zone_2",
+                        "Width": 168,
+                        "Height": 102,
+                        "Visible": false,
+                        "Pressed": "Bouton_Marron_Clicked_L168xH102.png",
+                        "Released": "Bouton_Marron_Unclicked_L168xH102.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_violet_zone_2",
+                        "Width": 168,
+                        "Height": 102,
+                        "Visible": false,
+                        "Pressed": "Bouton_Violet_Clicked_L168xH102.png",
+                        "Released": "Bouton_Violet_Unclicked_L168xH102.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_zone_2",
+                        "Y": 71,
+                        "Width": 168,
+                        "Height": 28,
+                        "TextId": "text_accueil_zone_2_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_accueil_zone_2_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_maison_zone_2",
+                        "X": 89,
+                        "Y": 11,
+                        "Width": 67,
+                        "Height": 58,
+                        "RelativeFilename": "Etat_Maison_L67xH58.png"
+                      },
+                      {
+                        "Type": "Circle",
+                        "Name": "circle_demande_zone_2",
+                        "X": 116,
+                        "Y": 41,
                         "Width": 14,
                         "Height": 14,
                         "Color": {
@@ -457,9 +1058,9 @@
                       },
                       {
                         "Type": "Circle",
-                        "Name": "circle_sonde_ext_1",
-                        "X": 683,
-                        "Y": 292,
+                        "Name": "circle_mode_zone_2",
+                        "X": 111,
+                        "Y": 36,
                         "Width": 24,
                         "Height": 24,
                         "Color": {
@@ -475,1104 +1076,67 @@
                         "CapPrecision": "Round"
                       },
                       {
-                        "Type": "Image",
-                        "Name": "Image_maison_temp_ext",
-                        "X": 621,
-                        "Y": 261,
-                        "Width": 67,
-                        "Height": 58,
-                        "RelativeFilename": "Etat_Maison_L67xH58.png"
-                      },
-                      {
-                        "Type": "Line",
-                        "Name": "line_3",
-                        "X": 569,
-                        "Y": 250,
-                        "Width": 3,
-                        "Height": 102,
-                        "Color": {
-                          "Red": 76,
-                          "Green": 76,
-                          "Blue": 76
-                        },
-                        "StartX": 2.5,
-                        "StartY": 2.5,
-                        "EndX": 2.5,
-                        "EndY": 99.5,
-                        "LineWidth": 5.0,
-                        "LineEndingStyle": "Round"
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_pression_aero",
-                        "X": 384,
-                        "Y": 281,
-                        "Width": 185,
-                        "Height": 71,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_pression",
-                            "Y": 50,
-                            "Width": 183,
-                            "Height": 21,
-                            "TextId": "text_pression_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_pression_init_centre_defaut"
-                            }
-                          },
-                          {
-                            "Type": "Image",
-                            "Name": "Image_pression_aero",
-                            "X": 55,
-                            "Width": 72,
-                            "Height": 40,
-                            "RelativeFilename": "Etat_Pression_Eau_L72xH40.png"
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_pression_geo",
-                        "X": 384,
-                        "Y": 260,
-                        "Width": 185,
-                        "Height": 92,
-                        "Components": [
-                          {
-                            "Type": "Image",
-                            "Name": "Image_pression_geo",
-                            "X": 9,
-                            "Y": 21,
-                            "Width": 164,
-                            "Height": 40,
-                            "RelativeFilename": "Etat_Pression_Eau_Eau_L164xH40.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_bar",
-                            "X": 1,
-                            "Width": 183,
-                            "Height": 21,
-                            "TextId": "text_pression_bars_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_pression_capt",
-                            "Y": 71,
-                            "Width": 91,
-                            "Height": 21,
-                            "TextId": "text_ecs_milieu_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_pression_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_pression_chauf",
-                            "X": 92,
-                            "Y": 71,
-                            "Width": 91,
-                            "Height": 21,
-                            "TextId": "text_ecs_milieu_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_pression_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Line",
-                        "Name": "line_2",
-                        "X": 381,
-                        "Y": 250,
-                        "Width": 3,
-                        "Height": 102,
-                        "Color": {
-                          "Red": 76,
-                          "Green": 76,
-                          "Blue": 76
-                        },
-                        "StartX": 2.5,
-                        "StartY": 2.5,
-                        "EndX": 2.5,
-                        "EndY": 99.5,
-                        "LineWidth": 5.0,
-                        "LineEndingStyle": "Round"
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_etat",
-                        "X": 203,
-                        "Y": 250,
-                        "Width": 168,
-                        "Height": 102,
-                        "Visible": false,
-                        "Components": []
-                      },
-                      {
-                        "Type": "ScalableImage",
-                        "Name": "scalableImage_appoint",
-                        "X": 328,
-                        "Y": 252,
-                        "Width": 27,
-                        "Height": 40,
-                        "Visible": false,
-                        "Filename": "Etat_Bouton_Appoint_Elec_L33xH63.png",
-                        "ScalingAlgorithm": "Nearest-neighbor"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_chaudiere",
-                        "X": 317,
-                        "Y": 261,
-                        "Width": 51,
-                        "Height": 23,
-                        "Visible": false,
-                        "RelativeFilename": "Etat_Releve_Chaudiere_L50xH22-96.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_dalle",
-                        "X": 317,
-                        "Y": 290,
-                        "Width": 47,
-                        "Height": 47,
-                        "Visible": false,
-                        "RelativeFilename": "Etat_Mise_En_Chauffe_Dalle_L46xH46.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_sablier",
-                        "X": 324,
-                        "Y": 296,
-                        "Width": 33,
-                        "Height": 39,
-                        "Visible": false,
-                        "RelativeFilename": "Etat_Sablier_L32xH38.png"
-                      },
-                      {
-                        "Type": "ScalableImage",
-                        "Name": "scalableImage_vacances",
-                        "X": 317,
-                        "Y": 297,
-                        "Width": 47,
-                        "Height": 36,
-                        "Visible": false,
-                        "Filename": "Etat_Bouton_Vacances_L70xH54.png",
-                        "ScalingAlgorithm": "Nearest-neighbor"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_legionnel",
-                        "X": 319,
-                        "Y": 297,
-                        "Width": 43,
-                        "Height": 39,
-                        "Visible": false,
-                        "RelativeFilename": "Etat_Legionelle_L42xH38.png"
-                      },
-                      {
-                        "Type": "ScalableImage",
-                        "Name": "scalableImage_ext_chaud",
-                        "X": 229,
-                        "Y": 303,
-                        "Width": 33,
-                        "Height": 33,
-                        "Visible": false,
-                        "Filename": "Etat_Chauffage_Soleil_L60xH60.png",
-                        "ScalingAlgorithm": "Nearest-neighbor"
-                      },
-                      {
-                        "Type": "ScalableImage",
-                        "Name": "scalableImage_ext_froid",
-                        "X": 229,
-                        "Y": 303,
-                        "Width": 33,
-                        "Height": 33,
-                        "Visible": false,
-                        "Filename": "Etat_Rafraichissement_Flocon_L52xH60.png",
-                        "ScalingAlgorithm": "Nearest-neighbor"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_attente",
-                        "X": 214,
-                        "Y": 265,
-                        "Width": 55,
-                        "Height": 61,
-                        "Visible": false,
-                        "RelativeFilename": "Etat_Arret_Vert_L54xH60.png"
-                      },
-                      {
-                        "Type": "Image",
-                        "Name": "Image_arret",
-                        "X": 214,
-                        "Y": 265,
-                        "Width": 55,
-                        "Height": 61,
-                        "Visible": false,
-                        "RelativeFilename": "Etat_Arret_Rouge_L54xH60.png"
-                      },
-                      {
-                        "Type": "ScalableImage",
-                        "Name": "scalableImage_piscine",
-                        "X": 249,
-                        "Y": 267,
-                        "Width": 37,
-                        "Height": 32,
-                        "Visible": false,
-                        "Filename": "Etat_Bouton_Piscine_L75xH66.png",
-                        "ScalingAlgorithm": "Nearest-neighbor"
-                      },
-                      {
-                        "Type": "ScalableImage",
-                        "Name": "scalableImage_ecs",
-                        "X": 210,
-                        "Y": 269,
-                        "Width": 30,
-                        "Height": 29,
-                        "Visible": false,
-                        "Filename": "Etat_Bouton_ECS_L59xH61.png",
-                        "ScalingAlgorithm": "Nearest-neighbor"
-                      },
-                      {
                         "Type": "TextArea",
-                        "Name": "textArea_etat",
-                        "X": 197,
-                        "Y": 331,
-                        "Width": 183,
+                        "Name": "textArea_temp_zone_2",
+                        "Y": 15,
+                        "Width": 94,
                         "Height": 21,
-                        "TextId": "text_etat_centre_defaut",
+                        "TextId": "text_temp_centre_defaut",
                         "TextRotation": "0",
                         "Color": {
                           "Red": 255,
                           "Green": 255,
                           "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_temp_zone_2_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
                         }
                       },
                       {
-                        "Type": "ScalableImage",
-                        "Name": "scalableImage_maison_etat_pac",
-                        "X": 228,
-                        "Y": 302,
-                        "Width": 40,
-                        "Height": 34,
-                        "Visible": false,
-                        "Filename": "Etat_Maison_L67xH58.png",
-                        "ScalingAlgorithm": "Nearest-neighbor"
-                      },
-                      {
-                        "Type": "Circle",
-                        "Name": "circle_demande_pac",
-                        "X": 245,
-                        "Y": 320,
-                        "Width": 7,
-                        "Height": 7,
-                        "Visible": false,
-                        "Color": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        },
-                        "CenterX": 3.0,
-                        "CenterY": 3.0,
-                        "Radius": 3.0,
-                        "EndAngle": 360.0,
-                        "CapPrecision": "Butt"
-                      },
-                      {
-                        "Type": "Circle",
-                        "Name": "circle_mode_pac",
-                        "X": 240,
-                        "Y": 315,
-                        "Width": 17,
-                        "Height": 17,
-                        "Visible": false,
-                        "Color": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        },
-                        "CenterX": 8.0,
-                        "CenterY": 8.1,
-                        "Radius": 7.0,
-                        "LineWidth": 2.0,
-                        "EndAngle": 360.0,
-                        "CapPrecision": "Round"
-                      },
-                      {
-                        "Type": "Line",
-                        "Name": "line_1",
-                        "X": 193,
-                        "Y": 250,
-                        "Width": 3,
-                        "Height": 102,
-                        "Color": {
-                          "Red": 76,
-                          "Green": 76,
-                          "Blue": 76
-                        },
-                        "StartX": 2.5,
-                        "StartY": 2.5,
-                        "EndX": 2.5,
-                        "EndY": 99.5,
-                        "LineWidth": 5.0,
-                        "LineEndingStyle": "Round"
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_arret",
-                        "X": 15,
-                        "Y": 250,
-                        "Width": 168,
-                        "Height": 102,
-                        "Components": [
-                          {
-                            "Type": "ButtonWithIcon",
-                            "Name": "buttonWithIcon_arret",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Rouge_Clicked_L168xH102.png",
-                            "Released": "Bouton_Rouge_Unclicked_L168xH102.png",
-                            "IconPressed": "Etat_Marche_Arret_L55xH61.png",
-                            "IconReleased": "Etat_Marche_Arret_L55xH61.png",
-                            "IconX": 57,
-                            "IconY": 4,
-                            "IconHeight": 61,
-                            "IconWidth": 55
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_arret",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_ecs_arret_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_marche",
-                        "X": 15,
-                        "Y": 250,
-                        "Width": 168,
-                        "Height": 102,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "ButtonWithIcon",
-                            "Name": "buttonWithIcon_marche",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
-                            "Released": "Bouton_Vert_Unclicked_L168xH102.png",
-                            "IconPressed": "Etat_Marche_Arret_L55xH61.png",
-                            "IconReleased": "Etat_Marche_Arret_L55xH61.png",
-                            "IconX": 57,
-                            "IconY": 4,
-                            "IconHeight": 61,
-                            "IconWidth": 55
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_marche",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_marche_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_piscine",
-                        "X": 767,
-                        "Y": 125,
-                        "Width": 168,
-                        "Height": 102,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_piscine",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
-                            "Released": "Bouton_Orange_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_piscine",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_accueil_piscine_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          },
-                          {
-                            "Type": "Image",
-                            "Name": "Image_piscine",
-                            "X": 86,
-                            "Y": 4,
-                            "Width": 75,
-                            "Height": 66,
-                            "RelativeFilename": "Etat_Bouton_Piscine_L75xH66.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_temp_piscine",
-                            "Y": 15,
-                            "Width": 94,
-                            "Height": 21,
-                            "TextId": "text_temp_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_temp_piscine_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_zone_2",
-                        "X": 15,
-                        "Y": 125,
-                        "Width": 168,
-                        "Height": 102,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_orange_zone_2",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
-                            "Released": "Bouton_Orange_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_marron_zone_2",
-                            "Width": 168,
-                            "Height": 102,
-                            "Visible": false,
-                            "Pressed": "Bouton_Marron_Clicked_L168xH102.png",
-                            "Released": "Bouton_Marron_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_violet_zone_2",
-                            "Width": 168,
-                            "Height": 102,
-                            "Visible": false,
-                            "Pressed": "Bouton_Violet_Clicked_L168xH102.png",
-                            "Released": "Bouton_Violet_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_zone_2",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_accueil_zone_2_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_accueil_zone_2_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 11
-                            }
-                          },
-                          {
-                            "Type": "Image",
-                            "Name": "Image_maison_zone_2",
-                            "X": 89,
-                            "Y": 11,
-                            "Width": 67,
-                            "Height": 58,
-                            "RelativeFilename": "Etat_Maison_L67xH58.png"
-                          },
-                          {
-                            "Type": "Circle",
-                            "Name": "circle_demande_zone_2",
-                            "X": 116,
-                            "Y": 41,
-                            "Width": 14,
-                            "Height": 14,
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "CenterX": 7.0,
-                            "CenterY": 7.0,
-                            "Radius": 6.5,
-                            "EndAngle": 360.0,
-                            "CapPrecision": "Butt"
-                          },
-                          {
-                            "Type": "Circle",
-                            "Name": "circle_mode_zone_2",
-                            "X": 111,
-                            "Y": 36,
-                            "Width": 24,
-                            "Height": 24,
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "CenterX": 12.0,
-                            "CenterY": 12.0,
-                            "Radius": 11.0,
-                            "LineWidth": 2.0,
-                            "EndAngle": 360.0,
-                            "CapPrecision": "Round"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_temp_zone_2",
-                            "Y": 15,
-                            "Width": 94,
-                            "Height": 21,
-                            "TextId": "text_temp_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_temp_zone_2_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_on_off_temp_zone_2",
-                            "Y": 15,
-                            "Width": 94,
-                            "Height": 21,
-                            "TextId": "text_on_off_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_ecs",
-                        "X": 767,
-                        "Width": 168,
-                        "Height": 102,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_ecs",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
-                            "Released": "Bouton_Orange_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_ecs",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_accueil_ecs_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          },
-                          {
-                            "Type": "Image",
-                            "Name": "Image_ecs",
-                            "X": 94,
-                            "Y": 4,
-                            "Width": 59,
-                            "Height": 61,
-                            "RelativeFilename": "Etat_Bouton_ECS_L59xH61.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_temp_ecs",
-                            "Y": 15,
-                            "Width": 94,
-                            "Height": 21,
-                            "TextId": "text_temp_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_temp_temp_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_zone_1",
-                        "X": 15,
-                        "Width": 168,
-                        "Height": 102,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "Button",
-                            "Name": "button_orange_zone_1_1",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
-                            "Released": "Bouton_Orange_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_orange_zone_1",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
-                            "Released": "Bouton_Orange_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_marron_zone_1",
-                            "Width": 168,
-                            "Height": 102,
-                            "Visible": false,
-                            "Pressed": "Bouton_Marron_Clicked_L168xH102.png",
-                            "Released": "Bouton_Marron_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "Button",
-                            "Name": "button_violet_zone_1",
-                            "Width": 168,
-                            "Height": 102,
-                            "Visible": false,
-                            "Pressed": "Bouton_Violet_Clicked_L168xH102.png",
-                            "Released": "Bouton_Violet_Unclicked_L168xH102.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_zone_1",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_accueil_zone_1_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_accueil_zone_1_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 11
-                            }
-                          },
-                          {
-                            "Type": "Image",
-                            "Name": "Image_maison_zone_1",
-                            "X": 89,
-                            "Y": 11,
-                            "Width": 67,
-                            "Height": 58,
-                            "RelativeFilename": "Etat_Maison_L67xH58.png"
-                          },
-                          {
-                            "Type": "Circle",
-                            "Name": "circle_demande_zone_1",
-                            "X": 116,
-                            "Y": 41,
-                            "Width": 14,
-                            "Height": 14,
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "CenterX": 7.0,
-                            "CenterY": 7.0,
-                            "Radius": 6.5,
-                            "EndAngle": 360.0,
-                            "CapPrecision": "Butt"
-                          },
-                          {
-                            "Type": "Circle",
-                            "Name": "circle_mode_zone_1",
-                            "X": 111,
-                            "Y": 36,
-                            "Width": 24,
-                            "Height": 24,
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "CenterX": 12.0,
-                            "CenterY": 12.0,
-                            "Radius": 11.0,
-                            "LineWidth": 2.0,
-                            "EndAngle": 360.0,
-                            "CapPrecision": "Round"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_temp_zone_1",
-                            "Y": 15,
-                            "Width": 94,
-                            "Height": 21,
-                            "TextId": "text_temp_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "TextId": "text_temp_zone_1_init_centre_defaut",
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_on_off_temp_zone_1",
-                            "Y": 15,
-                            "Width": 94,
-                            "Height": 21,
-                            "Visible": false,
-                            "TextId": "text_on_off_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "Wildcard1": {
-                              "UseBuffer": true,
-                              "BufferSize": 7
-                            }
-                          }
-                        ]
-                      },
-                      {
                         "Type": "TextArea",
-                        "Name": "textArea_alerte",
-                        "X": 244,
-                        "Y": 194,
-                        "Width": 463,
-                        "Height": 29,
-                        "Visible": false,
-                        "TextId": "text_secours_pac_centre_defaut",
+                        "Name": "textArea_on_off_temp_zone_2",
+                        "Y": 15,
+                        "Width": 94,
+                        "Height": 21,
+                        "TextId": "text_on_off_centre_defaut",
                         "TextRotation": "0",
                         "Color": {
                           "Red": 255,
-                          "Green": 21
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "UseBuffer": true,
+                          "BufferSize": 7
                         }
                       }
                     ]
                   },
                   {
                     "Type": "Container",
-                    "Name": "swipeContainerConfiguration",
-                    "Width": 950,
-                    "Height": 375,
+                    "Name": "container_ecs",
+                    "X": 767,
+                    "Width": 168,
+                    "Height": 102,
+                    "Visible": false,
                     "Components": [
                       {
-                        "Type": "ButtonWithIcon",
-                        "Name": "buttonWithIcon_installation",
-                        "X": 767,
-                        "Y": 250,
+                        "Type": "Button",
+                        "Name": "button_ecs",
                         "Width": 168,
                         "Height": 102,
-                        "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
-                        "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
-                        "IconPressed": "Etat_Bouton_Installation_L82xH61.png",
-                        "IconReleased": "Etat_Bouton_Installation_L82xH61.png",
-                        "IconX": 43,
-                        "IconY": 7,
-                        "IconHeight": 61,
-                        "IconWidth": 82
+                        "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                        "Released": "Bouton_Orange_Unclicked_L168xH102.png"
                       },
                       {
                         "Type": "TextArea",
-                        "Name": "textArea_installation",
-                        "X": 767,
-                        "Y": 321,
-                        "Width": 168,
-                        "Height": 28,
-                        "TextId": "text_configuration_installation_centre_defaut",
-                        "TextRotation": "0",
-                        "Color": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        }
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_linky",
-                        "X": 579,
-                        "Y": 250,
-                        "Width": 168,
-                        "Height": 102,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "ButtonWithIcon",
-                            "Name": "buttonWithIcon_linky",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
-                            "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                            "IconPressed": "Etat_Bouton_Compteur_Linky_L38xH55.png",
-                            "IconReleased": "Etat_Bouton_Compteur_Linky_L38xH55.png",
-                            "IconX": 66,
-                            "IconY": 9,
-                            "IconHeight": 55,
-                            "IconWidth": 38
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_linky",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_configuration_linky_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "ButtonWithIcon",
-                        "Name": "buttonWithIcon_historique",
-                        "X": 391,
-                        "Y": 250,
-                        "Width": 168,
-                        "Height": 102,
-                        "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
-                        "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                        "IconPressed": "Etat_Bouton_Historique_L100xH60.png",
-                        "IconReleased": "Etat_Bouton_Historique_L100xH60.png",
-                        "IconX": 35,
-                        "IconY": 9,
-                        "IconHeight": 60,
-                        "IconWidth": 100
-                      },
-                      {
-                        "Type": "TextArea",
-                        "Name": "textArea_historique",
-                        "X": 391,
-                        "Y": 321,
-                        "Width": 168,
-                        "Height": 28,
-                        "TextId": "text_configuration_historique_centre_defaut",
-                        "TextRotation": "0",
-                        "Color": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        }
-                      },
-                      {
-                        "Type": "ButtonWithIcon",
-                        "Name": "buttonWithIcon_energies",
-                        "X": 203,
-                        "Y": 250,
-                        "Width": 168,
-                        "Height": 102,
-                        "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
-                        "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                        "IconPressed": "Etat_Bouton_Consommation_L98xH64.png",
-                        "IconReleased": "Etat_Bouton_Consommation_L98xH64.png",
-                        "IconX": 35,
-                        "IconY": 5,
-                        "IconHeight": 64,
-                        "IconWidth": 98
-                      },
-                      {
-                        "Type": "TextArea",
-                        "Name": "textArea_energies",
-                        "X": 203,
-                        "Y": 321,
-                        "Width": 168,
-                        "Height": 28,
-                        "TextId": "text_configuration_energies_centre_defaut",
-                        "TextRotation": "0",
-                        "Color": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        }
-                      },
-                      {
-                        "Type": "ButtonWithIcon",
-                        "Name": "buttonWithIcon_infos_systeme",
-                        "X": 15,
-                        "Y": 250,
-                        "Width": 168,
-                        "Height": 102,
-                        "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
-                        "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                        "IconPressed": "Etat_Bouton_Info_L73xH62.png",
-                        "IconReleased": "Etat_Bouton_Info_L73xH62.png",
-                        "IconX": 47,
-                        "IconY": 5,
-                        "IconHeight": 62,
-                        "IconWidth": 73
-                      },
-                      {
-                        "Type": "TextArea",
-                        "Name": "textArea_infos_systemes",
-                        "X": 15,
-                        "Y": 321,
-                        "Width": 168,
-                        "Height": 28,
-                        "TextId": "text_configuration_infos_systemes_centre_defaut",
-                        "TextRotation": "0",
-                        "Color": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        }
-                      },
-                      {
-                        "Type": "ButtonWithIcon",
-                        "Name": "buttonWithIcon_maintenance",
-                        "X": 767,
-                        "Y": 125,
-                        "Width": 168,
-                        "Height": 102,
-                        "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
-                        "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
-                        "IconPressed": "Etat_Bouton_Maintenance_L66xH59.png",
-                        "IconReleased": "Etat_Bouton_Maintenance_L66xH59.png",
-                        "IconX": 51,
-                        "IconY": 7,
-                        "IconHeight": 59,
-                        "IconWidth": 66
-                      },
-                      {
-                        "Type": "TextArea",
-                        "Name": "textArea_maintenance",
-                        "X": 767,
-                        "Y": 196,
-                        "Width": 168,
-                        "Height": 28,
-                        "TextId": "text_configuration_maintenance_centre_defaut",
-                        "TextRotation": "0",
-                        "Color": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        }
-                      },
-                      {
-                        "Type": "ButtonWithIcon",
-                        "Name": "buttonWithIcon_usine",
-                        "X": 767,
-                        "Width": 168,
-                        "Height": 102,
-                        "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
-                        "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
-                        "IconPressed": "Etat_Bouton_Usine_L70xH60.png",
-                        "IconReleased": "Etat_Bouton_Usine_L70xH60.png",
-                        "IconX": 49,
-                        "IconY": 7,
-                        "IconHeight": 60,
-                        "IconWidth": 70
-                      },
-                      {
-                        "Type": "TextArea",
-                        "Name": "textArea_usine",
-                        "X": 767,
+                        "Name": "textArea_ecs",
                         "Y": 71,
                         "Width": 168,
                         "Height": 28,
-                        "TextId": "text_configuration_usine_centre_defaut",
+                        "TextId": "text_accueil_ecs_centre_defaut",
                         "TextRotation": "0",
                         "Color": {
                           "Red": 255,
@@ -1581,301 +1145,198 @@
                         }
                       },
                       {
-                        "Type": "Container",
-                        "Name": "container_secours",
-                        "X": 391,
-                        "Width": 168,
-                        "Height": 102,
-                        "Visible": false,
-                        "Components": [
-                          {
-                            "Type": "ButtonWithIcon",
-                            "Name": "buttonWithIcon_secours_off",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
-                            "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
-                            "IconPressed": "Etat_Bouton_Secours_L60xH60.png",
-                            "IconReleased": "Etat_Bouton_Secours_L60xH60.png",
-                            "IconX": 54,
-                            "IconY": 7,
-                            "IconHeight": 60,
-                            "IconWidth": 60
-                          },
-                          {
-                            "Type": "ButtonWithIcon",
-                            "Name": "buttonWithIcon_secours_on",
-                            "Width": 168,
-                            "Height": 102,
-                            "Visible": false,
-                            "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
-                            "Released": "Bouton_Vert_Unclicked_L168xH102.png",
-                            "IconPressed": "Etat_Bouton_Secours_L60xH60.png",
-                            "IconReleased": "Etat_Bouton_Secours_L60xH60.png",
-                            "IconX": 54,
-                            "IconY": 7,
-                            "IconHeight": 60,
-                            "IconWidth": 60
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_secours",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_configuration_secours_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_vacances",
-                        "X": 203,
-                        "Width": 168,
-                        "Height": 102,
-                        "Components": [
-                          {
-                            "Type": "ButtonWithIcon",
-                            "Name": "buttonWithIcon_vacances_off",
-                            "Width": 168,
-                            "Height": 102,
-                            "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
-                            "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                            "IconPressed": "Etat_Bouton_Vacances_L70xH54.png",
-                            "IconReleased": "Etat_Bouton_Vacances_L70xH54.png",
-                            "IconX": 49,
-                            "IconY": 11,
-                            "IconHeight": 54,
-                            "IconWidth": 70
-                          },
-                          {
-                            "Type": "ButtonWithIcon",
-                            "Name": "buttonWithIcon_vacances_on",
-                            "Width": 168,
-                            "Height": 102,
-                            "Visible": false,
-                            "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
-                            "Released": "Bouton_Vert_Unclicked_L168xH102.png",
-                            "IconPressed": "Etat_Bouton_Vacances_L70xH54.png",
-                            "IconReleased": "Etat_Bouton_Vacances_L70xH54.png",
-                            "IconX": 49,
-                            "IconY": 11,
-                            "IconHeight": 54,
-                            "IconWidth": 70
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_vacances",
-                            "Y": 71,
-                            "Width": 168,
-                            "Height": 28,
-                            "TextId": "text_configuration_vacances_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          }
-                        ]
-                      },
-                      {
-                        "Type": "ButtonWithIcon",
-                        "Name": "buttonWithIcon_parametres",
-                        "X": 15,
-                        "Width": 168,
-                        "Height": 102,
-                        "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
-                        "Released": "Bouton_Beige_Unclicked_L168xH102.png",
-                        "IconPressed": "Etat_Bouton_Parametre_L97xH58.png",
-                        "IconReleased": "Etat_Bouton_Parametre_L97xH58.png",
-                        "IconX": 35,
-                        "IconY": 7,
-                        "IconHeight": 58,
-                        "IconWidth": 97
+                        "Type": "Image",
+                        "Name": "Image_ecs",
+                        "X": 94,
+                        "Y": 4,
+                        "Width": 59,
+                        "Height": 61,
+                        "RelativeFilename": "Etat_Bouton_ECS_L59xH61.png"
                       },
                       {
                         "Type": "TextArea",
-                        "Name": "textArea_parametres",
-                        "X": 15,
-                        "Y": 71,
-                        "Width": 168,
-                        "Height": 28,
-                        "TextId": "text_configuration_parametres_centre_defaut",
+                        "Name": "textArea_temp_ecs",
+                        "Y": 15,
+                        "Width": 94,
+                        "Height": 21,
+                        "TextId": "text_temp_centre_defaut",
                         "TextRotation": "0",
                         "Color": {
                           "Red": 255,
                           "Green": 255,
                           "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_temp_temp_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
                         }
-                      },
-                      {
-                        "Type": "Container",
-                        "Name": "container_oui_non_veille",
-                        "X": 15,
-                        "Y": 110,
-                        "Width": 449,
-                        "Height": 129,
-                        "Components": [
-                          {
-                            "Type": "Line",
-                            "Name": "line_bas_oui_non_veille",
-                            "Y": 127,
-                            "Width": 449,
-                            "Height": 2,
-                            "Color": {
-                              "Red": 76,
-                              "Green": 76,
-                              "Blue": 76
-                            },
-                            "StartY": 1.0,
-                            "EndX": 449.0,
-                            "EndY": 1.0,
-                            "LineWidth": 2.0,
-                            "LineEndingStyle": "Round"
-                          },
-                          {
-                            "Type": "Line",
-                            "Name": "line_haut_oui_non_veille",
-                            "Width": 449,
-                            "Height": 2,
-                            "Color": {
-                              "Red": 76,
-                              "Green": 76,
-                              "Blue": 76
-                            },
-                            "StartY": 1.0,
-                            "EndX": 449.0,
-                            "EndY": 1.0,
-                            "LineWidth": 2.0,
-                            "LineEndingStyle": "Round"
-                          },
-                          {
-                            "Type": "Line",
-                            "Name": "line_gauche_oui_non_veille",
-                            "Width": 2,
-                            "Height": 129,
-                            "Color": {
-                              "Red": 76,
-                              "Green": 76,
-                              "Blue": 76
-                            },
-                            "StartX": 1.0,
-                            "EndX": 1.0,
-                            "EndY": 129.0,
-                            "LineWidth": 2.0,
-                            "LineEndingStyle": "Round"
-                          },
-                          {
-                            "Type": "Line",
-                            "Name": "line_droite_oui_non_veille",
-                            "X": 447,
-                            "Width": 2,
-                            "Height": 129,
-                            "Color": {
-                              "Red": 76,
-                              "Green": 76,
-                              "Blue": 76
-                            },
-                            "StartX": 1.0,
-                            "EndX": 1.0,
-                            "EndY": 129.0,
-                            "LineWidth": 2.0,
-                            "LineEndingStyle": "Round"
-                          },
-                          {
-                            "Type": "ToggleButton",
-                            "Name": "toggleButton_oui_oui_non_veille",
-                            "X": 233,
-                            "Y": 75,
-                            "Width": 216,
-                            "Height": 53,
-                            "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
-                            "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
-                          },
-                          {
-                            "Type": "ToggleButton",
-                            "Name": "toggleButton_non_oui_non_veille",
-                            "Y": 76,
-                            "Width": 216,
-                            "Height": 53,
-                            "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
-                            "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_question_oui_non_veille",
-                            "X": 8,
-                            "Y": 8,
-                            "Width": 433,
-                            "Height": 60,
-                            "TextId": "text_oui_non_veille",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            },
-                            "WideTextAction": 1
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_non_oui_non_veille",
-                            "X": 62,
-                            "Y": 89,
-                            "Width": 92,
-                            "Height": 24,
-                            "TextId": "text_non_marche_forcee_circ_capt_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          },
-                          {
-                            "Type": "TextArea",
-                            "Name": "textArea_oui_oui_non_veille",
-                            "X": 295,
-                            "Y": 89,
-                            "Width": 92,
-                            "Height": 24,
-                            "TextId": "text_oui_marche_forcee_circ_capt_centre_defaut",
-                            "TextRotation": "0",
-                            "Color": {
-                              "Red": 255,
-                              "Green": 255,
-                              "Blue": 255
-                            }
-                          }
-                        ]
                       }
                     ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_zone_1",
+                    "X": 15,
+                    "Width": 168,
+                    "Height": 102,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "Button",
+                        "Name": "button_orange_zone_1_1",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                        "Released": "Bouton_Orange_Unclicked_L168xH102.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_orange_zone_1",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Orange_Clicked_L168xH102.png",
+                        "Released": "Bouton_Orange_Unclicked_L168xH102.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_marron_zone_1",
+                        "Width": 168,
+                        "Height": 102,
+                        "Visible": false,
+                        "Pressed": "Bouton_Marron_Clicked_L168xH102.png",
+                        "Released": "Bouton_Marron_Unclicked_L168xH102.png"
+                      },
+                      {
+                        "Type": "Button",
+                        "Name": "button_violet_zone_1",
+                        "Width": 168,
+                        "Height": 102,
+                        "Visible": false,
+                        "Pressed": "Bouton_Violet_Clicked_L168xH102.png",
+                        "Released": "Bouton_Violet_Unclicked_L168xH102.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_zone_1",
+                        "Y": 71,
+                        "Width": 168,
+                        "Height": 28,
+                        "TextId": "text_accueil_zone_1_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_accueil_zone_1_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 11
+                        }
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_maison_zone_1",
+                        "X": 89,
+                        "Y": 11,
+                        "Width": 67,
+                        "Height": 58,
+                        "RelativeFilename": "Etat_Maison_L67xH58.png"
+                      },
+                      {
+                        "Type": "Circle",
+                        "Name": "circle_demande_zone_1",
+                        "X": 116,
+                        "Y": 41,
+                        "Width": 14,
+                        "Height": 14,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "CenterX": 7.0,
+                        "CenterY": 7.0,
+                        "Radius": 6.5,
+                        "EndAngle": 360.0,
+                        "CapPrecision": "Butt"
+                      },
+                      {
+                        "Type": "Circle",
+                        "Name": "circle_mode_zone_1",
+                        "X": 111,
+                        "Y": 36,
+                        "Width": 24,
+                        "Height": 24,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "CenterX": 12.0,
+                        "CenterY": 12.0,
+                        "Radius": 11.0,
+                        "LineWidth": 2.0,
+                        "EndAngle": 360.0,
+                        "CapPrecision": "Round"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_temp_zone_1",
+                        "Y": 15,
+                        "Width": 94,
+                        "Height": 21,
+                        "TextId": "text_temp_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_temp_zone_1_init_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_on_off_temp_zone_1",
+                        "Y": 15,
+                        "Width": 94,
+                        "Height": 21,
+                        "Visible": false,
+                        "TextId": "text_on_off_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "UseBuffer": true,
+                          "BufferSize": 7
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_alerte",
+                    "X": 244,
+                    "Y": 194,
+                    "Width": 463,
+                    "Height": 29,
+                    "Visible": false,
+                    "TextId": "text_secours_pac_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 21
+                    }
                   }
                 ]
-              },
-              {
-                "Type": "TextArea",
-                "Name": "textArea_config_page",
-                "X": 492,
-                "Y": 16,
-                "Width": 17,
-                "Height": 37,
-                "Visible": false,
-                "TextId": "text_barre_titre_2_centre_defaut",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "AutoSize": true
               },
               {
                 "Type": "TextArea",
@@ -1892,25 +1353,6 @@
                   "Blue": 255
                 },
                 "AutoSize": true
-              },
-              {
-                "Type": "Circle",
-                "Name": "circle_point_page_config",
-                "X": 451,
-                "Y": 28,
-                "Width": 16,
-                "Height": 16,
-                "Visible": false,
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "CenterX": 8.0,
-                "CenterY": 8.0,
-                "Radius": 8.0,
-                "EndAngle": 360.0,
-                "CapPrecision": "Butt"
               },
               {
                 "Type": "Circle",
@@ -2018,8 +1460,9 @@
               "TriggerComponent": "flexButton_to_config_screen"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "change_to_config_screen"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
             }
           },
           {
@@ -2194,6 +1637,858 @@
           {
             "InteractionName": "BTNClicked_installation_fct",
             "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_installation"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_maintenance_fct",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_maintenance"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_usine_chgsc_usine",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_usine"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_historique_chgsc_historique_fonct",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Historiques_fonctionnement"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_energie_chgsc_energies",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Energies"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_infos_systeme_chgsc_infos_systeme",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Infos_systeme"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_secours_off_chgsc_secours",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Secours"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_vacances_off_chgsc_vacances",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Vacances"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_parametres_chgsc_parametres",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Parametres"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_to_screen_accueil",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButton_to_accueil_screen"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "button_accueil"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_secours_on_chgsc_secours",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Secours"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_vacances_on_chgsc_vacances",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Vacances"
+            }
+          },
+          {
+            "InteractionName": "Swipe_config_chsc_accueil",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "flexButton_to_accueil_screen"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "change_to_accueil_screen"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_Linky",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Linky"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_non_veille",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_non_veille"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_oui_veille",
+            "Trigger": {
+              "Type": "TriggerClicked"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_oui_veille"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_ECS_fct",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_ecs"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_ecs"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "goToPiscine"
+          },
+          {
+            "Name": "action1"
+          }
+        ]
+      },
+      {
+        "Name": "Configuration",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_zone_boutons",
+                "Y": 149,
+                "Width": 950,
+                "Height": 375,
+                "Components": [
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_installation",
+                    "X": 767,
+                    "Y": 250,
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
+                    "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Bouton_Installation_L82xH61.png",
+                    "IconReleased": "Etat_Bouton_Installation_L82xH61.png",
+                    "IconX": 43,
+                    "IconY": 7,
+                    "IconHeight": 61,
+                    "IconWidth": 82
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_installation",
+                    "X": 767,
+                    "Y": 321,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_configuration_installation_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_linky",
+                    "X": 579,
+                    "Y": 250,
+                    "Width": 168,
+                    "Height": 102,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "ButtonWithIcon",
+                        "Name": "buttonWithIcon_linky",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                        "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                        "IconPressed": "Etat_Bouton_Compteur_Linky_L38xH55.png",
+                        "IconReleased": "Etat_Bouton_Compteur_Linky_L38xH55.png",
+                        "IconX": 66,
+                        "IconY": 9,
+                        "IconHeight": 55,
+                        "IconWidth": 38
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_linky",
+                        "Y": 71,
+                        "Width": 168,
+                        "Height": 28,
+                        "TextId": "text_configuration_linky_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_historique",
+                    "X": 391,
+                    "Y": 250,
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                    "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Bouton_Historique_L100xH60.png",
+                    "IconReleased": "Etat_Bouton_Historique_L100xH60.png",
+                    "IconX": 35,
+                    "IconY": 9,
+                    "IconHeight": 60,
+                    "IconWidth": 100
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_historique",
+                    "X": 391,
+                    "Y": 321,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_configuration_historique_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_energies",
+                    "X": 203,
+                    "Y": 250,
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                    "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Bouton_Consommation_L98xH64.png",
+                    "IconReleased": "Etat_Bouton_Consommation_L98xH64.png",
+                    "IconX": 35,
+                    "IconY": 5,
+                    "IconHeight": 64,
+                    "IconWidth": 98
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_energies",
+                    "X": 203,
+                    "Y": 321,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_configuration_energies_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_infos_systeme",
+                    "X": 15,
+                    "Y": 250,
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                    "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Bouton_Info_L73xH62.png",
+                    "IconReleased": "Etat_Bouton_Info_L73xH62.png",
+                    "IconX": 47,
+                    "IconY": 5,
+                    "IconHeight": 62,
+                    "IconWidth": 73
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_infos_systemes",
+                    "X": 15,
+                    "Y": 321,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_configuration_infos_systemes_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_maintenance",
+                    "X": 767,
+                    "Y": 125,
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
+                    "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Bouton_Maintenance_L66xH59.png",
+                    "IconReleased": "Etat_Bouton_Maintenance_L66xH59.png",
+                    "IconX": 51,
+                    "IconY": 7,
+                    "IconHeight": 59,
+                    "IconWidth": 66
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_maintenance",
+                    "X": 767,
+                    "Y": 196,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_configuration_maintenance_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_usine",
+                    "X": 767,
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
+                    "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Bouton_Usine_L70xH60.png",
+                    "IconReleased": "Etat_Bouton_Usine_L70xH60.png",
+                    "IconX": 49,
+                    "IconY": 7,
+                    "IconHeight": 60,
+                    "IconWidth": 70
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_usine",
+                    "X": 767,
+                    "Y": 71,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_configuration_usine_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_secours",
+                    "X": 391,
+                    "Width": 168,
+                    "Height": 102,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "ButtonWithIcon",
+                        "Name": "buttonWithIcon_secours_off",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Gris_Clair_Clicked_L168xH102.png",
+                        "Released": "Bouton_Gris_Clair_Unclicked_L168xH102.png",
+                        "IconPressed": "Etat_Bouton_Secours_L60xH60.png",
+                        "IconReleased": "Etat_Bouton_Secours_L60xH60.png",
+                        "IconX": 54,
+                        "IconY": 7,
+                        "IconHeight": 60,
+                        "IconWidth": 60
+                      },
+                      {
+                        "Type": "ButtonWithIcon",
+                        "Name": "buttonWithIcon_secours_on",
+                        "Width": 168,
+                        "Height": 102,
+                        "Visible": false,
+                        "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                        "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                        "IconPressed": "Etat_Bouton_Secours_L60xH60.png",
+                        "IconReleased": "Etat_Bouton_Secours_L60xH60.png",
+                        "IconX": 54,
+                        "IconY": 7,
+                        "IconHeight": 60,
+                        "IconWidth": 60
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_secours",
+                        "Y": 71,
+                        "Width": 168,
+                        "Height": 28,
+                        "TextId": "text_configuration_secours_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_vacances",
+                    "X": 203,
+                    "Width": 168,
+                    "Height": 102,
+                    "Components": [
+                      {
+                        "Type": "ButtonWithIcon",
+                        "Name": "buttonWithIcon_vacances_off",
+                        "Width": 168,
+                        "Height": 102,
+                        "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                        "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                        "IconPressed": "Etat_Bouton_Vacances_L70xH54.png",
+                        "IconReleased": "Etat_Bouton_Vacances_L70xH54.png",
+                        "IconX": 49,
+                        "IconY": 11,
+                        "IconHeight": 54,
+                        "IconWidth": 70
+                      },
+                      {
+                        "Type": "ButtonWithIcon",
+                        "Name": "buttonWithIcon_vacances_on",
+                        "Width": 168,
+                        "Height": 102,
+                        "Visible": false,
+                        "Pressed": "Bouton_Vert_Clicked_L168xH102.png",
+                        "Released": "Bouton_Vert_Unclicked_L168xH102.png",
+                        "IconPressed": "Etat_Bouton_Vacances_L70xH54.png",
+                        "IconReleased": "Etat_Bouton_Vacances_L70xH54.png",
+                        "IconX": 49,
+                        "IconY": 11,
+                        "IconHeight": 54,
+                        "IconWidth": 70
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_vacances",
+                        "Y": 71,
+                        "Width": 168,
+                        "Height": 28,
+                        "TextId": "text_configuration_vacances_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "ButtonWithIcon",
+                    "Name": "buttonWithIcon_parametres",
+                    "X": 15,
+                    "Width": 168,
+                    "Height": 102,
+                    "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
+                    "Released": "Bouton_Beige_Unclicked_L168xH102.png",
+                    "IconPressed": "Etat_Bouton_Parametre_L97xH58.png",
+                    "IconReleased": "Etat_Bouton_Parametre_L97xH58.png",
+                    "IconX": 35,
+                    "IconY": 7,
+                    "IconHeight": 58,
+                    "IconWidth": 97
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_parametres",
+                    "X": 15,
+                    "Y": 71,
+                    "Width": 168,
+                    "Height": 28,
+                    "TextId": "text_configuration_parametres_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_oui_non_veille",
+                    "X": 15,
+                    "Y": 110,
+                    "Width": 449,
+                    "Height": 129,
+                    "Components": [
+                      {
+                        "Type": "Line",
+                        "Name": "line_bas_oui_non_veille",
+                        "Y": 127,
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_haut_oui_non_veille",
+                        "Width": 449,
+                        "Height": 2,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartY": 1.0,
+                        "EndX": 449.0,
+                        "EndY": 1.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_gauche_oui_non_veille",
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "Line",
+                        "Name": "line_droite_oui_non_veille",
+                        "X": 447,
+                        "Width": 2,
+                        "Height": 129,
+                        "Color": {
+                          "Red": 76,
+                          "Green": 76,
+                          "Blue": 76
+                        },
+                        "StartX": 1.0,
+                        "EndX": 1.0,
+                        "EndY": 129.0,
+                        "LineWidth": 2.0,
+                        "LineEndingStyle": "Round"
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_oui_oui_non_veille",
+                        "X": 233,
+                        "Y": 75,
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton_non_oui_non_veille",
+                        "Y": 76,
+                        "Width": 216,
+                        "Height": 53,
+                        "Pressed": "Bouton_Vert_OuiNon_Unclicked_L216xH53.png",
+                        "Released": "Bouton_Beige_OuiNon_Unclicked_L216xH53.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_question_oui_non_veille",
+                        "X": 8,
+                        "Y": 8,
+                        "Width": 433,
+                        "Height": 60,
+                        "TextId": "text_oui_non_veille",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "WideTextAction": 1
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_non_oui_non_veille",
+                        "X": 62,
+                        "Y": 89,
+                        "Width": 92,
+                        "Height": 24,
+                        "TextId": "text_non_marche_forcee_circ_capt_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_oui_oui_non_veille",
+                        "X": 295,
+                        "Y": 89,
+                        "Width": 92,
+                        "Height": 24,
+                        "TextId": "text_oui_marche_forcee_circ_capt_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_config_page",
+                "X": 492,
+                "Y": 16,
+                "Width": 17,
+                "Height": 37,
+                "TextId": "text_barre_titre_2_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_point_page_config",
+                "X": 451,
+                "Y": 28,
+                "Width": 16,
+                "Height": 16,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 8.0,
+                "CenterY": 8.0,
+                "Radius": 8.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "flexButton_to_config_screen",
+                "X": 475,
+                "Y": 11,
+                "Width": 50,
+                "Height": 50,
+                "Alpha": 0,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 50,
+                    "Height": 50,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "flexButton_to_accueil_screen",
+                "X": 434,
+                "Y": 11,
+                "Width": 50,
+                "Height": 50,
+                "Alpha": 0,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 50,
+                    "Height": 50,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 5,
+                    "ColorReleased": {
+                      "Green": 102,
+                      "Blue": 153
+                    },
+                    "ColorPressed": {
+                      "Green": 153,
+                      "Blue": 204
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Timer_accueil_500ms",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 50
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "Timer_500ms"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_installation_fct",
+            "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "buttonWithIcon_installation"
             },
@@ -2303,8 +2598,9 @@
               "TriggerComponent": "flexButton_to_accueil_screen"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "button_accueil"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Accueil"
             }
           },
           {
@@ -2380,8 +2676,7 @@
             "InteractionName": "BTNClicked_ECS_fct",
             "HasCompletedTrigger": true,
             "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "button_ecs"
+              "Type": "TriggerClicked"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -18505,25 +18800,13 @@
           {
             "InteractionName": "BTNClicked_retour_chgsc_configuration",
             "Trigger": {
-              "Type": "TriggerInteractionCompleted",
-              "InteractionToTriggerOn": "BTNClicked_Retour_Fct"
-            },
-            "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Accueil"
-            }
-          },
-          {
-            "InteractionName": "BTNClicked_Retour_Fct",
-            "HasCompletedTrigger": true,
-            "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "button_retour"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "bouton_retour"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
             }
           }
         ]
@@ -22060,8 +22343,9 @@
               "TriggerComponent": "button_retour"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "bouton_retour"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
             }
           }
         ]
@@ -24513,6 +24797,7 @@
                 "Y": 149,
                 "Width": 774,
                 "Height": 358,
+                "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
                 "ScrollbarsVisible": true,
@@ -33139,7 +33424,6 @@
                 "Y": 149,
                 "Width": 774,
                 "Height": 360,
-                "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
                 "ScrollbarsVisible": true,
@@ -33174,8 +33458,8 @@
                       {
                         "Type": "TextArea",
                         "Name": "textArea_zuba_val_statut_pac_2",
-                        "X": 622,
-                        "Width": 144,
+                        "X": 522,
+                        "Width": 244,
                         "Height": 26,
                         "TextId": "__SingleUse_WW0P",
                         "TextRotation": "0",
@@ -52435,12 +52719,180 @@
                 "CustomContainerDefinitionName": "Barre_titre"
               },
               {
+                "Type": "Button",
+                "Name": "button_gauche_synoptique",
+                "X": 785,
+                "Y": 466,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_droite_synoptique",
+                "X": 867,
+                "Y": 466,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_timax",
+                "Y": 126,
+                "Width": 950,
+                "Height": 398,
+                "Visible": false,
+                "Components": []
+              },
+              {
+                "Type": "Container",
+                "Name": "container_mitsu_2",
+                "Y": 126,
+                "Width": 950,
+                "Height": 398,
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_trait_rouge_hydrau_mitsu",
+                    "X": 257,
+                    "Y": 142,
+                    "Width": 131,
+                    "Height": 11,
+                    "RelativeFilename": "Fleche_Trait_Rouge_Circuit_Hydrau_L131xH10.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_trait_orange_hydrau_mitsu",
+                    "X": 257,
+                    "Y": 275,
+                    "Width": 131,
+                    "Height": 11,
+                    "RelativeFilename": "Fleche_Trait_Orange_Circuit_Hydrau_L131xH10.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_trait_bleu_hydrau_mitsu",
+                    "X": 257,
+                    "Y": 142,
+                    "Width": 131,
+                    "Height": 11,
+                    "RelativeFilename": "Fleche_Trait_Bleu_Circuit_Hydrau_L131xH10.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_trait_violet_hydrau_mitsu",
+                    "X": 257,
+                    "Y": 275,
+                    "Width": 131,
+                    "Height": 11,
+                    "RelativeFilename": "Fleche_Trait_Violet_Circuit_Hydrau_L131xH10.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_circuit_hydrau_zuran_baguio",
+                    "X": 350,
+                    "Y": 91,
+                    "Width": 343,
+                    "Height": 261,
+                    "RelativeFilename": "Circuit_Hydraulique_Zuran_Baguio_L342xH261.png"
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_mitsu_1",
+                "Y": 126,
+                "Width": 950,
+                "Height": 398,
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_trait_orange_mitsu_baguio_chaud",
+                    "X": 332,
+                    "Y": 279,
+                    "Width": 111,
+                    "Height": 4,
+                    "Visible": false,
+                    "RelativeFilename": "Trait_Orange_Baguio_Mode_Chaud_L110xH2.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_trait_violet_mitsu_baguio_froid",
+                    "X": 332,
+                    "Y": 279,
+                    "Width": 111,
+                    "Height": 4,
+                    "RelativeFilename": "Trait_Violet_Baguio_Mode_Froid_L110xH2.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_detendeur_mitsu_zuran_froid",
+                    "X": 330,
+                    "Y": 181,
+                    "Width": 202,
+                    "Height": 186,
+                    "Visible": false,
+                    "RelativeFilename": "Detendeur_Zuran_Mode_Chaud_L201xH186.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_detendeur_mitsu_zuran_chaud",
+                    "X": 330,
+                    "Y": 181,
+                    "Width": 202,
+                    "Height": 186,
+                    "Visible": false,
+                    "RelativeFilename": "Detendeur_Zuran_Mode_Froid_L201xH186.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_frigo_mitsu_chaud",
+                    "X": 89,
+                    "Y": 49,
+                    "Width": 771,
+                    "Height": 283,
+                    "Visible": false,
+                    "RelativeFilename": "Frigo_Zuran_Baguio_Mode_Chaud_L770xH283.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_frigo_mitsu_froid",
+                    "X": 89,
+                    "Y": 49,
+                    "Width": 771,
+                    "Height": 283,
+                    "RelativeFilename": "Frigo_Zuran_Baguio_Mode_Froid_L770xH283.png"
+                  }
+                ]
+              },
+              {
                 "Type": "Container",
                 "Name": "container_geotwin_inverterra",
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
+                "Visible": false,
                 "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_appoint_invert",
+                    "X": 793,
+                    "Y": 78,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_off_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
                   {
                     "Type": "Image",
                     "Name": "Image_appoint",
@@ -52448,16 +52900,17 @@
                     "Y": 100,
                     "Width": 75,
                     "Height": 75,
+                    "Visible": false,
                     "RelativeFilename": "Bloc_Appoint_Avec_L74xH75.png"
                   },
                   {
                     "Type": "Image",
-                    "Name": "image1",
-                    "X": 100,
-                    "Y": 10,
-                    "Width": 318,
-                    "Height": 185,
-                    "RelativeFilename": "Bloc_Compresseur1_Reversible_Froid_L318xH185.png"
+                    "Name": "Image_no_appoint",
+                    "X": 806,
+                    "Y": 161,
+                    "Width": 74,
+                    "Height": 4,
+                    "RelativeFilename": "Bloc_Appoint_Sans_L74xH4.png"
                   },
                   {
                     "Type": "Image",
@@ -52465,7 +52918,7 @@
                     "X": 598,
                     "Y": 105,
                     "Width": 307,
-                    "Height": 249,
+                    "Height": 250,
                     "RelativeFilename": "Bloc_Condenseur_Circuit_Chauffage_L306xH249.png"
                   },
                   {
@@ -52488,12 +52941,111 @@
                   },
                   {
                     "Type": "Image",
+                    "Name": "Image_comp_rev_chaud_seul",
+                    "X": 281,
+                    "Y": 21,
+                    "Width": 319,
+                    "Height": 184,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_Compresseur1_Reversible_Chaud_L318xH184.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_comp_rev_froid_seul",
+                    "X": 281,
+                    "Y": 20,
+                    "Width": 319,
+                    "Height": 184,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_Compresseur1_Reversible_Froid_L318xH184.png"
+                  },
+                  {
+                    "Type": "Image",
                     "Name": "Image_comp_chaud_seul",
                     "X": 281,
                     "Y": 105,
                     "Width": 319,
                     "Height": 100,
                     "RelativeFilename": "Bloc_Compresseur1_Chaud_Seul_L318xH99.png"
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_comp2_geo",
+                    "X": 280,
+                    "Y": 164,
+                    "Width": 320,
+                    "Height": 120,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "Image",
+                        "Name": "Image_comp_2",
+                        "X": 76,
+                        "Width": 164,
+                        "Height": 114,
+                        "RelativeFilename": "Bloc_Compresseur2_L164xH114.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_temp_BP2_invert",
+                        "X": -24,
+                        "Y": 91,
+                        "Width": 94,
+                        "Height": 21,
+                        "TextId": "text_temp_droit_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_init_00_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_temp_HP2_invert",
+                        "X": 247,
+                        "Y": 91,
+                        "Width": 94,
+                        "Height": 21,
+                        "TextId": "text_temp_gauche_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_init_00_centre_defaut",
+                          "UseBuffer": true,
+                          "BufferSize": 7
+                        }
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_on_off_comp_2",
+                        "X": 130,
+                        "Y": 59,
+                        "Width": 59,
+                        "Height": 21,
+                        "TextId": "text_hz_comp_droite",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "Wildcard1": {
+                          "TextId": "text_init_0_droite",
+                          "UseBuffer": true,
+                          "BufferSize": 4
+                        }
+                      }
+                    ]
                   },
                   {
                     "Type": "TextArea",
@@ -52517,7 +53069,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_temp_BP_invert",
+                    "Name": "textArea_temp_BP1_invert",
                     "X": 256,
                     "Y": 182,
                     "Width": 94,
@@ -52597,10 +53149,10 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_Hz_comp_invert",
-                    "X": 374,
+                    "Name": "textArea_on_off_comp_1",
+                    "X": 410,
                     "Y": 150,
-                    "Width": 94,
+                    "Width": 59,
                     "Height": 21,
                     "TextId": "text_hz_comp_droite",
                     "TextRotation": "0",
@@ -52633,21 +53185,6 @@
                       "TextId": "text_init_0_centre_defaut",
                       "UseBuffer": true,
                       "BufferSize": 6
-                    }
-                  },
-                  {
-                    "Type": "TextArea",
-                    "Name": "textArea_appoint_invert",
-                    "X": 793,
-                    "Y": 78,
-                    "Width": 94,
-                    "Height": 21,
-                    "TextId": "text_off_centre_defaut",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
                     }
                   },
                   {
@@ -52732,7 +53269,7 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_temp_HP_invert",
+                    "Name": "textArea_temp_HP1_invert",
                     "X": 527,
                     "Y": 182,
                     "Width": 94,
@@ -52754,7 +53291,7 @@
                     "Type": "TextArea",
                     "Name": "textArea_temp_HP_cible_invert",
                     "X": 527,
-                    "Y": 207,
+                    "Y": 218,
                     "Width": 94,
                     "Height": 21,
                     "TextId": "text_temp_HP_cible_gauche_defaut",
@@ -52864,115 +53401,45 @@
               },
               {
                 "Type": "Container",
-                "Name": "container_timax",
-                "Y": 126,
-                "Width": 950,
-                "Height": 398,
-                "Visible": false,
-                "Components": []
-              },
-              {
-                "Type": "Container",
-                "Name": "container_mitsu_2",
-                "Y": 126,
-                "Width": 950,
-                "Height": 398,
-                "Visible": false,
-                "Components": [
-                  {
-                    "Type": "Button",
-                    "Name": "button_gauche_synoptique_mitsu_2",
-                    "X": 785,
-                    "Y": 340,
-                    "Width": 75,
-                    "Height": 53,
-                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
-                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
-                  },
-                  {
-                    "Type": "Button",
-                    "Name": "button_droite_synoptique_mitsu_2",
-                    "X": 867,
-                    "Y": 340,
-                    "Width": 75,
-                    "Height": 53,
-                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
-                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
-                  },
-                  {
-                    "Type": "TextArea",
-                    "Name": "textArea_ue_timax",
-                    "X": 255,
-                    "Y": 46,
-                    "Width": 195,
-                    "Height": 23,
-                    "TextId": "text_unite_exterieure_centre_defaut",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "container_mitsu_1",
-                "Y": 126,
-                "Width": 950,
-                "Height": 398,
-                "Visible": false,
-                "Components": [
-                  {
-                    "Type": "Button",
-                    "Name": "button_gauche_synoptique_mitsu_1",
-                    "X": 785,
-                    "Y": 340,
-                    "Width": 75,
-                    "Height": 53,
-                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
-                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
-                  },
-                  {
-                    "Type": "Button",
-                    "Name": "button_droite_synoptique_mitsu_1",
-                    "X": 867,
-                    "Y": 340,
-                    "Width": 75,
-                    "Height": 53,
-                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
-                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
                 "Name": "container_ajpac_2",
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
-                "Visible": false,
                 "Components": [
                   {
-                    "Type": "Button",
-                    "Name": "button_gauche_synoptique_ajpac",
-                    "X": 785,
-                    "Y": 340,
-                    "Width": 75,
-                    "Height": 53,
-                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
-                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
+                    "Type": "Image",
+                    "Name": "Image_ajpac_simple_P2",
+                    "X": 50,
+                    "Width": 849,
+                    "Height": 390,
+                    "RelativeFilename": "Bloc_AJPAC_Simple_Etage_P2_L849xH390.png"
                   },
                   {
-                    "Type": "Button",
-                    "Name": "button_droite_synoptique_ajpac",
-                    "X": 867,
-                    "Y": 340,
-                    "Width": 75,
-                    "Height": 53,
-                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
-                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                    "Type": "Image",
+                    "Name": "Image_ajpac_semi_P2",
+                    "X": 50,
+                    "Width": 849,
+                    "Height": 390,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_AJPAC_Semi_Etage_P2_L849xH390.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ajpac_double_P2",
+                    "X": 50,
+                    "Width": 849,
+                    "Height": 390,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_AJPAC_Bi_Etage_P2_L849xH390.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ajpac_froid_P2",
+                    "X": 50,
+                    "Width": 849,
+                    "Height": 390,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_AJPAC_Froid_P2_L849xH390.png"
                   }
                 ]
               },
@@ -53003,17 +53470,37 @@
                     "Height": 53,
                     "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
                     "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ajpac_simple_semi_P1",
+                    "X": 130,
+                    "Y": 30,
+                    "Width": 689,
+                    "Height": 317,
+                    "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH317.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ajpac_double_P1",
+                    "X": 130,
+                    "Y": 30,
+                    "Width": 689,
+                    "Height": 317,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_AJPAC_Bi_Etage_P1_L688xH317.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ajpac_froid_P1",
+                    "X": 130,
+                    "Y": 30,
+                    "Width": 689,
+                    "Height": 317,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_AJPAC_Froid_P1_L688xH317.png"
                   }
                 ]
-              },
-              {
-                "Type": "Image",
-                "Name": "Image_maison",
-                "X": 111,
-                "Y": 146,
-                "Width": 106,
-                "Height": 52,
-                "RelativeFilename": "Bloc_Maison_Pelouse_L105xH51-78.png"
               },
               {
                 "Type": "Button",
@@ -53024,6 +53511,16 @@
                 "Height": 55,
                 "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
                 "Released": "Bouton_Retour_Unclicked_L60xH54.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_maison",
+                "X": 111,
+                "Y": 146,
+                "Width": 107,
+                "Height": 52,
+                "Visible": false,
+                "RelativeFilename": "Bloc_Maison_Pelouse_L106xH51.png"
               }
             ]
           }
@@ -53038,6 +53535,28 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_retour"
+            }
+          },
+          {
+            "InteractionName": "BTNCLicked_bouton_gauche",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_gauche_synoptique"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_droit",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_droite_synoptique"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droit"
             }
           }
         ]
@@ -54904,8 +55423,9 @@
               "TriggerComponent": "button_retour"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "bouton_retour"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
             }
           },
           {
@@ -56979,8 +57499,9 @@
               "TriggerComponent": "button_retour"
             },
             "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "bouton_retour"
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
             }
           }
         ]
@@ -103737,34 +104258,21 @@
                     }
                   },
                   {
-                    "Type": "ScrollableContainer",
-                    "Name": "scrollableContainerLabelDef",
-                    "X": 100,
-                    "Y": 200,
-                    "Width": 300,
-                    "Height": 20,
+                    "Type": "TextArea",
+                    "Name": "textArea_def_1",
+                    "X": 95,
+                    "Y": 24,
+                    "Width": 600,
+                    "Height": 23,
                     "Visible": false,
-                    "HorizontalScrollEnabled": true,
-                    "ScrollbarsVisibleOnPressed": true,
-                    "ScrollbarsAlpha": 255,
-                    "Components": [
-                      {
-                        "Type": "TextArea",
-                        "Name": "textArea_def_1",
-                        "X": -5,
-                        "Y": -176,
-                        "Width": 600,
-                        "Height": 23,
-                        "Visible": false,
-                        "TextId": "text_erreur_2_liste_gauche_defaut",
-                        "TextRotation": "0",
-                        "Color": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        }
-                      }
-                    ]
+                    "TextId": "text_erreur_2_liste_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "WideTextAction": 1
                   }
                 ]
               }

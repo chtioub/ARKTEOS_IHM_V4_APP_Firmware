@@ -14,7 +14,6 @@ Model::Model() :
     modelListener(0), veilleCounter(0)
 {
 	//Utilisé pour init du Slid Page accueil/config
-	bPageAccueil = true;
 #if defined(SIMULATOR) || defined(DEMO_ARKTEOS)
 	// Options PAC
 	sConfig_IHM.sOption_PAC.sZone.bZone1 = 1;

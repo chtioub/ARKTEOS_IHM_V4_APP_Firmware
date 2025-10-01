@@ -19,6 +19,7 @@ Installation_hysteresisView::Installation_hysteresisView()
 	bMoveSliderPlus = false;
 	bMoveSliderMoins = false;
 
+
 	//u7VitesseVentilateur = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.u7VitesseMaxVentilateur;
 //	Unicode::snprintf(textAreaBuffer_Titre, 50, touchgfx::TypedText(T_TEXT_PARAM_COMPLEMENTAIRE_CENTRE_DEFAUT).getText());
 //	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
@@ -117,11 +118,17 @@ Installation_hysteresisView::Installation_hysteresisView()
 
 	barre_titre.titre(textAreaBuffer_Titre);
 	barre_titre.invalidate();
+
+//    dualSlider.setXY(50, 500);
+//    dualSlider.setLimits(-250, 250);  // exemple : plage -30°C à +30°C
+//    add(dualSlider);
+
 }
 
 void Installation_hysteresisView::setupScreen()
 {
     Installation_hysteresisViewBase::setupScreen();
+
 }
 
 void Installation_hysteresisView::tearDownScreen()

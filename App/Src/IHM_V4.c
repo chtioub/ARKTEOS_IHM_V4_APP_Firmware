@@ -58,7 +58,7 @@ uint8_t u8Prog[7][24], u8JourProg;
 uint8_t u8ZoneSelect;
 uint8_t u8PositionX, u8PositionY;
 bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp;
-bool bPageAccueil;
+//bool bPageAccueil;
 S_HISTO_ERR sHisto_Erreur;
 uint16_t u16NumAction = 0;
 uint32_t u32ValAction = 0, eAnciennePage;

@@ -30,12 +30,6 @@ void Infos_systemeView::tearDownScreen()
     Infos_systemeViewBase::tearDownScreen();
 }
 
-void Infos_systemeView::bouton_retour()
-{
-	bPageAccueil = false;
-	application().gotoAccueilScreenNoTransition();
-}
-
 void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
 	uint16_t u16TmpBuffer[4];
