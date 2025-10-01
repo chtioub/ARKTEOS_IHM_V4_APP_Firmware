@@ -71,8 +71,6 @@ void SynoptiqueView::update_container()
 		case AJPAC_III:
 			if (u8Page == 1)
 			{
-				container_ajpac_2.setVisible(false);
-				container_ajpac_2.invalidate();
 				container_ajpac_1.setVisible(true);
 				container_ajpac_1.invalidate();
 
@@ -89,17 +87,12 @@ void SynoptiqueView::update_container()
 			}
 			else
 			{
-				Image_ajpac_froid_P1.setVisible(false);
-				Image_ajpac_froid_P1.invalidate();
-				Image_ajpac_double_P1.setVisible(false);
-				Image_ajpac_double_P1.invalidate();
-				Image_ajpac_simple_semi_P1.setVisible(false);
-				Image_ajpac_simple_semi_P1.invalidate();
-
-				container_ajpac_1.setVisible(false);
-				container_ajpac_1.invalidate();
 				container_ajpac_2.setVisible(true);
 				container_ajpac_2.invalidate();
+				Image_ajpac_simple_P2.setVisible(true);
+				Image_ajpac_simple_P2.invalidate();
+
+
 				if (sStatut_PAC.S_Mode == S_FROID)
 				{
 					Image_ajpac_froid_P2.setVisible(true);
@@ -209,8 +202,7 @@ void SynoptiqueView::update_container()
 	}
 	button_droite_synoptique.invalidate();
 	button_gauche_synoptique.invalidate();
-	container_ajpac_1.invalidate();
-	container_ajpac_2.invalidate();
+
 	container_geotwin_inverterra.invalidate();
 	container_mitsu_1.invalidate();
 	container_mitsu_2.invalidate();

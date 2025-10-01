@@ -53405,6 +53405,7 @@
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "Image",
@@ -53412,6 +53413,7 @@
                     "X": 50,
                     "Width": 849,
                     "Height": 390,
+                    "Visible": false,
                     "RelativeFilename": "Bloc_AJPAC_Simple_Etage_P2_L849xH390.png"
                   },
                   {
@@ -53449,7 +53451,6 @@
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
-                "Visible": false,
                 "Components": [
                   {
                     "Type": "Button",
