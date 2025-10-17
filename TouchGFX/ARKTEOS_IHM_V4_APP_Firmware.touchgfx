@@ -2528,7 +2528,7 @@
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Historiques_fonctionnement"
+              "ActionComponent": "Histo_fonctionnement"
             }
           },
           {
@@ -13844,6 +13844,1424 @@
         ]
       },
       {
+        "Name": "Histo_fonctionnementa",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "buttonWithIcon_droite",
+                "X": 862,
+                "Y": 256,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                "Released": "Fleche_Droite_Unclicked_L75xH53.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconX": 97,
+                "IconHeight": 50,
+                "IconWidth": 50
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "buttonWithIcon_gauche",
+                "X": 13,
+                "Y": 256,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                "Released": "Fleche_Gauche_Unclicked_L75xH53.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconX": 97,
+                "IconHeight": 50,
+                "IconWidth": 50
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "buttonWithLabel_raz",
+                "X": 803,
+                "Y": 465,
+                "Width": 139,
+                "Height": 53,
+                "Pressed": "Boutons_3_Choix_Beige_Clicked_L139xH53.png",
+                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png",
+                "TextId": "text_raz_centre_defaut",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_0min",
+                "X": 794,
+                "Y": 359,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_0_histo_fct_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_10min",
+                "X": 675,
+                "Y": 359,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_10_histo_fct_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_60min",
+                "X": 75,
+                "Y": 359,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_60_histo_fct_centre_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_appoint",
+                "X": 23,
+                "Y": 398,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_appoint_droite_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_etat",
+                "X": 23,
+                "Y": 428,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_etat_droite_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_ecs",
+                "X": 841,
+                "Y": 389,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_ecs_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_d",
+                "X": 37,
+                "Y": 211,
+                "Width": 15,
+                "Height": 23,
+                "TextId": "text_histo_d_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_b",
+                "X": 37,
+                "Y": 211,
+                "Width": 15,
+                "Height": 23,
+                "TextId": "text_histo_b_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_r",
+                "X": 88,
+                "Y": 211,
+                "Width": 15,
+                "Height": 23,
+                "TextId": "text_histo_r_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_chaud",
+                "X": 841,
+                "Y": 409,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_chaud_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_eau_haut",
+                "X": 27,
+                "Y": 143,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_var_sys_geo_val_type_captage",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {}
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_eau_bas",
+                "X": 27,
+                "Y": 342,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_var_sys_geo_val_type_captage",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {}
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_ext_haut",
+                "X": 840,
+                "Y": 144,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_temp_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {}
+              },
+              {
+                "Type": "TextArea",
+                "Name": "textArea_ext_bas",
+                "X": 841,
+                "Y": 343,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_temp_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {}
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_ext_2",
+                "X": 923,
+                "Y": 228,
+                "Width": 14,
+                "Height": 14,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 7.0,
+                "CenterY": 7.0,
+                "Radius": 6.5,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_ext_1",
+                "X": 918,
+                "Y": 223,
+                "Width": 24,
+                "Height": 24,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 12.0,
+                "CenterY": 12.0,
+                "Radius": 11.0,
+                "LineWidth": 2.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Round"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_depart_2",
+                "X": 13,
+                "Y": 216,
+                "Width": 14,
+                "Height": 14,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 7.0,
+                "CenterY": 7.0,
+                "Radius": 6.5,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_depart_1",
+                "X": 8,
+                "Y": 211,
+                "Width": 24,
+                "Height": 24,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 12.0,
+                "CenterY": 12.0,
+                "Radius": 11.0,
+                "LineWidth": 2.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Round"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_retour_2",
+                "X": 64,
+                "Y": 216,
+                "Width": 14,
+                "Height": 14,
+                "Color": {
+                  "Green": 111,
+                  "Blue": 149
+                },
+                "CenterX": 7.0,
+                "CenterY": 7.0,
+                "Radius": 6.5,
+                "EndAngle": 360.0,
+                "CapPrecision": "Butt"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_sonde_retour_1",
+                "X": 59,
+                "Y": 211,
+                "Width": 24,
+                "Height": 24,
+                "Color": {
+                  "Green": 111,
+                  "Blue": 149
+                },
+                "CenterX": 12.0,
+                "CenterY": 12.0,
+                "Radius": 11.0,
+                "LineWidth": 2.0,
+                "EndAngle": 360.0,
+                "CapPrecision": "Round"
+              },
+              {
+                "Type": "Image",
+                "Name": "Image_maison_temp_ext",
+                "X": 856,
+                "Y": 192,
+                "Width": 67,
+                "Height": 58,
+                "RelativeFilename": "Etat_Maison_L67xH58.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_z1",
+                "X": 8,
+                "Y": 196,
+                "Width": 46,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box_z1",
+                    "X": 2,
+                    "Y": 2,
+                    "Width": 44,
+                    "Height": 38,
+                    "Color": {
+                      "Red": 226,
+                      "Green": 126
+                    }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_z1",
+                    "X": -1,
+                    "Width": 47,
+                    "Height": 41,
+                    "RelativeFilename": "Maison_Transparente_L46xH40.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_z1",
+                    "X": 12,
+                    "Y": 15,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "text_histo_z1_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_z2",
+                "X": 55,
+                "Y": 196,
+                "Width": 46,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box_z2",
+                    "X": 2,
+                    "Y": 2,
+                    "Width": 44,
+                    "Height": 38,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 211
+                    }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_z2",
+                    "Width": 47,
+                    "Height": 41,
+                    "RelativeFilename": "Maison_Transparente_L46xH40.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_z2",
+                    "X": 13,
+                    "Y": 15,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "text_histo_z2_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BTNClicked_retour_chgsc_accueil",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_retour"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Histo_fonctionnement",
+        "CanvasBufferSize": 15360,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background",
+            "Width": 1024,
+            "Height": 600
+          },
+          {
+            "Type": "Container",
+            "Name": "container",
+            "X": 37,
+            "Y": 38,
+            "Width": 950,
+            "Height": 524,
+            "Components": [
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "barre_titre",
+                "Width": 950,
+                "Height": 126,
+                "CustomContainerDefinitionName": "Barre_titre"
+              },
+              {
+                "Type": "Button",
+                "Name": "button_retour",
+                "X": 881,
+                "Y": 67,
+                "Width": 61,
+                "Height": 55,
+                "Pressed": "Bouton_Retour_Clicked_L60xH54.png",
+                "Released": "Bouton_Retour_Unclicked_L60xH54.png"
+              },
+              {
+                "Type": "Container",
+                "Name": "container_graph",
+                "X": 114,
+                "Y": 144,
+                "Width": 722,
+                "Height": 313,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "image_graph",
+                    "Width": 721,
+                    "Height": 313,
+                    "RelativeFilename": "Graphique_historique_L721xH313.png"
+                  },
+                  {
+                    "Type": "StaticGraph",
+                    "Name": "graph_eau_depart",
+                    "Y": 7,
+                    "Width": 722,
+                    "Height": 200,
+                    "Visible": false,
+                    "DataSeed": -1980621588,
+                    "NumberOfValues": 360,
+                    "MaxX": 100.0,
+                    "MinX": -100.0,
+                    "PrecisionX": "1",
+                    "MaxY": 100.0,
+                    "MinY": -100.0,
+                    "PrecisionY": "1",
+                    "XAxisScale": 1.0,
+                    "InsertRandomValues": true,
+                    "GraphDrawers": [
+                      {
+                        "Type": "LineDrawer",
+                        "LineWidth": 2,
+                        "FileNameImage": "",
+                        "Color": {
+                          "Red": 224,
+                          "Green": 7,
+                          "Blue": 27
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "StaticGraph",
+                    "Name": "graph_eau_retour",
+                    "Y": 7,
+                    "Width": 722,
+                    "Height": 200,
+                    "Visible": false,
+                    "DataSeed": -1980621588,
+                    "NumberOfValues": 360,
+                    "MaxX": 100.0,
+                    "MinX": -100.0,
+                    "PrecisionX": "1",
+                    "MaxY": 100.0,
+                    "MinY": -100.0,
+                    "PrecisionY": "1",
+                    "XAxisScale": 1.0,
+                    "InsertRandomValues": true,
+                    "GraphDrawers": [
+                      {
+                        "Type": "LineDrawer",
+                        "LineWidth": 2,
+                        "FileNameImage": "",
+                        "Color": {
+                          "Green": 92,
+                          "Blue": 130
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "StaticGraph",
+                    "Name": "graph_temp_ext",
+                    "Y": 7,
+                    "Width": 722,
+                    "Height": 200,
+                    "Visible": false,
+                    "DataSeed": -1980621588,
+                    "NumberOfValues": 360,
+                    "MaxX": 100.0,
+                    "MinX": -100.0,
+                    "PrecisionX": "1",
+                    "MaxY": 100.0,
+                    "MinY": -100.0,
+                    "PrecisionY": "1",
+                    "XAxisScale": 1.0,
+                    "InsertRandomValues": true,
+                    "GraphDrawers": [
+                      {
+                        "Type": "LineDrawer",
+                        "LineWidth": 2,
+                        "FileNameImage": "",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "StaticGraph",
+                    "Name": "graph_temp_z2",
+                    "Y": 7,
+                    "Width": 722,
+                    "Height": 200,
+                    "Visible": false,
+                    "DataSeed": -1980621588,
+                    "NumberOfValues": 360,
+                    "MaxX": 100.0,
+                    "MinX": -100.0,
+                    "PrecisionX": "1",
+                    "MaxY": 100.0,
+                    "MinY": -100.0,
+                    "PrecisionY": "1",
+                    "XAxisScale": 1.0,
+                    "InsertRandomValues": true,
+                    "GraphDrawers": [
+                      {
+                        "Type": "LineDrawer",
+                        "LineWidth": 2,
+                        "FileNameImage": "",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 211
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "StaticGraph",
+                    "Name": "graph_temp_z1_ballon",
+                    "Y": 7,
+                    "Width": 722,
+                    "Height": 200,
+                    "Visible": false,
+                    "DataSeed": -1980621588,
+                    "NumberOfValues": 360,
+                    "MaxX": 100.0,
+                    "MinX": -100.0,
+                    "PrecisionX": "1",
+                    "MaxY": 100.0,
+                    "MinY": -100.0,
+                    "PrecisionY": "1",
+                    "XAxisScale": 1.0,
+                    "InsertRandomValues": true,
+                    "GraphDrawers": [
+                      {
+                        "Type": "LineDrawer",
+                        "LineWidth": 2,
+                        "FileNameImage": "",
+                        "Color": {
+                          "Red": 193,
+                          "Green": 77
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_etat",
+                    "Y": 245,
+                    "Width": 722,
+                    "Height": 18,
+                    "Components": []
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_cercle_depart_retour",
+                "X": 8,
+                "Y": 211,
+                "Width": 100,
+                "Height": 24,
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_int_temp_ret",
+                    "X": 56,
+                    "Y": 5,
+                    "Width": 14,
+                    "Height": 14,
+                    "Color": {
+                      "Green": 92,
+                      "Blue": 130
+                    },
+                    "CenterX": 7.0,
+                    "CenterY": 7.0,
+                    "Radius": 6.5,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_int_temp_dep",
+                    "X": 5,
+                    "Y": 5,
+                    "Width": 14,
+                    "Height": 14,
+                    "Color": {
+                      "Red": 224,
+                      "Green": 7,
+                      "Blue": 27
+                    },
+                    "CenterX": 7.0,
+                    "CenterY": 7.0,
+                    "Radius": 6.5,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_ext_temp_ret",
+                    "X": 51,
+                    "Width": 24,
+                    "Height": 24,
+                    "Color": {
+                      "Green": 92,
+                      "Blue": 130
+                    },
+                    "CenterX": 12.0,
+                    "CenterY": 12.0,
+                    "Radius": 11.0,
+                    "LineWidth": 2.0,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_ext_temp_dep",
+                    "Width": 24,
+                    "Height": 24,
+                    "Color": {
+                      "Red": 224,
+                      "Green": 7,
+                      "Blue": 27
+                    },
+                    "CenterX": 12.0,
+                    "CenterY": 12.0,
+                    "Radius": 11.0,
+                    "LineWidth": 2.0,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "text_d",
+                    "X": 26,
+                    "Y": 1,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "__SingleUse_IHIL",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "text_r",
+                    "X": 78,
+                    "Y": 1,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "__SingleUse_CTLB",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_cercle_ballon_tampon",
+                "X": 8,
+                "Y": 211,
+                "Width": 100,
+                "Height": 24,
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_int_temp_ball",
+                    "X": 6,
+                    "Y": 5,
+                    "Width": 14,
+                    "Height": 14,
+                    "Color": {
+                      "Red": 193,
+                      "Green": 77
+                    },
+                    "CenterX": 7.0,
+                    "CenterY": 7.0,
+                    "Radius": 6.5,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_ext_temp_ball",
+                    "Width": 24,
+                    "Height": 24,
+                    "Color": {
+                      "Red": 193,
+                      "Green": 77
+                    },
+                    "CenterX": 12.0,
+                    "CenterY": 12.0,
+                    "Radius": 11.0,
+                    "LineWidth": 2.0,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "text_b",
+                    "X": 26,
+                    "Y": 1,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "__SingleUse_2729",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_z1",
+                "X": 8,
+                "Y": 196,
+                "Width": 47,
+                "Height": 41,
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box_z1",
+                    "X": 2,
+                    "Y": 2,
+                    "Width": 43,
+                    "Height": 37,
+                    "Color": {
+                      "Red": 226,
+                      "Green": 126
+                    }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "image_z1",
+                    "X": -1,
+                    "Y": -1,
+                    "Width": 47,
+                    "Height": 41,
+                    "RelativeFilename": "Maison_Transparente_L46xH40.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_z1",
+                    "X": 13,
+                    "Y": 15,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "__SingleUse_4UWA",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "AutoSize": true
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_z2",
+                "X": 55,
+                "Y": 196,
+                "Width": 47,
+                "Height": 41,
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "Box",
+                    "Name": "box_z2",
+                    "X": 2,
+                    "Y": 2,
+                    "Width": 43,
+                    "Height": 37,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 211
+                    }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "image_z2",
+                    "X": -1,
+                    "Y": -1,
+                    "Width": 47,
+                    "Height": 41,
+                    "RelativeFilename": "Maison_Transparente_L46xH40.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_z2",
+                    "X": 13,
+                    "Y": 15,
+                    "Width": 23,
+                    "Height": 23,
+                    "TextId": "__SingleUse_L99Z",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "AutoSize": true
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_temp_ext",
+                "X": 856,
+                "Y": 192,
+                "Width": 94,
+                "Height": 58,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "image_maison_temp_ext",
+                    "Width": 67,
+                    "Height": 58,
+                    "RelativeFilename": "Etat_Maison_L67xH58.png"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_ext_temp_ext",
+                    "X": 70,
+                    "Y": 31,
+                    "Width": 24,
+                    "Height": 24,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "CenterX": 12.0,
+                    "CenterY": 12.0,
+                    "Radius": 11.0,
+                    "LineWidth": 2.0,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  },
+                  {
+                    "Type": "Circle",
+                    "Name": "circle_int_temp_ext",
+                    "X": 74,
+                    "Y": 36,
+                    "Width": 14,
+                    "Height": 14,
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "CenterX": 7.0,
+                    "CenterY": 7.0,
+                    "Radius": 6.5,
+                    "EndAngle": 360.0,
+                    "CapPrecision": "Butt"
+                  }
+                ]
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "bouton_fleche_gauche",
+                "X": 13,
+                "Y": 256,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
+                "Released": "Fleche_Gauche_Unclicked_L75xH53.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconX": 97,
+                "IconHeight": 50,
+                "IconWidth": 50
+              },
+              {
+                "Type": "ButtonWithIcon",
+                "Name": "bouton_fleche_droite",
+                "X": 862,
+                "Y": 256,
+                "Width": 75,
+                "Height": 53,
+                "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
+                "Released": "Fleche_Droite_Unclicked_L75xH53.png",
+                "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+                "IconX": 97,
+                "IconHeight": 50,
+                "IconWidth": 50
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "bouton_raz",
+                "X": 803,
+                "Y": 465,
+                "Width": 139,
+                "Height": 53,
+                "Pressed": "Boutons_3_Choix_Beige_Clicked_L139xH53.png",
+                "Released": "Boutons_3_Choix_Beige_Unclicked_L139xH53.png",
+                "TextId": "__SingleUse_OYH7",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_60_min",
+                "X": 75,
+                "Y": 359,
+                "Width": 64,
+                "Height": 23,
+                "TextId": "__SingleUse_4PFM",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_10_min",
+                "X": 675,
+                "Y": 359,
+                "Width": 64,
+                "Height": 23,
+                "TextId": "__SingleUse_Z81F",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_0_min",
+                "X": 794,
+                "Y": 359,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "__SingleUse_VQNY",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_temp_ext_max",
+                "X": 841,
+                "Y": 138,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_temp_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_ABAI"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_temp_ext_min",
+                "X": 841,
+                "Y": 338,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_temp_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_1JQB"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_temp_eau_min",
+                "X": 27,
+                "Y": 338,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_temp_droite_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_MFL0"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_temp_eau_max",
+                "X": 27,
+                "Y": 138,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_temp_droite_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_UEP1"
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_etat",
+                "X": 23,
+                "Y": 426,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_etat_droite_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_appoint",
+                "X": 9,
+                "Y": 396,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_appoint_droite_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_ecs",
+                "X": 841,
+                "Y": 386,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_ecs_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_chaud",
+                "X": 841,
+                "Y": 407,
+                "Width": 83,
+                "Height": 23,
+                "TextId": "text_histo_chaud_gauche_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "Image",
+                "Name": "image_froid",
+                "X": 410,
+                "Y": 463,
+                "Width": 53,
+                "Height": 61,
+                "RelativeFilename": "Etat_Rafraichissement_Flocon_L52xH60.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image_chaud",
+                "X": 333,
+                "Y": 463,
+                "Width": 61,
+                "Height": 60,
+                "RelativeFilename": "Icone_chauffage_L60xH60.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image_arret",
+                "X": 261,
+                "Y": 459,
+                "Width": 54,
+                "Height": 60,
+                "RelativeFilename": "Icone_arret_L54xH60.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image_ecs",
+                "X": 481,
+                "Y": 459,
+                "Width": 60,
+                "Height": 62,
+                "RelativeFilename": "Icone_ecs_L59xH61.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image_piscine",
+                "X": 550,
+                "Y": 457,
+                "Width": 76,
+                "Height": 67,
+                "RelativeFilename": "Icone_piscine_L75xH66.png"
+              },
+              {
+                "Type": "Image",
+                "Name": "image_appoint",
+                "X": 644,
+                "Y": 459,
+                "Width": 33,
+                "Height": 63,
+                "RelativeFilename": "Icone_appoint_L32xH62.png"
+              },
+              {
+                "Type": "Circle",
+                "Name": "circle_appoint",
+                "X": 97,
+                "Y": 388,
+                "Width": 15,
+                "Height": 40,
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "CenterX": 24.0,
+                "CenterY": 20.0,
+                "Radius": 20.0,
+                "LineWidth": 2.0,
+                "StartAngle": 220.0,
+                "EndAngle": 320.0,
+                "CapPrecision": "Butt"
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "BTN_Clicked_Retour",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "button_retour"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Configuration"
+            }
+          },
+          {
+            "InteractionName": "Timer_1sec",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 100
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "timer_10s"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_raz",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_raz"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "clear_graph"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_droit",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_fleche_droite"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_droit"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_bouton_gauche",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "bouton_fleche_gauche"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_gauche"
+            }
+          }
+        ]
+      },
+      {
         "Name": "Historiques_fonctionnement",
         "CanvasBufferSize": 15360,
         "Components": [
@@ -14495,6 +15913,51 @@
                     "EndY": 1.0,
                     "LineWidth": 2.0,
                     "LineEndingStyle": "Round"
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container_z2",
+                    "X": -59,
+                    "Y": 52,
+                    "Width": 46,
+                    "Height": 40,
+                    "Visible": false,
+                    "Components": [
+                      {
+                        "Type": "Box",
+                        "Name": "box_z2",
+                        "X": 2,
+                        "Y": 2,
+                        "Width": 44,
+                        "Height": 38,
+                        "Color": {
+                          "Red": 255,
+                          "Green": 211
+                        }
+                      },
+                      {
+                        "Type": "Image",
+                        "Name": "Image_z2",
+                        "Width": 47,
+                        "Height": 41,
+                        "RelativeFilename": "Maison_Transparente_L46xH40.png"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea_z2",
+                        "X": 13,
+                        "Y": 15,
+                        "Width": 23,
+                        "Height": 23,
+                        "TextId": "text_histo_z2_centre_defaut",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        }
+                      }
+                    ]
                   }
                 ]
               },
@@ -14604,6 +16067,7 @@
                 "Y": 216,
                 "Width": 14,
                 "Height": 14,
+                "Visible": false,
                 "Color": {
                   "Red": 255,
                   "Green": 255,
@@ -14622,6 +16086,7 @@
                 "Y": 211,
                 "Width": 24,
                 "Height": 24,
+                "Visible": false,
                 "Color": {
                   "Red": 255,
                   "Green": 255,
@@ -14641,6 +16106,7 @@
                 "Y": 216,
                 "Width": 14,
                 "Height": 14,
+                "Visible": false,
                 "Color": {
                   "Green": 111,
                   "Blue": 149
@@ -14658,6 +16124,7 @@
                 "Y": 211,
                 "Width": 24,
                 "Height": 24,
+                "Visible": false,
                 "Color": {
                   "Green": 111,
                   "Blue": 149
@@ -14757,7 +16224,7 @@
                 "Type": "TextArea",
                 "Name": "textArea_ecs",
                 "X": 841,
-                "Y": 389,
+                "Y": 388,
                 "Width": 83,
                 "Height": 23,
                 "TextId": "text_histo_ecs_gauche_defaut",
@@ -14775,6 +16242,7 @@
                 "Y": 211,
                 "Width": 15,
                 "Height": 23,
+                "Visible": false,
                 "TextId": "text_histo_d_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
@@ -14805,6 +16273,7 @@
                 "Y": 211,
                 "Width": 15,
                 "Height": 23,
+                "Visible": false,
                 "TextId": "text_histo_r_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
@@ -14835,6 +16304,7 @@
                 "Y": 143,
                 "Width": 83,
                 "Height": 23,
+                "Visible": false,
                 "TextId": "text_var_sys_geo_val_type_captage",
                 "TextRotation": "0",
                 "Color": {
@@ -14851,6 +16321,7 @@
                 "Y": 342,
                 "Width": 83,
                 "Height": 23,
+                "Visible": false,
                 "TextId": "text_var_sys_geo_val_type_captage",
                 "TextRotation": "0",
                 "Color": {
@@ -14867,6 +16338,7 @@
                 "Y": 144,
                 "Width": 83,
                 "Height": 23,
+                "Visible": false,
                 "TextId": "text_histo_temp_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
@@ -14883,6 +16355,7 @@
                 "Y": 343,
                 "Width": 83,
                 "Height": 23,
+                "Visible": false,
                 "TextId": "text_histo_temp_gauche_defaut",
                 "TextRotation": "0",
                 "Color": {
@@ -14899,6 +16372,7 @@
                 "Y": 152,
                 "Width": 718,
                 "Height": 202,
+                "Visible": false,
                 "DataSeed": -1720629446,
                 "NumberOfValues": 360,
                 "MaxY": 100.0,
@@ -14927,6 +16401,7 @@
                 "Y": 152,
                 "Width": 718,
                 "Height": 202,
+                "Visible": false,
                 "DataSeed": -1720629446,
                 "NumberOfValues": 360,
                 "MaxY": 100.0,
@@ -14954,6 +16429,7 @@
                 "Y": 152,
                 "Width": 718,
                 "Height": 202,
+                "Visible": false,
                 "DataSeed": -1720629446,
                 "NumberOfValues": 360,
                 "MaxY": 100.0,
@@ -14983,6 +16459,7 @@
                 "Y": 196,
                 "Width": 46,
                 "Height": 40,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "Box",
@@ -15023,45 +16500,19 @@
               },
               {
                 "Type": "Container",
-                "Name": "container_z2",
-                "X": 55,
-                "Y": 196,
-                "Width": 46,
-                "Height": 40,
+                "Name": "container_graph1",
+                "X": 114,
+                "Y": 144,
+                "Width": 722,
+                "Height": 313,
+                "Visible": false,
                 "Components": [
                   {
-                    "Type": "Box",
-                    "Name": "box_z2",
-                    "X": 2,
-                    "Y": 2,
-                    "Width": 44,
-                    "Height": 38,
-                    "Color": {
-                      "Red": 255,
-                      "Green": 211
-                    }
-                  },
-                  {
                     "Type": "Image",
-                    "Name": "Image_z2",
-                    "Width": 47,
-                    "Height": 41,
-                    "RelativeFilename": "Maison_Transparente_L46xH40.png"
-                  },
-                  {
-                    "Type": "TextArea",
-                    "Name": "textArea_z2",
-                    "X": 13,
-                    "Y": 15,
-                    "Width": 23,
-                    "Height": 23,
-                    "TextId": "text_histo_z2_centre_defaut",
-                    "TextRotation": "0",
-                    "Color": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    }
+                    "Name": "Image_graphique",
+                    "Width": 721,
+                    "Height": 313,
+                    "RelativeFilename": "Graphique_historique_L721xH313.png"
                   }
                 ]
               }
@@ -52799,6 +54250,202 @@
                     "Width": 343,
                     "Height": 261,
                     "RelativeFilename": "Circuit_Hydraulique_Zuran_Baguio_L342xH261.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_liquide_mitsu",
+                    "X": 248,
+                    "Y": 326,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_circ_chauf_mitsu",
+                    "X": 491,
+                    "Y": 66,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_percent_circ_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 4
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_dep_ch_mitsu",
+                    "X": 555,
+                    "Y": 178,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_ret_ch_mitsu",
+                    "X": 555,
+                    "Y": 220,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_debit_mitsu",
+                    "X": 491,
+                    "Y": 342,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_debit_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 6
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_appoint_mitsu",
+                    "X": 585,
+                    "Y": 70,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_on_off_sajiter_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_MVX7",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "trait_point_tille_horiz_haut",
+                    "X": 215,
+                    "Y": 115,
+                    "Width": 250,
+                    "Height": 4,
+                    "Visible": false,
+                    "RelativeFilename": "Trait_Blanc_Pointilles_L250xH4.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "trait_point_tille_horiz_bas",
+                    "X": 215,
+                    "Y": 311,
+                    "Width": 250,
+                    "Height": 4,
+                    "Visible": false,
+                    "RelativeFilename": "Trait_Blanc_Pointilles_L250xH4.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "trait_point_tille_vert",
+                    "X": 461,
+                    "Y": 115,
+                    "Width": 4,
+                    "Height": 200,
+                    "Visible": false,
+                    "RelativeFilename": "Trait_Blanc_Pointilles_L200xH4.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_unite_exterieure",
+                    "X": 257,
+                    "Y": 85,
+                    "Width": 158,
+                    "Height": 23,
+                    "Visible": false,
+                    "TextId": "text_unite_exterieure_synoptique",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_retour_eau_timax",
+                    "X": 453,
+                    "Y": 194,
+                    "Width": 32,
+                    "Height": 91,
+                    "RelativeFilename": "Sonde_Retour_Chauffage_Timax_L31xH90.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_retour_eau_mitsu",
+                    "X": 489,
+                    "Y": 192,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
                   }
                 ]
               },
@@ -52808,7 +54455,6 @@
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
-                "Visible": false,
                 "Components": [
                   {
                     "Type": "Image",
@@ -52817,7 +54463,6 @@
                     "Y": 279,
                     "Width": 111,
                     "Height": 4,
-                    "Visible": false,
                     "RelativeFilename": "Trait_Orange_Baguio_Mode_Chaud_L110xH2.png"
                   },
                   {
@@ -52827,6 +54472,7 @@
                     "Y": 279,
                     "Width": 111,
                     "Height": 4,
+                    "Visible": false,
                     "RelativeFilename": "Trait_Violet_Baguio_Mode_Froid_L110xH2.png"
                   },
                   {
@@ -52846,7 +54492,6 @@
                     "Y": 181,
                     "Width": 202,
                     "Height": 186,
-                    "Visible": false,
                     "RelativeFilename": "Detendeur_Zuran_Mode_Froid_L201xH186.png"
                   },
                   {
@@ -52854,9 +54499,8 @@
                     "Name": "Image_frigo_mitsu_chaud",
                     "X": 89,
                     "Y": 49,
-                    "Width": 771,
+                    "Width": 772,
                     "Height": 283,
-                    "Visible": false,
                     "RelativeFilename": "Frigo_Zuran_Baguio_Mode_Chaud_L770xH283.png"
                   },
                   {
@@ -52866,7 +54510,282 @@
                     "Y": 49,
                     "Width": 771,
                     "Height": 283,
+                    "Visible": false,
                     "RelativeFilename": "Frigo_Zuran_Baguio_Mode_Froid_L770xH283.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_detendeur_ligne_liquide",
+                    "X": 670,
+                    "Y": 260,
+                    "Width": 49,
+                    "Height": 72,
+                    "RelativeFilename": "Detendeur_Ligne_Liquide_L49xH71.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_milieu_batterie_mitsu",
+                    "X": 210,
+                    "Y": 208,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_out_evap_mitsu",
+                    "X": 40,
+                    "Y": 81,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_EEVC_mitsu",
+                    "X": 537,
+                    "Y": 307,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_EEV_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_EEVA_mitsu",
+                    "X": 264,
+                    "Y": 332,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_EEV_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_frequence_mitsu",
+                    "X": 340,
+                    "Y": 84,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_freqence_comp",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_HB9C",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_EEVB_mitsu",
+                    "X": 655,
+                    "Y": 338,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_EEV_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_percent_ventil_2_mitsu",
+                    "X": 70,
+                    "Y": 337,
+                    "Width": 150,
+                    "Height": 21,
+                    "TextId": "text_percent_ventil_2_centre",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_91U1",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_percent_ventil_1_mitsu",
+                    "X": 70,
+                    "Y": 311,
+                    "Width": 150,
+                    "Height": 21,
+                    "TextId": "text_percent_ventil_1_centre",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_EIA9",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_in_ue_mitsu",
+                    "X": 232,
+                    "Y": 243,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_hp_comp_mitsu",
+                    "X": 458,
+                    "Y": 115,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_cloche_comp_mitsu",
+                    "X": 458,
+                    "Y": 88,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_bp_comp_mitsu",
+                    "X": 204,
+                    "Y": 169,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_pression_temp_hp_mitsu",
+                    "X": 458,
+                    "Y": 222,
+                    "Width": 74,
+                    "Height": 43,
+                    "TextId": "text_pression_temp_gauche_2_lignes_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    },
+                    "Wildcard2": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
                   }
                 ]
               },
@@ -52906,11 +54825,12 @@
                   {
                     "Type": "Image",
                     "Name": "Image_no_appoint",
-                    "X": 806,
+                    "X": 805,
                     "Y": 161,
-                    "Width": 74,
+                    "Width": 76,
                     "Height": 4,
-                    "RelativeFilename": "Bloc_Appoint_Sans_L74xH4.png"
+                    "RelativeFilename": "Bloc_Appoint_Sans_L76xH4.png",
+                    "Draggable": true
                   },
                   {
                     "Type": "Image",
@@ -52946,7 +54866,6 @@
                     "Y": 21,
                     "Width": 319,
                     "Height": 184,
-                    "Visible": false,
                     "RelativeFilename": "Bloc_Compresseur1_Reversible_Chaud_L318xH184.png"
                   },
                   {
@@ -52975,7 +54894,6 @@
                     "Y": 164,
                     "Width": 320,
                     "Height": 120,
-                    "Visible": false,
                     "Components": [
                       {
                         "Type": "Image",
@@ -53379,9 +55297,216 @@
                   },
                   {
                     "Type": "TextArea",
-                    "Name": "textArea_temp_ext_invert",
-                    "X": 10,
-                    "Y": 40,
+                    "Name": "textArea_label_comp1",
+                    "X": 470,
+                    "Y": 178,
+                    "Width": 11,
+                    "Height": 23,
+                    "TextId": "__SingleUse_S28Z",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "AutoSize": true
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_label_comp2",
+                    "X": 470,
+                    "Y": 250,
+                    "Width": 11,
+                    "Height": 23,
+                    "TextId": "__SingleUse_B96G",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "AutoSize": true
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container_ajpac_1",
+                "X": 10,
+                "Y": 104,
+                "Width": 950,
+                "Height": 398,
+                "Visible": false,
+                "Components": [
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ajpac_simple_semi_P1",
+                    "X": 130,
+                    "Y": 30,
+                    "Width": 689,
+                    "Height": 317,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH317.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ajpac_double_P1",
+                    "X": 130,
+                    "Y": 30,
+                    "Width": 689,
+                    "Height": 317,
+                    "Visible": false,
+                    "RelativeFilename": "Bloc_AJPAC_Bi_Etage_P1_L688xH317.png"
+                  },
+                  {
+                    "Type": "Image",
+                    "Name": "Image_ajpac_froid_P1",
+                    "X": 130,
+                    "Y": 30,
+                    "Width": 688,
+                    "Height": 317,
+                    "RelativeFilename": "Bloc_AJPAC_Froid_P1_L688xH317.png"
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_pression_temp_hp_ajp",
+                    "X": 674,
+                    "Y": 62,
+                    "Width": 160,
+                    "Height": 21,
+                    "TextId": "text_pression_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    },
+                    "Wildcard2": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_pression_temp_hp_int_ajp",
+                    "X": 760,
+                    "Y": 224,
+                    "Width": 160,
+                    "Height": 21,
+                    "TextId": "text_pression_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    },
+                    "Wildcard2": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_pression_temp_bp_ajp",
+                    "X": 674,
+                    "Y": 202,
+                    "Width": 74,
+                    "Height": 43,
+                    "TextId": "text_pression_temp_gauche_2_lignes_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    },
+                    "Wildcard2": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_in_ue_ajp",
+                    "X": 265,
+                    "Y": 296,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_hp_410_ajp",
+                    "X": 681,
+                    "Y": 16,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_percent_ventil_ajp",
+                    "X": 33,
+                    "Y": 198,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_percent_ventil_droite",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_WRQ9",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_out_ue_ajp",
+                    "X": 106,
+                    "Y": 94,
                     "Width": 94,
                     "Height": 21,
                     "TextId": "text_temp_droit_defaut",
@@ -53395,6 +55520,129 @@
                       "TextId": "text_init_00_centre_defaut",
                       "UseBuffer": true,
                       "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_in_bout_liq_ajp",
+                    "X": 645,
+                    "Y": 262,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_palier_hz_comp_ajp",
+                    "X": 523,
+                    "Y": 124,
+                    "Width": 81,
+                    "Height": 46,
+                    "TextId": "text_palier_frequence_2_lignes_droite_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_val_0",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    },
+                    "Wildcard2": {
+                      "TextId": "text_val_0"
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_EEV_EV_ajp",
+                    "X": 312,
+                    "Y": 124,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_EEV_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_EV_ue_ajp",
+                    "X": 333,
+                    "Y": 251,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_on_off_sajiter_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_WFFP",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_EV_ui_ajp",
+                    "X": 765,
+                    "Y": 113,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_off_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_DRJF",
+                      "UseBuffer": true,
+                      "BufferSize": 10
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_HP_cible_ajp",
+                    "X": 681,
+                    "Y": 40,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_HP_cible_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 6
                     }
                   }
                 ]
@@ -53440,66 +55688,332 @@
                     "X": 50,
                     "Width": 849,
                     "Height": 390,
-                    "Visible": false,
                     "RelativeFilename": "Bloc_AJPAC_Froid_P2_L849xH390.png"
-                  }
-                ]
-              },
-              {
-                "Type": "Container",
-                "Name": "container_ajpac_1",
-                "Y": 126,
-                "Width": 950,
-                "Height": 398,
-                "Components": [
-                  {
-                    "Type": "Button",
-                    "Name": "button_gauche_synoptique_ajpac_1",
-                    "X": 785,
-                    "Y": 340,
-                    "Width": 75,
-                    "Height": 53,
-                    "Pressed": "Fleche_Gauche_Clicked_L75xH53.png",
-                    "Released": "Fleche_Gauche_Unclicked_L75xH53.png"
                   },
                   {
-                    "Type": "Button",
-                    "Name": "button_droite_synoptique_ajpac_1",
-                    "X": 867,
-                    "Y": 340,
-                    "Width": 75,
-                    "Height": 53,
-                    "Pressed": "Fleche_Droite_Clicked_L75xH53.png",
-                    "Released": "Fleche_Droite_Unclicked_L75xH53.png"
+                    "Type": "TextArea",
+                    "Name": "textArea_debit_ajp",
+                    "X": 675,
+                    "Y": 98,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_debit_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 6
+                    }
                   },
                   {
-                    "Type": "Image",
-                    "Name": "Image_ajpac_simple_semi_P1",
-                    "X": 130,
-                    "Y": 30,
-                    "Width": 689,
-                    "Height": 317,
-                    "RelativeFilename": "Bloc_AJPAC_Simple_Semi_Etage_P1_L688xH317.png"
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_ret_ch_ajp",
+                    "X": 738,
+                    "Y": 98,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
                   },
                   {
-                    "Type": "Image",
-                    "Name": "Image_ajpac_double_P1",
-                    "X": 130,
-                    "Y": 30,
-                    "Width": 689,
-                    "Height": 317,
-                    "Visible": false,
-                    "RelativeFilename": "Bloc_AJPAC_Bi_Etage_P1_L688xH317.png"
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_out_liquide_ech_int_ajp",
+                    "X": 33,
+                    "Y": 301,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
                   },
                   {
-                    "Type": "Image",
-                    "Name": "Image_ajpac_froid_P1",
-                    "X": 130,
-                    "Y": 30,
-                    "Width": 689,
-                    "Height": 317,
-                    "Visible": false,
-                    "RelativeFilename": "Bloc_AJPAC_Froid_P1_L688xH317.png"
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_dep_ch_ajp",
+                    "X": 738,
+                    "Y": 210,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_droit_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_appoint_ajp",
+                    "X": 766,
+                    "Y": 231,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "__SingleUse_B282",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_comp2_ajp",
+                    "X": 359,
+                    "Y": 344,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_off_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_EEV_134_ajp",
+                    "X": 361,
+                    "Y": 242,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_EEV_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_EEV_410_ajp",
+                    "X": 267,
+                    "Y": 126,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_EEV_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_evap_134_ajp",
+                    "X": 301,
+                    "Y": 253,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_hp_134_ajp",
+                    "X": 519,
+                    "Y": 301,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_temp_hp_134_cible_ajp",
+                    "X": 494,
+                    "Y": 333,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_cible_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_out_liq_cond_410_ajp",
+                    "X": 501,
+                    "Y": 126,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_temp_gauche_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_pression_temp_bp_134_ajp",
+                    "X": 189,
+                    "Y": 286,
+                    "Width": 160,
+                    "Height": 21,
+                    "TextId": "text_pression_temp_droite_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    },
+                    "Wildcard2": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_pression_temp_hp_134_ajp",
+                    "X": 359,
+                    "Y": 274,
+                    "Width": 160,
+                    "Height": 21,
+                    "TextId": "text_pression_temp_droite_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    },
+                    "Wildcard2": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_pression_temp_inter_p2_ajp",
+                    "X": 68,
+                    "Y": 116,
+                    "Width": 160,
+                    "Height": 21,
+                    "TextId": "text_pression_temp_droite_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    },
+                    "Wildcard2": {
+                      "TextId": "text_init_00_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 7
+                    }
+                  },
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea_circ_chauf_ajp",
+                    "X": 675,
+                    "Y": 231,
+                    "Width": 94,
+                    "Height": 21,
+                    "TextId": "text_percent_circ_centre_defaut",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "Wildcard1": {
+                      "TextId": "text_init_0_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 4
+                    }
                   }
                 ]
               },
@@ -53514,13 +56028,32 @@
                 "Released": "Bouton_Retour_Unclicked_L60xH54.png"
               },
               {
+                "Type": "TextArea",
+                "Name": "textArea_temp_ext",
+                "X": 10,
+                "Y": 166,
+                "Width": 94,
+                "Height": 21,
+                "TextId": "text_temp_droit_defaut",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "text_init_00_centre_defaut",
+                  "UseBuffer": true,
+                  "BufferSize": 7
+                }
+              },
+              {
                 "Type": "Image",
                 "Name": "Image_maison",
                 "X": 111,
                 "Y": 146,
                 "Width": 107,
                 "Height": 52,
-                "Visible": false,
                 "RelativeFilename": "Bloc_Maison_Pelouse_L106xH51.png"
               }
             ]

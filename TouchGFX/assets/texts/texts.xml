@@ -3408,6 +3408,27 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Group1">
+      <Text Id="text_na_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">NA</Translation>
+        <Translation Language="GB">NA</Translation>
+        <Translation Language="PT">NA</Translation>
+        <Translation Language="NL">NA</Translation>
+        <Translation Language="DE">NA</Translation>
+      </Text>
+      <Text Id="text_na_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">NA</Translation>
+        <Translation Language="GB">NA</Translation>
+        <Translation Language="PT">NA</Translation>
+        <Translation Language="NL">NA</Translation>
+        <Translation Language="DE">NA</Translation>
+      </Text>
+      <Text Id="text_na_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">NA</Translation>
+        <Translation Language="GB">NA</Translation>
+        <Translation Language="PT">NA</Translation>
+        <Translation Language="NL">NA</Translation>
+        <Translation Language="DE">NA</Translation>
+      </Text>
       <Text Id="text_message_meme_numero_sonde" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Une autre sonde Modbus ou RF est déjà attribuée avec le&#10;même numéro de sonde.&#10;- Si votre actuelle sonde est du type Modbus, contrôler les&#10;numéros attribués sur vos sondes RF.&#10;- Si votre actuelle sonde est du type RF, contrôler les&#10;numéros attribués sur vos sondes Modbus.</Translation>
         <Translation Language="GB">New Text</Translation>
@@ -4692,6 +4713,265 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_2729" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">B</Translation>
+        <Translation Language="GB">°C</Translation>
+        <Translation Language="PT">°C</Translation>
+        <Translation Language="NL">°C</Translation>
+        <Translation Language="DE">°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_CTLB" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">R</Translation>
+        <Translation Language="GB">°C</Translation>
+        <Translation Language="PT">°C</Translation>
+        <Translation Language="NL">°C</Translation>
+        <Translation Language="DE">°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_IHIL" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">D</Translation>
+        <Translation Language="GB">°C</Translation>
+        <Translation Language="PT">°C</Translation>
+        <Translation Language="NL">°C</Translation>
+        <Translation Language="DE">°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_UEP1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_histo_temp_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_MFL0" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_1JQB" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">25</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_ABAI" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">60</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_VQNY" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z81F" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">-10 mn</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_4PFM" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">-60 mn</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_OYH7" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">R.A.Z</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_L99Z" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Z2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_4UWA" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Z1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_EEV_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;/500</Translation>
+        <Translation Language="GB">&lt;Value&gt;/500</Translation>
+        <Translation Language="PT">&lt;Value&gt;/500</Translation>
+        <Translation Language="NL">&lt;Value&gt;/500</Translation>
+        <Translation Language="DE">&lt;Value&gt;/500</Translation>
+      </Text>
+      <Text Id="__SingleUse_HB9C" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_freqence_comp" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;Hz</Translation>
+        <Translation Language="GB">&lt;Value&gt;Hz</Translation>
+        <Translation Language="PT">&lt;Value&gt;Hz</Translation>
+        <Translation Language="NL">&lt;Value&gt;Hz</Translation>
+        <Translation Language="DE">&lt;Value&gt;Hz</Translation>
+      </Text>
+      <Text Id="text_unite_exterieure_synoptique" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">(Unité extérieure)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_percent_ventil_2_centre" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">V2 : &lt;Value&gt; tr/mn</Translation>
+        <Translation Language="GB">V2 : &lt;Value&gt;tr/mn</Translation>
+        <Translation Language="PT">V2 : &lt;Value&gt;tr/mn</Translation>
+        <Translation Language="NL">V2 : &lt;Value&gt;tr/mn</Translation>
+        <Translation Language="DE">V2 : &lt;Value&gt;tr/mn</Translation>
+      </Text>
+      <Text Id="__SingleUse_91U1" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_percent_ventil_1_centre" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">V1 : &lt;Value&gt; tr/mn</Translation>
+        <Translation Language="GB">V1 : &lt;Value&gt;tr/mn</Translation>
+        <Translation Language="PT">V1 : &lt;Value&gt;tr/mn</Translation>
+        <Translation Language="NL">V1 : &lt;Value&gt;tr/mn</Translation>
+        <Translation Language="DE">V1 : &lt;Value&gt;tr/mn</Translation>
+      </Text>
+      <Text Id="__SingleUse_MVX7" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_EIA9" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">0</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_WFFP" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_DRJF" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_off_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
+      <Text Id="ResourceId3" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">New Text</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_temp_cible_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">(&lt;Value&gt;°C)</Translation>
+        <Translation Language="GB">(&lt;Value&gt;°C)</Translation>
+        <Translation Language="PT">(&lt;Value&gt;°C)</Translation>
+        <Translation Language="NL">(&lt;Value&gt;°C)</Translation>
+        <Translation Language="DE">(&lt;Value&gt;°C)</Translation>
+      </Text>
+      <Text Id="text_pression_temp_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_B282" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Off</Translation>
+        <Translation Language="GB">/500</Translation>
+        <Translation Language="PT">/500</Translation>
+        <Translation Language="NL">/500</Translation>
+        <Translation Language="DE">/500</Translation>
+      </Text>
+      <Text Id="text_palier_frequence_2_lignes_droite_defaut" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">P.&lt;Value&gt;&#10;F.&lt;Value&gt;Hz</Translation>
+        <Translation Language="GB">P.&lt;Value&gt;&#10;F.&lt;Value&gt;Hz</Translation>
+        <Translation Language="PT">P.&lt;Value&gt;&#10;F.&lt;Value&gt;Hz</Translation>
+        <Translation Language="NL">P.&lt;Value&gt;&#10;F.&lt;Value&gt;Hz</Translation>
+        <Translation Language="DE">P.&lt;Value&gt;&#10;F.&lt;Value&gt;Hz</Translation>
+      </Text>
+      <Text Id="text_pression_temp_gauche_2_lignes_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;b/&#10;&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;b/&#10;&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;b/&#10;&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;b/&#10;&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;b/&#10;&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="text_pression_temp_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+        <Translation Language="GB">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+        <Translation Language="PT">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+        <Translation Language="NL">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+        <Translation Language="DE">&lt;Value&gt;b/&lt;Value&gt;°C</Translation>
+      </Text>
+      <Text Id="__SingleUse_WRQ9" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">100</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_percent_ventil_droite" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;%</Translation>
+        <Translation Language="GB">&lt;Value&gt;%</Translation>
+        <Translation Language="PT">&lt;Value&gt;%</Translation>
+        <Translation Language="NL">&lt;Value&gt;%</Translation>
+        <Translation Language="DE">&lt;Value&gt;%</Translation>
+      </Text>
+      <Text Id="__SingleUse_B96G" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_S28Z" Alignment="Right" TypographyId="Default">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_off_resistance_terminaisaon" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">&lt;Value&gt;</Translation>
         <Translation Language="GB">&lt;Value&gt;</Translation>

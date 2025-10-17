@@ -41,3 +41,9 @@ void SynoptiquePresenter::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 {
 	view.changeStatutCyclFrigo(sCyclRegFrigo);
 }
+
+void SynoptiquePresenter::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
+{
+	view.changeStatutPrimaire(sStatut_Primaire);
+}
+

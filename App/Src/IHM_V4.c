@@ -640,7 +640,7 @@ int ConvertPressionToTemperature(E_TYPE_GAZ typegaz, int PressionHP, int valpres
 
   switch (typegaz)
   {
-    case GAZ_R407:
+    case GAZ_R407: // Ne pas ajouter d'offset de 1 bar pour la 407
     	if (PressionHP)
     	{
 			if (valpression < 100)

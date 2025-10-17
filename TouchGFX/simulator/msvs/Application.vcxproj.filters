@@ -1312,6 +1312,30 @@
     <Filter Include="Source Files\generated\gui_generated\configuration_screen">
       <UniqueIdentifier>095D5181-7D0C-85B6-2F83-5D913A3FF7B0</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\histo_fonctionnementa_screen">
+      <UniqueIdentifier>AFAE1F4F-C32D-90EB-2722-9BA26F04A510</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\histo_fonctionnementa_screen">
+      <UniqueIdentifier>0CC1EEB3-F5E8-ADA5-EC90-D3CF864E7E86</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\histo_fonctionnementa_screen">
+      <UniqueIdentifier>3A343E0B-2EA0-4F0D-5860-87BA3EF3B4F5</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\histo_fonctionnementa_screen">
+      <UniqueIdentifier>F55D2A45-067E-990E-DE0E-4EF5FC93DFF9</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\histo_fonctionnement_screen">
+      <UniqueIdentifier>01B0FB72-C69E-B354-EBE3-69602339B86E</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\histo_fonctionnement_screen">
+      <UniqueIdentifier>C0637464-AAB0-8014-BE01-BD0012FABFE1</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\histo_fonctionnement_screen">
+      <UniqueIdentifier>CC034A65-6BE6-1133-B316-A0095AA9A8D8</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\histo_fonctionnement_screen">
+      <UniqueIdentifier>CD150CA9-5034-8B6C-BE24-C7287FAC0467</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -2228,6 +2252,24 @@
     </ClCompile>
     <ClCompile Include="..\..\gui\src\containers\DualSlider.cpp">
       <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\histo_fonctionnementa_screen\Histo_fonctionnementaPresenter.cpp">
+      <Filter>Source Files\gui\histo_fonctionnementa_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\histo_fonctionnementa_screen\Histo_fonctionnementaView.cpp">
+      <Filter>Source Files\gui\histo_fonctionnementa_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\histo_fonctionnementa_screen\Histo_fonctionnementaViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\histo_fonctionnementa_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\histo_fonctionnement_screen\Histo_fonctionnementPresenter.cpp">
+      <Filter>Source Files\gui\histo_fonctionnement_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\histo_fonctionnement_screen\Histo_fonctionnementView.cpp">
+      <Filter>Source Files\gui\histo_fonctionnement_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\histo_fonctionnement_screen\Histo_fonctionnementViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\histo_fonctionnement_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -3555,6 +3597,24 @@
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\containers\DualSlider.hpp">
       <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\histo_fonctionnementa_screen\Histo_fonctionnementaPresenter.hpp">
+      <Filter>Header Files\gui\histo_fonctionnementa_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\histo_fonctionnementa_screen\Histo_fonctionnementaView.hpp">
+      <Filter>Header Files\gui\histo_fonctionnementa_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\histo_fonctionnementa_screen\Histo_fonctionnementaViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\histo_fonctionnementa_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\histo_fonctionnement_screen\Histo_fonctionnementPresenter.hpp">
+      <Filter>Header Files\gui\histo_fonctionnement_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\histo_fonctionnement_screen\Histo_fonctionnementView.hpp">
+      <Filter>Header Files\gui\histo_fonctionnement_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\histo_fonctionnement_screen\Histo_fonctionnementViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\histo_fonctionnement_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

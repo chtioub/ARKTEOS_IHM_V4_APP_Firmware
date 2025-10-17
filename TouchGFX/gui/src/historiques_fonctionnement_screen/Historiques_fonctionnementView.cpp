@@ -10,6 +10,8 @@ Historiques_fonctionnementView::Historiques_fonctionnementView()
 
 void Historiques_fonctionnementView::setupScreen()
 {
+
+
 //	//Init des graphiques
 //	for(int i = 0; i < 360; i++)
 //	{
@@ -41,7 +43,7 @@ void Historiques_fonctionnementView::setupScreen()
 //	changement_page();
 //	maj_graphiques();
 //
-    Historiques_fonctionnementViewBase::setupScreen();
+
 }
 
 void Historiques_fonctionnementView::tearDownScreen()
