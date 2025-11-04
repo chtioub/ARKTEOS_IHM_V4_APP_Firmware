@@ -50,6 +50,17 @@ void MaintenanceView::bouton_retour()
 	}
 }
 
+void MaintenanceView::bouton_test_composants()
+{
+	bTestPacComposantDepuisUsine = false;
+}
+
+void MaintenanceView::bouton_test_pac()
+{
+	bTestPacComposantDepuisUsine = false;
+	application().gotoTest_pacScreenNoTransition();
+}
+
 void MaintenanceView::bouton_raz_histo_err()
 {
 	eOuiNon = OUI_NON_RAZ_HISTO_ERREUR;
@@ -106,12 +117,21 @@ void MaintenanceView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 	// Test PAC
 	if(sStatut_PAC_old.Test != sStatut_PAC->Test)
 	{
-		if(sStatut_PAC->Test)
+		if(sStatut_PAC->Test == S_TF_PAC)
 		{
+			buttonWithLabel_test_pac_maintenance.setVisible(false);
+			buttonWithLabel_test_pac_maintenance.invalidate();
 			buttonWithLabel_test_pac_on_maintenance.setVisible(true);
+			buttonWithLabel_test_pac_on_maintenance.invalidate();
 		}
-		else buttonWithLabel_test_pac_on_maintenance.setVisible(false);
-		buttonWithLabel_test_pac_on_maintenance.invalidate();
+		else
+		{
+			buttonWithLabel_test_pac_on_maintenance.setVisible(false);
+			buttonWithLabel_test_pac_on_maintenance.invalidate();
+			buttonWithLabel_test_pac_maintenance.setVisible(true);
+			buttonWithLabel_test_pac_maintenance.invalidate();
+		}
+
 	}
 	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
 }

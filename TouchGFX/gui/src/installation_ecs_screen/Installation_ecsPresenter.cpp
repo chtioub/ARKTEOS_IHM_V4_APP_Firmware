@@ -19,7 +19,7 @@ void Installation_ecsPresenter::deactivate()
 
 void Installation_ecsPresenter::c_install_param()
 {
-	model->c_install_param();;
+	model->c_install_param();
 }
 
 

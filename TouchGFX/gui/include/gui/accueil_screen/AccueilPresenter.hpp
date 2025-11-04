@@ -43,6 +43,8 @@ public:
     virtual void changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt);
 
     void c_prog_ecs(bool bEnvoi);
+
+
 private:
     AccueilPresenter();
 

@@ -61,9 +61,6 @@
     <ClCompile Include="..\..\generated\gui_generated\src\erreurs_screen\ErreursViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\historiques_fonctionnement_screen\Historiques_fonctionnementPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\historiques_fonctionnement_screen\Historiques_fonctionnementView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\historiques_fonctionnement_screen\Historiques_fonctionnementViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\infos_systeme_screen\Infos_systemePresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\infos_systeme_screen\Infos_systemeView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\infos_systeme_screen\Infos_systemeViewBase.cpp"/>
@@ -316,12 +313,14 @@
     <ClCompile Include="..\..\gui\src\configuration_screen\ConfigurationView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\configuration_screen\ConfigurationViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\DualSlider.cpp"/>
-    <ClCompile Include="..\..\gui\src\histo_fonctionnementa_screen\Histo_fonctionnementaPresenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\histo_fonctionnementa_screen\Histo_fonctionnementaView.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\histo_fonctionnementa_screen\Histo_fonctionnementaViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\histo_fonctionnement_screen\Histo_fonctionnementPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\histo_fonctionnement_screen\Histo_fonctionnementView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\histo_fonctionnement_screen\Histo_fonctionnementViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\Message_GF.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\Message_GFBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\verification_annuelle_screen\Verification_annuellePresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\verification_annuelle_screen\Verification_annuelleView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\verification_annuelle_screen\Verification_annuelleViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -509,9 +508,7 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendApplicationBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\historiques_fonctionnement_screen\Historiques_fonctionnementPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\historiques_fonctionnement_screen\Historiques_fonctionnementView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\historiques_fonctionnement_screen\Historiques_fonctionnementViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\infos_systeme_screen\Infos_systemePresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\infos_systeme_screen\Infos_systemeView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\infos_systeme_screen\Infos_systemeViewBase.hpp"/>
@@ -767,12 +764,14 @@
     <ClInclude Include="..\..\gui\include\gui\configuration_screen\ConfigurationView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\configuration_screen\ConfigurationViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\DualSlider.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\histo_fonctionnementa_screen\Histo_fonctionnementaPresenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\histo_fonctionnementa_screen\Histo_fonctionnementaView.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\histo_fonctionnementa_screen\Histo_fonctionnementaViewBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\histo_fonctionnement_screen\Histo_fonctionnementPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\histo_fonctionnement_screen\Histo_fonctionnementView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\histo_fonctionnement_screen\Histo_fonctionnementViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\Message_GF.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Message_GFBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\verification_annuelle_screen\Verification_annuellePresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\verification_annuelle_screen\Verification_annuelleView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\verification_annuelle_screen\Verification_annuelleViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

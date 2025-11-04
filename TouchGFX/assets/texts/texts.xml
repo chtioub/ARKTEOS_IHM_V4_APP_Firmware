@@ -8,6 +8,568 @@
     <Language Id="DE" />
   </Languages>
   <Texts>
+    <TextGroup Id="Erreurs_GEOHPF">
+      <Text Id="text_err_200_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde extérieure</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_201_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde extérieure</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_210_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_211_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde d'eau départ chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_212_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_213_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde d'eau retour chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_214_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Pression d'eau chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_215_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Pression d'eau chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_216_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Débitmètre chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_217_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Débitmètre chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_230_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Fusible appoint (brin 1)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_231_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Fusible appoint (brin 2)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_232_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Fusible appoint (brin 3)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_233_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Klixon ou fusibles appoint (brin 1, 2 et 3)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_240_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Mauvaise Configuration PAC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_241_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Absence de numéro de série</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_250_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau départ captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_251_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde d'eau départ captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_252_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'eau retour captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_253_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde d'eau retour captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_254_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde entrée eau de nappe anormale</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_255_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Température entrée eau de nappe anormale</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_256_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde sortie eau de nappe anormale</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_257_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Température sortie eau de nappe anormale</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_258_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Pression d'eau captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_259_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Pression d'eau captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_260_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Débitmètre captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_261_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Débitmètre captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_262_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Débistat puits</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_300_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde de refoulement circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_301_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde de refoulement circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_302_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'aspiration circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_303_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde d'aspiration circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_304_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Pression HP circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_305_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Pression HP circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_306_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Pression BP circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_307_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Pression BP circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_308_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Démarrage compresseur circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_309_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Démarrage compresseur récurrent circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_310_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Pressostat HP circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_311_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Klixon compresseur circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_340_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde de refoulement circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_341_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde de refoulement circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_342_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde d'aspiration circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_343_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde d'aspiration circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_344_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Pression HP circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_345_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Pression HP circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_346_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Pression BP circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_347_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Pression BP circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_348_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Démarrage compresseur circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_349_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Démarrage compresseur récurrent circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_350_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Pressostat HP circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_351_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Klixon compresseur circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_380_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde de retour liquide circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_381_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde de retour liquide circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_382_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Sonde de retour liquide circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_383_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Défaut : Sonde de retour liquide circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_384_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Erreur : Erreurs récurrentes</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_700_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde extérieure</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_705_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde d'eau départ chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_706_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde d'eau retour chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_707_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Pression d'eau chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_708_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Débitmètre chauffage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_715_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Compteur d'energie</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_720_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde d'eau départ captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_721_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde d'eau retour captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_722_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde d'entrée eau de puits</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_723_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde de sortie d'eau de puits</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_724_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Pression d'eau captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_725_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Débitmètre captage</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_740_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde de refoulement circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_741_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde d'aspiration circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_742_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Pression HP circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_743_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Pression BP circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_760_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde de refoulement circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_761_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde d'aspiration circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_762_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Pression HP circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_763_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Pression BP circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_780_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde de retour liquide circuit 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_err_781_geohpf_gauche_defaut" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Alerte : Sonde de retour liquide circuit 2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Erreurs_INVERTERRA">
       <Text Id="text_err_782_inv_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Alerte : Cycle dégivrage incomplet</Translation>
@@ -3408,6 +3970,307 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Group1">
+      <Text Id="text_circulateur_carte_reg_Z2_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Circulateurs&#10;Carte REG (Z2)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_circulateur_carte_reg_Z1_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Circulateurs&#10;Carte REG (Z1)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_circulateur_carte_reg_P_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Circulateurs&#10;Carte REG (P)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_test_composants_titre_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Test Composants</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_circulateur_geotwin_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Circulateurs&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_relais_geotwin_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Relais&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_detendeur_geotwin_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Détendeur&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_comp2_geotwin_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Compresseur 2&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_comp1_geotwin_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Compresseur 1&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_det4_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie&#10;DET 4</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_det3_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie&#10;DET 3</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_det2_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie&#10;DET2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_vent_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie&#10;OUT VENT</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_det1_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie&#10;DET 1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_option_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie&#10;OPTION</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_circ_prim_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie&#10;circulateur&#10;CIRC PRIM</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_v4v_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie Relais&#10;V4V</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_circ_cent_capt_inv_dentre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie&#10;circulateur&#10;VENT CAPT</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_puits_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie Relais&#10;Cont. PUITS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_spa2_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie Relais&#10;SPA2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_spa1_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie Relais&#10;SPA1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_c2_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie Relais&#10;C2</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_c1_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie Relais&#10;C1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_rc_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie relais&#10;RC</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_ev_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie relais&#10;EV</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_relais_rv_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sortie relais&#10;RV</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sorties_relais_appoint_inv_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sorties Relais&#10;APPOINT&#10;(3s)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sortie_carte_mz_0_10v_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sorties 0-10V&#10;Carte MZ&#10;(60 secs 75%)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_relais_carte_mz_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Relais&#10;Carte MZ&#10;(10 secs)</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_circulateur_carte_geo_cenbtre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Circulateurs&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_relais_carte_geo_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Relais&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_detendeur_carte_geo_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Détendeur&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_comp2_carte_geo_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Compresseur 2&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_comp1_carte_geo_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Compresseur 1&#10;Carte GEOTWIN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_relais_v3v_carte_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Relais V3V&#10;Carte ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_relais_appoint_carte_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Relais Appoint&#10;Carte ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_relais_circulateur_carte_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Relais&#10;Circulateur&#10;Carte ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_sorties_ana_carte_ecs_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Sorties&#10;analogiques&#10;Carte ECS</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_relais_carte_reg_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Relais&#10;Carte REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_vanne_de_melange_carte_reg_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Vanne de&#10;mélange&#10;Carte REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_circulateur_carte_reg_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">Circulateurs&#10;Carte REG</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_titre_verification_annuelle" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">* * * VERIFICATION ANNUELLE * * *</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_verification_anode" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">Veuillez faire effectuer par votre installateur votre entretien annuel sur votre&#10;pompe à chaleur : Contrôle de l'étanchéité du circuit frigorifique, Nettoyage&#10;des filtres et pots à boues, Contrôle de l'état de l'anode pour les Pompes à&#10;chaleur disposant de l'option eau chaude sanitaire, Nettoyage de la batterie à&#10;ailette de l'unité extérieure pour les groupes aérothermiques, Contrôle du taux&#10;de glycol pour les groupe Géothermiques, Resserrage des bornes des différents&#10;composants électriques, Contrôle et regonflage du vase d'expansion...</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
       <Text Id="text_na_centre_defaut" Alignment="Center" TypographyId="Default">
         <Translation Language="FR">NA</Translation>
         <Translation Language="GB">NA</Translation>
@@ -4713,6 +5576,48 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_R94T" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">1</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="text_fan_centre_defaut" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">FAN</Translation>
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="PT">New Text</Translation>
+        <Translation Language="NL">New Text</Translation>
+        <Translation Language="DE">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_V8B1" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">MZ</Translation>
+        <Translation Language="GB">MZ1</Translation>
+        <Translation Language="PT">MZ1</Translation>
+        <Translation Language="NL">MZ1</Translation>
+        <Translation Language="DE">MZ1</Translation>
+      </Text>
+      <Text Id="__SingleUse_YTS9" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">MZ1</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+        <Translation Language="NL"></Translation>
+        <Translation Language="DE"></Translation>
+      </Text>
+      <Text Id="__SingleUse_XNZQ" Alignment="Center" TypographyId="Default">
+        <Translation Language="FR">MZ1</Translation>
+        <Translation Language="GB"></Translation>
+        <Translation Language="PT"></Translation>
+        <Translation Language="NL"></Translation>
+        <Translation Language="DE"></Translation>
+      </Text>
+      <Text Id="text_carte_mz_test_cps" Alignment="Left" TypographyId="Default">
+        <Translation Language="FR">&lt;Value&gt;</Translation>
+        <Translation Language="GB">&lt;Value&gt;</Translation>
+        <Translation Language="PT">&lt;Value&gt;</Translation>
+        <Translation Language="NL">&lt;Value&gt;</Translation>
+        <Translation Language="DE">&lt;Value&gt;</Translation>
+      </Text>
       <Text Id="__SingleUse_2729" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">B</Translation>
         <Translation Language="GB">°C</Translation>

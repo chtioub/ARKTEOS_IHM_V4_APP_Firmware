@@ -17,6 +17,8 @@ public:
     void bouton_raz_config_usine();
     void bouton_derog_pression_bp();
     void bouton_param_avances();
+    void bouton_test_pac();
+    void bouton_test_composants();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

@@ -24,6 +24,11 @@ public:
      * (ie. made inactive). Teardown functionality can be placed here.
      */
     virtual void deactivate();
+    virtual void update_graph_histo(DATA_HISTO *data_histo);
+    virtual void changeDate(S_DATE *sDate);
+	virtual void changeErreur(uint16_t u16Erreur);
+	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
 
     virtual ~Histo_fonctionnementPresenter() {}
 

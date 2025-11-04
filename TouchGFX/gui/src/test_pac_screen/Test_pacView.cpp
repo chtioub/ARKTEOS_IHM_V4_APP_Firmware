@@ -52,6 +52,14 @@ void Test_pacView::bouton_retour()
 	sParam_Test_PAC.Pw = 0;
 	sParam_Test_PAC.Teau = 1;
 	sParam_Test_PAC.bTestPAC = false;
+	if (bTestPacComposantDepuisUsine)
+	{
+		application().gotoUsineScreenNoTransition();
+	}
+	else
+	{
+		application().gotoMaintenanceScreenNoTransition();
+	}
 }
 
 void Test_pacView::setupScreen()

@@ -1,17 +1,17 @@
-#ifndef HISTORIQUES_FONCTIONNEMENTPRESENTER_HPP
-#define HISTORIQUES_FONCTIONNEMENTPRESENTER_HPP
+#ifndef VERIFICATION_ANNUELLEPRESENTER_HPP
+#define VERIFICATION_ANNUELLEPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Historiques_fonctionnementView;
+class Verification_annuelleView;
 
-class Historiques_fonctionnementPresenter : public touchgfx::Presenter, public ModelListener
+class Verification_annuellePresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Historiques_fonctionnementPresenter(Historiques_fonctionnementView& v);
+    Verification_annuellePresenter(Verification_annuelleView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,13 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Historiques_fonctionnementPresenter() {}
+    virtual ~Verification_annuellePresenter() {}
+    void c_install_install_pac();
 
 private:
-    Historiques_fonctionnementPresenter();
+    Verification_annuellePresenter();
 
-    Historiques_fonctionnementView& view;
+    Verification_annuelleView& view;
 };
 
-#endif // HISTORIQUES_FONCTIONNEMENTPRESENTER_HPP
+#endif // VERIFICATION_ANNUELLEPRESENTER_HPP

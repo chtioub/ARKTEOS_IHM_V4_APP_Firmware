@@ -12,19 +12,12 @@ public:
     virtual void setupScreen();
     virtual void tearDownScreen();
     void Timer_500ms();
-    void Timer_Swipe_Detection();
     void bouton_marche_arret();
     void bouton_zone_1();
     void bouton_zone_2();
-    void bouton_maintenance();
-    void bouton_installation();
-    void bouton_usine();
     void changeLogo(bool bVisible);
-//    void bouton_oui_veille();
-//    void bouton_non_veille();
     void bouton_ecs();
 
-//    void update_titre_page();
     virtual void changeModePac(bool marche);
     virtual void changeDate(S_DATE *sDate);
     virtual void changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire);
@@ -37,7 +30,6 @@ public:
     virtual void changeStatutPiscine(S_STATUT_PISCINE *sStatut_Piscine);
     virtual void changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo);
     virtual void changeStatutRegulExt(S_STATUT_REG_EXT *sStatut_RegulExt);
-
     virtual void handleGestureEvent(const touchgfx::GestureEvent& evt) override;
 
 protected:

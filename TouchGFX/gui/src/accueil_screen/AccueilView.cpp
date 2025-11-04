@@ -2,36 +2,12 @@
 #include <images/BitmapDatabase.hpp>
 
 AccueilView::AccueilView()//:
-        //swipeCallback(this, &AccueilView::swipeCallbackHandler)
 {
-	//MAJ de la page en fonction de là d'ou on vient
-//	if (bPageAccueil == true)
-//	{
-//		swipeContainerMain.setSelectedPage(0);
-//		swipeContainerMain.invalidate();
-		barre_titre.titre(textAreaBuffer_Titre_Date);
-//		barre_titre.invalidate();
-//		circle_point_page_config.setVisible(false);
-//		textArea_config_page.setVisible(false);
-		circle_point_page_accueil.setVisible(true);
-		textArea_accueil_page.setVisible(true);
-//	}
-//	else
-//	{
-//		swipeContainerMain.setSelectedPage(1);
-////		swipeContainerMain.invalidate();
-//		Unicode::snprintf(textAreaBuffer_Titre_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_CENTRE_DEFAUT).getText());
-//		barre_titre.titre(textAreaBuffer_Titre_Titre);
-////		barre_titre.invalidate();
-//		circle_point_page_accueil.setVisible(false);
-//		textArea_accueil_page.setVisible(false);
-//		circle_point_page_config.setVisible(true);
-//		textArea_config_page.setVisible(true);
-//	}
-//	swipeContainerMain.invalidate();
+
+	barre_titre.titre(textAreaBuffer_Titre_Date);
+	circle_point_page_accueil.setVisible(true);
+	textArea_accueil_page.setVisible(true);
 	barre_titre.invalidate();
-//	circle_point_page_config.invalidate();
-//	textArea_config_page.invalidate();
 	circle_point_page_accueil.invalidate();
 	textArea_accueil_page.invalidate();
 
@@ -51,6 +27,7 @@ AccueilView::AccueilView()//:
 	u8NbZones = 0;
 	bPageUsine = 0;
 	bConnexionDistance = false;
+	changeLogo(true);
 	changeStatutPAC(&sStatut_PAC);
 	changeDate(&sDate);
 	changeConfig(&sConfig_IHM);
@@ -72,12 +49,6 @@ AccueilView::AccueilView()//:
 	barre_titre.sansAccueil();
 	barre_titre.sansRetour();
 
-
-	//Pour Page Configuration
-	bMaintenanceDepuisUsine = false;
-	bInstallationDepuisUsine = false;
-
-    //swipeDetectContainerConfigurationScreen.setAction(swipeCallback);
     // Affichage dans la bonne langue
 	if(sConfig_IHM.sParam_Utilisateur.Langue != Texts::getLanguage())
 	{
@@ -96,36 +67,6 @@ AccueilView::AccueilView()//:
 	}
 	container.setXY(u8PositionX, u8PositionY);
 
-//	if (oui_veille == 1)
-//	{
-//		toggleButton_oui_oui_non_veille.forceState(false);
-//		toggleButton_oui_oui_non_veille.setTouchable(true);
-//		toggleButton_non_oui_non_veille.forceState(true);
-//		toggleButton_non_oui_non_veille.setTouchable(false);
-//	}
-//	else
-//	{
-//		toggleButton_oui_oui_non_veille.forceState(true);
-//		toggleButton_oui_oui_non_veille.setTouchable(false);
-//		toggleButton_non_oui_non_veille.forceState(false);
-//		toggleButton_non_oui_non_veille.setTouchable(true);
-//	}
-//	toggleButton_oui_oui_non_veille.invalidate();
-//	toggleButton_non_oui_non_veille.invalidate();
-
-//	//Container Vacances
-//	if ((sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_MULTI_ZONE && sConfig_IHM.sOption_PAC.sZone.u8val != 0)
-//			|| sConfig_IHM.sOption_PAC.ECS != 0 || sConfig_IHM.sOption_PAC.Piscine != 0)
-//	{
-//		container_vacances.setVisible(true);
-//	}
-//	else
-//	{
-//		container_vacances.setVisible(false);
-//	}
-//	container_vacances.invalidate();
-
-	//
 #ifndef SIMULATOR
 	if(sConfig_IHM.sParam_Utilisateur.u7Luminosite != 0)
 	{
@@ -133,12 +74,12 @@ AccueilView::AccueilView()//:
 	}
 	else presenter->editLuminosite(100);
 #endif
+
 }
 
 void AccueilView::setupScreen()
 {
-    AccueilViewBase::setupScreen();
-
+	    AccueilViewBase::setupScreen();
 }
 
 void AccueilView::tearDownScreen()
@@ -146,13 +87,6 @@ void AccueilView::tearDownScreen()
     AccueilViewBase::tearDownScreen();
 }
 
-//void AccueilView::swipeCallbackHandler(int16_t velocity)
-//{
-//    if(velocity < 0)
-//    {
-//		application().gotoConfigurationScreenSlideTransitionEast();
-//    }
-//}
 
 void AccueilView::handleGestureEvent(const touchgfx::GestureEvent& evt)
 {
@@ -171,87 +105,65 @@ void AccueilView::handleGestureEvent(const touchgfx::GestureEvent& evt)
     }
 }
 
-void AccueilView::Timer_Swipe_Detection()
-{
-////	if (swipeContainerMain.getSelectedPage() == 0)
-////	{
-//		barre_titre.titre(textAreaBuffer_Titre_Date);
-////		circle_point_page_config.setVisible(false);
-////		textArea_config_page.setVisible(false);
-//		circle_point_page_accueil.setVisible(true);
-//		textArea_accueil_page.setVisible(true);
-////		bPageAccueil = true;
-////	}
-////	else
-////	{
-////		Unicode::snprintf(textAreaBuffer_Titre_Titre, 40, touchgfx::TypedText(T_TEXT_CONFIGURATION_CENTRE_DEFAUT).getText());
-////		barre_titre.titre(textAreaBuffer_Titre_Titre);
-////		circle_point_page_accueil.setVisible(false);
-////		textArea_accueil_page.setVisible(false);
-////		circle_point_page_config.setVisible(true);
-////		textArea_config_page.setVisible(true);
-////		bPageAccueil = false;
-////	}
-//	barre_titre.invalidate();
-////	circle_point_page_config.invalidate();
-////	textArea_config_page.invalidate();
-//	circle_point_page_accueil.invalidate();
-//	textArea_accueil_page.invalidate();
-}
-
-
-//void AccueilView::bouton_oui_veille()
-//{
-//	toggleButton_oui_oui_non_veille.forceState(true);
-//	toggleButton_oui_oui_non_veille.setTouchable(false);
-//	toggleButton_non_oui_non_veille.forceState(false);
-//	toggleButton_non_oui_non_veille.setTouchable(true);
-//	oui_veille = 0;
-//	toggleButton_oui_oui_non_veille.invalidate();
-//	toggleButton_non_oui_non_veille.invalidate();
-//}
-//
-//void AccueilView::bouton_non_veille()
-//{
-//	toggleButton_oui_oui_non_veille.forceState(false);
-//	toggleButton_oui_oui_non_veille.setTouchable(true);
-//	toggleButton_non_oui_non_veille.forceState(true);
-//	toggleButton_non_oui_non_veille.setTouchable(false);
-//	oui_veille = 1;
-//	toggleButton_oui_oui_non_veille.invalidate();
-//	toggleButton_non_oui_non_veille.invalidate();
-//}
-
-
 void AccueilView::Timer_500ms()
 {
-	//
-	if(sStatut_PAC_old.Mode_Secours != 0 || sStatut_PAC_old.Test != 0 || sDemandeFrigo.bShuntTempo != 0 || sStatut_PAC_old.sFonctInxTor.bTorEJP != 0 || sStatut_PAC_old.bDerogationPression != 0 || sStatut_PAC_old.bDerogationPressionBP != 0)
+//	//Vérif anode
+//	if (!container_message.isVisible() && bDemandeAfficheMessageVerif)
+//	{
+//		empty_box.setVisible(true);
+//		empty_box.setTouchable(true);
+//		empty_box.invalidate();
+//		container_message.setVisible(true);
+//		container_message.invalidate();
+//		bMessageControleAnodeActif = true;
+//	}
+
+//	 // ---- Affichage du message de vérification annuelle ----
+//	    if (bDemandeAfficheMessageVerif && !bMessageControleAnodeActif)
+//	    {
+//	        // Affiche le message
+//	        container_message.setVisible(true);
+//	        container_message.invalidate();
+//
+//	        // Overlay transparent pour bloquer les autres boutons
+//	        empty_box.setVisible(true);
+//	        empty_box.setTouchable(true);
+//	        empty_box.invalidate();
+//
+//	        // Indique que le message est actif
+//	        bMessageControleAnodeActif = true;
+//
+//	        // On ne relancera plus tant que l'utilisateur n'a pas fermé le message
+//	        showMessageVerif();
+//	        bDemandeAfficheMessageVerif = false;
+//	    }
+
+	if(sStatut_PAC_old.Mode_Secours != 0 || sStatut_PAC_old.Test == S_TF_PAC || sDemandeFrigo.bShuntTempo != 0 || sStatut_PAC_old.sFonctInxTor.bTorEJP != 0 || sStatut_PAC_old.bDerogationPression != 0 || sStatut_PAC_old.bDerogationPressionBP != 0)
 	{
 		// Texte à afficher
 		if(sStatut_PAC_old.Mode_Secours != 0)
 		{
-		    textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_SECOURS_PAC_CENTRE_DEFAUT));
+			textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_SECOURS_PAC_CENTRE_DEFAUT));
 		}
-		else if (sStatut_PAC_old.Test != 0)
+		else if (sStatut_PAC_old.Test == S_TF_PAC)
 		{
-		    textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_TEST_PAC_CENTRE_DEFAUT));
+			textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_TEST_PAC_CENTRE_DEFAUT));
 		}
 		else if (sDemandeFrigo.bShuntTempo != 0)
 		{
-		    textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_SHUNT_TEMPO_CENTRE_DEFAUT));
+			textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_SHUNT_TEMPO_CENTRE_DEFAUT));
 		}
 		else if (sStatut_PAC_old.sFonctInxTor.bTorEJP != 0)
 		{
-		    textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_EJP_CENTRE_DEFAUT));
+			textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_EJP_CENTRE_DEFAUT));
 		}
 		else if (sStatut_PAC_old.bDerogationPression != 0)
 		{
-		    textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_DEROG_PRESSION_CENTRE_DEFAUT));
+			textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_DEROG_PRESSION_CENTRE_DEFAUT));
 		}
 		else if (sStatut_PAC_old.bDerogationPressionBP != 0)
 		{
-		    textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_DEROG_PRESSION_BP_CENTRE_DEFAUT));
+			textArea_alerte.setTypedText(touchgfx::TypedText(T_TEXT_DEROG_PRESSION_BP_CENTRE_DEFAUT));
 		}
 		// Clignottement du logo et de la zone de texte
 		if(textArea_alerte.isVisible())
@@ -383,106 +295,41 @@ void AccueilView::Timer_500ms()
 
 void AccueilView::changeLogo(bool bVisible)
 {
-//	Image_qualiclim.setVisible(false);
-////	Image_cfd.setVisible(false);
-////	Image_ces.setVisible(false);
-////	Image_enelia.setVisible(false);
-//	Image_bltec.setVisible(false);
-////	Image_variation.setVisible(false);
-////	Image_gourdon.setVisible(false);
-////	Image_etienne.setVisible(false);
-////	Image_alppac.setVisible(false);
-//	Image_arkteos.setVisible(false);
-//
-//
-//	Bltec x:225	y:24
-//	//CES 	x:220	y:-6
-//	//cfd	x:232	y:17
-//	//enelia x:244	y:10
-//	//etienne	x:261	y:24
-//	//gourdon	x:225	y:11
-//	//qualiclim	x:253	y:3
-//	//variation x:225	y:19
-//	//alppac	x:233	y:40
-//
-//
-//	if(bVisible)
-//	{
-//////		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) 		Image_qualiclim.setVisible(true);
-//////		else
-////			if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) 		scalableImageLogo.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_CFD_L486_H200_ID));
-////				//Image_cfd.setVisible(true);
-//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
-//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
-//		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
-//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
-//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
-//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
-//////		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
-////		else scalableImageLogo.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_ARKTEOS_L381_H131_ID));
-//			Image_arkteos.setVisible(true);
-//	}
-////
-////	scalableImageLogo.invalidate();
-////	scalableImage_appoint.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_CFD_L486_H200_ID));
-////	Image_qualiclim.invalidate();
-////	Image_cfd.invalidate();
-////	Image_ces.invalidate();
-////	Image_enelia.invalidate();
-////	Image_bltec.invalidate();
-////	Image_variation.invalidate();
-////	Image_gourdon.invalidate();
-////	Image_etienne.invalidate();
-////	Image_alppac.invalidate();
-//	Image_arkteos.invalidate();
+	Image_qualiclim.setVisible(false);
+	Image_cfd.setVisible(false);
+	Image_ces.setVisible(false);
+	Image_enelia.setVisible(false);
+	Image_bltec.setVisible(false);
+	Image_variation.setVisible(false);
+	Image_gourdon.setVisible(false);
+	Image_etienne.setVisible(false);
+	Image_alppac.setVisible(false);
+	Image_arkteos.setVisible(false);
 
-
-		Image_qualiclim.setVisible(false);
-		Image_cfd.setVisible(false);
-		Image_ces.setVisible(false);
-		Image_enelia.setVisible(false);
-		Image_bltec.setVisible(false);
-		Image_variation.setVisible(false);
-		Image_gourdon.setVisible(false);
-		Image_etienne.setVisible(false);
-		Image_alppac.setVisible(false);
-		Image_arkteos.setVisible(false);
-
-		//Bltec x:225	y:24
-		//CES 	x:220	y:-6
-		//cfd	x:232	y:17
-		//enelia x:244	y:10
-		//etienne	x:261	y:24
-		//gourdon	x:225	y:11
-		//qualiclim	x:253	y:3
-		//variation x:225	y:19
-		//alppac	x:233	y:40
-
-
-		if(bVisible)
-		{
-			if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
-			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) Image_qualiclim.setVisible(true);
-			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
-			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) Image_cfd.setVisible(true);
-			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
-			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
-			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
-			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
-			else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
-			else Image_arkteos.setVisible(true);
-		}
-		Image_qualiclim.invalidate();
-		Image_cfd.invalidate();
-		Image_ces.invalidate();
-		Image_enelia.invalidate();
-		Image_bltec.invalidate();
-		Image_variation.invalidate();
-		Image_gourdon.invalidate();
-		Image_etienne.invalidate();
-		Image_alppac.invalidate();
-		Image_arkteos.invalidate();
-		scalableImageLogo.invalidate();
+	if(bVisible)
+	{
+		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) Image_qualiclim.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) Image_cfd.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
+		else Image_arkteos.setVisible(true);
+	}
+	Image_qualiclim.invalidate();
+	Image_cfd.invalidate();
+	Image_ces.invalidate();
+	Image_enelia.invalidate();
+	Image_bltec.invalidate();
+	Image_variation.invalidate();
+	Image_gourdon.invalidate();
+	Image_etienne.invalidate();
+	Image_alppac.invalidate();
+	Image_arkteos.invalidate();
+	scalableImageLogo.invalidate();
 }
 
 void AccueilView::bouton_marche_arret()
@@ -529,39 +376,6 @@ void AccueilView::changeModePac(bool marche)
 //  container_marche.setVisible(marche);
 //  container_marche.invalidate();
 }
-
-void AccueilView::bouton_maintenance()
-{
-	if (bAutorisationNoCode)
-	{
-		application().gotoMaintenanceScreenNoTransition();
-	}
-	else
-	{
-		eCode = CODE_ACCES_MAINT;
-		application().gotoCode_numeriqueScreenNoTransition();
-	}
-}
-
-void AccueilView::bouton_installation()
-{
-	if (bAutorisationNoCode)
-	{
-		application().gotoInstallationScreenNoTransition();
-	}
-	else
-	{
-		eCode = CODE_ACCES_INSTALL;
-		application().gotoCode_numeriqueScreenNoTransition();
-	}
-}
-
-void AccueilView::bouton_usine()
-{
-	eCode = CODE_ACCES_USINE;
-	application().gotoCode_numeriqueScreenNoTransition();
-}
-
 
 
 void AccueilView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
@@ -1931,51 +1745,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	S_ZONE sZone_tmp;
 	memset(&sZone_tmp, 0, sizeof(S_ZONE));
 
-//	if(sConfig_IHM->sOption_PAC.TypeAppoint != sConfig_IHM_old.sOption_PAC.TypeAppoint || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sMode_ECS.bUserAppointECS != sConfig_IHM_old.sMode_ECS.bUserAppointECS))
-//	{
-//		if(sConfig_IHM->sOption_PAC.TypeAppoint != NO_APPOINT || (sConfig_IHM->sOption_PAC.ECS == 1 && sConfig_IHM->sMode_ECS.bUserAppointECS == 1))
-//		{
-//			container_secours.setVisible(true);
-//		}
-//		else container_secours.setVisible(false);
-//		container_secours.invalidate();
-//	}
-
-//	if((sConfig_IHM->sMode_PAC.bSecours != sConfig_IHM_old.sMode_PAC.bSecours) || (sConfig_IHM->sMode_ECS.bUserECSSecours != sConfig_IHM_old.sMode_ECS.bUserECSSecours))
-//	{
-//		if(sConfig_IHM->sMode_PAC.bSecours == 1 || sConfig_IHM->sMode_ECS.bUserECSSecours == 1)
-//		{
-//			buttonWithIcon_secours_off.setVisible(false);
-//			buttonWithIcon_secours_on.setVisible(true);
-//		}
-//		else
-//		{
-//			buttonWithIcon_secours_on.setVisible(false);
-//			buttonWithIcon_secours_off.setVisible(true);
-//		}
-//		buttonWithIcon_secours_on.invalidate();
-//		buttonWithIcon_secours_off.invalidate();
-//	}
-
-//	if((sConfig_IHM->sParam_PAC.TypeRegul != sConfig_IHM_old.sParam_PAC.TypeRegul) || memcmp(&sConfig_IHM->sOption_PAC.sZone, &sConfig_IHM_old.sOption_PAC.sZone, sizeof(S_ZONE)) || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sOption_PAC.Piscine != sConfig_IHM_old.sOption_PAC.Piscine))
-//	{
-//		if((sConfig_IHM->sParam_PAC.TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE && memcmp(&sConfig_IHM->sOption_PAC.sZone, &sZone_tmp, sizeof(S_ZONE))) || sConfig_IHM->sOption_PAC.ECS || sConfig_IHM->sOption_PAC.Piscine)
-//		{
-//			container_vacances.setVisible(true);
-//		}
-//		else container_vacances.setVisible(false);
-//		container_vacances.invalidate();
-//	}
 //
-//	if(sConfig_IHM->sMode_ECS.Exception != sConfig_IHM_old.sMode_ECS.Exception)
-//	{
-//		if(sConfig_IHM->sMode_ECS.Exception == VACANCES)
-//		{
-//			buttonWithIcon_vacances_on.setVisible(true);
-//		}
-//		else buttonWithIcon_vacances_on.setVisible(false);
-//		buttonWithIcon_vacances_on.invalidate();
-//	}
 
 	memcpy(&sConfig_IHM_old, sConfig_IHM, sizeof(S_CONFIG_IHM));
 }
@@ -2066,14 +1836,11 @@ void AccueilView::changeDate(S_DATE *sDate)
 					break;
 			}
 			Unicode::snprintf(textAreaBuffer_Titre_Date, 30, "%s %d %s 20%02d", touchgfx::TypedText(u32Jour).getText(), sDate->Date, touchgfx::TypedText(u32Mois).getText(), sDate->Year);
-//			if (swipeContainerMain.getSelectedPage() == 0)
-//			{
-//				barre_titre.titre(textAreaBuffer_Titre_Date);
-//				swipeContainerMain.invalidate();
-//			}
+
 		}
 
-		barre_titre.invalidate();
-		memcpy(&sDate_old, sDate, sizeof(S_DATE));
-//	}
+	barre_titre.invalidate();
+	memcpy(&sDate_old, sDate, sizeof(S_DATE));
 }
+
+

@@ -23,11 +23,12 @@ extern "C"
 #include "arkteos_defauts.h"
 #include <texts/TextKeysAndLanguages.hpp>
 
+
 #define VEILLE_1_TIME           30//5//10//600 //60              // Temps avant mise en veille 1 en secondes
 #define VEILLE_2_TIME           40//10//3000//300             // Temps avant mise en veille 1 en secondes
 #define PWM_VEILLE_1            5u
 #define TPS_NO_CODE		        900000 //15 mn
-
+#define TIMER_RECORD_10S			10*60
 
 
 #define VEILLE_1_COUNT          (VEILLE_1_TIME*60)
@@ -193,6 +194,46 @@ typedef struct
   uint16_t u16Data;
 }cosebe_tx_t;
 
+typedef enum
+{
+	COLOR_BLANC = 0,
+	COLOR_ORANGE,
+	COLOR_BLEU,
+	COLOR_ROSE,
+	COLOR_VERT,
+	COLOR_ROUGE,
+	COLOR_NONE,
+} E_COULEUR;
+
+typedef struct
+{
+	uint16_t u16TempBallon_Z1[360];
+	uint16_t u16Temp_Z2[360];
+	uint16_t u16TempDepart[360];
+	uint16_t u16TempRetour[360];
+	uint16_t u16PointeurTableau;//, u16StartIndex;
+	uint16_t u16ValmaxAmbBall;
+	uint16_t u16ValminAmbBall;
+	uint16_t u16ValmaxTeau;
+	uint16_t u16ValminTeau;
+	uint16_t valmaxgaucheP1;
+	uint16_t valmingaucheP1;
+	uint16_t valmaxgaucheP2;
+	uint16_t valmingaucheP2;
+	int16_t  valmaxdroiteP1P2;
+	int16_t  valmindroiteP1P2;
+	int16_t  i16ValmaxText;
+	int16_t  i16ValminText;
+	int16_t  i16TempExt[360];
+	E_COULEUR etat_app_ecs[360];
+	E_COULEUR etat_app_chaud[360];
+	E_COULEUR etat_pac[360];
+
+	uint16_t limit;
+	bool bTableauPlein;
+}DATA_HISTO;
+
+extern DATA_HISTO data_histo;
 extern cosebe_test_t cosebe_test;
 extern arkteos_update_t arkteos_update;
 extern rxData_t rxData;
@@ -236,7 +277,7 @@ extern uint8_t au8Prog_ModeSilence[7][24];
 extern uint8_t u8Prog[7][24], u8JourProg;
 extern uint8_t u8ZoneSelect;
 extern uint8_t u8PositionX, u8PositionY;
-extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp;
+extern bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp,bTestPacComposantDepuisUsine;
 //extern bool bPageAccueil;
 extern S_HISTO_ERR sHisto_Erreur;
 extern uint16_t u16NumAction;
@@ -262,7 +303,14 @@ extern bool bAutorisationNoCode;
 extern uint32_t TimerNoNeededCode;
 extern uint32_t u32LastTick;
 extern S_CONFIG_OFFSET sConfig_Offset;
-extern bool bAutorisationCompteurVeille;
+extern bool bAutorisationCompteurVeille, bMessageEnCoursAffichage,bRecupConfigTermine;
+
+
+//extern uint16_t u16TempBallon_Z1[360],u16Temp_Z2[360], u16TempDepart[360],u16TempRetour[360], u16PointeurTableau;//, u16StartIndex;
+//extern uint16_t u16ValmaxAmbBall, u16ValminAmbBall,  u16ValmaxTeau, u16ValminTeau;
+//extern uint16_t valmaxgaucheP1, valmingaucheP1, valmaxgaucheP2, valmingaucheP2, valmaxdroiteP1P2, valmindroiteP1P2;
+//extern int16_t i16ValmaxText, i16ValminText, i16TempExt[360];
+//extern uint16_t limit;
 
 void setBackLightPWM(uint8_t pwm);
 uint8_t decodeRxData(rxData_t *rxData);

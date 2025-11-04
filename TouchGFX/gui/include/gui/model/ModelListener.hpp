@@ -34,6 +34,8 @@ public:
     virtual void changeStatutRegulEsclave(S_STATUT_REGUL_ESCLAVE *sStatut_RegulEsclave) {};
     virtual void changeStatutTempsFonct(S_STATUT_TPS_FONCT *sStatut_TpsFonct) {};
     virtual void changeOffset(S_CONFIG_OFFSET *sConfig_Offset) {};
+    virtual void update_graph_histo(DATA_HISTO *data_histo){};
+
 
 protected:
     Model* model;

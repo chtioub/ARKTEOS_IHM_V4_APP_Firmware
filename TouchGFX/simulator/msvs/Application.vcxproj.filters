@@ -427,9 +427,6 @@
     <Filter Include="Header Files\gui\historiques_fonctionnement_screen">
       <UniqueIdentifier>191AC0EE-E083-09B0-2FAB-E7DB99D93034</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\historiques_fonctionnement_screen">
-      <UniqueIdentifier>C0EC8143-5B68-B308-FF4A-9A59EEB9BB83</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\gui\common">
       <UniqueIdentifier>CD507C57-144E-B82A-69A5-2830D8D7B234</UniqueIdentifier>
     </Filter>
@@ -589,14 +586,8 @@
     <Filter Include="Header Files\generated\gui_generated\derogation_ecs_screen">
       <UniqueIdentifier>0CF610EE-C185-C682-54FC-86C6BBDA967C</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\historiques_fonctionnement_screen">
-      <UniqueIdentifier>3E142873-C370-37A2-9538-57C3ECFEB5B4</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\generated\gui_generated\derogation_ecs_screen">
       <UniqueIdentifier>430733EF-6DA7-CEE5-CEF1-23C2E5357AED</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\historiques_fonctionnement_screen">
-      <UniqueIdentifier>DF7F7D6C-F813-CF31-AC45-C1CB48653501</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\generated\gui_generated\synoptique_screen">
       <UniqueIdentifier>C015543F-F1CD-3385-A35C-D19BE88FB7F2</UniqueIdentifier>
@@ -1312,18 +1303,6 @@
     <Filter Include="Source Files\generated\gui_generated\configuration_screen">
       <UniqueIdentifier>095D5181-7D0C-85B6-2F83-5D913A3FF7B0</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\histo_fonctionnementa_screen">
-      <UniqueIdentifier>AFAE1F4F-C32D-90EB-2722-9BA26F04A510</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\gui\histo_fonctionnementa_screen">
-      <UniqueIdentifier>0CC1EEB3-F5E8-ADA5-EC90-D3CF864E7E86</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\generated\gui_generated\histo_fonctionnementa_screen">
-      <UniqueIdentifier>3A343E0B-2EA0-4F0D-5860-87BA3EF3B4F5</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\generated\gui_generated\histo_fonctionnementa_screen">
-      <UniqueIdentifier>F55D2A45-067E-990E-DE0E-4EF5FC93DFF9</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\gui\histo_fonctionnement_screen">
       <UniqueIdentifier>01B0FB72-C69E-B354-EBE3-69602339B86E</UniqueIdentifier>
     </Filter>
@@ -1335,6 +1314,18 @@
     </Filter>
     <Filter Include="Source Files\generated\gui_generated\histo_fonctionnement_screen">
       <UniqueIdentifier>CD150CA9-5034-8B6C-BE24-C7287FAC0467</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\verification_annuelle_screen">
+      <UniqueIdentifier>F6695282-9BAA-6EE6-A180-36509CE4DFB3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\verification_annuelle_screen">
+      <UniqueIdentifier>9C4E5263-37B1-CF3F-E5DA-A414E04805B3</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\verification_annuelle_screen">
+      <UniqueIdentifier>C0D6D864-2BB4-041E-A954-304B060CFD39</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\verification_annuelle_screen">
+      <UniqueIdentifier>05AE2689-BB58-63FA-31BF-8BC7A6AD22A9</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -1487,15 +1478,6 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp">
       <Filter>Source Files\generated\gui_generated\common</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\historiques_fonctionnement_screen\Historiques_fonctionnementPresenter.cpp">
-      <Filter>Source Files\gui\historiques_fonctionnement_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\historiques_fonctionnement_screen\Historiques_fonctionnementView.cpp">
-      <Filter>Source Files\gui\historiques_fonctionnement_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\historiques_fonctionnement_screen\Historiques_fonctionnementViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\historiques_fonctionnement_screen</Filter>
     </ClCompile>
     <ClCompile Include="..\..\gui\src\infos_systeme_screen\Infos_systemePresenter.cpp">
       <Filter>Source Files\gui\infos_systeme_screen</Filter>
@@ -2253,15 +2235,6 @@
     <ClCompile Include="..\..\gui\src\containers\DualSlider.cpp">
       <Filter>Source Files\gui\containers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\histo_fonctionnementa_screen\Histo_fonctionnementaPresenter.cpp">
-      <Filter>Source Files\gui\histo_fonctionnementa_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\gui\src\histo_fonctionnementa_screen\Histo_fonctionnementaView.cpp">
-      <Filter>Source Files\gui\histo_fonctionnementa_screen</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\histo_fonctionnementa_screen\Histo_fonctionnementaViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\histo_fonctionnementa_screen</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\gui\src\histo_fonctionnement_screen\Histo_fonctionnementPresenter.cpp">
       <Filter>Source Files\gui\histo_fonctionnement_screen</Filter>
     </ClCompile>
@@ -2270,6 +2243,21 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\histo_fonctionnement_screen\Histo_fonctionnementViewBase.cpp">
       <Filter>Source Files\generated\gui_generated\histo_fonctionnement_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\Message_GF.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\Message_GFBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\verification_annuelle_screen\Verification_annuellePresenter.cpp">
+      <Filter>Source Files\gui\verification_annuelle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\verification_annuelle_screen\Verification_annuelleView.cpp">
+      <Filter>Source Files\gui\verification_annuelle_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\verification_annuelle_screen\Verification_annuelleViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\verification_annuelle_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2824,14 +2812,8 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\FrontendHeapBase.hpp">
       <Filter>Header Files\generated\gui_generated\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\historiques_fonctionnement_screen\Historiques_fonctionnementPresenter.hpp">
-      <Filter>Header Files\gui\historiques_fonctionnement_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\historiques_fonctionnement_screen\Historiques_fonctionnementView.hpp">
       <Filter>Header Files\gui\historiques_fonctionnement_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\historiques_fonctionnement_screen\Historiques_fonctionnementViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\historiques_fonctionnement_screen</Filter>
     </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\infos_systeme_screen\Infos_systemePresenter.hpp">
       <Filter>Header Files\gui\infos_systeme_screen</Filter>
@@ -3598,15 +3580,6 @@
     <ClInclude Include="..\..\gui\include\gui\containers\DualSlider.hpp">
       <Filter>Header Files\gui\containers</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\histo_fonctionnementa_screen\Histo_fonctionnementaPresenter.hpp">
-      <Filter>Header Files\gui\histo_fonctionnementa_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\histo_fonctionnementa_screen\Histo_fonctionnementaView.hpp">
-      <Filter>Header Files\gui\histo_fonctionnementa_screen</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\histo_fonctionnementa_screen\Histo_fonctionnementaViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\histo_fonctionnementa_screen</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\gui\include\gui\histo_fonctionnement_screen\Histo_fonctionnementPresenter.hpp">
       <Filter>Header Files\gui\histo_fonctionnement_screen</Filter>
     </ClInclude>
@@ -3615,6 +3588,21 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\histo_fonctionnement_screen\Histo_fonctionnementViewBase.hpp">
       <Filter>Header Files\generated\gui_generated\histo_fonctionnement_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\Message_GF.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\Message_GFBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\verification_annuelle_screen\Verification_annuellePresenter.hpp">
+      <Filter>Header Files\gui\verification_annuelle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\verification_annuelle_screen\Verification_annuelleView.hpp">
+      <Filter>Header Files\gui\verification_annuelle_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\verification_annuelle_screen\Verification_annuelleViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\verification_annuelle_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -20,6 +20,8 @@ public:
     void bouton_redemarrer_ihm();
     void bouton_retour();
     void bouton_histo_erreurs();
+    void bouton_test_pac();
+    void bouton_test_composants();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

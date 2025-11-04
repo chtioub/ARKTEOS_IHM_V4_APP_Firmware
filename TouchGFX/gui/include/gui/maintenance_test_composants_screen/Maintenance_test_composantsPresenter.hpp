@@ -27,6 +27,15 @@ public:
 
     virtual ~Maintenance_test_composantsPresenter() {}
 
+    virtual void changeDate(S_DATE *sDate);
+	virtual void changeErreur(uint16_t u16Erreur);
+	virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
+	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
+
+	void c_sav_test_cps(uint16_t u16CodeTestCps);
+	void c_sav_test_cps_start();
+	void c_sav_test_cps_stop();
+
 private:
     Maintenance_test_composantsPresenter();
 

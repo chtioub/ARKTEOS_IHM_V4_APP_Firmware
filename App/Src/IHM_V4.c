@@ -16,6 +16,7 @@
 uint8_t rxBuffer[TAILLE_BUFFER_UART];
 rxData_t rxData;
 
+DATA_HISTO data_histo;
 cosebe_rx_t cosebe_rx;
 cosebe_test_t cosebe_test;
 arkteos_update_t arkteos_update;
@@ -57,7 +58,7 @@ uint8_t au8Prog_ModeSilence[7][24];
 uint8_t u8Prog[7][24], u8JourProg;
 uint8_t u8ZoneSelect;
 uint8_t u8PositionX, u8PositionY;
-bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp;
+bool bConsoProd, bPageUsine, bMaintenanceDepuisUsine, bInstallationDepuisUsine, bRegroupementZoneTemp, bTestPacComposantDepuisUsine;
 //bool bPageAccueil;
 S_HISTO_ERR sHisto_Erreur;
 uint16_t u16NumAction = 0;
@@ -84,6 +85,22 @@ bool bAutorisationNoCode = false;
 uint32_t TimerNoNeededCode;
 uint32_t u32LastTick;
 bool bAutorisationCompteurVeille = false;
+bool bMessageEnCoursAffichage = false;
+bool bRecupConfigTermine = false;
+
+uint16_t u16TempBallon_Z1[360],u16Temp_Z2[360], u16TempDepart[360],u16TempRetour[360], u16PointeurTableau;//, u16StartIndex;
+uint16_t u16ValmaxAmbBall, u16ValminAmbBall,  u16ValmaxTeau,u16ValminTeau;
+uint16_t valmaxgaucheP1, valmingaucheP1, valmaxgaucheP2, valmingaucheP2, valmaxdroiteP1P2, valmindroiteP1P2;
+int16_t i16ValmaxText, i16ValminText, i16TempExt[360];
+uint16_t limit;
+
+//const touchgfx::colortype RED = touchgfx::Color::getColorFromRGB(229, 38, 32);
+//const touchgfx::colortype GREEN = touchgfx::Color::getColorFromRGB(179, 193, 14);
+//const touchgfx::colortype BLUE = touchgfx::Color::getColorFromRGB(58, 176, 200);
+//const touchgfx::colortype PINK = touchgfx::Color::getColorFromRGB(231, 0, 148);
+//const touchgfx::colortype WHITE = touchgfx::Color::getColorFromRGB(255, 255, 255);
+//const touchgfx::colortype ORANGE = touchgfx::Color::getColorFromRGB(226, 126, 7);
+
 
 
 void setBackLightPWM(uint8_t pwm)

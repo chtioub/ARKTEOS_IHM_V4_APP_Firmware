@@ -7,6 +7,7 @@
 #include "arkteos_var_commune.h"
 #include "arkteos_defauts.h"
 #include "IHM_V4.h"
+#include <touchgfx/Color.hpp>
 
 class ModelListener;
 
@@ -25,6 +26,8 @@ public:
     uint16_t computeCRC(uint8_t *data, uint16_t size);
 
 //    void energieState(uint16_t state);
+    void update_data_histo();
+    void MessageControlePeriodique();
     void enterVeille();
     void exitVeille();
     void editLuminosite(uint8_t u8Luminosite);
@@ -93,6 +96,9 @@ public:
     void c_sav_mode_pump_down_stop();
     void c_sav_par21();
     void c_sav_test_pac();
+    void c_sav_test_cps(uint16_t u16CodeTestCps);
+    void c_sav_test_cps_stop();
+    void c_sav_test_cps_start();
 
 
     void c_restart();
@@ -100,6 +106,8 @@ public:
 protected:
     ModelListener* modelListener;
     uint32_t veilleCounter;
+    uint32_t recordCounter;
+
 
 };
 

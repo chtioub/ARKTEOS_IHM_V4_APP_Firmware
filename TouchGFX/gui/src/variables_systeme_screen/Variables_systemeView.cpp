@@ -141,8 +141,17 @@ void Variables_systemeView::update_num_ligne_zone()
 		Unicode::snprintf(&textAreaBuffer_NumZone[k][0],3,"%d", k+1);
 	}
 	//Zone 1
+	//Affichage du numéro et nom de la zone
+	Unicode::snprintf(textAreaBuffer_ModeZone1, sizeof(textAreaBuffer_ModeZone1), "%s - (", &textAreaBuffer_NumZone[0][0]);
+	for (int m = 0; m < 10 ; m++)
+	{
+		textAreaBuffer_ModeZone1[m+5] = sConfig_IHM.sParam_Zx[0].u8NomZone[m];
+	}
+	Unicode::snprintf(&textAreaBuffer_ModeZone1[Unicode::strlen(textAreaBuffer_ModeZone1)], 2,")");
 	textArea_mode_zone_1.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
-	textArea_mode_zone_1.setWildcard2(&textAreaBuffer_NumZone[0][0]);
+	textArea_mode_zone_1.setWildcard2(textAreaBuffer_ModeZone1);
+	textArea_mode_zone_1.invalidate();
+
 	j++;
 	textArea_temp_int_zone_1.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	textArea_temp_int_zone_1.setWildcard2(&textAreaBuffer_NumZone[0][0]);
@@ -205,8 +214,18 @@ void Variables_systemeView::update_num_ligne_zone()
 	textArea_vide_zone_1.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	j++;
 	//Zone 2
+//	textArea_mode_zone_2.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
+//	textArea_mode_zone_2.setWildcard2(&textAreaBuffer_NumZone[1][0]);
+	//Affichage du numéro et nom de la zone
+	Unicode::snprintf(textAreaBuffer_ModeZone2, sizeof(textAreaBuffer_ModeZone2), "%s - (", &textAreaBuffer_NumZone[1][0]);
+	for (int m = 0; m < 10 ; m++)
+	{
+		textAreaBuffer_ModeZone2[m+5] = sConfig_IHM.sParam_Zx[1].u8NomZone[m];
+	}
+	Unicode::snprintf(&textAreaBuffer_ModeZone2[Unicode::strlen(textAreaBuffer_ModeZone2)], 2,")");
 	textArea_mode_zone_2.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
-	textArea_mode_zone_2.setWildcard2(&textAreaBuffer_NumZone[1][0]);
+	textArea_mode_zone_2.setWildcard2(textAreaBuffer_ModeZone2);
+	textArea_mode_zone_2.invalidate();
 	j++;
 	textArea_temp_int_zone_2.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	textArea_temp_int_zone_2.setWildcard2(&textAreaBuffer_NumZone[1][0]);
@@ -269,8 +288,16 @@ void Variables_systemeView::update_num_ligne_zone()
 	textArea_vide_zone_2.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	j++;
 	//Zone 3
+	//Affichage du numéro et nom de la zone
+	Unicode::snprintf(textAreaBuffer_ModeZone3, sizeof(textAreaBuffer_ModeZone3), "%s - (", &textAreaBuffer_NumZone[2][0]);
+	for (int m = 0; m < 10 ; m++)
+	{
+		textAreaBuffer_ModeZone3[m+5] = sConfig_IHM.sParam_Zx[2].u8NomZone[m];
+	}
+	Unicode::snprintf(&textAreaBuffer_ModeZone3[Unicode::strlen(textAreaBuffer_ModeZone3)], 2,")");
 	textArea_mode_zone_3.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
-	textArea_mode_zone_3.setWildcard2(&textAreaBuffer_NumZone[2][0]);
+	textArea_mode_zone_3.setWildcard2(textAreaBuffer_ModeZone3);
+	textArea_mode_zone_3.invalidate();
 	j++;
 	textArea_temp_int_zone_3.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	textArea_temp_int_zone_3.setWildcard2(&textAreaBuffer_NumZone[2][0]);
@@ -333,8 +360,16 @@ void Variables_systemeView::update_num_ligne_zone()
 	textArea_vide_zone_3.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	j++;
 	//Zone 4
+	//Affichage du numéro et nom de la zone
+	Unicode::snprintf(textAreaBuffer_ModeZone4, sizeof(textAreaBuffer_ModeZone4), "%s - (", &textAreaBuffer_NumZone[3][0]);
+	for (int m = 0; m < 10 ; m++)
+	{
+		textAreaBuffer_ModeZone4[m+5] = sConfig_IHM.sParam_Zx[3].u8NomZone[m];
+	}
+	Unicode::snprintf(&textAreaBuffer_ModeZone4[Unicode::strlen(textAreaBuffer_ModeZone4)], 2,")");
 	textArea_mode_zone_4.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
-	textArea_mode_zone_4.setWildcard2(&textAreaBuffer_NumZone[3][0]);
+	textArea_mode_zone_4.setWildcard2(textAreaBuffer_ModeZone4);
+	textArea_mode_zone_4.invalidate();
 	j++;
 	textArea_temp_int_zone_4.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	textArea_temp_int_zone_4.setWildcard2(&textAreaBuffer_NumZone[3][0]);
@@ -397,8 +432,16 @@ void Variables_systemeView::update_num_ligne_zone()
 	textArea_vide_zone_4.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	j++;
 	//Zone 5
+	//Affichage du numéro et nom de la zone
+	Unicode::snprintf(textAreaBuffer_ModeZone5, sizeof(textAreaBuffer_ModeZone5), "%s - (", &textAreaBuffer_NumZone[4][0]);
+	for (int m = 0; m < 10 ; m++)
+	{
+		textAreaBuffer_ModeZone5[m+5] = sConfig_IHM.sParam_Zx[4].u8NomZone[m];
+	}
+	Unicode::snprintf(&textAreaBuffer_ModeZone5[Unicode::strlen(textAreaBuffer_ModeZone5)], 2,")");
 	textArea_mode_zone_5.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
-	textArea_mode_zone_5.setWildcard2(&textAreaBuffer_NumZone[4][0]);
+	textArea_mode_zone_5.setWildcard2(textAreaBuffer_ModeZone5);
+	textArea_mode_zone_5.invalidate();
 	j++;
 	textArea_temp_int_zone_5.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	textArea_temp_int_zone_5.setWildcard2(&textAreaBuffer_NumZone[4][0]);
@@ -461,8 +504,16 @@ void Variables_systemeView::update_num_ligne_zone()
 	textArea_vide_zone_5.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	j++;
 	//Zone 6
+	//Affichage du numéro et nom de la zone
+	Unicode::snprintf(textAreaBuffer_ModeZone6, sizeof(textAreaBuffer_ModeZone6), "%s - (", &textAreaBuffer_NumZone[5][0]);
+	for (int m = 0; m < 10 ; m++)
+	{
+		textAreaBuffer_ModeZone6[m+5] = sConfig_IHM.sParam_Zx[5].u8NomZone[m];
+	}
+	Unicode::snprintf(&textAreaBuffer_ModeZone6[Unicode::strlen(textAreaBuffer_ModeZone6)], 2,")");
 	textArea_mode_zone_6.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
-	textArea_mode_zone_6.setWildcard2(&textAreaBuffer_NumZone[5][0]);
+	textArea_mode_zone_6.setWildcard2(textAreaBuffer_ModeZone6);
+	textArea_mode_zone_6.invalidate();
 	j++;
 	textArea_temp_int_zone_6.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	textArea_temp_int_zone_6.setWildcard2(&textAreaBuffer_NumZone[5][0]);
@@ -525,8 +576,16 @@ void Variables_systemeView::update_num_ligne_zone()
 	textArea_vide_zone_6.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	j++;
 	//Zone 7
+	//Affichage du numéro et nom de la zone
+	Unicode::snprintf(textAreaBuffer_ModeZone7, sizeof(textAreaBuffer_ModeZone7), "%s - (", &textAreaBuffer_NumZone[6][0]);
+	for (int m = 0; m < 10 ; m++)
+	{
+		textAreaBuffer_ModeZone7[m+5] = sConfig_IHM.sParam_Zx[6].u8NomZone[m];
+	}
+	Unicode::snprintf(&textAreaBuffer_ModeZone7[Unicode::strlen(textAreaBuffer_ModeZone7)], 2,")");
 	textArea_mode_zone_7.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
-	textArea_mode_zone_7.setWildcard2(&textAreaBuffer_NumZone[6][0]);
+	textArea_mode_zone_7.setWildcard2(textAreaBuffer_ModeZone7);
+	textArea_mode_zone_7.invalidate();
 	j++;
 	textArea_temp_int_zone_7.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	textArea_temp_int_zone_7.setWildcard2(&textAreaBuffer_NumZone[6][0]);
@@ -589,8 +648,16 @@ void Variables_systemeView::update_num_ligne_zone()
 	textArea_vide_zone_7.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	j++;
 	//Zone 8
+	//Affichage du numéro et nom de la zone
+	Unicode::snprintf(textAreaBuffer_ModeZone8, sizeof(textAreaBuffer_ModeZone8), "%s - (", &textAreaBuffer_NumZone[7][0]);
+	for (int m = 0; m < 10 ; m++)
+	{
+		textAreaBuffer_ModeZone8[m+5] = sConfig_IHM.sParam_Zx[7].u8NomZone[m];
+	}
+	Unicode::snprintf(&textAreaBuffer_ModeZone8[Unicode::strlen(textAreaBuffer_ModeZone8)], 2,")");
 	textArea_mode_zone_8.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
-	textArea_mode_zone_8.setWildcard2(&textAreaBuffer_NumZone[7][0]);
+	textArea_mode_zone_8.setWildcard2(textAreaBuffer_ModeZone8);
+	textArea_mode_zone_8.invalidate();
 	j++;
 	textArea_temp_int_zone_8.setWildcard1(&textAreaBuffer_NumLigne[j][0]);
 	textArea_temp_int_zone_8.setWildcard2(&textAreaBuffer_NumZone[7][0]);

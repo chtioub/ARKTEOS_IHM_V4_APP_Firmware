@@ -1,12 +1,23 @@
 #include <gui/histo_fonctionnement_screen/Histo_fonctionnementView.hpp>
 #include <touchgfx/Utils.hpp>
 #include <touchgfx/Color.hpp>
-//#include <touchgfx/widgets/graph/Graph.hpp>
+
 
 
 Histo_fonctionnementView::Histo_fonctionnementView()
 {
+	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));
+	memset(&sStatut_PAC_old, 0, sizeof(sStatut_PAC_old));
+	sDate_old.Date = 0;
+	u16ErreurAffichee = 0;
+	changeDate(&sDate);
+	bConnexionDistance = false;
+	changeErreur(u16ErreurEncours);
+	changeStatutPAC(&sStatut_PAC);
+	changeStatutEther(&sCycEther);
 
+	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_HISTO_CENTRE_LARGE).getText());
+	barre_titre.titre(textAreaBuffer_Titre);
 }
 
 
@@ -22,30 +33,48 @@ void Histo_fonctionnementView::setupScreen()
 	else bAffichageTempBallon = true;
 	bPremierPassage = true;
 
+	for (int i = 0; i < 360; ++i)
+	{
+		box_etat_pac[i].setPosition(i*2, 0, 2, 18);
+		box_etat_pac[i].setVisible(false);
+		container_etat_pac.add(box_etat_pac[i]);
+
+		box_etat_app_chauf[i].setPosition(i*2, 0, 2, 18);
+		box_etat_app_chauf[i].setVisible(false);
+		container_etat_app_chauf.add(box_etat_app_chauf[i]);
+
+		box_etat_app_ecs[i].setPosition(i*2, 0, 2, 18);
+		box_etat_app_ecs[i].setVisible(false);
+		container_etat_app_ecs.add(box_etat_app_ecs[i]);
+	}
+
 	update_container();
-	clear_graph();
-	timer_10s();
+
 }
 
 void Histo_fonctionnementView::clear_graph()
 {
-	u16PointeurTableau = 0;
+	memset(&data_histo, 0, sizeof(DATA_HISTO));
+	data_histo.bTableauPlein = false;
+	data_histo.i16ValminText = 0xFFFF;
+	data_histo.u16ValminTeau = 0xFFFF;
+	data_histo.u16ValminAmbBall = 0xFFFF;
 
-	for (int i = 0; i < 360; i++)
-	{
-		u16TempBallon_Z1[i] = 0;
-		u16Temp_Z2[i] = 0;
-		u16TempDepart[i] = 0;
-		u16TempRetour[i] = 0;
-		i16TempExt[i] = 0;
-	}
 	graph_temp_z1_ballon.clear();
 	graph_temp_z2.clear();
 	graph_eau_depart.clear();
 	graph_eau_retour.clear();
 	graph_temp_ext.clear();
 
-	bTableauPlein = false;
+	for (int i = 0; i < 360; ++i)
+	{
+		box_etat_pac[i].setVisible(false);
+		box_etat_app_chauf[i].setVisible(false);
+		box_etat_app_ecs[i].setVisible(false);
+	}
+	container_etat_pac.invalidate();
+	container_etat_app_chauf.invalidate();
+	container_etat_app_ecs.invalidate();
 }
 
 void Histo_fonctionnementView::bouton_droit()
@@ -54,7 +83,6 @@ void Histo_fonctionnementView::bouton_droit()
 	{
 		bGraphPage1 = false;
 		update_container();
-		timer_10s();
 	}
 }
 
@@ -64,7 +92,6 @@ void Histo_fonctionnementView::bouton_gauche()
 	{
 		bGraphPage1 = true;
 		update_container();
-		timer_10s();
 	}
 }
 
@@ -110,6 +137,14 @@ void Histo_fonctionnementView::update_container()
 		container_cercle_depart_retour.setVisible(true);
 		container_cercle_depart_retour.invalidate();
 	}
+	container_etat_pac.setVisible(true);
+	container_etat_pac.invalidate();
+	container_etat_app_chauf.setVisible(true);
+	container_etat_app_chauf.invalidate();
+	container_etat_app_ecs.setVisible(true);
+	container_etat_app_ecs.invalidate();
+
+	update_graph_histo(&data_histo);
 }
 
 void Histo_fonctionnementView::tearDownScreen()
@@ -118,191 +153,180 @@ void Histo_fonctionnementView::tearDownScreen()
 }
 
 
-void Histo_fonctionnementView::timer_10s()
+void Histo_fonctionnementView::update_graph_histo(DATA_HISTO *data_histo)
 {
-
-    if (bAffichageTempBallon)
-    {
-    	u16TempBallon_Z1[u16PointeurTableau] = sStatut_Primaire.i16TeauBallonTampon / 10;
-    }
-    else
-    {
-    	u16TempBallon_Z1[u16PointeurTableau] = sStatut_Zx[0].i16Tint / 10;
-    	u16Temp_Z2[u16PointeurTableau] = sStatut_Zx[1].i16Tint / 10;
-    }
-    i16TempExt[u16PointeurTableau] = sCyclRegFrigo[0].commun.i16Text / 10;
-    u16TempDepart[u16PointeurTableau] = sStatut_Primaire.i16TeauDepart / 10;
-    u16TempRetour[u16PointeurTableau] = sStatut_Primaire.i16TeauRetour / 10;
-
-
-    //Init des val max
-    if (bPremierPassage)
-    {
-		if (bAffichageTempBallon)
-		{
-			u16ValmaxAmbBall = u16TempBallon_Z1[0] + 1;//(u16TempBallon[0]>u16TempRetour[0]) ? u16TempBallon[0]:u16TempRetour[0];
-			u16ValminAmbBall = u16TempBallon_Z1[0] - 1;//(u16TempBallon[0]<u16TempRetour[0]) ? u16TempBallon[0]:u16TempRetour[0];
-		}
-		else
-		{
-			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 && sConfig_IHM.sOption_PAC.sZone.zone.bZone2)
-			{
-				u16ValmaxAmbBall = (u16TempBallon_Z1[0]>u16Temp_Z2[0]) ? u16TempBallon_Z1[0] + 1:u16Temp_Z2[0] + 1;
-				u16ValminAmbBall = (u16TempBallon_Z1[0]<u16Temp_Z2[0]) ? u16TempBallon_Z1[0] - 1:u16Temp_Z2[0] - 1;
-			}
-			else if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1)
-			{
-				u16ValmaxAmbBall = u16TempBallon_Z1[0] + 1;
-				u16ValminAmbBall = u16TempBallon_Z1[0] - 1;
-			}
-			else
-			{
-				u16ValmaxAmbBall = u16Temp_Z2[0] + 1;
-				u16ValminAmbBall = u16Temp_Z2[0] - 1;
-			}
-		}
-		u16ValmaxTeau = (u16TempDepart[0]>u16TempRetour[0]) ? u16TempDepart[0] + 1:u16TempRetour[0] + 1;
-		u16ValminTeau = (u16TempDepart[0]<u16TempRetour[0]) ? u16TempDepart[0] - 1:u16TempRetour[0] - 1;
-		i16ValmaxText = i16TempExt[0] + 1;
-		i16ValminText = i16TempExt[0] - 1;
-
-		bPremierPassage = false;
-    }
-
-    uint16_t limit = bTableauPlein ? 360 : u16PointeurTableau + 1;
-    for (uint16_t i = 1; i < limit; i++)
-    {
-    	//Page 1
-        if (bAffichageTempBallon)
-		{
-        	uint16_t valmaxgaucheP1 = u16TempBallon_Z1[i];//>u16TempRetour[i]) ? u16TempBallon[i]:u16TempRetour[i];//u16TempBallon[i];
-			if (valmaxgaucheP1 > u16ValmaxAmbBall) u16ValmaxAmbBall = valmaxgaucheP1+1;
-			uint16_t valmingaucheP1 = u16TempBallon_Z1[i];//(u16TempBallon[i]<u16TempRetour[i]) ? u16TempBallon[i]:u16TempRetour[i];
-			if (valmingaucheP1 < u16ValminAmbBall) u16ValminAmbBall = valmingaucheP1-1;
-		}
-		else
-		{
-			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 && sConfig_IHM.sOption_PAC.sZone.zone.bZone2)
-			{
-				uint16_t valmaxgaucheP1 = (u16TempBallon_Z1[i]>u16Temp_Z2[i]) ? u16TempBallon_Z1[i]:u16Temp_Z2[i];
-				if (valmaxgaucheP1 > u16ValmaxAmbBall) u16ValmaxAmbBall = valmaxgaucheP1+1;
-				uint16_t valmingaucheP1 = (u16TempBallon_Z1[i]<u16Temp_Z2[i]) ? u16TempBallon_Z1[i]:u16Temp_Z2[i];
-				if (valmingaucheP1 < u16ValminAmbBall) u16ValminAmbBall = valmingaucheP1-1;
-			}
-			else if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1)
-			{
-				uint16_t valmaxgaucheP1 = u16TempBallon_Z1[i];//>u16Temp_Z2[i]) ? u16TempBallon_Z1[i]:u16Temp_Z2[i];
-				if (valmaxgaucheP1 > u16ValmaxAmbBall) u16ValmaxAmbBall = valmaxgaucheP1+1;
-				uint16_t valmingaucheP1 = u16TempBallon_Z1[i];//<u16Temp_Z2[i]) ? u16TempBallon_Z1[i]:u16Temp_Z2[i];
-				if (valmingaucheP1 < u16ValminAmbBall) u16ValminAmbBall = valmingaucheP1-1;
-			}
-			else
-			{
-				uint16_t valmaxgaucheP1 = u16Temp_Z2[i];
-				if (valmaxgaucheP1 > u16ValmaxAmbBall) u16ValmaxAmbBall = valmaxgaucheP1+1;
-				uint16_t valmingaucheP1 = u16Temp_Z2[i];
-				if (valmingaucheP1 < u16ValminAmbBall) u16ValminAmbBall = valmingaucheP1-1;
-			}
-		}
-
-        //Page 2
-        uint16_t valmaxgaucheP2 = (u16TempDepart[i]>u16TempRetour[i]) ? u16TempDepart[i]:u16TempRetour[i];
-		if (valmaxgaucheP2 > u16ValmaxTeau) u16ValmaxTeau = valmaxgaucheP2+1;
-		uint16_t valmingaucheP2 = (u16TempDepart[i]<u16TempRetour[i]) ? u16TempDepart[i]:u16TempRetour[i];
-		if (valmingaucheP2 < u16ValminTeau) u16ValminTeau = valmingaucheP2-1;
-
-		//Page 1 & 2
-		int16_t valmaxdroiteP1P2 = i16TempExt[i];
-		if (valmaxdroiteP1P2 > i16ValmaxText) i16ValmaxText = valmaxdroiteP1P2+1;
-		int16_t valmindroiteP1P2 = i16TempExt[i];
-		if (valmindroiteP1P2 < i16ValminText) i16ValminText = valmindroiteP1P2-1;
-    }
+	touchgfx::colortype ColorEtat;
 
     //MAJ Text Min/Max
     if (bGraphPage1)
     {
-		Unicode::snprintf(textArea_Buffer_temp_gauche_max, 7, "%d", (u16ValmaxAmbBall));
+		Unicode::snprintf(textArea_Buffer_temp_gauche_max, 7, "%d", (data_histo->u16ValmaxAmbBall/10));
 		text_temp_eau_max.setWildcard(textArea_Buffer_temp_gauche_max);
 		text_temp_eau_max.invalidate();
-		Unicode::snprintf(textArea_Buffer_temp_gauche_min, 7, "%d", (u16ValminAmbBall));
+		Unicode::snprintf(textArea_Buffer_temp_gauche_min, 7, "%d", (data_histo->u16ValminAmbBall/10));
 		text_temp_eau_min.setWildcard(textArea_Buffer_temp_gauche_min);
 		text_temp_eau_min.invalidate();
     }
     else
     {
-		Unicode::snprintf(textArea_Buffer_temp_gauche_max, 7, "%d", (u16ValmaxTeau));
+		Unicode::snprintf(textArea_Buffer_temp_gauche_max, 7, "%d", (data_histo->u16ValmaxTeau/10));
 		text_temp_eau_max.setWildcard(textArea_Buffer_temp_gauche_max);
 		text_temp_eau_max.invalidate();
-		Unicode::snprintf(textArea_Buffer_temp_gauche_min, 7, "%d", (u16ValminTeau));
+		Unicode::snprintf(textArea_Buffer_temp_gauche_min, 7, "%d", (data_histo->u16ValminTeau/10));
 		text_temp_eau_min.setWildcard(textArea_Buffer_temp_gauche_min);
 		text_temp_eau_min.invalidate();
     }
 
-	Unicode::snprintf(textArea_Buffer_temp_droite_max, 7, "%d", (i16ValmaxText));
+	Unicode::snprintf(textArea_Buffer_temp_droite_max, 7, "%d", (data_histo->i16ValmaxText/10));
 	text_temp_ext_max.setWildcard(textArea_Buffer_temp_droite_max);
 	text_temp_ext_max.invalidate();
-	Unicode::snprintf(textArea_Buffer_temp_droite_min, 7, "%d", (i16ValminText));
+	Unicode::snprintf(textArea_Buffer_temp_droite_min, 7, "%d", (data_histo->i16ValminText/10));
 	text_temp_ext_min.setWildcard(textArea_Buffer_temp_droite_min);
 	text_temp_ext_min.invalidate();
-
-    // --- Mise à jour du graphe ---
-    //graph_eau_depart.clear(); // Important : évite les doublons
-//    graph_eau_depart.setGraphRange(0, 359, u16Valmin - 1, u16Valmax + 1);
-//    //graph_eau_retour.clear(); // Important : évite les doublons
-//    graph_eau_retour.setGraphRange(0, 359, u16Valmin - 1, u16Valmax + 1);
 
     //MAJ Définition des limites Min/Max des graphs
 	if (bGraphPage1)
 	{
 		if (bAffichageTempBallon)
 		{
-			graph_temp_z1_ballon.setGraphRange(0, 359, u16ValminAmbBall, u16ValmaxAmbBall);
+			graph_temp_z1_ballon.setGraphRange(0, 359, data_histo->u16ValminAmbBall, data_histo->u16ValmaxAmbBall);
 		}
 		else
 		{
 			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1)
 			{
-				graph_temp_z1_ballon.setGraphRange(0, 359, u16ValminAmbBall, u16ValmaxAmbBall);
+				graph_temp_z1_ballon.setGraphRange(0, 359, data_histo->u16ValminAmbBall, data_histo->u16ValmaxAmbBall);
 			}
 			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone2)
 			{
-				graph_temp_z2.setGraphRange(0, 359, u16ValminAmbBall, u16ValmaxAmbBall);
+				graph_temp_z2.setGraphRange(0, 359, data_histo->u16ValminAmbBall, data_histo->u16ValmaxAmbBall);
 			}
 		}
 	}
 	else
 	{
-		graph_eau_depart.setGraphRange(0, 359, u16ValminTeau, u16ValmaxTeau);
-		graph_eau_retour.setGraphRange(0, 359, u16ValminTeau, u16ValmaxTeau);
+		graph_eau_depart.setGraphRange(0, 359, data_histo->u16ValminTeau, data_histo->u16ValmaxTeau);
+		graph_eau_retour.setGraphRange(0, 359, data_histo->u16ValminTeau, data_histo->u16ValmaxTeau);
 	}
-	graph_temp_ext.setGraphRange(0, 359, i16ValminText, i16ValmaxText);
+	graph_temp_ext.setGraphRange(0, 359, data_histo->i16ValminText, data_histo->i16ValmaxText);
+
+	graph_eau_depart.clear();
+	graph_eau_retour.clear();
+	graph_temp_z1_ballon.clear();
+	graph_temp_z2.clear();
+	graph_temp_ext.clear();
 
 
-    if (bTableauPlein)
+	if (data_histo->bTableauPlein)
     {
-        // tableau circulaire complet
     	for (int i = 0; i < 360; i++)
         {
-            uint16_t index = (u16PointeurTableau + i + 1) % 360;
-            graph_eau_depart.addDataPoint(i, u16TempDepart[index]);
-            graph_eau_retour.addDataPoint(i, u16TempRetour[index]);
-            graph_temp_z1_ballon.addDataPoint(i, u16TempBallon_Z1[index]);
-            graph_temp_z2.addDataPoint(i, u16Temp_Z2[index]);
-            graph_temp_ext.addDataPoint(i, i16TempExt[index]);
+    		int index = (((data_histo->u16PointeurTableau + 360)%360) - (360 - i) + 360)%360;
+
+            graph_eau_depart.addDataPoint(i, data_histo->u16TempDepart[index]);
+            graph_eau_retour.addDataPoint(i, data_histo->u16TempRetour[index]);
+            graph_temp_z1_ballon.addDataPoint(i, data_histo->u16TempBallon_Z1[index]);
+            graph_temp_z2.addDataPoint(i, data_histo->u16Temp_Z2[index]);
+            graph_temp_ext.addDataPoint(i, data_histo->i16TempExt[index]);
+
+            //Etat PAC
+			switch(data_histo->etat_pac[index])
+			{
+				default:
+				case COLOR_BLANC: 	ColorEtat = WHITE;	break;
+				case COLOR_ORANGE: 	ColorEtat = ORANGE;	break;
+				case COLOR_BLEU: 	ColorEtat = BLUE;	break;
+				case COLOR_ROSE: 	ColorEtat = PINK;	break;
+				case COLOR_VERT: 	ColorEtat = GREEN;	break;
+			}
+			box_etat_pac[i].setColor(ColorEtat);
+			if (data_histo->etat_pac[index] == COLOR_NONE)
+			{
+				box_etat_pac[i].setVisible(false);
+			}
+			else box_etat_pac[i].setVisible(true);
+			box_etat_pac[i].invalidate();
+
+
+			//Statut appoint PAC
+			if (data_histo->etat_app_chaud[index] == COLOR_ROUGE)
+			{
+				box_etat_app_chauf[i].setColor(RED);
+				box_etat_app_chauf[i].setVisible(true);
+			}
+			else
+			{
+				box_etat_app_chauf[i].setVisible(false);
+			}
+			box_etat_app_chauf[i].invalidate();
+
+			//Statut appoint ECS
+			if (data_histo->etat_app_ecs[index] == COLOR_ROSE)
+			{
+				box_etat_app_ecs[i].setColor(PINK);
+				box_etat_app_ecs[i].setVisible(true);
+			}
+			else
+			{
+				box_etat_app_ecs[i].setVisible(false);
+			}
+			box_etat_app_ecs[i].invalidate();
         }
     }
     else
     {
-		for (int i = 0; i < limit; i++)
+		for (int i = 0; i < data_histo->limit; i++) // = 360 si tableau plein ou sinon pointeur
 		{
-			int graphIndex = (360 - limit + i) % 360; // <-- décalage à droite
+			int graphIndex = (360 - data_histo->limit + i); //22/10/25 % 360;
 
-			graph_eau_depart.addDataPoint(graphIndex, u16TempDepart[i]);
-			graph_eau_retour.addDataPoint(graphIndex, u16TempRetour[i]);
-			graph_temp_z1_ballon.addDataPoint(graphIndex, u16TempBallon_Z1[i]);
-			graph_temp_z2.addDataPoint(graphIndex, u16Temp_Z2[i]);
-			graph_temp_ext.addDataPoint(graphIndex, i16TempExt[i]);
+			graph_eau_depart.addDataPoint(graphIndex, data_histo->u16TempDepart[i]);
+			graph_eau_retour.addDataPoint(graphIndex, data_histo->u16TempRetour[i]);
+			graph_temp_z1_ballon.addDataPoint(graphIndex, data_histo->u16TempBallon_Z1[i]);
+			graph_temp_z2.addDataPoint(graphIndex, data_histo->u16Temp_Z2[i]);
+			graph_temp_ext.addDataPoint(graphIndex, data_histo->i16TempExt[i]);
 
+			//Etat PAC
+			switch(data_histo->etat_pac[i])
+			{
+				default:
+				case COLOR_BLANC: 	ColorEtat = WHITE;	break;
+				case COLOR_ORANGE: 	ColorEtat = ORANGE;	break;
+				case COLOR_BLEU: 	ColorEtat = BLUE;	break;
+				case COLOR_ROSE: 	ColorEtat = PINK;	break;
+				case COLOR_VERT: 	ColorEtat = GREEN;	break;
+			}
+			box_etat_pac[graphIndex].setColor(ColorEtat);
+			if (data_histo->etat_pac[i] == COLOR_NONE)
+			{
+				box_etat_pac[graphIndex].setVisible(false);
+			}
+			else box_etat_pac[graphIndex].setVisible(true);
+			box_etat_pac[graphIndex].invalidate();
+
+
+			//Statut appoint PAC
+			if (data_histo->etat_app_chaud[i] == COLOR_ROUGE)
+			{
+				box_etat_app_chauf[graphIndex].setColor(RED);
+				box_etat_app_chauf[graphIndex].setVisible(true);
+			}
+			else
+			{
+				box_etat_app_chauf[graphIndex].setVisible(false);
+			}
+			box_etat_app_chauf[graphIndex].invalidate();
+
+			//Statut appoint ECS
+			if (data_histo->etat_app_ecs[i] == COLOR_ROSE)
+			{
+				box_etat_app_ecs[graphIndex].setColor(PINK);
+				box_etat_app_ecs[graphIndex].setVisible(true);
+			}
+			else
+			{
+				box_etat_app_ecs[graphIndex].setVisible(false);
+			}
+			box_etat_app_ecs[graphIndex].invalidate();
 		}
     }
 
@@ -340,8 +364,6 @@ void Histo_fonctionnementView::timer_10s()
 		graph_eau_depart.invalidate();
 		graph_eau_retour.setVisible(false);
 		graph_eau_retour.invalidate();
-
-
 	}
     else
     {
@@ -364,29 +386,62 @@ void Histo_fonctionnementView::timer_10s()
 	}
     graph_temp_ext.invalidate();
 
-    //Test SER
-//	for (int i = 0; i<360; i++)
-//	{
-//		box_etat[i].setPosition(i, 0, 1, 18);
-//		if (i<50)
-//		{
-//			box_etat[i].setColor(RED);
-//		}
-//		else if (i >= 50 && i <80)
-//		{
-//			box_etat[i].setColor(GREEN);
-//		}
-//		else box_etat[i].setColor(BLUE);
-//		container_etat.add(box_etat[i]);
-//	}
-//	container_etat.invalidate();
+    //Ajout pour essai
+    container_etat_pac.invalidate();
+    container_etat_app_chauf.invalidate();
+    container_etat_app_ecs.invalidate();
+}
 
 
-    u16PointeurTableau++;
-    if (u16PointeurTableau >= 360)
-    {
-        u16PointeurTableau = 0;
-        bTableauPlein = true;
-    }
+void Histo_fonctionnementView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
+{
+	if(bConnexionDistance != sCycEther->bAppletConnect)
+	{
+		bConnexionDistance = sCycEther->bAppletConnect;
+		barre_titre.connexionDistante(bConnexionDistance);
+		barre_titre.invalidate();
+	}
+}
+
+void Histo_fonctionnementView::changeErreur(uint16_t u16Erreur)
+{
+	if(u16ErreurAffichee != u16Erreur)
+	{
+		u16ErreurAffichee = u16Erreur;
+		barre_titre.erreur(u16Erreur);
+		barre_titre.invalidate();
+	}
+}
+
+void Histo_fonctionnementView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
+{
+	// Recup config
+	if((sStatut_PAC_old.ModifConfig | sStatut_PAC_old.ModifConfigSimple) != (sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple))
+	{
+		barre_titre.recupConfig((sStatut_PAC->ModifConfig | sStatut_PAC->ModifConfigSimple));
+		barre_titre.invalidate();
+	}
+	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
+}
+
+void Histo_fonctionnementView::changeDate(S_DATE *sDate)
+{
+	if(sDate_old.Date != sDate->Date)
+	{
+		// Affichage de la date
+	    Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
+	    barre_titre.date(textAreaBuffer_Date);
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+	else if(sDate_old.Minutes != sDate->Minutes)
+	{
+		// Affichage de l'heure
+	    Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+	    barre_titre.heure(textAreaBuffer_Heure);
+	}
+    barre_titre.invalidate();
+	memcpy(&sDate_old, sDate, sizeof(S_DATE));
 }
 

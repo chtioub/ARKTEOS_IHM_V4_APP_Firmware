@@ -212,7 +212,56 @@ void ConfigurationView::changeErreur(uint16_t u16Erreur)
 
 void ConfigurationView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 {
+	S_ZONE sZone_tmp;
+	memset(&sZone_tmp, 0, sizeof(S_ZONE));
 
+	if(sConfig_IHM->sOption_PAC.TypeAppoint != sConfig_IHM_old.sOption_PAC.TypeAppoint || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sMode_ECS.bUserAppointECS != sConfig_IHM_old.sMode_ECS.bUserAppointECS))
+	{
+		if(sConfig_IHM->sOption_PAC.TypeAppoint != NO_APPOINT || (sConfig_IHM->sOption_PAC.ECS == 1 && sConfig_IHM->sMode_ECS.bUserAppointECS == 1))
+		{
+			container_secours.setVisible(true);
+		}
+		else container_secours.setVisible(false);
+		container_secours.invalidate();
+	}
+
+	if((sConfig_IHM->sMode_PAC.bSecours != sConfig_IHM_old.sMode_PAC.bSecours) || (sConfig_IHM->sMode_ECS.bUserECSSecours != sConfig_IHM_old.sMode_ECS.bUserECSSecours))
+	{
+		if(sConfig_IHM->sMode_PAC.bSecours == 1 || sConfig_IHM->sMode_ECS.bUserECSSecours == 1)
+		{
+			buttonWithIcon_secours_off.setVisible(false);
+			buttonWithIcon_secours_on.setVisible(true);
+		}
+		else
+		{
+			buttonWithIcon_secours_on.setVisible(false);
+			buttonWithIcon_secours_off.setVisible(true);
+		}
+		buttonWithIcon_secours_on.invalidate();
+		buttonWithIcon_secours_off.invalidate();
+	}
+
+	if((sConfig_IHM->sParam_PAC.TypeRegul != sConfig_IHM_old.sParam_PAC.TypeRegul) || memcmp(&sConfig_IHM->sOption_PAC.sZone, &sConfig_IHM_old.sOption_PAC.sZone, sizeof(S_ZONE)) || (sConfig_IHM->sOption_PAC.ECS != sConfig_IHM_old.sOption_PAC.ECS) || (sConfig_IHM->sOption_PAC.Piscine != sConfig_IHM_old.sOption_PAC.Piscine))
+	{
+		if((sConfig_IHM->sParam_PAC.TypeRegul == REGUL_BAL_TAMPON_MULTI_ZONE && memcmp(&sConfig_IHM->sOption_PAC.sZone, &sZone_tmp, sizeof(S_ZONE))) || sConfig_IHM->sOption_PAC.ECS || sConfig_IHM->sOption_PAC.Piscine)
+		{
+			container_vacances.setVisible(true);
+		}
+		else container_vacances.setVisible(false);
+		container_vacances.invalidate();
+	}
+
+	if(sConfig_IHM->sMode_ECS.Exception != sConfig_IHM_old.sMode_ECS.Exception)
+	{
+		if(sConfig_IHM->sMode_ECS.Exception == VACANCES)
+		{
+			buttonWithIcon_vacances_on.setVisible(true);
+		}
+		else buttonWithIcon_vacances_on.setVisible(false);
+		buttonWithIcon_vacances_on.invalidate();
+	}
+
+	memcpy(&sConfig_IHM_old, sConfig_IHM, sizeof(S_CONFIG_IHM));
 }
 
 void ConfigurationView::changeDate(S_DATE *sDate)

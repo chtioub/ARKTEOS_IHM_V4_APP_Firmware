@@ -120,12 +120,14 @@ void AttenteView::Timer_500ms()
 			else if(sConfig_IHM.u16NbCyclique == 6)
 			{
 				application().gotoAccueilScreenNoTransition();
+				bRecupConfigTermine = true;
 			}
 			break;
 		case 4:
 			if(sConfig_IHM.u16NbCyclique == 6)
 			{
 				application().gotoAccueilScreenNoTransition();
+				bRecupConfigTermine = true;
 			}
 			break;
 	}

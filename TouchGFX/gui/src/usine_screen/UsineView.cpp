@@ -62,6 +62,17 @@ void UsineView::bouton_derog_pression_bp()
 	application().gotoPage_oui_nonScreenNoTransition();
 }
 
+void UsineView::bouton_test_pac()
+{
+	bTestPacComposantDepuisUsine = true;
+	application().gotoTest_pacScreenNoTransition();
+}
+
+void UsineView::bouton_test_composants()
+{
+	bTestPacComposantDepuisUsine = true;
+}
+
 void UsineView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 {
 	// Recup config
@@ -83,12 +94,20 @@ void UsineView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)
 	// Test PAC
 	if(sStatut_PAC_old.Test != sStatut_PAC->Test)
 	{
-		if(sStatut_PAC->Test)
+		if(sStatut_PAC->Test == S_TF_PAC)
 		{
+			buttonWithLabel_test_pac_usine.setVisible(false);
+			buttonWithLabel_test_pac_usine.invalidate();
 			buttonWithLabel_test_pac_on_usine.setVisible(true);
+			buttonWithLabel_test_pac_on_usine.invalidate();
 		}
-		else buttonWithLabel_test_pac_on_usine.setVisible(false);
-		buttonWithLabel_test_pac_on_usine.invalidate();
+		else
+		{
+			buttonWithLabel_test_pac_on_usine.setVisible(false);
+			buttonWithLabel_test_pac_on_usine.invalidate();
+			buttonWithLabel_test_pac_usine.setVisible(true);
+			buttonWithLabel_test_pac_usine.invalidate();
+		}
 	}
 	memcpy(&sStatut_PAC_old, sStatut_PAC, sizeof(S_STATUT_PAC));
 }

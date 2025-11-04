@@ -236,6 +236,23 @@ void Model::tick()
 		gTouched = 0;
 		veilleCounter = 0;
 	}
+
+	if (bMessageEnCoursAffichage)
+	{
+		oui_veille = 0;
+		exitVeille();
+		gTouched = 0;
+		veilleCounter = 0;
+	}
+
+	//Pour l'affichage de l'historique des températures
+	recordCounter++;
+	if (recordCounter >= TIMER_RECORD_10S)
+	{
+		recordCounter = 0;
+		update_data_histo();
+		modelListener->update_graph_histo(&data_histo);
+	}
 #endif
 
   if(dataUpdated != 0)
@@ -247,6 +264,7 @@ void Model::tick()
   {
     modelListener->changeDate(&sDate);
     arkteos_update.date_update = false;
+    MessageControlePeriodique();
   }
   if(arkteos_update.erreur_update)
   {
@@ -446,6 +464,298 @@ void Model::exitVeille()
 //  uint8_t PWMActive = 100;
 //  setBackLightPWM(PWMActive);
 #endif
+}
+
+void Model::MessageControlePeriodique()
+{
+//	if (!bMessageControleAnodeActif
+//			&& sConfig_IHM.sInstall_PAC.u5VerificationAnnuelle != 0
+//			&& ((sDate.Year - sConfig_IHM.sInstall_PAC.sDateMiseEnService.Year) > (sConfig_IHM.sInstall_PAC.u5VerificationAnnuelle - 1))
+//		    && sDate.Month >=  sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month && sDate.Date >=  sConfig_IHM.sInstall_PAC.sDateMiseEnService.Date)
+//		|| (((sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month <= 6 && (sDate.Month - sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month) >= 6)
+//		||(sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month > 6 && sDate.Month >= (sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month - 6)
+//				&& sDate.Year > sConfig_IHM.sInstall_PAC.sDateMiseEnService.Year))
+//				&& sConfig_IHM.sInstall_PAC.u5VerificationAnnuelle == 0
+//				&& sDate.Date >= sConfig_IHM.sInstall_PAC.sDateMiseEnService.Date))
+//		&& !bActionMessage))
+//		{
+//			;
+//		}
+	//*********Fin premier commentaire
+//			// Conditions intermédiaires pour plus de clarté
+//		bool verificationAnnuelleActive = (sConfig_IHM.sInstall_PAC.u5VerificationAnnuelle != 0);
+//		bool verificationAnnuelleInactive = (sConfig_IHM.sInstall_PAC.u5VerificationAnnuelle == 0);
+//
+//		bool delaiAnneeDepasse =
+//			(sDate.Year - sConfig_IHM.sInstall_PAC.sDateMiseEnService.Year) >
+//			(sConfig_IHM.sInstall_PAC.u5VerificationAnnuelle - 1);
+//
+//		bool dateDepassee =
+//			sDate.Month >= sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month &&
+//			sDate.Date  >= sConfig_IHM.sInstall_PAC.sDateMiseEnService.Date;
+//
+//		// Cas 1 : vérification annuelle activée
+//		bool conditionAnnuelle =
+//			verificationAnnuelleActive &&
+//			delaiAnneeDepasse &&
+//			dateDepassee;
+//
+//		// Cas 2 : vérification tous les 6 mois si non annuelle
+//		bool conditionSemestrielle = false;
+//
+//		if (verificationAnnuelleInactive)
+//		{
+//			bool moisInferieur =
+//				sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month <= 6 &&
+//				(sDate.Month - sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month) >= 6;
+//
+//			bool moisSuperieur =
+//				sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month > 6 &&
+//				sDate.Month >= (sConfig_IHM.sInstall_PAC.sDateMiseEnService.Month - 6) &&
+//				sDate.Year > sConfig_IHM.sInstall_PAC.sDateMiseEnService.Year;
+//
+//			conditionSemestrielle = (moisInferieur || moisSuperieur) && dateDepassee;
+//		}
+//
+//		// Condition finale
+//		if ((conditionAnnuelle || conditionSemestrielle) && !bMessageEnCoursAffichage && bRecupConfigTermine)
+//		{
+//			bMessageEnCoursAffichage = true;
+//			static_cast<FrontendApplication*>(touchgfx::Application::getInstance())->gotoVerification_annuelleScreenNoTransition();
+//		}
+
+	// --- Conditions globales de sécurité ---
+	    if (bMessageEnCoursAffichage || !bRecupConfigTermine)
+	        return;
+
+	    const auto& install = sConfig_IHM.sInstall_PAC;
+	    const auto& dateMS = install.sDateMiseEnService;
+	    const auto& dateCourante = sDate;
+
+	    // --- Vérification de validité ---
+	    if (dateMS.Year == 0 || dateCourante.Year == 0)
+	        return;
+
+	    // --- Calcul du nombre total de mois écoulés depuis la mise en service ---
+	    int totalMonthsService = (dateCourante.Year - dateMS.Year) * 12 + (dateCourante.Month - dateMS.Month);
+
+	    // Si on n’a pas encore atteint le jour exact du mois, on considère que le mois n’est pas encore complet
+	    if (dateCourante.Date < dateMS.Date)
+	        totalMonthsService--;
+
+	    if (totalMonthsService < 0)
+	        return; // Date système incohérente
+
+	    // --- Calcul de la période cible en fonction du nombre de vérifications déjà effectuées ---
+	    int periodeCible = 0; // en mois
+
+	    if (install.u5VerificationAnnuelle == 0)
+	    {
+	        // Première vérification : à 6 mois après la mise en service
+	        periodeCible = 6;
+	    }
+	    else
+	    {
+	        // Vérifications suivantes : tous les ans à partir de la première
+	        periodeCible = 6 + (install.u5VerificationAnnuelle * 12);
+	    }
+
+	    // --- Condition d’affichage ---
+	    if (totalMonthsService >= periodeCible)
+	    {
+	        // Sécurité : ne pas relancer pour la même valeur de u5VerificationAnnuelle
+	        static uint8_t derniereVerifDeclenchee = 0xFF;
+	        if (derniereVerifDeclenchee == install.u5VerificationAnnuelle)
+	            return; // Déjà traité pour cette période
+
+	        derniereVerifDeclenchee = install.u5VerificationAnnuelle;
+
+	        // Déclenchement de l’affichage du message
+	        bMessageEnCoursAffichage = true;
+
+	        static_cast<FrontendApplication*>(touchgfx::Application::getInstance())
+	            ->gotoVerification_annuelleScreenNoTransition();
+	    }
+}
+
+void Model::update_data_histo()
+{
+	bool bConfigBallon = sConfig_Hydrau_temp.u8TypeRegul >= REGUL_BAL_TAMPON_MULTI_ZONE;
+	static bool bPremierPassage = true;
+
+	 if (bConfigBallon)
+	{
+		 data_histo.u16TempBallon_Z1[data_histo.u16PointeurTableau] = sStatut_Primaire.i16TeauBallonTampon;
+	}
+	else
+	{
+		//Zone 1
+		if (sConfig_IHM.sParam_Zx[0].type_zone.zone.TypeThermostat == TH_RF || sConfig_IHM.sParam_Zx[0].type_zone.zone.TypeThermostat == TH_MODBUS)
+		{
+			data_histo.u16TempBallon_Z1[data_histo.u16PointeurTableau] = sStatut_Zx[0].i16Tint;
+		}
+		else
+		{
+			if (sStatut_PAC.sFonctInxTor.bTorTH1 == 0)
+			{
+				data_histo.u16TempBallon_Z1[data_histo.u16PointeurTableau] = 100;
+			}
+			else
+			{
+				data_histo.u16TempBallon_Z1[data_histo.u16PointeurTableau] = 190;
+			}
+		}
+		//Zone 2
+		if (sConfig_IHM.sParam_Zx[1].type_zone.zone.TypeThermostat == TH_RF || sConfig_IHM.sParam_Zx[1].type_zone.zone.TypeThermostat == TH_MODBUS)
+		{
+			data_histo.u16Temp_Z2[data_histo.u16PointeurTableau] = sStatut_Zx[1].i16Tint;
+		}
+		else
+		{
+			if (sStatut_PAC.sFonctInxTor.bTorTH1 == 0)
+			{
+				data_histo.u16Temp_Z2[data_histo.u16PointeurTableau] = 100;
+			}
+			else
+			{
+				data_histo.u16Temp_Z2[data_histo.u16PointeurTableau] = 190;
+			}
+		}
+	}
+	 data_histo.i16TempExt[data_histo.u16PointeurTableau] = sCyclRegFrigo[0].commun.i16Text;
+	 data_histo.u16TempDepart[data_histo.u16PointeurTableau] = sStatut_Primaire.i16TeauDepart;
+	 data_histo.u16TempRetour[data_histo.u16PointeurTableau] = sStatut_Primaire.i16TeauRetour;
+
+
+	//Init des val max
+	if (bPremierPassage)
+	{
+		if (bConfigBallon)
+		{
+			data_histo.u16ValmaxAmbBall = data_histo.u16TempBallon_Z1[0] + 10;
+			data_histo.u16ValminAmbBall = data_histo.u16TempBallon_Z1[0] - 10;
+		}
+		else
+		{
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 && sConfig_IHM.sOption_PAC.sZone.zone.bZone2)
+			{
+				data_histo.u16ValmaxAmbBall = (data_histo.u16TempBallon_Z1[0]>data_histo.u16Temp_Z2[0]) ? data_histo.u16TempBallon_Z1[0] + 10:data_histo.u16Temp_Z2[0] + 10;
+				data_histo.u16ValminAmbBall = (data_histo.u16TempBallon_Z1[0]<data_histo.u16Temp_Z2[0]) ? data_histo.u16TempBallon_Z1[0] - 10:data_histo.u16Temp_Z2[0] - 10;
+			}
+			else if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1)
+			{
+				data_histo.u16ValmaxAmbBall = data_histo.u16TempBallon_Z1[0] + 10;
+				data_histo.u16ValminAmbBall = data_histo.u16TempBallon_Z1[0] - 10;
+			}
+			else
+			{
+				data_histo.u16ValmaxAmbBall = data_histo.u16Temp_Z2[0] + 10;
+				data_histo.u16ValminAmbBall = data_histo.u16Temp_Z2[0] - 10;
+			}
+		}
+		data_histo.u16ValmaxTeau = (data_histo.u16TempDepart[0]>data_histo.u16TempRetour[0]) ? data_histo.u16TempDepart[0] + 10:data_histo.u16TempRetour[0] + 10;
+		data_histo.u16ValminTeau = (data_histo.u16TempDepart[0]<data_histo.u16TempRetour[0]) ? data_histo.u16TempDepart[0] - 10:data_histo.u16TempRetour[0] - 10;
+		data_histo.i16ValmaxText = data_histo.i16TempExt[0] + 10;
+		data_histo.i16ValminText = data_histo.i16TempExt[0] - 10;
+
+		bPremierPassage = false;
+	}
+
+	data_histo.limit = data_histo.bTableauPlein ? 360 : data_histo.u16PointeurTableau;
+	for (uint16_t i = 0; i < data_histo.limit; i++)
+	{
+		//Page 1
+		if (bConfigBallon)
+		{
+			data_histo.valmaxgaucheP1 = data_histo.u16TempBallon_Z1[i];
+			if (data_histo.valmaxgaucheP1 > data_histo.u16ValmaxAmbBall) data_histo.u16ValmaxAmbBall = data_histo.valmaxgaucheP1 + 10;
+			data_histo.valmingaucheP1 = data_histo.u16TempBallon_Z1[i];
+			if (data_histo.valmingaucheP1 < data_histo.u16ValminAmbBall) data_histo.u16ValminAmbBall = data_histo.valmingaucheP1 - 10;
+		}
+		else
+		{
+			if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1 && sConfig_IHM.sOption_PAC.sZone.zone.bZone2)
+			{
+				data_histo.valmaxgaucheP1 = (data_histo.u16TempBallon_Z1[i]>data_histo.u16Temp_Z2[i]) ? data_histo.u16TempBallon_Z1[i]:data_histo.u16Temp_Z2[i];
+				if (data_histo.valmaxgaucheP1 > data_histo.u16ValmaxAmbBall) data_histo.u16ValmaxAmbBall = data_histo.valmaxgaucheP1 + 10;
+				data_histo.valmingaucheP1 = (data_histo.u16TempBallon_Z1[i]<data_histo.u16Temp_Z2[i]) ? data_histo.u16TempBallon_Z1[i]:data_histo.u16Temp_Z2[i];
+				if (data_histo.valmingaucheP1 < data_histo.u16ValminAmbBall) data_histo.u16ValminAmbBall = data_histo.valmingaucheP1 - 10;
+			}
+			else if (sConfig_IHM.sOption_PAC.sZone.zone.bZone1)
+			{
+				data_histo.valmaxgaucheP1 = data_histo.u16TempBallon_Z1[i];
+				if (data_histo.valmaxgaucheP1 > data_histo.u16ValmaxAmbBall) data_histo.u16ValmaxAmbBall = data_histo.valmaxgaucheP1 + 10;
+				data_histo.valmingaucheP1 = data_histo.u16TempBallon_Z1[i];
+				if (data_histo.valmingaucheP1 < data_histo.u16ValminAmbBall) data_histo.u16ValminAmbBall = data_histo.valmingaucheP1 - 10;
+			}
+			else
+			{
+				data_histo.valmaxgaucheP1 = data_histo.u16Temp_Z2[i];
+				if (data_histo.valmaxgaucheP1 > data_histo.u16ValmaxAmbBall) data_histo.u16ValmaxAmbBall = data_histo.valmaxgaucheP1 + 10;
+				data_histo.valmingaucheP1 = data_histo.u16Temp_Z2[i];
+				if (data_histo.valmingaucheP1 < data_histo.u16ValminAmbBall) data_histo.u16ValminAmbBall = data_histo.valmingaucheP1 - 10;
+			}
+		}
+
+		//Page 2
+		data_histo.valmaxgaucheP2 = (data_histo.u16TempDepart[i]>data_histo.u16TempRetour[i]) ? data_histo.u16TempDepart[i]:data_histo.u16TempRetour[i];
+		if (data_histo.valmaxgaucheP2 > data_histo.u16ValmaxTeau) data_histo.u16ValmaxTeau = data_histo.valmaxgaucheP2 + 10;
+		data_histo.valmingaucheP2 = (data_histo.u16TempDepart[i]<data_histo.u16TempRetour[i]) ? data_histo.u16TempDepart[i]:data_histo.u16TempRetour[i];
+		if (data_histo.valmingaucheP2 < data_histo.u16ValminTeau) data_histo.u16ValminTeau = data_histo.valmingaucheP2 - 10;
+
+		//Page 1 & 2
+		data_histo.valmaxdroiteP1P2 = data_histo.i16TempExt[i];
+		if (data_histo.valmaxdroiteP1P2 > data_histo.i16ValmaxText) data_histo.i16ValmaxText = data_histo.valmaxdroiteP1P2 + 10;
+		data_histo.valmindroiteP1P2 = data_histo.i16TempExt[i];
+		if (data_histo.valmindroiteP1P2 < data_histo.i16ValminText) data_histo.i16ValminText = data_histo.valmindroiteP1P2 - 10;
+
+	}
+	//Statut PAC
+	switch(sStatut_PAC.S_Mode)
+	{
+		case S_ARRET:
+			data_histo.etat_pac[data_histo.u16PointeurTableau] = COLOR_NONE;
+			break;
+		case S_ATTENTE:
+			data_histo.etat_pac[data_histo.u16PointeurTableau] = COLOR_BLANC;
+			break;
+
+		case S_CHAUD:
+		case S_CHAUD_FROID:
+		case S_HORS_GEL:
+		case S_EXT_CHAUD:
+			data_histo.etat_pac[data_histo.u16PointeurTableau] = COLOR_ORANGE;
+			break;
+
+		case S_FROID:
+		case S_EXT_FROID:
+			data_histo.etat_pac[data_histo.u16PointeurTableau] = COLOR_BLEU;
+			break;
+		case S_ECS :
+			data_histo.etat_pac[data_histo.u16PointeurTableau] = COLOR_ROSE;
+			break;
+		case S_PISCINE:
+			data_histo.etat_pac[data_histo.u16PointeurTableau] = COLOR_VERT;
+		break;
+		default:
+			break;
+	}
+
+	//Statut appoint PAC
+	if (sStatut_PAC.sOutTor.Pw_Relec != 0) data_histo.etat_app_chaud[data_histo.u16PointeurTableau] = COLOR_ROUGE;
+	else data_histo.etat_app_chaud[data_histo.u16PointeurTableau] = COLOR_NONE;
+
+	//Statut appoint ECS
+	if (sStatut_ECS.bOutTorAppoint_ECS != 0) data_histo.etat_app_ecs[data_histo.u16PointeurTableau] = COLOR_ROSE;
+	else data_histo.etat_app_ecs[data_histo.u16PointeurTableau] = COLOR_NONE;
+
+
+	data_histo.u16PointeurTableau++;
+	if (data_histo.u16PointeurTableau >= 360)
+	{
+		data_histo.u16PointeurTableau = 0;
+		data_histo.bTableauPlein = true;
+	}
 }
 
 void Model::c_user_param()
@@ -1998,6 +2308,88 @@ void Model::c_sav_test_pac()
 
 	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &sParam_Test_PAC, sizeof(S_PARAM_TEST_PAC));
 	u16Pointeur += sizeof(S_PARAM_TEST_PAC);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_sav_test_cps_start()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_TEST_CPS_START;
+	txData[u8Pointeur_buffer_tx].data[4] = 1;//sizeof(S_PARAM_TEST_PAC);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur]= SC_SAV_TEST_CPS_START;//sizeof(S_PARAM_TEST_PAC));
+	u16Pointeur += 1;//sizeof(S_PARAM_TEST_PAC);
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+void Model::c_sav_test_cps_stop()
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_TEST_CPS_STOP;
+	txData[u8Pointeur_buffer_tx].data[4] = 1;//sizeof
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur] = SC_SAV_TEST_CPS_STOP;
+	u16Pointeur += 1;
+
+	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
+	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = (u16CRC >> 8) & 0xff;
+
+	txData[u8Pointeur_buffer_tx].size = u16Pointeur;
+
+	if(++u8Pointeur_buffer_tx > 9)
+	{
+		u8Pointeur_buffer_tx = 0;
+	}
+}
+
+
+void Model::c_sav_test_cps(uint16_t u16CodeTestCps)
+{
+  uint16_t u16Pointeur = 0, u16CRC = 0;
+
+	txData[u8Pointeur_buffer_tx].data[0] = N_ADD_REG;
+	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
+	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
+	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_TEST_CPS;
+	txData[u8Pointeur_buffer_tx].data[4] = sizeof(u16CodeTestCps);
+	txData[u8Pointeur_buffer_tx].data[5] = 0;
+  u16Pointeur = 6;
+
+	memcpy(&txData[u8Pointeur_buffer_tx].data[u16Pointeur], &u16CodeTestCps, sizeof(u16CodeTestCps));
+	u16Pointeur += sizeof(u16CodeTestCps);
 
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;

@@ -86,3 +86,5 @@ void AccueilPresenter::editLuminosite(uint8_t u8Luminosite)
 {
 	model->editLuminosite(u8Luminosite);
 }
+
+

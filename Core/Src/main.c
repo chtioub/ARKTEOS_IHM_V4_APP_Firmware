@@ -97,6 +97,7 @@ int main(void)
   /* USER CODE BEGIN Init */
   u8Pointeur_buffer_tx = 0;
   u8Pointeur_envoi = 0;
+  data_histo.bTableauPlein = false;
   /* USER CODE END Init */
 
   /* Configure the system clock */
