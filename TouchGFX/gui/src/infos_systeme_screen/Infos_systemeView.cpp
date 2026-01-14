@@ -18,6 +18,11 @@ Infos_systemeView::Infos_systemeView()
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_INFOS_SYSTEME_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
+
+	// Soft IHM
+	Unicode::fromUTF8(Version_Soft, textAreaBuffer_SoftIHM, 7);
+	textArea_ihm.setWildcard(textAreaBuffer_SoftIHM);
+	textArea_ihm.invalidate();
 }
 
 void Infos_systemeView::setupScreen()
@@ -387,10 +392,9 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				}
 				if (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bReversible == 1)
 				{
-					Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 4, "R -");
+					Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 6, "R - ");
 				}
-				Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 23," %d KW - %c~", sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u7Puissance, sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bSupply == 0 ? '1' : '3');
-
+				Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 23,"%d KW - %c~", sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u7Puissance, sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bSupply == 0 ? '1' : '3');
 				break;
 		}
 
@@ -678,6 +682,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_fluide.setWildcard(textAreaBuffer_Fluide);
 	textArea_fluide.invalidate();
 
+
 	// Soft ETHER
 	if(memcmp(&sConfig_IHM->sParamSoft.Soft_ETH, &sConfig_IHM_old.sParamSoft.Soft_ETH, sizeof(sConfig_IHM_old.sParamSoft.Soft_ETH)))
 	{
@@ -762,7 +767,7 @@ void Infos_systemeView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 		memcpy(&u32IP, &sCycEther->IP, sizeof(u32IP));
 		Unicode::snprintf(textAreaBuffer_IP, 16, "%d.%d.%d.%d", u32IP & 0xff, (u32IP >> 8) & 0xff, (u32IP >> 16) & 0xff, (u32IP >> 24) & 0xff);
 		textArea_ip.setWildcard(textAreaBuffer_IP);
-		textArea_wip.invalidate();
+		textArea_ip.invalidate();
 	}
 }
 

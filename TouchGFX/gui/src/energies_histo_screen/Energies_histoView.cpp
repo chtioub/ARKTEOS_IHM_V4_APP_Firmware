@@ -24,7 +24,7 @@ Energies_histoView::Energies_histoView()
     // Titre histo produites ou consommees
 	if(bConsoProd == 0)
 	{
-		Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_HISTO_PRODUITES_CENTRE_LARGE).getText());
+		Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_HISTO_PRODUITES_CENTRE_LARGE).getText());
 		barre_titre.titre(textAreaBuffer_Titre);
 	}
 	else

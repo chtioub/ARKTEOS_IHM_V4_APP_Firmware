@@ -112,6 +112,7 @@ RenommerView::RenommerView()
 
 
 	bMajActif = false;
+	bouton_maj();
 }
 
 void RenommerView::bouton_maj()
@@ -333,6 +334,7 @@ void RenommerView::bouton_valider()
 		else if (memcmp(u8TexteTemp, "GOURDON5609", 11) == 0)   code_logo_ok();
 		else if (memcmp(u8TexteTemp, "ETIENNE5796", 11) == 0)   code_logo_ok();
 		else if (memcmp(u8TexteTemp, "CLIMDIFF3597", 12) == 0)  code_logo_ok();
+		else if (memcmp(u8TexteTemp, "IDEALCLIM1578", 12) == 0)  code_logo_ok();
 		else
 		{
 			modalWindow_attention.show();

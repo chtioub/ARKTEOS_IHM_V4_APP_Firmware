@@ -526,6 +526,7 @@ void Page_oui_nonView::bouton_valider()
 			if(toggleButton_oui_oui_non.getState())
 			{
 				presenter->c_restart();
+				bDdeRestartCartes = true;
 			}
 			application().gotoMaintenanceScreenNoTransition();
 			break;
@@ -533,6 +534,7 @@ void Page_oui_nonView::bouton_valider()
 			if(toggleButton_oui_oui_non.getState())
 			{
 				presenter->c_restart();
+				bDdeRestartCartes = true;
 			}
 			application().gotoUsine_param_avancesScreenNoTransition();
 			break;

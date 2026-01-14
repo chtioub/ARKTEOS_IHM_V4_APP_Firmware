@@ -26,6 +26,7 @@ public:
 	void update_pw_pac();
 	void update_mode_pac();
 	void update_test_code();
+	void timer_10ms();
 
     virtual void changeDate(S_DATE *sDate);
 	virtual void changeErreur(uint16_t u16Erreur);
@@ -37,6 +38,7 @@ protected:
     uint16_t u16ErreurAffichee;
 	unsigned char ModeTest, bTestPAC;
 	uint8_t  Pw;
+	 uint8_t u8PressionLongue_droite, u8PressionLongue_gauche;
 	int16_t Teau;
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;

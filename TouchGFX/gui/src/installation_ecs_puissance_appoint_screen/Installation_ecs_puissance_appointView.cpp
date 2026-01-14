@@ -13,7 +13,7 @@ Installation_ecs_puissance_appointView::Installation_ecs_puissance_appointView()
 	changeStatutEther(&sCycEther);
 
 	// Titre
-	Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_PUISSANCE_APPOINT_ECS_CENTRE_DEFAUT).getText());
+	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PUISSANCE_APPOINT_ECS_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
 	barre_titre.invalidate();
 

@@ -2628,22 +2628,24 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				break;
 		}
 		//Réversibilité Inv
-		if (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bReversible == 0)
+		if (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bReversible == 1)
 		{
-			Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 1,"");
+			Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 5,"R - ");
 		}
-		else Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 5,"R - ");
 		//Puissance PAC Inv
-		Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 3, "%d", sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u7Puissance);
+		Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 4, "%d", sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u7Puissance);
 		Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 7," KW - ");
 		//Mono/Tri Inv
 		if (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bSupply == 0)
 		{
-			Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 3,"1~");
+			Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 2,"1");
 		}
-		else Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 3,"3~");
+		else Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 2,"3");
+
+		Unicode::snprintf(&textAreaBuffer_Modele_PAC_Inv[Unicode::strlen(textAreaBuffer_Modele_PAC_Inv)], 3,"~ ");
 		textArea_inv_val_modele_pac.setWildcard(textAreaBuffer_Modele_PAC_Inv);
 		textArea_inv_val_modele_pac.invalidate();
+
 		//Réversibilité Inv
 		if (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bReversible == 0)
 		{
@@ -3261,7 +3263,7 @@ void Variables_systemeView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Prim
 		textArea_cascade_demande_val.invalidate();
 		//
 		Unicode::snprintf(textAreaBuffer_CirculateurPrimaire, 4, "%d", sStatut_Primaire->u8ConsigneCirculateur);
-		Unicode::snprintf(&textAreaBuffer_CirculateurPrimaire[Unicode::strlen(textAreaBuffer_CirculateurPrimaire)], 2, "%");
+		//Unicode::snprintf(&textAreaBuffer_CirculateurPrimaire[Unicode::strlen(textAreaBuffer_CirculateurPrimaire)], 2, "%");
 		textArea_cons_circ_prim_val.setWildcard(textAreaBuffer_CirculateurPrimaire);
 		textArea_cons_circ_prim_val.invalidate();
 	}
@@ -5652,7 +5654,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		else
 		{
 			Unicode::snprintf(textAreaBuffer_CirculateurPrimaire, 4, "%d", sCyclRegFrigo->pac.geoinverter.sOutAnaGeoinv.u8ConsigneCirculateurPrimaire);
-			Unicode::snprintf(&textAreaBuffer_CirculateurPrimaire[Unicode::strlen(textAreaBuffer_CirculateurPrimaire)], 2, "%");
+			//Unicode::snprintf(&textAreaBuffer_CirculateurPrimaire[Unicode::strlen(textAreaBuffer_CirculateurPrimaire)], 2, "%");
 		}
 		textArea_cons_circ_prim_val.setWildcard(textAreaBuffer_CirculateurPrimaire);
 		textArea_cons_circ_prim_val.invalidate();
@@ -5793,28 +5795,28 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		{
 			default:
 			case R0 :
-				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 20, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R0).getText());
+				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 22, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R0).getText());
 				break;
 			case R1:
-				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 20, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R1).getText());
+				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 22, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R1).getText());
 				break;
 			case R2:
-				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 20, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R2).getText());
+				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 22, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R2).getText());
 				break;
 			case R3:
-				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 20, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R3).getText());
+				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 22, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R3).getText());
 				break;
 			case R4:
-				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 20, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R4).getText());
+				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 22, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R4).getText());
 				break;
 			case R5:
-				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 20, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R5).getText());
+				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 22, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R5).getText());
 				break;
 			case R6:
-				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 20, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R6).getText());
+				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 22, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R6).getText());
 				break;
 			case R7:
-				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 20, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R7).getText());
+				Unicode::snprintf(textAreaBuffer_ReducPW_Inv, 22, touchgfx::TypedText(T_TEXT_VAR_SYS_REDUC_PW_R7).getText());
 				break;
 
 		}
@@ -5950,7 +5952,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		//Fréquence/RPM Inv
 		Unicode::snprintf(textAreaBuffer_FrequenceCurrent_Inv, 4, "%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DetectedSpeedByCurrentFrequency);
 		textArea_inv_val_vit_mes_courant.setWildcard1(textAreaBuffer_FrequenceCurrent_Inv);
-		Unicode::snprintf(textAreaBuffer_RPMCurrent_Inv, 5, "%d", (sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DetectedSpeedByCurrentFrequency / 60));
+		Unicode::snprintf(textAreaBuffer_RPMCurrent_Inv, 5, "%d", (sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DetectedSpeedByCurrentFrequency * 60));
 		textArea_inv_val_vit_mes_courant.setWildcard2(textAreaBuffer_RPMCurrent_Inv);
 		textArea_inv_val_vit_mes_courant.invalidate();
 		//Temp DLT Inv

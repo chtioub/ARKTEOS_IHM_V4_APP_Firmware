@@ -184,6 +184,31 @@ void Test_pacView::update_test_code()
 	textArea_valeur_test_code.invalidate();
 }
 
+void Test_pacView::timer_10ms()
+{
+	//
+	if(button_gauche_test_code.getPressedState())
+	{
+		if(u8PressionLongue_gauche < 15)
+		{
+			u8PressionLongue_gauche++;
+		}
+		else bouton_gauche_test_code();
+	}
+	else u8PressionLongue_gauche = 0;
+	//
+	if(button_droite_test_code.getPressedState())
+	{
+		if(u8PressionLongue_droite < 15)
+		{
+			u8PressionLongue_droite++;
+		}
+		else bouton_droit_test_code();
+	}
+	else u8PressionLongue_droite = 0;
+}
+
+
 void Test_pacView::bouton_valider()
 {
 	if (toggleButton_oui_oui_non_test_pac.getState())
@@ -206,6 +231,14 @@ void Test_pacView::bouton_valider()
 	}
 
 	presenter->c_sav_test_pac();
+	if(bTestPacComposantDepuisUsine)
+	{
+		application().gotoUsineScreenNoTransition();
+	}
+	else
+	{
+		application().gotoMaintenanceScreenNoTransition();
+	}
 }
 
 void Test_pacView::changeStatutEther(S_CYC_ETHER_III *sCycEther)

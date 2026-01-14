@@ -208,11 +208,11 @@ Model::Model() :
 void Model::tick()
 {
 #ifndef SIMULATOR
-	if(gTouched == 0 && bAutorisationCompteurVeille)// && u16ErreurEncours == 0)
+	if(gTouched == 0 && bAutorisationCompteurVeille && !u16ErreurEncours)
 	{
 		if (oui_veille == 1)
 		{
-		veilleCounter++;
+			veilleCounter++;
 		}
 		if(veilleCounter == VEILLE_1_COUNT)
 		{
@@ -229,6 +229,7 @@ void Model::tick()
 	}
 	else
 	{
+		//Si pas là on a un clignottement sur la page de luminosité
 		if(veilleCounter >= VEILLE_1_COUNT)
 		{
 			exitVeille();
@@ -237,12 +238,24 @@ void Model::tick()
 		veilleCounter = 0;
 	}
 
+	//Si Message vérification annuelle
 	if (bMessageEnCoursAffichage)
 	{
 		oui_veille = 0;
 		exitVeille();
 		gTouched = 0;
 		veilleCounter = 0;
+	}
+
+	//Si Défaut en cours => on sort de veille et reste allumé
+	if (u16ErreurEncours && !page_accueil_displayed)
+	{
+		static_cast<FrontendApplication*>(touchgfx::Application::getInstance())->gotoAccueilScreenNoTransition();
+		page_accueil_displayed = 1;
+	}
+	else if(!u16ErreurEncours)
+	{
+		page_accueil_displayed = 0;
 	}
 
 	//Pour l'affichage de l'historique des températures
@@ -252,6 +265,13 @@ void Model::tick()
 		recordCounter = 0;
 		update_data_histo();
 		modelListener->update_graph_histo(&data_histo);
+
+		if (bDdeRestartCartes)
+		{
+#ifndef SIMULATOR
+		NVIC_SystemReset();
+#endif
+		}
 	}
 #endif
 
@@ -328,7 +348,7 @@ void Model::tick()
   }
   if(arkteos_update.statut_pac_update)
   {
-	  modelListener->changeStatutPAC(&sStatut_PAC);
+	modelListener->changeStatutPAC(&sStatut_PAC);
 	if(sStatut_PAC.ModifConfig)
 	{
 		c_recup_config(0);
@@ -2329,12 +2349,12 @@ void Model::c_sav_test_cps_start()
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
 	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_TEST_CPS_START;
-	txData[u8Pointeur_buffer_tx].data[4] = 1;//sizeof(S_PARAM_TEST_PAC);
+	txData[u8Pointeur_buffer_tx].data[4] = 0;//1;//sizeof(S_PARAM_TEST_PAC);
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
 
-	txData[u8Pointeur_buffer_tx].data[u16Pointeur]= SC_SAV_TEST_CPS_START;//sizeof(S_PARAM_TEST_PAC));
-	u16Pointeur += 1;//sizeof(S_PARAM_TEST_PAC);
+//	txData[u8Pointeur_buffer_tx].data[u16Pointeur]= 0;//sizeof(S_PARAM_TEST_PAC));
+//	u16Pointeur += 1;//sizeof(S_PARAM_TEST_PAC);
 
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;
@@ -2356,12 +2376,12 @@ void Model::c_sav_test_cps_stop()
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = C_SAV;
 	txData[u8Pointeur_buffer_tx].data[3] = SC_SAV_TEST_CPS_STOP;
-	txData[u8Pointeur_buffer_tx].data[4] = 1;//sizeof
+	txData[u8Pointeur_buffer_tx].data[4] = 0;//1;//sizeof
 	txData[u8Pointeur_buffer_tx].data[5] = 0;
   u16Pointeur = 6;
 
-	txData[u8Pointeur_buffer_tx].data[u16Pointeur] = SC_SAV_TEST_CPS_STOP;
-	u16Pointeur += 1;
+//	txData[u8Pointeur_buffer_tx].data[u16Pointeur] = 0;
+//	u16Pointeur += 1;
 
 	u16CRC = computeCRC((uint8_t*)&txData[u8Pointeur_buffer_tx].data[0], u16Pointeur);
 	txData[u8Pointeur_buffer_tx].data[u16Pointeur++] = u16CRC & 0xff;

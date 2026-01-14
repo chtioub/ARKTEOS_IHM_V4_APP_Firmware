@@ -17,10 +17,10 @@ void AccueilPresenter::deactivate()
 
 }
 
-void AccueilPresenter::changeModePac(bool marche)
-{
-  view.changeModePac(marche);
-}
+//void AccueilPresenter::changeModePac(bool marche)
+//{
+//  view.changeModePac(marche);
+//}
 
 void AccueilPresenter::c_prog_ecs(bool bEnvoi)
 {

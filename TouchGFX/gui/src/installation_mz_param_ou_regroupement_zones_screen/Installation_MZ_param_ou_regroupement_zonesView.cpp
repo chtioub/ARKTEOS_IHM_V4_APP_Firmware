@@ -393,6 +393,22 @@ void Installation_MZ_param_ou_regroupement_zonesView::MAJRattachement()
 		default:
 			break;
 	}
+	if (u2Rattachement[u8LigneZone] == GROUPE_A && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].bModeFroid == false)
+	{
+		sParamZxMZtemp[u8LigneZone].bModeFroid = false;
+	}
+	else if (u2Rattachement[u8LigneZone] == GROUPE_B && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].bModeFroid == false)
+	{
+		sParamZxMZtemp[u8LigneZone].bModeFroid = false;
+	}
+	if (u2Rattachement[u8LigneZone] == GROUPE_A && sParamZxMZtemp[8].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[8].bModeChaud == false)
+	{
+		sParamZxMZtemp[u8LigneZone].bModeChaud = false;
+	}
+	else if (u2Rattachement[u8LigneZone] == GROUPE_B && sParamZxMZtemp[9].type_zone.GroupeEau.bGroupeActif && sParamZxMZtemp[9].bModeChaud == false)
+	{
+		sParamZxMZtemp[u8LigneZone].bModeChaud = false;
+	}
 	RefreshRattachement();
 }
 

@@ -32,6 +32,19 @@ ConfigurationView::ConfigurationView()
 //	circle_point_page_accueil.invalidate();
 //	textArea_accueil_page.invalidate();
 
+	// Affichage du bon offset
+	if(sConfig_IHM.sParam_Utilisateur.u8PositionX == 0 || sConfig_IHM.sParam_Utilisateur.u8PositionX >= 100 || sConfig_IHM.sParam_Utilisateur.u8PositionY == 0 || sConfig_IHM.sParam_Utilisateur.u8PositionX >= 100)
+	{
+		u8PositionX = 37;
+		u8PositionY = 38;
+	}
+	else
+	{
+		u8PositionX = (sConfig_IHM.sParam_Utilisateur.u8PositionX/*- 1*/);
+		u8PositionY = (sConfig_IHM.sParam_Utilisateur.u8PositionY /*- 1*/);
+	}
+	container.setXY(u8PositionX, u8PositionY);
+
 	memset(&sDate_old, 0, sizeof(sDate));
 	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM));
 	memset(&sCyclRegFrigo_old, 0, sizeof(sCyclRegFrigo_old));
@@ -72,6 +85,10 @@ ConfigurationView::ConfigurationView()
 	}
 	toggleButton_oui_oui_non_veille.invalidate();
 	toggleButton_non_oui_non_veille.invalidate();
+
+	//On cache le oui/non veille
+	container_oui_non_veille.setVisible(false);
+	container_oui_non_veille.invalidate();
 
 	//Container Vacances
 	if ((sConfig_IHM.sParam_PAC.TypeRegul <= REGUL_BAL_TAMPON_MULTI_ZONE && sConfig_IHM.sOption_PAC.sZone.u8val != 0)

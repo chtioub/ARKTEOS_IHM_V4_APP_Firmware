@@ -57,8 +57,9 @@ protected:
     bool bConnexionDistance;
 	uint16_t u16ErreurAffichee;
 	uint8_t u8NumVoie, u8NumCarte, u8TimerCircRegP, u8TimerCircRegZ1, u8TimerCircRegZ2, u8TimerVanneMel, u8TimerRelaisReg, u8TimerSortieAnaECS,
-	u8TimerRelaisCircECS, u8TimerRelaisAppECS, u8TimerV3VECS,u8TimerRelaisMZ,u8TimerSortieAnaMZ,u8TimerRelaisAppoint;
-	bool bButtonV4VOn, bButtonRVOn, bButtonEVOn, bButtonRCOn, bButtonC1On, bButtonC2On;
+	u8TimerRelaisCircECS, u8TimerRelaisAppECS, u8TimerV3VECS,u8TimerRelaisMZ,u8TimerSortieAnaMZ,u8TimerRelaisAppoint, u8TimerRelaisC1, u8TimerRelaisC2,u8TimerDetGeot, u8TimerRelaisGeot, u8TimerRelaisCircGeot;
+	bool bButtonV4VOn, bButtonRVOn, bButtonEVOn, bButtonRCOn, bButtonSpa1On, bButtonSpa2On, bButtonPuitsOn, bButtonVentCaptsOn, bButtonCircPrimOn, bButtonOutVentil,
+	bButtonOutOption, bButtonOutDet1, bButtonOutDet2, bButtonOutDet3,bButtonOutDet4;
 	S_DATE sDate_old;
 	S_STATUT_PAC sStatut_PAC_old;
 	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9],textAreaBuffer_NumVoie[8];

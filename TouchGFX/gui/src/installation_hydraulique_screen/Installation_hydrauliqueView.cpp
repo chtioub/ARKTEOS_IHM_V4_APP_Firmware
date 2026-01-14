@@ -512,7 +512,7 @@ void Installation_hydrauliqueView ::bouton_repartition_puissance_zone()
 
 void Installation_hydrauliqueView ::bouton_hysteresis_sonde_primaire()
 {
-	eHysteresis = HYST_PRIM;
+	eHysteresis = HYST_TEAU; //Mis de cette façon sous VS Code
 	application().gotoInstallation_hysteresisScreenNoTransition();
 }
 

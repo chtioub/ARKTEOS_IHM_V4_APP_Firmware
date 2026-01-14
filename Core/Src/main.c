@@ -27,6 +27,7 @@
 #include "gpio.h"
 #include "fmc.h"
 #include "app_touchgfx.h"
+#include "string.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -73,6 +74,8 @@ static void MPU_Config(void);
   */
 int main(void)
 {
+
+  strcpy((char*)Version_Soft, "IH00B");
 
   /* USER CODE BEGIN 1 */
   uint32_t u32LastEnvoi = HAL_GetTick();
