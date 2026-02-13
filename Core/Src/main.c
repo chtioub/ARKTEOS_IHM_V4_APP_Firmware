@@ -27,7 +27,7 @@
 #include "gpio.h"
 #include "fmc.h"
 #include "app_touchgfx.h"
-#include "string.h"
+#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -74,8 +74,7 @@ static void MPU_Config(void);
   */
 int main(void)
 {
-
-  strcpy((char*)Version_Soft, "IH00B");
+	strcpy((char*)Version_Soft, "IHA0A");
 
   /* USER CODE BEGIN 1 */
   uint32_t u32LastEnvoi = HAL_GetTick();
@@ -340,8 +339,7 @@ void Error_Handler(void)
   }
   /* USER CODE END Error_Handler_Debug */
 }
-
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
   * @brief  Reports the name of the source file and the source line number
   *         where the assert_param error has occurred.

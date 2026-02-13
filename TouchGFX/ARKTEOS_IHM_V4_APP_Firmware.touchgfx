@@ -32944,7 +32944,6 @@
                 "Y": 149,
                 "Width": 774,
                 "Height": 360,
-                "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
                 "ScrollbarsVisible": true,
@@ -32961,6 +32960,7 @@
                     "Name": "container_zu_ba_tim_other",
                     "Width": 766,
                     "Height": 1035,
+                    "Visible": false,
                     "Components": [
                       {
                         "Type": "TextArea",
@@ -34783,7 +34783,6 @@
                     "Name": "container_zu_ba_tim_PP_UDC_1",
                     "Width": 766,
                     "Height": 1500,
-                    "Visible": false,
                     "Components": [
                       {
                         "Type": "TextArea",
@@ -37551,6 +37550,7 @@
                 "Y": 149,
                 "Width": 774,
                 "Height": 360,
+                "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
                 "ScrollbarsVisible": true,
@@ -52520,7 +52520,6 @@
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
-                "Visible": false,
                 "Components": [
                   {
                     "Type": "Image",
@@ -52861,6 +52860,7 @@
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "TextArea",
@@ -107809,5 +107809,5 @@
     "OptionalComponents": [],
     "AdditionalFeatures": []
   },
-  "Version": "4.25.0"
+  "Version": "4.26.0"
 }

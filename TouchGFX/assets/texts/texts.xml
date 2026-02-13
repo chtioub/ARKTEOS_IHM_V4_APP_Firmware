@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.26.0">
   <Languages>
     <Language Id="FR" />
     <Language Id="GB" />
@@ -3214,7 +3214,7 @@
       </Text>
       <Text Id="text_err_278_gauche_defaut" Alignment="Left" TypographyId="Default">
         <Translation Language="FR">Erreur : configuration carte PW Inverter\nVérifier la présence du cavalier sur CN622</Translation>
-        <Translation Language="GB">rreur : PW Inverter board configuration\nCheck presence of jumper on CN622</Translation>
+        <Translation Language="GB">Erreur : PW Inverter board configuration\nCheck presence of jumper on CN622</Translation>
         <Translation Language="PT">New Text</Translation>
         <Translation Language="NL">New Text</Translation>
         <Translation Language="DE">New Text</Translation>

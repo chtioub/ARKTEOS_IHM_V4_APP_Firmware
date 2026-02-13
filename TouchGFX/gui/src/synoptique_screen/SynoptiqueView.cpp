@@ -247,7 +247,7 @@ void SynoptiqueView::update_container()
 					Image_frigo_mitsu_chaud.setVisible(true);
 					Image_trait_orange_mitsu_baguio_chaud.setVisible(true);
 					textArea_percent_ventil_2_mitsu.setVisible(false);
-					textArea_EEVA_mitsu.setVisible(false);
+					textArea_EEVA_mitsu.setVisible(true);
 				}
 				//BAGUIO
 				else if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO || sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO_PUZ)
@@ -261,11 +261,13 @@ void SynoptiqueView::update_container()
 					}
 				}
 				//ZURAN
-				else if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_ZURAN_PUZ)
+				else if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_ZURAN_PUZ || sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_ZURAN)
 				{
 					Image_frigo_mitsu_chaud.setVisible(true);
 					Image_detendeur_mitsu_zuran_chaud.setVisible(true);
 					textArea_EEVC_mitsu.setVisible(true);
+					Image_detendeur_ligne_liquide.setVisible(true);
+					textArea_EEVB_mitsu.setVisible(true);
 				}
 				else
 				{
@@ -309,7 +311,7 @@ void SynoptiqueView::update_container()
 				Image_detendeur_ligne_liquide.setVisible(true);
 				textArea_EEVB_mitsu.setVisible(true);
 
-				if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO)
+				if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO || sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO_PUZ )
 				{
 					Image_trait_orange_mitsu_baguio_chaud.setVisible(true);
 				}
@@ -325,23 +327,20 @@ void SynoptiqueView::update_container()
 				Image_trait_orange_hydrau_mitsu.setVisible(true);
 				Image_trait_rouge_hydrau_mitsu.setVisible(true);
 
-				if (sConfig_IHM.sModele_PAC.u8ModelePAC == TIMAX_III)
+				textArea_unite_exterieure.setVisible(true);
+				trait_point_tille_horiz_bas.setVisible(true);
+				trait_point_tille_horiz_haut.setVisible(true);
+				trait_point_tille_vert.setVisible(true);
+				textArea_unite_exterieure.invalidate();
+				trait_point_tille_horiz_bas.invalidate();
+				trait_point_tille_horiz_haut.invalidate();
+				trait_point_tille_vert.invalidate();
+				if(sConfig_IHM.sModele_PAC.Gaz_C1 != GAZ_R32)
 				{
-					textArea_unite_exterieure.setVisible(true);
-					trait_point_tille_horiz_bas.setVisible(true);
-					trait_point_tille_horiz_haut.setVisible(true);
-					trait_point_tille_vert.setVisible(true);
-					textArea_unite_exterieure.invalidate();
-					trait_point_tille_horiz_bas.invalidate();
-					trait_point_tille_horiz_haut.invalidate();
-					trait_point_tille_vert.invalidate();
-					if(sConfig_IHM.sModele_PAC.Gaz_C1 != GAZ_R32)
-					{
-						textArea_temp_retour_eau_mitsu.setVisible(true);
-						textArea_temp_retour_eau_mitsu.invalidate();
-						Image_retour_eau_timax.setVisible(true);
-						Image_retour_eau_timax.invalidate();
-					}
+					textArea_temp_retour_eau_mitsu.setVisible(true);
+					textArea_temp_retour_eau_mitsu.invalidate();
+					Image_retour_eau_timax.setVisible(true);
+					Image_retour_eau_timax.invalidate();
 				}
 			}
 
@@ -824,29 +823,43 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 						}
 						else
 						{
-							Unicode::snprintf(textAreaBuffer_Temp_HP_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T_Refoulement));
+							textArea_temp_cloche_comp_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
+							textArea_temp_cloche_comp_mitsu.invalidate();
+
+							Unicode::snprintf(textAreaBuffer_Temp_HP_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T_Refoulement);
 							textArea_temp_hp_comp_mitsu.setWildcard(textAreaBuffer_Temp_HP_mitsu);
 							textArea_temp_hp_comp_mitsu.invalidate();
+							textArea_temp_bp_comp_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_DROITE_DEFAUT));
+							textArea_temp_bp_comp_mitsu.invalidate();
 							Unicode::snprintf(textAreaBuffer_EEVA_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.LEVA));
 							textArea_EEVA_mitsu.setWildcard(textAreaBuffer_EEVA_mitsu);
 							textArea_EEVA_mitsu.invalidate();
+							textArea_temp_in_ue_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
+							textArea_temp_in_ue_mitsu.invalidate();
 							if(sConfig_IHM.sModele_PAC.Gaz_C1 == GAZ_R32)
 							{
-								i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10);
-								Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+								i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
+								Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 								textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 							}
 							else
 							{
 								i16PressCond = ConvertTemperatureToPression(GAZ_R410,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10);
-								Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+								Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 								textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 							}
 							Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));
 							textArea_pression_temp_hp_mitsu.setWildcard2(textAreaBuffer_Temp_Cond_mitsu);
 							textArea_pression_temp_hp_mitsu.invalidate();
-							Unicode::snprintf(textAreaBuffer_Temp_Batt_Milieu_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH3);
-							textArea_temp_milieu_batterie_mitsu.setWildcard(textAreaBuffer_Temp_Batt_Milieu_mitsu);
+							if(sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH3 > 250)
+							{
+								textArea_temp_milieu_batterie_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
+							}
+							else
+							{
+								Unicode::snprintf(textAreaBuffer_Temp_Batt_Milieu_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH3);
+								textArea_temp_milieu_batterie_mitsu.setWildcard(textAreaBuffer_Temp_Batt_Milieu_mitsu);
+							}
 							textArea_temp_milieu_batterie_mitsu.invalidate();
 							Unicode::snprintf(textAreaBuffer_Vit_Ventil1_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.Vitesse_Ventilateur1);
 							textArea_percent_ventil_1_mitsu.setWildcard(textAreaBuffer_Vit_Ventil1_mitsu);
@@ -860,6 +873,7 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 							textArea_temp_out_evap_mitsu.invalidate();
 						}
 					}
+
 					//P1 Autre que BAGUIO PP (BAGUIO)
 					else if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO || sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO_PUZ)
 					{
@@ -881,15 +895,19 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 						if(sConfig_IHM.sModele_PAC.Gaz_C1 == GAZ_R32)
 						{
 							i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
-							Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+							Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 							textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 						}
 						else
 						{
-							i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS * 10);
-							Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+							i16PressCond = ConvertTemperatureToPression(GAZ_R410,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS * 10);
+							Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 							textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
+
 						}
+						Unicode::snprintf(textAreaBuffer_Temp_Batt_Milieu_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH6);
+						textArea_temp_milieu_batterie_mitsu.setWildcard(textAreaBuffer_Temp_Batt_Milieu_mitsu);
+						textArea_temp_milieu_batterie_mitsu.invalidate();
 						Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));
 						textArea_pression_temp_hp_mitsu.setWildcard2(textAreaBuffer_Temp_Cond_mitsu);
 						textArea_pression_temp_hp_mitsu.invalidate();
@@ -903,6 +921,16 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 						textArea_frequence_mitsu.setWildcard(textAreaBuffer_Frequence_mitsu);
 						textArea_frequence_mitsu.invalidate();
 
+						//Ajouté suite essai PUHZ-SW50
+						textArea_temp_bp_comp_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_DROITE_DEFAUT));
+						textArea_temp_bp_comp_mitsu.invalidate();
+						Unicode::snprintf(textAreaBuffer_Temp_In_Batt_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH3);
+						textArea_temp_in_ue_mitsu.setWildcard(textAreaBuffer_Temp_In_Batt_mitsu);
+						textArea_temp_in_ue_mitsu.invalidate();
+						textArea_temp_out_evap_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_DROITE_DEFAUT));
+						textArea_temp_out_evap_mitsu.invalidate();
+						textArea_temp_cloche_comp_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
+						textArea_temp_cloche_comp_mitsu.invalidate();
 
 					}
 					else if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_ZURAN_PUZ)
@@ -916,6 +944,8 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 						Unicode::snprintf(textAreaBuffer_Temp_BP_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T_Aspiration));
 						textArea_temp_bp_comp_mitsu.setWildcard(textAreaBuffer_Temp_BP_mitsu);
 						textArea_temp_bp_comp_mitsu.invalidate();
+						textArea_temp_cloche_comp_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
+						textArea_temp_cloche_comp_mitsu.invalidate();
 						Unicode::snprintf(textAreaBuffer_EEVA_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.LEVA));
 						textArea_EEVA_mitsu.setWildcard(textAreaBuffer_EEVA_mitsu);
 						textArea_EEVA_mitsu.invalidate();
@@ -934,20 +964,29 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 							textArea_temp_in_ue_mitsu.invalidate();
 						}
 						i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
-						Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+						Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 						textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
-						Unicode::snprintf(textAreaBuffer_Temp_Batt_Milieu_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH6));
+						Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));
+						textArea_pression_temp_hp_mitsu.setWildcard2(textAreaBuffer_Temp_Cond_mitsu);
+						textArea_pression_temp_hp_mitsu.invalidate();
+						Unicode::snprintf(textAreaBuffer_Temp_Batt_Milieu_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH6);
 						textArea_temp_milieu_batterie_mitsu.setWildcard(textAreaBuffer_Temp_Batt_Milieu_mitsu);
 						textArea_temp_milieu_batterie_mitsu.invalidate();
+//						textArea_temp_milieu_batterie_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
+//						textArea_temp_milieu_batterie_mitsu.invalidate();
 						Unicode::snprintf(textAreaBuffer_Vit_Ventil1_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.Vitesse_Ventilateur1);
 						textArea_percent_ventil_1_mitsu.setWildcard(textAreaBuffer_Vit_Ventil1_mitsu);
 						textArea_percent_ventil_1_mitsu.invalidate();
+						textArea_percent_ventil_2_mitsu.setVisible(false);
+						textArea_percent_ventil_2_mitsu.invalidate();
 						Unicode::snprintf(textAreaBuffer_Frequence_mitsu, 4,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.Freq_Compresseur);
 						textArea_frequence_mitsu.setWildcard(textAreaBuffer_Frequence_mitsu);
 						textArea_frequence_mitsu.invalidate();
 						Unicode::snprintf(textAreaBuffer_EEVC_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.LEVC));
 						textArea_EEVC_mitsu.setWildcard(textAreaBuffer_EEVC_mitsu);
 						textArea_EEVC_mitsu.invalidate();
+						textArea_temp_out_evap_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_DROITE_DEFAUT));
+						textArea_temp_out_evap_mitsu.invalidate();
 					}
 					else
 					{
@@ -969,19 +1008,19 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 							textArea_EEVB_mitsu.setWildcard(textAreaBuffer_EEVB_mitsu);
 							textArea_EEVB_mitsu.invalidate();
 						}
-						Unicode::snprintf(textAreaBuffer_Temp_Batt_Milieu_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH6));
-						textArea_temp_milieu_batterie_mitsu.setWildcard(textAreaBuffer_Temp_Batt_Milieu_mitsu);
+//						Unicode::snprintf(textAreaBuffer_Temp_Batt_Milieu_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH6));
+						textArea_temp_milieu_batterie_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
 						textArea_temp_milieu_batterie_mitsu.invalidate();
 						if(sConfig_IHM.sModele_PAC.Gaz_C1 == GAZ_R32)
 						{
 							i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
-							Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+							Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 							textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 						}
 						else
 						{
-							i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS * 10);
-							Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+							i16PressCond = ConvertTemperatureToPression(GAZ_R410,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS * 10);
+							Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 							textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 						}
 						Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));
@@ -1003,6 +1042,9 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 						textArea_temp_cloche_comp_mitsu.invalidate();
 						textArea_temp_out_evap_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_DROITE_DEFAUT));
 						textArea_temp_out_evap_mitsu.invalidate();
+						Unicode::snprintf(textAreaBuffer_Temp_In_Batt_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH6);
+						textArea_temp_in_ue_mitsu.setWildcard(textAreaBuffer_Temp_In_Batt_mitsu);
+						textArea_temp_in_ue_mitsu.invalidate();
 					}
 				}
 				//Page 2 ZURAN/BAGUIO
@@ -1010,12 +1052,13 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 				{
 					if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO_PP)
 					{
-						textArea_temp_liquide_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_DROITE_DEFAUT));
+						Unicode::snprintf(textAreaBuffer_Temp_Liquide_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS - sCyclRegFrigo->pac.zuba.sStatutFrigo.u8SousRefroidissement);
+						textArea_temp_liquide_mitsu.setWildcard(textAreaBuffer_Temp_Liquide_mitsu);
 						textArea_temp_liquide_mitsu.invalidate();
 					}
-					else if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO)
+					else if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO || sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_ZURAN ||sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_ZURAN_PUZ)
 					{
-						Unicode::snprintf(textAreaBuffer_Temp_Liquide_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 / 10));
+						Unicode::snprintfFloat(textAreaBuffer_Temp_Liquide_mitsu, 7,"%.1f", ((float)sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 / 10));
 						textArea_temp_liquide_mitsu.setWildcard(textAreaBuffer_Temp_Liquide_mitsu);
 						textArea_temp_liquide_mitsu.invalidate();
 					}
@@ -1038,14 +1081,15 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					textArea_EEVB_mitsu.invalidate();
 					if(sConfig_IHM.sModele_PAC.Gaz_C1 == GAZ_R32)
 					{
-						i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10);
-						Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+						i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
+						Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 						textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 					}
 					else
 					{
+
 						i16PressCond = ConvertTemperatureToPression(GAZ_R410,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10);
-						Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7,"%d", (i16PressCond/10));
+						Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
 						textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 					}
 					Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));
@@ -1063,20 +1107,24 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					Unicode::snprintf(textAreaBuffer_Frequence_mitsu, 4,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.Freq_Compresseur);
 					textArea_frequence_mitsu.setWildcard(textAreaBuffer_Frequence_mitsu);
 					textArea_frequence_mitsu.invalidate();
+
+					//Suite test PUHZ-W85
 					if (sConfig_IHM.sModele_PAC.u3SousTypePAC != SOUS_TYPE_BAGUIO)
 					{
 						Unicode::snprintf(textAreaBuffer_Temp_BP_mitsu, 7,"%d", sCyclRegFrigo->pac.zuba.sStatutMitsu.T_Aspiration);
 						textArea_temp_bp_comp_mitsu.setWildcard(textAreaBuffer_Temp_BP_mitsu);
 						textArea_temp_bp_comp_mitsu.invalidate();
+
 						Unicode::snprintf(textAreaBuffer_EEVC_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.LEVC));
 						textArea_EEVC_mitsu.setWildcard(textAreaBuffer_EEVC_mitsu);
 						textArea_EEVC_mitsu.invalidate();
 					}
 					else
 					{
-						textArea_temp_bp_comp_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
+						textArea_temp_bp_comp_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_DROITE_DEFAUT));
 						textArea_temp_bp_comp_mitsu.invalidate();
 					}
+
 					textArea_temp_in_ue_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
 					textArea_temp_in_ue_mitsu.invalidate();
 					textArea_temp_cloche_comp_mitsu.setTypedText(touchgfx::TypedText(T_TEXT_NA_GAUCHE_DEFAUT));
