@@ -41,7 +41,7 @@ protected:
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9];
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[60], textAreaBuffer_Heure[6], textAreaBuffer_Date[9];
     uint16_t u16ConsigneReduit, u16ConsigneNormal, u16ConsigneConfort, u16TempoEnvoiConsigne;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_ConsigneReduit[6], textAreaBuffer_ConsigneNormal[6], textAreaBuffer_ConsigneConfort[6];
 };

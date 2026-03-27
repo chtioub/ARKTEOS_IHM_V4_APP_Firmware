@@ -1274,6 +1274,8 @@ void Model::c_recup_config(uint8_t u8RecupConfig)
 				txData[u8Pointeur_buffer_tx].data[3] = SC_RECUP_CONFIG_PHOENIX;
 			}
 			break;
+		default:
+			break;
 	}
 	txData[u8Pointeur_buffer_tx].data[1] = N_ADD_IHM;
 	txData[u8Pointeur_buffer_tx].data[2] = RECUP_CONFIG;

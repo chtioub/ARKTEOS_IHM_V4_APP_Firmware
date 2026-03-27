@@ -159,17 +159,16 @@ int main(void)
 		}
     }
 
-    //u32LastTick = HAL_GetTick();
 
-    if ((HAL_GetTick() - u32LastTick) > 100 && TimerNoNeededCode > 0 && bAutorisationNoCode)
-	{
-    	u32LastTick = HAL_GetTick();
-    	TimerNoNeededCode = TimerNoNeededCode - 100;
-	}
-    else if (TimerNoNeededCode <= 0)
-    {
-    	bAutorisationNoCode = false;
-    }
+//    if ((HAL_GetTick() - u32LastTick) > 100 && TimerNoNeededCode > 0 && bAutorisationNoCode)
+//	{
+//    	u32LastTick = HAL_GetTick();
+//    	TimerNoNeededCode = TimerNoNeededCode - 100;
+//	}
+//    else if (TimerNoNeededCode <= 0)
+//    {
+//    	bAutorisationNoCode = false;
+//    }
   }
   /* USER CODE END 3 */
 }

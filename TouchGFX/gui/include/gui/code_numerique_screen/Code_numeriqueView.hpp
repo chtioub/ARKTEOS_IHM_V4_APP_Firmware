@@ -28,7 +28,6 @@ public:
     void bouton_8();
     void bouton_9();
 
-
     virtual void changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo);
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);

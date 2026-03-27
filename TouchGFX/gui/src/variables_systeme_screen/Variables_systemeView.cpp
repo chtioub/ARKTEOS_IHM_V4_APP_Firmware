@@ -1963,12 +1963,15 @@ void Variables_systemeView::bouton_frigo()
 		default:
 		case AJPAC_III:
 			scrollableContainer_frigo_ajpac.setVisible(true);
+			scrollableContainer_frigo_ajpac.invalidate();//SER
 			break;
 		case GEOINVERTER:
 			scrollableContainer_frigo_geoinv.setVisible(true);
+			scrollableContainer_frigo_geoinv.invalidate();//SER
 			break;
 		case GEOTWIN_IV:
 			scrollableContainer_frigo_geotwin.setVisible(true);
+			scrollableContainer_frigo_geotwin.invalidate();//SER
 			break;
 		case BAGUIO_ZURAN_IV:
 		case TIMAX_III:
@@ -1996,14 +1999,11 @@ void Variables_systemeView::bouton_frigo()
 			container_zu_ba_tim_PP_UDC_0.invalidate();
 			container_zu_ba_tim_PP_UDC_1.invalidate();
 			container_zu_ba_tim_other.invalidate();
+			scrollableContainer_frigo_zu_ba_tim.invalidate();//SER
 			break;
 		case PHOENIX:
 			break;
 	}
-	scrollableContainer_frigo_zu_ba_tim.invalidate();
-	scrollableContainer_frigo_geoinv.invalidate();
-	scrollableContainer_frigo_geotwin.invalidate();
-	scrollableContainer_frigo_ajpac.invalidate();
 }
 
 void Variables_systemeView::bouton_config_in_out()

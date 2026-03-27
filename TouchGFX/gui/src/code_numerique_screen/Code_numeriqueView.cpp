@@ -17,6 +17,7 @@ Code_numeriqueView::Code_numeriqueView()
 	changeStatutEther(&sCycEther);
 	changeStatutCyclFrigo(&sCyclRegFrigo[0]);
 	container.setXY(u8PositionX, u8PositionY);
+	//container.setXY(0, 0);
 	modalWindow_code_inconnu.setBackground(touchgfx::BitmapId(BITMAP_BARRE_TITRE_L950XH63_ID), u8PositionX, u8PositionY + 524 - 64);
 	modalWindow_code_inconnu.hide();
 	modalWindow_code_inconnu.invalidate();
