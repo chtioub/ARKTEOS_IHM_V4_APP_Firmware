@@ -66,7 +66,7 @@ protected:
 	unsigned short VolumePiece;
 	unsigned char TypeThermostat : 2;
 	unsigned char bActivationCorrection , bModeChaud, bModeFroid;
-    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[50], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_MessTitre[40], textAreaBuffer_MessMess[500],
+    touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_MessTitre[40], textAreaBuffer_MessMess[500],
 	textAreaBuffer_PertesDeCharges[5],textAreaBuffer_VolumeZone[4];
 
 };

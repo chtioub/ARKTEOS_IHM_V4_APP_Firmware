@@ -36,10 +36,10 @@ void Position_ecranView::tearDownScreen()
 
 void Position_ecranView::bouton_valider()
 {
-	if(((container.getX() /*+ 1*/) != sConfig_IHM.sParam_Utilisateur.u8PositionX) || ((container.getY() /*+ 1*/) != sConfig_IHM.sParam_Utilisateur.u8PositionY))
+	if(((container.getX() + 1) != sConfig_IHM.sParam_Utilisateur.u8PositionX) || ((container.getY() + 1) != sConfig_IHM.sParam_Utilisateur.u8PositionY))
 	{
-		sConfig_IHM.sParam_Utilisateur.u8PositionX = u8PositionX = container.getX()/* + 1*/;
-		sConfig_IHM.sParam_Utilisateur.u8PositionY = u8PositionY = container.getY() /*+ 1*/;
+		sConfig_IHM.sParam_Utilisateur.u8PositionX = u8PositionX = container.getX() + 1;
+		sConfig_IHM.sParam_Utilisateur.u8PositionY = u8PositionY = container.getY() + 1;
 		presenter->c_user_param();
 	}
 	application().gotoParametresScreenNoTransition();
@@ -95,50 +95,6 @@ void Position_ecranView::bouton_haut()
 	    textArea_position.setWildcard2(textAreaBuffer_OffsetY);
 	    textArea_position.invalidate();
 	}
-}
-
-void Position_ecranView::timer_10ms()
-{
-	//
-	if(button_gauche.getPressedState())
-	{
-		if(u8PressionLongue_gauche < 15)
-		{
-			u8PressionLongue_gauche++;
-		}
-		else bouton_gauche();
-	}
-	else u8PressionLongue_gauche = 0;
-	//
-	if(button_droite.getPressedState())
-	{
-		if(u8PressionLongue_droite < 15)
-		{
-			u8PressionLongue_droite++;
-		}
-		else bouton_droit();
-	}
-	else u8PressionLongue_droite = 0;
-	//
-	if(button_haut.getPressedState())
-	{
-		if(u8PressionLongue_haut < 15)
-		{
-			u8PressionLongue_haut++;
-		}
-		else bouton_haut();
-	}
-	else u8PressionLongue_haut = 0;
-	//
-	if(button_bas.getPressedState())
-	{
-		if(u8PressionLongue_bas < 15)
-		{
-			u8PressionLongue_bas++;
-		}
-		else bouton_bas();
-	}
-	else u8PressionLongue_bas = 0;
 }
 
 void Position_ecranView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

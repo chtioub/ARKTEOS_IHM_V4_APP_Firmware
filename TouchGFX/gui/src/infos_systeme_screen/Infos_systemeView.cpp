@@ -18,11 +18,6 @@ Infos_systemeView::Infos_systemeView()
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_INFOS_SYSTEME_CENTRE_DEFAUT).getText());
 	barre_titre.titre(textAreaBuffer_Titre);
-
-	// Soft IHM
-	Unicode::fromUTF8(Version_Soft, textAreaBuffer_SoftIHM, 7);
-	textArea_ihm.setWildcard(textAreaBuffer_SoftIHM);
-	textArea_ihm.invalidate();
 }
 
 void Infos_systemeView::setupScreen()
@@ -70,7 +65,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				{
 					Unicode::snprintf(textAreaBuffer_Gamme, 12, "alpMVAL III");
 				}
-				else Unicode::snprintf(textAreaBuffer_Gamme, 10, "TIMAX III");
+				else Unicode::snprintf(textAreaBuffer_Gamme, 9, "TIMAX III");
 				textArea_capteur_val.setVisible(false);
 				textArea_type_capteur.setVisible(false);
 				break;
@@ -132,49 +127,49 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						switch(sConfig_IHM->sModele_PAC.u8PwPac)
 						{
 							case 2:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SW45");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SW45");
 								break;
 							case 9:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "RP35");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "RP35");
 								break;
 							case 10:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SW50");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SW50");
 								break;
 							case 11:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "RP60");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "RP60");
 								break;
 							case 14:
 								if(sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SW75");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SW75");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SWM80");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUD-SWM80");
 								break;
 							case 20:
 								if(sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SW100");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SW100");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUD-SWM100");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUD-SWM100");
 								break;
 							case 25:
 								if(sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SW120");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SW120");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUD-SWM120");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUD-SWM120");
 								break;
 							case 28:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "RP140");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "RP140");
 								break;
 							case 40:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SW160");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SW160");
 								break;
 							case 50:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SW200");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SW200");
 								break;
 							default:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "xxx ");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "xxx ");
 								break;
 						}
 						if(sConfig_IHM->sModele_PAC.bSupply)
@@ -189,39 +184,39 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 							case 14:
 								if (sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SHW80");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SHW80");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUD-SHWM80");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUD-SHWM80");
 								break;
 							case 20:
 								if (sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SHW112");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SHW112");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUD-SHWM100");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUD-SHWM100");
 								break;
 							case 25:
 								if (sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SHW140");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SHW140");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUD-SHWM120");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUD-SHWM120");
 								break;
 							case 28:
 								if (sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "140");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "140");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUD-SHWM140");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUD-SHWM140");
 								break;
 							case 40:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-SHW230");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-SHW230");
 								break;
 							case 50:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "250");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "250");
 								break;
 							default:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "xxx");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "xxx");
 								break;
 						}
 						if(sConfig_IHM->sModele_PAC.bSupply)
@@ -234,19 +229,19 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						switch(sConfig_IHM->sModele_PAC.u8PwPac)
 						{
 							case 14:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SWM80");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-SWM80");
 								break;
 							case 20:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SWM100");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-SWM100");
 								break;
 							case 25:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SWM120");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-SWM120");
 								break;
 							case 28:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SWM140");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-SWM140");
 								break;
 							default:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "xxx");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "xxx");
 								break;
 						}
 						if(sConfig_IHM->sModele_PAC.bSupply)
@@ -259,19 +254,19 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						switch(sConfig_IHM->sModele_PAC.u8PwPac)
 						{
 							case 14:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SHWM80");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-SHWM80");
 								break;
 							case 20:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SHWM100");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-SHWM100");
 								break;
 							case 25:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SHWM120");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-SHWM120");
 								break;
 							case 28:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-SHWM140");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-SHWM140");
 								break;
 							default:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "xxx");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "xxx");
 								break;
 						}
 						if(sConfig_IHM->sModele_PAC.bSupply)
@@ -292,29 +287,29 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 							case 9:
 								if(sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-W50");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-W50");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-WM50");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-WM50");
 								break;
 							case 11:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-WM60");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-WM60");
 								break;
 							case 14:
 								if(sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-W85");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-W85");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-WM85");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-WM85");
 								break;
 							case 20:
 								if(sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-W112");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-W112");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-WM112");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-WM112");
 								break;
 							default:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "xxx ");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "xxx ");
 								break;
 						}
 						break;
@@ -322,21 +317,17 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 						switch (sConfig_IHM->sModele_PAC.u8PwPac)
 						{
 							case 20:
-								if(sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
-								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-W112");
-								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-WM112");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-HW112");
 								break;
 							case 25:
 								if(sConfig_IHM->sModele_PAC.Gaz_C1 == GAZ_R410)
 								{
-									Unicode::snprintf(textAreaBuffer_Modele, 12, "PUHZ-HW140");
+									Unicode::snprintf(textAreaBuffer_Modele, 11, "PUHZ-HW140");
 								}
-								else Unicode::snprintf(textAreaBuffer_Modele, 12, "PUZ-HWM140");
+								else Unicode::snprintf(textAreaBuffer_Modele, 11, "PUZ-HWM140");
 								break;
 							default:
-								Unicode::snprintf(textAreaBuffer_Modele, 12, "xxx");
+								Unicode::snprintf(textAreaBuffer_Modele, 11, "xxx");
 								break;
 						}
 						break;
@@ -396,9 +387,10 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				}
 				if (sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bReversible == 1)
 				{
-					Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 6, "R - ");
+					Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 4, "R -");
 				}
-				Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 23,"%d KW - %c~", sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u7Puissance, sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bSupply == 0 ? '1' : '3');
+				Unicode::snprintf(&textAreaBuffer_Modele[Unicode::strlen(textAreaBuffer_Modele)], 23," %d KW - %c~", sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.u7Puissance, sConfig_IHM->sConfigFrigo[0].sModele_FRIGO.bSupply == 0 ? '1' : '3');
+
 				break;
 		}
 
@@ -517,14 +509,10 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		textArea_mise_serv.setWildcard(textAreaBuffer_MiseService);
 		textArea_mise_serv.invalidate();
 	}
-	// Numéro de série
+	// Nuémro de série
 	if(memcmp(&sConfig_IHM->sInstall_PAC.auc8Serial_Number_PAC, &sConfig_IHM_old.sInstall_PAC.auc8Serial_Number_PAC, sizeof(sConfig_IHM_old.sInstall_PAC.auc8Serial_Number_PAC)))
 	{
-		uint8_t serialTmp[13];
-		memcpy(serialTmp, sConfig_IHM->sInstall_PAC.auc8Serial_Number_PAC, 12);
-		serialTmp[12] = '\0';
-
-		Unicode::fromUTF8(/*sConfig_IHM->sInstall_PAC.auc8Serial_Number_PAC*/serialTmp, textAreaBuffer_NumeroSerie, 14);
+		Unicode::fromUTF8(sConfig_IHM->sInstall_PAC.auc8Serial_Number_PAC, textAreaBuffer_NumeroSerie, 12);
 		textArea_numserie.setWildcard(textAreaBuffer_NumeroSerie);
 		textArea_numserie.invalidate();
 	}
@@ -591,7 +579,7 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				u16TmpBuffer[1] = 'o';
 				break;
 		}
-		Unicode::snprintf(textAreaBuffer_Modbus, 17, "%d %d 8,%d,%c", sConfig_IHM->sParamModbus.adresse, u16TmpBuffer[0], sConfig_IHM->sParamModbus.u1NbStopBit + 1, u16TmpBuffer[1]);
+		Unicode::snprintf(textAreaBuffer_Modbus, 15, "%d %d 8,%d,%c", sConfig_IHM->sParamModbus.adresse, u16TmpBuffer[0], sConfig_IHM->sParamModbus.u1NbStopBit + 1, u16TmpBuffer[1]);
 		textArea_mod.setWildcard(textAreaBuffer_Modbus);
 		textArea_mod.invalidate();
 	}
@@ -690,7 +678,6 @@ void Infos_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_fluide.setWildcard(textAreaBuffer_Fluide);
 	textArea_fluide.invalidate();
 
-
 	// Soft ETHER
 	if(memcmp(&sConfig_IHM->sParamSoft.Soft_ETH, &sConfig_IHM_old.sParamSoft.Soft_ETH, sizeof(sConfig_IHM_old.sParamSoft.Soft_ETH)))
 	{
@@ -775,7 +762,7 @@ void Infos_systemeView::changeStatutEther(S_CYC_ETHER_III *sCycEther)
 		memcpy(&u32IP, &sCycEther->IP, sizeof(u32IP));
 		Unicode::snprintf(textAreaBuffer_IP, 16, "%d.%d.%d.%d", u32IP & 0xff, (u32IP >> 8) & 0xff, (u32IP >> 16) & 0xff, (u32IP >> 24) & 0xff);
 		textArea_ip.setWildcard(textAreaBuffer_IP);
-		textArea_ip.invalidate();
+		textArea_wip.invalidate();
 	}
 }
 

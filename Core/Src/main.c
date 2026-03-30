@@ -27,7 +27,6 @@
 #include "gpio.h"
 #include "fmc.h"
 #include "app_touchgfx.h"
-#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -74,7 +73,6 @@ static void MPU_Config(void);
   */
 int main(void)
 {
-	strcpy((char*)Version_Soft, "IHA0A");
 
   /* USER CODE BEGIN 1 */
   uint32_t u32LastEnvoi = HAL_GetTick();
@@ -159,16 +157,17 @@ int main(void)
 		}
     }
 
+    //u32LastTick = HAL_GetTick();
 
-//    if ((HAL_GetTick() - u32LastTick) > 100 && TimerNoNeededCode > 0 && bAutorisationNoCode)
-//	{
-//    	u32LastTick = HAL_GetTick();
-//    	TimerNoNeededCode = TimerNoNeededCode - 100;
-//	}
-//    else if (TimerNoNeededCode <= 0)
-//    {
-//    	bAutorisationNoCode = false;
-//    }
+    if ((HAL_GetTick() - u32LastTick) > 100 && TimerNoNeededCode > 0 && bAutorisationNoCode)
+	{
+    	u32LastTick = HAL_GetTick();
+    	TimerNoNeededCode = TimerNoNeededCode - 100;
+	}
+    else if (TimerNoNeededCode <= 0)
+    {
+    	bAutorisationNoCode = false;
+    }
   }
   /* USER CODE END 3 */
 }
@@ -246,8 +245,8 @@ void PeriphCommonClock_Config(void)
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_FMC|RCC_PERIPHCLK_ADC;
   PeriphClkInitStruct.PLL2.PLL2M = 4;
   PeriphClkInitStruct.PLL2.PLL2N = 24;
-  PeriphClkInitStruct.PLL2.PLL2P = 4;
-  PeriphClkInitStruct.PLL2.PLL2Q = 2;
+  PeriphClkInitStruct.PLL2.PLL2P = 128;
+  PeriphClkInitStruct.PLL2.PLL2Q = 128;
   PeriphClkInitStruct.PLL2.PLL2R = 2;
   PeriphClkInitStruct.PLL2.PLL2RGE = RCC_PLL2VCIRANGE_3;
   PeriphClkInitStruct.PLL2.PLL2VCOSEL = RCC_PLL2VCOWIDE;

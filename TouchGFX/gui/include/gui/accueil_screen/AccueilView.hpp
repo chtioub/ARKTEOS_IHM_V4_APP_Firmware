@@ -18,7 +18,7 @@ public:
     void changeLogo(bool bVisible);
     void bouton_ecs();
 
-//    virtual void changeModePac(bool marche);
+    virtual void changeModePac(bool marche);
     virtual void changeDate(S_DATE *sDate);
     virtual void changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);

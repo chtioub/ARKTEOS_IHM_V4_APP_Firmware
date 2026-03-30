@@ -16,7 +16,6 @@ public:
     void bouton_gauche();
     void bouton_bas();
     void bouton_haut();
-    void timer_10ms();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
@@ -25,7 +24,6 @@ public:
 protected:
     bool bConnexionDistance;
     uint16_t u16ErreurAffichee;
-    uint8_t u8PressionLongue_droite, u8PressionLongue_gauche,u8PressionLongue_haut, u8PressionLongue_bas;
     S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;

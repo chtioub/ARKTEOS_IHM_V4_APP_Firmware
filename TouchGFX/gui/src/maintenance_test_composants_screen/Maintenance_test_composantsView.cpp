@@ -23,33 +23,29 @@ Maintenance_test_composantsView::Maintenance_test_composantsView()
 	{
 		case GEOINVERTER :
 			scrollableContainer_geotwin.setVisible(false);
-//			scrollableContainer_geotwin.invalidate();
+			scrollableContainer_geotwin.invalidate();
 			container_default.setVisible(false);
-//			container_default.invalidate();
+			container_default.invalidate();
 			scrollableContainer_inverterra.setVisible(true);
-//			scrollableContainer_inverterra.invalidate();
+			scrollableContainer_inverterra.invalidate();
 			break;
 		case GEOTWIN_IV:
 			container_default.setVisible(false);
-//			container_default.invalidate();
+			container_default.invalidate();
 			scrollableContainer_inverterra.setVisible(false);
-//			scrollableContainer_inverterra.invalidate();
+			scrollableContainer_inverterra.invalidate();
 			scrollableContainer_geotwin.setVisible(true);
-//			scrollableContainer_geotwin.invalidate();
+			scrollableContainer_geotwin.invalidate();
 			break;
 		default:
 			scrollableContainer_geotwin.setVisible(false);
-//			scrollableContainer_geotwin.invalidate();
+			scrollableContainer_geotwin.invalidate();
 			scrollableContainer_inverterra.setVisible(false);
-//			scrollableContainer_inverterra.invalidate();
+			scrollableContainer_inverterra.invalidate();
 			container_default.setVisible(true);
-//			container_default.invalidate();
+			container_default.invalidate();
 			break;
 	}
-
-	scrollableContainer_geotwin.invalidate();
-	scrollableContainer_inverterra.invalidate();
-	container_default.invalidate();
 
 	u8NumVoie = 0;
 	u8NumCarte = 0;
@@ -68,25 +64,11 @@ Maintenance_test_composantsView::Maintenance_test_composantsView()
 	u8TimerRelaisMZ = 0;
 	u8TimerSortieAnaMZ = 0;
 	u8TimerRelaisAppoint = 0;
-	u8TimerRelaisC1 = 0;
-	u8TimerRelaisC2 = 0;
-	u8TimerDetGeot = 0;
-	u8TimerRelaisGeot = 0;
-	u8TimerRelaisCircGeot = 0;
 	bButtonV4VOn = false;
 	bButtonRVOn = false;
 	bButtonEVOn = false;
-	bButtonSpa1On = false;
-	bButtonSpa2On = false;
-	bButtonPuitsOn = false;
-	bButtonVentCaptsOn = false;
-	bButtonCircPrimOn = false;
-	bButtonOutVentil = false;
-	bButtonOutOption = false;
-	bButtonOutDet1 = false;
-	bButtonOutDet2 = false;
-	bButtonOutDet3 = false;
-	bButtonOutDet4 = false;
+	bButtonC1On = false;
+	bButtonC2On = false;
 }
 
 void Maintenance_test_composantsView::setupScreen()
@@ -359,36 +341,6 @@ void Maintenance_test_composantsView::timer_1s()
 			}
 		}
 	}
-	//Détendeur Géotwin
-	if (u8TimerDetGeot)
-	{
-		u8TimerDetGeot--;
-		if (u8TimerDetGeot == 0)
-		{
-			buttonWithLabel_sortie_detendeur_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-			buttonWithLabel_sortie_detendeur_geot.invalidate();
-		}
-	}
-	//Relais Géotwin
-	if (u8TimerRelaisGeot)
-	{
-		u8TimerRelaisGeot--;
-		if (u8TimerRelaisGeot == 0)
-		{
-			buttonWithLabel_sortie_relais_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-			buttonWithLabel_sortie_relais_geot.invalidate();
-		}
-	}
-	//Relais Circulateur
-	if (u8TimerRelaisCircGeot)
-	{
-		u8TimerRelaisCircGeot--;
-		if (u8TimerRelaisCircGeot == 0)
-		{
-			buttonWithLabel_sortie_circulateur_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-			buttonWithLabel_sortie_circulateur_geot.invalidate();
-		}
-	}
 	//Relais appoint 3s
 	if (u8TimerRelaisAppoint)
 	{
@@ -399,37 +351,6 @@ void Maintenance_test_composantsView::timer_1s()
 			buttonWithLabel_sortie_relais_appoint_inv.invalidate();
 		}
 	}
-	//Relais C1
-	if (u8TimerRelaisC1)
-	{
-		u8TimerRelaisC1--;
-		if (u8TimerRelaisC1 == 0 && sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-		{
-			buttonWithLabel_sortie_relais_c1_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-			buttonWithLabel_sortie_relais_c1_inv.invalidate();
-		}
-		else if(sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
-		{
-			buttonWithLabel_sortie_relais_c1_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-			buttonWithLabel_sortie_relais_c1_geot.invalidate();
-		}
-	}
-	//Relais C2
-	if (u8TimerRelaisC2)
-	{
-		u8TimerRelaisC2--;
-		if (u8TimerRelaisC2 == 0 && sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-		{
-			buttonWithLabel_sortie_relais_c2_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-			buttonWithLabel_sortie_relais_c2_inv.invalidate();
-		}
-		else if(sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
-		{
-			buttonWithLabel_sortie_relais_c2_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-			buttonWithLabel_sortie_relais_c2_geot.invalidate();
-		}
-	}
-
 }
 
 void  Maintenance_test_composantsView::bouton_valider()
@@ -866,16 +787,24 @@ void  Maintenance_test_composantsView::bouton_relais_c1()
 	if(sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
 	{
 		presenter->c_sav_test_cps(4);
-		u8TimerRelaisC1 = 4;
-		buttonWithLabel_sortie_relais_c1_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		buttonWithLabel_sortie_relais_c1_geot.invalidate();
 	}
-	else if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
+	else
 	{
 		presenter->c_sav_test_cps(43);
-		u8TimerRelaisC1 = 3;
-		buttonWithLabel_sortie_relais_c1_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		buttonWithLabel_sortie_relais_c1_inv.invalidate();
+		if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
+		{
+			if (!bButtonC1On)
+			{
+				bButtonC1On = true;
+				buttonWithLabel_sortie_relais_c1_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
+			}
+			else
+			{
+				bButtonC1On = false;
+				buttonWithLabel_sortie_relais_c1_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
+			}
+			buttonWithLabel_sortie_relais_c1_inv.invalidate();
+		}
 	}
 }
 
@@ -884,254 +813,98 @@ void  Maintenance_test_composantsView::bouton_relais_c2()
 	if(sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
 	{
 		presenter->c_sav_test_cps(5);
-		u8TimerRelaisC2 = 4;
-		buttonWithLabel_sortie_relais_c2_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		buttonWithLabel_sortie_relais_c2_geot.invalidate();
 	}
-	else if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
+	else
 	{
 		presenter->c_sav_test_cps(44);
-		u8TimerRelaisC2 = 3;
-		buttonWithLabel_sortie_relais_c2_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		buttonWithLabel_sortie_relais_c2_inv.invalidate();
+		if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
+		{
+			if (!bButtonC2On)
+			{
+				bButtonC2On = true;
+				buttonWithLabel_sortie_relais_c2_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
+			}
+			else
+			{
+				bButtonC2On = false;
+				buttonWithLabel_sortie_relais_c2_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
+			}
+			buttonWithLabel_sortie_relais_c2_inv.invalidate();
+		}
 	}
 }
 
 void  Maintenance_test_composantsView::bouton_relais_spa1()
 {
 	presenter->c_sav_test_cps(45);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonSpa1On)
-		{
-			bButtonSpa1On = true;
-			buttonWithLabel_sortie_spa1_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonSpa1On = false;
-			buttonWithLabel_sortie_spa1_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_spa1_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_relais_spa2()
 {
 	presenter->c_sav_test_cps(46);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonSpa2On)
-		{
-			bButtonSpa2On = true;
-			buttonWithLabel_sortie_spa2_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonSpa2On = false;
-			buttonWithLabel_sortie_spa2_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_spa2_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_relais_puits()
 {
 	presenter->c_sav_test_cps(47);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonPuitsOn)
-		{
-			bButtonPuitsOn = true;
-			buttonWithLabel_sortie_relais_puits_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonPuitsOn = false;
-			buttonWithLabel_sortie_relais_puits_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_relais_puits_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_relais_cric_vent()
 {
 	presenter->c_sav_test_cps(48);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonVentCaptsOn)
-		{
-			bButtonVentCaptsOn = true;
-			buttonWithLabel_sortie_circ_vent_capt_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonVentCaptsOn = false;
-			buttonWithLabel_sortie_circ_vent_capt_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_circ_vent_capt_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_relais_circ_prim()
 {
 	presenter->c_sav_test_cps(49);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonCircPrimOn)
-		{
-			bButtonCircPrimOn = true;
-			buttonWithLabel_sortie_relais_circ_prim_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonCircPrimOn = false;
-			buttonWithLabel_sortie_relais_circ_prim_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_relais_circ_prim_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_out_ventil()
 {
 	presenter->c_sav_test_cps(50);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonOutVentil)
-		{
-			bButtonOutVentil = true;
-			buttonWithLabel_sortie_vent_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonOutVentil = false;
-			buttonWithLabel_sortie_vent_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_vent_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_out_option()
 {
 	presenter->c_sav_test_cps(51);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonOutOption)
-		{
-			bButtonOutOption = true;
-			buttonWithLabel_sortie_option_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonOutOption = false;
-			buttonWithLabel_sortie_option_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_option_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_out_det1()
 {
 	presenter->c_sav_test_cps(52);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonOutDet1)
-		{
-			bButtonOutDet1 = true;
-			buttonWithLabel_sortie_det1_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonOutDet1 = false;
-			buttonWithLabel_sortie_det1_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_det1_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_out_det2()
 {
 	presenter->c_sav_test_cps(53);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonOutDet2)
-		{
-			bButtonOutDet2 = true;
-			buttonWithLabel_sortie_det2_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonOutDet2 = false;
-			buttonWithLabel_sortie_det2_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_det2_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_out_det3()
 {
 	presenter->c_sav_test_cps(54);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonOutDet3)
-		{
-			bButtonOutDet3 = true;
-			buttonWithLabel_sortie_det3_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonOutDet3 = false;
-			buttonWithLabel_sortie_det3_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_det3_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_out_det4()
 {
 	presenter->c_sav_test_cps(55);
-	if (sConfig_IHM.sModele_PAC.u8ModelePAC == GEOINVERTER)
-	{
-		if (!bButtonOutDet4)
-		{
-			bButtonOutDet4 = true;
-			buttonWithLabel_sortie_det4_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-		}
-		else
-		{
-			bButtonOutDet4 = false;
-			buttonWithLabel_sortie_det4_inv.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_BEIGE_CLICKED_L168XH102_ID));
-		}
-		buttonWithLabel_sortie_det4_inv.invalidate();
-	}
 }
 
 void  Maintenance_test_composantsView::bouton_detendeur()
 {
 	//Geotwin
 	presenter->c_sav_test_cps(7);
-	u8TimerDetGeot = 4;
-	buttonWithLabel_sortie_detendeur_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-	buttonWithLabel_sortie_detendeur_geot.invalidate();
-
 }
 
 void  Maintenance_test_composantsView::bouton_relais_geot()
 {
 	//Geotwin
 	presenter->c_sav_test_cps(8);
-	u8TimerRelaisGeot = 4;
-	buttonWithLabel_sortie_relais_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-	buttonWithLabel_sortie_relais_geot.invalidate();
 }
 
 void  Maintenance_test_composantsView::bouton_circulateur_geot()
 {
 	//Geotwin
 	presenter->c_sav_test_cps(6);
-	u8TimerRelaisCircGeot = 4;
-	buttonWithLabel_sortie_circulateur_geot.setBitmaps(touchgfx::Bitmap(BITMAP_BOUTON_VERT_UNCLICKED_L168XH102_ID), touchgfx::Bitmap(BITMAP_BOUTON_VERT_CLICKED_L168XH102_ID));
-	buttonWithLabel_sortie_circulateur_geot.invalidate();
 }
 
 void Maintenance_test_composantsView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

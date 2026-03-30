@@ -846,7 +846,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 
 		if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneSelect].u8NomZone[0], &sConfig_IHM->sParam_Zx[u8ZoneSelect].u8NomZone[0], 10))
 		{
-			Unicode::fromUTF8(sConfig_IHM->sParam_Zx[u8ZoneSelect].u8NomZone, textAreaBuffer_Titre, 12);
+			Unicode::fromUTF8(sConfig_IHM->sParam_Zx[u8ZoneSelect].u8NomZone, textAreaBuffer_Titre, 10);
 			barre_titre.titre(textAreaBuffer_Titre);
 		}
 

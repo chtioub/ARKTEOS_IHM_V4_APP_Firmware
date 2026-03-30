@@ -4,12 +4,12 @@
 AccueilView::AccueilView()//:
 {
 
-//	barre_titre.titre(textAreaBuffer_Titre_Date);
-//	circle_point_page_accueil.setVisible(true);
-//	textArea_accueil_page.setVisible(true);
-//	barre_titre.invalidate();
-//	circle_point_page_accueil.invalidate();
-//	textArea_accueil_page.invalidate();
+	barre_titre.titre(textAreaBuffer_Titre_Date);
+	circle_point_page_accueil.setVisible(true);
+	textArea_accueil_page.setVisible(true);
+	barre_titre.invalidate();
+	circle_point_page_accueil.invalidate();
+	textArea_accueil_page.invalidate();
 
 	memset(&sDate_old, 0, sizeof(sDate));
 	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM));
@@ -29,6 +29,7 @@ AccueilView::AccueilView()//:
 	bConnexionDistance = false;
 	changeLogo(true);
 	changeStatutPAC(&sStatut_PAC);
+	changeDate(&sDate);
 	changeConfig(&sConfig_IHM);
 	changeErreur(u16ErreurEncours);
 	changeStatutPrimaire(&sStatut_Primaire);
@@ -45,26 +46,14 @@ AccueilView::AccueilView()//:
     changeStatutZx(5, &sStatut_Zx[5]);
     changeStatutZx(6, &sStatut_Zx[6]);
     changeStatutZx(7, &sStatut_Zx[7]);
-
-    // Affichage dans la bonne langue
-   	if(sConfig_IHM.sParam_Utilisateur.Langue != Texts::getLanguage())
-   	{
-   		Texts::setLanguage(sConfig_IHM.sParam_Utilisateur.Langue);
-   	}
-   	//A garder ici pour avoir la bonne langue sur la date
-   	changeDate(&sDate);
-   	barre_titre.titre(textAreaBuffer_Titre_Date);
 	barre_titre.sansAccueil();
 	barre_titre.sansRetour();
 
-	circle_point_page_accueil.setVisible(true);
-	textArea_accueil_page.setVisible(true);
-	barre_titre.invalidate();
-	circle_point_page_accueil.invalidate();
-	textArea_accueil_page.invalidate();
-
-
-
+    // Affichage dans la bonne langue
+	if(sConfig_IHM.sParam_Utilisateur.Langue != Texts::getLanguage())
+	{
+		Texts::setLanguage(sConfig_IHM.sParam_Utilisateur.Langue);
+	}
 	// Affichage du bon offset
 	if(sConfig_IHM.sParam_Utilisateur.u8PositionX == 0 || sConfig_IHM.sParam_Utilisateur.u8PositionX >= 100 || sConfig_IHM.sParam_Utilisateur.u8PositionY == 0 || sConfig_IHM.sParam_Utilisateur.u8PositionX >= 100)
 	{
@@ -73,8 +62,8 @@ AccueilView::AccueilView()//:
 	}
 	else
 	{
-		u8PositionX = (sConfig_IHM.sParam_Utilisateur.u8PositionX/*- 1*/);
-		u8PositionY = (sConfig_IHM.sParam_Utilisateur.u8PositionY /*- 1*/);
+		u8PositionX = (sConfig_IHM.sParam_Utilisateur.u8PositionX - 1);
+		u8PositionY = (sConfig_IHM.sParam_Utilisateur.u8PositionY - 1);
 	}
 	container.setXY(u8PositionX, u8PositionY);
 
@@ -90,7 +79,7 @@ AccueilView::AccueilView()//:
 
 void AccueilView::setupScreen()
 {
-	AccueilViewBase::setupScreen();
+	    AccueilViewBase::setupScreen();
 }
 
 void AccueilView::tearDownScreen()
@@ -118,7 +107,7 @@ void AccueilView::handleGestureEvent(const touchgfx::GestureEvent& evt)
 
 void AccueilView::Timer_500ms()
 {
-//	//Vérif anode
+	//Vérif anode
 //	if (!container_message.isVisible() && bDemandeAfficheMessageVerif)
 //	{
 //		empty_box.setVisible(true);
@@ -128,7 +117,7 @@ void AccueilView::Timer_500ms()
 //		container_message.invalidate();
 //		bMessageControleAnodeActif = true;
 //	}
-
+//
 //	 // ---- Affichage du message de vérification annuelle ----
 //	    if (bDemandeAfficheMessageVerif && !bMessageControleAnodeActif)
 //	    {
@@ -314,34 +303,31 @@ void AccueilView::changeLogo(bool bVisible)
 	Image_variation.setVisible(false);
 	Image_gourdon.setVisible(false);
 	Image_etienne.setVisible(false);
-	Image_idealclim.setVisible(false);
 	Image_alppac.setVisible(false);
 	Image_arkteos.setVisible(false);
 
 	if(bVisible)
 	{
-		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  		Image_alppac.setVisible(true);
+		if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CLIMDIFF3597", 12) == 0)  Image_alppac.setVisible(true);
 		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "QUALICLIM5129", 13) == 0) Image_qualiclim.setVisible(true);
 		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "BLTEC3178", 9) == 0) 		Image_bltec.setVisible(true);
-		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) 		Image_cfd.setVisible(true);
+		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CFD2366", 7) == 0) Image_cfd.setVisible(true);
 		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "CES1718", 7) == 0) 		Image_ces.setVisible(true);
 		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ENELIA5664", 10) == 0) 	Image_enelia.setVisible(true);
 		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "VARIATION4368", 13) == 0) Image_variation.setVisible(true);
 		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "GOURDON5609", 11) == 0)   Image_gourdon.setVisible(true);
 		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "ETIENNE5796", 11) == 0)   Image_etienne.setVisible(true);
-		else if (memcmp(sConfig_IHM.sInstall_PAC.CodeLogoClient, "IDEALCLIM1578", 11) == 0)   Image_idealclim.setVisible(true);
 		else Image_arkteos.setVisible(true);
 	}
-	Image_alppac.invalidate();
 	Image_qualiclim.invalidate();
-	Image_bltec.invalidate();
 	Image_cfd.invalidate();
 	Image_ces.invalidate();
 	Image_enelia.invalidate();
+	Image_bltec.invalidate();
 	Image_variation.invalidate();
 	Image_gourdon.invalidate();
 	Image_etienne.invalidate();
-	Image_idealclim.invalidate();
+	Image_alppac.invalidate();
 	Image_arkteos.invalidate();
 	scalableImageLogo.invalidate();
 }
@@ -385,11 +371,11 @@ void AccueilView::bouton_ecs()
 	presenter->c_prog_ecs(false);
 }
 
-//void AccueilView::changeModePac(bool marche)
-//{
-////  container_marche.setVisible(marche);
-////  container_marche.invalidate();
-//}
+void AccueilView::changeModePac(bool marche)
+{
+  container_marche.setVisible(marche);
+  container_marche.invalidate();
+}
 
 
 void AccueilView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
@@ -1755,9 +1741,9 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	}
 	memcpy(&sConfig_IHM_old, sConfig_IHM, sizeof(S_CONFIG_IHM));
 
-//	//Page Configuration
-//	S_ZONE sZone_tmp;
-//	memset(&sZone_tmp, 0, sizeof(S_ZONE));
+	//Page Configuration
+	S_ZONE sZone_tmp;
+	memset(&sZone_tmp, 0, sizeof(S_ZONE));
 
 //
 
@@ -1768,85 +1754,90 @@ void AccueilView::changeDate(S_DATE *sDate)
 {
 	uint32_t u32Mois, u32Jour;
 
-	// Affichage de l'heure
-	if(sDate_old.Hours != sDate->Hours || sDate_old.Minutes != sDate->Minutes)
-	{
-			Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
-			barre_titre.heure(textAreaBuffer_Heure);
-	}
 
-	if(sDate_old.Date != sDate->Date || sDate_old.Month != sDate->Month || sDate_old.Year != sDate->Year  || sDate_old.WeekDay != sDate->WeekDay)
-	{
-		// Affichage de la date
-		Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
-		barre_titre.date(textAreaBuffer_Date);
+//	if(sDate_old.Date != sDate->Date || sDate_old.Month != sDate->Month || sDate_old.Year != sDate->Year  || sDate_old.WeekDay != sDate->WeekDay
+//			|| sDate_old.Hours != sDate->Hours || sDate_old.Minutes != sDate->Minutes)
+//	{
+		// Affichage de l'heure
+		if(sDate_old.Hours != sDate->Hours || sDate_old.Minutes != sDate->Minutes)
+		{
+				Unicode::snprintf(textAreaBuffer_Heure, 6, "%02d:%02d", sDate->Hours, sDate->Minutes);
+				barre_titre.heure(textAreaBuffer_Heure);
+		}
 
-		// Affichage du titre
-		switch(sDate->WeekDay)
+		if(sDate_old.Date != sDate->Date || sDate_old.Month != sDate->Month || sDate_old.Year != sDate->Year  || sDate_old.WeekDay != sDate->WeekDay)
 		{
-			default:
-				u32Jour = T_TEXT_LUNDI_CENTRE_LARGE;
-				break;
-			case 1:
-				u32Jour = T_TEXT_MARDI_CENTRE_LARGE;
-				break;
-			case 2:
-				u32Jour = T_TEXT_MERCREDI_CENTRE_LARGE;
-				break;
-			case 3:
-				u32Jour = T_TEXT_JEUDI_CENTRE_LARGE;
-				break;
-			case 4:
-				u32Jour = T_TEXT_VENDREDI_CENTRE_LARGE;
-				break;
-			case 5:
-				u32Jour = T_TEXT_SAMEDI_CENTRE_LARGE;
-				break;
-			case 6:
-				u32Jour = T_TEXT_DIMANCHE_CENTRE_LARGE;
-				break;
+			// Affichage de la date
+			Unicode::snprintf(textAreaBuffer_Date, 9, "%02d/%02d/%02d", sDate->Date, sDate->Month, sDate->Year);
+			barre_titre.date(textAreaBuffer_Date);
+
+			// Affichage du titre
+			switch(sDate->WeekDay)
+			{
+				default:
+					u32Jour = T_TEXT_LUNDI_CENTRE_LARGE;
+					break;
+				case 1:
+					u32Jour = T_TEXT_MARDI_CENTRE_LARGE;
+					break;
+				case 2:
+					u32Jour = T_TEXT_MERCREDI_CENTRE_LARGE;
+					break;
+				case 3:
+					u32Jour = T_TEXT_JEUDI_CENTRE_LARGE;
+					break;
+				case 4:
+					u32Jour = T_TEXT_VENDREDI_CENTRE_LARGE;
+					break;
+				case 5:
+					u32Jour = T_TEXT_SAMEDI_CENTRE_LARGE;
+					break;
+				case 6:
+					u32Jour = T_TEXT_DIMANCHE_CENTRE_LARGE;
+					break;
+			}
+			switch(sDate->Month)
+			{
+				default:
+					u32Mois = T_TEXT_MOIS_JANVIER_CENTRE_LARGE;
+					break;
+				case 2:
+					u32Mois = T_TEXT_MOIS_FEVRIER_CENTRE_LARGE;
+					break;
+				case 3:
+					u32Mois = T_TEXT_MOIS_MARS_CENTRE_LARGE;
+					break;
+				case 4:
+					u32Mois = T_TEXT_MOIS_AVRIL_CENTRE_LARGE;
+					break;
+				case 5:
+					u32Mois = T_TEXT_MOIS_MAI_CENTRE_LARGE;
+					break;
+				case 6:
+					u32Mois = T_TEXT_MOIS_JUIN_CENTRE_LARGE;
+					break;
+				case 7:
+					u32Mois = T_TEXT_MOIS_JUILLET_CENTRE_LARGE;
+					break;
+				case 8:
+					u32Mois = T_TEXT_MOIS_AOUT_CENTRE_LARGE;
+					break;
+				case 9:
+					u32Mois = T_TEXT_MOIS_SEPTEMBRE_CENTRE_LARGE;
+					break;
+				case 10:
+					u32Mois = T_TEXT_MOIS_OCTOBRE_CENTRE_LARGE;
+					break;
+				case 11:
+					u32Mois = T_TEXT_MOIS_NOVEMBRE_CENTRE_LARGE;
+					break;
+				case 12:
+					u32Mois = T_TEXT_MOIS_DECEMBRE_CENTRE_LARGE;
+					break;
+			}
+			Unicode::snprintf(textAreaBuffer_Titre_Date, 30, "%s %d %s 20%02d", touchgfx::TypedText(u32Jour).getText(), sDate->Date, touchgfx::TypedText(u32Mois).getText(), sDate->Year);
+
 		}
-		switch(sDate->Month)
-		{
-			default:
-				u32Mois = T_TEXT_MOIS_JANVIER_CENTRE_LARGE;
-				break;
-			case 2:
-				u32Mois = T_TEXT_MOIS_FEVRIER_CENTRE_LARGE;
-				break;
-			case 3:
-				u32Mois = T_TEXT_MOIS_MARS_CENTRE_LARGE;
-				break;
-			case 4:
-				u32Mois = T_TEXT_MOIS_AVRIL_CENTRE_LARGE;
-				break;
-			case 5:
-				u32Mois = T_TEXT_MOIS_MAI_CENTRE_LARGE;
-				break;
-			case 6:
-				u32Mois = T_TEXT_MOIS_JUIN_CENTRE_LARGE;
-				break;
-			case 7:
-				u32Mois = T_TEXT_MOIS_JUILLET_CENTRE_LARGE;
-				break;
-			case 8:
-				u32Mois = T_TEXT_MOIS_AOUT_CENTRE_LARGE;
-				break;
-			case 9:
-				u32Mois = T_TEXT_MOIS_SEPTEMBRE_CENTRE_LARGE;
-				break;
-			case 10:
-				u32Mois = T_TEXT_MOIS_OCTOBRE_CENTRE_LARGE;
-				break;
-			case 11:
-				u32Mois = T_TEXT_MOIS_NOVEMBRE_CENTRE_LARGE;
-				break;
-			case 12:
-				u32Mois = T_TEXT_MOIS_DECEMBRE_CENTRE_LARGE;
-				break;
-		}
-		Unicode::snprintf(textAreaBuffer_Titre_Date, 30, "%s %d %s 20%02d", touchgfx::TypedText(u32Jour).getText(), sDate->Date, touchgfx::TypedText(u32Mois).getText(), sDate->Year);
-	}
 
 	barre_titre.invalidate();
 	memcpy(&sDate_old, sDate, sizeof(S_DATE));

@@ -114,15 +114,15 @@ void Installation_ecs_avancesView::update_type_echangeur()
 	switch (u2TypeEchangeur)
 	{
 		case ECS_PLAQUE:
-			Unicode::snprintf(textAreaBuffer_TypeEchangeur, 15,touchgfx::TypedText(T_TEXT_ECHANGEUR_ECS_PLAQUE_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_TypeEchangeur, 11,touchgfx::TypedText(T_TEXT_ECHANGEUR_ECS_PLAQUE_CENTRE_DEFAUT).getText());
 			buttonWithLabel_puissance_echangeur_ecs.setVisible(true);
 			break;
 		case ECS_BAIN_MARIE:
-			Unicode::snprintf(textAreaBuffer_TypeEchangeur, 15,touchgfx::TypedText(T_TEXT_ECHANGEUR_ECS_BAIN_MARIE_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_TypeEchangeur, 11,touchgfx::TypedText(T_TEXT_ECHANGEUR_ECS_BAIN_MARIE_CENTRE_DEFAUT).getText());
 			buttonWithLabel_puissance_echangeur_ecs.setVisible(false);
 			break;
 		case ECS_SERPENTIN:
-			Unicode::snprintf(textAreaBuffer_TypeEchangeur, 15,touchgfx::TypedText(T_TEXT_ECHANGEUR_ECS_SERPENTIN_CENTRE_DEFAUT).getText());
+			Unicode::snprintf(textAreaBuffer_TypeEchangeur, 11,touchgfx::TypedText(T_TEXT_ECHANGEUR_ECS_SERPENTIN_CENTRE_DEFAUT).getText());
 			buttonWithLabel_puissance_echangeur_ecs.setVisible(true);
 			break;
 	}
@@ -212,30 +212,6 @@ void Installation_ecs_avancesView::bouton_bouclage_ecs()
 	toggleButton_bouclage_ecs.invalidate();
 	textArea_on_off_bouclage_ecs.setWildcard(textAreaBuffer_BouclageECS);
 	textArea_on_off_bouclage_ecs.invalidate();
-}
-
-void Installation_ecs_avancesView::timer_10ms()
-{
-	//
-	if(button_gauche_temps_vanne_ecs.getPressedState())
-	{
-		if(u8PressionLongue_gauche < 15)
-		{
-			u8PressionLongue_gauche++;
-		}
-		else bouton_gauche_temps_vanne_ecs();
-	}
-	else u8PressionLongue_gauche = 0;
-	//
-	if(button_droite_temps_vanne_ecs.getPressedState())
-	{
-		if(u8PressionLongue_droite < 15)
-		{
-			u8PressionLongue_droite++;
-		}
-		else bouton_droit_temps_vanne_ecs();
-	}
-	else u8PressionLongue_droite = 0;
 }
 
 void Installation_ecs_avancesView::bouton_retour()

@@ -291,7 +291,6 @@ extern S_PARAM_ZX sParamZxMZtemp[10];
 extern uint16_t u16CodeCommande;
 extern S_STATUT_LINKY sStatutLinky;
 extern uint8_t oui_veille;
-extern uint8_t page_accueil_displayed;
 extern uint8_t u8Nb_PAC;
 extern uint8_t u3CarteGroupeA, u3CarteGroupeB, u3NumVoieGroupeA, u3NumVoieGroupeB;
 extern uint8_t eTypeSimultaneChaudFroid, bLimitationPW_Froid, bLimitationPW_ECS;
@@ -304,8 +303,8 @@ extern bool bAutorisationNoCode;
 extern uint32_t TimerNoNeededCode;
 extern uint32_t u32LastTick;
 extern S_CONFIG_OFFSET sConfig_Offset;
-extern bool bAutorisationCompteurVeille, bMessageEnCoursAffichage,bRecupConfigTermine, bDdeRestartCartes;
-extern uint8_t Version_Soft[8];
+extern bool bAutorisationCompteurVeille, bMessageEnCoursAffichage,bRecupConfigTermine;
+
 
 //extern uint16_t u16TempBallon_Z1[360],u16Temp_Z2[360], u16TempDepart[360],u16TempRetour[360], u16PointeurTableau;//, u16StartIndex;
 //extern uint16_t u16ValmaxAmbBall, u16ValminAmbBall,  u16ValmaxTeau, u16ValminTeau;

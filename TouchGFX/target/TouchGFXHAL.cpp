@@ -24,14 +24,6 @@
 
 /* USER CODE BEGIN TouchGFXHAL.cpp */
 
-
-//Sam
-#define LCD_WIDTH 480
-#define LCD_HEIGHT 272
-#define BPP 2
-#define FRAMEBUFFER_SIZE (LCD_WIDTH * LCD_HEIGHT * BPP)
-
-
 using namespace touchgfx;
 
 void TouchGFXHAL::initialize()

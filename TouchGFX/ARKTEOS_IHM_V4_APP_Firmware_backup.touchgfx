@@ -273,15 +273,6 @@
                   },
                   {
                     "Type": "Image",
-                    "Name": "Image_idealclim",
-                    "X": 283,
-                    "Width": 383,
-                    "Height": 211,
-                    "Visible": false,
-                    "RelativeFilename": "Logo_L382xh210_Ideal_Clim.png"
-                  },
-                  {
-                    "Type": "Image",
                     "Name": "Image_cfd",
                     "X": 295,
                     "Width": 382,
@@ -24197,9 +24188,9 @@
               {
                 "Type": "TextArea",
                 "Name": "textArea_frigo",
-                "X": 23,
+                "X": 43,
                 "Y": 408,
-                "Width": 123,
+                "Width": 83,
                 "Height": 23,
                 "TextId": "text_frigo_centre_defaut",
                 "TextRotation": "0",
@@ -26707,7 +26698,6 @@
                 "Y": 149,
                 "Width": 774,
                 "Height": 360,
-                "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
                 "ScrollbarsVisible": true,
@@ -37551,6 +37541,7 @@
                 "Y": 149,
                 "Width": 774,
                 "Height": 360,
+                "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
                 "ScrollbarsVisible": true,
@@ -37630,14 +37621,18 @@
                     "Y": 28,
                     "Width": 266,
                     "Height": 26,
-                    "TextId": "text_modele_pac",
+                    "TextId": "text_var_sys_geo_val_type_captage",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
                       "Green": 255,
                       "Blue": 255
                     },
-                    "Wildcard1": {}
+                    "Wildcard1": {
+                      "TextId": "text_pisc_vert_init_centre_defaut",
+                      "UseBuffer": true,
+                      "BufferSize": 6
+                    }
                   },
                   {
                     "Type": "Line",
@@ -38095,7 +38090,7 @@
                     "Y": 280,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_autorisation_piscine",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -38147,7 +38142,7 @@
                     "Y": 308,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_autorisation_piscine",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -39071,9 +39066,9 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_inv_val_vit_mes_courant",
-                    "X": 522,
+                    "X": 622,
                     "Y": 809,
-                    "Width": 244,
+                    "Width": 144,
                     "Height": 26,
                     "TextId": "text_var_sys_hz_rpm",
                     "TextRotation": "0",
@@ -39287,7 +39282,7 @@
                     "Y": 922,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -39391,7 +39386,7 @@
                     "Y": 978,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40012,7 +40007,7 @@
                     "Y": 1313,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40064,7 +40059,7 @@
                     "Y": 1341,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40522,9 +40517,9 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_inv_val_demande_vitesse",
-                    "X": 522,
+                    "X": 622,
                     "Y": 1592,
-                    "Width": 244,
+                    "Width": 144,
                     "Height": 26,
                     "TextId": "text_var_sys_dde_vitesse",
                     "TextRotation": "0",
@@ -40574,9 +40569,9 @@
                   {
                     "Type": "TextArea",
                     "Name": "textArea_inv_val_vitesse_comp",
-                    "X": 522,
+                    "X": 622,
                     "Y": 1620,
-                    "Width": 244,
+                    "Width": 144,
                     "Height": 26,
                     "TextId": "text_var_sys_dde_vitesse",
                     "TextRotation": "0",
@@ -40631,7 +40626,7 @@
                     "Y": 1648,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -40998,7 +40993,7 @@
                     "Y": 1842,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_cons_circ",
+                    "TextId": "text_var_sys_geo_val_type_captage",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41207,7 +41202,7 @@
                     "Y": 1955,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41259,7 +41254,7 @@
                     "Y": 1983,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41311,7 +41306,7 @@
                     "Y": 2011,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41363,7 +41358,7 @@
                     "Y": 2038,
                     "Width": 166,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41774,7 +41769,7 @@
                     "Y": 2262,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41826,7 +41821,7 @@
                     "Y": 2290,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41878,7 +41873,7 @@
                     "Y": 2318,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41930,7 +41925,7 @@
                     "Y": 2346,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -41982,7 +41977,7 @@
                     "Y": 2373,
                     "Width": 166,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -42186,7 +42181,7 @@
                     "Y": 2485,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -42194,7 +42189,7 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "text_pisc_vert_init_centre_defaut",
+                      "TextId": "text_hysteresis_val_centre_defaut",
                       "UseBuffer": true,
                       "BufferSize": 5
                     }
@@ -42238,7 +42233,7 @@
                     "Y": 2513,
                     "Width": 144,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -42246,7 +42241,7 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "text_pisc_vert_init_centre_defaut"
+                      "TextId": "text_recep_radio"
                     }
                   },
                   {
@@ -42444,7 +42439,7 @@
                     "Y": 2625,
                     "Width": 244,
                     "Height": 26,
-                    "TextId": "text_var_sys_geo_val_type_captage",
+                    "TextId": "text_var_sys_pourcentage_droit_defaut",
                     "TextRotation": "0",
                     "Color": {
                       "Red": 255,
@@ -42452,7 +42447,7 @@
                       "Blue": 255
                     },
                     "Wildcard1": {
-                      "TextId": "text_pisc_vert_init_centre_defaut",
+                      "TextId": "text_code_web_init_centre_defaut",
                       "UseBuffer": true,
                       "BufferSize": 7
                     }
@@ -52520,7 +52515,6 @@
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
-                "Visible": false,
                 "Components": [
                   {
                     "Type": "Image",
@@ -52861,6 +52855,7 @@
                 "Y": 126,
                 "Width": 950,
                 "Height": 398,
+                "Visible": false,
                 "Components": [
                   {
                     "Type": "TextArea",
@@ -52931,7 +52926,6 @@
                     "Y": 21,
                     "Width": 319,
                     "Height": 184,
-                    "Visible": false,
                     "RelativeFilename": "Bloc_Compresseur1_Reversible_Chaud_L318xH184.png"
                   },
                   {
@@ -52960,7 +52954,6 @@
                     "Y": 164,
                     "Width": 320,
                     "Height": 120,
-                    "Visible": false,
                     "Components": [
                       {
                         "Type": "Image",
@@ -58819,6 +58812,18 @@
             }
           },
           {
+            "InteractionName": "BTNClicked_Valider_Chgt",
+            "Trigger": {
+              "Type": "TriggerInteractionCompleted",
+              "InteractionToTriggerOn": "BTNClicked_valider_fct"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Usine"
+            }
+          },
+          {
             "InteractionName": "BTNClicked_droit_test_code",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -58850,17 +58855,6 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_retour"
-            }
-          },
-          {
-            "InteractionName": "Timer_10ms",
-            "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 2
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "timer_10ms"
             }
           }
         ]
@@ -63394,7 +63388,7 @@
                   {
                     "Type": "Button",
                     "Name": "button_droite_temps_rotation_vanne",
-                    "X": 380,
+                    "X": 374,
                     "Y": 76,
                     "Width": 75,
                     "Height": 53,
@@ -66063,7 +66057,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_IKR4",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66112,7 +66106,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_EE2L",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66161,7 +66155,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_XNCQ",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66210,7 +66204,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_EV14",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66259,7 +66253,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_OZWQ",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66307,7 +66301,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_6U6C",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66356,7 +66350,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_IA1M",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66405,7 +66399,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_LKIN",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66454,7 +66448,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_JSU6",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66503,7 +66497,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_GAMA",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66552,7 +66546,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_P05J",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66601,7 +66595,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_6F19",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66650,7 +66644,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_CGEF",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66699,7 +66693,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_J9G3",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66748,7 +66742,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_Z7KC",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66796,7 +66790,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_1DS4",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66845,7 +66839,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_5MJL",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66894,7 +66888,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_J8P2",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66943,7 +66937,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_F26A",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -66992,7 +66986,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_H69D",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -67041,7 +67035,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_A3IC",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -67090,7 +67084,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_4LU2",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -67139,7 +67133,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_KIGI",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -67188,7 +67182,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_ZT4R",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -67237,7 +67231,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_VAA8",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -67285,7 +67279,7 @@
                         "Height": 48,
                         "Pressed": "Bouton_Clavier_Alpha_Clicked_L92xH48.png",
                         "Released": "Bouton_Clavier_Alpha_Unclicked_L92xH48.png",
-                        "TextId": "text_vide",
+                        "TextId": "__SingleUse_COKQ",
                         "ReleasedColor": {
                           "Red": 255,
                           "Green": 255,
@@ -69042,17 +69036,6 @@
               "Type": "ActionCustom",
               "FunctionName": "bouton_ecs_avance"
             }
-          },
-          {
-            "InteractionName": "Timer_10ms",
-            "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 2
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "timer_10ms"
-            }
           }
         ]
       },
@@ -70008,17 +69991,6 @@
               "Type": "ActionCustom",
               "FunctionName": "bouton_retour"
             }
-          },
-          {
-            "InteractionName": "Timer_10ms",
-            "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 2
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "timer_10ms"
-            }
           }
         ]
       },
@@ -70590,17 +70562,6 @@
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
               "ActionComponent": "Installation_ecs"
-            }
-          },
-          {
-            "InteractionName": "Timer_10ms",
-            "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 2
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "timer_10ms"
             }
           }
         ]
@@ -81479,6 +81440,17 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_hysteresis_sonde_ballon"
+            }
+          },
+          {
+            "InteractionName": "BTNClicked_hysteresis_primaire",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_hysteresis_primaire_regul_directe"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_hysteresis_sonde_primaire"
             }
           },
           {
@@ -94331,17 +94303,6 @@
               "Type": "ActionCustom",
               "FunctionName": "bouton_gauche"
             }
-          },
-          {
-            "InteractionName": "Timer_10ms",
-            "Trigger": {
-              "Type": "TriggerOnEveryTick",
-              "TickCount": 1
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "timer_10ms"
-            }
           }
         ]
       },
@@ -104981,7 +104942,6 @@
                 "Y": 149,
                 "Width": 950,
                 "Height": 360,
-                "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
                 "ScrollbarsVisibleOnPressed": true,
@@ -105683,6 +105643,7 @@
                 "Y": 149,
                 "Width": 950,
                 "Height": 360,
+                "Visible": false,
                 "HorizontalScrollEnabled": true,
                 "VerticalScrollEnabled": true,
                 "ScrollbarsVisibleOnPressed": true,
@@ -106839,6 +106800,17 @@
             }
           },
           {
+            "InteractionName": "BTNClicked_circulateur_geot",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel_sortie_circulateur_geot"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "bouton_circulateur_reg"
+            }
+          },
+          {
             "InteractionName": "BTNClicked_vanne_melange_reg_geot",
             "Trigger": {
               "Type": "TriggerClicked",
@@ -107034,17 +107006,6 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "bouton_vanne_melange_reg"
-            }
-          },
-          {
-            "InteractionName": "BTNClicked_circ_reg_geot",
-            "Trigger": {
-              "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel_circulateur_carte_reg_geot"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "bouton_circulateur_reg"
             }
           }
         ]
@@ -107763,7 +107724,7 @@
       "Height": 600
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Attente",
+    "StartupScreenName": "Configuration",
     "SelectedStartupLanguage": "FR",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
@@ -107809,5 +107770,5 @@
     "OptionalComponents": [],
     "AdditionalFeatures": []
   },
-  "Version": "4.25.0"
+  "Version": "4.26.0"
 }

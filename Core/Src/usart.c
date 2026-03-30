@@ -157,3 +157,4 @@ void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
   HAL_UARTEx_ReceiveToIdle_IT(&huart2, rxBuffer, sizeof(rxBuffer));
 }
 /* USER CODE END 1 */
+

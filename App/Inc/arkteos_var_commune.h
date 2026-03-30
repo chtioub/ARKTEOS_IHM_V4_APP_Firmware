@@ -1385,8 +1385,8 @@ typedef struct
 {
 	unsigned char Langue :3;                // E_LANGUE
 	unsigned char u5Spare:5;
-	unsigned char u7Luminosite :7;
-	unsigned char bSpare :1;
+	uint8_t u7Luminosite :7;
+	uint8_t bSpare :1;
 	uint8_t u8PositionX;
 	uint8_t u8PositionY;
 } S_PARAM_UTILISATEUR;                          // 4 Octets
