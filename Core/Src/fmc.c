@@ -22,11 +22,7 @@
 #include "fmc.h"
 
 /* USER CODE BEGIN 0 */
-//#define REFRESH_COUNT                            ((uint32_t)1480)   /* Refresh rate = 32ms/2048 = 15.625us  ;  SDRAM refresh counter = Refresh rate*(192Mhz/2)-20  */
-//#define REFRESH_COUNT                            ((uint32_t)980)   /* Refresh rate = 32ms/2048 = 15.625us  ;  SDRAM refresh counter = Refresh rate*(192Mhz/3)-20  */
-//#define REFRESH_COUNT                            ((uint32_t)730)   /* Refresh rate = 32ms/2048 = 15.625us  ;  SDRAM refresh counter = Refresh rate*(96Mhz/3)-20  */
-//#define REFRESH_COUNT                            ((uint32_t)1700)   /* Refresh rate = 32ms/2048 = 15.625us  ;  SDRAM refresh counter = Refresh rate*(264Mhz/2)-20  */
-#define REFRESH_COUNT                            ((uint32_t)800)   /* Refresh rate = 32ms/2048 = 15.625us  ;  SDRAM refresh counter = Refresh rate*(188Mhz/2)-20  */
+#define REFRESH_COUNT                            ((uint32_t)1480)   /* Refresh rate = 32ms/2048 = 15.625us  ;  SDRAM refresh counter = Refresh rate*(192Mhz/2)-20  */
 
 #define SDRAM_TIMEOUT                            ((uint32_t)0xFFFF)
 #define SDRAM_MODEREG_BURST_LENGTH_1             ((uint16_t)0x0000)
