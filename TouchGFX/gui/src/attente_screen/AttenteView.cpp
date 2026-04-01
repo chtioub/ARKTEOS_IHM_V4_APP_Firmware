@@ -96,10 +96,11 @@ void AttenteView::Timer_500ms()
 	switch(sConfig_IHM.u16RecupConfig)
 	{
 		case 0:
-			if (u16CompteurDemarrageSysteme == 0)
-			{
+			//Commit 2026_01_12
+//			if (u16CompteurDemarrageSysteme == 0)
+//			{
 				presenter->c_recup_config(0);
-			}
+//			}
 			break;
 		case 1:
 			presenter->c_recup_config(1);

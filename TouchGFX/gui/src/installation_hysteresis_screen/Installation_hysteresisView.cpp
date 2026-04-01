@@ -20,15 +20,6 @@ Installation_hysteresisView::Installation_hysteresisView()
 	bMoveSliderMoins = false;
 
 
-	//u7VitesseVentilateur = sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].type_zone.GroupeEau.u7VitesseMaxVentilateur;
-//	Unicode::snprintf(textAreaBuffer_Titre, 50, touchgfx::TypedText(T_TEXT_PARAM_COMPLEMENTAIRE_CENTRE_DEFAUT).getText());
-//	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " - ");
-//	Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
-//	//Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, " (%d)", (sConfig_Hydrau_temp.u8NumZone == 8) ? 'A' : 'B');
-//	Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
-//	barre_titre.titre(textAreaBuffer_Titre);
-//
-
 	switch (eHysteresis)
 	{
 		case HYST_TINT ://-2/2
@@ -47,8 +38,8 @@ Installation_hysteresisView::Installation_hysteresisView()
 				Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 2, " ");
 				Unicode::fromUTF8(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 11);
 				Unicode::snprintf(&textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 5, (sConfig_Hydrau_temp.u8NumZone == 8) ? " (A)" : " (B)");
-				slider_hyst_plus.setValue(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].i8HysteresisPlus * 10);
-				slider_hyst_moins.setValue(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].i8HysteresisMoins * 10);
+				slider_hyst_plus.setValue(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].i8HysteresisPlus * 20);
+				slider_hyst_moins.setValue(sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].i8HysteresisMoins * 20);
 			}
 			else
 			{
@@ -87,6 +78,17 @@ Installation_hysteresisView::Installation_hysteresisView()
 			Unicode::snprintfFloat(textAreaBuffer_hyst_moins, 5, "%.1f", ((float)(slider_hyst_moins.getValue()))/200);
 			break;
 		case HYST_TEAU :
+			if (sConfig_Hydrau_temp.u8NumZone >= 8)
+			{
+				Unicode::snprintfFloat(textAreaBuffer_hyst_plus, 5, "%.1f", ((float)(slider_hyst_plus.getValue()))/200);
+				Unicode::snprintfFloat(textAreaBuffer_hyst_moins, 5, "%.1f", ((float)(slider_hyst_moins.getValue()))/200);
+			}
+			else
+			{
+				Unicode::snprintfFloat(textAreaBuffer_hyst_plus, 5, "%.1f", ((float)(slider_hyst_plus.getValue()))/100);
+				Unicode::snprintfFloat(textAreaBuffer_hyst_moins, 5, "%.1f", ((float)(slider_hyst_moins.getValue()))/100);
+			}
+			break;
 		case HYST_ECS :
 		case HYST_EXT :
 		case HYST_PISC :
@@ -201,6 +203,15 @@ void Installation_hysteresisView::GestionSliderPlus()
 			Unicode::snprintfFloat(textAreaBuffer_hyst_plus, 5, "%.1f", ((float)(slider_hyst_plus.getValue()))/200);
 			break;
 		case HYST_TEAU :
+			if (sConfig_Hydrau_temp.u8NumZone >= 8)
+			{
+				Unicode::snprintfFloat(textAreaBuffer_hyst_plus, 5, "%.1f", ((float)(slider_hyst_plus.getValue()))/200);
+			}
+			else
+			{
+				Unicode::snprintfFloat(textAreaBuffer_hyst_plus, 5, "%.1f", ((float)(slider_hyst_plus.getValue()))/100);
+			}
+			break;
 		case HYST_ECS :
 		case HYST_EXT :
 		case HYST_PISC :
@@ -271,6 +282,15 @@ void Installation_hysteresisView::GestionSliderMoins()
 			Unicode::snprintfFloat(textAreaBuffer_hyst_moins, 5, "%.1f", ((float)(slider_hyst_moins.getValue()))/200);
 			break;
 		case HYST_TEAU ://-2/2
+			if (sConfig_Hydrau_temp.u8NumZone >= 8)
+			{
+				Unicode::snprintfFloat(textAreaBuffer_hyst_moins, 5, "%.1f", ((float)(slider_hyst_moins.getValue()))/200);
+			}
+			else
+			{
+				Unicode::snprintfFloat(textAreaBuffer_hyst_moins, 5, "%.1f", ((float)(slider_hyst_moins.getValue()))/100);
+			}
+			break;
 		case HYST_ECS :
 		case HYST_EXT :
 		case HYST_PISC :
@@ -358,8 +378,8 @@ void Installation_hysteresisView::bouton_valider()
 		case HYST_TEAU :
 			if (sConfig_Hydrau_temp.u8NumZone >= 8)
 			{
-				sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].i8HysteresisPlus = (slider_hyst_plus.getValue()/10);
-				sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].i8HysteresisMoins = (slider_hyst_moins.getValue()/10);
+				sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].i8HysteresisPlus = (slider_hyst_plus.getValue()/20);
+				sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].i8HysteresisMoins = (slider_hyst_moins.getValue()/20);
 				application().gotoInstallation_MZ_param_complementaires_groupeScreenNoTransition();
 			}
 			else
@@ -396,11 +416,10 @@ void Installation_hysteresisView::bouton_valider()
 			application().gotoInstallation_piscineScreenNoTransition();
 			break;
 		case HYST_PRIM :
-			//Page théoriquement plus utilisée ou accessible (valable anciennement que pour Géotwin)
-//			sConfig_IHM.sConfig_PAC.CommunAllConfig.i8Hysteresis_Primaire_Plus = (slider_hyst_plus.getValue()/10);
-//			sConfig_IHM.sConfig_PAC.CommunAllConfig.i8Hysteresis_Primaire_Moins = (slider_hyst_moins.getValue()/10);
-//			presenter->c_install_config_pac();
-//			application().gotoInstallation_piscineScreenNoTransition();
+			sConfig_IHM.sConfig_PAC.CommunAllConfig.i8Hysteresis_Primaire_Plus = (slider_hyst_plus.getValue()/10);
+			sConfig_IHM.sConfig_PAC.CommunAllConfig.i8Hysteresis_Primaire_Moins = (slider_hyst_moins.getValue()/10);
+			presenter->c_install_config_pac();
+			application().gotoInstallation_hydrauliqueScreenNoTransition();
 			break;
 		default:
 			break;
@@ -466,7 +485,7 @@ void Installation_hysteresisView::bouton_retour()
 //			sConfig_IHM.sConfig_PAC.CommunAllConfig.i8Hysteresis_Primaire_Plus = (slider_hyst_plus.getValue()/10);
 //			sConfig_IHM.sConfig_PAC.CommunAllConfig.i8Hysteresis_Primaire_Moins = (slider_hyst_moins.getValue()/10);
 //			presenter->c_install_config_pac();
-//			application().gotoInstallation_piscineScreenNoTransition();
+			application().gotoInstallation_hydrauliqueScreenNoTransition();
 			break;
 		default:
 			break;

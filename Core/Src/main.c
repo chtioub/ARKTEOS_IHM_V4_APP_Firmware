@@ -27,6 +27,7 @@
 #include "gpio.h"
 #include "fmc.h"
 #include "app_touchgfx.h"
+#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -74,6 +75,7 @@ static void MPU_Config(void);
 int main(void)
 {
 
+  strcpy((char*)Version_Soft, "IHA0B");
   /* USER CODE BEGIN 1 */
   uint32_t u32LastEnvoi = HAL_GetTick();
   /* USER CODE END 1 */
@@ -159,15 +161,15 @@ int main(void)
 
     //u32LastTick = HAL_GetTick();
 
-    if ((HAL_GetTick() - u32LastTick) > 100 && TimerNoNeededCode > 0 && bAutorisationNoCode)
-	{
-    	u32LastTick = HAL_GetTick();
-    	TimerNoNeededCode = TimerNoNeededCode - 100;
-	}
-    else if (TimerNoNeededCode <= 0)
-    {
-    	bAutorisationNoCode = false;
-    }
+//    if ((HAL_GetTick() - u32LastTick) > 100 && TimerNoNeededCode > 0 && bAutorisationNoCode)
+//	{
+//    	u32LastTick = HAL_GetTick();
+//    	TimerNoNeededCode = TimerNoNeededCode - 100;
+//	}
+//    else if (TimerNoNeededCode <= 0)
+//    {
+//    	bAutorisationNoCode = false;
+//    }
   }
   /* USER CODE END 3 */
 }

@@ -39,7 +39,7 @@ void Installation_piscine_avancesView::tearDownScreen()
 void Installation_piscine_avancesView::timer_10ms()
 {
 	//
-	if(button_gauche_prog_3_niveau_piscine.getPressedState())
+	if(button_gauche_temps_rotation_vanne.getPressedState())
 	{
 		if(u8PressionLongue_gauche < 15)
 		{
@@ -49,7 +49,7 @@ void Installation_piscine_avancesView::timer_10ms()
 	}
 	else u8PressionLongue_gauche = 0;
 	//
-	if(button_droite_prog_3_niveau_piscine.getPressedState())
+	if(button_droite_temps_rotation_vanne.getPressedState())
 	{
 		if(u8PressionLongue_droite < 15)
 		{

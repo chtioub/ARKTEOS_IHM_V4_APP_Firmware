@@ -501,23 +501,27 @@ void Installation_circuit_captageView::bouton_oui_pilotage_vit_pompe_puits()
 			{
 				container_vitesse_max_pompe_puits.setXY(486, 459);
 				container_vitesse_max_pompe_puits.setVisible(true);
+				container_vitesse_max_pompe_puits.invalidate();
 			}
 			else
 			{
 				textArea_vitesse_min_pompe_puits.setTypedText(touchgfx::TypedText(T_TEXT_VITESSE_POMPE_DE_PUITS));
 				container_vitesse_max_pompe_puits.setVisible(false);
+				container_vitesse_max_pompe_puits.invalidate();
 			}
 		}
 		else
 		{
 			container_vitesse_max_pompe_puits.setXY(486, 459);
 			container_vitesse_max_pompe_puits.setVisible(true);
+			container_vitesse_max_pompe_puits.invalidate();
 		}
 
 		container_vitesse_min_pompe_puits.setVisible(true);
 		container_vitesse_min_pompe_puits.invalidate();
 
-		container_vitesse_max_pompe_puits.invalidate();
+		scrollableContainer.invalidate();
+
 
 		update_vitesse_min_pompe_puits();
 		update_vitesse_max_pompe_puits();

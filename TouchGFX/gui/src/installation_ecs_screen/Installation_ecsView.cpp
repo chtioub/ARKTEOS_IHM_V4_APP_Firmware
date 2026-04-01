@@ -167,6 +167,31 @@ void Installation_ecsView::bouton_hysteresis_ECS()
 	eHysteresis = HYST_ECS;
 }
 
+void Installation_ecsView::timer_10ms()
+{
+	//
+	if(button_gauche_duree_cycle_thermo.getPressedState())
+	{
+		if(u8PressionLongue_gauche < 15)
+		{
+			u8PressionLongue_gauche++;
+		}
+		else bouton_gauche_duree_cycle();
+	}
+	else u8PressionLongue_gauche = 0;
+	//
+	if(button_droite_duree_cycle_thermo.getPressedState())
+	{
+		if(u8PressionLongue_droite < 15)
+		{
+			u8PressionLongue_droite++;
+		}
+		else bouton_droite_duree_cycle();
+	}
+	else u8PressionLongue_droite = 0;
+}
+
+
 void Installation_ecsView::bouton_valider()
 {
 	//Ajouté sinon on écrasait l'hystérésis précédemment ajouté

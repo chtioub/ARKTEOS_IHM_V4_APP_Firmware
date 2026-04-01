@@ -33,10 +33,14 @@ void LangueView::tearDownScreen()
 
 void LangueView::bouton_droit()
 {
-	if(++u8Langue == NUMBER_OF_LANGUAGES)
-	{
-		u8Langue = 0;
-	}
+//	if(++u8Langue == NUMBER_OF_LANGUAGES)
+//	{
+//		u8Langue = 0;
+//	}
+	if(++u8Langue > 1)//NUMBER_OF_LANGUAGES)
+		{
+			u8Langue = 0;
+		}
 	// Changement langue
 	changementLangue();
 }
@@ -45,7 +49,7 @@ void LangueView::bouton_gauche()
 {
 	if(u8Langue == 0)
 	{
-		u8Langue = NUMBER_OF_LANGUAGES - 1;
+		u8Langue = 1;//NUMBER_OF_LANGUAGES - 1;
 	}
 	else u8Langue--;
 	// Changement langue

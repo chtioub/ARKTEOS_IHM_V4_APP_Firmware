@@ -1,5 +1,6 @@
 #include <gui/energies_histo_screen/Energies_histoView.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <touchgfx/widgets/canvas/AbstractPainterRGB565.hpp>
 
 Energies_histoView::Energies_histoView()
 {
@@ -24,7 +25,7 @@ Energies_histoView::Energies_histoView()
     // Titre histo produites ou consommees
 	if(bConsoProd == 0)
 	{
-		Unicode::snprintf(textAreaBuffer_Titre, 25, touchgfx::TypedText(T_TEXT_HISTO_PRODUITES_CENTRE_LARGE).getText());
+		Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_HISTO_PRODUITES_CENTRE_LARGE).getText());
 		barre_titre.titre(textAreaBuffer_Titre);
 	}
 	else
@@ -63,7 +64,8 @@ void Energies_histoView::bouton_pac()
     toggleButton_piscine.setTouchable(true);
     toggleButton_piscine.forceState(false);
     toggleButton_piscine.invalidate();
-    couleur_barres(0xffcd00);
+    //couleur_barres(0xffcd00);
+	couleur_barres(touchgfx::Color::getColorFromRGB(255, 205, 0));
 		// MAJ des barres
 		if(toggleButton_12_mois.getState())
 		{
@@ -99,7 +101,8 @@ void Energies_histoView::bouton_chaud()
     toggleButton_piscine.setTouchable(true);
     toggleButton_piscine.forceState(false);
     toggleButton_piscine.invalidate();
-    couleur_barres(0xc14d00);
+//    couleur_barres(0xc14d00);
+	couleur_barres(touchgfx::Color::getColorFromRGB(193, 77, 0));
 		// MAJ des barres
 		if(toggleButton_12_mois.getState())
 		{
@@ -135,7 +138,8 @@ void Energies_histoView::bouton_froid()
     toggleButton_piscine.setTouchable(true);
     toggleButton_piscine.forceState(false);
     toggleButton_piscine.invalidate();
-    couleur_barres(0x3ab0c8);
+    //    couleur_barres(0x3ab0c8);
+        couleur_barres(touchgfx::Color::getColorFromRGB(58, 176, 200));
 		// MAJ des barres
 		if(toggleButton_12_mois.getState())
 		{
@@ -169,7 +173,8 @@ void Energies_histoView::bouton_ecs()
 		toggleButton_piscine.setTouchable(true);
 		toggleButton_piscine.forceState(false);
 		toggleButton_piscine.invalidate();
-		couleur_barres(0xe70094);
+//		couleur_barres(0xe70094);
+		couleur_barres(touchgfx::Color::getColorFromRGB(231, 0, 148));
 		// MAJ des barres
 		if(toggleButton_12_mois.getState())
 		{
@@ -204,7 +209,8 @@ void Energies_histoView::bouton_piscine()
 		toggleButton_ecs.invalidate();
 		toggleButton_piscine.setTouchable(false);
 		toggleButton_piscine.invalidate();
-		couleur_barres(0xb9c400);
+		//		couleur_barres(0xb9c400);
+				couleur_barres(touchgfx::Color::getColorFromRGB(185, 196, 0));
 		// MAJ des barres
 		if(toggleButton_12_mois.getState())
 		{
@@ -1177,79 +1183,79 @@ void Energies_histoView::heures(uint8_t u8Heure)
     textArea_chiffre_24.invalidate();
 }
 
-void Energies_histoView::couleur_barres(uint32_t u32Couleur)
+void Energies_histoView::couleur_barres(touchgfx::colortype couleur)
 {
-  box_mois_1.setColor(u32Couleur);
+  box_mois_1.setColor(couleur);
   box_mois_1.invalidate();
-  box_mois_2.setColor(u32Couleur);
+  box_mois_2.setColor(couleur);
   box_mois_2.invalidate();
-  box_mois_3.setColor(u32Couleur);
+  box_mois_3.setColor(couleur);
   box_mois_3.invalidate();
-  box_mois_4.setColor(u32Couleur);
+  box_mois_4.setColor(couleur);
   box_mois_4.invalidate();
-  box_mois_5.setColor(u32Couleur);
+  box_mois_5.setColor(couleur);
   box_mois_5.invalidate();
-  box_mois_6.setColor(u32Couleur);
+  box_mois_6.setColor(couleur);
   box_mois_6.invalidate();
-  box_mois_7.setColor(u32Couleur);
+  box_mois_7.setColor(couleur);
   box_mois_7.invalidate();
-  box_mois_8.setColor(u32Couleur);
+  box_mois_8.setColor(couleur);
   box_mois_8.invalidate();
-  box_mois_9.setColor(u32Couleur);
+  box_mois_9.setColor(couleur);
   box_mois_9.invalidate();
-  box_mois_10.setColor(u32Couleur);
+  box_mois_10.setColor(couleur);
   box_mois_10.invalidate();
-  box_mois_11.setColor(u32Couleur);
+  box_mois_11.setColor(couleur);
   box_mois_11.invalidate();
-  box_mois_12.setColor(u32Couleur);
+  box_mois_12.setColor(couleur);
   box_mois_12.invalidate();
-  box_24_1.setColor(u32Couleur);
+  box_24_1.setColor(couleur);
   box_24_1.invalidate();
-  box_24_2.setColor(u32Couleur);
+  box_24_2.setColor(couleur);
   box_24_2.invalidate();
-  box_24_3.setColor(u32Couleur);
+  box_24_3.setColor(couleur);
   box_24_3.invalidate();
-  box_24_4.setColor(u32Couleur);
+  box_24_4.setColor(couleur);
   box_24_4.invalidate();
-  box_24_5.setColor(u32Couleur);
+  box_24_5.setColor(couleur);
   box_24_5.invalidate();
-  box_24_6.setColor(u32Couleur);
+  box_24_6.setColor(couleur);
   box_24_6.invalidate();
-  box_24_7.setColor(u32Couleur);
+  box_24_7.setColor(couleur);
   box_24_7.invalidate();
-  box_24_8.setColor(u32Couleur);
+  box_24_8.setColor(couleur);
   box_24_8.invalidate();
-  box_24_9.setColor(u32Couleur);
+  box_24_9.setColor(couleur);
   box_24_9.invalidate();
-  box_24_10.setColor(u32Couleur);
+  box_24_10.setColor(couleur);
   box_24_10.invalidate();
-  box_24_11.setColor(u32Couleur);
+  box_24_11.setColor(couleur);
   box_24_11.invalidate();
-  box_24_12.setColor(u32Couleur);
+  box_24_12.setColor(couleur);
   box_24_12.invalidate();
-  box_24_13.setColor(u32Couleur);
+  box_24_13.setColor(couleur);
   box_24_13.invalidate();
-  box_24_14.setColor(u32Couleur);
+  box_24_14.setColor(couleur);
   box_24_14.invalidate();
-  box_24_15.setColor(u32Couleur);
+  box_24_15.setColor(couleur);
   box_24_15.invalidate();
-  box_24_16.setColor(u32Couleur);
+  box_24_16.setColor(couleur);
   box_24_16.invalidate();
-  box_24_17.setColor(u32Couleur);
+  box_24_17.setColor(couleur);
   box_24_17.invalidate();
-  box_24_18.setColor(u32Couleur);
+  box_24_18.setColor(couleur);
   box_24_18.invalidate();
-  box_24_19.setColor(u32Couleur);
+  box_24_19.setColor(couleur);
   box_24_19.invalidate();
-  box_24_20.setColor(u32Couleur);
+  box_24_20.setColor(couleur);
   box_24_20.invalidate();
-  box_24_21.setColor(u32Couleur);
+  box_24_21.setColor(couleur);
   box_24_21.invalidate();
-  box_24_22.setColor(u32Couleur);
+  box_24_22.setColor(couleur);
   box_24_22.invalidate();
-  box_24_23.setColor(u32Couleur);
+  box_24_23.setColor(couleur);
   box_24_23.invalidate();
-  box_24_24.setColor(u32Couleur);
+  box_24_24.setColor(couleur);
   box_24_24.invalidate();
 }
 

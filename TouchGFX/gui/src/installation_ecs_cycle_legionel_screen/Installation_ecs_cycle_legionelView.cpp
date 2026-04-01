@@ -136,6 +136,30 @@ void Installation_ecs_cycle_legionelView::bouton_droit_heure()
 	update_heure_antilegionellose();
 }
 
+void Installation_ecs_cycle_legionelView::timer_10ms()
+{
+	//
+	if(button_gauche_heure_cycle_legionel_ecs.getPressedState())
+	{
+		if(u8PressionLongue_gauche < 15)
+		{
+			u8PressionLongue_gauche++;
+		}
+		else bouton_gauche_heure();
+	}
+	else u8PressionLongue_gauche = 0;
+	//
+	if(button_droite_heure_cycle_legionel_ecs.getPressedState())
+	{
+		if(u8PressionLongue_droite < 15)
+		{
+			u8PressionLongue_droite++;
+		}
+		else bouton_droit_heure();
+	}
+	else u8PressionLongue_droite = 0;
+}
+
 void Installation_ecs_cycle_legionelView::bouton_valider()
 {
 	sParam_ECS_temp.bAntiLegionnel = bAntiLegionnel & 1;

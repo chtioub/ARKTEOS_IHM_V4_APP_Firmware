@@ -25,6 +25,7 @@ public:
     void bouton_bouclage_ecs();
     void bouton_valider();
     void bouton_retour();
+    void timer_10ms();
 
     virtual void changeDate(S_DATE *sDate);
 	virtual void changeErreur(uint16_t u16Erreur);
@@ -34,11 +35,12 @@ protected:
     bool bConnexionDistance;
 	uint16_t u16ErreurAffichee;
 	uint8_t Time_Bascul_V3V_ECS;
+	uint8_t u8PressionLongue_droite, u8PressionLongue_gauche;
 	unsigned char bTypeAppointECS, u2TypeEchangeur, bSolaire, bCouplageEJP, bBouclageECS;
 	S_DATE sDate_old;
 	S_CONFIG_IHM sConfig_IHM_old;
 	S_STATUT_PAC sStatut_PAC_old;
-	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_TypeAppoint[19], textAreaBuffer_TypeEchangeur[11], textAreaBuffer_TempsV3V[13], textAreaBuffer_BouclageECS[4], textAreaBuffer_CouplageEJP[4];
+	touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_TypeAppoint[19], textAreaBuffer_TypeEchangeur[15], textAreaBuffer_TempsV3V[13], textAreaBuffer_BouclageECS[4], textAreaBuffer_CouplageEJP[4];
    };
 
 #endif // INSTALLATION_ECS_AVANCESVIEW_HPP

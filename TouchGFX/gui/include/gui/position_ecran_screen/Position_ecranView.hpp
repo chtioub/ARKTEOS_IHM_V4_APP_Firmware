@@ -16,6 +16,7 @@ public:
     void bouton_gauche();
     void bouton_bas();
     void bouton_haut();
+    void timer_10ms();
 
     virtual void changeDate(S_DATE *sDate);
     virtual void changeErreur(uint16_t u16Erreur);
@@ -24,7 +25,8 @@ public:
 protected:
     bool bConnexionDistance;
     uint16_t u16ErreurAffichee;
-    S_DATE sDate_old;
+    uint8_t u8PressionLongue_droite, u8PressionLongue_gauche,u8PressionLongue_haut, u8PressionLongue_bas;
+	S_DATE sDate_old;
     S_CONFIG_IHM sConfig_IHM_old;
     S_STATUT_PAC sStatut_PAC_old;
     touchgfx::Unicode::UnicodeChar textAreaBuffer_Titre[40], textAreaBuffer_Heure[6], textAreaBuffer_Date[9], textAreaBuffer_OffsetX[3], textAreaBuffer_OffsetY[3];

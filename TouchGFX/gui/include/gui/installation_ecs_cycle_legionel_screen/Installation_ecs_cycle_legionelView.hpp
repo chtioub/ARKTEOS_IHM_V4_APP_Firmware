@@ -21,6 +21,7 @@ public:
     void bouton_droit_jour();
     void bouton_gauche_heure();
     void bouton_droit_heure();
+    void timer_10ms();
 
     virtual void changeDate(S_DATE *sDate);
 	virtual void changeErreur(uint16_t u16Erreur);
@@ -28,7 +29,7 @@ public:
 	virtual void changeStatutEther(S_CYC_ETHER_III *sCycEther);
 protected:
 	 bool bConnexionDistance;
-//	    uint8_t u8PressionLongue_droite, u8PressionLongue_gauche;
+	    uint8_t u8PressionLongue_droite, u8PressionLongue_gauche;
 	    uint16_t u16ErreurAffichee;
 	    unsigned char bAntiLegionnel, Jour_Legionel, Heure_Legionel;
 	    S_DATE sDate_old;

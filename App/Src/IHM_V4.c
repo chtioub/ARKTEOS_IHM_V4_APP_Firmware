@@ -72,6 +72,7 @@ S_PARAM_ZX sParamZxMZtemp[10];
 uint16_t u16CodeCommande;
 S_STATUT_LINKY sStatutLinky;
 uint8_t oui_veille = 1;
+uint8_t page_accueil_displayed = 0;
 uint8_t u8Nb_PAC;
 uint8_t u3CarteGroupeA, u3CarteGroupeB, u3NumVoieGroupeA, u3NumVoieGroupeB;
 uint8_t eTypeSimultaneChaudFroid, bLimitationPW_Froid, bLimitationPW_ECS;
@@ -87,12 +88,14 @@ uint32_t u32LastTick;
 bool bAutorisationCompteurVeille = false;
 bool bMessageEnCoursAffichage = false;
 bool bRecupConfigTermine = false;
+bool bDdeRestartCartes = false;
 
 uint16_t u16TempBallon_Z1[360],u16Temp_Z2[360], u16TempDepart[360],u16TempRetour[360], u16PointeurTableau;//, u16StartIndex;
 uint16_t u16ValmaxAmbBall, u16ValminAmbBall,  u16ValmaxTeau,u16ValminTeau;
 uint16_t valmaxgaucheP1, valmingaucheP1, valmaxgaucheP2, valmingaucheP2, valmaxdroiteP1P2, valmindroiteP1P2;
 int16_t i16ValmaxText, i16ValminText, i16TempExt[360];
 uint16_t limit;
+uint8_t Version_Soft[8];
 
 //const touchgfx::colortype RED = touchgfx::Color::getColorFromRGB(229, 38, 32);
 //const touchgfx::colortype GREEN = touchgfx::Color::getColorFromRGB(179, 193, 14);
@@ -106,13 +109,13 @@ uint16_t limit;
 void setBackLightPWM(uint8_t pwm)
 {
 #ifndef SIMULATOR
-  if(pwm == 0)
-    HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
-  else
-  {
-    __HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, pwm * 10);
-    HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  }
+	  if(pwm == 0)
+		HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_1);
+	  else
+	  {
+		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_1, pwm * 10);
+		HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+	  }
 #endif
 }
 
@@ -129,6 +132,8 @@ uint8_t decodeRxData(rxData_t *rxData)
     switch (pHeader->comm)
     {
       case RECUP_SOFT:
+	  // Ecrire la demande de reprogrammation sur la QSPI
+	  // Reset pour lancer le bootloader
         break;
       case UPLOAD:
         break;
@@ -444,11 +449,11 @@ uint8_t decodeRxData(rxData_t *rxData)
 						arkteos_update.erreur_update = true;
 					}
 				}
+				ptrRxBuffer += sizeof(S_CYC_ETHER_III);
 				if(sConfig_IHM.u16NbCyclique < 6)
 				{
 					sConfig_IHM.u16NbCyclique++;
 				}
-				ptrRxBuffer += sizeof(S_CYC_ETHER_III);
 				break;
 			case C_USER:
 //				if(pHeader->dest == N_ADD_IHM)
@@ -1282,7 +1287,7 @@ uint32_t u32ErreursINV[1000] = {
 		T_TEXT_ERR_301_INV_GAUCHE_DEFAUT,T_TEXT_ERR_302_INV_GAUCHE_DEFAUT,T_TEXT_ERR_303_INV_GAUCHE_DEFAUT,T_TEXT_ERR_304_INV_GAUCHE_DEFAUT,T_TEXT_ERR_305_INV_GAUCHE_DEFAUT,
 		T_TEXT_ERR_306_INV_GAUCHE_DEFAUT,T_TEXT_ERR_307_INV_GAUCHE_DEFAUT,T_TEXT_ERR_308_INV_GAUCHE_DEFAUT,T_TEXT_ERR_309_INV_GAUCHE_DEFAUT,T_TEXT_ERR_310_INV_GAUCHE_DEFAUT,  //310
 		T_TEXT_ERR_311_INV_GAUCHE_DEFAUT, 0, 0, 0, 0, 0, 0, 0, 0, 0,	// 320
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,								// 33
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,								// 330
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,								// 340
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,								// 350
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,								// 360
@@ -1346,7 +1351,12 @@ uint32_t u32ErreursINV[1000] = {
 		T_TEXT_ERR_721_INV_GAUCHE_DEFAUT, T_TEXT_ERR_722_INV_GAUCHE_DEFAUT,T_TEXT_ERR_723_INV_GAUCHE_DEFAUT, T_TEXT_ERR_724_INV_GAUCHE_DEFAUT, T_TEXT_ERR_725_INV_GAUCHE_DEFAUT,
 		0, 0, 0, 0, 0,  //730
 		0, 0, 0, 0, 0, 0, 0, 0, 0, T_TEXT_ERR_740_INV_GAUCHE_DEFAUT, //740
-		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,								// 750
+		T_TEXT_ERR_741_INV_GAUCHE_DEFAUT, T_TEXT_ERR_742_INV_GAUCHE_DEFAUT, T_TEXT_ERR_743_INV_GAUCHE_DEFAUT, T_TEXT_ERR_744_INV_GAUCHE_DEFAUT, 0,
+		0, 0, 0, 0, 0,	// 750
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,							    // 760
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,							    // 770
+		0, 0, 0, 0, 0, 0, 0, 0, 0, 0,							    // 780
+		0, T_TEXT_ERR_782_INV_GAUCHE_DEFAUT, 0, 0, 0, 0, 0, 0, 0, 0,							    // 790
 
 };
 

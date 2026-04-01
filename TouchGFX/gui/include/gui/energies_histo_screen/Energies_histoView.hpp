@@ -19,7 +19,7 @@ public:
     void bouton_12mois();
     void bouton_24jours();
     void bouton_24heures();
-    void couleur_barres(uint32_t u32Couleur);
+    void couleur_barres(touchgfx::colortype couleur);
     void jours(uint8_t u8Jours, uint8_t u8Mois, uint8_t u8Annee);
     void heures(uint8_t u8Heure);
     void mois(uint8_t u8Mois);

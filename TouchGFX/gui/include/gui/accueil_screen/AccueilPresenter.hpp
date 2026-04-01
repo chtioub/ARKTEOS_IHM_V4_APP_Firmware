@@ -29,7 +29,7 @@ public:
 
     void editLuminosite(uint8_t u8Luminosite);
 
-    virtual void changeModePac(bool marche);
+//    virtual void changeModePac(bool marche);
     virtual void changeDate(S_DATE *sDate);
     virtual void changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire);
     virtual void changeStatutPAC(S_STATUT_PAC *sStatut_PAC);
