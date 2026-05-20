@@ -11,6 +11,8 @@ AccueilView::AccueilView()//:
 //	circle_point_page_accueil.invalidate();
 //	textArea_accueil_page.invalidate();
 
+
+
 	memset(&sDate_old, 0, sizeof(sDate));
 	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM));
 	memset(&sStatut_Primaire_old, 0, sizeof(sStatut_Primaire));
