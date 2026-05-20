@@ -189,13 +189,13 @@ SECTIONS
     *(FontFlashSection FontFlashSection.*)
     *(.gnu.linkonce.r.*)
         . = ALIGN(0x4);
-  } >FLASH
+  } >FLASH_GFX
 
   TextFlashSection :
   {
     *(TextFlashSection TextFlashSection.*)
     *(.gnu.linkonce.r.*)
         . = ALIGN(0x4);
-  } >FLASH
+  } >FLASH_GFX
   
 }

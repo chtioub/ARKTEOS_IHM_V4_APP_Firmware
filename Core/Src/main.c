@@ -27,11 +27,11 @@
 #include "gpio.h"
 #include "fmc.h"
 #include "app_touchgfx.h"
-#include <string.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "IHM_V4.h"
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -75,7 +75,6 @@ static void MPU_Config(void);
 int main(void)
 {
 
-  strcpy((char*)Version_Soft, "IHA0B");
   /* USER CODE BEGIN 1 */
   uint32_t u32LastEnvoi = HAL_GetTick();
   /* USER CODE END 1 */
@@ -97,6 +96,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
+  strcpy((char*)Version_Soft, "IHA0B");
   u8Pointeur_buffer_tx = 0;
   u8Pointeur_envoi = 0;
   data_histo.bTableauPlein = false;
