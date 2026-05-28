@@ -137,10 +137,16 @@ int main(void)
 
   MX_TouchGFX_Process();
     /* USER CODE BEGIN 3 */
-    // Données recues
-    if(decodeRxData(&rxData))
+    // Données recues : on vide TOUTE la file à chaque tour
+    while(rxQueueRead != rxQueueWrite)
     {
-    	dataUpdated = 1;
+    	if(decodeRxData(&rxData[rxQueueRead]))
+    	{
+    		dataUpdated = 1;
+    	}
+    	uint8_t u8Next = rxQueueRead + 1;
+    	if(u8Next >= RX_QUEUE_LEN) u8Next = 0;
+    	rxQueueRead = u8Next;
     }
     // Données envoyées
     if(((HAL_GetTick() - u32LastCyclique) > 100 && (HAL_GetTick() - u32LastCyclique) < 900) && (HAL_GetTick() - u32LastEnvoi) > 100)

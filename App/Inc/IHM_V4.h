@@ -236,7 +236,10 @@ typedef struct
 extern DATA_HISTO data_histo;
 extern cosebe_test_t cosebe_test;
 extern arkteos_update_t arkteos_update;
-extern rxData_t rxData;
+#define RX_QUEUE_LEN 6
+extern rxData_t rxData[RX_QUEUE_LEN];
+extern volatile uint8_t rxQueueWrite;   // avancé par l'ISR uniquement
+extern volatile uint8_t rxQueueRead;    // avancé par main uniquement
 extern uint8_t rxBuffer[TAILLE_BUFFER_UART];
 extern uint8_t dataUpdated;
 extern uint8_t eOuiNon, eCode, eTypeClavierAlpha;

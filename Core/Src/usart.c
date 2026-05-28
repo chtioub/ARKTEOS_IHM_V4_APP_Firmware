@@ -146,14 +146,18 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 /* USER CODE BEGIN 1 */
 void HAL_UARTEx_RxEventCallback(UART_HandleTypeDef *huart, uint16_t Size)
 {
-  if(rxData.size != 0)
-  {
-	  memset(rxData.data, 0, TAILLE_BUFFER_UART);
-    // TODO : gerer trame non trait�e
-  }
+  uint8_t u8Next = rxQueueWrite + 1;
+  if(u8Next >= RX_QUEUE_LEN) u8Next = 0;
 
-  memcpy(rxData.data, rxBuffer, Size);
-  rxData.size = Size;
+  if(u8Next != rxQueueRead)                 // file non pleine : on n'écrase jamais une trame en attente
+  {
+    if(Size > TAILLE_BUFFER_UART) Size = TAILLE_BUFFER_UART;
+    memcpy(rxData[rxQueueWrite].data, rxBuffer, Size);
+    rxData[rxQueueWrite].size = Size;
+    rxQueueWrite = u8Next;                   // publie la trame
+  }
+  // sinon : file pleine -> trame ignorée (anormal, surveillable)
+
   HAL_UARTEx_ReceiveToIdle_IT(&huart2, rxBuffer, sizeof(rxBuffer));
 }
 /* USER CODE END 1 */

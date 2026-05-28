@@ -248,7 +248,7 @@ void Model::tick()
 	}
 
 	//Si Défaut en cours => on sort de veille et reste allumé
-	if (u16ErreurEncours && !page_accueil_displayed)
+	if (u16ErreurEncours && !page_accueil_displayed  && bRecupConfigTermine)
 	{
 		static_cast<FrontendApplication*>(touchgfx::Application::getInstance())->gotoAccueilScreenNoTransition();
 		page_accueil_displayed = 1;

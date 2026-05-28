@@ -14,7 +14,10 @@
 #include <math.h>
 
 uint8_t rxBuffer[TAILLE_BUFFER_UART];
-rxData_t rxData;
+rxData_t rxData[RX_QUEUE_LEN];
+volatile uint8_t rxQueueWrite = 0;
+volatile uint8_t rxQueueRead = 0;
+uint32_t u32CrcMismatch = 0;            // compteur d'observation (validation CRC)
 
 DATA_HISTO data_histo;
 cosebe_rx_t cosebe_rx;
@@ -120,6 +123,21 @@ void setBackLightPWM(uint8_t pwm)
 }
 
 
+static uint16_t computeCRC_rx(uint8_t *data, uint16_t size)
+{
+  uint16_t u16Crc = 0xFFFF;
+  for(uint16_t i = 0; i < size; i++)
+  {
+    u16Crc ^= data[i];
+    for(uint8_t j = 0; j < 8; j++)
+    {
+      if(u16Crc & 1) { u16Crc >>= 1; u16Crc ^= 0xA001; }
+      else             u16Crc >>= 1;
+    }
+  }
+  return u16Crc;
+}
+
 uint8_t decodeRxData(rxData_t *rxData)
 {
   uint16_t ptrRxBuffer = 6;
@@ -129,6 +147,33 @@ uint8_t decodeRxData(rxData_t *rxData)
   if(rxData->size != 0)
   {
     pHeader = (header_t*) rxData->data;
+
+    /* --- Contrôle d'intégrité de trame --- */
+    if(rxData->size < (sizeof(header_t) + 2))            // en-tête + CRC minimum
+    {
+      rxData->size = 0;
+      return 0;
+    }
+    uint16_t u16LongTrame = sizeof(header_t) + pHeader->taille + 2;
+    if(rxData->size < u16LongTrame)                      // trame tronquée / scindée -> rejet
+    {
+      rxData->size = 0;
+      return 0;
+    }
+    {
+      uint16_t u16CrcCalc = computeCRC_rx(rxData->data, sizeof(header_t) + pHeader->taille);
+      uint16_t u16CrcRecu = rxData->data[sizeof(header_t) + pHeader->taille]
+                          | (rxData->data[sizeof(header_t) + pHeader->taille + 1] << 8);
+      if(u16CrcCalc != u16CrcRecu)
+      {
+        u32CrcMismatch++;        // MODE OBSERVATION : on compte sans rejeter
+        // Pour activer le rejet une fois le CRC carte confirmé, décommenter :
+        // rxData->size = 0;
+        // return 0;
+      }
+    }
+    /* ------------------------------------- */
+
     switch (pHeader->comm)
     {
       case RECUP_SOFT:
@@ -152,21 +197,26 @@ uint8_t decodeRxData(rxData_t *rxData)
 					switch(pHeader->emet)
 					{
 						case N_ADD_ETHER:
-							memcpy(&sConfig_IHM.sParamSoft, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_SOFT_III));
-							ptrRxBuffer += sizeof(S_PARAM_ETHER_SOFT_III);
-							memcpy(&sConfig_IHM.sParamPort, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_PORT_III));
-							ptrRxBuffer += sizeof(S_PARAM_ETHER_PORT_III);
-							memcpy(&sConfig_IHM.sParamWifi, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_WIFI_III));
-							ptrRxBuffer += sizeof(S_PARAM_ETHER_WIFI_III);
-							memcpy(&sConfig_IHM.sParamModbus, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_MODBUS_III));
-							ptrRxBuffer += sizeof(S_PARAM_ETHER_MODBUS_III);
-							sConfig_IHM.u16RecupConfig = 1;
+							if(pHeader->taille == (sizeof(S_PARAM_ETHER_SOFT_III) + sizeof(S_PARAM_ETHER_PORT_III)
+							                     + sizeof(S_PARAM_ETHER_WIFI_III) + sizeof(S_PARAM_ETHER_MODBUS_III)))
+							{
+								memcpy(&sConfig_IHM.sParamSoft, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_SOFT_III));
+								ptrRxBuffer += sizeof(S_PARAM_ETHER_SOFT_III);
+								memcpy(&sConfig_IHM.sParamPort, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_PORT_III));
+								ptrRxBuffer += sizeof(S_PARAM_ETHER_PORT_III);
+								memcpy(&sConfig_IHM.sParamWifi, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_WIFI_III));
+								ptrRxBuffer += sizeof(S_PARAM_ETHER_WIFI_III);
+								memcpy(&sConfig_IHM.sParamModbus, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_ETHER_MODBUS_III));
+								ptrRxBuffer += sizeof(S_PARAM_ETHER_MODBUS_III);
+								sConfig_IHM.u16RecupConfig = 1;          // n'avance que sur trame complète
+							}
 							break;
 						case N_ADD_REG:
 							switch(pHeader->s_comm)
 							{
 								case SC_RECUP_GENERAL:
-									if(pHeader->taille == (sizeof(S_MODE_ZX) * NB_ZONE + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE) + sizeof(S_MODE_REG_EXT) + sizeof(S_MODE_PAC) + sizeof(S_PARAM_UTILISATEUR) + sizeof(S_MODELE_PAC) + sizeof(S_OPTION_PAC) + sizeof(S_CONFIG_PAC) + sizeof(S_INSTALL_PAC) + sizeof(S_PARAM_PAC) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT) + sizeof(S_PARAM_FRIGO)))
+									if(pHeader->taille == (sizeof(S_MODE_ZX) * NB_ZONE + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE) + sizeof(S_MODE_REG_EXT) + sizeof(S_MODE_PAC) + sizeof(S_PARAM_UTILISATEUR) + sizeof(S_MODELE_PAC) + sizeof(S_OPTION_PAC) + sizeof(S_CONFIG_PAC) + sizeof(S_INSTALL_PAC) + sizeof(S_PARAM_PAC) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT) + sizeof(S_PARAM_FRIGO))
+									|| pHeader->taille == (sizeof(S_MODE_ZX) * NB_ZONE + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE) + sizeof(S_MODE_REG_EXT) + sizeof(S_MODE_PAC) + sizeof(S_PARAM_UTILISATEUR) + sizeof(S_MODELE_PAC) + sizeof(S_OPTION_PAC) + sizeof(S_CONFIG_PAC) + sizeof(S_INSTALL_PAC) + sizeof(S_PARAM_PAC) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT)))
 									{
 										memcpy(&sConfig_IHM.sMode_Zx[0], &rxData->data[ptrRxBuffer], sizeof(S_MODE_ZX) * NB_ZONE);
 										ptrRxBuffer += sizeof(S_MODE_ZX) * NB_ZONE;
@@ -196,7 +246,14 @@ uint8_t decodeRxData(rxData_t *rxData)
 										ptrRxBuffer += sizeof(S_PARAM_PISCINE);
 										memcpy(&sConfig_IHM.sParam_RegulExt, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_REG_EXT));
 										ptrRxBuffer += sizeof(S_PARAM_REG_EXT);
-										memcpy(&sConfig_IHM.sParam_Frigo, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_FRIGO));
+										if(pHeader->taille >= (sizeof(S_MODE_ZX) * NB_ZONE + sizeof(S_MODE_ECS) + sizeof(S_MODE_PISCINE) + sizeof(S_MODE_REG_EXT) + sizeof(S_MODE_PAC) + sizeof(S_PARAM_UTILISATEUR) + sizeof(S_MODELE_PAC) + sizeof(S_OPTION_PAC) + sizeof(S_CONFIG_PAC) + sizeof(S_INSTALL_PAC) + sizeof(S_PARAM_PAC) + sizeof(S_PARAM_ECS) + sizeof(S_PARAM_PISCINE) + sizeof(S_PARAM_REG_EXT) + sizeof(S_PARAM_FRIGO)))   // bloc frigo présent
+											{
+												memcpy(&sConfig_IHM.sParam_Frigo, &rxData->data[ptrRxBuffer], sizeof(S_PARAM_FRIGO));
+											}
+											else                                         // pas de carte frigo -> valeurs par défaut
+											{
+												memset(&sConfig_IHM.sParam_Frigo, 0, sizeof(S_PARAM_FRIGO));
+											}
 										ptrRxBuffer += sizeof(S_PARAM_FRIGO);
 										sConfig_IHM.u16RecupConfig = 2;
 									}
