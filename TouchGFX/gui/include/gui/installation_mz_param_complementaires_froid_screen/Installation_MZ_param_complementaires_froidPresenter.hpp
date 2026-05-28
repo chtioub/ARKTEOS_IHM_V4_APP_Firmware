@@ -28,6 +28,7 @@ public:
     virtual ~Installation_MZ_param_complementaires_froidPresenter() {}
 
     void c_install_zx(uint8_t u8NumZone);
+    void c_install_param();
 
   virtual void changeDate(S_DATE *sDate);
   virtual void changeErreur(uint16_t u16Erreur);

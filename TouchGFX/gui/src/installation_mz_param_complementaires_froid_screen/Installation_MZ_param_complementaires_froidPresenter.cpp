@@ -42,3 +42,9 @@ void Installation_MZ_param_complementaires_froidPresenter::c_install_zx(uint8_t 
 {
 	model->c_install_zx(u8NumZone);
 }
+
+
+void Installation_MZ_param_complementaires_froidPresenter::c_install_param()
+{
+	model->c_install_param();
+}

@@ -22,8 +22,9 @@ public:
 	void bouton_oui();
 	void bouton_non();
 	void bouton_retour();
+	void bouton_th_contact();
 protected:
-		bool bConnexionDistance, bModeFroid;
+		bool bConnexionDistance, bModeFroid, bThContactModeFroid;
 		uint16_t u16ErreurAffichee, u16ConsigneFroid;
 		S_DATE sDate_old;
 		S_CONFIG_IHM sConfig_IHM_old;

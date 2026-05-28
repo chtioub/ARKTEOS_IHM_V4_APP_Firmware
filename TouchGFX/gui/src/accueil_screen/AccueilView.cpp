@@ -299,9 +299,29 @@ void AccueilView::Timer_500ms()
 		circle_mode_zone_1.invalidate();
 		circle_demande_zone_1.invalidate();
 		//
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Zx_old[u8Zone1].i16Tint) / 10);
-		textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
-		textArea_temp_zone_1.invalidate();
+		if (sConfig_IHM.sParam_Zx[u8Zone1].type_zone.zone.TypeThermostat != TH_CONTACT)
+		{
+			textArea_on_off_temp_zone_1.setVisible(false);
+			textArea_temp_zone_1.setVisible(true);
+			Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Zx_old[u8Zone1].i16Tint) / 10);
+			textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
+			textArea_temp_zone_1.invalidate();
+		}
+		else
+		{
+			if (sStatut_Zx_old[u8Zone1].bTorThermostat == 1)
+			{
+			  Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 4, touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
+			}
+			else
+			{
+			  Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 4, touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT).getText());
+			}
+			textArea_temp_zone_1.setVisible(false);
+			textArea_on_off_temp_zone_1.setVisible(true);
+			textArea_on_off_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
+			textArea_on_off_temp_zone_1.invalidate();
+		}
 	}
 }
 

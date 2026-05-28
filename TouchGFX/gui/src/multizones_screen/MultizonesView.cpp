@@ -83,28 +83,28 @@ void MultizonesView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx)
 	{
 		if(memcmp(&sStatut_Zx_old[u8ZoneCorrespondante[0]], sStatut_Zx, sizeof(S_STATUT_ZX)))
 		{
-			changeZx(u8ZoneCorrespondante[0], &sStatut_Zx[u8ZoneCorrespondante[0]], &circle_demande_zone_1, &circle_demande_zone_1Painter, &circle_mode_zone_1, &circle_mode_zone_1Painter, &textArea_temp_zone_1, textAreaBuffer_Temp_Zone_1);
+			changeZx(u8ZoneCorrespondante[0], sStatut_Zx, &circle_demande_zone_1, &circle_demande_zone_1Painter, &circle_mode_zone_1, &circle_mode_zone_1Painter, &textArea_temp_zone_1, textAreaBuffer_Temp_Zone_1,&textArea_on_off_zone_1,textArea_on_off_zone_1Buffer);
 		}
 	}
 	else if(u8Zone == u8ZoneCorrespondante[1])
 	{
 		if(memcmp(&sStatut_Zx_old[u8ZoneCorrespondante[1]], sStatut_Zx, sizeof(S_STATUT_ZX)))
 		{
-			changeZx(u8ZoneCorrespondante[1], &sStatut_Zx[u8ZoneCorrespondante[1]], &circle_demande_zone_2, &circle_demande_zone_2Painter, &circle_mode_zone_2, &circle_mode_zone_2Painter, &textArea_temp_zone_2, textAreaBuffer_Temp_Zone_2);
+			changeZx(u8ZoneCorrespondante[1], sStatut_Zx, &circle_demande_zone_2, &circle_demande_zone_2Painter, &circle_mode_zone_2, &circle_mode_zone_2Painter, &textArea_temp_zone_2, textAreaBuffer_Temp_Zone_2,&textArea_on_off_zone_2,textArea_on_off_zone_2Buffer);
 		}
 	}
 	else if(u8Zone == u8ZoneCorrespondante[2])
 	{
 		if(memcmp(&sStatut_Zx_old[u8ZoneCorrespondante[2]], sStatut_Zx, sizeof(S_STATUT_ZX)))
 		{
-			changeZx(u8ZoneCorrespondante[2], &sStatut_Zx[u8ZoneCorrespondante[2]], &circle_demande_zone_3, &circle_demande_zone_3Painter, &circle_mode_zone_3, &circle_mode_zone_3Painter, &textArea_temp_zone_3, textAreaBuffer_Temp_Zone_3);
+			changeZx(u8ZoneCorrespondante[2], sStatut_Zx, &circle_demande_zone_3, &circle_demande_zone_3Painter, &circle_mode_zone_3, &circle_mode_zone_3Painter, &textArea_temp_zone_3, textAreaBuffer_Temp_Zone_3,&textArea_on_off_zone_3,textArea_on_off_zone_3Buffer);
 		}
 	}
 	else if(u8Zone == u8ZoneCorrespondante[3])
 	{
 		if(memcmp(&sStatut_Zx_old[u8ZoneCorrespondante[3]], sStatut_Zx, sizeof(S_STATUT_ZX)))
 		{
-			changeZx(u8ZoneCorrespondante[3], &sStatut_Zx[u8ZoneCorrespondante[3]], &circle_demande_zone_4, &circle_demande_zone_4Painter, &circle_mode_zone_4, &circle_mode_zone_4Painter, &textArea_temp_zone_4, textAreaBuffer_Temp_Zone_4);
+			changeZx(u8ZoneCorrespondante[3], sStatut_Zx, &circle_demande_zone_4, &circle_demande_zone_4Painter, &circle_mode_zone_4, &circle_mode_zone_4Painter, &textArea_temp_zone_4, textAreaBuffer_Temp_Zone_4,&textArea_on_off_zone_4,textArea_on_off_zone_4Buffer);
 		}
 	}
 	else if(u8Zone == u8ZoneCorrespondante[4])
@@ -112,28 +112,28 @@ void MultizonesView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx)
 		// Affichage de la zone 2
 		if(memcmp(&sStatut_Zx_old[u8ZoneCorrespondante[4]], sStatut_Zx, sizeof(S_STATUT_ZX)))
 		{
-			changeZx(u8ZoneCorrespondante[4], &sStatut_Zx[u8ZoneCorrespondante[4]], &circle_demande_zone_5, &circle_demande_zone_5Painter, &circle_mode_zone_5, &circle_mode_zone_5Painter, &textArea_temp_zone_5, textAreaBuffer_Temp_Zone_5);
+			changeZx(u8ZoneCorrespondante[4], sStatut_Zx, &circle_demande_zone_5, &circle_demande_zone_5Painter, &circle_mode_zone_5, &circle_mode_zone_5Painter, &textArea_temp_zone_5, textAreaBuffer_Temp_Zone_5,&textArea_on_off_zone_5,textArea_on_off_zone_5Buffer);
 		}
 	}
 	else if(u8Zone == u8ZoneCorrespondante[5])
 	{
 		if(memcmp(&sStatut_Zx_old[u8ZoneCorrespondante[5]], sStatut_Zx, sizeof(S_STATUT_ZX)))
 		{
-			changeZx(u8ZoneCorrespondante[5], &sStatut_Zx[u8ZoneCorrespondante[5]], &circle_demande_zone_6, &circle_demande_zone_6Painter, &circle_mode_zone_6, &circle_mode_zone_6Painter, &textArea_temp_zone_6, textAreaBuffer_Temp_Zone_6);
+			changeZx(u8ZoneCorrespondante[5], sStatut_Zx, &circle_demande_zone_6, &circle_demande_zone_6Painter, &circle_mode_zone_6, &circle_mode_zone_6Painter, &textArea_temp_zone_6, textAreaBuffer_Temp_Zone_6,&textArea_on_off_zone_6,textArea_on_off_zone_6Buffer);
 		}
 	}
 	else if(u8Zone == u8ZoneCorrespondante[6])
 	{
 		if(memcmp(&sStatut_Zx_old[u8ZoneCorrespondante[6]], sStatut_Zx, sizeof(S_STATUT_ZX)))
 		{
-			changeZx(u8ZoneCorrespondante[6], &sStatut_Zx[u8ZoneCorrespondante[6]], &circle_demande_zone_7, &circle_demande_zone_7Painter, &circle_mode_zone_7, &circle_mode_zone_7Painter, &textArea_temp_zone_7, textAreaBuffer_Temp_Zone_7);
+			changeZx(u8ZoneCorrespondante[6], sStatut_Zx, &circle_demande_zone_7, &circle_demande_zone_7Painter, &circle_mode_zone_7, &circle_mode_zone_7Painter, &textArea_temp_zone_7, textAreaBuffer_Temp_Zone_7,&textArea_on_off_zone_7,textArea_on_off_zone_7Buffer);
 		}
 	}
 	else if(u8Zone == u8ZoneCorrespondante[7])
 	{
 		if(memcmp(&sStatut_Zx_old[u8ZoneCorrespondante[7]], sStatut_Zx, sizeof(S_STATUT_ZX)))
 		{
-			changeZx(u8ZoneCorrespondante[7], &sStatut_Zx[u8ZoneCorrespondante[7]], &circle_demande_zone_8, &circle_demande_zone_8Painter, &circle_mode_zone_8, &circle_mode_zone_8Painter, &textArea_temp_zone_8, textAreaBuffer_Temp_Zone_8);
+			changeZx(u8ZoneCorrespondante[7], sStatut_Zx, &circle_demande_zone_8, &circle_demande_zone_8Painter, &circle_mode_zone_8, &circle_mode_zone_8Painter, &textArea_temp_zone_8, textAreaBuffer_Temp_Zone_8,&textArea_on_off_zone_8,textArea_on_off_zone_8Buffer);
 		}
 	}
 	// Mémorisation de l'état précédent
@@ -248,49 +248,49 @@ void MultizonesView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneCorrespondante[0]], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[0]], sizeof(S_PARAM_ZX)))
 	{
 		changeConfigZx(u8ZoneCorrespondante[0], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[0]], &button_orange_zone_1, &button_marron_zone_1, &button_violet_zone_1, &textArea_zone_1, textAreaBuffer_Zone_1);
-		changeZx(u8ZoneCorrespondante[0], &sStatut_Zx[u8ZoneCorrespondante[0]], &circle_demande_zone_1, &circle_demande_zone_1Painter, &circle_mode_zone_1, &circle_mode_zone_1Painter, &textArea_temp_zone_1, textAreaBuffer_Temp_Zone_1);
+		changeZx(u8ZoneCorrespondante[0], &sStatut_Zx[u8ZoneCorrespondante[0]], &circle_demande_zone_1, &circle_demande_zone_1Painter, &circle_mode_zone_1, &circle_mode_zone_1Painter, &textArea_temp_zone_1, textAreaBuffer_Temp_Zone_1, &textArea_on_off_zone_1, textArea_on_off_zone_1Buffer);
 	}
 	// Affichage de la zone 2
 	if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneCorrespondante[1]], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[1]], sizeof(S_PARAM_ZX)))
 	{
 		changeConfigZx(u8ZoneCorrespondante[1], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[1]], &button_orange_zone_2, &button_marron_zone_2, &button_violet_zone_2, &textArea_zone_2, textAreaBuffer_Zone_2);
-		changeZx(u8ZoneCorrespondante[1], &sStatut_Zx[u8ZoneCorrespondante[1]], &circle_demande_zone_2, &circle_demande_zone_2Painter, &circle_mode_zone_2, &circle_mode_zone_2Painter, &textArea_temp_zone_2, textAreaBuffer_Temp_Zone_2);
+		changeZx(u8ZoneCorrespondante[1], &sStatut_Zx[u8ZoneCorrespondante[1]], &circle_demande_zone_2, &circle_demande_zone_2Painter, &circle_mode_zone_2, &circle_mode_zone_2Painter, &textArea_temp_zone_2, textAreaBuffer_Temp_Zone_2, &textArea_on_off_zone_2, textArea_on_off_zone_2Buffer);
 	}
 	// Affichage de la zone 3
 	if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneCorrespondante[2]], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[2]], sizeof(S_PARAM_ZX)))
 	{
 		changeConfigZx(u8ZoneCorrespondante[2], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[2]], &button_orange_zone_3, &button_marron_zone_3, &button_violet_zone_3, &textArea_zone_3, textAreaBuffer_Zone_3);
-		changeZx(u8ZoneCorrespondante[2], &sStatut_Zx[u8ZoneCorrespondante[2]], &circle_demande_zone_3, &circle_demande_zone_3Painter, &circle_mode_zone_3, &circle_mode_zone_3Painter, &textArea_temp_zone_3, textAreaBuffer_Temp_Zone_3);
+		changeZx(u8ZoneCorrespondante[2], &sStatut_Zx[u8ZoneCorrespondante[2]], &circle_demande_zone_3, &circle_demande_zone_3Painter, &circle_mode_zone_3, &circle_mode_zone_3Painter, &textArea_temp_zone_3, textAreaBuffer_Temp_Zone_3, &textArea_on_off_zone_3, textArea_on_off_zone_3Buffer);
 	}
 	// Affichage de la zone 4
 	if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneCorrespondante[3]], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[3]], sizeof(S_PARAM_ZX)))
 	{
 		changeConfigZx(u8ZoneCorrespondante[3], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[3]], &button_orange_zone_4, &button_marron_zone_4, &button_violet_zone_4, &textArea_zone_4, textAreaBuffer_Zone_4);
-		changeZx(u8ZoneCorrespondante[3], &sStatut_Zx[u8ZoneCorrespondante[3]], &circle_demande_zone_4, &circle_demande_zone_4Painter, &circle_mode_zone_4, &circle_mode_zone_4Painter, &textArea_temp_zone_4, textAreaBuffer_Temp_Zone_4);
+		changeZx(u8ZoneCorrespondante[3], &sStatut_Zx[u8ZoneCorrespondante[3]], &circle_demande_zone_4, &circle_demande_zone_4Painter, &circle_mode_zone_4, &circle_mode_zone_4Painter, &textArea_temp_zone_4, textAreaBuffer_Temp_Zone_4, &textArea_on_off_zone_4, textArea_on_off_zone_4Buffer);
 	}
 	// Affichage de la zone 5
 	if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneCorrespondante[4]], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[4]], sizeof(S_PARAM_ZX)))
 	{
 		changeConfigZx(u8ZoneCorrespondante[4], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[4]], &button_orange_zone_5, &button_marron_zone_5, &button_violet_zone_5, &textArea_zone_5, textAreaBuffer_Zone_5);
-		changeZx(u8ZoneCorrespondante[4], &sStatut_Zx[u8ZoneCorrespondante[4]], &circle_demande_zone_5, &circle_demande_zone_5Painter, &circle_mode_zone_5, &circle_mode_zone_5Painter, &textArea_temp_zone_5, textAreaBuffer_Temp_Zone_5);
+		changeZx(u8ZoneCorrespondante[4], &sStatut_Zx[u8ZoneCorrespondante[4]], &circle_demande_zone_5, &circle_demande_zone_5Painter, &circle_mode_zone_5, &circle_mode_zone_5Painter, &textArea_temp_zone_5, textAreaBuffer_Temp_Zone_5, &textArea_on_off_zone_5, textArea_on_off_zone_5Buffer);
 	}
 	// Affichage de la zone 6
 	if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneCorrespondante[5]], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[5]], sizeof(S_PARAM_ZX)))
 	{
 		changeConfigZx(u8ZoneCorrespondante[5], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[5]], &button_orange_zone_6, &button_marron_zone_6, &button_violet_zone_6, &textArea_zone_6, textAreaBuffer_Zone_6);
-		changeZx(u8ZoneCorrespondante[5], &sStatut_Zx[u8ZoneCorrespondante[5]], &circle_demande_zone_6, &circle_demande_zone_6Painter, &circle_mode_zone_6, &circle_mode_zone_6Painter, &textArea_temp_zone_6, textAreaBuffer_Temp_Zone_6);
+		changeZx(u8ZoneCorrespondante[5], &sStatut_Zx[u8ZoneCorrespondante[5]], &circle_demande_zone_6, &circle_demande_zone_6Painter, &circle_mode_zone_6, &circle_mode_zone_6Painter, &textArea_temp_zone_6, textAreaBuffer_Temp_Zone_6, &textArea_on_off_zone_6, textArea_on_off_zone_6Buffer);
 	}
 	// Affichage de la zone 7
 	if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneCorrespondante[6]], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[6]], sizeof(S_PARAM_ZX)))
 	{
 		changeConfigZx(u8ZoneCorrespondante[6], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[6]], &button_orange_zone_7, &button_marron_zone_7, &button_violet_zone_7, &textArea_zone_7, textAreaBuffer_Zone_7);
-		changeZx(u8ZoneCorrespondante[6], &sStatut_Zx[u8ZoneCorrespondante[6]], &circle_demande_zone_7, &circle_demande_zone_7Painter, &circle_mode_zone_7, &circle_mode_zone_7Painter, &textArea_temp_zone_7, textAreaBuffer_Temp_Zone_7);
+		changeZx(u8ZoneCorrespondante[6], &sStatut_Zx[u8ZoneCorrespondante[6]], &circle_demande_zone_7, &circle_demande_zone_7Painter, &circle_mode_zone_7, &circle_mode_zone_7Painter, &textArea_temp_zone_7, textAreaBuffer_Temp_Zone_7, &textArea_on_off_zone_7, textArea_on_off_zone_7Buffer);
 	}
 	// Affichage de la zone 8
 	if(memcmp(&sConfig_IHM_old.sParam_Zx[u8ZoneCorrespondante[7]], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[7]], sizeof(S_PARAM_ZX)))
 	{
 		changeConfigZx(u8ZoneCorrespondante[7], &sConfig_IHM->sParam_Zx[u8ZoneCorrespondante[7]], &button_orange_zone_8, &button_marron_zone_8, &button_violet_zone_8, &textArea_zone_8, textAreaBuffer_Zone_8);
-		changeZx(u8ZoneCorrespondante[7], &sStatut_Zx[u8ZoneCorrespondante[7]], &circle_demande_zone_8, &circle_demande_zone_8Painter, &circle_mode_zone_8, &circle_mode_zone_8Painter, &textArea_temp_zone_8, textAreaBuffer_Temp_Zone_8);
+		changeZx(u8ZoneCorrespondante[7], &sStatut_Zx[u8ZoneCorrespondante[7]], &circle_demande_zone_8, &circle_demande_zone_8Painter, &circle_mode_zone_8, &circle_mode_zone_8Painter, &textArea_temp_zone_8, textAreaBuffer_Temp_Zone_8, &textArea_on_off_zone_8, textArea_on_off_zone_8Buffer);
 	}
 	//
 	memcpy(&sConfig_IHM_old, sConfig_IHM, sizeof(S_CONFIG_IHM));
@@ -327,7 +327,7 @@ void MultizonesView::changeConfigZx(uint8_t u8Zone, S_PARAM_ZX *sParam_Zx, touch
 	button_violet_zone->invalidate();
 }
 
-void MultizonesView::changeZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx, touchgfx::Circle *circle_demande_zone, touchgfx::PainterRGB565 *circle_demande_zonePainter, touchgfx::Circle *circle_mode_zone, touchgfx::PainterRGB565 *circle_mode_zonePainter, touchgfx::TextAreaWithOneWildcard *textArea_temp_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_Temp_Zone)
+void MultizonesView::changeZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx, touchgfx::Circle *circle_demande_zone, touchgfx::PainterRGB565 *circle_demande_zonePainter, touchgfx::Circle *circle_mode_zone, touchgfx::PainterRGB565 *circle_mode_zonePainter, touchgfx::TextAreaWithOneWildcard *textArea_temp_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_Temp_Zone,touchgfx::TextAreaWithOneWildcard *textArea_on_off_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_on_off_Zone)
 {
 	// Mode et demande de la zone
 	switch(sStatut_Zx->Mode)
@@ -361,9 +361,29 @@ void MultizonesView::changeZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx, touchgfx:
 	circle_mode_zone->invalidate();
 	circle_demande_zone->invalidate();
 	//
-	Unicode::snprintfFloat(textAreaBuffer_Temp_Zone, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
-	textArea_temp_zone->setWildcard(textAreaBuffer_Temp_Zone);
-	textArea_temp_zone->invalidate();
+	if (sConfig_IHM.sParam_Zx[u8Zone].type_zone.zone.TypeThermostat != TH_CONTACT)
+	{
+		textArea_on_off_zone->setVisible(false);
+		textArea_temp_zone->setVisible(true);
+		Unicode::snprintfFloat(textAreaBuffer_Temp_Zone, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
+		textArea_temp_zone->setWildcard(textAreaBuffer_Temp_Zone);
+		textArea_temp_zone->invalidate();
+	}
+	else
+	{
+		textArea_temp_zone->setVisible(false);
+		textArea_on_off_zone->setVisible(true);
+		if (sStatut_Zx->bTorThermostat == 1)
+		{
+		  Unicode::snprintf(textAreaBuffer_on_off_Zone, 4, touchgfx::TypedText(T_TEXT_ON_CENTRE_DEFAUT).getText());
+		}
+		else
+		{
+		  Unicode::snprintf(textAreaBuffer_on_off_Zone, 4, touchgfx::TypedText(T_TEXT_OFF_CENTRE_DEFAUT).getText());
+		}
+		textArea_on_off_zone->setWildcard(textAreaBuffer_on_off_Zone);
+		textArea_on_off_zone->invalidate();
+	}
 }
 
 void MultizonesView::changeStatutPAC(S_STATUT_PAC *sStatut_PAC)

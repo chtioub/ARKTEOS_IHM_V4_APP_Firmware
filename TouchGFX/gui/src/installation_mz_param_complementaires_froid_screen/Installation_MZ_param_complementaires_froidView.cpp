@@ -26,6 +26,7 @@ Installation_MZ_param_complementaires_froidView::Installation_MZ_param_complemen
 
 	// Mode Froid actif oui/non
 	bModeFroid = (sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid == 1) ? true : false;
+	bThContactModeFroid = (sConfig_IHM.sParam_PAC.bThermostatContactModeFroid == 1) ? true : false;
 	if(bModeFroid == false)
 	{
 		toggleButton_oui_oui_non_rafraichissement.forceState(false);
@@ -35,9 +36,21 @@ Installation_MZ_param_complementaires_froidView::Installation_MZ_param_complemen
 		toggleButton_non_oui_non_rafraichissement.setTouchable(false);
 		toggleButton_non_oui_non_rafraichissement.invalidate();
 		container_temp_depart_eau_raf.setVisible(false);
+		container_config_contact.setVisible(false);
+		container_config_contact.invalidate();
 	}
 	else
 	{
+		if (bThContactModeFroid)
+		{
+			buttonWithLabel_oui_config_contact.setVisible(true);
+			buttonWithLabel_non_config_contact.setVisible(false);
+		}
+		else
+		{
+			buttonWithLabel_oui_config_contact.setVisible(false);
+			buttonWithLabel_non_config_contact.setVisible(true);
+		}
 		toggleButton_oui_oui_non_rafraichissement.forceState(true);
 		toggleButton_oui_oui_non_rafraichissement.setTouchable(false);
 		toggleButton_oui_oui_non_rafraichissement.invalidate();
@@ -45,6 +58,8 @@ Installation_MZ_param_complementaires_froidView::Installation_MZ_param_complemen
 		toggleButton_non_oui_non_rafraichissement.setTouchable(true);
 		toggleButton_non_oui_non_rafraichissement.invalidate();
 		container_temp_depart_eau_raf.setVisible(true);
+		container_config_contact.setVisible(true);
+		container_config_contact.invalidate();
 	}
 	container_temp_depart_eau_raf.invalidate();
 
@@ -163,6 +178,9 @@ void Installation_MZ_param_complementaires_froidView::bouton_oui()
 
 		container_temp_depart_eau_raf.setVisible(true);
 		container_temp_depart_eau_raf.invalidate();
+
+		container_config_contact.setVisible(true);
+		container_config_contact.invalidate();
 	}
 }
 
@@ -179,8 +197,31 @@ void Installation_MZ_param_complementaires_froidView::bouton_non()
 
 		container_temp_depart_eau_raf.setVisible(false);
 		container_temp_depart_eau_raf.invalidate();
+
+		container_config_contact.setVisible(false);
+		container_config_contact.invalidate();
 	}
 }
+
+void Installation_MZ_param_complementaires_froidView::bouton_th_contact()
+{
+	if (bThContactModeFroid == true)
+	{
+		buttonWithLabel_oui_config_contact.setVisible(false);
+		buttonWithLabel_non_config_contact.setVisible(true);
+		buttonWithLabel_non_config_contact.invalidate();
+		bThContactModeFroid = false;
+	}
+	else
+	{
+		buttonWithLabel_non_config_contact.setVisible(false);
+		buttonWithLabel_oui_config_contact.setVisible(true);
+		buttonWithLabel_oui_config_contact.invalidate();
+		bThContactModeFroid = true;
+	}
+}
+
+
 
 void Installation_MZ_param_complementaires_froidView::bouton_retour()
 {
@@ -219,6 +260,8 @@ void Installation_MZ_param_complementaires_froidView::bouton_valider()
 	{
 		sParamZxMZtemp[sConfig_Hydrau_temp.u8NumZone].bModeFroid = 0;
 	}
+	sConfig_IHM.sParam_PAC.bThermostatContactModeFroid = (bThContactModeFroid == true);
+	presenter->c_install_param();
 	//Cas de groupes
 	if (sConfig_Hydrau_temp.u8NumZone < 8)
 	{

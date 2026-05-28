@@ -28,7 +28,7 @@ public:
 	void bouton_zone_7();
 	void bouton_zone_8();
 	void changeConfigZx(uint8_t u8Zone, S_PARAM_ZX *sParam_Zx, touchgfx::Button *button_orange_zone, touchgfx::Button *button_marron_zone, touchgfx::Button *button_violet_zone, touchgfx::TextAreaWithOneWildcard *textArea_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_Zone);
-	void changeZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx, touchgfx::Circle *circle_demande_zone, touchgfx::PainterRGB565 *circle_demande_zonePainter, touchgfx::Circle *circle_mode_zone, touchgfx::PainterRGB565 *circle_mode_zonePainter, touchgfx::TextAreaWithOneWildcard *textArea_temp_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_Temp_Zone);
+	void changeZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx, touchgfx::Circle *circle_demande_zone, touchgfx::PainterRGB565 *circle_demande_zonePainter, touchgfx::Circle *circle_mode_zone, touchgfx::PainterRGB565 *circle_mode_zonePainter, touchgfx::TextAreaWithOneWildcard *textArea_temp_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_Temp_Zone,touchgfx::TextAreaWithOneWildcard *textArea_on_off_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_on_off_Zone);
 protected:
 	bool bConnexionDistance;
 	uint8_t u8ZoneCorrespondante[NB_ZONE];
