@@ -1,5 +1,6 @@
 #include <gui/accueil_screen/AccueilView.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <stdlib.h>
 
 AccueilView::AccueilView()//:
 {
@@ -303,7 +304,7 @@ void AccueilView::Timer_500ms()
 		{
 			textArea_on_off_temp_zone_1.setVisible(false);
 			textArea_temp_zone_1.setVisible(true);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Zx_old[u8Zone1].i16Tint) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 7, sStatut_Zx_old[u8Zone1].i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx_old[u8Zone1].i16Tint / 10), abs(sStatut_Zx_old[u8Zone1].i16Tint % 10));
 			textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
 			textArea_temp_zone_1.invalidate();
 		}
@@ -417,7 +418,7 @@ void AccueilView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
 {
 	if(sStatut_Primaire_old.u16In_Pression_Eau != sStatut_Primaire->u16In_Pression_Eau)
 	{
-	    Unicode::snprintfFloat(textAreaBuffer_Pression, 7, "%.1f", ((float) sStatut_Primaire->u16In_Pression_Eau) / 10);
+	    Unicode::snprintf(textAreaBuffer_Pression, 7, "%d.%d", sStatut_Primaire->u16In_Pression_Eau / 10, abs(sStatut_Primaire->u16In_Pression_Eau % 10));
 	    textArea_pression.setWildcard(textAreaBuffer_Pression);
 	    textArea_pression.invalidate();
 	    textArea_pression_chauf.setWildcard(textAreaBuffer_Pression);
@@ -426,7 +427,7 @@ void AccueilView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
 	//
 	if(sConfig_IHM_old.sParam_PAC.TypeRegul >= REGUL_EXTERNE && sStatut_Primaire_old.i16TeauBallonTampon != sStatut_Primaire->i16TeauBallonTampon)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Primaire->i16TeauBallonTampon) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 7, sStatut_Primaire->i16TeauBallonTampon < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16TeauBallonTampon / 10), abs(sStatut_Primaire->i16TeauBallonTampon % 10));
 		textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
 		textArea_temp_zone_1.invalidate();
 	}
@@ -988,7 +989,7 @@ void AccueilView::changeStatutPiscine(S_STATUT_PISCINE *sStatut_Piscine)
 {
 	if(sStatut_Piscine_old.i16TeauPiscine != sStatut_Piscine->i16TeauPiscine)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_Piscine, 7, "%.1f", ((float) sStatut_Piscine->i16TeauPiscine) / 10);
+		Unicode::snprintf(textAreaBuffer_Piscine, 7, sStatut_Piscine->i16TeauPiscine < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Piscine->i16TeauPiscine / 10), abs(sStatut_Piscine->i16TeauPiscine % 10));
 		textArea_temp_piscine.setWildcard(textAreaBuffer_Piscine);
 		textArea_temp_piscine.invalidate();
 	}
@@ -1000,7 +1001,7 @@ void AccueilView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 	// Température extérieure
 	if(sCyclRegFrigo_old.commun.i16Text != sCyclRegFrigo->commun.i16Text)
 	{
-	    Unicode::snprintfFloat(textAreaBuffer_Temp_Ext, 7, "%.1f", ((float) sCyclRegFrigo->commun.i16Text) / 10);
+	    Unicode::snprintf(textAreaBuffer_Temp_Ext, 7, sCyclRegFrigo->commun.i16Text < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->commun.i16Text / 10), abs(sCyclRegFrigo->commun.i16Text % 10));
 	    textArea_temp_ext.setWildcard(textAreaBuffer_Temp_Ext);
 	    textArea_temp_ext.invalidate();
 	}
@@ -1067,20 +1068,20 @@ void AccueilView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 	// Pression capteur
 	if(sConfig_IHM_old.sModele_PAC.u8ModelePAC == GEOTWIN_IV && sCyclRegFrigo_old.pac.geotwin.InPress.i16Pression_EauCaptage != sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage)
 	{
-	    Unicode::snprintfFloat(textAreaBuffer_Pression_Capt, 7, "%.1f", ((float) sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage) / 10);
+	    Unicode::snprintf(textAreaBuffer_Pression_Capt, 7, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage / 10), abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage % 10));
 	    textArea_pression_capt.setWildcard(textAreaBuffer_Pression_Capt);
 	    textArea_pression_capt.invalidate();
 	}
 	else if(sConfig_IHM_old.sModele_PAC.u8ModelePAC == INVERTERRA && sCyclRegFrigo_old.pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur != sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur)
 	{
-	    Unicode::snprintfFloat(textAreaBuffer_Pression_Capt, 7, "%.1f", ((float) sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur) / 10);
+	    Unicode::snprintf(textAreaBuffer_Pression_Capt, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur % 10));
 	    textArea_pression_capt.setWildcard(textAreaBuffer_Pression_Capt);
 	    textArea_pression_capt.invalidate();
 	}
 	// Pression chauffage
 	if(sConfig_IHM_old.sModele_PAC.u8ModelePAC == INVERTERRA && sCyclRegFrigo_old.pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage != sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_pression_chauf, 7, "%.1f", ((float) sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage) / 10);
+		Unicode::snprintf(textAreaBuffer_pression_chauf, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage % 10));
 		textArea_pression_chauf.setWildcard(textAreaBuffer_pression_chauf);
 		textArea_pression_chauf.invalidate();
 	}
@@ -1136,7 +1137,7 @@ void AccueilView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx)
 
 				if(sStatut_Zx_old[u8Zone].i16Tint != sStatut_Zx->i16Tint)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
+					Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 7, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
 					textArea_temp_zone_1.setVisible(true);
 					textArea_temp_zone_1.invalidate();
@@ -1208,7 +1209,7 @@ void AccueilView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx)
 
 				if(sStatut_Zx_old[u8Zone].i16Tint != sStatut_Zx->i16Tint)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_2, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
+					Unicode::snprintf(textAreaBuffer_Temp_Zone_2, 7, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					textArea_temp_zone_2.setWildcard(textAreaBuffer_Temp_Zone_2);
 					textArea_temp_zone_2.invalidate();
 				}
@@ -1313,7 +1314,7 @@ void AccueilView::changeStatutECS(S_STATUT_ECS *sStatut_ECS)
 	}
 	if(sStatut_ECS_old.i16TeauMilieu != sStatut_ECS->i16TeauMilieu)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ECS_Milieu, 7, "%.1f", ((float) sStatut_ECS->i16TeauMilieu) / 10);
+		Unicode::snprintf(textAreaBuffer_ECS_Milieu, 7, sStatut_ECS->i16TeauMilieu < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_ECS->i16TeauMilieu / 10), abs(sStatut_ECS->i16TeauMilieu % 10));
 		textArea_temp_ecs.setWildcard(textAreaBuffer_ECS_Milieu);
 		textArea_temp_ecs.invalidate();
 		textArea_ecs_milieu.setWildcard(textAreaBuffer_ECS_Milieu);
@@ -1321,7 +1322,7 @@ void AccueilView::changeStatutECS(S_STATUT_ECS *sStatut_ECS)
 	}
 	if(sStatut_ECS_old.i16TeauBas != sStatut_ECS->i16TeauBas)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ECS_Bas, 7, "%.1f", ((float) sStatut_ECS->i16TeauBas) / 10);
+		Unicode::snprintf(textAreaBuffer_ECS_Bas, 7, sStatut_ECS->i16TeauBas < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_ECS->i16TeauBas / 10), abs(sStatut_ECS->i16TeauBas % 10));
 		textArea_ecs_bas.setWildcard(textAreaBuffer_ECS_Bas);
 		textArea_ecs_bas.invalidate();
 	}
@@ -1547,7 +1548,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				circle_mode_zone_1.invalidate();
 				circle_demande_zone_1.invalidate();
 			}
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Zx_old[u8Zone1].i16Tint) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 7, sStatut_Zx_old[u8Zone1].i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx_old[u8Zone1].i16Tint / 10), abs(sStatut_Zx_old[u8Zone1].i16Tint % 10));
 			textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
 			textArea_temp_zone_1.invalidate();
 		}
@@ -1620,7 +1621,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			circle_demande_zone_2.setPainter(circle_demande_zone_2Painter);
 			circle_mode_zone_2.invalidate();
 			circle_demande_zone_2.invalidate();
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_2, 7, "%.1f", ((float) sStatut_Zx_old[u8Zone2].i16Tint) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_Zone_2, 7, sStatut_Zx_old[u8Zone2].i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx_old[u8Zone2].i16Tint / 10), abs(sStatut_Zx_old[u8Zone2].i16Tint % 10));
 			textArea_temp_zone_2.setWildcard(textAreaBuffer_Temp_Zone_2);
 			textArea_temp_zone_2.invalidate();
 		}
@@ -1634,7 +1635,7 @@ void AccueilView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			Unicode::snprintf(textAreaBuffer_Zone_1, 11, touchgfx::TypedText(T_TEXT_TEMP_BALLON_EXTERNE_CENTRE_DEFAUT).getText());
 			textArea_zone_1.setWildcard(textAreaBuffer_Zone_1);
 			textArea_zone_1.invalidate();
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Zone_1, 7, "%.1f", ((float) sStatut_Primaire_old.i16TeauBallonTampon) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_Zone_1, 7, sStatut_Primaire_old.i16TeauBallonTampon < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire_old.i16TeauBallonTampon / 10), abs(sStatut_Primaire_old.i16TeauBallonTampon % 10));
 			textArea_temp_zone_1.setWildcard(textAreaBuffer_Temp_Zone_1);
 			textArea_temp_zone_1.invalidate();
 			// Affichage d'une zone uniquement

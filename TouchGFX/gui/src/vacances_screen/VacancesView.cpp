@@ -1,4 +1,5 @@
 #include <gui/vacances_screen/VacancesView.hpp>
+#include <stdlib.h>
 
 VacancesView::VacancesView()
 {
@@ -90,7 +91,7 @@ VacancesView::VacancesView()
 		// Position de la température
 		u16ConsignePiscineTempVacances = sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Vacances;
 		slider_piscine.setValue(u16ConsignePiscineTempVacances);
-		Unicode::snprintfFloat(textAreaBuffer_TempPiscine, 6, "%.1f", ((float) u16ConsignePiscineTempVacances) / 10);
+		Unicode::snprintf(textAreaBuffer_TempPiscine, 6, "%d.%d", u16ConsignePiscineTempVacances / 10, abs(u16ConsignePiscineTempVacances % 10));
 		textArea_piscine.moveTo((int) ((float) slider_piscine.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_piscine.getWidth() / 2 + ((float) u16ConsignePiscineTempVacances - (float) 150) * (float) 1.42), 51);
 		textArea_piscine.setWildcard(textAreaBuffer_TempPiscine);
 
@@ -123,7 +124,7 @@ VacancesView::VacancesView()
 void VacancesView::slider_pisc(int sliderValue)
 {
 	u16ConsignePiscineTempVacances = sliderValue;
-	Unicode::snprintfFloat(textAreaBuffer_TempPiscine, 6, "%.1f", ((float) u16ConsignePiscineTempVacances) / 10);
+	Unicode::snprintf(textAreaBuffer_TempPiscine, 6, "%d.%d", u16ConsignePiscineTempVacances / 10, abs(u16ConsignePiscineTempVacances % 10));
 	textArea_piscine.moveTo((int) ((float) slider_piscine.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_piscine.getWidth() / 2 + ((float) u16ConsignePiscineTempVacances - (float) 150) * (float) 1.42), 51);
 	textArea_piscine.setWildcard(textAreaBuffer_TempPiscine);
 	textArea_piscine.invalidate();
@@ -158,7 +159,7 @@ void VacancesView::bouton_piscine_plus()
 	u16ConsignePiscineTempVacances++;
 	slider_piscine.setValue(u16ConsignePiscineTempVacances);
 	slider_piscine.invalidate();
-	Unicode::snprintfFloat(textAreaBuffer_TempPiscine, 6, "%.1f", ((float) u16ConsignePiscineTempVacances) / 10);
+	Unicode::snprintf(textAreaBuffer_TempPiscine, 6, "%d.%d", u16ConsignePiscineTempVacances / 10, abs(u16ConsignePiscineTempVacances % 10));
 	textArea_piscine.moveTo((int) ((float) slider_piscine.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_piscine.getWidth() / 2 + ((float) u16ConsignePiscineTempVacances - (float) 150) * (float) 1.42), 51);
 	textArea_piscine.setWildcard(textAreaBuffer_TempPiscine);
 	textArea_piscine.invalidate();
@@ -172,7 +173,7 @@ void VacancesView::bouton_piscine_moins()
 	u16ConsignePiscineTempVacances--;
 	slider_piscine.setValue(u16ConsignePiscineTempVacances);
 	slider_piscine.invalidate();
-	Unicode::snprintfFloat(textAreaBuffer_TempPiscine, 6, "%.1f", ((float) u16ConsignePiscineTempVacances) / 10);
+	Unicode::snprintf(textAreaBuffer_TempPiscine, 6, "%d.%d", u16ConsignePiscineTempVacances / 10, abs(u16ConsignePiscineTempVacances % 10));
 	textArea_piscine.moveTo((int) ((float) slider_piscine.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_piscine.getWidth() / 2 + ((float) u16ConsignePiscineTempVacances - (float) 150) * (float) 1.42), 51);
 	textArea_piscine.setWildcard(textAreaBuffer_TempPiscine);
 	textArea_piscine.invalidate();
@@ -280,7 +281,7 @@ void VacancesView::slider_zone8(int sliderValue)
 
 void VacancesView::slider_zone_x(uint8_t u8Zone, touchgfx::TextAreaWithOneWildcard *textArea_zone, touchgfx::Unicode::UnicodeChar *textAreaBuffer_TempZone)
 {
-	Unicode::snprintfFloat(textAreaBuffer_TempZone, 6, "%.1f", ((float) u16ConsigneTempVacances[u8Zone]) / 10);
+	Unicode::snprintf(textAreaBuffer_TempZone, 6, "%d.%d", u16ConsigneTempVacances[u8Zone] / 10, abs(u16ConsigneTempVacances[u8Zone] % 10));
 	textArea_zone->moveTo((int) ((float) slider_zone_1.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_zone->getWidth() / 2 + ((float) u16ConsigneTempVacances[u8Zone] - (float) 120) * (float) 1.98), 51);
 	textArea_zone->setWildcard(textAreaBuffer_TempZone);
 	textArea_zone->invalidate();
@@ -334,7 +335,7 @@ void VacancesView::bouton_zone_x_plus(uint8_t u8Zone, touchgfx::Slider *slider_z
 	u16ConsigneTempVacances[u8Zone]++;
 	slider_zone->setValue(u16ConsigneTempVacances[u8Zone]);
 	slider_zone->invalidate();
-	Unicode::snprintfFloat(textAreaBuffer_TempZone, 6, "%.1f", ((float) u16ConsigneTempVacances[u8Zone]) / 10);
+	Unicode::snprintf(textAreaBuffer_TempZone, 6, "%d.%d", u16ConsigneTempVacances[u8Zone] / 10, abs(u16ConsigneTempVacances[u8Zone] % 10));
 	textArea_zone->moveTo((int) ((float) slider_zone->getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_zone->getWidth() / 2 + ((float) u16ConsigneTempVacances[u8Zone] - (float) 120) * (float) 1.98), 51);
 	textArea_zone->setWildcard(textAreaBuffer_TempZone);
 	textArea_zone->invalidate();
@@ -387,7 +388,7 @@ void VacancesView::bouton_zone_x_moins(uint8_t u8Zone, touchgfx::Slider *slider_
 	u16ConsigneTempVacances[u8Zone]--;
 	slider_zone->setValue(u16ConsigneTempVacances[u8Zone]);
 	slider_zone->invalidate();
-	Unicode::snprintfFloat(textAreaBuffer_TempZone, 6, "%.1f", ((float) u16ConsigneTempVacances[u8Zone]) / 10);
+	Unicode::snprintf(textAreaBuffer_TempZone, 6, "%d.%d", u16ConsigneTempVacances[u8Zone] / 10, abs(u16ConsigneTempVacances[u8Zone] % 10));
 	textArea_zone->moveTo((int) ((float) slider_zone->getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_zone->getWidth() / 2 + ((float) u16ConsigneTempVacances[u8Zone] - (float) 120) * (float) 1.98), 51);
 	textArea_zone->setWildcard(textAreaBuffer_TempZone);
 	textArea_zone->invalidate();
@@ -415,7 +416,7 @@ void VacancesView::affichageZone(uint8_t u8Zone, touchgfx::Container *container_
 	// Position de la température
 	u16ConsigneTempVacances[u8Zone] = sConfig_IHM.sMode_Zx[u8Zone].i16Consigne_Tint_Vacances;
 	slider_zone->setValue(u16ConsigneTempVacances[u8Zone]);
-	Unicode::snprintfFloat(textAreaBuffer_TempZone, 6, "%.1f", ((float) u16ConsigneTempVacances[u8Zone]) / 10);
+	Unicode::snprintf(textAreaBuffer_TempZone, 6, "%d.%d", u16ConsigneTempVacances[u8Zone] / 10, abs(u16ConsigneTempVacances[u8Zone] % 10));
 	textArea_zone->moveTo((int) ((float) slider_zone->getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_zone->getWidth() / 2 + ((float) u16ConsigneTempVacances[u8Zone] - (float) 120) * (float) 1.98), 51);
 	textArea_zone->setWildcard(textAreaBuffer_TempZone);
 	// Nom de la zone

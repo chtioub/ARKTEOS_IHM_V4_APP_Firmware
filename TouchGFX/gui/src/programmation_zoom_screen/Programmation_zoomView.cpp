@@ -1,5 +1,6 @@
 #include <gui/programmation_zoom_screen/Programmation_zoomView.hpp>
 #include <BitmapDatabase.hpp>
+#include <stdlib.h>
 
 Programmation_zoomView::Programmation_zoomView()
 {
@@ -34,9 +35,9 @@ Programmation_zoomView::Programmation_zoomView()
 			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUD_CONFORT_PLUS_L108XH71_ID);
 			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUD_ZOOM_L108XH71_ID);
 			//
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 5, "%.1f", ((float) sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit) / 10);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 5, "%.1f", ((float) sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal) / 10);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 5, "%.1f", ((float) sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_1, 5, sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit / 10), abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit % 10));
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_2, 5, sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal / 10), abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Normal % 10));
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_3, 5, sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort / 10), abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort % 10));
 			// Titre
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_ZONE_CHAUD_CENTRE_DEFAUT).getText());
 			Unicode::fromUTF8(sConfig_IHM.sParam_Zx[u8ZoneSelect].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
@@ -53,9 +54,9 @@ Programmation_zoomView::Programmation_zoomView()
 			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_FROID_CONFORT_L108XH71_ID);
 			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_FROID_ZOOM_L108XH71_ID);
 			//
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 5, "%.1f", ((float) sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit) / 10);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 5, "%.1f", ((float) sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort) / 10);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 5, "%.1f", ((float) sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_1, 5, sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit / 10), abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Reduit % 10));
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_2, 5, sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort / 10), abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort % 10));
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_3, 5, sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort / 10), abs(sConfig_IHM.sMode_Zx[u8ZoneSelect].i16Consigne_Tint_Confort % 10));
 			// Titre
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_ZONE_CHAUD_CENTRE_DEFAUT).getText());
 			Unicode::fromUTF8(sConfig_IHM.sParam_Zx[u8ZoneSelect].u8NomZone, &textAreaBuffer_Titre[Unicode::strlen(textAreaBuffer_Titre)], 10);
@@ -72,9 +73,9 @@ Programmation_zoomView::Programmation_zoomView()
 			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUD_CONFORT_PLUS_L108XH71_ID);
 			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_CHAUD_ZOOM_L108XH71_ID);
 			//
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Reduit) - 200);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Normal) - 200);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_1, 6, "%d.0", sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Reduit - 200);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_2, 6, "%d.0", sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Normal - 200);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_3, 6, "%d.0", sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort - 200);
 			// Titre
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_REGUL_EXT_CHAUD_CENTRE_DEFAUT).getText());
 			barre_titre.titre(textAreaBuffer_Titre);
@@ -91,9 +92,9 @@ Programmation_zoomView::Programmation_zoomView()
 			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_FROID_CONFORT_L108XH71_ID);
 			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_FROID_ZOOM_L108XH71_ID);
 			//
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Reduit) - 200);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 6, "%.1f", ((float) sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort) - 200);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_1, 6, "%d.0", sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Reduit - 200);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_2, 6, "%d.0", sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort - 200);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_3, 6, "%d.0", sConfig_IHM.sMode_RegulExt.i16Consigne_Eau_Confort - 200);
 			// Titre
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_REGUL_EXT_RAFRAICHISSEMENT_CENTRE_DEFAUT).getText());
 			barre_titre.titre(textAreaBuffer_Titre);
@@ -109,9 +110,9 @@ Programmation_zoomView::Programmation_zoomView()
 			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_PISCINE_ON_L108XH71_ID);
 			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_PISCINE_ZOOM_L108XH71_ID);
 			//
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 5, "%.1f", ((float) sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal) / 10);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 5, "%.1f", ((float) sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal) / 10);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 5, "%.1f", ((float) sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_1, 5, sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal / 10), abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal % 10));
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_2, 5, sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal / 10), abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal % 10));
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_3, 5, sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal / 10), abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal % 10));
 			// Titre
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_PISCINE_CENTRE_DEFAUT).getText());
 			barre_titre.titre(textAreaBuffer_Titre);
@@ -145,9 +146,9 @@ Programmation_zoomView::Programmation_zoomView()
 			bouton3 = touchgfx::Bitmap(BITMAP_BOUTON_PROG_PISCINE_CONFORT_L108XH71_ID);
 			bouton_mixte = touchgfx::Bitmap(BITMAP_BOUTON_PROG_PISCINE_ZOOM_L108XH71_ID);
 			//
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_1, 5, "%.1f", ((float) sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Reduit) / 10);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_2, 5, "%.1f", ((float) sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal) / 10);
-			Unicode::snprintfFloat(textAreaBuffer_Temp_Affichee_3, 5, "%.1f", ((float) sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Confort) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_1, 5, sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Reduit < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Reduit / 10), abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Reduit % 10));
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_2, 5, sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal / 10), abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Normal % 10));
+			Unicode::snprintf(textAreaBuffer_Temp_Affichee_3, 5, sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Confort < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Confort / 10), abs(sConfig_IHM.sMode_Piscine.i16Consigne_Piscine_Confort % 10));
 			// Titre
 			Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_PROG_PISCINE_CENTRE_DEFAUT).getText());
 			barre_titre.titre(textAreaBuffer_Titre);

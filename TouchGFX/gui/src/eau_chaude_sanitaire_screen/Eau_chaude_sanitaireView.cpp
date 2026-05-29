@@ -1,5 +1,6 @@
 #include <gui/eau_chaude_sanitaire_screen/Eau_chaude_sanitaireView.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <stdlib.h>
 
 Eau_chaude_sanitaireView::Eau_chaude_sanitaireView()
 {
@@ -62,7 +63,7 @@ void Eau_chaude_sanitaireView::slider_consigne(int sliderValue)
 		sliderValue = u16Consigne;
 	}
 	else u16Consigne = sliderValue;
-    Unicode::snprintfFloat(textAreaBuffer_consigne, 5, "%.1f", ((float) u16Consigne) / 10.0);
+    Unicode::snprintf(textAreaBuffer_consigne, 5, "%d.%d", u16Consigne / 10, abs(u16Consigne % 10));
     textArea_rose.setWildcard(textAreaBuffer_consigne);
     textArea_rose.moveTo((int)((float) slider_rose.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_rose.getWidth()/2  + ((float)sliderValue - (float)400) * (float)1.98),51);
     textArea_rose.invalidate();
@@ -80,7 +81,7 @@ void Eau_chaude_sanitaireView::slider_relance(int sliderValue)
 		sliderValue = u16Relance;
 	}
 	else u16Relance = sliderValue;
-    Unicode::snprintfFloat(textAreaBuffer_relance, 5, "%.1f", ((float) u16Relance) / 10.0);
+    Unicode::snprintf(textAreaBuffer_relance, 5, "%d.%d", u16Relance / 10, abs(u16Relance % 10));
     textArea_gris.setWildcard(textAreaBuffer_relance);
     textArea_gris.moveTo((int)((float) slider_gris.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_gris.getWidth()/2 + ((float)sliderValue - (float)400) * (float)1.98),51);
     textArea_gris.invalidate();
@@ -99,7 +100,7 @@ void Eau_chaude_sanitaireView::bouton_plus_relance()
 		u16Relance = u16Consigne - 50;
 	}
 	slider_gris.setValue((int)u16Relance);
-    Unicode::snprintfFloat(textAreaBuffer_relance, 5, "%.1f", ((float) u16Relance) / 10.0);
+    Unicode::snprintf(textAreaBuffer_relance, 5, "%d.%d", u16Relance / 10, abs(u16Relance % 10));
     textArea_gris.setWildcard(textAreaBuffer_relance);
     textArea_gris.moveTo((int)((float) slider_gris.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_gris.getWidth()/2 + ((float)u16Relance - (float)400) * (float)1.98),51);
     textArea_gris.invalidate();
@@ -118,7 +119,7 @@ void Eau_chaude_sanitaireView::bouton_moins_relance()
 		u16Relance = 400;
 	}
 	slider_gris.setValue((int)u16Relance);
-    Unicode::snprintfFloat(textAreaBuffer_consigne, 5, "%.1f", ((float) u16Relance) / 10.0);
+    Unicode::snprintf(textAreaBuffer_consigne, 5, "%d.%d", u16Relance / 10, abs(u16Relance % 10));
     textArea_gris.setWildcard(textAreaBuffer_relance);
     textArea_gris.moveTo((int)((float) slider_gris.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_gris.getWidth()/2 + ((float)u16Relance - (float)400) * (float)1.98),51);
     textArea_gris.invalidate();
@@ -138,7 +139,7 @@ void Eau_chaude_sanitaireView::bouton_plus_consigne()
 	}
 	//
 	slider_rose.setValue(u16Consigne);
-    Unicode::snprintfFloat(textAreaBuffer_consigne, 5, "%.1f", ((float) u16Consigne) / 10.0);
+    Unicode::snprintf(textAreaBuffer_consigne, 5, "%d.%d", u16Consigne / 10, abs(u16Consigne % 10));
     textArea_rose.setWildcard(textAreaBuffer_consigne);
     textArea_rose.moveTo((int)((float) slider_gris.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_gris.getWidth()/2 + ((float)u16Consigne - (float)400) * (float)1.98),51);
     textArea_rose.invalidate();
@@ -157,7 +158,7 @@ void Eau_chaude_sanitaireView::bouton_moins_consigne()
 		u16Consigne = u16Relance + 50;
 	}
 	slider_rose.setValue((int)u16Consigne);
-    Unicode::snprintfFloat(textAreaBuffer_consigne, 5, "%.1f", ((float) u16Consigne) / 10.0);
+    Unicode::snprintf(textAreaBuffer_consigne, 5, "%d.%d", u16Consigne / 10, abs(u16Consigne % 10));
     textArea_rose.setWildcard(textAreaBuffer_consigne);
     textArea_rose.moveTo((int)((float) slider_gris.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_gris.getWidth()/2 + ((float)u16Consigne - (float)400) * (float)1.98),51);
     textArea_rose.invalidate();
@@ -263,13 +264,13 @@ void Eau_chaude_sanitaireView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		u16Relance = sConfig_IHM->sMode_ECS.i16Consigne_ECS_Relance;
 		//
 		slider_rose.setValue((int) u16Consigne);
-	    Unicode::snprintfFloat(textAreaBuffer_consigne, 5, "%.1f", ((float) u16Consigne) / 10.0);
+	    Unicode::snprintf(textAreaBuffer_consigne, 5, "%d.%d", u16Consigne / 10, abs(u16Consigne % 10));
 	    textArea_rose.setWildcard(textAreaBuffer_consigne);
 	    textArea_rose.moveTo((int)((float) slider_gris.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_gris.getWidth()/2 + ((float)u16Consigne - (float)400) * (float)1.98),51);
 	    textArea_rose.invalidate();
 		//
 		slider_gris.setValue((int) u16Relance);
-	    Unicode::snprintfFloat(textAreaBuffer_relance, 5, "%.1f", ((float) u16Relance) / 10.0);
+	    Unicode::snprintf(textAreaBuffer_relance, 5, "%d.%d", u16Relance / 10, abs(u16Relance % 10));
 	    textArea_gris.setWildcard(textAreaBuffer_relance);
 	    textArea_gris.moveTo((int)((float) slider_gris.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_gris.getWidth()/2 + ((float)u16Relance - (float)400) * (float)1.98),51);
 	    textArea_gris.invalidate();

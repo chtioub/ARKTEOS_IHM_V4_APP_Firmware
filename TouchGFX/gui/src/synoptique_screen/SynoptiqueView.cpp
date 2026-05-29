@@ -1,6 +1,7 @@
 #include <gui/synoptique_screen/SynoptiqueView.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Utils.hpp>
+#include <stdlib.h>
 SynoptiqueView::SynoptiqueView()
 {
 //	memset(&sConfig_IHM_old, 0, sizeof(sConfig_IHM_old));
@@ -482,10 +483,10 @@ void SynoptiqueView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
 		case AJPAC_III:
 			if (u8Page == 2)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_T_Dep_Prim_ajp, 7,"%.1f", ((float)(sStatut_Primaire->i16TeauDepart)/10));
+				Unicode::snprintf(textAreaBuffer_T_Dep_Prim_ajp, 7, sStatut_Primaire->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16TeauDepart / 10), abs(sStatut_Primaire->i16TeauDepart % 10));
 				textArea_temp_dep_ch_ajp.setWildcard(textAreaBuffer_T_Dep_Prim_ajp);
 				textArea_temp_dep_ch_ajp.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_T_Ret_Prim_ajp, 7,"%.1f", ((float)(sStatut_Primaire->i16TeauRetour)/10));
+				Unicode::snprintf(textAreaBuffer_T_Ret_Prim_ajp, 7, sStatut_Primaire->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16TeauRetour / 10), abs(sStatut_Primaire->i16TeauRetour % 10));
 				textArea_temp_ret_ch_ajp.setWildcard(textAreaBuffer_T_Ret_Prim_ajp);
 				textArea_temp_ret_ch_ajp.invalidate();
 				Unicode::snprintf(textAreaBuffer_DebitPrim_ajp, 7,"%d", (sStatut_Primaire->u16DebitPrimaire));
@@ -501,10 +502,10 @@ void SynoptiqueView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Primaire)
 		case TIMAX_III:
 			if(u8Page == 2)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Prim_mitsu, 7,"%.1f", ((float)(sStatut_Primaire->i16TeauDepart)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Dep_Prim_mitsu, 7, sStatut_Primaire->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16TeauDepart / 10), abs(sStatut_Primaire->i16TeauDepart % 10));
 				textArea_temp_dep_ch_mitsu.setWildcard(textAreaBuffer_Temp_Dep_Prim_mitsu);
 				textArea_temp_dep_ch_mitsu.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Prim_mitsu, 7,"%.1f", ((float)(sStatut_Primaire->i16TeauRetour)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Ret_Prim_mitsu, 7, sStatut_Primaire->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16TeauRetour / 10), abs(sStatut_Primaire->i16TeauRetour % 10));
 				textArea_temp_ret_ch_mitsu.setWildcard(textAreaBuffer_Temp_Ret_Prim_mitsu);
 				textArea_temp_ret_ch_mitsu.invalidate();
 				Unicode::snprintf(textAreaBuffer_Temp_Debit_mitsu, 7,"%d", (sStatut_Primaire->u16DebitPrimaire));
@@ -530,19 +531,19 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 			case AJPAC_III:
 				if (u8Page == 2)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Liq_Evap_Cond_P2_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Liq_Evap_Cond_P2_ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B % 10));
 					textArea_temp_out_liquide_ech_int_ajp.setWildcard(textAreaBuffer_Temp_Liq_Evap_Cond_P2_ajp);
 					textArea_temp_out_liquide_ech_int_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Liq_Cond410_P2_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_A)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Liq_Cond410_P2_ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_A < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_A / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_A % 10));
 					textArea_out_liq_cond_410_ajp.setWildcard(textAreaBuffer_Temp_Liq_Cond410_P2_ajp);
 					textArea_out_liq_cond_410_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Liq_Cond134_P2_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TEV134)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Liq_Cond134_P2_ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TEV134 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TEV134 / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TEV134 % 10));
 					textArea_temp_evap_134_ajp.setWildcard(textAreaBuffer_Temp_Liq_Cond134_P2_ajp);
 					textArea_temp_evap_134_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_HP_134_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH134)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_HP_134_ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH134 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH134 / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH134 % 10));
 					textArea_temp_hp_134_ajp.setWildcard(textAreaBuffer_Temp_HP_134_ajp);
 					textArea_temp_hp_134_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_HP_Cible_134_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP134_Cible)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_HP_Cible_134_ajp, 7, sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP134_Cible < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP134_Cible / 10), abs(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP134_Cible % 10));
 					textArea_temp_hp_134_cible_ajp.setWildcard(textAreaBuffer_Temp_HP_Cible_134_ajp);
 					textArea_temp_hp_134_cible_ajp.invalidate();
 					Unicode::snprintf(textAreaBuffer_EEV_410_P2_ajp, 4,"%d", (sCyclRegFrigo->pac.ajpac.sStatut_EEV_AJP.u16Position_Pulse_EEV410));
@@ -551,22 +552,22 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					Unicode::snprintf(textAreaBuffer_EEV_134_P2_ajp, 4,"%d", (sCyclRegFrigo->pac.ajpac.sStatut_EEV_AJP.u16Position_Pulse_EEV134));
 					textArea_EEV_134_ajp.setWildcard(textAreaBuffer_EEV_134_P2_ajp);
 					textArea_EEV_134_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Press_Cond_134_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134)/10));
+					Unicode::snprintf(textAreaBuffer_Press_Cond_134_ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134 % 10));
 					textArea_pression_temp_hp_134_ajp.setWildcard1(textAreaBuffer_Press_Cond_134_ajp);
 					i16TempCond = ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C2, 0, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134 /*+ 10*/);
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_134_ajp, 7,"%.1f", ((float)(i16TempCond)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Cond_134_ajp, 7, i16TempCond < 0 ? "-%d.%d" : "%d.%d", abs(i16TempCond / 10), abs(i16TempCond % 10));
 					textArea_pression_temp_hp_134_ajp.setWildcard2(textAreaBuffer_Temp_Cond_134_ajp);
 					textArea_pression_temp_hp_134_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Press_Evap_134_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134)/10));
+					Unicode::snprintf(textAreaBuffer_Press_Evap_134_ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134 % 10));
 					textArea_pression_temp_bp_134_ajp.setWildcard1(textAreaBuffer_Press_Evap_134_ajp);
 					i16TempEvap = ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C2, 0, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134 /*+ 10*/);
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Evap_134_ajp, 7,"%.1f", ((float)(i16TempEvap)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Evap_134_ajp, 7, i16TempEvap < 0 ? "-%d.%d" : "%d.%d", abs(i16TempEvap / 10), abs(i16TempEvap % 10));
 					textArea_pression_temp_bp_134_ajp.setWildcard2(textAreaBuffer_Temp_Evap_134_ajp);
 					textArea_pression_temp_bp_134_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Press_410_P2_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT)/10));
+					Unicode::snprintf(textAreaBuffer_Press_410_P2_ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT % 10));
 					textArea_pression_temp_inter_p2_ajp.setWildcard1(textAreaBuffer_Press_410_P2_ajp);
 					i16TempCond = ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C1, 0, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT /*+ 10*/);
-					Unicode::snprintfFloat(textAreaBuffer_TempCond_410_P2_ajp, 7,"%.1f", ((float)(i16TempCond)/10));
+					Unicode::snprintf(textAreaBuffer_TempCond_410_P2_ajp, 7, i16TempCond < 0 ? "-%d.%d" : "%d.%d", abs(i16TempCond / 10), abs(i16TempCond % 10));
 					textArea_pression_temp_inter_p2_ajp.setWildcard2(textAreaBuffer_TempCond_410_P2_ajp);
 					textArea_pression_temp_inter_p2_ajp.invalidate();
 
@@ -580,13 +581,13 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 				}
 				else //AJPAC Page 1
 				{
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Ext, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Text)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Ext, 7, sCyclRegFrigo->pac.ajpac.sRetourFan.i16Text < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Text / 10), abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Text % 10));
 					textArea_temp_ext.setWildcard(textAreaBuffer_Temp_Ext);
 					textArea_temp_ext.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_In_UE_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_IN)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_In_UE_ajp, 7, sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_IN < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_IN / 10), abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_IN % 10));
 					textArea_temp_in_ue_ajp.setWildcard(textAreaBuffer_Temp_In_UE_ajp);
 					textArea_temp_in_ue_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Out_UE_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_OUT)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Out_UE_ajp, 7, sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_OUT < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_OUT / 10), abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_OUT % 10));
 					textArea_temp_out_ue_ajp.setWildcard(textAreaBuffer_Temp_Out_UE_ajp);
 					textArea_temp_out_ue_ajp.invalidate();
 					Unicode::snprintf(textAreaBuffer_Percent_Ventil_UE_ajp, 4,"%d", (sCyclRegFrigo->pac.ajpac.sRetourFan.u16In_Vitesse_Ventilateur_1));
@@ -608,75 +609,75 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					Unicode::snprintf(textAreaBuffer_freq_Comp_410_ajp, 4,"%d", (sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.u8Freq_Comp410));
 					textArea_palier_hz_comp_ajp.setWildcard2(textAreaBuffer_freq_Comp_410_ajp);
 					textArea_palier_hz_comp_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_HP_Comp_410_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH410)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_HP_Comp_410_ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH410 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH410 / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH410 % 10));
 					textArea_temp_hp_410_ajp.setWildcard(textAreaBuffer_Temp_HP_Comp_410_ajp);
 					textArea_temp_hp_410_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_In_Bout_Liqu_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_In_Bout_Liqu_ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B % 10));
 					textArea_temp_in_bout_liq_ajp.setWildcard(textAreaBuffer_Temp_In_Bout_Liqu_ajp);
 					textArea_temp_in_bout_liq_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_HP_Cible_410_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP410_Cible)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_HP_Cible_410_ajp, 7, sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP410_Cible < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP410_Cible / 10), abs(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP410_Cible % 10));
 					textArea_temp_HP_cible_ajp.setWildcard(textAreaBuffer_Temp_HP_Cible_410_ajp);
 					textArea_temp_HP_cible_ajp.invalidate();
 
 
-					Unicode::snprintfFloat(textAreaBuffer_Press_Cond_410_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410)/10));
+					Unicode::snprintf(textAreaBuffer_Press_Cond_410_ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 % 10));
 					textArea_pression_temp_hp_ajp.setWildcard1(textAreaBuffer_Press_Cond_410_ajp);
-					Unicode::snprintfFloat(textAreaBuffer_Press_Evap_410_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410)/10));
+					Unicode::snprintf(textAreaBuffer_Press_Evap_410_ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 % 10));
 					textArea_pression_temp_bp_ajp.setWildcard1(textAreaBuffer_Press_Evap_410_ajp);
-					Unicode::snprintfFloat(textAreaBuffer_Press_Cond2_410_ajp, 7,"%.1f", ((float)(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT)/10));
+					Unicode::snprintf(textAreaBuffer_Press_Cond2_410_ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT % 10));
 					textArea_pression_temp_hp_int_ajp.setWildcard1(textAreaBuffer_Press_Cond2_410_ajp);
 
 					i16TempCond = ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C1, 0, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 /*+ 10*/);
 					i16TempEvap = ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C1, 0, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 /*+ 10*/);
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_410_ajp, 7,"%.1f", ((float)(i16TempCond)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Cond_410_ajp, 7, i16TempCond < 0 ? "-%d.%d" : "%d.%d", abs(i16TempCond / 10), abs(i16TempCond % 10));
 					textArea_pression_temp_hp_ajp.setWildcard2(textAreaBuffer_Temp_Cond_410_ajp);
 					textArea_pression_temp_hp_ajp.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Evap_410_ajp, 7,"%.1f", ((float)(i16TempEvap)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Evap_410_ajp, 7, i16TempEvap < 0 ? "-%d.%d" : "%d.%d", abs(i16TempEvap / 10), abs(i16TempEvap % 10));
 					textArea_pression_temp_bp_ajp.setWildcard2(textAreaBuffer_Temp_Evap_410_ajp);
 					textArea_pression_temp_bp_ajp.invalidate();
 					i16TempCond = ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C1, 0, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT /*+ 10*/);
-					Unicode::snprintfFloat(textAreaBuffer_Temp_Cond2_P1_410_ajp, 7,"%.1f", ((float)(i16TempCond)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_Cond2_P1_410_ajp, 7, i16TempCond < 0 ? "-%d.%d" : "%d.%d", abs(i16TempCond / 10), abs(i16TempCond % 10));
 					textArea_pression_temp_hp_int_ajp.setWildcard2(textAreaBuffer_Temp_Cond2_P1_410_ajp);
 					textArea_pression_temp_hp_int_ajp.invalidate();
 				}
 				break;
 
 			case GEOTWIN_IV:
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Prim_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_PRI)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Dep_Prim_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_PRI < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_PRI / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_PRI % 10));
 				textArea_temp_DCh_invert.setWildcard(textAreaBuffer_Temp_Dep_Prim_Inv);
 				textArea_temp_DCh_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Prim_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_PRI)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Ret_Prim_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_PRI < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_PRI / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_PRI % 10));
 				textArea_temp_RCh_invert.setWildcard(textAreaBuffer_Temp_Ret_Prim_Inv);
 				textArea_temp_RCh_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Capt_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_CAP)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Ret_Capt_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_CAP < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_CAP / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_CAP % 10));
 				textArea_temp_RCa_invert.setWildcard(textAreaBuffer_Temp_Ret_Capt_Inv);
 				textArea_temp_RCa_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Capt_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_CAP)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Dep_Capt_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_CAP < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_CAP / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_CAP % 10));
 				textArea_temp_DCa_invert.setWildcard(textAreaBuffer_Temp_Dep_Capt_Inv);
 				textArea_temp_DCa_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Ext, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_EXT)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Ext, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_EXT < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_EXT / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_EXT % 10));
 				textArea_temp_ext.setWildcard(textAreaBuffer_Temp_Ext);
 				textArea_temp_ext.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_HP1_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP1)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_HP1_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP1 / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP1 % 10));
 				textArea_temp_HP1_invert.setWildcard(textAreaBuffer_Temp_HP1_Inv);
 				textArea_temp_HP1_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_BP1_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP1)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_BP1_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP1 / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP1 % 10));
 				textArea_temp_BP1_invert.setWildcard(textAreaBuffer_Temp_BP1_Inv);
 				textArea_temp_BP1_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Liq_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_COND)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Liq_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_COND < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_COND / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_COND % 10));
 				textArea_temp_liquide_invert.setWildcard(textAreaBuffer_Temp_Liq_Inv);
 				textArea_temp_liquide_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Press_Cond_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP)/10));
+				Unicode::snprintf(textAreaBuffer_Press_Cond_Inv, 7, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP / 10), abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP % 10));
 				textArea_pression_temp_hp_invert.setWildcard1(textAreaBuffer_Press_Cond_Inv);
-				Unicode::snprintfFloat(textAreaBuffer_Press_Evap_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP)/10));
+				Unicode::snprintf(textAreaBuffer_Press_Evap_Inv, 7, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP / 10), abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP % 10));
 				textArea_pression_temp_bp_invert.setWildcard1(textAreaBuffer_Press_Evap_Inv);
 
 				i16TempCond = ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C1, 1, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP /*+ 10*/);
 				i16TempEvap = ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C1, 0, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP /*+ 10*/);
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_Inv, 7,"%.1f", ((float)(i16TempCond)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Cond_Inv, 7, i16TempCond < 0 ? "-%d.%d" : "%d.%d", abs(i16TempCond / 10), abs(i16TempCond % 10));
 				textArea_pression_temp_hp_invert.setWildcard2(textAreaBuffer_Temp_Cond_Inv);
 				textArea_pression_temp_hp_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Evap_Inv, 7,"%.1f", ((float)(i16TempEvap)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Evap_Inv, 7, i16TempEvap < 0 ? "-%d.%d" : "%d.%d", abs(i16TempEvap / 10), abs(i16TempEvap % 10));
 				textArea_pression_temp_bp_invert.setWildcard2(textAreaBuffer_Temp_Evap_Inv);
 				textArea_pression_temp_bp_invert.invalidate();
 				Unicode::snprintf(textAreaBuffer_Temp_HP_Cible_Inv, 6,"%d", sCyclRegFrigo->pac.geotwin.StatutEEV.i16Temp_HP_Cible);
@@ -710,10 +711,10 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					textArea_on_off_comp_2.setWildcard(textAreaBuffer_comp_2);
 					textArea_on_off_comp_2.invalidate();
 					//Temp hp et bp
-					Unicode::snprintfFloat(textAreaBuffer_Temp_HP2_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP2)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_HP2_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP2 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP2 / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP2 % 10));
 					textArea_temp_HP2_invert.setWildcard(textAreaBuffer_Temp_HP2_Inv);
 					textArea_temp_HP2_invert.invalidate();
-					Unicode::snprintfFloat(textAreaBuffer_Temp_BP2_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP2)/10));
+					Unicode::snprintf(textAreaBuffer_Temp_BP2_Inv, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP2 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP2 / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP2 % 10));
 					textArea_temp_BP2_invert.setWildcard(textAreaBuffer_Temp_BP2_Inv);
 					textArea_temp_BP2_invert.invalidate();
 
@@ -721,41 +722,41 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 
 				break;
 			case GEOINVERTER:
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Prim_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Dep_Prim_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire % 10));
 				textArea_temp_DCh_invert.setWildcard(textAreaBuffer_Temp_Dep_Prim_Inv);
 				textArea_temp_DCh_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Prim_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Ret_Prim_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire % 10));
 				textArea_temp_RCh_invert.setWildcard(textAreaBuffer_Temp_Ret_Prim_Inv);
 				textArea_temp_RCh_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Capt_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Ret_Capt_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur % 10));
 				textArea_temp_RCa_invert.setWildcard(textAreaBuffer_Temp_Ret_Capt_Inv);
 				textArea_temp_RCa_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Capt_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Dep_Capt_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur % 10));
 				textArea_temp_DCa_invert.setWildcard(textAreaBuffer_Temp_Dep_Capt_Inv);
 				textArea_temp_DCa_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Ext, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Ext, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur % 10));
 				textArea_temp_ext.setWildcard(textAreaBuffer_Temp_Ext);
 				textArea_temp_ext.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_HP1_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_HP1_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1 / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1 % 10));
 				textArea_temp_HP1_invert.setWildcard(textAreaBuffer_Temp_HP1_Inv);
 				textArea_temp_HP1_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_BP1_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_BP1_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1 / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1 % 10));
 				textArea_temp_BP1_invert.setWildcard(textAreaBuffer_Temp_BP1_Inv);
 				textArea_temp_BP1_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Liq_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Liq_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide % 10));
 				textArea_temp_liquide_invert.setWildcard(textAreaBuffer_Temp_Liq_Inv);
 				textArea_temp_liquide_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Press_Cond_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1)/10));
+				Unicode::snprintf(textAreaBuffer_Press_Cond_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 % 10));
 				textArea_pression_temp_hp_invert.setWildcard1(textAreaBuffer_Press_Cond_Inv);
-				Unicode::snprintfFloat(textAreaBuffer_Press_Evap_Inv, 7,"%.1f", ((float)(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1)/10));
+				Unicode::snprintf(textAreaBuffer_Press_Evap_Inv, 7, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 % 10));
 				textArea_pression_temp_bp_invert.setWildcard1(textAreaBuffer_Press_Evap_Inv);
 
 				i16TempCond = ConvertPressionToTemperature(GAZ_R454C, 1, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 + 10);
 				i16TempEvap = ConvertPressionToTemperature(GAZ_R454C, 0, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 + 10);
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_Inv, 7,"%.1f", ((float)(i16TempCond)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Cond_Inv, 7, i16TempCond < 0 ? "-%d.%d" : "%d.%d", abs(i16TempCond / 10), abs(i16TempCond % 10));
 				textArea_pression_temp_hp_invert.setWildcard2(textAreaBuffer_Temp_Cond_Inv);
 				textArea_pression_temp_hp_invert.invalidate();
-				Unicode::snprintfFloat(textAreaBuffer_Temp_Evap_Inv, 7,"%.1f", ((float)(i16TempEvap)/10));
+				Unicode::snprintf(textAreaBuffer_Temp_Evap_Inv, 7, i16TempEvap < 0 ? "-%d.%d" : "%d.%d", abs(i16TempEvap / 10), abs(i16TempEvap % 10));
 				textArea_pression_temp_bp_invert.setWildcard2(textAreaBuffer_Temp_Evap_Inv);
 				textArea_pression_temp_bp_invert.invalidate();
 				Unicode::snprintf(textAreaBuffer_Temp_HP_Cible_Inv, 6,"%d", (sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16Temp_HP_Cible[0]/10));
@@ -839,13 +840,13 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 							if(sConfig_IHM.sModele_PAC.Gaz_C1 == GAZ_R32)
 							{
 								i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
-								Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+								Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 								textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 							}
 							else
 							{
 								i16PressCond = ConvertTemperatureToPression(GAZ_R410,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10);
-								Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+								Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 								textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 							}
 							Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));
@@ -895,13 +896,13 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 						if(sConfig_IHM.sModele_PAC.Gaz_C1 == GAZ_R32)
 						{
 							i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
-							Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+							Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 							textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 						}
 						else
 						{
 							i16PressCond = ConvertTemperatureToPression(GAZ_R410,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS * 10);
-							Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+							Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 							textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 
 						}
@@ -964,7 +965,7 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 							textArea_temp_in_ue_mitsu.invalidate();
 						}
 						i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
-						Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+						Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 						textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 						Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));
 						textArea_pression_temp_hp_mitsu.setWildcard2(textAreaBuffer_Temp_Cond_mitsu);
@@ -1014,13 +1015,13 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 						if(sConfig_IHM.sModele_PAC.Gaz_C1 == GAZ_R32)
 						{
 							i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
-							Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+							Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 							textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 						}
 						else
 						{
 							i16PressCond = ConvertTemperatureToPression(GAZ_R410,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS * 10);
-							Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+							Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 							textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 						}
 						Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));
@@ -1058,7 +1059,7 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					}
 					else if (sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_BAGUIO || sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_ZURAN ||sConfig_IHM.sModele_PAC.u3SousTypePAC == SOUS_TYPE_ZURAN_PUZ)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_Temp_Liquide_mitsu, 7,"%.1f", ((float)sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 / 10));
+						Unicode::snprintf(textAreaBuffer_Temp_Liquide_mitsu, 7, sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 / 10), abs(sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 % 10));
 						textArea_temp_liquide_mitsu.setWildcard(textAreaBuffer_Temp_Liquide_mitsu);
 						textArea_temp_liquide_mitsu.invalidate();
 					}
@@ -1082,14 +1083,14 @@ void SynoptiqueView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					if(sConfig_IHM.sModele_PAC.Gaz_C1 == GAZ_R32)
 					{
 						i16PressCond = ConvertTemperatureToPression(GAZ_R32,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS);
-						Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+						Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 						textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 					}
 					else
 					{
 
 						i16PressCond = ConvertTemperatureToPression(GAZ_R410,sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10);
-						Unicode::snprintfFloat(textAreaBuffer_Press_Cond_mitsu, 7,"%.1f", ((float)i16PressCond/10));
+						Unicode::snprintf(textAreaBuffer_Press_Cond_mitsu, 7, i16PressCond < 0 ? "-%d.%d" : "%d.%d", abs(i16PressCond / 10), abs(i16PressCond % 10));
 						textArea_pression_temp_hp_mitsu.setWildcard1(textAreaBuffer_Press_Cond_mitsu);
 					}
 					Unicode::snprintf(textAreaBuffer_Temp_Cond_mitsu, 7,"%d", (sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS));

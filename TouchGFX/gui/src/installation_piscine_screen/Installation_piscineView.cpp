@@ -1,4 +1,5 @@
 #include <gui/installation_piscine_screen/Installation_piscineView.hpp>
+#include <stdlib.h>
 
 Installation_piscineView::Installation_piscineView()
 {
@@ -43,7 +44,7 @@ Installation_piscineView::Installation_piscineView()
 	bouton_50_50();
 	//
 	u16ConsignePiscine = sConfig_Piscine_temp.sParam_Piscine.i16ConsigneDepartEauPiscine;
-    Unicode::snprintfFloat(textAreaBuffer_Temp, 5, "%.1f", ((float) u16ConsignePiscine) / 10);
+    Unicode::snprintf(textAreaBuffer_Temp, 5, "%d.%d", u16ConsignePiscine / 10, abs(u16ConsignePiscine % 10));
     textArea_valeur_consigne_eau_piscine.setWildcard(textAreaBuffer_Temp);
 	//
 	if(sConfig_Piscine_temp.sParam_Piscine.bGestionSimultanee)
@@ -141,7 +142,7 @@ void Installation_piscineView::bouton_consigne_moins()
 	//
 	u16ConsignePiscine--;
 	//
-    Unicode::snprintfFloat(textAreaBuffer_Temp, 5, "%.1f", ((float) u16ConsignePiscine) / 10);
+    Unicode::snprintf(textAreaBuffer_Temp, 5, "%d.%d", u16ConsignePiscine / 10, abs(u16ConsignePiscine % 10));
     textArea_valeur_consigne_eau_piscine.setWildcard(textAreaBuffer_Temp);
     textArea_valeur_consigne_eau_piscine.invalidate();
 }
@@ -152,7 +153,7 @@ void Installation_piscineView::bouton_consigne_plus()
 	//
 	u16ConsignePiscine++;
 	//
-    Unicode::snprintfFloat(textAreaBuffer_Temp, 5, "%.1f", ((float) u16ConsignePiscine) / 10);
+    Unicode::snprintf(textAreaBuffer_Temp, 5, "%d.%d", u16ConsignePiscine / 10, abs(u16ConsignePiscine % 10));
     textArea_valeur_consigne_eau_piscine.setWildcard(textAreaBuffer_Temp);
     textArea_valeur_consigne_eau_piscine.invalidate();
 }

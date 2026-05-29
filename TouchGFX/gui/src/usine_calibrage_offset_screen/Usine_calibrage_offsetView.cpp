@@ -1,4 +1,5 @@
 #include <gui/usine_calibrage_offset_screen/Usine_calibrage_offsetView.hpp>
+#include <stdlib.h>
 
 Usine_calibrage_offsetView::Usine_calibrage_offsetView()
 {
@@ -157,7 +158,7 @@ void Usine_calibrage_offsetView::bouton_droit_offset_sonde()
 void Usine_calibrage_offsetView::update_offset()
 {
 	Unicode::UnicodeChar degre[] = {0x00B0};
-	Unicode::snprintfFloat(textAreaBuffer_valeur_offset, 6, "%.1f", ((float)sConfig_OffsetTemp.i8Val[u8NumSonde]/10));
+	Unicode::snprintf(textAreaBuffer_valeur_offset, 6, sConfig_OffsetTemp.i8Val[u8NumSonde] < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_OffsetTemp.i8Val[u8NumSonde] / 10), abs(sConfig_OffsetTemp.i8Val[u8NumSonde] % 10));
 	Unicode::snprintf(&textAreaBuffer_valeur_offset[Unicode::strlen(textAreaBuffer_valeur_offset)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_valeur_offset[Unicode::strlen(textAreaBuffer_valeur_offset)], 2,"C");
 	textArea_valeur_offset.setWildcard(textAreaBuffer_valeur_offset);

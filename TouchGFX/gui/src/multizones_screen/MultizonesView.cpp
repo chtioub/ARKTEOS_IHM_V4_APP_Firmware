@@ -1,4 +1,5 @@
 #include <gui/multizones_screen/MultizonesView.hpp>
+#include <stdlib.h>
 
 MultizonesView::MultizonesView()
 {
@@ -365,7 +366,7 @@ void MultizonesView::changeZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_Zx, touchgfx:
 	{
 		textArea_on_off_zone->setVisible(false);
 		textArea_temp_zone->setVisible(true);
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Zone, 7, "%.1f", ((float) sStatut_Zx->i16Tint) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Zone, 7, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 		textArea_temp_zone->setWildcard(textAreaBuffer_Temp_Zone);
 		textArea_temp_zone->invalidate();
 	}

@@ -1,6 +1,7 @@
 #include <gui/piscine_screen/PiscineView.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Utils.hpp>
+#include <stdlib.h>
 
 PiscineView::PiscineView()
 {
@@ -67,7 +68,7 @@ void PiscineView::slider_reduit(int sliderValue)
 	u16TempoEnvoiConsigne = 10;
 	//
 	u16ConsigneReduit = sliderValue;
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 5, "%.1f", ((float) u16ConsigneReduit) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneReduit, 5, "%d.%d", u16ConsigneReduit / 10, abs(u16ConsigneReduit % 10));
     textArea_vert_clair.setWildcard(textAreaBuffer_ConsigneReduit);
     textArea_vert_clair.moveTo((int)((float) slider_vert_clair.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert_clair.getWidth()/2  + ((float)sliderValue - (float)150) * (float)1.98),51);
     textArea_vert_clair.invalidate();
@@ -79,7 +80,7 @@ void PiscineView::slider_normal(int sliderValue)
 	u16TempoEnvoiConsigne = 10;
 	//
 	u16ConsigneNormal = sliderValue;
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 5, "%.1f", ((float) u16ConsigneNormal) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneNormal, 5, "%d.%d", u16ConsigneNormal / 10, abs(u16ConsigneNormal % 10));
     textArea_vert.setWildcard(textAreaBuffer_ConsigneNormal);
     textArea_vert.moveTo((int)((float) slider_vert.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert.getWidth()/2  + ((float)sliderValue - (float)150) * (float)1.98),51);
     textArea_vert.invalidate();
@@ -91,7 +92,7 @@ void PiscineView::slider_confort(int sliderValue)
 	u16TempoEnvoiConsigne = 10;
 	//
 	u16ConsigneConfort = sliderValue;
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 5, "%.1f", ((float) u16ConsigneConfort) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneConfort, 5, "%d.%d", u16ConsigneConfort / 10, abs(u16ConsigneConfort % 10));
     textArea_vert_fonce.setWildcard(textAreaBuffer_ConsigneConfort);
     textArea_vert_fonce.moveTo((int)((float) slider_vert_fonce.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert_fonce.getWidth()/2  + ((float)sliderValue - (float)150) * (float)1.98),51);
     textArea_vert_fonce.invalidate();
@@ -151,7 +152,7 @@ void PiscineView::bouton_plus_reduit()
 	touchgfx_printf("Bouton plus; val = %d\n", u16ConsigneReduit);
 	slider_vert_clair.setValue(u16ConsigneReduit);
 	slider_vert_clair.invalidate();
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 5, "%.1f", ((float) u16ConsigneReduit) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneReduit, 5, "%d.%d", u16ConsigneReduit / 10, abs(u16ConsigneReduit % 10));
     textArea_vert_clair.setWildcard(textAreaBuffer_ConsigneReduit);
     textArea_vert_clair.moveTo((int)((float) slider_vert_clair.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert_clair.getWidth()/2 + ((float)u16ConsigneReduit - (float)150) * (float)1.98),51);
     textArea_vert_clair.invalidate();
@@ -167,7 +168,7 @@ void PiscineView::bouton_moins_reduit()
 	u16ConsigneReduit--;
 	slider_vert_clair.setValue(u16ConsigneReduit);
 	slider_vert_clair.invalidate();
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 5, "%.1f", ((float) u16ConsigneReduit) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneReduit, 5, "%d.%d", u16ConsigneReduit / 10, abs(u16ConsigneReduit % 10));
     textArea_vert_clair.setWildcard(textAreaBuffer_ConsigneReduit);
     textArea_vert_clair.moveTo((int)((float) slider_vert_clair.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert_clair.getWidth()/2 + ((float)u16ConsigneReduit - (float)150) * (float)1.98),51);
     textArea_vert_clair.invalidate();
@@ -185,7 +186,7 @@ void PiscineView::bouton_plus_normal()
 	touchgfx_printf("Bouton plus; val = %d\n", u16ConsigneNormal);
 	slider_vert.setValue(u16ConsigneNormal);
 	slider_vert.invalidate();
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 5, "%.1f", ((float) u16ConsigneNormal) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneNormal, 5, "%d.%d", u16ConsigneNormal / 10, abs(u16ConsigneNormal % 10));
     textArea_vert.setWildcard(textAreaBuffer_ConsigneNormal);
     textArea_vert.moveTo((int)((float) slider_vert.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert.getWidth()/2 + ((float)u16ConsigneNormal - (float)150) * (float)1.98),51);
     textArea_vert.invalidate();
@@ -201,7 +202,7 @@ void PiscineView::bouton_moins_normal()
 	u16ConsigneNormal--;
 	slider_vert.setValue(u16ConsigneNormal);
 	slider_vert.invalidate();
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 5, "%.1f", ((float) u16ConsigneNormal) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneNormal, 5, "%d.%d", u16ConsigneNormal / 10, abs(u16ConsigneNormal % 10));
     textArea_vert.setWildcard(textAreaBuffer_ConsigneNormal);
     textArea_vert.moveTo((int)((float) slider_vert.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert.getWidth()/2 + ((float)u16ConsigneNormal - (float)150) * (float)1.98),51);
     textArea_vert.invalidate();
@@ -219,7 +220,7 @@ void PiscineView::bouton_plus_confort()
 	touchgfx_printf("Bouton plus; val = %d\n", u16ConsigneConfort);
 	slider_vert_fonce.setValue(u16ConsigneConfort);
 	slider_vert_fonce.invalidate();
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 5, "%.1f", ((float) u16ConsigneConfort) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneConfort, 5, "%d.%d", u16ConsigneConfort / 10, abs(u16ConsigneConfort % 10));
     textArea_vert_fonce.setWildcard(textAreaBuffer_ConsigneConfort);
     textArea_vert_fonce.moveTo((int)((float) slider_vert_fonce.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert_fonce.getWidth()/2 + ((float)u16ConsigneConfort - (float)150) * (float)1.98),51);
     textArea_vert_fonce.invalidate();
@@ -235,7 +236,7 @@ void PiscineView::bouton_moins_confort()
 	u16ConsigneConfort--;
 	slider_vert_fonce.setValue(u16ConsigneConfort);
 	slider_vert_fonce.invalidate();
-    Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 5, "%.1f", ((float) u16ConsigneConfort) / 10);
+    Unicode::snprintf(textAreaBuffer_ConsigneConfort, 5, "%d.%d", u16ConsigneConfort / 10, abs(u16ConsigneConfort % 10));
     textArea_vert_fonce.setWildcard(textAreaBuffer_ConsigneConfort);
     textArea_vert_fonce.moveTo((int)((float) slider_vert_fonce.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert_fonce.getWidth()/2 + ((float)u16ConsigneConfort - (float)150) * (float)1.98),51);
     textArea_vert_fonce.invalidate();
@@ -294,7 +295,7 @@ void PiscineView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		u16ConsigneConfort = sConfig_IHM->sMode_Piscine.i16Consigne_Piscine_Confort;
 		//
 		slider_vert_fonce.setValue(u16ConsigneConfort);
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 5, "%.1f", ((float) u16ConsigneConfort) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneConfort, 5, "%d.%d", u16ConsigneConfort / 10, abs(u16ConsigneConfort % 10));
 		textArea_vert_fonce.setWildcard(textAreaBuffer_ConsigneConfort);
 		textArea_vert_fonce.moveTo((int)((float) slider_vert_fonce.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert_fonce.getWidth()/2 + ((float)u16ConsigneConfort - (float)150) * (float)1.98),51);
 		textArea_vert_fonce.invalidate();
@@ -305,7 +306,7 @@ void PiscineView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		u16ConsigneNormal = sConfig_IHM->sMode_Piscine.i16Consigne_Piscine_Normal;
 		//
 		slider_vert.setValue(u16ConsigneNormal);
-	    Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 5, "%.1f", ((float) u16ConsigneNormal) / 10);
+	    Unicode::snprintf(textAreaBuffer_ConsigneNormal, 5, "%d.%d", u16ConsigneNormal / 10, abs(u16ConsigneNormal % 10));
 	    textArea_vert.setWildcard(textAreaBuffer_ConsigneNormal);
 	    textArea_vert.moveTo((int)((float) slider_vert.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert.getWidth()/2 + ((float)u16ConsigneNormal - (float)150) * (float)1.98),51);
 	    textArea_vert.invalidate();
@@ -316,7 +317,7 @@ void PiscineView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 		u16ConsigneReduit = sConfig_IHM->sMode_Piscine.i16Consigne_Piscine_Reduit;
 		//
 		slider_vert_clair.setValue(u16ConsigneReduit);
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 5, "%.1f", ((float) u16ConsigneReduit) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneReduit, 5, "%d.%d", u16ConsigneReduit / 10, abs(u16ConsigneReduit % 10));
 		textArea_vert_clair.setWildcard(textAreaBuffer_ConsigneReduit);
 		textArea_vert_clair.moveTo((int)((float) slider_vert_clair.getX() + 19 /*+ slider_gris.background.getX()*/ - textArea_vert_clair.getWidth()/2 + ((float)u16ConsigneReduit - (float)150) * (float)1.98),51);
 		textArea_vert_clair.invalidate();

@@ -1,5 +1,6 @@
 #include <gui/variables_systeme_screen/Variables_systemeView.hpp>
 #include <touchgfx/Utils.hpp>
+#include <stdlib.h>
 
 Variables_systemeView::Variables_systemeView()
 {
@@ -2091,25 +2092,25 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	}
     textArea_type_regul_val.invalidate();
     //
-	Unicode::snprintfFloat(textAreaBuffer_HystExtMoins, 7, "%.1f", ((float) sConfig_IHM->sParam_PAC.i8HysteresisTextMoins) / 10);
+	Unicode::snprintf(textAreaBuffer_HystExtMoins, 7, sConfig_IHM->sParam_PAC.i8HysteresisTextMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_PAC.i8HysteresisTextMoins / 10), abs(sConfig_IHM->sParam_PAC.i8HysteresisTextMoins % 10));
 	Unicode::snprintf(&textAreaBuffer_HystExtMoins[Unicode::strlen(textAreaBuffer_HystExtMoins)], 4," / ");
-	Unicode::snprintfFloat(textAreaBuffer_HystExtPlus, 7, "%.1f", ((float) sConfig_IHM->sParam_PAC.i8HysteresisTextPlus) / 10);
+	Unicode::snprintf(textAreaBuffer_HystExtPlus, 7, sConfig_IHM->sParam_PAC.i8HysteresisTextPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_PAC.i8HysteresisTextPlus / 10), abs(sConfig_IHM->sParam_PAC.i8HysteresisTextPlus % 10));
 	Unicode::snprintf(&textAreaBuffer_HystExtPlus[Unicode::strlen(textAreaBuffer_HystExtPlus)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_HystExtPlus[Unicode::strlen(textAreaBuffer_HystExtPlus)], 2,"C");
 	textArea_hysteresis_sonde_ext_val.setWildcard1(textAreaBuffer_HystExtMoins);
     textArea_hysteresis_sonde_ext_val.setWildcard2(textAreaBuffer_HystExtPlus);
     textArea_hysteresis_sonde_ext_val.invalidate();
     //
-	Unicode::snprintfFloat(textAreaBuffer_HystBallonMoins, 7, "%.1f", ((float) sConfig_IHM->sParam_PAC.i8HysteresisEauMoins) / 10);
+	Unicode::snprintf(textAreaBuffer_HystBallonMoins, 7, sConfig_IHM->sParam_PAC.i8HysteresisEauMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_PAC.i8HysteresisEauMoins / 10), abs(sConfig_IHM->sParam_PAC.i8HysteresisEauMoins % 10));
 	Unicode::snprintf(&textAreaBuffer_HystBallonMoins[Unicode::strlen(textAreaBuffer_HystBallonMoins)], 4," / ");
-	Unicode::snprintfFloat(textAreaBuffer_HystBallonPlus, 7, "%.1f", ((float) sConfig_IHM->sParam_PAC.i8HysteresisEauPlus) / 10);
+	Unicode::snprintf(textAreaBuffer_HystBallonPlus, 7, sConfig_IHM->sParam_PAC.i8HysteresisEauPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_PAC.i8HysteresisEauPlus / 10), abs(sConfig_IHM->sParam_PAC.i8HysteresisEauPlus % 10));
 	Unicode::snprintf(&textAreaBuffer_HystBallonPlus[Unicode::strlen(textAreaBuffer_HystBallonPlus)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_HystBallonPlus[Unicode::strlen(textAreaBuffer_HystBallonPlus)], 2,"C");
 	textArea_hysteresis_prim_val.setWildcard1(textAreaBuffer_HystBallonMoins);
 	textArea_hysteresis_prim_val.setWildcard2(textAreaBuffer_HystBallonPlus);
 	textArea_hysteresis_prim_val.invalidate();
 	//
-	Unicode::snprintfFloat(textAreaBuffer_TempExtEqui, 7, "%.1f", ((float) sConfig_IHM->sParam_PAC.i8Text_Ref_Appoint * 10) / 10);
+	Unicode::snprintf(textAreaBuffer_TempExtEqui, 7, sConfig_IHM->sParam_PAC.i8Text_Ref_Appoint * 10 < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_PAC.i8Text_Ref_Appoint * 10 / 10), abs(sConfig_IHM->sParam_PAC.i8Text_Ref_Appoint * 10 % 10));
 	Unicode::snprintf(&textAreaBuffer_TempExtEqui[Unicode::strlen(textAreaBuffer_TempExtEqui)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_TempExtEqui[Unicode::strlen(textAreaBuffer_TempExtEqui)], 2,"C");
 	textArea_temp_ext_equilibre_val.setWildcard(textAreaBuffer_TempExtEqui);
@@ -2282,10 +2283,10 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	//Zone 1 - Hyst Int
 	if (sConfig_IHM->sParam_Zx[0].type_zone.zone.TypeThermostat != TH_CONTACT)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_HystMoinsZone1, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[0].i8HysteresisMoins) / 10);
+		Unicode::snprintf(textAreaBuffer_HystMoinsZone1, 5, sConfig_IHM->sParam_Zx[0].i8HysteresisMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[0].i8HysteresisMoins / 10), abs(sConfig_IHM->sParam_Zx[0].i8HysteresisMoins % 10));
 		Unicode::snprintf(&textAreaBuffer_HystMoinsZone1[Unicode::strlen(textAreaBuffer_HystMoinsZone1)], 4," / ");
 		textArea_val_hyst_sonde_ambiance_zone_1.setWildcard1(textAreaBuffer_HystMoinsZone1);
-		Unicode::snprintfFloat(textAreaBuffer_HystPlusZone1, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[0].i8HysteresisPlus) / 10);
+		Unicode::snprintf(textAreaBuffer_HystPlusZone1, 5, sConfig_IHM->sParam_Zx[0].i8HysteresisPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[0].i8HysteresisPlus / 10), abs(sConfig_IHM->sParam_Zx[0].i8HysteresisPlus % 10));
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone1[Unicode::strlen(textAreaBuffer_HystPlusZone1)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone1[Unicode::strlen(textAreaBuffer_HystPlusZone1)], 2,"C");
 		textArea_val_hyst_sonde_ambiance_zone_1.setWildcard2(textAreaBuffer_HystPlusZone1);
@@ -2309,10 +2310,10 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	//Zone 2 - Hyst Int
 	if (sConfig_IHM->sParam_Zx[1].type_zone.zone.TypeThermostat != TH_CONTACT)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_HystMoinsZone2, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[1].i8HysteresisMoins) / 10);
+		Unicode::snprintf(textAreaBuffer_HystMoinsZone2, 5, sConfig_IHM->sParam_Zx[1].i8HysteresisMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[1].i8HysteresisMoins / 10), abs(sConfig_IHM->sParam_Zx[1].i8HysteresisMoins % 10));
 		Unicode::snprintf(&textAreaBuffer_HystMoinsZone2[Unicode::strlen(textAreaBuffer_HystMoinsZone2)], 4," / ");
 		textArea_val_hyst_sonde_ambiance_zone_2.setWildcard1(textAreaBuffer_HystMoinsZone2);
-		Unicode::snprintfFloat(textAreaBuffer_HystPlusZone2, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[1].i8HysteresisPlus) / 10);
+		Unicode::snprintf(textAreaBuffer_HystPlusZone2, 5, sConfig_IHM->sParam_Zx[1].i8HysteresisPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[1].i8HysteresisPlus / 10), abs(sConfig_IHM->sParam_Zx[1].i8HysteresisPlus % 10));
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone2[Unicode::strlen(textAreaBuffer_HystPlusZone2)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone2[Unicode::strlen(textAreaBuffer_HystPlusZone2)], 2,"C");
 		textArea_val_hyst_sonde_ambiance_zone_2.setWildcard2(textAreaBuffer_HystPlusZone2);
@@ -2337,10 +2338,10 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	//Zone 3 - Hyst Int
 	if (sConfig_IHM->sParam_Zx[2].type_zone.zone.TypeThermostat != TH_CONTACT)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_HystMoinsZone3, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[2].i8HysteresisMoins) / 10);
+		Unicode::snprintf(textAreaBuffer_HystMoinsZone3, 5, sConfig_IHM->sParam_Zx[2].i8HysteresisMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[2].i8HysteresisMoins / 10), abs(sConfig_IHM->sParam_Zx[2].i8HysteresisMoins % 10));
 		Unicode::snprintf(&textAreaBuffer_HystMoinsZone3[Unicode::strlen(textAreaBuffer_HystMoinsZone3)], 4," / ");
 		textArea_val_hyst_sonde_ambiance_zone_3.setWildcard1(textAreaBuffer_HystMoinsZone3);
-		Unicode::snprintfFloat(textAreaBuffer_HystPlusZone3, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[2].i8HysteresisPlus) / 10);
+		Unicode::snprintf(textAreaBuffer_HystPlusZone3, 5, sConfig_IHM->sParam_Zx[2].i8HysteresisPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[2].i8HysteresisPlus / 10), abs(sConfig_IHM->sParam_Zx[2].i8HysteresisPlus % 10));
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone3[Unicode::strlen(textAreaBuffer_HystPlusZone3)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone3[Unicode::strlen(textAreaBuffer_HystPlusZone3)], 2,"C");
 		textArea_val_hyst_sonde_ambiance_zone_3.setWildcard2(textAreaBuffer_HystPlusZone3);
@@ -2364,10 +2365,10 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	//Zone 4 - Hyst Int
 	if (sConfig_IHM->sParam_Zx[3].type_zone.zone.TypeThermostat != TH_CONTACT)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_HystMoinsZone4, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[3].i8HysteresisMoins) / 10);
+		Unicode::snprintf(textAreaBuffer_HystMoinsZone4, 5, sConfig_IHM->sParam_Zx[3].i8HysteresisMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[3].i8HysteresisMoins / 10), abs(sConfig_IHM->sParam_Zx[3].i8HysteresisMoins % 10));
 		Unicode::snprintf(&textAreaBuffer_HystMoinsZone4[Unicode::strlen(textAreaBuffer_HystMoinsZone4)], 4," / ");
 		textArea_val_hyst_sonde_ambiance_zone_4.setWildcard1(textAreaBuffer_HystMoinsZone4);
-		Unicode::snprintfFloat(textAreaBuffer_HystPlusZone4, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[3].i8HysteresisPlus) / 10);
+		Unicode::snprintf(textAreaBuffer_HystPlusZone4, 5, sConfig_IHM->sParam_Zx[3].i8HysteresisPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[3].i8HysteresisPlus / 10), abs(sConfig_IHM->sParam_Zx[3].i8HysteresisPlus % 10));
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone4[Unicode::strlen(textAreaBuffer_HystPlusZone4)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone4[Unicode::strlen(textAreaBuffer_HystPlusZone4)], 2,"C");
 		textArea_val_hyst_sonde_ambiance_zone_4.setWildcard2(textAreaBuffer_HystPlusZone4);
@@ -2391,10 +2392,10 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	//Zone 5 - Hyst Int
 	if (sConfig_IHM->sParam_Zx[4].type_zone.zone.TypeThermostat != TH_CONTACT)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_HystMoinsZone5, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[4].i8HysteresisMoins) / 10);
+		Unicode::snprintf(textAreaBuffer_HystMoinsZone5, 5, sConfig_IHM->sParam_Zx[4].i8HysteresisMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[4].i8HysteresisMoins / 10), abs(sConfig_IHM->sParam_Zx[4].i8HysteresisMoins % 10));
 		Unicode::snprintf(&textAreaBuffer_HystMoinsZone5[Unicode::strlen(textAreaBuffer_HystMoinsZone5)], 4," / ");
 		textArea_val_hyst_sonde_ambiance_zone_5.setWildcard1(textAreaBuffer_HystMoinsZone5);
-		Unicode::snprintfFloat(textAreaBuffer_HystPlusZone5, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[4].i8HysteresisPlus) / 10);
+		Unicode::snprintf(textAreaBuffer_HystPlusZone5, 5, sConfig_IHM->sParam_Zx[4].i8HysteresisPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[4].i8HysteresisPlus / 10), abs(sConfig_IHM->sParam_Zx[4].i8HysteresisPlus % 10));
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone5[Unicode::strlen(textAreaBuffer_HystPlusZone5)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone5[Unicode::strlen(textAreaBuffer_HystPlusZone5)], 2,"C");
 		textArea_val_hyst_sonde_ambiance_zone_5.setWildcard2(textAreaBuffer_HystPlusZone5);
@@ -2418,10 +2419,10 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	//Zone 6 - Hyst Int
 	if (sConfig_IHM->sParam_Zx[5].type_zone.zone.TypeThermostat != TH_CONTACT)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_HystMoinsZone6, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[5].i8HysteresisMoins) / 10);
+		Unicode::snprintf(textAreaBuffer_HystMoinsZone6, 5, sConfig_IHM->sParam_Zx[5].i8HysteresisMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[5].i8HysteresisMoins / 10), abs(sConfig_IHM->sParam_Zx[5].i8HysteresisMoins % 10));
 		Unicode::snprintf(&textAreaBuffer_HystMoinsZone6[Unicode::strlen(textAreaBuffer_HystMoinsZone6)], 4," / ");
 		textArea_val_hyst_sonde_ambiance_zone_6.setWildcard1(textAreaBuffer_HystMoinsZone6);
-		Unicode::snprintfFloat(textAreaBuffer_HystPlusZone6, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[5].i8HysteresisPlus) / 10);
+		Unicode::snprintf(textAreaBuffer_HystPlusZone6, 5, sConfig_IHM->sParam_Zx[5].i8HysteresisPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[5].i8HysteresisPlus / 10), abs(sConfig_IHM->sParam_Zx[5].i8HysteresisPlus % 10));
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone6[Unicode::strlen(textAreaBuffer_HystPlusZone6)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone6[Unicode::strlen(textAreaBuffer_HystPlusZone6)], 2,"C");
 		textArea_val_hyst_sonde_ambiance_zone_6.setWildcard2(textAreaBuffer_HystPlusZone6);
@@ -2445,10 +2446,10 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	//Zone 7 - Hyst Int
 	if (sConfig_IHM->sParam_Zx[6].type_zone.zone.TypeThermostat != TH_CONTACT)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_HystMoinsZone7, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[6].i8HysteresisMoins) / 10);
+		Unicode::snprintf(textAreaBuffer_HystMoinsZone7, 5, sConfig_IHM->sParam_Zx[6].i8HysteresisMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[6].i8HysteresisMoins / 10), abs(sConfig_IHM->sParam_Zx[6].i8HysteresisMoins % 10));
 		Unicode::snprintf(&textAreaBuffer_HystMoinsZone7[Unicode::strlen(textAreaBuffer_HystMoinsZone7)], 4," / ");
 		textArea_val_hyst_sonde_ambiance_zone_7.setWildcard1(textAreaBuffer_HystMoinsZone7);
-		Unicode::snprintfFloat(textAreaBuffer_HystPlusZone7, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[6].i8HysteresisPlus) / 10);
+		Unicode::snprintf(textAreaBuffer_HystPlusZone7, 5, sConfig_IHM->sParam_Zx[6].i8HysteresisPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[6].i8HysteresisPlus / 10), abs(sConfig_IHM->sParam_Zx[6].i8HysteresisPlus % 10));
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone7[Unicode::strlen(textAreaBuffer_HystPlusZone7)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone7[Unicode::strlen(textAreaBuffer_HystPlusZone7)], 2,"C");
 		textArea_val_hyst_sonde_ambiance_zone_7.setWildcard2(textAreaBuffer_HystPlusZone7);
@@ -2471,10 +2472,10 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	//Zone 8 - Hyst Int
 	if (sConfig_IHM->sParam_Zx[7].type_zone.zone.TypeThermostat != TH_CONTACT)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_HystMoinsZone8, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[7].i8HysteresisMoins) / 10);
+		Unicode::snprintf(textAreaBuffer_HystMoinsZone8, 5, sConfig_IHM->sParam_Zx[7].i8HysteresisMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[7].i8HysteresisMoins / 10), abs(sConfig_IHM->sParam_Zx[7].i8HysteresisMoins % 10));
 		Unicode::snprintf(&textAreaBuffer_HystMoinsZone8[Unicode::strlen(textAreaBuffer_HystMoinsZone8)], 4," / ");
 		textArea_val_hyst_sonde_ambiance_zone_8.setWildcard1(textAreaBuffer_HystMoinsZone8);
-		Unicode::snprintfFloat(textAreaBuffer_HystPlusZone8, 5, "%.1f", ((float) sConfig_IHM->sParam_Zx[7].i8HysteresisPlus) / 10);
+		Unicode::snprintf(textAreaBuffer_HystPlusZone8, 5, sConfig_IHM->sParam_Zx[7].i8HysteresisPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Zx[7].i8HysteresisPlus / 10), abs(sConfig_IHM->sParam_Zx[7].i8HysteresisPlus % 10));
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone8[Unicode::strlen(textAreaBuffer_HystPlusZone8)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_HystPlusZone8[Unicode::strlen(textAreaBuffer_HystPlusZone8)], 2,"C");
 		textArea_val_hyst_sonde_ambiance_zone_8.setWildcard2(textAreaBuffer_HystPlusZone8);
@@ -2499,24 +2500,24 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_mode_groupe_b_val.invalidate();
 
 	//Consigne ECS Fin
-	Unicode::snprintfFloat(textAreaBuffer_Cons_ECS_Fin, 7, "%.1f", ((float) sConfig_IHM->sMode_ECS.i16Consigne_ECS_Normal) / 10);
+	Unicode::snprintf(textAreaBuffer_Cons_ECS_Fin, 7, sConfig_IHM->sMode_ECS.i16Consigne_ECS_Normal < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sMode_ECS.i16Consigne_ECS_Normal / 10), abs(sConfig_IHM->sMode_ECS.i16Consigne_ECS_Normal % 10));
 	Unicode::snprintf(&textAreaBuffer_Cons_ECS_Fin[Unicode::strlen(textAreaBuffer_Cons_ECS_Fin)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Cons_ECS_Fin[Unicode::strlen(textAreaBuffer_Cons_ECS_Fin)], 2,"C");
 	textArea_cons_ecs_val.setWildcard(textAreaBuffer_Cons_ECS_Fin);
 	textArea_cons_ecs_val.invalidate();
 
 	//Consigne ECS Relance
-	Unicode::snprintfFloat(textAreaBuffer_Cons_Ecs_Relance, 7, "%.1f", ((float) sConfig_IHM->sMode_ECS.i16Consigne_ECS_Relance) / 10);
+	Unicode::snprintf(textAreaBuffer_Cons_Ecs_Relance, 7, sConfig_IHM->sMode_ECS.i16Consigne_ECS_Relance < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sMode_ECS.i16Consigne_ECS_Relance / 10), abs(sConfig_IHM->sMode_ECS.i16Consigne_ECS_Relance % 10));
 	Unicode::snprintf(&textAreaBuffer_Cons_Ecs_Relance[Unicode::strlen(textAreaBuffer_Cons_Ecs_Relance)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Cons_Ecs_Relance[Unicode::strlen(textAreaBuffer_Cons_Ecs_Relance)], 2,"C");
 	textArea_cons_relance_ecs_val.setWildcard(textAreaBuffer_Cons_Ecs_Relance);
 	textArea_cons_relance_ecs_val.invalidate();
 
 	//Hyst ECS
-	Unicode::snprintfFloat(textAreaBuffer_HystECSMoins, 7, "%.1f", ((float) sConfig_IHM->sParam_ECS.i8HysteresisECSMoins) / 10);
+	Unicode::snprintf(textAreaBuffer_HystECSMoins, 7, sConfig_IHM->sParam_ECS.i8HysteresisECSMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_ECS.i8HysteresisECSMoins / 10), abs(sConfig_IHM->sParam_ECS.i8HysteresisECSMoins % 10));
 	Unicode::snprintf(&textAreaBuffer_HystECSMoins[Unicode::strlen(textAreaBuffer_HystECSMoins)], 4," / ");
 	textArea_hyst_ecs_val.setWildcard1(textAreaBuffer_HystECSMoins);
-	Unicode::snprintfFloat(textAreaBuffer_HystECSPlus, 7, "%.1f", ((float) sConfig_IHM->sParam_ECS.i8HysteresisECSPlus) / 10);
+	Unicode::snprintf(textAreaBuffer_HystECSPlus, 7, sConfig_IHM->sParam_ECS.i8HysteresisECSPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_ECS.i8HysteresisECSPlus / 10), abs(sConfig_IHM->sParam_ECS.i8HysteresisECSPlus % 10));
 	Unicode::snprintf(&textAreaBuffer_HystECSPlus[Unicode::strlen(textAreaBuffer_HystECSPlus)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_HystECSPlus[Unicode::strlen(textAreaBuffer_HystECSPlus)], 2,"C");
 	textArea_hyst_ecs_val.setWildcard2(textAreaBuffer_HystECSPlus);
@@ -2556,17 +2557,17 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_tps_rotation_v3v_val.invalidate();
 
 	//Consigne Piscine Primaire
-	Unicode::snprintfFloat(textAreaBuffer_Cons_Prim_Piscine, 7, "%.1f", ((float) sConfig_IHM->sParam_Piscine.i16ConsigneDepartEauPiscine) / 10);
+	Unicode::snprintf(textAreaBuffer_Cons_Prim_Piscine, 7, sConfig_IHM->sParam_Piscine.i16ConsigneDepartEauPiscine < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Piscine.i16ConsigneDepartEauPiscine / 10), abs(sConfig_IHM->sParam_Piscine.i16ConsigneDepartEauPiscine % 10));
 	Unicode::snprintf(&textAreaBuffer_Cons_Prim_Piscine[Unicode::strlen(textAreaBuffer_Cons_Prim_Piscine)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Cons_Prim_Piscine[Unicode::strlen(textAreaBuffer_Cons_Prim_Piscine)], 2,"C");
 	textArea_cons_depart_eau_piscine_val.setWildcard(textAreaBuffer_Cons_Prim_Piscine);
 	textArea_cons_depart_eau_piscine_val.invalidate();
 
 	//Hyst Piscine
-	Unicode::snprintfFloat(textAreaBuffer_HystPiscMoins, 7, "%.1f", ((float) sConfig_IHM->sParam_Piscine.i8HysteresisEauMoins) / 10);
+	Unicode::snprintf(textAreaBuffer_HystPiscMoins, 7, sConfig_IHM->sParam_Piscine.i8HysteresisEauMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Piscine.i8HysteresisEauMoins / 10), abs(sConfig_IHM->sParam_Piscine.i8HysteresisEauMoins % 10));
 	Unicode::snprintf(&textAreaBuffer_HystPiscMoins[Unicode::strlen(textAreaBuffer_HystPiscMoins)], 4," / ");
 	textArea_hyst_piscine_val.setWildcard1(textAreaBuffer_HystPiscMoins);
-	Unicode::snprintfFloat(textAreaBuffer_HystPiscPlus, 7, "%.1f", ((float) sConfig_IHM->sParam_Piscine.i8HysteresisEauPlus) / 10);
+	Unicode::snprintf(textAreaBuffer_HystPiscPlus, 7, sConfig_IHM->sParam_Piscine.i8HysteresisEauPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Piscine.i8HysteresisEauPlus / 10), abs(sConfig_IHM->sParam_Piscine.i8HysteresisEauPlus % 10));
 	Unicode::snprintf(&textAreaBuffer_HystPiscPlus[Unicode::strlen(textAreaBuffer_HystPiscPlus)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_HystPiscPlus[Unicode::strlen(textAreaBuffer_HystPiscPlus)], 2,"C");
 	textArea_hyst_piscine_val.setWildcard2(textAreaBuffer_HystPiscPlus);
@@ -3052,30 +3053,30 @@ void Variables_systemeView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 	textArea_val_config_piscine_confort.invalidate();
 
 	//In_Out HystEau
-	Unicode::snprintfFloat(textAreaBuffer_HystEauMoins, 7, "%.1f", ((float) sConfig_IHM->sParam_PAC.i8HysteresisEauMoins) / 10);
+	Unicode::snprintf(textAreaBuffer_HystEauMoins, 7, sConfig_IHM->sParam_PAC.i8HysteresisEauMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_PAC.i8HysteresisEauMoins / 10), abs(sConfig_IHM->sParam_PAC.i8HysteresisEauMoins % 10));
 	Unicode::snprintf(&textAreaBuffer_HystEauMoins[Unicode::strlen(textAreaBuffer_HystEauMoins)], 4," / ");
 	textArea_val_config_hyst_chaud_froid.setWildcard1(textAreaBuffer_HystEauMoins);
-	Unicode::snprintfFloat(textAreaBuffer_HystEauPlus, 7, "%.1f", ((float) sConfig_IHM->sParam_PAC.i8HysteresisEauPlus) / 10);
+	Unicode::snprintf(textAreaBuffer_HystEauPlus, 7, sConfig_IHM->sParam_PAC.i8HysteresisEauPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_PAC.i8HysteresisEauPlus / 10), abs(sConfig_IHM->sParam_PAC.i8HysteresisEauPlus % 10));
 	Unicode::snprintf(&textAreaBuffer_HystEauPlus[Unicode::strlen(textAreaBuffer_HystEauPlus)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_HystEauPlus[Unicode::strlen(textAreaBuffer_HystEauPlus)], 2,"C");
 	textArea_val_config_hyst_chaud_froid.setWildcard2(textAreaBuffer_HystEauPlus);
 	textArea_val_config_hyst_chaud_froid.invalidate();
 
 	//In_Out HystEau ECS
-	Unicode::snprintfFloat(textAreaBuffer_HystEauECSMoins, 7, "%.1f", ((float) sConfig_IHM->sParam_ECS.i8HysteresisECSMoins) / 10);
+	Unicode::snprintf(textAreaBuffer_HystEauECSMoins, 7, sConfig_IHM->sParam_ECS.i8HysteresisECSMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_ECS.i8HysteresisECSMoins / 10), abs(sConfig_IHM->sParam_ECS.i8HysteresisECSMoins % 10));
 	Unicode::snprintf(&textAreaBuffer_HystEauECSMoins[Unicode::strlen(textAreaBuffer_HystEauECSMoins)], 4," / ");
 	textArea_val_config_hyst_ecs.setWildcard1(textAreaBuffer_HystEauECSMoins);
-	Unicode::snprintfFloat(textAreaBuffer_HystEauECSPlus, 7, "%.1f", ((float) sConfig_IHM->sParam_ECS.i8HysteresisECSPlus) / 10);
+	Unicode::snprintf(textAreaBuffer_HystEauECSPlus, 7, sConfig_IHM->sParam_ECS.i8HysteresisECSPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_ECS.i8HysteresisECSPlus / 10), abs(sConfig_IHM->sParam_ECS.i8HysteresisECSPlus % 10));
 	Unicode::snprintf(&textAreaBuffer_HystEauECSPlus[Unicode::strlen(textAreaBuffer_HystEauECSPlus)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_HystEauECSPlus[Unicode::strlen(textAreaBuffer_HystEauECSPlus)], 2,"C");
 	textArea_val_config_hyst_ecs.setWildcard2(textAreaBuffer_HystEauECSPlus);
 	textArea_val_config_hyst_ecs.invalidate();
 
 	//In_Out HystEau Piscine
-	Unicode::snprintfFloat(textAreaBuffer_HystEauPiscineMoins, 7, "%.1f", ((float) sConfig_IHM->sParam_Piscine.i8HysteresisEauMoins) / 10);
+	Unicode::snprintf(textAreaBuffer_HystEauPiscineMoins, 7, sConfig_IHM->sParam_Piscine.i8HysteresisEauMoins < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Piscine.i8HysteresisEauMoins / 10), abs(sConfig_IHM->sParam_Piscine.i8HysteresisEauMoins % 10));
 	Unicode::snprintf(&textAreaBuffer_HystEauPiscineMoins[Unicode::strlen(textAreaBuffer_HystEauPiscineMoins)], 4," / ");
 	textArea_val_config_hyst_piscine.setWildcard1(textAreaBuffer_HystEauPiscineMoins);
-	Unicode::snprintfFloat(textAreaBuffer_HystEauPiscinePlus, 7, "%.1f", ((float) sConfig_IHM->sParam_Piscine.i8HysteresisEauPlus) / 10);
+	Unicode::snprintf(textAreaBuffer_HystEauPiscinePlus, 7, sConfig_IHM->sParam_Piscine.i8HysteresisEauPlus < 0 ? "-%d.%d" : "%d.%d", abs(sConfig_IHM->sParam_Piscine.i8HysteresisEauPlus / 10), abs(sConfig_IHM->sParam_Piscine.i8HysteresisEauPlus % 10));
 	Unicode::snprintf(&textAreaBuffer_HystEauPiscinePlus[Unicode::strlen(textAreaBuffer_HystEauPiscinePlus)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_HystEauPiscinePlus[Unicode::strlen(textAreaBuffer_HystEauPiscinePlus)], 2,"C");
 	textArea_val_config_hyst_piscine.setWildcard2(textAreaBuffer_HystEauPiscinePlus);
@@ -3251,7 +3252,7 @@ void Variables_systemeView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Prim
 	if (sConfig_IHM.sModele_PAC.u8ModelePAC != GEOINVERTER && sConfig_IHM.sModele_PAC.u8ModelePAC != PHOENIX)
 	{
 		//
-		Unicode::snprintfFloat(textAreaBuffer_ConsignePrimaire, 7, "%.1f", ((float) sStatut_Primaire->i16ConsigneTeauPrimaire) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsignePrimaire, 7, sStatut_Primaire->i16ConsigneTeauPrimaire < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16ConsigneTeauPrimaire / 10), abs(sStatut_Primaire->i16ConsigneTeauPrimaire % 10));
 		Unicode::snprintf(&textAreaBuffer_ConsignePrimaire[Unicode::strlen(textAreaBuffer_ConsignePrimaire)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_ConsignePrimaire[Unicode::strlen(textAreaBuffer_ConsignePrimaire)], 2,"C");
 
@@ -3268,7 +3269,7 @@ void Variables_systemeView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Prim
 		textArea_cons_circ_prim_val.invalidate();
 	}
 	//
-	Unicode::snprintfFloat(textAreaBuffer_PressionPrimaire, 7, "%.1f", ((float) sStatut_Primaire->u16In_Pression_Eau) / 10);
+	Unicode::snprintf(textAreaBuffer_PressionPrimaire, 7, "%d.%d", sStatut_Primaire->u16In_Pression_Eau / 10, abs(sStatut_Primaire->u16In_Pression_Eau % 10));
 	textArea_pression_prim_val.setWildcard(textAreaBuffer_PressionPrimaire);
 	textArea_pression_prim_val.invalidate();
 	//
@@ -3276,19 +3277,19 @@ void Variables_systemeView::changeStatutPrimaire(S_STATUT_PRIMAIRE *sStatut_Prim
 	textArea_debit_prim_val.setWildcard(textAreaBuffer_DebitPrimaire);
 	textArea_debit_prim_val.invalidate();
 	//
-	Unicode::snprintfFloat(textAreaBuffer_BallonTamponPrimaire, 7, "%.1f", ((float) sStatut_Primaire->i16TeauBallonTampon) / 10);
+	Unicode::snprintf(textAreaBuffer_BallonTamponPrimaire, 7, sStatut_Primaire->i16TeauBallonTampon < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16TeauBallonTampon / 10), abs(sStatut_Primaire->i16TeauBallonTampon % 10));
 	Unicode::snprintf(&textAreaBuffer_BallonTamponPrimaire[Unicode::strlen(textAreaBuffer_BallonTamponPrimaire)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_BallonTamponPrimaire[Unicode::strlen(textAreaBuffer_BallonTamponPrimaire)], 2,"C");
 	textArea_temp_ballon_val.setWildcard(textAreaBuffer_BallonTamponPrimaire);
 	textArea_temp_ballon_val.invalidate();
 	//
-	Unicode::snprintfFloat(textAreaBuffer_DepartPrimaire, 7, "%.1f", ((float) sStatut_Primaire->i16TeauDepart) / 10);
+	Unicode::snprintf(textAreaBuffer_DepartPrimaire, 7, sStatut_Primaire->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16TeauDepart / 10), abs(sStatut_Primaire->i16TeauDepart % 10));
 	Unicode::snprintf(&textAreaBuffer_DepartPrimaire[Unicode::strlen(textAreaBuffer_DepartPrimaire)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_DepartPrimaire[Unicode::strlen(textAreaBuffer_DepartPrimaire)], 2,"C");
 	textArea_temp_dep_prim_val.setWildcard(textAreaBuffer_DepartPrimaire);
 	textArea_temp_dep_prim_val.invalidate();
 	//
-	Unicode::snprintfFloat(textAreaBuffer_RetourPrimaire, 7, "%.1f", ((float) sStatut_Primaire->i16TeauRetour) / 10);
+	Unicode::snprintf(textAreaBuffer_RetourPrimaire, 7, sStatut_Primaire->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Primaire->i16TeauRetour / 10), abs(sStatut_Primaire->i16TeauRetour % 10));
 	Unicode::snprintf(&textAreaBuffer_RetourPrimaire[Unicode::strlen(textAreaBuffer_RetourPrimaire)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_RetourPrimaire[Unicode::strlen(textAreaBuffer_RetourPrimaire)], 2,"C");
 	textArea_temp_ret_prim_val.setWildcard(textAreaBuffer_RetourPrimaire);
@@ -3339,13 +3340,13 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			{
 				if (sConfig_IHM.sParam_Zx[0].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_TintZone1, 5, "%.1f", ((float) sStatut_Zx->i16Tint / 10));
+					Unicode::snprintf(textAreaBuffer_TintZone1, 5, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					Unicode::snprintf(&textAreaBuffer_TintZone1[Unicode::strlen(textAreaBuffer_TintZone1)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_TintZone1[Unicode::strlen(textAreaBuffer_TintZone1)], 2,"C");
 
 					if (sStatut_Zx->i16ConsigneTint > 0 && sStatut_Zx->Mode != ARRET)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_ConsIntZone1, 5, "%f",  ((float) sStatut_Zx->i16ConsigneTint / 10));//, ce_caract);
+						Unicode::snprintf(textAreaBuffer_ConsIntZone1, 5, sStatut_Zx->i16ConsigneTint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTint / 10), abs(sStatut_Zx->i16ConsigneTint % 10));//, ce_caract);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone1[Unicode::strlen(textAreaBuffer_ConsIntZone1)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone1[Unicode::strlen(textAreaBuffer_ConsIntZone1)], 2,"C");
 					}
@@ -3395,7 +3396,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_DepartZone1, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(textAreaBuffer_DepartZone1, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"C");
 					textArea_val_temp_dep_zone_1.setWildcard(textAreaBuffer_DepartZone1);
@@ -3405,7 +3406,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_DepartZone1, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"C");
 					textArea_val_temp_dep_zone_1.setWildcard(textAreaBuffer_DepartZone1);
@@ -3416,7 +3417,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_DepartZone1, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartZone1[Unicode::strlen(textAreaBuffer_DepartZone1)], 2,"C");
 				textArea_val_temp_dep_zone_1.setWildcard(textAreaBuffer_DepartZone1);
@@ -3430,7 +3431,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_RetourZone1, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(textAreaBuffer_RetourZone1, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"C");
 					textArea_val_temp_ret_zone_1.setWildcard(textAreaBuffer_RetourZone1);
@@ -3440,7 +3441,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_RetourZone1, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"C");
 					textArea_val_temp_ret_zone_1.setWildcard(textAreaBuffer_RetourZone1);
@@ -3451,7 +3452,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_RetourZone1, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourZone1[Unicode::strlen(textAreaBuffer_RetourZone1)], 2,"C");
 				textArea_val_temp_ret_zone_1.setWildcard(textAreaBuffer_RetourZone1);
@@ -3465,7 +3466,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[0].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone1, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneTeauZone1, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone1[Unicode::strlen(textAreaBuffer_ConsigneTeauZone1)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone1[Unicode::strlen(textAreaBuffer_ConsigneTeauZone1)], 2,"C");
 					textArea_val_cons_temp_dep_zone_1.setWildcard(textAreaBuffer_ConsigneTeauZone1);
@@ -3591,13 +3592,13 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			{
 				if (sConfig_IHM.sParam_Zx[1].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_TintZone2, 5, "%.1f", ((float) sStatut_Zx->i16Tint / 10));
+					Unicode::snprintf(textAreaBuffer_TintZone2, 5, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					Unicode::snprintf(&textAreaBuffer_TintZone2[Unicode::strlen(textAreaBuffer_TintZone2)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_TintZone2[Unicode::strlen(textAreaBuffer_TintZone2)], 2,"C");
 
 					if (sStatut_Zx->i16ConsigneTint > 0 && sStatut_Zx->Mode != ARRET)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_ConsIntZone2, 5, "%f",  ((float) sStatut_Zx->i16ConsigneTint / 10));//, ce_caract);
+						Unicode::snprintf(textAreaBuffer_ConsIntZone2, 5, sStatut_Zx->i16ConsigneTint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTint / 10), abs(sStatut_Zx->i16ConsigneTint % 10));//, ce_caract);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone2[Unicode::strlen(textAreaBuffer_ConsIntZone2)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone2[Unicode::strlen(textAreaBuffer_ConsIntZone2)], 2,"C");
 					}
@@ -3647,7 +3648,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_DepartZone2, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(textAreaBuffer_DepartZone2, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"C");
 					textArea_val_temp_dep_zone_2.setWildcard(textAreaBuffer_DepartZone2);
@@ -3657,7 +3658,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_DepartZone2, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"C");
 					textArea_val_temp_dep_zone_2.setWildcard(textAreaBuffer_DepartZone2);
@@ -3668,7 +3669,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_DepartZone2, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartZone2[Unicode::strlen(textAreaBuffer_DepartZone2)], 2,"C");
 				textArea_val_temp_dep_zone_2.setWildcard(textAreaBuffer_DepartZone2);
@@ -3682,7 +3683,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_RetourZone2, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(textAreaBuffer_RetourZone2, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"C");
 					textArea_val_temp_ret_zone_2.setWildcard(textAreaBuffer_RetourZone2);
@@ -3692,7 +3693,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_RetourZone2, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"C");
 					textArea_val_temp_ret_zone_2.setWildcard(textAreaBuffer_RetourZone2);
@@ -3703,7 +3704,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_RetourZone2, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourZone2[Unicode::strlen(textAreaBuffer_RetourZone2)], 2,"C");
 				textArea_val_temp_ret_zone_2.setWildcard(textAreaBuffer_RetourZone2);
@@ -3717,7 +3718,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[1].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone2, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneTeauZone2, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone2[Unicode::strlen(textAreaBuffer_ConsigneTeauZone2)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone2[Unicode::strlen(textAreaBuffer_ConsigneTeauZone2)], 2,"C");
 					textArea_val_cons_temp_dep_zone_2.setWildcard(textAreaBuffer_ConsigneTeauZone2);
@@ -3844,13 +3845,13 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			{
 				if (sConfig_IHM.sParam_Zx[2].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_TintZone3, 5, "%.1f", ((float) sStatut_Zx->i16Tint / 10));
+					Unicode::snprintf(textAreaBuffer_TintZone3, 5, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					Unicode::snprintf(&textAreaBuffer_TintZone3[Unicode::strlen(textAreaBuffer_TintZone3)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_TintZone3[Unicode::strlen(textAreaBuffer_TintZone3)], 2,"C");
 
 					if (sStatut_Zx->i16ConsigneTint > 0 && sStatut_Zx->Mode != ARRET)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_ConsIntZone3, 5, "%f",  ((float) sStatut_Zx->i16ConsigneTint / 10));//, ce_caract);
+						Unicode::snprintf(textAreaBuffer_ConsIntZone3, 5, sStatut_Zx->i16ConsigneTint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTint / 10), abs(sStatut_Zx->i16ConsigneTint % 10));//, ce_caract);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone3[Unicode::strlen(textAreaBuffer_ConsIntZone3)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone3[Unicode::strlen(textAreaBuffer_ConsIntZone3)], 2,"C");
 					}
@@ -3900,7 +3901,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_DepartZone3, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(textAreaBuffer_DepartZone3, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"C");
 					textArea_val_temp_dep_zone_3.setWildcard(textAreaBuffer_DepartZone3);
@@ -3910,7 +3911,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_DepartZone3, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"C");
 					textArea_val_temp_dep_zone_3.setWildcard(textAreaBuffer_DepartZone3);
@@ -3921,7 +3922,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_DepartZone3, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartZone3[Unicode::strlen(textAreaBuffer_DepartZone3)], 2,"C");
 				textArea_val_temp_dep_zone_3.setWildcard(textAreaBuffer_DepartZone3);
@@ -3935,7 +3936,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_RetourZone3, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(textAreaBuffer_RetourZone3, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"C");
 					textArea_val_temp_ret_zone_3.setWildcard(textAreaBuffer_RetourZone3);
@@ -3945,7 +3946,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_RetourZone3, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"C");
 					textArea_val_temp_ret_zone_3.setWildcard(textAreaBuffer_RetourZone3);
@@ -3956,7 +3957,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_RetourZone3, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourZone3[Unicode::strlen(textAreaBuffer_RetourZone3)], 2,"C");
 				textArea_val_temp_ret_zone_3.setWildcard(textAreaBuffer_RetourZone3);
@@ -3970,7 +3971,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[2].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone3, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneTeauZone3, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone3[Unicode::strlen(textAreaBuffer_ConsigneTeauZone3)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone3[Unicode::strlen(textAreaBuffer_ConsigneTeauZone3)], 2,"C");
 					textArea_val_cons_temp_dep_zone_3.setWildcard(textAreaBuffer_ConsigneTeauZone3);
@@ -4096,13 +4097,13 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			{
 				if (sConfig_IHM.sParam_Zx[3].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_TintZone4, 5, "%.1f", ((float) sStatut_Zx->i16Tint / 10));
+					Unicode::snprintf(textAreaBuffer_TintZone4, 5, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					Unicode::snprintf(&textAreaBuffer_TintZone4[Unicode::strlen(textAreaBuffer_TintZone4)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_TintZone4[Unicode::strlen(textAreaBuffer_TintZone4)], 2,"C");
 
 					if (sStatut_Zx->i16ConsigneTint > 0 && sStatut_Zx->Mode != ARRET)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_ConsIntZone4, 5, "%f",  ((float) sStatut_Zx->i16ConsigneTint / 10));//, ce_caract);
+						Unicode::snprintf(textAreaBuffer_ConsIntZone4, 5, sStatut_Zx->i16ConsigneTint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTint / 10), abs(sStatut_Zx->i16ConsigneTint % 10));//, ce_caract);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone4[Unicode::strlen(textAreaBuffer_ConsIntZone4)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone4[Unicode::strlen(textAreaBuffer_ConsIntZone4)], 2,"C");
 					}
@@ -4152,7 +4153,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_DepartZone4, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(textAreaBuffer_DepartZone4, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"C");
 					textArea_val_temp_dep_zone_4.setWildcard(textAreaBuffer_DepartZone4);
@@ -4162,7 +4163,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_DepartZone4, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"C");
 					textArea_val_temp_dep_zone_4.setWildcard(textAreaBuffer_DepartZone4);
@@ -4173,7 +4174,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_DepartZone4, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartZone4[Unicode::strlen(textAreaBuffer_DepartZone4)], 2,"C");
 				textArea_val_temp_dep_zone_4.setWildcard(textAreaBuffer_DepartZone4);
@@ -4187,7 +4188,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_RetourZone4, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(textAreaBuffer_RetourZone4, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"C");
 					textArea_val_temp_ret_zone_4.setWildcard(textAreaBuffer_RetourZone4);
@@ -4197,7 +4198,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_RetourZone4, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"C");
 					textArea_val_temp_ret_zone_4.setWildcard(textAreaBuffer_RetourZone4);
@@ -4208,7 +4209,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_RetourZone4, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourZone4[Unicode::strlen(textAreaBuffer_RetourZone4)], 2,"C");
 				textArea_val_temp_ret_zone_4.setWildcard(textAreaBuffer_RetourZone4);
@@ -4222,7 +4223,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[3].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone4, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneTeauZone4, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone4[Unicode::strlen(textAreaBuffer_ConsigneTeauZone4)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone4[Unicode::strlen(textAreaBuffer_ConsigneTeauZone4)], 2,"C");
 					textArea_val_cons_temp_dep_zone_4.setWildcard(textAreaBuffer_ConsigneTeauZone4);
@@ -4349,13 +4350,13 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			{
 				if (sConfig_IHM.sParam_Zx[4].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_TintZone5, 5, "%.1f", ((float) sStatut_Zx->i16Tint / 10));
+					Unicode::snprintf(textAreaBuffer_TintZone5, 5, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					Unicode::snprintf(&textAreaBuffer_TintZone5[Unicode::strlen(textAreaBuffer_TintZone5)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_TintZone5[Unicode::strlen(textAreaBuffer_TintZone5)], 2,"C");
 
 					if (sStatut_Zx->i16ConsigneTint > 0 && sStatut_Zx->Mode != ARRET)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_ConsIntZone5, 5, "%f",  ((float) sStatut_Zx->i16ConsigneTint / 10));//, ce_caract);
+						Unicode::snprintf(textAreaBuffer_ConsIntZone5, 5, sStatut_Zx->i16ConsigneTint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTint / 10), abs(sStatut_Zx->i16ConsigneTint % 10));//, ce_caract);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone5[Unicode::strlen(textAreaBuffer_ConsIntZone5)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone5[Unicode::strlen(textAreaBuffer_ConsIntZone5)], 2,"C");
 					}
@@ -4405,7 +4406,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_DepartZone5, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(textAreaBuffer_DepartZone5, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"C");
 					textArea_val_temp_dep_zone_5.setWildcard(textAreaBuffer_DepartZone5);
@@ -4415,7 +4416,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_DepartZone5, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"C");
 					textArea_val_temp_dep_zone_5.setWildcard(textAreaBuffer_DepartZone5);
@@ -4426,7 +4427,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_DepartZone5, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartZone5[Unicode::strlen(textAreaBuffer_DepartZone5)], 2,"C");
 				textArea_val_temp_dep_zone_5.setWildcard(textAreaBuffer_DepartZone5);
@@ -4440,7 +4441,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_RetourZone5, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(textAreaBuffer_RetourZone5, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"C");
 					textArea_val_temp_ret_zone_5.setWildcard(textAreaBuffer_RetourZone5);
@@ -4450,7 +4451,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_RetourZone5, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"C");
 					textArea_val_temp_ret_zone_5.setWildcard(textAreaBuffer_RetourZone5);
@@ -4461,7 +4462,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_RetourZone5, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourZone5[Unicode::strlen(textAreaBuffer_RetourZone5)], 2,"C");
 				textArea_val_temp_ret_zone_5.setWildcard(textAreaBuffer_RetourZone5);
@@ -4475,7 +4476,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[4].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone5, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneTeauZone5, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone5[Unicode::strlen(textAreaBuffer_ConsigneTeauZone5)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone5[Unicode::strlen(textAreaBuffer_ConsigneTeauZone5)], 2,"C");
 					textArea_val_cons_temp_dep_zone_5.setWildcard(textAreaBuffer_ConsigneTeauZone5);
@@ -4602,13 +4603,13 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			{
 				if (sConfig_IHM.sParam_Zx[5].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_TintZone6, 5, "%.1f", ((float) sStatut_Zx->i16Tint / 10));
+					Unicode::snprintf(textAreaBuffer_TintZone6, 5, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					Unicode::snprintf(&textAreaBuffer_TintZone6[Unicode::strlen(textAreaBuffer_TintZone6)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_TintZone6[Unicode::strlen(textAreaBuffer_TintZone6)], 2,"C");
 
 					if (sStatut_Zx->i16ConsigneTint > 0 && sStatut_Zx->Mode != ARRET)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_ConsIntZone6, 5, "%f",  ((float) sStatut_Zx->i16ConsigneTint / 10));//, ce_caract);
+						Unicode::snprintf(textAreaBuffer_ConsIntZone6, 5, sStatut_Zx->i16ConsigneTint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTint / 10), abs(sStatut_Zx->i16ConsigneTint % 10));//, ce_caract);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone6[Unicode::strlen(textAreaBuffer_ConsIntZone6)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone6[Unicode::strlen(textAreaBuffer_ConsIntZone6)], 2,"C");
 					}
@@ -4658,7 +4659,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_DepartZone6, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(textAreaBuffer_DepartZone6, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"C");
 					textArea_val_temp_dep_zone_6.setWildcard(textAreaBuffer_DepartZone6);
@@ -4668,7 +4669,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_DepartZone6, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"C");
 					textArea_val_temp_dep_zone_6.setWildcard(textAreaBuffer_DepartZone6);
@@ -4679,7 +4680,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_DepartZone6, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartZone6[Unicode::strlen(textAreaBuffer_DepartZone6)], 2,"C");
 				textArea_val_temp_dep_zone_6.setWildcard(textAreaBuffer_DepartZone6);
@@ -4693,7 +4694,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_RetourZone6, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(textAreaBuffer_RetourZone6, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"C");
 					textArea_val_temp_ret_zone_6.setWildcard(textAreaBuffer_RetourZone6);
@@ -4703,7 +4704,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_RetourZone6, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"C");
 					textArea_val_temp_ret_zone_6.setWildcard(textAreaBuffer_RetourZone6);
@@ -4714,7 +4715,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_RetourZone6, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourZone6[Unicode::strlen(textAreaBuffer_RetourZone6)], 2,"C");
 				textArea_val_temp_ret_zone_6.setWildcard(textAreaBuffer_RetourZone6);
@@ -4728,7 +4729,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[5].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone6, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneTeauZone6, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone6[Unicode::strlen(textAreaBuffer_ConsigneTeauZone6)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone6[Unicode::strlen(textAreaBuffer_ConsigneTeauZone6)], 2,"C");
 					textArea_val_cons_temp_dep_zone_6.setWildcard(textAreaBuffer_ConsigneTeauZone6);
@@ -4855,13 +4856,13 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			{
 				if (sConfig_IHM.sParam_Zx[6].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_TintZone7, 5, "%.1f", ((float) sStatut_Zx->i16Tint / 10));
+					Unicode::snprintf(textAreaBuffer_TintZone7, 5, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					Unicode::snprintf(&textAreaBuffer_TintZone7[Unicode::strlen(textAreaBuffer_TintZone7)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_TintZone7[Unicode::strlen(textAreaBuffer_TintZone7)], 2,"C");
 
 					if (sStatut_Zx->i16ConsigneTint > 0 && sStatut_Zx->Mode != ARRET)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_ConsIntZone7, 5, "%f",  ((float) sStatut_Zx->i16ConsigneTint / 10));//, ce_caract);
+						Unicode::snprintf(textAreaBuffer_ConsIntZone7, 5, sStatut_Zx->i16ConsigneTint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTint / 10), abs(sStatut_Zx->i16ConsigneTint % 10));//, ce_caract);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone7[Unicode::strlen(textAreaBuffer_ConsIntZone7)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone7[Unicode::strlen(textAreaBuffer_ConsIntZone7)], 2,"C");
 					}
@@ -4911,7 +4912,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_DepartZone7, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(textAreaBuffer_DepartZone7, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"C");
 					textArea_val_temp_dep_zone_7.setWildcard(textAreaBuffer_DepartZone7);
@@ -4921,7 +4922,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_DepartZone7, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"C");
 					textArea_val_temp_dep_zone_7.setWildcard(textAreaBuffer_DepartZone7);
@@ -4932,7 +4933,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_DepartZone7, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartZone7[Unicode::strlen(textAreaBuffer_DepartZone7)], 2,"C");
 				textArea_val_temp_dep_zone_7.setWildcard(textAreaBuffer_DepartZone7);
@@ -4946,7 +4947,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_RetourZone7, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(textAreaBuffer_RetourZone7, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"C");
 					textArea_val_temp_ret_zone_7.setWildcard(textAreaBuffer_RetourZone7);
@@ -4956,7 +4957,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_RetourZone7, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"C");
 					textArea_val_temp_ret_zone_7.setWildcard(textAreaBuffer_RetourZone7);
@@ -4967,7 +4968,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_RetourZone7, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourZone7[Unicode::strlen(textAreaBuffer_RetourZone7)], 2,"C");
 				textArea_val_temp_ret_zone_7.setWildcard(textAreaBuffer_RetourZone7);
@@ -4981,7 +4982,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[6].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone7, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneTeauZone7, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone7[Unicode::strlen(textAreaBuffer_ConsigneTeauZone7)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone7[Unicode::strlen(textAreaBuffer_ConsigneTeauZone7)], 2,"C");
 					textArea_val_cons_temp_dep_zone_7.setWildcard(textAreaBuffer_ConsigneTeauZone7);
@@ -5108,13 +5109,13 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			{
 				if (sConfig_IHM.sParam_Zx[7].type_zone.zone.TypeThermostat <= TH_MODBUS)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_TintZone8, 5, "%.1f", ((float) sStatut_Zx->i16Tint / 10));
+					Unicode::snprintf(textAreaBuffer_TintZone8, 5, sStatut_Zx->i16Tint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16Tint / 10), abs(sStatut_Zx->i16Tint % 10));
 					Unicode::snprintf(&textAreaBuffer_TintZone8[Unicode::strlen(textAreaBuffer_TintZone8)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_TintZone8[Unicode::strlen(textAreaBuffer_TintZone8)], 2,"C");
 
 					if (sStatut_Zx->i16ConsigneTint > 0 && sStatut_Zx->Mode != ARRET)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_ConsIntZone8, 5, "%f",  ((float) sStatut_Zx->i16ConsigneTint / 10));//, ce_caract);
+						Unicode::snprintf(textAreaBuffer_ConsIntZone8, 5, sStatut_Zx->i16ConsigneTint < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTint / 10), abs(sStatut_Zx->i16ConsigneTint % 10));//, ce_caract);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone8[Unicode::strlen(textAreaBuffer_ConsIntZone8)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_ConsIntZone8[Unicode::strlen(textAreaBuffer_ConsIntZone8)], 2,"C");
 					}
@@ -5164,7 +5165,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_DepartZone8, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(textAreaBuffer_DepartZone8, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"C");
 					textArea_val_temp_dep_zone_8.setWildcard(textAreaBuffer_DepartZone8);
@@ -5174,7 +5175,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_DepartZone8, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"C");
 					textArea_val_temp_dep_zone_8.setWildcard(textAreaBuffer_DepartZone8);
@@ -5185,7 +5186,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_DepartZone8, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartZone8[Unicode::strlen(textAreaBuffer_DepartZone8)], 2,"C");
 				textArea_val_temp_dep_zone_8.setWildcard(textAreaBuffer_DepartZone8);
@@ -5199,7 +5200,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_RetourZone8, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(textAreaBuffer_RetourZone8, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"C");
 					textArea_val_temp_ret_zone_8.setWildcard(textAreaBuffer_RetourZone8);
@@ -5209,7 +5210,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 					Unicode::snprintf(textAreaBuffer_RetourZone8, 2, "(");
 					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 3,") ");
-					Unicode::snprintfFloat(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"C");
 					textArea_val_temp_ret_zone_8.setWildcard(textAreaBuffer_RetourZone8);
@@ -5220,7 +5221,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 				Unicode::snprintf(textAreaBuffer_RetourZone8, 2, "(");
 				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 5, "%s",touchgfx::TypedText(T_TEXT_VAR_SYS_NA_DROITE_DEFAUT).getText());
 				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 3,") ");
-				Unicode::snprintfFloat(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourZone8[Unicode::strlen(textAreaBuffer_RetourZone8)], 2,"C");
 				textArea_val_temp_ret_zone_8.setWildcard(textAreaBuffer_RetourZone8);
@@ -5234,7 +5235,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 1 && sConfig_IHM.sParam_Zx[8].TypeEmmetteur == SOUS_STATION) ||
 						(sConfig_IHM.sParam_Zx[7].u2RattachementGroupe == 2 && sConfig_IHM.sParam_Zx[9].TypeEmmetteur == SOUS_STATION))
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauZone8, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneTeauZone8, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone8[Unicode::strlen(textAreaBuffer_ConsigneTeauZone8)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_ConsigneTeauZone8[Unicode::strlen(textAreaBuffer_ConsigneTeauZone8)], 2,"C");
 					textArea_val_cons_temp_dep_zone_8.setWildcard(textAreaBuffer_ConsigneTeauZone8);
@@ -5376,7 +5377,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			//T°C Depart
 			if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_DepartGroupeA, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(textAreaBuffer_DepartGroupeA, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartGroupeA[Unicode::strlen(textAreaBuffer_DepartGroupeA)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartGroupeA[Unicode::strlen(textAreaBuffer_DepartGroupeA)], 2,"C");
 				textArea_temp_dep_groupe_a_val.setWildcard(textAreaBuffer_DepartGroupeA);
@@ -5389,7 +5390,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			//T°C Retour
 			if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_RetourGroupeA, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(textAreaBuffer_RetourGroupeA, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourGroupeA[Unicode::strlen(textAreaBuffer_RetourGroupeA)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourGroupeA[Unicode::strlen(textAreaBuffer_RetourGroupeA)], 2,"C");
 				textArea_temp_ret_groupe_a_val.setWildcard(textAreaBuffer_RetourGroupeA);
@@ -5402,7 +5403,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			//Consigne départ
 			if (sConfig_IHM.sParam_Zx[8].type_zone.GroupeEau.bGroupeActif == 1)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauGroupeA, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+				Unicode::snprintf(textAreaBuffer_ConsigneTeauGroupeA, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 				Unicode::snprintf(&textAreaBuffer_ConsigneTeauGroupeA[Unicode::strlen(textAreaBuffer_ConsigneTeauGroupeA)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_ConsigneTeauGroupeA[Unicode::strlen(textAreaBuffer_ConsigneTeauGroupeA)], 2,"C");
 				textArea_cons_temp_dep_groupe_a_val.setWildcard(textAreaBuffer_ConsigneTeauGroupeA);
@@ -5542,7 +5543,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			//T°C Depart
 			if (sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_DepartGroupeB, 7, "%.1f", ((float) sStatut_Zx->i16TeauDepart) / 10);
+				Unicode::snprintf(textAreaBuffer_DepartGroupeB, 7, sStatut_Zx->i16TeauDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauDepart / 10), abs(sStatut_Zx->i16TeauDepart % 10));
 				Unicode::snprintf(&textAreaBuffer_DepartGroupeB[Unicode::strlen(textAreaBuffer_DepartGroupeB)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_DepartGroupeB[Unicode::strlen(textAreaBuffer_DepartGroupeB)], 2,"C");
 				textArea_temp_dep_groupe_b_val.setWildcard(textAreaBuffer_DepartGroupeB);
@@ -5555,7 +5556,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			//T°C Retour
 			if (sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_RetourGroupeB, 7, "%.1f", ((float) sStatut_Zx->i16TeauRetour) / 10);
+				Unicode::snprintf(textAreaBuffer_RetourGroupeB, 7, sStatut_Zx->i16TeauRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16TeauRetour / 10), abs(sStatut_Zx->i16TeauRetour % 10));
 				Unicode::snprintf(&textAreaBuffer_RetourGroupeB[Unicode::strlen(textAreaBuffer_RetourGroupeB)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_RetourGroupeB[Unicode::strlen(textAreaBuffer_RetourGroupeB)], 2,"C");
 				textArea_temp_ret_groupe_b_val.setWildcard(textAreaBuffer_RetourGroupeB);
@@ -5568,7 +5569,7 @@ void Variables_systemeView::changeStatutZx(uint8_t u8Zone, S_STATUT_ZX *sStatut_
 			//Consigne départ
 			if (sConfig_IHM.sParam_Zx[9].type_zone.GroupeEau.bGroupeActif == 1)
 			{
-				Unicode::snprintfFloat(textAreaBuffer_ConsigneTeauGroupeB, 7, "%.1f", ((float) sStatut_Zx->i16ConsigneTeau) / 10);
+				Unicode::snprintf(textAreaBuffer_ConsigneTeauGroupeB, 7, sStatut_Zx->i16ConsigneTeau < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Zx->i16ConsigneTeau / 10), abs(sStatut_Zx->i16ConsigneTeau % 10));
 				Unicode::snprintf(&textAreaBuffer_ConsigneTeauGroupeB[Unicode::strlen(textAreaBuffer_ConsigneTeauGroupeB)], 2,"%s", degre);
 				Unicode::snprintf(&textAreaBuffer_ConsigneTeauGroupeB[Unicode::strlen(textAreaBuffer_ConsigneTeauGroupeB)], 2,"C");
 				textArea_cons_temp_dep_groupe_b_val.setWildcard(textAreaBuffer_ConsigneTeauGroupeB);
@@ -5705,7 +5706,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		}
 		textArea_demande_pac_val.setWildcard1(textAreaBuffer_Demande);
 		//Consigne
-		Unicode::snprintfFloat(textAreaBuffer_ConsignePrimaire, 7, "%.1f", ((float) sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16ConsignePrimaire) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsignePrimaire, 7, sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16ConsignePrimaire < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16ConsignePrimaire / 10), abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16ConsignePrimaire % 10));
 		Unicode::snprintf(&textAreaBuffer_ConsignePrimaire[Unicode::strlen(textAreaBuffer_ConsignePrimaire)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_ConsignePrimaire[Unicode::strlen(textAreaBuffer_ConsignePrimaire)], 2,"C");
 		textArea_cons_temp_prim_val.setWildcard(textAreaBuffer_ConsignePrimaire);
@@ -5758,7 +5759,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		}
 		textArea_demande_pac_val.setWildcard1(textAreaBuffer_Demande);
 		//Consigne
-		Unicode::snprintfFloat(textAreaBuffer_ConsignePrimaire, 7, "%.1f", ((float) sCyclRegFrigo->pac.phoenix.sStatutFrigoPhoenix.i16ConsignePrimaire) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsignePrimaire, 7, sCyclRegFrigo->pac.phoenix.sStatutFrigoPhoenix.i16ConsignePrimaire < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.phoenix.sStatutFrigoPhoenix.i16ConsignePrimaire / 10), abs(sCyclRegFrigo->pac.phoenix.sStatutFrigoPhoenix.i16ConsignePrimaire % 10));
 		Unicode::snprintf(&textAreaBuffer_ConsignePrimaire[Unicode::strlen(textAreaBuffer_ConsignePrimaire)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_ConsignePrimaire[Unicode::strlen(textAreaBuffer_ConsignePrimaire)], 2,"C");
 		textArea_cons_temp_prim_val.setWildcard(textAreaBuffer_ConsignePrimaire);
@@ -5767,7 +5768,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_demande_pac_val.invalidate();
 	}
 	//
-	Unicode::snprintfFloat(textAreaBuffer_Temp_Ext, 7, "%.1f", ((float) sCyclRegFrigo->commun.i16Text) / 10);
+	Unicode::snprintf(textAreaBuffer_Temp_Ext, 7, sCyclRegFrigo->commun.i16Text < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->commun.i16Text / 10), abs(sCyclRegFrigo->commun.i16Text % 10));
 	Unicode::snprintf(&textAreaBuffer_Temp_Ext[Unicode::strlen(textAreaBuffer_Temp_Ext)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Temp_Ext[Unicode::strlen(textAreaBuffer_Temp_Ext)], 2,"C");
 	textArea_temp_ext_val.setWildcard(textAreaBuffer_Temp_Ext);
@@ -5910,43 +5911,43 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_inv_val_pfc.setWildcard(textAreaBuffer_PFC_Inv);
 		textArea_inv_val_pfc.invalidate();
 		//Courant Phase comp Inv
-		Unicode::snprintfFloat(textAreaBuffer_CourantPhase_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorPhaseCurrent) / 10);
+		Unicode::snprintf(textAreaBuffer_CourantPhase_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorPhaseCurrent / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorPhaseCurrent % 10));
 		textArea_inv_val_courant_in_ac.setWildcard(textAreaBuffer_CourantPhase_Inv);
 		textArea_inv_val_courant_in_ac.invalidate();
 		//Courant AC Inv
-		Unicode::snprintfFloat(textAreaBuffer_CourantAC_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16AC_InputCurrent) / 10);
+		Unicode::snprintf(textAreaBuffer_CourantAC_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16AC_InputCurrent / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16AC_InputCurrent % 10));
 		textArea_inv_val_courant_in_ac.setWildcard(textAreaBuffer_CourantAC_Inv);
 		textArea_inv_val_courant_in_ac.invalidate();
 		//Tension AC Inv
-		Unicode::snprintfFloat(textAreaBuffer_TensionAC_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16AC_InputVoltage) / 10);
+		Unicode::snprintf(textAreaBuffer_TensionAC_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16AC_InputVoltage / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16AC_InputVoltage % 10));
 		textArea_inv_val_tension_in_ac.setWildcard(textAreaBuffer_TensionAC_Inv);
 		textArea_inv_val_tension_in_ac.invalidate();
 		//Tension DC Inv
-		Unicode::snprintfFloat(textAreaBuffer_TensionDC_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DC_Voltage) / 10);
+		Unicode::snprintf(textAreaBuffer_TensionDC_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DC_Voltage / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DC_Voltage % 10));
 		textArea_inv_val_tension_dc.setWildcard(textAreaBuffer_TensionDC_Inv);
 		textArea_inv_val_tension_dc.invalidate();
 		//Temp IPM Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_IPM_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16IPM_Temperature) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_IPM_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16IPM_Temperature / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16IPM_Temperature % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_IPM_Inv[Unicode::strlen(textAreaBuffer_Temp_IPM_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_IPM_Inv[Unicode::strlen(textAreaBuffer_Temp_IPM_Inv)], 2,"C");
 		textArea_inv_val_temp_ipm.setWildcard(textAreaBuffer_Temp_IPM_Inv);
 		textArea_inv_val_temp_ipm.invalidate();
 		//Temp PFC Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_PFC_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16PFC_Temperature) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_PFC_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16PFC_Temperature / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16PFC_Temperature % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_PFC_Inv[Unicode::strlen(textAreaBuffer_Temp_PFC_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_PFC_Inv[Unicode::strlen(textAreaBuffer_Temp_PFC_Inv)], 2,"C");
 		textArea_inv_val_temp_pfc.setWildcard(textAreaBuffer_Temp_PFC_Inv);
 		textArea_inv_val_temp_pfc.invalidate();
 		//Courant U Inv
-		Unicode::snprintfFloat(textAreaBuffer_Courant_U_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorU_PhaseCurrent) / 10);
+		Unicode::snprintf(textAreaBuffer_Courant_U_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorU_PhaseCurrent / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorU_PhaseCurrent % 10));
 		textArea_inv_val_courant_u_comp.setWildcard(textAreaBuffer_Courant_U_Inv);
 		textArea_inv_val_courant_u_comp.invalidate();
 		//Courant V Inv
-		Unicode::snprintfFloat(textAreaBuffer_Courant_V_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorV_PhaseCurrent) / 10);
+		Unicode::snprintf(textAreaBuffer_Courant_V_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorV_PhaseCurrent / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorV_PhaseCurrent % 10));
 		textArea_inv_val_courant_v_comp.setWildcard(textAreaBuffer_Courant_V_Inv);
 		textArea_inv_val_courant_v_comp.invalidate();
 		//Courant W Inv
-		Unicode::snprintfFloat(textAreaBuffer_Courant_W_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorW_PhaseCurrent) / 10);
+		Unicode::snprintf(textAreaBuffer_Courant_W_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorW_PhaseCurrent / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16CompressorW_PhaseCurrent % 10));
 		textArea_inv_val_courant_w_comp.setWildcard(textAreaBuffer_Courant_W_Inv);
 		textArea_inv_val_courant_w_comp.invalidate();
 		//Fréquence/RPM Inv
@@ -5958,7 +5959,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		//Temp DLT Inv
 		if (sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DLT_Temperature != 0)
 		{
-			Unicode::snprintfFloat(textAreaBuffer_Temp_DLT_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DLT_Temperature) / 10);
+			Unicode::snprintf(textAreaBuffer_Temp_DLT_Inv, 8, "%d.%d", sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DLT_Temperature / 10, abs(sCyclRegFrigo->pac.geoinverter.sRetourRukingRe.sDriveStatusInformation.u16DLT_Temperature % 10));
 			Unicode::snprintf(&textAreaBuffer_Temp_DLT_Inv[Unicode::strlen(textAreaBuffer_Temp_DLT_Inv)], 2,"%s", degre);
 			Unicode::snprintf(&textAreaBuffer_Temp_DLT_Inv[Unicode::strlen(textAreaBuffer_Temp_DLT_Inv)], 2,"C");
 		}
@@ -5969,19 +5970,19 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_inv_val_temp_dlt.setWildcard(textAreaBuffer_Temp_DLT_Inv);
 		textArea_inv_val_temp_dlt.invalidate();
 		//Temp Cond Max VS Evap Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_Max_VS_Evap_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MaxCondensingTempVSEvap) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Cond_Max_VS_Evap_Inv, 8, sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MaxCondensingTempVSEvap < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MaxCondensingTempVSEvap / 10), abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MaxCondensingTempVSEvap % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Cond_Max_VS_Evap_Inv[Unicode::strlen(textAreaBuffer_Temp_Cond_Max_VS_Evap_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Cond_Max_VS_Evap_Inv[Unicode::strlen(textAreaBuffer_Temp_Cond_Max_VS_Evap_Inv)], 2,"C");
 		textArea_inv_val_temp_cond_max.setWildcard(textAreaBuffer_Temp_Cond_Max_VS_Evap_Inv);
 		textArea_inv_val_temp_cond_max.invalidate();
 		//Temp Cond Min VS Evap Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_Min_VS_Evap_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MinCondensingTempVSEvap) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Cond_Min_VS_Evap_Inv, 8, sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MinCondensingTempVSEvap < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MinCondensingTempVSEvap / 10), abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MinCondensingTempVSEvap % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Cond_Min_VS_Evap_Inv[Unicode::strlen(textAreaBuffer_Temp_Cond_Min_VS_Evap_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Cond_Min_VS_Evap_Inv[Unicode::strlen(textAreaBuffer_Temp_Cond_Min_VS_Evap_Inv)], 2,"C");
 		textArea_inv_val_temp_cond_min.setWildcard(textAreaBuffer_Temp_Cond_Min_VS_Evap_Inv);
 		textArea_inv_val_temp_cond_min.invalidate();
 		//Press HP Max VS vitesse Inv
-		Unicode::snprintfFloat(textAreaBuffer_Press_HP_Max_VS_Vitesse_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MaxPressureHP_VS_RPM) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_HP_Max_VS_Vitesse_Inv, 8, sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MaxPressureHP_VS_RPM < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MaxPressureHP_VS_RPM / 10), abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16MaxPressureHP_VS_RPM % 10));
 		textArea_inv_val_press_hp_max.setWildcard(textAreaBuffer_Press_HP_Max_VS_Vitesse_Inv);
 		textArea_inv_val_press_hp_max.invalidate();
 		//Restriction Inv
@@ -6039,19 +6040,19 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_inv_val_spare.setWildcard(textAreaBuffer_Frigo_Spare_Inv);
 		textArea_inv_val_spare.invalidate();
 		//Temp Dep Prim Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Prim_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Dep_Prim_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartPrimaire % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Dep_Prim_Inv[Unicode::strlen(textAreaBuffer_Temp_Dep_Prim_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Dep_Prim_Inv[Unicode::strlen(textAreaBuffer_Temp_Dep_Prim_Inv)], 2,"C");
 		textArea_inv_val_dep_prim.setWildcard(textAreaBuffer_Temp_Dep_Prim_Inv);
 		textArea_inv_val_dep_prim.invalidate();
 		//Temp Ret Prim Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Prim_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Ret_Prim_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourPrimaire % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Ret_Prim_Inv[Unicode::strlen(textAreaBuffer_Temp_Ret_Prim_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Ret_Prim_Inv[Unicode::strlen(textAreaBuffer_Temp_Ret_Prim_Inv)], 2,"C");
 		textArea_inv_val_ret_prim.setWildcard(textAreaBuffer_Temp_Ret_Prim_Inv);
 		textArea_inv_val_ret_prim.invalidate();
 		//Press Prim Inv
-		Unicode::snprintfFloat(textAreaBuffer_Press_Prim_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_Prim_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauChauffage % 10));
 		textArea_inv_val_press_prim.setWildcard(textAreaBuffer_Press_Prim_Inv);
 		textArea_inv_val_press_prim.invalidate();
 		//Debit Prim Inv
@@ -6059,25 +6060,25 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_inv_val_debit_prim.setWildcard(textAreaBuffer_Debit_Prim_Inv);
 		textArea_inv_val_debit_prim.invalidate();
 		//Temp Ext Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Ext_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Ext_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Exterieur % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Ext_Inv[Unicode::strlen(textAreaBuffer_Temp_Ext_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Ext_Inv[Unicode::strlen(textAreaBuffer_Temp_Ext_Inv)], 2,"C");
 		textArea_inv_val_temp_ext.setWildcard(textAreaBuffer_Temp_Ext_Inv);
 		textArea_inv_val_temp_ext.invalidate();
 		//Temp Dep Capt Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Dep_Capt_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Dep_Capt_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_DepartCapteur % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Dep_Capt_Inv[Unicode::strlen(textAreaBuffer_Temp_Dep_Capt_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Dep_Capt_Inv[Unicode::strlen(textAreaBuffer_Temp_Dep_Capt_Inv)], 2,"C");
 		textArea_inv_val_dep_cap.setWildcard(textAreaBuffer_Temp_Dep_Capt_Inv);
 		textArea_inv_val_dep_cap.invalidate();
 		//Temp Ret Capt Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Ret_Capt_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Ret_Capt_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_RetourCapteur % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Ret_Capt_Inv[Unicode::strlen(textAreaBuffer_Temp_Ret_Capt_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Ret_Capt_Inv[Unicode::strlen(textAreaBuffer_Temp_Ret_Capt_Inv)], 2,"C");
 		textArea_inv_val_ret_cap.setWildcard(textAreaBuffer_Temp_Ret_Capt_Inv);
 		textArea_inv_val_ret_cap.invalidate();
 		//Press Capt Inv
-		Unicode::snprintfFloat(textAreaBuffer_Press_Capt_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_Capt_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_EauCapteur % 10));
 		textArea_inv_val_press_cap.setWildcard(textAreaBuffer_Press_Capt_Inv);
 		textArea_inv_val_press_cap.invalidate();
 		//Debit Capt Inv
@@ -6085,31 +6086,31 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_inv_val_debit_cap.setWildcard(textAreaBuffer_Temp_Debit_Capt_Inv);
 		textArea_inv_val_debit_cap.invalidate();
 		//Temp Liquide Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Liquide_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Liquide_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_Liquide % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Liquide_Inv[Unicode::strlen(textAreaBuffer_Temp_Liquide_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Liquide_Inv[Unicode::strlen(textAreaBuffer_Temp_Liquide_Inv)], 2,"C");
 		textArea_inv_val_temp_liqu.setWildcard(textAreaBuffer_Temp_Liquide_Inv);
 		textArea_inv_val_temp_liqu.invalidate();
 		//Temp HP Cible Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_HP_Cible_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16Temp_HP_Cible[0]) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_HP_Cible_Inv, 8, sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16Temp_HP_Cible[0] < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16Temp_HP_Cible[0] / 10), abs(sCyclRegFrigo->pac.geoinverter.sStatutFrigoGeoinv.i16Temp_HP_Cible[0] % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_HP_Cible_Inv[Unicode::strlen(textAreaBuffer_Temp_HP_Cible_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_HP_Cible_Inv[Unicode::strlen(textAreaBuffer_Temp_HP_Cible_Inv)], 2,"C");
 		textArea_val_inv_temp_hp_cible.setWildcard(textAreaBuffer_Temp_HP_Cible_Inv);
 		textArea_val_inv_temp_hp_cible.invalidate();
 		//Temp HP Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_HP_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_HP_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1 / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_HP1 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_HP_Inv[Unicode::strlen(textAreaBuffer_Temp_HP_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_HP_Inv[Unicode::strlen(textAreaBuffer_Temp_HP_Inv)], 2,"C");
 		textArea_val_inv_temp_hp.setWildcard(textAreaBuffer_Temp_HP_Inv);
 		textArea_val_inv_temp_hp.invalidate();
 		//Temp BP Inv
-		Unicode::snprintfFloat(textAreaBuffer_Temp_BP_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_BP_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1 / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Temp_BP1 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_BP_Inv[Unicode::strlen(textAreaBuffer_Temp_BP_Inv)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_BP_Inv[Unicode::strlen(textAreaBuffer_Temp_BP_Inv)], 2,"C");
 		textArea_val_inv_temp_bp.setWildcard(textAreaBuffer_Temp_BP_Inv);
 		textArea_val_inv_temp_bp.invalidate();
 		//Press / Temp Cond Inv
-		Unicode::snprintfFloat(textAreaBuffer_Press_Temp_Cond_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_Temp_Cond_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 % 10));
 		Unicode::snprintf(&textAreaBuffer_Press_Temp_Cond_Inv[Unicode::strlen(textAreaBuffer_Press_Temp_Cond_Inv)], 9," bars / ");
 		Unicode::snprintfFloat(&textAreaBuffer_Press_Temp_Cond_Inv[Unicode::strlen(textAreaBuffer_Press_Temp_Cond_Inv)], 6,"%.1f",((float)ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u4TypeGaz, true, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_HP1 + 10)/10));
 		Unicode::snprintf(&textAreaBuffer_Press_Temp_Cond_Inv[Unicode::strlen(textAreaBuffer_Press_Temp_Cond_Inv)], 2,"%s", degre);
@@ -6117,7 +6118,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_inv_val_press_hp.setWildcard(textAreaBuffer_Press_Temp_Cond_Inv);
 		textArea_inv_val_press_hp.invalidate();
 		//Press / Temp Evap Inv
-		Unicode::snprintfFloat(textAreaBuffer_Press_Temp_Evap_Inv, 8, "%.1f", ((float)sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_Temp_Evap_Inv, 8, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 / 10), abs(sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 % 10));
 		Unicode::snprintf(&textAreaBuffer_Press_Temp_Evap_Inv[Unicode::strlen(textAreaBuffer_Press_Temp_Evap_Inv)], 9," bars / ");
 		Unicode::snprintfFloat(&textAreaBuffer_Press_Temp_Evap_Inv[Unicode::strlen(textAreaBuffer_Press_Temp_Evap_Inv)], 6,"%.1f",((float)ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sConfigFrigo[0].sModele_FRIGO.u4TypeGaz, false, sCyclRegFrigo->pac.geoinverter.sInAnaGeoinv.i16Press_BP1 + 10)/10));
 		Unicode::snprintf(&textAreaBuffer_Press_Temp_Evap_Inv[Unicode::strlen(textAreaBuffer_Press_Temp_Evap_Inv)], 2,"%s", degre);
@@ -6451,7 +6452,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					textArea_zuba_val_ventilateur_on_off.setWildcard(textAreaBuffer_Ventil_MA_ZuBa);
 					textArea_zuba_val_ventilateur_on_off.invalidate();
 					//Départ Primaire Mitsu
-					Unicode::snprintfFloat(textAreaBuffer_Dep_Prim_Mitsu, 8, "%.1f", ((float)sCyclRegFrigo->pac.zuba.sStatutMitsu.Autre) / 10);
+					Unicode::snprintf(textAreaBuffer_Dep_Prim_Mitsu, 8, sCyclRegFrigo->pac.zuba.sStatutMitsu.Autre < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.zuba.sStatutMitsu.Autre / 10), abs(sCyclRegFrigo->pac.zuba.sStatutMitsu.Autre % 10));
 					Unicode::snprintf(&textAreaBuffer_Dep_Prim_Mitsu[Unicode::strlen(textAreaBuffer_Dep_Prim_Mitsu)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_Dep_Prim_Mitsu[Unicode::strlen(textAreaBuffer_Dep_Prim_Mitsu)], 2,"C");
 					textArea_zuba_val_dep_prim_mitsu.setWildcard(textAreaBuffer_Dep_Prim_Mitsu);
@@ -6572,7 +6573,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 
 						if (valtemp != 0)
 						{
-							Unicode::snprintfFloat(textAreaBuffer_Pression_ZuBa, 13, "%.1f", ((float)valtemp / 10));
+							Unicode::snprintf(textAreaBuffer_Pression_ZuBa, 13, valtemp < 0 ? "-%d.%d" : "%d.%d", abs(valtemp / 10), abs(valtemp % 10));
 							textArea_zuba_val_temp_cond_pression_1.setWildcard2(textAreaBuffer_Pression_ZuBa);
 						}
 						oldTempHP = sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS;
@@ -6635,7 +6636,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 					textArea_zuba_val_ventilateur_1.setWildcard(textAreaBuffer_VitVentil1_ZuBa);
 					textArea_zuba_val_ventilateur_1.invalidate();
 					//Départ Primaire Mitsu
-					Unicode::snprintfFloat(textAreaBuffer_Dep_Prim_Mitsu, 8, "%.1f", ((float)sCyclRegFrigo->pac.zuba.sStatutMitsu.Autre) / 10);
+					Unicode::snprintf(textAreaBuffer_Dep_Prim_Mitsu, 8, sCyclRegFrigo->pac.zuba.sStatutMitsu.Autre < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.zuba.sStatutMitsu.Autre / 10), abs(sCyclRegFrigo->pac.zuba.sStatutMitsu.Autre % 10));
 					Unicode::snprintf(&textAreaBuffer_Dep_Prim_Mitsu[Unicode::strlen(textAreaBuffer_Dep_Prim_Mitsu)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_Dep_Prim_Mitsu[Unicode::strlen(textAreaBuffer_Dep_Prim_Mitsu)], 2,"C");
 					textArea_zuba_val_dep_prim_mitsu_1.setWildcard(textAreaBuffer_Dep_Prim_Mitsu);
@@ -6963,7 +6964,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 							valtemp = 0;
 							break;
 					}
-					Unicode::snprintfFloat(textAreaBuffer_Pression_ZuBa, 13, "%.1f", ((float)valtemp) / 10);
+					Unicode::snprintf(textAreaBuffer_Pression_ZuBa, 13, valtemp < 0 ? "-%d.%d" : "%d.%d", abs(valtemp / 10), abs(valtemp % 10));
 					textArea_zuba_val_temp_cond_pression_2.setWildcard2(textAreaBuffer_Pression_ZuBa);
 
 					oldTempHP = sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS;
@@ -7025,7 +7026,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 				{
 					if (sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 != 32766)
 					{
-						Unicode::snprintfFloat(textAreaBuffer_TempLiquide_ZuBa, 8, "%.1f", ((float)sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 / 10));
+						Unicode::snprintf(textAreaBuffer_TempLiquide_ZuBa, 8, sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 / 10), abs(sCyclRegFrigo->pac.zuba.sInAnaFrigo.i16Temp_S1 % 10));
 						Unicode::snprintf(&textAreaBuffer_TempLiquide_ZuBa[Unicode::strlen(textAreaBuffer_TempLiquide_ZuBa)], 2,"%s", degre);
 						Unicode::snprintf(&textAreaBuffer_TempLiquide_ZuBa[Unicode::strlen(textAreaBuffer_TempLiquide_ZuBa)], 2,"C");
 					}
@@ -7045,7 +7046,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 				//Surchauffe Refoulement
 				if (sCyclRegFrigo->pac.zuba.sStatutMitsu.T_TH3 > 250)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_SurchauffeRef_ZuBa, 8, "%.1f", ((float)(sCyclRegFrigo->pac.zuba.sStatutMitsu.T_Refoulement - sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10) / 10));
+					Unicode::snprintf(textAreaBuffer_SurchauffeRef_ZuBa, 8, (sCyclRegFrigo->pac.zuba.sStatutMitsu.T_Refoulement - sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10) < 0 ? "-%d.%d" : "%d.%d", abs((sCyclRegFrigo->pac.zuba.sStatutMitsu.T_Refoulement - sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10) / 10), abs((sCyclRegFrigo->pac.zuba.sStatutMitsu.T_Refoulement - sCyclRegFrigo->pac.zuba.sStatutMitsu.T63HS*10) % 10));
 					Unicode::snprintf(&textAreaBuffer_SurchauffeRef_ZuBa[Unicode::strlen(textAreaBuffer_SurchauffeRef_ZuBa)], 2,"%s", degre);
 					Unicode::snprintf(&textAreaBuffer_SurchauffeRef_ZuBa[Unicode::strlen(textAreaBuffer_SurchauffeRef_ZuBa)], 2,"C");
 				}
@@ -7264,7 +7265,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		//Pression captage
 		if (sConfig_IHM.sConfig_PAC.ConfigGeo.eTypeDeCaptage != E_TYPE_CAPTAGE_NAPPE_DIRECTE)
 		{
-			Unicode::snprintfFloat(textAreaBuffer_Press_Capteur_Geot,4, "%.1f", ((float)sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage / 10));
+			Unicode::snprintf(textAreaBuffer_Press_Capteur_Geot, 4, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage / 10), abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_EauCaptage % 10));
 		}
 		else
 		{
@@ -7278,17 +7279,17 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_geo_val_debit_captage.invalidate();
 		//Temp Captage / Puits
 		//Out
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Out_Capteur_Geot, 7, "%.1f", ((float) sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_CAP) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_Out_Capteur_Geot, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_CAP < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_CAP / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_ALL_CAP % 10));
 		textArea_geo_val_temp_captage_puits.setWildcard1(textAreaBuffer_Temp_Out_Capteur_Geot);
 		//In
-		Unicode::snprintfFloat(textAreaBuffer_Temp_In_Capteur_Geot, 7, "%.1f", ((float) sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_CAP) / 10);
+		Unicode::snprintf(textAreaBuffer_Temp_In_Capteur_Geot, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_CAP < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_CAP / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_RET_CAP % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_In_Capteur_Geot[Unicode::strlen(textAreaBuffer_Temp_In_Capteur_Geot)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_In_Capteur_Geot[Unicode::strlen(textAreaBuffer_Temp_In_Capteur_Geot)], 2,"C");
 		textArea_geo_val_temp_captage_puits.setWildcard2(textAreaBuffer_Temp_In_Capteur_Geot);
 		textArea_geo_val_temp_captage_puits.invalidate();
 		//Pression HP / Temp Cond
 		//Pression
-		Unicode::snprintfFloat(textAreaBuffer_Press_HP_Geot, 7, "%.1f", ((float) sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_HP_Geot, 7, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP / 10), abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP % 10));
 		textArea_geo_val_press_temp_hp.setWildcard1(textAreaBuffer_Press_HP_Geot);
 		//Temp Cond
 		Unicode::snprintfFloat(textAreaBuffer_Temp_Cond_Geot, 7, "%.1f", ((float)ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C1, true, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazHP)/10));
@@ -7298,7 +7299,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_geo_val_press_temp_hp.invalidate();
 		//Pression BP / Temp Evap
 		//Pression
-		Unicode::snprintfFloat(textAreaBuffer_Press_BP_Geot, 7, "%.1f", ((float) sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_BP_Geot, 7, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP / 10), abs(sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP % 10));
 		textArea_geo_val_press_temp_bp.setWildcard1(textAreaBuffer_Press_BP_Geot);
 		//Temp Evap
 		Unicode::snprintfFloat(textAreaBuffer_Temp_Evap_Geot, 7, "%.1f", ((float)ConvertPressionToTemperature((E_TYPE_GAZ)sConfig_IHM.sModele_PAC.Gaz_C1, false, sCyclRegFrigo->pac.geotwin.InPress.i16Pression_GazBP)/10));
@@ -7313,37 +7314,37 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_geo_val_pos_eev_spare.setWildcard2(textAreaBuffer_Pos_EEVSP_Geot);
 		textArea_geo_val_pos_eev_spare.invalidate();
 		//Coef Poly / Cible
-		Unicode::snprintfFloat(textAreaBuffer_Coef_Poly_Geot, 7, "%.4f", ((float) sCyclRegFrigo->pac.geotwin.StatutEEV.u16Coef_Poly) / 10000);
+		Unicode::snprintf(textAreaBuffer_Coef_Poly_Geot, 7, "%d.%04d", sCyclRegFrigo->pac.geotwin.StatutEEV.u16Coef_Poly / 10000, abs(sCyclRegFrigo->pac.geotwin.StatutEEV.u16Coef_Poly % 10000));
 		textArea_geo_val_coef_poly_cible.setWildcard1(textAreaBuffer_Coef_Poly_Geot);
 		Unicode::snprintf(textAreaBuffer_Temp_HP_Cible_Geot, 3, "%d", sCyclRegFrigo->pac.geotwin.StatutEEV.i16Temp_HP_Cible);
 		textArea_geo_val_coef_poly_cible.setWildcard2(textAreaBuffer_Temp_HP_Cible_Geot);
 		textArea_geo_val_coef_poly_cible.invalidate();
 		//Temp HP1
-		Unicode::snprintfFloat(textAreaBuffer_Temp_HP1_Geot, 7, "%.1f", ((float)sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP1)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_HP1_Geot, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP1 / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP1 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_HP1_Geot[Unicode::strlen(textAreaBuffer_Temp_HP1_Geot)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_HP1_Geot[Unicode::strlen(textAreaBuffer_Temp_HP1_Geot)], 2,"C");
 		textArea_geo_val_temp_hp1.setWildcard1(textAreaBuffer_Temp_HP1_Geot);
 		textArea_geo_val_temp_hp1.invalidate();
 		//Temp HP2
-		Unicode::snprintfFloat(textAreaBuffer_Temp_HP2_Geot, 7, "%.1f", ((float)sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP2)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_HP2_Geot, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP2 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP2 / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_HP2 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_HP2_Geot[Unicode::strlen(textAreaBuffer_Temp_HP2_Geot)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_HP2_Geot[Unicode::strlen(textAreaBuffer_Temp_HP2_Geot)], 2,"C");
 		textArea_geo_val_temp_hp2.setWildcard1(textAreaBuffer_Temp_HP2_Geot);
 		textArea_geo_val_temp_hp2.invalidate();
 		//Temp BP1
-		Unicode::snprintfFloat(textAreaBuffer_Temp_BP1_Geot, 7, "%.1f", ((float)sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP1)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_BP1_Geot, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP1 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP1 / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP1 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_BP1_Geot[Unicode::strlen(textAreaBuffer_Temp_BP1_Geot)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_BP1_Geot[Unicode::strlen(textAreaBuffer_Temp_BP1_Geot)], 2,"C");
 		textArea_geo_val_temp_bp1.setWildcard1(textAreaBuffer_Temp_BP1_Geot);
 		textArea_geo_val_temp_bp1.invalidate();
 		//Temp BP2
-		Unicode::snprintfFloat(textAreaBuffer_Temp_BP2_Geot, 7, "%.1f", ((float)sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP2)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_BP2_Geot, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP2 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP2 / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_BP2 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_BP2_Geot[Unicode::strlen(textAreaBuffer_Temp_BP2_Geot)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_BP2_Geot[Unicode::strlen(textAreaBuffer_Temp_BP2_Geot)], 2,"C");
 		textArea_geo_val_temp_bp2.setWildcard1(textAreaBuffer_Temp_BP2_Geot);
 		textArea_geo_val_temp_bp2.invalidate();
 		//Temp Cond
-		Unicode::snprintfFloat(textAreaBuffer_Temp_OutCond_Geot, 7, "%.1f", ((float)sCyclRegFrigo->pac.geotwin.Temp.i16Temp_COND)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_OutCond_Geot, 7, sCyclRegFrigo->pac.geotwin.Temp.i16Temp_COND < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_COND / 10), abs(sCyclRegFrigo->pac.geotwin.Temp.i16Temp_COND % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_OutCond_Geot[Unicode::strlen(textAreaBuffer_Temp_OutCond_Geot)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_OutCond_Geot[Unicode::strlen(textAreaBuffer_Temp_OutCond_Geot)], 2,"C");
 		textArea_geo_val_temp_cond.setWildcard(textAreaBuffer_Temp_OutCond_Geot);
@@ -7559,56 +7560,56 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_ajp_val_demande_comp2.setWildcard(textAreaBuffer_Dde_Comp2_Ajp);
 		textArea_ajp_val_demande_comp2.invalidate();
 		//Temp cible 410
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Cible_Comp1_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP410_Cible)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_Cible_Comp1_Ajp, 7, sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP410_Cible < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP410_Cible / 10), abs(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP410_Cible % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Cible_Comp1_Ajp[Unicode::strlen(textAreaBuffer_Temp_Cible_Comp1_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Cible_Comp1_Ajp[Unicode::strlen(textAreaBuffer_Temp_Cible_Comp1_Ajp)], 2,"C");
 		textArea_ajp_val_objectif_410.setWildcard(textAreaBuffer_Temp_Cible_Comp1_Ajp);
 		textArea_ajp_val_objectif_410.invalidate();
 		//Temp TDS 410
-		Unicode::snprintfFloat(textAreaBuffer_Temp_TDS410_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH410)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_TDS410_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH410 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH410 / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH410 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_TDS410_Ajp[Unicode::strlen(textAreaBuffer_Temp_TDS410_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_TDS410_Ajp[Unicode::strlen(textAreaBuffer_Temp_TDS410_Ajp)], 2,"C");
 		textArea_ajp_val_temp_tds_410.setWildcard(textAreaBuffer_Temp_TDS410_Ajp);
 		textArea_ajp_val_temp_tds_410.invalidate();
 		//Temp TSC 410A
-		Unicode::snprintfFloat(textAreaBuffer_Temp_TSC410A_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_A)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_TSC410A_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_A < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_A / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_A % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_TSC410A_Ajp[Unicode::strlen(textAreaBuffer_Temp_TSC410A_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_TSC410A_Ajp[Unicode::strlen(textAreaBuffer_Temp_TSC410A_Ajp)], 2,"C");
 		textArea_ajp_val_temp_tsc410a.setWildcard(textAreaBuffer_Temp_TSC410A_Ajp);
 		textArea_ajp_val_temp_tsc410a.invalidate();
 		//Temp TSC 410B
-		Unicode::snprintfFloat(textAreaBuffer_Temp_TSC410B_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B )/10);
+		Unicode::snprintf(textAreaBuffer_Temp_TSC410B_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSC410_B % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_TSC410B_Ajp[Unicode::strlen(textAreaBuffer_Temp_TSC410B_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_TSC410B_Ajp[Unicode::strlen(textAreaBuffer_Temp_TSC410B_Ajp)], 2,"C");
 		textArea_ajp_val_temp_tsc410b.setWildcard(textAreaBuffer_Temp_TSC410B_Ajp);
 		textArea_ajp_val_temp_tsc410b.invalidate();
 		//Temp cible 134
-		Unicode::snprintfFloat(textAreaBuffer_Temp_Cible_Comp2_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP134_Cible )/10);
+		Unicode::snprintf(textAreaBuffer_Temp_Cible_Comp2_Ajp, 7, sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP134_Cible < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP134_Cible / 10), abs(sCyclRegFrigo->pac.ajpac.sStatut_Frigo_AJP.i16Temp_HP134_Cible % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_Cible_Comp2_Ajp[Unicode::strlen(textAreaBuffer_Temp_Cible_Comp2_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_Cible_Comp2_Ajp[Unicode::strlen(textAreaBuffer_Temp_Cible_Comp2_Ajp)], 2,"C");
 		textArea_ajp_val_objectif_temp_134.setWildcard(textAreaBuffer_Temp_Cible_Comp2_Ajp);
 		textArea_ajp_val_objectif_temp_134.invalidate();
 		//Temp TDS 134
-		Unicode::snprintfFloat(textAreaBuffer_Temp_TDS134_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH134)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_TDS134_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH134 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH134 / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TSH134 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_TDS134_Ajp[Unicode::strlen(textAreaBuffer_Temp_TDS134_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_TDS134_Ajp[Unicode::strlen(textAreaBuffer_Temp_TDS134_Ajp)], 2,"C");
 		textArea_ajp_val_temp_tds_134.setWildcard(textAreaBuffer_Temp_TDS134_Ajp);
 		textArea_ajp_val_temp_tds_134.invalidate();
 		//Temp TEV 134
-		Unicode::snprintfFloat(textAreaBuffer_Temp_TEV134_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TEV134)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_TEV134_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TEV134 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TEV134 / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TEV134 % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_TEV134_Ajp[Unicode::strlen(textAreaBuffer_Temp_TEV134_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_TEV134_Ajp[Unicode::strlen(textAreaBuffer_Temp_TEV134_Ajp)], 2,"C");
 		textArea_ajp_val_temp_tev_134.setWildcard(textAreaBuffer_Temp_TEV134_Ajp);
 		textArea_ajp_val_temp_tev_134.invalidate();
 		//Temp T IGBT
-		Unicode::snprintfFloat(textAreaBuffer_Temp_IGBT_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TIGBT)/10);
+		Unicode::snprintf(textAreaBuffer_Temp_IGBT_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TIGBT < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TIGBT / 10), abs(sCyclRegFrigo->pac.ajpac.sInTempFrigo.i16Temp_Frigo_TIGBT % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_IGBT_Ajp[Unicode::strlen(textAreaBuffer_Temp_IGBT_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_IGBT_Ajp[Unicode::strlen(textAreaBuffer_Temp_IGBT_Ajp)], 2,"C");
 		textArea_ajp_val_temp_igbt.setWildcard(textAreaBuffer_Temp_IGBT_Ajp);
 		textArea_ajp_val_temp_igbt.invalidate();
 		//Pression HP / Temp Cond 410
 		//Pression
-		Unicode::snprintfFloat(textAreaBuffer_Press_HP1_Ajp, 7, "%.1f", ((float) sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_HP1_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 % 10));
 		textArea_ajp_val_pression_temp_hp410.setWildcard1(textAreaBuffer_Press_HP1_Ajp);
 		//Temp Cond
 		Unicode::snprintfFloat(textAreaBuffer_Temp_Cond1_Ajp, 7, "%.1f", ((float)ConvertPressionToTemperature(GAZ_R410, true, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410)/10));
@@ -7618,7 +7619,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_ajp_val_pression_temp_hp410.invalidate();
 		//Pression BP / Temp Evap 410
 		//Pression
-		Unicode::snprintfFloat(textAreaBuffer_Press_BP1_Ajp, 7, "%.1f", ((float) sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_BP1_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 % 10));
 		textArea_ajp_val_pression_temp_bp410.setWildcard1(textAreaBuffer_Press_BP1_Ajp);
 		//Temp Evap
 		Unicode::snprintfFloat(textAreaBuffer_Temp_Evap1_Ajp, 7, "%.1f", ((float)ConvertPressionToTemperature(GAZ_R410, false, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410)/10));
@@ -7628,7 +7629,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_ajp_val_pression_temp_bp410.invalidate();
 		//Pression HP / Temp Cond 410 Int
 		//Pression
-		Unicode::snprintfFloat(textAreaBuffer_Press_HPInt_Ajp, 7, "%.1f", ((float) sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_HPInt_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT % 10));
 		textArea_ajp_val_pression_temp_int410.setWildcard1(textAreaBuffer_Press_HPInt_Ajp);
 		//Temp Cond
 		Unicode::snprintfFloat(textAreaBuffer_Temp_CondInt_Ajp, 7, "%.1f", ((float)ConvertPressionToTemperature(GAZ_R410, true, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HPINT)/10));
@@ -7638,7 +7639,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_ajp_val_pression_temp_int410.invalidate();
 		//Pression HP / Temp Cond 134
 		//Pression
-		Unicode::snprintfFloat(textAreaBuffer_Press_HP2_Ajp, 7, "%.1f", ((float) sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_HP2_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134 % 10));
 		textArea_ajp_val_pression_temp_hp134.setWildcard1(textAreaBuffer_Press_HP2_Ajp);
 		//Temp Cond
 		Unicode::snprintfFloat(textAreaBuffer_Temp_Cond2_Ajp, 7, "%.1f", ((float)ConvertPressionToTemperature(GAZ_R134, true, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP134)/10));
@@ -7648,7 +7649,7 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_ajp_val_pression_temp_hp134.invalidate();
 		//Pression BP / Temp Evap 134
 		//Pression
-		Unicode::snprintfFloat(textAreaBuffer_Press_BP2_Ajp, 7, "%.1f", ((float) sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134) / 10);
+		Unicode::snprintf(textAreaBuffer_Press_BP2_Ajp, 7, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134 % 10));
 		textArea_ajp_val_pression_temp_bp134.setWildcard1(textAreaBuffer_Press_BP2_Ajp);
 		//Temp Evap
 		Unicode::snprintfFloat(textAreaBuffer_Temp_Evap2_Ajp, 7, "%.1f", ((float)ConvertPressionToTemperature(GAZ_R134, false, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP134)/10));
@@ -7827,13 +7828,13 @@ void Variables_systemeView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 		textArea_ajp_val_eev_ue410.setWildcard(textAreaBuffer_EEV410_UE_Ajp);
 		textArea_ajp_val_eev_ue410.invalidate();
 		//Temp TEV IN
-		Unicode::snprintfFloat(textAreaBuffer_Temp_TEVIN_UE_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_IN )/10);
+		Unicode::snprintf(textAreaBuffer_Temp_TEVIN_UE_Ajp, 7, sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_IN < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_IN / 10), abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_IN % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_TEVIN_UE_Ajp[Unicode::strlen(textAreaBuffer_Temp_TEVIN_UE_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_TEVIN_UE_Ajp[Unicode::strlen(textAreaBuffer_Temp_TEVIN_UE_Ajp)], 2,"C");
 		textArea_ajp_val_temp_tev_in.setWildcard(textAreaBuffer_Temp_TEVIN_UE_Ajp);
 		textArea_ajp_val_temp_tev_in.invalidate();
 		//Temp TEV OUT
-		Unicode::snprintfFloat(textAreaBuffer_Temp_TEVOUT_UE_Ajp, 7, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_OUT )/10);
+		Unicode::snprintf(textAreaBuffer_Temp_TEVOUT_UE_Ajp, 7, sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_OUT < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_OUT / 10), abs(sCyclRegFrigo->pac.ajpac.sRetourFan.i16Temp_TEV_OUT % 10));
 		Unicode::snprintf(&textAreaBuffer_Temp_TEVOUT_UE_Ajp[Unicode::strlen(textAreaBuffer_Temp_TEVOUT_UE_Ajp)], 2,"%s", degre);
 		Unicode::snprintf(&textAreaBuffer_Temp_TEVOUT_UE_Ajp[Unicode::strlen(textAreaBuffer_Temp_TEVOUT_UE_Ajp)], 2,"C");
 		textArea_ajp_val_temp_tev_out.setWildcard(textAreaBuffer_Temp_TEVOUT_UE_Ajp);
@@ -7956,25 +7957,25 @@ void Variables_systemeView::changeStatutECS(S_STATUT_ECS *sStatut_ECS)
 	Unicode::UnicodeChar degre[] = {0x00B0};
 
 	//Temp ECS Milieu
-	Unicode::snprintfFloat(textAreaBuffer_Temp_Ecs_Milieu, 7, "%.1f", ((float) sStatut_ECS->i16TeauMilieu) / 10);
+	Unicode::snprintf(textAreaBuffer_Temp_Ecs_Milieu, 7, sStatut_ECS->i16TeauMilieu < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_ECS->i16TeauMilieu / 10), abs(sStatut_ECS->i16TeauMilieu % 10));
 	Unicode::snprintf(&textAreaBuffer_Temp_Ecs_Milieu[Unicode::strlen(textAreaBuffer_Temp_Ecs_Milieu)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Temp_Ecs_Milieu[Unicode::strlen(textAreaBuffer_Temp_Ecs_Milieu)], 2,"C");
 	textArea_val_temp_ecs_milieu.setWildcard(textAreaBuffer_Temp_Ecs_Milieu);
 	textArea_val_temp_ecs_milieu.invalidate();
 	//Temp ECS Bas
-	Unicode::snprintfFloat(textAreaBuffer_Temp_Ecs_Bas, 7, "%.1f", ((float) sStatut_ECS->i16TeauBas) / 10);
+	Unicode::snprintf(textAreaBuffer_Temp_Ecs_Bas, 7, sStatut_ECS->i16TeauBas < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_ECS->i16TeauBas / 10), abs(sStatut_ECS->i16TeauBas % 10));
 	Unicode::snprintf(&textAreaBuffer_Temp_Ecs_Bas[Unicode::strlen(textAreaBuffer_Temp_Ecs_Bas)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Temp_Ecs_Bas[Unicode::strlen(textAreaBuffer_Temp_Ecs_Bas)], 2,"C");
 	textArea_val_temp_ecs_bas.setWildcard(textAreaBuffer_Temp_Ecs_Bas);
 	textArea_val_temp_ecs_bas.invalidate();
 	//Temp ECS Spare 1 Départ
-	Unicode::snprintfFloat(textAreaBuffer_Temp_Ecs_Spare1, 7, "%.1f", ((float) sStatut_ECS->i16TempDepart) / 10);
+	Unicode::snprintf(textAreaBuffer_Temp_Ecs_Spare1, 7, sStatut_ECS->i16TempDepart < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_ECS->i16TempDepart / 10), abs(sStatut_ECS->i16TempDepart % 10));
 	Unicode::snprintf(&textAreaBuffer_Temp_Ecs_Spare1[Unicode::strlen(textAreaBuffer_Temp_Ecs_Spare1)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Temp_Ecs_Spare1[Unicode::strlen(textAreaBuffer_Temp_Ecs_Spare1)], 2,"C");
 	textArea_sonde_spare1_val.setWildcard(textAreaBuffer_Temp_Ecs_Spare1);
 	textArea_sonde_spare1_val.invalidate();
 	//Temp ECS Spare 2 Retour
-	Unicode::snprintfFloat(textAreaBuffer_Temp_Ecs_Spare2, 7, "%.1f", ((float) sStatut_ECS->i16TempRetour) / 10);
+	Unicode::snprintf(textAreaBuffer_Temp_Ecs_Spare2, 7, sStatut_ECS->i16TempRetour < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_ECS->i16TempRetour / 10), abs(sStatut_ECS->i16TempRetour % 10));
 	Unicode::snprintf(&textAreaBuffer_Temp_Ecs_Spare2[Unicode::strlen(textAreaBuffer_Temp_Ecs_Spare2)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Temp_Ecs_Spare2[Unicode::strlen(textAreaBuffer_Temp_Ecs_Spare2)], 2,"C");
 	textArea_sonde_spare2_val.setWildcard(textAreaBuffer_Temp_Ecs_Spare2);
@@ -8060,14 +8061,14 @@ void Variables_systemeView::changeStatutPiscine(S_STATUT_PISCINE *sStatut_Piscin
 	Unicode::UnicodeChar degre[] = {0x00B0};
 
 	//Temp Piscine
-	Unicode::snprintfFloat(textAreaBuffer_Temp_Piscine, 7, "%.1f", ((float) sStatut_Piscine->i16TeauPiscine) / 10);
+	Unicode::snprintf(textAreaBuffer_Temp_Piscine, 7, sStatut_Piscine->i16TeauPiscine < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Piscine->i16TeauPiscine / 10), abs(sStatut_Piscine->i16TeauPiscine % 10));
 	Unicode::snprintf(&textAreaBuffer_Temp_Piscine[Unicode::strlen(textAreaBuffer_Temp_Piscine)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Temp_Piscine[Unicode::strlen(textAreaBuffer_Temp_Piscine)], 2,"C");
 	textArea_val_temp_piscine.setWildcard(textAreaBuffer_Temp_Piscine);
 	textArea_val_temp_piscine.invalidate();
 
 	//Consigne Piscine
-	Unicode::snprintfFloat(textAreaBuffer_Cons_Piscine, 7, "%.1f", ((float) sStatut_Piscine->i16ConsignePiscine) / 10);
+	Unicode::snprintf(textAreaBuffer_Cons_Piscine, 7, sStatut_Piscine->i16ConsignePiscine < 0 ? "-%d.%d" : "%d.%d", abs(sStatut_Piscine->i16ConsignePiscine / 10), abs(sStatut_Piscine->i16ConsignePiscine % 10));
 	Unicode::snprintf(&textAreaBuffer_Cons_Piscine[Unicode::strlen(textAreaBuffer_Cons_Piscine)], 2,"%s", degre);
 	Unicode::snprintf(&textAreaBuffer_Cons_Piscine[Unicode::strlen(textAreaBuffer_Cons_Piscine)], 2,"C");
 	textArea_cons_piscine_val.setWildcard(textAreaBuffer_Cons_Piscine);
@@ -8789,11 +8790,11 @@ void Variables_systemeView::changeDemandeFrigo(S_DEMANDE_FRIGO *sDemandeFrigo)
 	//
 	if(sConfig_IHM.sModele_PAC.u8ModelePAC == GEOTWIN_IV)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_BallonTamponFroid, 7, "%.1f", ((float) sDemandeFrigo->sSupplementPAC.Geo.i16ConsigneTeauFroid) / 10);
+		Unicode::snprintf(textAreaBuffer_BallonTamponFroid, 7, sDemandeFrigo->sSupplementPAC.Geo.i16ConsigneTeauFroid < 0 ? "-%d.%d" : "%d.%d", abs(sDemandeFrigo->sSupplementPAC.Geo.i16ConsigneTeauFroid / 10), abs(sDemandeFrigo->sSupplementPAC.Geo.i16ConsigneTeauFroid % 10));
 	}
 	else if(sConfig_IHM.sModele_PAC.u8ModelePAC == INVERTERRA)
 	{
-		Unicode::snprintfFloat(textAreaBuffer_BallonTamponFroid, 7, "%.1f", ((float) sDemandeFrigo->sSupplementPAC.geoinverter.i16ConsigneTeauFroid) / 10);
+		Unicode::snprintf(textAreaBuffer_BallonTamponFroid, 7, sDemandeFrigo->sSupplementPAC.geoinverter.i16ConsigneTeauFroid < 0 ? "-%d.%d" : "%d.%d", abs(sDemandeFrigo->sSupplementPAC.geoinverter.i16ConsigneTeauFroid / 10), abs(sDemandeFrigo->sSupplementPAC.geoinverter.i16ConsigneTeauFroid % 10));
 	}
 	textArea_temp_ballon_val.setWildcard(textAreaBuffer_BallonTamponFroid);
 	textArea_temp_ballon_val.invalidate();

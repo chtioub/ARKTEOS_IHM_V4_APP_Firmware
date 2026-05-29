@@ -1,5 +1,6 @@
 #include <gui/derogation_screen/DerogationView.hpp>
 #include <gui/zone_screen/ZoneView.hpp>
+#include <stdlib.h>
 
 DerogationView::DerogationView()
 {
@@ -76,7 +77,7 @@ DerogationView::DerogationView()
 	}
 	u16Consigne_Derogation = (u16Consigne_Derogation < u16ValMax)? u16Consigne_Derogation : u16ValMax;
 	u16Consigne_Derogation = (u16Consigne_Derogation > u16ValMin)? u16Consigne_Derogation : u16ValMin;
-	Unicode::snprintfFloat(textAreaBuffer_Consigne, 6, "%.1f", ((float) u16Consigne_Derogation) / 10);
+	Unicode::snprintf(textAreaBuffer_Consigne, 6, "%d.%d", u16Consigne_Derogation / 10, abs(u16Consigne_Derogation % 10));
 	textArea_valeur_consigne_derog.setWildcard(textAreaBuffer_Consigne);
 	// Titre
 	Unicode::snprintf(textAreaBuffer_Titre, 40, touchgfx::TypedText(T_TEXT_ZONE_DEROGATION_CENTRE_DEFAUT).getText());
@@ -155,7 +156,7 @@ void DerogationView::bouton_plus_consigne()
 	{
 		u16Consigne_Derogation++;
 	}
-	Unicode::snprintfFloat(textAreaBuffer_Consigne, 6, "%.1f", ((float) u16Consigne_Derogation) / 10);
+	Unicode::snprintf(textAreaBuffer_Consigne, 6, "%d.%d", u16Consigne_Derogation / 10, abs(u16Consigne_Derogation % 10));
 	textArea_valeur_consigne_derog.setWildcard(textAreaBuffer_Consigne);
 	textArea_valeur_consigne_derog.invalidate();
 }
@@ -167,7 +168,7 @@ void DerogationView::bouton_moins_consigne()
 	{
 		u16Consigne_Derogation--;
 	}
-	Unicode::snprintfFloat(textAreaBuffer_Consigne, 6, "%.1f", ((float) u16Consigne_Derogation) / 10);
+	Unicode::snprintf(textAreaBuffer_Consigne, 6, "%d.%d", u16Consigne_Derogation / 10, abs(u16Consigne_Derogation % 10));
 	textArea_valeur_consigne_derog.setWildcard(textAreaBuffer_Consigne);
 	textArea_valeur_consigne_derog.invalidate();
 }

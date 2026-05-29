@@ -1,5 +1,6 @@
 #include <gui/zone_screen/ZoneView.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
+#include <stdlib.h>
 
 ZoneView::ZoneView()
 {
@@ -259,7 +260,7 @@ void ZoneView::slider_reduit(int sliderValue)
 	u16ConsigneReduit = sliderValue;
 	if(u8ZoneSelect == 0xff || (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.0", u16ConsigneReduit - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
@@ -271,7 +272,7 @@ void ZoneView::slider_reduit(int sliderValue)
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", ((float) u16ConsigneReduit) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.%d", u16ConsigneReduit / 10, abs(u16ConsigneReduit % 10));
 		positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 120) * (float) 1.98);
 	}
 	textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
@@ -297,7 +298,7 @@ void ZoneView::bouton_plus_reduit()
 	slider_bleu_reduit.invalidate();
 	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.0", u16ConsigneReduit - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
@@ -309,7 +310,7 @@ void ZoneView::bouton_plus_reduit()
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", ((float) u16ConsigneReduit) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.%d", u16ConsigneReduit / 10, abs(u16ConsigneReduit % 10));
 		positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 120) * (float) 1.98);
 	}
 	textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
@@ -335,7 +336,7 @@ void ZoneView::bouton_moins_reduit()
 	slider_bleu_reduit.invalidate();
 	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.0", u16ConsigneReduit - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9);
@@ -347,7 +348,7 @@ void ZoneView::bouton_moins_reduit()
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", ((float) u16ConsigneReduit) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.%d", u16ConsigneReduit / 10, abs(u16ConsigneReduit % 10));
 		positionEcran = ((float) slider_jaune.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 120) * (float) 1.98);
 	}
 	textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
@@ -367,7 +368,7 @@ void ZoneView::slider_normal(int sliderValue)
 	u16ConsigneNormal = sliderValue;
 	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.0", u16ConsigneNormal - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
@@ -379,7 +380,7 @@ void ZoneView::slider_normal(int sliderValue)
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", ((float) u16ConsigneNormal) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.%d", u16ConsigneNormal / 10, abs(u16ConsigneNormal % 10));
 		positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 120) * (float) 1.98);
 	}
 	textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
@@ -405,7 +406,7 @@ void ZoneView::bouton_plus_normal()
 	slider_bleu_ciel.invalidate();
 	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.0", u16ConsigneNormal - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
@@ -417,7 +418,7 @@ void ZoneView::bouton_plus_normal()
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", ((float) u16ConsigneNormal) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.%d", u16ConsigneNormal / 10, abs(u16ConsigneNormal % 10));
 		positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 120) * (float) 1.98);
 	}
 	textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
@@ -443,7 +444,7 @@ void ZoneView::bouton_moins_normal()
 	slider_bleu_ciel.invalidate();
 	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.0", u16ConsigneNormal - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9);
@@ -455,7 +456,7 @@ void ZoneView::bouton_moins_normal()
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", ((float) u16ConsigneNormal) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.%d", u16ConsigneNormal / 10, abs(u16ConsigneNormal % 10));
 		positionEcran = ((float) slider_orange.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 120) * (float) 1.98);
 	}
 	textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
@@ -475,7 +476,7 @@ void ZoneView::slider_confort(int sliderValue)
 	u16ConsigneConfort = sliderValue;
 	if(u8ZoneSelect == 0xff || (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.0", u16ConsigneConfort - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
@@ -487,7 +488,7 @@ void ZoneView::slider_confort(int sliderValue)
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", ((float) u16ConsigneConfort) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.%d", u16ConsigneConfort / 10, abs(u16ConsigneConfort % 10));
 		positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 120) * (float) 1.98);
 	}
 	textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
@@ -514,7 +515,7 @@ void ZoneView::bouton_plus_confort()
 	slider_bleu.invalidate();
 	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.0", u16ConsigneConfort - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
@@ -526,7 +527,7 @@ void ZoneView::bouton_plus_confort()
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", ((float) u16ConsigneConfort) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.%d", u16ConsigneConfort / 10, abs(u16ConsigneConfort % 10));
 		positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 120) * (float) 1.98);
 	}
 	textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
@@ -553,7 +554,7 @@ void ZoneView::bouton_moins_confort()
 	slider_bleu.invalidate();
 	if(u8ZoneSelect == 0xff ||  (sConfig_IHM.sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT))
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
+		Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.0", u16ConsigneConfort - 200);
 		if ((sConfig_IHM.sMode_RegulExt.Mode == AUTO_CHAUD && u8ZoneSelect == 0xff)|| (sConfig_IHM.sMode_Zx[u8ZoneSelect].Mode == AUTO_CHAUD && u8ZoneSelect != 0xff))
 		{
 			positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9);
@@ -565,7 +566,7 @@ void ZoneView::bouton_moins_confort()
 	}
 	else
 	{
-		Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", ((float) u16ConsigneConfort) / 10);
+		Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.%d", u16ConsigneConfort / 10, abs(u16ConsigneConfort % 10));
 		positionEcran = ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 120) * (float) 1.98);
 	}
 	textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
@@ -774,7 +775,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			slider_bleu_reduit.setValue((int) u16ConsigneReduit);
 			slider_bleu_reduit.invalidate();
 
-			Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
+			Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.0", u16ConsigneReduit - 200);
 
 			textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
 			textArea_jaune.moveTo((int) ((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9), 51);
@@ -793,7 +794,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			slider_bleu_ciel.setValue(u16ConsigneNormal);
 			slider_bleu_ciel.invalidate();
 
-			Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
+			Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.0", u16ConsigneNormal - 200);
 
 			textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 - textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
 			textArea_orange.invalidate();
@@ -810,7 +811,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 			slider_bleu.setValue(u16ConsigneConfort);
 			slider_bleu.invalidate();
 
-			Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
+			Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.0", u16ConsigneConfort - 200);
 
 			textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
 			textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 - textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
@@ -1093,7 +1094,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 
 				if (sConfig_IHM->sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", (float) u16ConsigneReduit - 200);
+					Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.0", u16ConsigneReduit - 200);
 					textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
 					textArea_jaune.moveTo((int) ((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 180) * (float) 8.9), 51);
 					textArea_jaune.invalidate();
@@ -1103,7 +1104,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				}
 				else
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneReduit, 6, "%.1f", ((float) u16ConsigneReduit) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneReduit, 6, "%d.%d", u16ConsigneReduit / 10, abs(u16ConsigneReduit % 10));
 					textArea_jaune.setWildcard(textAreaBuffer_ConsigneReduit);
 					textArea_jaune.moveTo((int) ((float) slider_jaune.getX() + 19 /*+ slider_jaune.background.getX()*/- textArea_jaune.getWidth() / 2 + ((float) u16ConsigneReduit - (float) 120) * (float) 1.98), 51);
 					textArea_jaune.invalidate();
@@ -1133,7 +1134,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 
 				if (sConfig_IHM->sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", (float) u16ConsigneNormal - 200);
+					Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.0", u16ConsigneNormal - 200);
 					textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 180) * (float) 8.9), 51);
 					textArea_orange.invalidate();
 //					textArea_bleu_ciel.setWildcard(textAreaBuffer_ConsigneNormal);
@@ -1142,7 +1143,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				}
 				else
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneNormal, 6, "%.1f", ((float) u16ConsigneNormal) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneNormal, 6, "%d.%d", u16ConsigneNormal / 10, abs(u16ConsigneNormal % 10));
 					textArea_orange.setWildcard(textAreaBuffer_ConsigneNormal);
 					textArea_orange.moveTo((int) ((float) slider_orange.getX() + 19 /*+ slider_bleu_ciel.background.getX()*/- textArea_orange.getWidth() / 2 + ((float) u16ConsigneNormal - (float) 120) * (float) 1.98), 51);
 					textArea_orange.invalidate();
@@ -1171,7 +1172,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 
 				if (sConfig_IHM->sParam_Zx[u8ZoneSelect].type_zone.zone.TypeThermostat == TH_CONTACT)
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", (float) u16ConsigneConfort - 200);
+					Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.0", u16ConsigneConfort - 200);
 					textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
 					textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 180) * (float) 8.9), 51);
 					textArea_rouge.invalidate();
@@ -1190,7 +1191,7 @@ void ZoneView::changeConfig(S_CONFIG_IHM *sConfig_IHM)
 				}
 				else
 				{
-					Unicode::snprintfFloat(textAreaBuffer_ConsigneConfort, 6, "%.1f", ((float) u16ConsigneConfort) / 10);
+					Unicode::snprintf(textAreaBuffer_ConsigneConfort, 6, "%d.%d", u16ConsigneConfort / 10, abs(u16ConsigneConfort % 10));
 					textArea_rouge.setWildcard(textAreaBuffer_ConsigneConfort);
 					textArea_rouge.moveTo((int) ((float) slider_rouge.getX() + 19 /*+ slider_rouge.background.getX()*/- textArea_rouge.getWidth() / 2 + ((float) u16ConsigneConfort - (float) 120) * (float) 1.98), 51);
 					textArea_rouge.invalidate();

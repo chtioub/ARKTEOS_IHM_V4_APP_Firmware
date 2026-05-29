@@ -1,4 +1,5 @@
 #include <gui/maintenance_pump_down_screen/Maintenance_pump_downView.hpp>
+#include <stdlib.h>
 
 Maintenance_pump_downView::Maintenance_pump_downView()
 {
@@ -182,8 +183,8 @@ void Maintenance_pump_downView::tearDownScreen()
 
 void Maintenance_pump_downView::changeStatutCyclFrigo(S_CYCL_REG_FRI *sCyclRegFrigo)
 {
-	Unicode::snprintfFloat(textAreaBuffer_Pression_HP, 6, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410/10));
-	Unicode::snprintfFloat(textAreaBuffer_Pression_BP, 6, "%.1f", ((float)sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410/10));
+	Unicode::snprintf(textAreaBuffer_Pression_HP, 6, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_HP410 % 10));
+	Unicode::snprintf(textAreaBuffer_Pression_BP, 6, sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 < 0 ? "-%d.%d" : "%d.%d", abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 / 10), abs(sCyclRegFrigo->pac.ajpac.sInPressFrigo.i16In_Pression_BP410 % 10));
 	textArea_val_pression_hp.setWildcard(textAreaBuffer_Pression_HP);
 	textArea_val_pression_bp.setWildcard(textAreaBuffer_Pression_BP);
 	textArea_val_pression_hp.invalidate();
