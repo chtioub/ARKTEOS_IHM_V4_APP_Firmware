@@ -99076,6 +99076,7 @@
                 "Y": 149,
                 "Width": 168,
                 "Height": 102,
+                "Visible": false,
                 "Pressed": "Bouton_Beige_Clicked_L168xH102.png",
                 "Released": "Bouton_Beige_Unclicked_L168xH102.png",
                 "TextId": "text_usine_offset_sondes",

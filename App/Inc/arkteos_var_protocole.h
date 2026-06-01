@@ -32,7 +32,11 @@
 //    u8    u8    u8       u2+u6          u16       xx          u16
 //   Dest  Emet  Comm  Control/S_Com   Nb_Octets   Data   CRC_Modus 0xA001
 /*****************************************************************************/
-#define TAILLE_BUFFER_UART      512
+// La plus grosse trame est SC_RECUP_CONFIG_PHOENIX : header(6) + payload(sizeof(S_CONFIG_FRIGO)*NB_UE_MAX = 64*8 = 512) + CRC(2) = 520 octets.
+// Le buffer doit pouvoir contenir une trame complete sinon elle est tronquee a la reception et rejetee par le controle d'integrite (cf. decodeRxData) -> recup config bloquee a 75% en Inverterra/Geoinverter.
+// Marge de securite pour le separateur idle et toute evolution mineure du protocole.
+#define MARGE_TRAME_UART        64
+#define TAILLE_BUFFER_UART      (520 + MARGE_TRAME_UART)   // = 584 octets
 
 typedef enum
 {
